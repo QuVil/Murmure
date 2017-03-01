@@ -25,6 +25,11 @@ class CaseSalle
             return motif;
         }
 
+        void set_motif(int mo)
+        {
+            motif = mo;
+        }
+
 };
 
 class Salle
@@ -94,14 +99,26 @@ class Salle
             etat_vide = false;
         }
 
-        void afficher_salle()
+        void operator = (const Salle &salle2)
         {
             for (int i=0; i<15; ++i)
             {
                 for (int j=0; j<10; ++j)
-                    cout<<grille[i][j].get_motif();
+                    grille[i][j] = salle2.get_case(i, j);
             }
-            cout<<endl;
+            etat_vide = salle2.get_etat_vide();
+            theme = salle2.get_theme();
+        }
+
+        void afficher_salle()
+        {
+            for (int i=0; i<10; ++i)
+            {
+                for (int j=0; j<15; ++j)
+                    cout<<grille[j][i].get_motif();
+                cout<<endl;
+            }
+
         }
 
 };
@@ -128,6 +145,16 @@ class Zone
             salle_actuelle_y = posy;
         }
 
+        Salle get_salle(int x, int y) const
+        {
+            return carte[x][y];
+        }
+
+        void set_salle(int x, int y, Salle nouvelle_salle)
+        {
+            carte[x][y] = nouvelle_salle;
+        }
+
         Salle donne_salle_actuelle () const
         {
             return carte[salle_actuelle_x][salle_actuelle_y];
@@ -138,8 +165,12 @@ class Zone
 int main(int argc,char ** argv)
 {
     //test lines
-    cout << "lol" << endl;
     Zone zone_test;
+    Salle salle_test;
+    salle_test.get_case(3, 8).set_motif(0);
+    salle_test.afficher_salle();
+    cout<<endl;
+    zone_test.set_salle(5, 5, salle_test);
     zone_test.donne_salle_actuelle().afficher_salle();
     return 0;
 }
