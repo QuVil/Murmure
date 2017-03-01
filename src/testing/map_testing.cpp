@@ -135,9 +135,11 @@ class Zone
 };
 
 
-int main()
+int main(int argc,char ** argv)
 {
     //test lines
+    cout << "lol" << endl;
     Zone zone_test;
     zone_test.donne_salle_actuelle().afficher_salle();
+    return 0;
 }
