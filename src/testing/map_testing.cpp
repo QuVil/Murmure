@@ -1,0 +1,143 @@
+#include <iostream>
+#include <string>
+
+//Salut, on fait ça à l'arrache : pas de modules parce que c'est du testing OK ? Ok.
+using namespace std;
+//Nota Bene : ce code n'a pas ete execute, ni fini; KEK. A prendre avec des pincettes je suppose.
+
+class CaseSalle
+{
+    private:
+        int motif; //TODO: creer classe motif pour les cases si on fait les salles en rectangle par grilles
+
+    public:
+        CaseSalle()
+        {
+            motif = 1;
+        }
+        ~CaseSalle()
+        {
+            motif = 0;
+        }
+
+        int get_motif()const
+        {
+            return motif;
+        }
+
+};
+
+class Salle
+{
+    private:
+        CaseSalle grille[15][10];
+        bool etat_vide;
+        string theme;
+
+    public:
+        //-------------------------Construction/Destruction-------------------
+        Salle()
+        {
+            etat_vide = false;
+            theme = "base";
+        }
+
+        Salle(int hau, int lar, string the = "base")
+        {
+            etat_vide = false;
+            theme = the;
+        }
+
+        ~Salle()
+        {
+            //NaN
+        }
+
+        //----------------------------Access-Mutat----------------------------
+        CaseSalle get_case(int x, int y) const
+        {
+            return grille[x][y];
+        }
+
+        string get_theme() const
+        {
+            return theme;
+        }
+
+        bool get_etat_vide() const
+        {
+            return etat_vide;
+        }
+
+        void set_case(int x, int y, CaseSalle nouvelle_case)
+        {
+            grille[x][y] = nouvelle_case;
+        }
+
+        void set_theme(string the)
+        {
+            theme = the;
+        }
+
+        void set_etat_vide(bool eta)
+        {
+            etat_vide = eta;
+        }
+
+        void vider()
+        {
+            etat_vide = true;
+        }
+
+        void remplir()
+        {
+            etat_vide = false;
+        }
+
+        void afficher_salle()
+        {
+            for (int i=0; i<15; ++i)
+            {
+                for (int j=0; j<10; ++j)
+                    cout<<grille[i][j].get_motif();
+            }
+            cout<<endl;
+        }
+
+};
+
+class Zone
+{
+    private:
+        Salle carte[10][10];
+        string nom;
+        int salle_actuelle_x, salle_actuelle_y;
+
+    public:
+        Zone()
+        {
+            nom = "Zone";
+            salle_actuelle_x = 5;
+            salle_actuelle_y = 5;
+        }
+
+        Zone(int posx, int posy, string nom_zone = "Zone")
+        {
+            nom = nom_zone;
+            salle_actuelle_x = posx;
+            salle_actuelle_y = posy;
+        }
+
+        Salle donne_salle_actuelle () const
+        {
+            return carte[salle_actuelle_x][salle_actuelle_y];
+        }
+};
+
+
+int main()
+{
+    //test lines
+    Zone zone_test;
+    zone_test.donne_salle_actuelle().afficher_salle();
+}

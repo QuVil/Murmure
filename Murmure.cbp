@@ -24,6 +24,8 @@
 		<Compiler>
 			<Add option="-Wall" />
 		</Compiler>
+		<Unit filename="src/testing/map_testing.cpp" />
+		<Unit filename="src/txt/mainTxt.cpp" />
 		<Extensions>
 			<code_completion />
 			<debugger />
