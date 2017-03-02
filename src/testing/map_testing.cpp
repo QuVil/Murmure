@@ -136,7 +136,7 @@ class Salle
 class Zone
 {
     private:
-        Salle carte[10][10];
+        Salle carte[11][11];
         string nom;
         int salle_actuelle_x, salle_actuelle_y;
 
@@ -144,9 +144,9 @@ class Zone
         Zone()
         {
             nom = "Zone";
-            for (int i=0; i<10; ++i)
+            for (int i=0; i<11; ++i)
             {
-                for (int j=0; j<10; ++j)
+                for (int j=0; j<11; ++j)
                 {
                     carte[i][j].vider();
                 }
@@ -189,9 +189,9 @@ class Zone
 
         void afficher_zone()
         {
-            for (int i=0; i<10; ++i)
+            for (int i=0; i<11; ++i)
             {
-                for (int j=0; j<10; ++j)
+                for (int j=0; j<11; ++j)
                 {
                     cout<<carte[i][j].is_etat_plein()<<" ";
                 }
