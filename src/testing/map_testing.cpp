@@ -53,7 +53,7 @@ class Salle
             theme = "base";
         }
 
-        Salle(string the = "base")
+        Salle(string the)
         {
             etat_vide = false;
             theme = the;
@@ -113,7 +113,7 @@ class Salle
                     grille[i][j] = salle2.get_case(i, j);
             }
             etat_vide = salle2.get_etat_vide();
-            theme = salle2.get_theme();
+            theme = "test reussi fdp";
             return *this;
         }
 
@@ -157,14 +157,24 @@ class Zone
             return carte[x][y];
         }
 
-        void set_salle(int x, int y, Salle nouvelle_salle)
+        Salle get_salle() const
+        {
+            return carte[salle_actuelle_x][salle_actuelle_y];
+        }
+
+        void set_salle(int x, int y, const Salle &nouvelle_salle)
         {
             carte[x][y] = nouvelle_salle;
         }
 
-        Salle donne_salle_actuelle () const
+        int get_salle_actuelle_x ()const
         {
-            return carte[salle_actuelle_x][salle_actuelle_y];
+            return salle_actuelle_x;
+        }
+
+        int get_salle_actuelle_y ()const
+        {
+            return salle_actuelle_y;
         }
 };
 
@@ -175,9 +185,11 @@ int main(int argc,char ** argv)
     Zone zone_test;
     Salle salle_test;
     CaseSalle case_test;
+
     case_test.set_motif(0);
     salle_test.set_case(6, 7, case_test);
-    zone_test.donne_salle_actuelle().get_case(5,5).set_motif(1);
-    zone_test.donne_salle_actuelle().afficher_salle();
+
+    zone_test.set_salle(zone_test.get_salle_actuelle_x(), zone_test.get_salle_actuelle_y(), salle_test);
+    zone_test.get_salle().afficher_salle();
     return 0;
 }
