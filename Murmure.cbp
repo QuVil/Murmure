@@ -32,6 +32,9 @@
 		<Unit filename="Makefile">
 			<Option target="murmure_txt" />
 		</Unit>
+		<Unit filename="src/testing/generation.cpp">
+			<Option target="murmure_test" />
+		</Unit>
 		<Unit filename="src/testing/map_testing.cpp">
 			<Option target="murmure_txt" />
 		</Unit>
