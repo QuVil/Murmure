@@ -15,6 +15,7 @@ class CaseSalle
         {
             motif = 1;
         }
+
         ~CaseSalle()
         {
             motif = 0;
@@ -41,21 +42,21 @@ class CaseSalle
 class Salle
 {
     private:
-        CaseSalle grille[15][10];
-        bool etat_vide;
+        CaseSalle grille[20][15];
+        bool etat_plein;
         string theme;
 
     public:
         //-------------------------Construction/Destruction-------------------
         Salle()
         {
-            etat_vide = false;
+            etat_plein = false;
             theme = "base";
         }
 
         Salle(string the)
         {
-            etat_vide = false;
+            etat_plein = false;
             theme = the;
         }
 
@@ -75,9 +76,9 @@ class Salle
             return theme;
         }
 
-        bool get_etat_vide() const
+        bool is_etat_plein() const
         {
-            return etat_vide;
+            return etat_plein;
         }
 
         void set_case(int x, int y, CaseSalle nouvelle_case)
@@ -90,30 +91,32 @@ class Salle
             theme = the;
         }
 
-        void set_etat_vide(bool eta)
+        void set_etat_plein(bool eta)
         {
-            etat_vide = eta;
+            etat_plein = eta;
         }
 
         void vider()
         {
-            etat_vide = true;
+            etat_plein = false;
+            theme = "vide";
+
         }
 
         void remplir()
         {
-            etat_vide = false;
+            etat_plein = true;
         }
 
         Salle& operator = (const Salle &salle2)
         {
-            for (int i=0; i<15; ++i)
+            for (int i=0; i<20; ++i)
             {
-                for (int j=0; j<10; ++j)
+                for (int j=0; j<15; ++j)
                     grille[i][j] = salle2.get_case(i, j);
             }
-            etat_vide = salle2.get_etat_vide();
-            theme = "test reussi fdp";
+            etat_plein = salle2.is_etat_plein();
+            theme = salle2.get_theme();
             return *this;
         }
 
@@ -141,6 +144,13 @@ class Zone
         Zone()
         {
             nom = "Zone";
+            for (int i=0; i<10; ++i)
+            {
+                for (int j=0; j<10; ++j)
+                {
+                    carte[i][j].vider();
+                }
+            }
             salle_actuelle_x = 5;
             salle_actuelle_y = 5;
         }
@@ -152,12 +162,12 @@ class Zone
             salle_actuelle_y = posy;
         }
 
-        Salle get_salle(int x, int y) const
+        Salle get_salle(int x, int y)
         {
             return carte[x][y];
         }
 
-        Salle get_salle() const
+        Salle get_salle()
         {
             return carte[salle_actuelle_x][salle_actuelle_y];
         }
@@ -176,6 +186,38 @@ class Zone
         {
             return salle_actuelle_y;
         }
+
+        void afficher_zone()
+        {
+            for (int i=0; i<10; ++i)
+            {
+                for (int j=0; j<10; ++j)
+                {
+                    cout<<carte[i][j].is_etat_plein()<<" ";
+                }
+                cout<<endl;
+            }
+        }
+
+        void remplir_salle(int x, int y)
+        {
+            carte[x][y].remplir();
+        }
+
+        void remplir_salle()
+        {
+            carte[salle_actuelle_x][salle_actuelle_y].remplir();
+        }
+
+        void vider_salle(int x, int y)
+        {
+            carte[x][y].vider();
+        }
+
+        void vider_salle()
+        {
+            carte[salle_actuelle_x][salle_actuelle_y].vider();
+        }
 };
 
 
@@ -183,13 +225,7 @@ int main(int argc,char ** argv)
 {
     //test lines
     Zone zone_test;
-    Salle salle_test;
-    CaseSalle case_test;
-
-    case_test.set_motif(0);
-    salle_test.set_case(6, 7, case_test);
-
-    zone_test.set_salle(zone_test.get_salle_actuelle_x(), zone_test.get_salle_actuelle_y(), salle_test);
-    zone_test.get_salle().afficher_salle();
+    zone_test.remplir_salle();
+    zone_test.afficher_zone();
     return 0;
 }
