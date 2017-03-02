@@ -30,6 +30,12 @@ class CaseSalle
             motif = mo;
         }
 
+        CaseSalle& operator = (const CaseSalle& case2)
+        {
+            motif = case2.get_motif();
+            return *this;
+        }
+
 };
 
 class Salle
@@ -47,7 +53,7 @@ class Salle
             theme = "base";
         }
 
-        Salle(int hau, int lar, string the = "base")
+        Salle(string the = "base")
         {
             etat_vide = false;
             theme = the;
@@ -99,7 +105,7 @@ class Salle
             etat_vide = false;
         }
 
-        void operator = (const Salle &salle2)
+        Salle& operator = (const Salle &salle2)
         {
             for (int i=0; i<15; ++i)
             {
@@ -108,6 +114,7 @@ class Salle
             }
             etat_vide = salle2.get_etat_vide();
             theme = salle2.get_theme();
+            return *this;
         }
 
         void afficher_salle()
@@ -167,10 +174,10 @@ int main(int argc,char ** argv)
     //test lines
     Zone zone_test;
     Salle salle_test;
-    salle_test.get_case(3, 8).set_motif(0);
-    salle_test.afficher_salle();
-    cout<<endl;
-    zone_test.set_salle(5, 5, salle_test);
+    CaseSalle case_test;
+    case_test.set_motif(0);
+    salle_test.set_case(6, 7, case_test);
+    zone_test.donne_salle_actuelle().get_case(5,5).set_motif(1);
     zone_test.donne_salle_actuelle().afficher_salle();
     return 0;
 }
