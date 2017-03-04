@@ -15,8 +15,8 @@ ifeq ($(OS),Windows_NT)
 			-Llib/SFML-2.4.2/SFML-2.4.2-windows/SFML-2.4.2/lib \
 			-lsfml-graphics.a -lsfml-window.a -lsfml-system.a
 else
-	INCLUDE_DIR_SFML = -Ilib/SFML-2.4.2/SFML-2.4.2_linux/include
-	LIBS_SFML = -Llib/SFML-2.4.2/SFML-2.4.2_linux/lib \
+	INCLUDE_DIR_SFML = -Ilib/SFML-2.4.2/SFML-2.4.2_Linux-gcc-5.4.0/include
+	LIBS_SFML = -Llib/SFML-2.4.2/SFML-2.4.2_Linux-gcc-5.4.0/lib \
 				-lsfml-graphics -lsfml-window -lsfml-system
 endif
 
