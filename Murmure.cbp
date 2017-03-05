@@ -44,11 +44,12 @@
 			<Option target="murmure_txt" />
 			<Option target="murmure_test" />
 		</Unit>
-		<Unit filename="src/testing/generation.cpp">
+		<Unit filename="src/testing/generation_tests.cpp">
 			<Option target="murmure_test" />
 		</Unit>
 		<Unit filename="src/testing/map_testing.cpp">
 			<Option target="murmure_txt" />
+			<Option target="murmure_test" />
 		</Unit>
 		<Unit filename="src/txt/mainTxt.cpp">
 			<Option target="murmure_txt" />
