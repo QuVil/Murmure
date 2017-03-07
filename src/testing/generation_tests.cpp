@@ -47,6 +47,21 @@ class CarteGen
             return carte[x][y];
         }
 
+        int nb_cases ()const
+        {
+            int nb =0;
+            for (int i=0; i<11; ++i)
+                {
+                    for (int j=0; j<11; ++j)
+                    {
+                        if (carte[i][j] == 1)
+                        {
+                            nb++;
+                        }
+                    }
+                }
+            return nb;
+        }
 
         void initialisation_gen(string pat, string met)
         {
@@ -356,5 +371,6 @@ int main()
     carte_test.initialisation_gen("h", "voisins");
     carte_test.iterer();
     carte_test.afficher_carte();
+    cout<<"nb_cases : "<<carte_test.nb_cases()<<endl;
     return 0;
 }
