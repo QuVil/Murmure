@@ -15,7 +15,7 @@ class CarteGen
         bool pret_iteration;  //pret_iteration = l'instance est-elle prête à itérer ?
         bool valide; //valide = la carte est-elle jouable ?
         //patternes : croix, carre, h, vide, hub
-        //methodes : voisins, bruit, aleatoire
+        //methodes : voisins, bruit, aleatoire, epuration
 
 
     public:
@@ -153,7 +153,7 @@ class CarteGen
                 terminate();
             }
 
-            if (!(methode == "voisins" || methode == "bruit" || methode == "aleatoire"))
+            if (!(methode == "voisins" || methode == "bruit" || methode == "aleatoire" || methode == "epuration"))
             {
                 cout<<"error : Invalid method"<<endl;
                 terminate();
@@ -168,9 +168,9 @@ class CarteGen
                     for (int j=0; j<11; ++j)
                     {
                         if (carte[i][j] == 0)
-                            cout<<"-"<<" ";
+                            cout<<"- ";
                         else
-                            cout<<"X"<<" ";
+                            cout<<"X ";
                     }
                     cout<<endl;
                 }
@@ -197,7 +197,6 @@ class CarteGen
 
                         if((i!=5 || j!=5) && voisins == 1 && carte[i][j] == 1)
                         {
-                            cout<<"OKOK"<<endl;
                             int nb_aleat = rand() % 12;
                             switch(nb_aleat)
                             {
@@ -235,13 +234,11 @@ class CarteGen
 
                         if((i!=5 || j!=5) && voisins == 2 && carte[i+1][j] == 0)
                         {
-                            cout<<"OK"<<endl;
                             int nb_aleat = rand() % 12;
                             switch(nb_aleat)
                             {
                                 case 6:
                                     carte[i+1][j] = 1;
-                                    cout<<"carte modifiee"<<endl;
                                     break;
                                 case 3:
                                     carte[i][j] = 1;
@@ -254,13 +251,11 @@ class CarteGen
 
                         if((i!=5 || j!=5) && voisins == 3 && carte[i][j] == 0)
                         {
-                            cout<<"OKook"<<endl;
                             int nb_aleat = rand() % 6;
                             switch(nb_aleat)
                             {
                                 case 2:
                                     carte[i][j] = 1;
-                                    cout<<"carte modifiee"<<endl;
                                     break;
                                 default:
                                     break;
@@ -270,14 +265,12 @@ class CarteGen
 
                         if((i!=5 || j!=5) && voisins == 3 && carte[i][j] == 1)
                         {
-                            cout<<"OKook"<<endl;
                             int nb_aleat = rand() % 12
                             ;
                             switch(nb_aleat)
                             {
                                 case 9:
                                     carte[i][j] = 0;
-                                    cout<<"carte modifiee"<<endl;
                                     break;
                                 default:
                                     break;
@@ -287,13 +280,11 @@ class CarteGen
 
                         if((i!=5 || j!=5) && voisins == 0)
                         {
-                            cout<<"OKook"<<endl;
                             int nb_aleat = rand() % 5;
                             switch(nb_aleat)
                             {
                                 case 4:
                                     carte[i][j] = 0;
-                                    cout<<"carte modifiee"<<endl;
                                     break;
                                 default:
                                     break;
@@ -304,13 +295,11 @@ class CarteGen
 
                         if((i!=5 || j!=5) && voisins == 2)
                         {
-                            cout<<"OKook"<<endl;
                             int nb_aleat = rand() % 15;
                             switch(nb_aleat)
                             {
                                 case 10:
                                     carte[i][j] = 0;
-                                    cout<<"carte modifiee"<<endl;
                                     break;
                                 default:
                                     break;
@@ -320,17 +309,14 @@ class CarteGen
 
                         if((i!=5 || j!=5) && voisins == 1 && carte[i][j+1] == 0 && carte[i][j-1] == 0)
                         {
-                            cout<<"Okkkk"<<endl;
                             int nb_aleat = rand() % 10;
                             switch(nb_aleat)
                             {
                                 case 5:
                                     carte[i][j-1] = 1;
-                                    cout<<"carte modifiee"<<endl;
                                     break;
                                 case 7:
                                     carte[i][j+1] = 1;
-                                    cout<<"carte modifiee"<<endl;
                                     break;
                                 default:
                                     break;
@@ -340,13 +326,11 @@ class CarteGen
 
                         if((i!=5 || j!=5) && voisins == 4)
                         {
-                            cout<<"Okkkk"<<endl;
                             int nb_aleat = rand() % 9;
                             switch(nb_aleat)
                             {
                                 case 6:
                                     carte[i][j] = 0;
-                                    cout<<"carte modifiee"<<endl;
                                     break;
                                 default:
                                     break;
@@ -369,6 +353,8 @@ int main()
 {
     CarteGen carte_test;
     carte_test.initialisation_gen("h", "voisins");
+    carte_test.iterer();
+    carte_test.iterer();
     carte_test.iterer();
     carte_test.afficher_carte();
     cout<<"nb_cases : "<<carte_test.nb_cases()<<endl;
