@@ -10,10 +10,10 @@ class CarteGen
 {
     private:
         int carte[11][11];
-        string patterne;
-        string methode;
-        bool pret_iteration;
-        bool valide;
+        string patterne; //patterne = le motif de base de la carte à sa création
+        string methode;  //methode = méthode d'itération de création de carte
+        bool pret_iteration;  //pret_iteration = l'instance est-elle prête à itérer ?
+        bool valide; //valide = la carte est-elle jouable ?
         //patternes : croix, carre, h, vide, hub
         //methodes : voisins, bruit, aleatoire
 
@@ -50,6 +50,7 @@ class CarteGen
 
         void initialisation_gen(string pat, string met)
         {
+            //Vérifie qu'un patterne et une méthode valides soient entrées, et dessine le patterne de base.
             if (patterne == " ")
             {
                 patterne = pat;
@@ -162,6 +163,7 @@ class CarteGen
 
         void iterer()
         {
+            //itere la creation de la carte selon la méthode donnée dans l'instance au temps t
             if (pret_iteration == false)
                 cout<<"erreur : modele potentiellement non initialise..."<<endl;
             srand (time(NULL));
