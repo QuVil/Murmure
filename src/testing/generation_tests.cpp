@@ -177,12 +177,12 @@ public:
         }
     }
 
-    void iterer(string meth)
+    void iterer(string meth = "")
     {
         if (meth != "" && meth != " ") //Si on passe une methode => changement de la methode
         {
             methode = meth;
-            cout<<"methode changee"
+            cout<<"methode changee"<<endl;
         }
         //itere la creation de la carte selon la méthode donnée dans l'instance au temps t
         if (pret_iteration == false)
@@ -375,7 +375,23 @@ public:
             {
                 for (int j=1; j<10; ++j)
                 {
+                    if (carte[i][j] == 0 && (i !=5 || j != 5))
+                    {
+                        int nb_aleat = rand() % 15;
+                        if (nb_aleat == 12)
+                        {
+                            carte[i][j] = 1;
+                        }
+                    }
 
+                    if (carte[i][j] == 1 && (i !=5 || j != 5))
+                    {
+                        int nb_aleat = rand() % 25;
+                        if (nb_aleat == 7)
+                        {
+                            carte[i][j] = 0;
+                        }
+                    }
                 }
             }
         }
@@ -390,7 +406,16 @@ int main()
 {
     CarteGen carte_test;
     carte_test.initialisation_gen("carre", "voisins");
+    carte_test.iterer();
+    carte_test.iterer();
+    carte_test.iterer();
+    carte_test.iterer();
+    carte_test.iterer();
     carte_test.iterer("aleatoire");
+    carte_test.iterer();
+    carte_test.iterer();
+    carte_test.iterer();
+    carte_test.iterer();
     carte_test.afficher_carte();
     cout<<"nb_cases : "<<carte_test.nb_cases()<<endl;
     return 0;
