@@ -177,8 +177,13 @@ public:
         }
     }
 
-    void iterer()
+    void iterer(string meth)
     {
+        if (meth != "" && meth != " ") //Si on passe une methode => changement de la methode
+        {
+            methode = meth;
+            cout<<"methode changee"
+        }
         //itere la creation de la carte selon la méthode donnée dans l'instance au temps t
         if (pret_iteration == false)
             cout<<"erreur : modele potentiellement non initialise..."<<endl;
@@ -364,6 +369,16 @@ public:
         }
 
 
+        if (methode == "aleatoire")
+        {
+            for (int i=1; i<10; ++i)
+            {
+                for (int j=1; j<10; ++j)
+                {
+
+                }
+            }
+        }
 
 
     }
@@ -375,9 +390,7 @@ int main()
 {
     CarteGen carte_test;
     carte_test.initialisation_gen("carre", "voisins");
-    carte_test.iterer();
-    carte_test.iterer();
-    carte_test.iterer();
+    carte_test.iterer("aleatoire");
     carte_test.afficher_carte();
     cout<<"nb_cases : "<<carte_test.nb_cases()<<endl;
     return 0;
