@@ -25,10 +25,13 @@
 				<Option type="1" />
 				<Option compiler="gcc" />
 			</Target>
-			<Target title="murmure_sdl">
-				<Option output="bin/murmure_sdl" prefix_auto="1" extension_auto="1" />
+			<Target title="murmure_sfml">
+				<Option output="bin/murmure_sfml" prefix_auto="1" extension_auto="1" />
 				<Option type="0" />
 				<Option compiler="gcc" />
+				<ExtraCommands>
+					<Add after="export LD_LIBRARY_PATH=lib/SFML-2.4.2/SFML-2.4.2_Linux-gcc-5.4.0/lib &amp;&amp; bin/murmure_sfml" />
+				</ExtraCommands>
 			</Target>
 			<Target title="murmure_gen_test">
 				<Option output="bin/murmure_gen_test" prefix_auto="1" extension_auto="1" />
@@ -42,8 +45,9 @@
 		<Unit filename="Makefile">
 			<Option target="murmure_txt" />
 		</Unit>
-		<Unit filename="src/sdl/mainSDL.cpp">
-			<Option target="murmure_sdl" />
+		<Unit filename="src/sfml/mainSFML.cpp">
+			<Option target="murmure_txt" />
+			<Option target="murmure_test" />
 		</Unit>
 		<Unit filename="src/testing/generation_tests.cpp">
 			<Option target="murmure_test" />
@@ -58,7 +62,6 @@
 		<Extensions>
 			<code_completion />
 			<debugger />
-			<envvars />
 		</Extensions>
 	</Project>
 </CodeBlocks_project_file>

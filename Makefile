@@ -6,25 +6,20 @@ FINAL_TARGET_TXT = murmure_txt
 SRCS_TEST = $(CORE) testing/map_testing.cpp
 FINAL_TARGET_TEST = murmure_test
 
-SRCS_SDL = $(CORE) sdl/mainSDL.cpp
-FINAL_TARGET_SDL = murmure_sdl
-
-SRCS_GEN_TEST = $(CORE) testing/generation_tests.cpp
-FINAL_TARGET_GEN_TEST = murmure_gen_test
+SRCS_SFML = $(CORE) sfml/mainSFML.cpp
+FINAL_TARGET_SFML = murmure_sfml
 
 ifeq ($(OS),Windows_NT)
-	INCLUDE_DIR_SDL = 	-Iextern/SDL2_mingw/SDL2-2.0.3/include \
-						-Iextern/SDL2_mingw/SDL2_ttf-2.0.12/i686-w64-mingw32/include/SDL2 \
-						-Iextern/SDL2_mingw/SDL2_image-2.0.0/i686-w64-mingw32/include/SDL2
-	LIBS_SDL = 	-Lextern \
-			-Lextern/SDL2_mingw/SDL2-2.0.3/i686-w64-mingw32/lib \
-			-Lextern/SDL2_mingw/SDL2_ttf-2.0.12/i686-w64-mingw32/lib \
-			-Lextern/SDL2_mingw/SDL2_image-2.0.0/i686-w64-mingw32/lib \
-			-lmingw32 -lSDL2main -lSDL2.dll -lSDL2_ttf.dll -lSDL2_image.dll
+	INCLUDE_DIR_SFML = 	-Ilib/SFML-2.4.2/SFML-2.4.2-windows/SFML-2.4.2/include
+	LIBS_SFML = 	-Llib \
+			-Llib/SFML-2.4.2/SFML-2.4.2-windows/SFML-2.4.2/lib \
+			-lsfml-graphics.a -lsfml-window.a -lsfml-system.a
 else
-	INCLUDE_DIR_SDL = -I/usr/include/SDL2
-	LIBS_SDL = -lSDL2 -lSDL2_ttf -lSDL2_image
+	INCLUDE_DIR_SFML = -Ilib/SFML-2.4.2/SFML-2.4.2_Linux-gcc-5.4.0/include
+	LIBS_SFML = -Llib/SFML-2.4.2/SFML-2.4.2_Linux-gcc-5.4.0/lib \
+				-lsfml-graphics -lsfml-window -lsfml-system
 endif
+
 CC					= g++
 LD 					= g++
 LDFLAGS  			=
@@ -32,24 +27,22 @@ CPPFLAGS 			= -Wall -ggdb   #-O2   # pour optimiser
 OBJ_DIR 			= obj
 SRC_DIR 			= src
 BIN_DIR 			= bin
-INCLUDE_DIR			= -Isrc -Isrc/core -Isrc/txt -Isrc/sdl
+INCLUDE_DIR			= -Isrc -Isrc/core -Isrc/txt -Isrc/sfml
 
-default: make_dir $(BIN_DIR)/$(FINAL_TARGET_TXT) $(BIN_DIR)/$(FINAL_TARGET_TEST) $(BIN_DIR)/$(FINAL_TARGET_SDL)
+default: make_dir $(BIN_DIR)/$(FINAL_TARGET_TXT) $(BIN_DIR)/$(FINAL_TARGET_TEST) $(BIN_DIR)/$(FINAL_TARGET_SFML)
 
 $(FINAL_TARGET_TXT) : make_dir $(BIN_DIR)/$(FINAL_TARGET_TXT)
 
 $(FINAL_TARGET_TEST) : make_dir $(BIN_DIR)/$(FINAL_TARGET_TEST)
 
-$(FINAL_TARGET_SDL) : make_dir $(BIN_DIR)/$(FINAL_TARGET_SDL)
-
-$(FINAL_TARGET_GEN_TEST) : make_dir $(BIN_DIR)/$(FINAL_TARGET_GEN_TEST)
+$(FINAL_TARGET_SFML) : make_dir $(BIN_DIR)/$(FINAL_TARGET_SFML)
 
 make_dir:
 ifeq ($(OS),Windows_NT)
-	if not exist $(OBJ_DIR) mkdir $(OBJ_DIR) $(OBJ_DIR)\txt $(OBJ_DIR)\testing $(OBJ_DIR)\sdl $(OBJ_DIR)\core $(OBJ_DIR)\gen_test 
+	if not exist $(OBJ_DIR) mkdir $(OBJ_DIR) $(OBJ_DIR)\txt $(OBJ_DIR)\testing $(OBJ_DIR)\sfml $(OBJ_DIR)\core
 	if not exist $(BIN_DIR) mkdir $(BIN_DIR)
 else
-	test -d $(OBJ_DIR) || mkdir -p $(OBJ_DIR) $(OBJ_DIR)/txt $(OBJ_DIR)/testing $(OBJ_DIR)/sdl $(OBJ_DIR)/core $(OBJ_DIR)/gen_test
+	test -d $(OBJ_DIR) || mkdir -p $(OBJ_DIR) $(OBJ_DIR)/txt $(OBJ_DIR)/testing $(OBJ_DIR)/sfml $(OBJ_DIR)/core
 	test -d $(BIN_DIR) || mkdir $(BIN_DIR)
 endif
 
@@ -59,18 +52,15 @@ $(BIN_DIR)/$(FINAL_TARGET_TXT): $(SRCS_TXT:%.cpp=$(OBJ_DIR)/%.o)
 $(BIN_DIR)/$(FINAL_TARGET_TEST): $(SRCS_TEST:%.cpp=$(OBJ_DIR)/%.o)
 	$(LD) $+ -o $@ $(LDFLAGS)
 
-$(BIN_DIR)/$(FINAL_TARGET_GEN_TEST): $(SRCS_GEN_TEST:%.cpp=$(OBJ_DIR)/%.o)
-	$(LD) $+ -o $@ $(LDFLAGS)
-
-$(BIN_DIR)/$(FINAL_TARGET_SDL): $(SRCS_SDL:%.cpp=$(OBJ_DIR)/%.o)
-	$(LD) $+ -o $@ $(LDFLAGS) $(LIBS_SDL)
+$(BIN_DIR)/$(FINAL_TARGET_SFML): $(SRCS_SFML:%.cpp=$(OBJ_DIR)/%.o)
+	$(LD) $+ -o $@ $(LDFLAGS) $(LIBS_SFML)
 
 $(OBJ_DIR)/%.o: $(SRC_DIR)/%.cpp
-	$(CC) -c $(CPPFLAGS) $(INCLUDE_DIR_SDL) $(INCLUDE_DIR) $< -o $@
+	$(CC) -c $(CPPFLAGS) $(INCLUDE_DIR_SFML) $(INCLUDE_DIR) $< -o $@
 
 clean:
 ifeq ($(OS),Windows_NT)
-	del /f $(OBJ_DIR)\txt\*.o $(OBJ_DIR)\core\*.o $(BIN_DIR)\$(FINAL_TARGET_SDL).exe $(BIN_DIR)\$(FINAL_TARGET_TXT).exe $(BIN_DIR)\$(FINAL_TARGET_TEST).exe $(BIN_DIR)\$(FINAL_TARGET_GEN_TEST).exe
+	del /f $(OBJ_DIR)\txt\*.o $(OBJ_DIR)\core\*.o $(BIN_DIR)\$(FINAL_TARGET_SFML).exe $(BIN_DIR)\$(FINAL_TARGET_TXT).exe $(BIN_DIR)\$(FINAL_TARGET_TEST).exe
 else
-	rm -rf $(OBJ_DIR) $(BIN_DIR)/$(FINAL_TARGET_TXT) $(BIN_DIR)/$(FINAL_TARGET_SDL) $(BIN_DIR)/$(FINAL_TARGET_TEST) $(BIN_DIR)/$(FINAL_TARGET_GEN_TEST)
+	rm -rf $(OBJ_DIR) $(BIN_DIR)/$(FINAL_TARGET_TXT) $(BIN_DIR)/$(FINAL_TARGET_SFML) $(BIN_DIR)/$(FINAL_TARGET_TEST)
 endif
