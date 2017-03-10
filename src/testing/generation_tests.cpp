@@ -99,6 +99,7 @@ public:
         }
         else if (patterne == "carre")
         {
+            carte[5][5] = 1;
             for (int i=0; i<11; ++i)
             {
                 for (int j=0; j<11; ++j)
@@ -373,7 +374,7 @@ public:
 int main()
 {
     CarteGen carte_test;
-    carte_test.initialisation_gen("h", "voisins");
+    carte_test.initialisation_gen("carre", "voisins");
     carte_test.iterer();
     carte_test.iterer();
     carte_test.iterer();
