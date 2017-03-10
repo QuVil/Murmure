@@ -12,10 +12,10 @@ FINAL_TARGET_SFML = murmure_sfml
 SRCS_GEN_TEST = $(CORE) testing/generation_tests.cpp
 FINAL_TARGET_GEN_TEST = murmure_gen_test
 ifeq ($(OS),Windows_NT)
-	INCLUDE_DIR_SFML = 	-Ilib/SFML-2.4.2/SFML-2.4.2-windows/SFML-2.4.2/include
+	INCLUDE_DIR_SFML = 	-Ilib\SFML-2.4.2\SFLM-2.4.2_Windows-MinGW-6.1.0\include
 	LIBS_SFML = 	-Llib \
-			-Llib/SFML-2.4.2/SFML-2.4.2-windows/SFML-2.4.2/lib \
-			-lsfml-graphics.a -lsfml-window.a -lsfml-system.a
+			-Llib\SFML-2.4.2\SFLM-2.4.2_Windows-MinGW-6.1.0\lib \
+			-lsfml-graphics -lsfml-window -lsfml-system
 else
 	INCLUDE_DIR_SFML = -Ilib/SFML-2.4.2/SFML-2.4.2_Linux-gcc-5.4.0/include
 	LIBS_SFML = -Llib/SFML-2.4.2/SFML-2.4.2_Linux-gcc-5.4.0/lib \
@@ -58,7 +58,6 @@ $(BIN_DIR)/$(FINAL_TARGET_TEST): $(SRCS_TEST:%.cpp=$(OBJ_DIR)/%.o)
 
 $(BIN_DIR)/$(FINAL_TARGET_GEN_TEST): $(SRCS_GEN_TEST:%.cpp=$(OBJ_DIR)/%.o)
 	$(LD) $+ -o $@ $(LDFLAGS)
-
 
 $(BIN_DIR)/$(FINAL_TARGET_SFML): $(SRCS_SFML:%.cpp=$(OBJ_DIR)/%.o)
 	$(LD) $+ -o $@ $(LDFLAGS) $(LIBS_SFML)
