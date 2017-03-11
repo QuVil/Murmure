@@ -1,4 +1,4 @@
-CORE =
+CORE = core/Fichier.cpp core/CaseSalle.cpp core/Salle.cpp
 
 SRCS_TXT = $(CORE) txt/mainTxt.cpp
 FINAL_TARGET_TXT = murmure_txt
@@ -11,6 +11,7 @@ FINAL_TARGET_SFML = murmure_sfml
 
 SRCS_GEN_TEST = $(CORE) testing/generation_tests.cpp
 FINAL_TARGET_GEN_TEST = murmure_gen_test
+
 ifeq ($(OS),Windows_NT)
 	INCLUDE_DIR_SFML = 	-Ilib\SFML-2.4.2\SFLM-2.4.2_Windows-MinGW-6.1.0\include
 	LIBS_SFML = 	-Llib \

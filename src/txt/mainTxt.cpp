@@ -1,9 +1,12 @@
 #include <iostream>
 
+#include "Salle.h"
+#include "Fichier.h"
+
 using namespace std;
 
 int main(int argc, char ** argv)
 {
-    cout << "gars rie la ptite bite" << endl;
-    return 0;
+    Salle s;
+    s.afficher();
 }

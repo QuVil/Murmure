@@ -45,6 +45,12 @@
 		<Unit filename="Makefile">
 			<Option target="murmure_txt" />
 		</Unit>
+		<Unit filename="src/core/CaseSalle.cpp" />
+		<Unit filename="src/core/CaseSalle.h" />
+		<Unit filename="src/core/Fichier.cpp" />
+		<Unit filename="src/core/Fichier.h" />
+		<Unit filename="src/core/Salle.cpp" />
+		<Unit filename="src/core/Salle.h" />
 		<Unit filename="src/sfml/mainSFML.cpp">
 			<Option target="murmure_txt" />
 			<Option target="murmure_test" />
@@ -52,6 +58,7 @@
 		<Unit filename="src/testing/generation_tests.cpp">
 			<Option target="murmure_test" />
 		</Unit>
+		<Unit filename="src/testing/generation_tests.h" />
 		<Unit filename="src/testing/map_testing.cpp">
 			<Option target="murmure_txt" />
 			<Option target="murmure_test" />
