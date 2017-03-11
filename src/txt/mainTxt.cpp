@@ -10,7 +10,7 @@ int main(int argc, char ** argv)
 {
     Jeu jeu;
     jeu.get_salle().afficher();
-    cout << "KENTIN LA PTITE BEET" << endl;
+    cout << "Gare y lappe teet bih-t" << endl;
 
     return 0;
 }
