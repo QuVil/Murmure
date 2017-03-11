@@ -60,6 +60,8 @@
 			<Option target="murmure_sfml" />
 			<Option target="murmure_gen_test" />
 		</Unit>
+		<Unit filename="src/core/ZoneGen.cpp" />
+		<Unit filename="src/core/ZoneGen.h" />
 		<Unit filename="src/sfml/mainSFML.cpp">
 			<Option target="murmure_txt" />
 			<Option target="murmure_test" />
