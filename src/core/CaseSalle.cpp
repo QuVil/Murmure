@@ -40,7 +40,7 @@ CaseSalle::~CaseSalle()
 }
 
 /**
- * \brief Surcharge d'affectation
+ * \brief Surcharge d'affectation de CaseSalle.
  * Surcharge de l'operateur = pour affecter des CaseSalle entre elles.
  * \param[in] c : La CaseSalle dont les membres -ici \a type- doivent etre copies.
  */
@@ -71,7 +71,7 @@ void CaseSalle::set_CaseSalle_type(int t)
 }
 
 /**
- * \brief Affichage
+ * \brief Affichage de CaseSalle.
  * Procedure d'affichage de la CaseSalle.
  */
 void CaseSalle::afficher()
