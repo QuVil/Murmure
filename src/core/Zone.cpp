@@ -6,6 +6,7 @@
 Zone::Zone()
 {
     niveau_zone = 1;
+
     for (int i=0; i<11; ++i)
     {
         for (int j=0; j<11; ++j)
@@ -20,6 +21,7 @@ Zone::Zone()
 Zone::Zone(int posx, int posy, int niv = 1)
 {
     niveau_zone = niv;
+
     salle_actuelle_x = posx;
     salle_actuelle_y = posy;
 }
