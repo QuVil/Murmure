@@ -1,69 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
 <CodeBlocks_layout_file>
-	<ActiveTarget name="murmure_sfml" />
-	<File name="src/core/CaseSalle.h" open="1" top="0" tabpos="7" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="305" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="src/core/Fichier.cpp" open="1" top="0" tabpos="8" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="2221" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="src/txt/mainTxt.cpp" open="1" top="0" tabpos="10" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="148" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="src/core/CaseSalle.cpp" open="1" top="0" tabpos="4" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="0" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="src/sfml/mainSFML.cpp" open="1" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="115" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="src/testing/generation_tests.cpp" open="1" top="0" tabpos="1" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="11644" topLine="366" />
-		</Cursor>
-	</File>
-	<File name="src/testing/map_testing.cpp" open="1" top="0" tabpos="13" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="979" topLine="39" />
-		</Cursor>
-	</File>
-	<File name="Makefile" open="1" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+
 		<Cursor>
 			<Cursor1 position="323" topLine="0" />
 		</Cursor>
 	</File>
-	<File name="src/sfml/JeuSFML.h" open="1" top="0" tabpos="17" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="372" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="src/core/Salle.h" open="1" top="0" tabpos="6" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="255" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="src/sfml/CaseSFML.cpp" open="1" top="0" tabpos="15" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="1055" topLine="14" />
-		</Cursor>
-	</File>
-	<File name="src/core/Fichier.h" open="1" top="0" tabpos="9" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="355" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="src/sfml/CaseSFML.h" open="1" top="0" tabpos="16" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="0" topLine="0" />
+			<Cursor1 position="76" topLine="0" />
 		</Cursor>
 	</File>
 	<File name="src/core/Salle.cpp" open="1" top="0" tabpos="5" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">

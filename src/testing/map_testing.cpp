@@ -3,7 +3,7 @@
 
 //Salut, on fait ça à l'arrache : pas de modules parce que c'est du testing OK ? Ok.
 using namespace std;
-//Nota Bene : ce code n'a pas ete execute, ni fini; KEK. A prendre avec des pincettes je suppose.
+//Nota Bene : ce code n'est pas fini; KEK. A prendre avec des pincettes je suppose.
 
 class CaseSalle
 {
@@ -100,7 +100,6 @@ public:
     {
         etat_plein = false;
         theme = "vide";
-
     }
 
     void remplir()

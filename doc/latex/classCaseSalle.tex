@@ -1,0 +1,147 @@
+\hypertarget{classCaseSalle}{}\section{Case\+Salle Class Reference}
+\label{classCaseSalle}\index{Case\+Salle@{Case\+Salle}}
+
+
+class des cases qui composent les salles dans le jeu. Une \hyperlink{classSalle}{Salle} de base est composée d\textquotesingle{}un tableau de \hyperlink{classCaseSalle}{Case\+Salle} de taille variable. Il est à noter que les \hyperlink{classCaseSalle}{Case\+Salle} servent uniquement à la gestion et la génération de décors et d\textquotesingle{}ennemis, et que les mouvements d\textquotesingle{}entités ne dépendent pas de ces \hyperlink{classCaseSalle}{Case\+Salle}.  
+
+
+
+
+{\ttfamily \#include $<$Case\+Salle.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classCaseSalle_a4252822534722fccb7d8355f79d7f244}{Case\+Salle} ()
+\begin{DoxyCompactList}\small\item\em Consctructeur Le Constructeur basique de \hyperlink{classCaseSalle}{Case\+Salle} initialisant type sur 0. \end{DoxyCompactList}\item 
+\hyperlink{classCaseSalle_a470fc8fdb01879fd5405392909775fe6}{Case\+Salle} (const int \&t)
+\begin{DoxyCompactList}\small\item\em Consctructeur avec type Constructeur prenant le type de \hyperlink{classCaseSalle}{Case\+Salle} désiré en parametre. \end{DoxyCompactList}\item 
+\hyperlink{classCaseSalle_aca43a910dbbb59bdac7af10faa5b3f39}{$\sim$\+Case\+Salle} ()
+\begin{DoxyCompactList}\small\item\em Destructeur Le Destructeur basique de \hyperlink{classCaseSalle}{Case\+Salle} -\/ne faisant rien. \end{DoxyCompactList}\item 
+\hyperlink{classCaseSalle}{Case\+Salle} \hyperlink{classCaseSalle_a7b85096b9782b5d52089651c69f92bee}{get\+\_\+\+Case\+Salle} ()
+\item 
+\hyperlink{classCaseSalle}{Case\+Salle} \& \hyperlink{classCaseSalle_a8494bda87f21c608d7da7bb510c0e525}{operator=} (const \hyperlink{classCaseSalle}{Case\+Salle} \&c)
+\begin{DoxyCompactList}\small\item\em Surcharge d\textquotesingle{}affectation de \hyperlink{classCaseSalle}{Case\+Salle}. Surcharge de l\textquotesingle{}operateur = pour affecter des \hyperlink{classCaseSalle}{Case\+Salle} entre elles. \end{DoxyCompactList}\item 
+int \hyperlink{classCaseSalle_a0a2939d0c9c02c9ed643e040f8f9bfce}{get\+\_\+\+Case\+Salle\+\_\+type} ()
+\begin{DoxyCompactList}\small\item\em Accesseur de {\itshape type} Accesseur du membre {\itshape type} de la \hyperlink{classCaseSalle}{Case\+Salle}. \end{DoxyCompactList}\item 
+void \hyperlink{classCaseSalle_a0b07f1c744058eaaeb2cb00cc86a697e}{set\+\_\+\+Case\+Salle\+\_\+type} (int t)
+\begin{DoxyCompactList}\small\item\em Mutateur de {\itshape type} Mutateur du membre {\itshape type} de la \hyperlink{classCaseSalle}{Case\+Salle}. \end{DoxyCompactList}\item 
+void \hyperlink{classCaseSalle_aa892c144815ba118fa911e91b1658ba3}{afficher} ()
+\begin{DoxyCompactList}\small\item\em Affichage de \hyperlink{classCaseSalle}{Case\+Salle}. Procedure d\textquotesingle{}affichage de la \hyperlink{classCaseSalle}{Case\+Salle}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+class des cases qui composent les salles dans le jeu. Une \hyperlink{classSalle}{Salle} de base est composée d\textquotesingle{}un tableau de \hyperlink{classCaseSalle}{Case\+Salle} de taille variable. Il est à noter que les \hyperlink{classCaseSalle}{Case\+Salle} servent uniquement à la gestion et la génération de décors et d\textquotesingle{}ennemis, et que les mouvements d\textquotesingle{}entités ne dépendent pas de ces \hyperlink{classCaseSalle}{Case\+Salle}. 
+
+\subsection{Constructor \& Destructor Documentation}
+\index{Case\+Salle@{Case\+Salle}!Case\+Salle@{Case\+Salle}}
+\index{Case\+Salle@{Case\+Salle}!Case\+Salle@{Case\+Salle}}
+\subsubsection[{\texorpdfstring{Case\+Salle()}{CaseSalle()}}]{\setlength{\rightskip}{0pt plus 5cm}Case\+Salle\+::\+Case\+Salle (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classCaseSalle_a4252822534722fccb7d8355f79d7f244}{}\label{classCaseSalle_a4252822534722fccb7d8355f79d7f244}
+
+
+Consctructeur Le Constructeur basique de \hyperlink{classCaseSalle}{Case\+Salle} initialisant type sur 0. 
+
+\index{Case\+Salle@{Case\+Salle}!Case\+Salle@{Case\+Salle}}
+\index{Case\+Salle@{Case\+Salle}!Case\+Salle@{Case\+Salle}}
+\subsubsection[{\texorpdfstring{Case\+Salle(const int \&t)}{CaseSalle(const int &t)}}]{\setlength{\rightskip}{0pt plus 5cm}Case\+Salle\+::\+Case\+Salle (
+\begin{DoxyParamCaption}
+\item[{const int \&}]{t}
+\end{DoxyParamCaption}
+)}\hypertarget{classCaseSalle_a470fc8fdb01879fd5405392909775fe6}{}\label{classCaseSalle_a470fc8fdb01879fd5405392909775fe6}
+
+
+Consctructeur avec type Constructeur prenant le type de \hyperlink{classCaseSalle}{Case\+Salle} désiré en parametre. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em t} & \+: le {\itshape type} qui sera affecte a la nouvelle instance. \\
+\hline
+\end{DoxyParams}
+\index{Case\+Salle@{Case\+Salle}!````~Case\+Salle@{$\sim$\+Case\+Salle}}
+\index{````~Case\+Salle@{$\sim$\+Case\+Salle}!Case\+Salle@{Case\+Salle}}
+\subsubsection[{\texorpdfstring{$\sim$\+Case\+Salle()}{~CaseSalle()}}]{\setlength{\rightskip}{0pt plus 5cm}Case\+Salle\+::$\sim$\+Case\+Salle (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classCaseSalle_aca43a910dbbb59bdac7af10faa5b3f39}{}\label{classCaseSalle_aca43a910dbbb59bdac7af10faa5b3f39}
+
+
+Destructeur Le Destructeur basique de \hyperlink{classCaseSalle}{Case\+Salle} -\/ne faisant rien. 
+
+
+
+\subsection{Member Function Documentation}
+\index{Case\+Salle@{Case\+Salle}!afficher@{afficher}}
+\index{afficher@{afficher}!Case\+Salle@{Case\+Salle}}
+\subsubsection[{\texorpdfstring{afficher()}{afficher()}}]{\setlength{\rightskip}{0pt plus 5cm}void Case\+Salle\+::afficher (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classCaseSalle_aa892c144815ba118fa911e91b1658ba3}{}\label{classCaseSalle_aa892c144815ba118fa911e91b1658ba3}
+
+
+Affichage de \hyperlink{classCaseSalle}{Case\+Salle}. Procedure d\textquotesingle{}affichage de la \hyperlink{classCaseSalle}{Case\+Salle}. 
+
+\index{Case\+Salle@{Case\+Salle}!get\+\_\+\+Case\+Salle@{get\+\_\+\+Case\+Salle}}
+\index{get\+\_\+\+Case\+Salle@{get\+\_\+\+Case\+Salle}!Case\+Salle@{Case\+Salle}}
+\subsubsection[{\texorpdfstring{get\+\_\+\+Case\+Salle()}{get_CaseSalle()}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Case\+Salle} Case\+Salle\+::get\+\_\+\+Case\+Salle (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classCaseSalle_a7b85096b9782b5d52089651c69f92bee}{}\label{classCaseSalle_a7b85096b9782b5d52089651c69f92bee}
+\index{Case\+Salle@{Case\+Salle}!get\+\_\+\+Case\+Salle\+\_\+type@{get\+\_\+\+Case\+Salle\+\_\+type}}
+\index{get\+\_\+\+Case\+Salle\+\_\+type@{get\+\_\+\+Case\+Salle\+\_\+type}!Case\+Salle@{Case\+Salle}}
+\subsubsection[{\texorpdfstring{get\+\_\+\+Case\+Salle\+\_\+type()}{get_CaseSalle_type()}}]{\setlength{\rightskip}{0pt plus 5cm}int Case\+Salle\+::get\+\_\+\+Case\+Salle\+\_\+type (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classCaseSalle_a0a2939d0c9c02c9ed643e040f8f9bfce}{}\label{classCaseSalle_a0a2939d0c9c02c9ed643e040f8f9bfce}
+
+
+Accesseur de {\itshape type} Accesseur du membre {\itshape type} de la \hyperlink{classCaseSalle}{Case\+Salle}. 
+
+\begin{DoxyReturn}{Returns}
+le {\itshape type} de la \hyperlink{classCaseSalle}{Case\+Salle} en question. 
+\end{DoxyReturn}
+\index{Case\+Salle@{Case\+Salle}!operator=@{operator=}}
+\index{operator=@{operator=}!Case\+Salle@{Case\+Salle}}
+\subsubsection[{\texorpdfstring{operator=(const Case\+Salle \&c)}{operator=(const CaseSalle &c)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Case\+Salle} \& Case\+Salle\+::operator= (
+\begin{DoxyParamCaption}
+\item[{const {\bf Case\+Salle} \&}]{c}
+\end{DoxyParamCaption}
+)}\hypertarget{classCaseSalle_a8494bda87f21c608d7da7bb510c0e525}{}\label{classCaseSalle_a8494bda87f21c608d7da7bb510c0e525}
+
+
+Surcharge d\textquotesingle{}affectation de \hyperlink{classCaseSalle}{Case\+Salle}. Surcharge de l\textquotesingle{}operateur = pour affecter des \hyperlink{classCaseSalle}{Case\+Salle} entre elles. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em c} & \+: La \hyperlink{classCaseSalle}{Case\+Salle} dont les membres -\/ici {\itshape type-\/} doivent etre copies. \\
+\hline
+\end{DoxyParams}
+\index{Case\+Salle@{Case\+Salle}!set\+\_\+\+Case\+Salle\+\_\+type@{set\+\_\+\+Case\+Salle\+\_\+type}}
+\index{set\+\_\+\+Case\+Salle\+\_\+type@{set\+\_\+\+Case\+Salle\+\_\+type}!Case\+Salle@{Case\+Salle}}
+\subsubsection[{\texorpdfstring{set\+\_\+\+Case\+Salle\+\_\+type(int t)}{set_CaseSalle_type(int t)}}]{\setlength{\rightskip}{0pt plus 5cm}void Case\+Salle\+::set\+\_\+\+Case\+Salle\+\_\+type (
+\begin{DoxyParamCaption}
+\item[{int}]{t}
+\end{DoxyParamCaption}
+)}\hypertarget{classCaseSalle_a0b07f1c744058eaaeb2cb00cc86a697e}{}\label{classCaseSalle_a0b07f1c744058eaaeb2cb00cc86a697e}
+
+
+Mutateur de {\itshape type} Mutateur du membre {\itshape type} de la \hyperlink{classCaseSalle}{Case\+Salle}. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em t} & \+: nouvelle valeur pour {\itshape type}. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/quentin/\+Murmure/src/core/\hyperlink{CaseSalle_8h}{Case\+Salle.\+h}\item 
+/home/quentin/\+Murmure/src/core/\hyperlink{CaseSalle_8cpp}{Case\+Salle.\+cpp}\end{DoxyCompactItemize}
