@@ -57,10 +57,6 @@ CaseSalle& CaseSalle::operator =(const CaseSalle & c)
  * Accesseur du membre \a type de la CaseSalle.
  * \return le \a type de la CaseSalle en question.
  */
-int CaseSalle::get_CaseSalle_type()
-{
-    return type;
-}
 
 std::string CaseSalle::get_type_string()
 {
@@ -77,11 +73,6 @@ std::string CaseSalle::get_type_string()
         default : return "normal";
                           break;
     }
-}
-
-void CaseSalle::set_CaseSalle_type(int t)
-{
-    type = t;
 }
 
 /**
