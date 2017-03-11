@@ -2,28 +2,40 @@
 \label{classSalle}\index{Salle@{Salle}}
 
 
+class des salles de jeu où évolue le joueur. \hyperlink{classSalle}{Salle} dépend de \hyperlink{classCaseSalle}{Case\+Salle} et se compose d\textquotesingle{}une grille de \hyperlink{classCaseSalle}{Case\+Salle}, dont les bords sont des murs.  
+
+
+
+
 {\ttfamily \#include $<$Salle.\+h$>$}
 
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
 \hyperlink{classSalle_a4cb05b76fb2b5430ac2bf903b8f75906}{Salle} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Consctructeur Le Constructeur basique de \hyperlink{classSalle}{Salle} donnant la {\itshape config} 1 à l\textquotesingle{}instance créée, et créant son fichier modèle. \end{DoxyCompactList}\item 
+\hyperlink{classSalle_ad5b7cf5a8567b142dd3ed77b39480afb}{Salle} (int conf)
+\begin{DoxyCompactList}\small\item\em Consctructeur avec {\itshape config} Le Constructeur avec paramètre, donnant à l\textquotesingle{}instance la {\itshape config} donnée. \end{DoxyCompactList}\item 
 \hyperlink{classCaseSalle}{Case\+Salle} \hyperlink{classSalle_aae17412fe140b77d027fdc3553ecd33c}{get\+\_\+case} (int i, int j)
-\item 
+\begin{DoxyCompactList}\small\item\em Accesseur de case dans la grille. \end{DoxyCompactList}\item 
 void \hyperlink{classSalle_ac0ce53372cead99268609aba57d0fff2}{set\+\_\+case} (int i, int j, \hyperlink{classCaseSalle}{Case\+Salle} c)
-\item 
+\begin{DoxyCompactList}\small\item\em Mutateur de case dans la grille. \end{DoxyCompactList}\item 
 int \hyperlink{classSalle_a9268968ab5741a35da4e52399a4be0b7}{get\+\_\+config} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Accesseur de la {\itshape config}. \end{DoxyCompactList}\item 
 void \hyperlink{classSalle_a3d8b62393fd9cfa15bb385e187e72189}{set\+\_\+config} (int c)
 \item 
-void \hyperlink{classSalle_ae8248a5ded8514be67a29efdeb70af96}{vider} ()
-\item 
 void \hyperlink{classSalle_ae6fd7211225455d887859f983e3bddce}{remplir} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Procédure de remplissage de \hyperlink{classSalle}{Salle}. Techniquement, \hyperlink{classSalle_ae6fd7211225455d887859f983e3bddce}{remplir()} est un mutateur de {\itshape config} avec paramètre fixé. \end{DoxyCompactList}\item 
+void \hyperlink{classSalle_ae8248a5ded8514be67a29efdeb70af96}{vider} ()
+\begin{DoxyCompactList}\small\item\em Procédure de vidage de \hyperlink{classSalle}{Salle}. Techniquement, \hyperlink{classSalle_ae8248a5ded8514be67a29efdeb70af96}{vider()} est un mutateur de {\itshape config} avec paramètre fixé. \end{DoxyCompactList}\item 
+\hyperlink{classSalle}{Salle} \& \hyperlink{classSalle_a315947e357a3fd958b40eb087a82c4d7}{operator=} (\hyperlink{classSalle}{Salle} salle2)
+\begin{DoxyCompactList}\small\item\em Surcharge d\textquotesingle{}affectation de \hyperlink{classSalle}{Salle}. Surcharge de l\textquotesingle{}operateur = pour affecter des \hyperlink{classSalle}{Salle} entre elles. \end{DoxyCompactList}\item 
 void \hyperlink{classSalle_a50ed839f1a93753fddf6171ef343a0bb}{afficher} ()
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Affichage de \hyperlink{classSalle}{Salle}. Procedure d\textquotesingle{}affichage de la \hyperlink{classSalle}{Salle}. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
+
+\subsection{Detailed Description}
+class des salles de jeu où évolue le joueur. \hyperlink{classSalle}{Salle} dépend de \hyperlink{classCaseSalle}{Case\+Salle} et se compose d\textquotesingle{}une grille de \hyperlink{classCaseSalle}{Case\+Salle}, dont les bords sont des murs. 
 
 \subsection{Constructor \& Destructor Documentation}
 \index{Salle@{Salle}!Salle@{Salle}}
@@ -35,6 +47,28 @@ void \hyperlink{classSalle_a50ed839f1a93753fddf6171ef343a0bb}{afficher} ()
 )}\hypertarget{classSalle_a4cb05b76fb2b5430ac2bf903b8f75906}{}\label{classSalle_a4cb05b76fb2b5430ac2bf903b8f75906}
 
 
+Consctructeur Le Constructeur basique de \hyperlink{classSalle}{Salle} donnant la {\itshape config} 1 à l\textquotesingle{}instance créée, et créant son fichier modèle. 
+
+\index{Salle@{Salle}!Salle@{Salle}}
+\index{Salle@{Salle}!Salle@{Salle}}
+\subsubsection[{\texorpdfstring{Salle(int conf)}{Salle(int conf)}}]{\setlength{\rightskip}{0pt plus 5cm}Salle\+::\+Salle (
+\begin{DoxyParamCaption}
+\item[{int}]{conf}
+\end{DoxyParamCaption}
+)}\hypertarget{classSalle_ad5b7cf5a8567b142dd3ed77b39480afb}{}\label{classSalle_ad5b7cf5a8567b142dd3ed77b39480afb}
+
+
+Consctructeur avec {\itshape config} Le Constructeur avec paramètre, donnant à l\textquotesingle{}instance la {\itshape config} donnée. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em conf} & \+: la {\itshape config} donnée à la nouvelle instance. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyRefDesc}{Todo}
+\item[\hyperlink{todo__todo000001}{Todo}]\+: potentiellement ajouter le paramètre fichier pour copie (G\+A\+RY ?) \end{DoxyRefDesc}
+
+
 \subsection{Member Function Documentation}
 \index{Salle@{Salle}!afficher@{afficher}}
 \index{afficher@{afficher}!Salle@{Salle}}
@@ -43,6 +77,10 @@ void \hyperlink{classSalle_a50ed839f1a93753fddf6171ef343a0bb}{afficher} ()
 {}
 \end{DoxyParamCaption}
 )}\hypertarget{classSalle_a50ed839f1a93753fddf6171ef343a0bb}{}\label{classSalle_a50ed839f1a93753fddf6171ef343a0bb}
+
+
+Affichage de \hyperlink{classSalle}{Salle}. Procedure d\textquotesingle{}affichage de la \hyperlink{classSalle}{Salle}. 
+
 \index{Salle@{Salle}!get\+\_\+case@{get\+\_\+case}}
 \index{get\+\_\+case@{get\+\_\+case}!Salle@{Salle}}
 \subsubsection[{\texorpdfstring{get\+\_\+case(int i, int j)}{get_case(int i, int j)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Case\+Salle} Salle\+::get\+\_\+case (
@@ -51,6 +89,23 @@ void \hyperlink{classSalle_a50ed839f1a93753fddf6171ef343a0bb}{afficher} ()
 \item[{int}]{j}
 \end{DoxyParamCaption}
 )}\hypertarget{classSalle_aae17412fe140b77d027fdc3553ecd33c}{}\label{classSalle_aae17412fe140b77d027fdc3553ecd33c}
+
+
+Accesseur de case dans la grille. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em i} & \+: coordonnée de la ligne de la case désirée. \\
+\hline
+\mbox{\tt in}  & {\em j} & \+: coordonnée de la colonne de la case désirée. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+renvoie la \hyperlink{classCaseSalle}{Case\+Salle} i,j de la grille de l\textquotesingle{}instance. 
+\end{DoxyReturn}
+\begin{DoxyWarning}{Warning}
+l\textquotesingle{}accesseur renvoyant une copie, attention à ne pas vouloir utiliser un membre. 
+\end{DoxyWarning}
 \index{Salle@{Salle}!get\+\_\+config@{get\+\_\+config}}
 \index{get\+\_\+config@{get\+\_\+config}!Salle@{Salle}}
 \subsubsection[{\texorpdfstring{get\+\_\+config()}{get_config()}}]{\setlength{\rightskip}{0pt plus 5cm}int Salle\+::get\+\_\+config (
@@ -58,6 +113,29 @@ void \hyperlink{classSalle_a50ed839f1a93753fddf6171ef343a0bb}{afficher} ()
 {}
 \end{DoxyParamCaption}
 )}\hypertarget{classSalle_a9268968ab5741a35da4e52399a4be0b7}{}\label{classSalle_a9268968ab5741a35da4e52399a4be0b7}
+
+
+Accesseur de la {\itshape config}. 
+
+\begin{DoxyReturn}{Returns}
+la {\itshape config} (un int) de la \hyperlink{classSalle}{Salle}. 
+\end{DoxyReturn}
+\index{Salle@{Salle}!operator=@{operator=}}
+\index{operator=@{operator=}!Salle@{Salle}}
+\subsubsection[{\texorpdfstring{operator=(\+Salle salle2)}{operator=(Salle salle2)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Salle} \& Salle\+::operator= (
+\begin{DoxyParamCaption}
+\item[{{\bf Salle}}]{salle2}
+\end{DoxyParamCaption}
+)}\hypertarget{classSalle_a315947e357a3fd958b40eb087a82c4d7}{}\label{classSalle_a315947e357a3fd958b40eb087a82c4d7}
+
+
+Surcharge d\textquotesingle{}affectation de \hyperlink{classSalle}{Salle}. Surcharge de l\textquotesingle{}operateur = pour affecter des \hyperlink{classSalle}{Salle} entre elles. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em salle2} & \+: La \hyperlink{classSalle}{Salle} dont les membres -\/ici les \hyperlink{classCaseSalle}{Case\+Salle} de la grille et la {\itshape config-\/} doivent être copiés. \\
+\hline
+\end{DoxyParams}
 \index{Salle@{Salle}!remplir@{remplir}}
 \index{remplir@{remplir}!Salle@{Salle}}
 \subsubsection[{\texorpdfstring{remplir()}{remplir()}}]{\setlength{\rightskip}{0pt plus 5cm}void Salle\+::remplir (
@@ -65,6 +143,10 @@ void \hyperlink{classSalle_a50ed839f1a93753fddf6171ef343a0bb}{afficher} ()
 {}
 \end{DoxyParamCaption}
 )}\hypertarget{classSalle_ae6fd7211225455d887859f983e3bddce}{}\label{classSalle_ae6fd7211225455d887859f983e3bddce}
+
+
+Procédure de remplissage de \hyperlink{classSalle}{Salle}. Techniquement, \hyperlink{classSalle_ae6fd7211225455d887859f983e3bddce}{remplir()} est un mutateur de {\itshape config} avec paramètre fixé. 
+
 \index{Salle@{Salle}!set\+\_\+case@{set\+\_\+case}}
 \index{set\+\_\+case@{set\+\_\+case}!Salle@{Salle}}
 \subsubsection[{\texorpdfstring{set\+\_\+case(int i, int j, Case\+Salle c)}{set_case(int i, int j, CaseSalle c)}}]{\setlength{\rightskip}{0pt plus 5cm}void Salle\+::set\+\_\+case (
@@ -74,6 +156,19 @@ void \hyperlink{classSalle_a50ed839f1a93753fddf6171ef343a0bb}{afficher} ()
 \item[{{\bf Case\+Salle}}]{c}
 \end{DoxyParamCaption}
 )}\hypertarget{classSalle_ac0ce53372cead99268609aba57d0fff2}{}\label{classSalle_ac0ce53372cead99268609aba57d0fff2}
+
+
+Mutateur de case dans la grille. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em i} & \+: coordonnée de la ligne de la case à changer. \\
+\hline
+\mbox{\tt in}  & {\em j} & \+: coordonnée de la colonne de la case à changer. \\
+\hline
+\mbox{\tt in}  & {\em c} & \+: la \hyperlink{classCaseSalle}{Case\+Salle} pour remplacer la case i,j. \\
+\hline
+\end{DoxyParams}
 \index{Salle@{Salle}!set\+\_\+config@{set\+\_\+config}}
 \index{set\+\_\+config@{set\+\_\+config}!Salle@{Salle}}
 \subsubsection[{\texorpdfstring{set\+\_\+config(int c)}{set_config(int c)}}]{\setlength{\rightskip}{0pt plus 5cm}void Salle\+::set\+\_\+config (
@@ -88,6 +183,10 @@ void \hyperlink{classSalle_a50ed839f1a93753fddf6171ef343a0bb}{afficher} ()
 {}
 \end{DoxyParamCaption}
 )}\hypertarget{classSalle_ae8248a5ded8514be67a29efdeb70af96}{}\label{classSalle_ae8248a5ded8514be67a29efdeb70af96}
+
+
+Procédure de vidage de \hyperlink{classSalle}{Salle}. Techniquement, \hyperlink{classSalle_ae8248a5ded8514be67a29efdeb70af96}{vider()} est un mutateur de {\itshape config} avec paramètre fixé. 
+
 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
