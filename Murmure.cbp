@@ -4,7 +4,7 @@
 	<Project>
 		<Option title="Murmure" />
 		<Option makefile_is_custom="1" />
-		<Option execution_dir="/home/gary/Documents/Murmure" />
+		<Option execution_dir="../Murmure" />
 		<Option pch_mode="2" />
 		<Option compiler="gcc" />
 		<Build>
@@ -49,8 +49,14 @@
 		<Unit filename="src/core/CaseSalle.h" />
 		<Unit filename="src/core/Fichier.cpp" />
 		<Unit filename="src/core/Fichier.h" />
+		<Unit filename="src/core/Jeu.cpp" />
+		<Unit filename="src/core/Jeu.h" />
 		<Unit filename="src/core/Salle.cpp" />
 		<Unit filename="src/core/Salle.h" />
+		<Unit filename="src/sfml/CaseSFML.cpp" />
+		<Unit filename="src/sfml/CaseSFML.h" />
+		<Unit filename="src/sfml/JeuSFML.cpp" />
+		<Unit filename="src/sfml/JeuSFML.h" />
 		<Unit filename="src/sfml/mainSFML.cpp">
 			<Option target="murmure_txt" />
 			<Option target="murmure_test" />

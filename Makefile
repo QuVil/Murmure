@@ -1,4 +1,4 @@
-CORE = core/Fichier.cpp core/CaseSalle.cpp core/Salle.cpp
+CORE = core/Fichier.cpp core/CaseSalle.cpp core/Salle.cpp core/Jeu.cpp
 
 SRCS_TXT = $(CORE) txt/mainTxt.cpp
 FINAL_TARGET_TXT = murmure_txt
@@ -6,7 +6,7 @@ FINAL_TARGET_TXT = murmure_txt
 SRCS_TEST = $(CORE) testing/map_testing.cpp
 FINAL_TARGET_TEST = murmure_test
 
-SRCS_SFML = $(CORE) sfml/mainSFML.cpp
+SRCS_SFML = $(CORE) sfml/mainSFML.cpp sfml/JeuSFML.cpp sfml/CaseSFML.cpp
 FINAL_TARGET_SFML = murmure_sfml
 
 SRCS_GEN_TEST = $(CORE) testing/generation_tests.cpp

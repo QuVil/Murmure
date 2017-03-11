@@ -86,6 +86,8 @@ void Fichier::creation_index()
 
 void Fichier::charger(Salle & s)
 {
+    //Cree un chemin relatif qui pointe sur la configuration en fonction
+    //de la valeur config de la salle (par defaut 1)
     stringstream ss;
     ss << chemin << "Salle/" << s.get_config() << ".cfg";
     string path = ss.str();
@@ -97,6 +99,7 @@ void Fichier::charger(Salle & s)
 
     for(int i=0;i<15;i++)
     {
+        //compte les retours à la ligne donc <= 21 pour avoir le bon compte
         for(int j=0;j<=21;j++)
         {
             tampon=fichier.get();
@@ -110,9 +113,6 @@ void Fichier::charger(Salle & s)
 
     fichier.close();
 }
-
-
-
 
 
 

@@ -1,6 +1,7 @@
 #ifndef CASESALLE_H_INCLUDED
 #define CASESALLE_H_INCLUDED
 
+#include <string>
 /**
 *
 */
@@ -8,7 +9,7 @@ class CaseSalle
 {
 private:
         int type;
-        // 0 : case normale
+        // 0 : normal
         // 1 : porte
         // 2 : trou
         // 3 : mur
@@ -26,9 +27,11 @@ public:
 
     CaseSalle& operator =(const CaseSalle & c);
 
-    int get_CaseSalle_type();
+    int get_type();
 
-    void set_CaseSalle_type(int t);
+    std::string get_type_string();
+
+    void set_type(int t);
 
     void afficher();
 };
