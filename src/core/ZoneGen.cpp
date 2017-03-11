@@ -1,6 +1,7 @@
 #include <iostream>
 
 #include "ZoneGen.h"
+#include "Fichier.h"
 
 ZoneGen::ZoneGen()
 {
@@ -67,6 +68,10 @@ void ZoneGen::initialisation_gen(string pat, string met)
         cout<<"methode deja choisie : "<<methode<<endl;
     }
 
+    Fichier fichier;
+    fichier.charger(*this);
+
+/*
     if (patterne == "croix")
     {
         for (int i=0; i<11; ++i)
@@ -135,7 +140,7 @@ void ZoneGen::initialisation_gen(string pat, string met)
     {
         cout<<"error : Invalid pattern"<<endl;
         terminate();
-    }
+    }*/
 
     if (!(methode == "voisins" || methode == "bruit" || methode == "aleatoire" || methode == "epuration"))
     {
@@ -380,4 +385,14 @@ void ZoneGen::iterer(string meth /* = "" */)
     }
 
 
+}
+
+string ZoneGen::get_patterne()
+{
+    return patterne;
+}
+
+void ZoneGen::set_salle(int i, int j, int salle)
+{
+    carte[i][j] = salle;
 }

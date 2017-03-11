@@ -5,6 +5,7 @@
 #include <string>
 
 #include "Salle.h"
+#include "ZoneGen.h"
 
 class Fichier
 {
@@ -21,6 +22,8 @@ public:
     void creation_index();
 
     void charger(Salle & s);
+
+    void charger(ZoneGen & z);
 };
 
 #endif // FICHIER_H_INCLUDED
