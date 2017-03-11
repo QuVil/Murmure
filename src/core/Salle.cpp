@@ -27,6 +27,16 @@ int Salle::get_config()
     return config;
 }
 
+void Salle::remplir()
+{
+    config = 1;
+}
+
+void Salle::vider()
+{
+    config = -1;
+}
+
 void Salle::afficher()
 {
     for(int i=0;i<15;i++)

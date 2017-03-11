@@ -10,7 +10,7 @@ class Zone
 {
 private:
     Salle carte[11][11];
-    string nom;
+    int niveau_zone;
     int salle_actuelle_x, salle_actuelle_y;
 
 public:
@@ -18,7 +18,7 @@ public:
     Zone();
 
     //crée une instance de zone en passant en paramètre les coordonnées de la salle actuelle et son nom
-    Zone(int posx, int posy, string nom_zone = "Zone");
+    Zone(int posx, int posy, int niv);
 
     //renvoie la salle x,y
     Salle get_salle(int x, int y);

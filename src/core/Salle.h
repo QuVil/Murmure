@@ -22,6 +22,10 @@ public:
 
     void set_config(int c);
 
+    void vider();
+
+    void remplir();
+
     void afficher();
 };
 

@@ -5,7 +5,7 @@
 
 Zone::Zone()
 {
-    nom = "Zone";
+    niveau_zone = 1;
     for (int i=0; i<11; ++i)
     {
         for (int j=0; j<11; ++j)
@@ -17,9 +17,9 @@ Zone::Zone()
     salle_actuelle_y = 5;
 }
 
-Zone::Zone(int posx, int posy, string nom_zone = "Zone")
+Zone::Zone(int posx, int posy, int niv = 1)
 {
-    nom = nom_zone;
+    niveau_zone = niv;
     salle_actuelle_x = posx;
     salle_actuelle_y = posy;
 }
@@ -39,7 +39,7 @@ void Zone::set_salle(int x, int y, const Salle &nouvelle_salle)
     carte[x][y] = nouvelle_salle;
 }
 
-int Zone;;get_salle_actuelle_x ()const
+int Zone::get_salle_actuelle_x ()const
 {
         return salle_actuelle_x;
 }
@@ -55,7 +55,7 @@ void Zone::afficher_zone()
     {
         for (int j=0; j<11; ++j)
         {
-            cout<<carte[i][j].is_etat_plein()<<" ";
+            cout<<carte[i][j].get_config()<<" ";
         }
         cout<<endl;
     }
