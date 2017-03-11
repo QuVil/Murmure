@@ -1,6 +1,7 @@
 #ifndef CASESALLE_H_INCLUDED
 #define CASESALLE_H_INCLUDED
 
+#include <string>
 /**
  * \file CaseSalle.h
  * \brief Header du module CaseSalle.
@@ -21,8 +22,8 @@
 class CaseSalle
 {
 private:
-        int type; /**< \a type est le membre principal, et détermine les caractéristiques de la CaseSalle. */
-        // 0 : case normale
+        int type;
+        // 0 : normal
         // 1 : porte
         // 2 : trou
         // 3 : mur
@@ -39,9 +40,11 @@ public:
 
     CaseSalle& operator =(const CaseSalle & c);
 
-    int get_CaseSalle_type();
+    int get_type();
 
-    void set_CaseSalle_type(int t);
+    std::string get_type_string();
+
+    void set_type(int t);
 
     void afficher();
 };
