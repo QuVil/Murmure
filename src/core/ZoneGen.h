@@ -41,7 +41,6 @@ class ZoneGen
         string get_patterne();
 
         void set_salle(int i, int j, int salle);
-
 };
 
 #endif // ZONEGEN_H_INCLUDED

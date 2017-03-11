@@ -18,15 +18,20 @@ private:
     // (en fonction de la taille de l'ecran)
     int scale;
 
-    int posx0,posy0;
+    // positions initiales des cases de la salle pour
+    // centrer au mieux la salle sur l'ecran
+    int posx0salle,posy0salle;
 
     Jeu jeu;
 
     void afficher_salle();
 
+    void afficher_carte();
+
 public:
     JeuSFML();
 
+    void SFML_boucle();
 };
 
 
