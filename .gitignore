@@ -1,2 +1,7 @@
-#NE PAS UTILISER CE PUTAIN DE FICHIER DE MERDE
-mainSFML.o
+#Fichiers objet
+
+*.o
+
+#Layout de Code::Blocks pcq ça pue
+
+Murmure.layout
