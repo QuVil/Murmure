@@ -14,6 +14,8 @@ private:
 public:
     Salle();
 
+    Salle(int conf);
+
     CaseSalle get_case(int i,int j);
 
     void set_case(int i, int j, CaseSalle c);
@@ -22,9 +24,11 @@ public:
 
     void set_config(int c);
 
+    void remplir();
+
     void vider();
 
-    void remplir();
+    Salle& operator = (Salle salle2);
 
     void afficher();
 };

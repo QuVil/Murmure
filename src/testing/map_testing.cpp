@@ -100,7 +100,6 @@ public:
     {
         etat_plein = false;
         theme = "vide";
-
     }
 
     void remplir()
