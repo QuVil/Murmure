@@ -51,6 +51,15 @@
 		<Unit filename="src/core/Fichier.h" />
 		<Unit filename="src/core/Salle.cpp" />
 		<Unit filename="src/core/Salle.h" />
+		<Unit filename="src/core/Zone.cpp">
+			<Option target="murmure_test" />
+			<Option target="murmure_gen_test" />
+		</Unit>
+		<Unit filename="src/core/Zone.h">
+			<Option target="murmure_test" />
+			<Option target="murmure_sfml" />
+			<Option target="murmure_gen_test" />
+		</Unit>
 		<Unit filename="src/sfml/mainSFML.cpp">
 			<Option target="murmure_txt" />
 			<Option target="murmure_test" />
