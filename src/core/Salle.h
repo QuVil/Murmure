@@ -12,8 +12,8 @@
 
 #include "CaseSalle.h"
 
-const int cases_largeur = 17;
-const int cases_hauteur = 9;
+const int cases_largeur = 27;
+const int cases_hauteur = 15;
 
 /**
  * \class Salle
