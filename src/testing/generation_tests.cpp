@@ -396,6 +396,78 @@ public:
             }
         }
 
+        if (methode == "epuration")
+        {
+            for (int i=1; i<10; ++i)
+            {
+                for (int j=1; j<10; ++j)
+                {
+                    int voisins = 0;
+                    if (carte[i-1][j] == 1)
+                    {
+                        voisins++;
+                    }
+                    if (carte[i+1][j] == 1)
+                    {
+                        voisins++;
+                    }
+                    if (carte[i][j-1] == 1)
+                    {
+                        voisins++;
+                    }
+                    if (carte[i][j+1] == 1)
+                    {
+                        voisins++;
+                    }
+                    if (voisins == 0 && carte[i][j] == 1)
+                    {
+                        carte[i][j] = 0;
+                    }
+                }
+            }
+
+            if (carte[0][0] == 1 && carte[1][0] == 0 && carte[0][1] == 0)
+            {
+                carte[0][0] = 0;
+            }
+            if (carte[10][10] == 1 && carte[9][10] == 0 && carte[10][9] == 0)
+            {
+                carte[10][10] = 0;
+            }
+            if (carte[0][10] == 1 && carte[1][10] == 0 && carte[0][9] == 0)
+            {
+                carte[0][10] = 0;
+            }
+            if (carte[10][0] == 1 && carte[10][1] == 0 && carte[9][0] == 0)
+            {
+                carte[10][0] = 0;
+            }
+
+            for (int i=1; i<10; ++i)
+            {
+                if (carte[i][0] == 1 && carte[i-1][0] == 0 && carte[i+1][0] == 0
+                    && carte[i][1] == 0)
+                {
+                    carte[i][0] = 0;
+                }
+                if (carte[i][10] == 1 && carte[i-1][10] == 0 && carte[i+1][10] == 0
+                    && carte[i][9] == 0)
+                {
+                    carte[i][0] = 0;
+                }
+
+                if (carte[0][i] == 1 && carte[0][i-1] == 0 && carte[0][i+1] == 0
+                    && carte[1][i] == 0)
+                {
+                    carte[i][0] = 0;
+                }
+                if (carte[10][i] == 1 && carte[10][i-1] == 0 && carte[10][i+1] == 0
+                    && carte[9][i] == 0)
+                {
+                    carte[i][0] = 0;
+                }
+            }
+        }
 
     }
 };
@@ -411,11 +483,17 @@ int main()
     carte_test.iterer();
     carte_test.iterer();
     carte_test.iterer();
+
     carte_test.iterer("aleatoire");
     carte_test.iterer();
     carte_test.iterer();
     carte_test.iterer();
     carte_test.iterer();
+    carte_test.afficher_carte();
+    cout<<"nb_cases : "<<carte_test.nb_cases()<<endl;
+
+    carte_test.iterer("epuration");
+    cout<<endl;
     carte_test.afficher_carte();
     cout<<"nb_cases : "<<carte_test.nb_cases()<<endl;
     return 0;
