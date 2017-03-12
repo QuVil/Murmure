@@ -398,27 +398,44 @@ public:
 
         if (methode == "epuration")
         {
-            for (int i=1; i<10; ++i)
+            cout<<"epuration en cours..."<<endl;
+            for (int i=0; i<11; ++i)
             {
-                for (int j=1; j<10; ++j)
+                for (int j=0; j<11; ++j)
                 {
                     int voisins = 0;
-                    if (carte[i-1][j] == 1)
+                    if (i>0)
                     {
-                        voisins++;
+                        if (carte[i-1][j] == 1)
+                        {
+                            voisins++;
+                        }
                     }
-                    if (carte[i+1][j] == 1)
+
+                    if (i<10)
                     {
-                        voisins++;
+                        if (carte[i+1][j] == 1)
+                        {
+                            voisins++;
+                        }
                     }
-                    if (carte[i][j-1] == 1)
+
+                    if (j>0)
                     {
-                        voisins++;
+                        if (carte[i][j-1] == 1)
+                        {
+                            voisins++;
+                        }
                     }
-                    if (carte[i][j+1] == 1)
+
+                    if (j<10)
                     {
-                        voisins++;
+                        if (carte[i][j+1] == 1)
+                        {
+                            voisins++;
+                        }
                     }
+
                     if (voisins == 0 && carte[i][j] == 1)
                     {
                         carte[i][j] = 0;
@@ -426,47 +443,6 @@ public:
                 }
             }
 
-            if (carte[0][0] == 1 && carte[1][0] == 0 && carte[0][1] == 0)
-            {
-                carte[0][0] = 0;
-            }
-            if (carte[10][10] == 1 && carte[9][10] == 0 && carte[10][9] == 0)
-            {
-                carte[10][10] = 0;
-            }
-            if (carte[0][10] == 1 && carte[1][10] == 0 && carte[0][9] == 0)
-            {
-                carte[0][10] = 0;
-            }
-            if (carte[10][0] == 1 && carte[10][1] == 0 && carte[9][0] == 0)
-            {
-                carte[10][0] = 0;
-            }
-
-            for (int i=1; i<10; ++i)
-            {
-                if (carte[i][0] == 1 && carte[i-1][0] == 0 && carte[i+1][0] == 0
-                    && carte[i][1] == 0)
-                {
-                    carte[i][0] = 0;
-                }
-                if (carte[i][10] == 1 && carte[i-1][10] == 0 && carte[i+1][10] == 0
-                    && carte[i][9] == 0)
-                {
-                    carte[i][0] = 0;
-                }
-
-                if (carte[0][i] == 1 && carte[0][i-1] == 0 && carte[0][i+1] == 0
-                    && carte[1][i] == 0)
-                {
-                    carte[i][0] = 0;
-                }
-                if (carte[10][i] == 1 && carte[10][i-1] == 0 && carte[10][i+1] == 0
-                    && carte[9][i] == 0)
-                {
-                    carte[i][0] = 0;
-                }
-            }
         }
 
     }
@@ -477,14 +453,12 @@ public:
 int main()
 {
     CarteGen carte_test;
-    carte_test.initialisation_gen("carre", "voisins");
+    carte_test.initialisation_gen("hub", "voisins");
     carte_test.iterer();
     carte_test.iterer();
     carte_test.iterer();
     carte_test.iterer();
     carte_test.iterer();
-
-    carte_test.iterer("aleatoire");
     carte_test.iterer();
     carte_test.iterer();
     carte_test.iterer();

@@ -384,6 +384,52 @@ void ZoneGen::iterer(string meth /* = "" */)
         }
     }
 
+    if (methode == "epuration")
+    {
+        cout<<"epuration en cours..."<<endl;
+        for (int i=0; i<11; ++i)
+        {
+            for (int j=0; j<11; ++j)
+            {
+                int voisins = 0;
+                if (i>0)
+                {
+                    if (carte[i-1][j] == 1)
+                    {
+                        voisins++;
+                    }
+                }
+
+                if (i<10)
+                {
+                    if (carte[i+1][j] == 1)
+                    {
+                        voisins++;
+                    }
+                }
+
+                if (j>0)
+                {
+                    if (carte[i][j-1] == 1)
+                    {
+                        voisins++;
+                    }
+                }
+
+                if (j<10)
+                {
+                    if (carte[i][j+1] == 1)
+                    {
+                        voisins++;
+                    }
+                }
+
+                if (voisins == 0 && carte[i][j] == 1)
+                {
+                    carte[i][j] = 0;
+                }
+            }
+        }
 
 }
 
