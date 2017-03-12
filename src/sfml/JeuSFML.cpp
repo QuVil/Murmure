@@ -12,12 +12,16 @@ JeuSFML::JeuSFML()
     // cherche les parametres de l'utilisateur (resolution)
     desktop = sf::VideoMode::getDesktopMode();
     window.create(sf::VideoMode(desktop.width, desktop.height, desktop.bitsPerPixel), "Murmure",sf::Style::Fullscreen);
-
-    if(desktop.width/27 <desktop.height/15){scale = desktop.width/27;}
-    else{scale = desktop.height/15;}
+    /*
+    if(desktop.width/jeu.get_salle().get_cases_largeur() <desktop.height/jeu.get_salle().get_cases_hauteur()){scale = desktop.width/jeu.get_salle().get_cases_largeur();}
+    else{scale = desktop.height/jeu.get_salle().get_cases_hauteur();}*/
+    scale_salle_largeur = desktop.width/jeu.get_salle().get_cases_largeur();
+    scale_salle_hauteur = desktop.height/jeu.get_salle().get_cases_hauteur();
     //std::cout << desktop.width << " " << desktop.height << " " << desktop.bitsPerPixel << std::endl;
-    posx0salle = (desktop.width -27*scale)/2;
-    posy0salle = (desktop.height - 15*scale)/2;
+
+    posx0salle = (desktop.width -jeu.get_salle().get_cases_largeur()*scale_salle_largeur)/2;
+    posy0salle = (desktop.height - jeu.get_salle().get_cases_hauteur()*scale_salle_hauteur)/2;
+
 }
 
 void JeuSFML::SFML_boucle()
@@ -55,15 +59,21 @@ void JeuSFML::SFML_boucle()
 void JeuSFML::afficher_salle()
 {
     CaseSalle c;
-    for(int i=0;i<15;i++)
+    for(int i=0;i<jeu.get_salle().get_cases_hauteur();i++)
     {
-        for(int j=0;j<27;j++)
+        for(int j=0;j<jeu.get_salle().get_cases_largeur();j++)
         {
             c=jeu.get_salle().get_case(i,j);
+            /*
             CaseSFML C(posx0salle +j*scale,
                                    posy0salle +i*scale,
                                    scale,
                                    scale,
+                                   c.get_type_string());*/
+            CaseSFML C(posx0salle + j*scale_salle_largeur,
+                                   posy0salle + i*scale_salle_hauteur,
+                                   scale_salle_largeur,
+                                   scale_salle_hauteur,
                                    c.get_type_string());
             window.draw(C.get_casesfml(),C.get_states());
         }

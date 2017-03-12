@@ -16,7 +16,7 @@ private:
     sf::VideoMode desktop;
     //echelle a laquelle on va charger les textures
     // (en fonction de la taille de l'ecran)
-    int scale;
+    int scale_salle_largeur, scale_salle_hauteur;
 
     // positions initiales des cases de la salle pour
     // centrer au mieux la salle sur l'ecran

@@ -12,6 +12,9 @@
 
 #include "CaseSalle.h"
 
+const int cases_largeur = 17;
+const int cases_hauteur = 9;
+
 /**
  * \class Salle
  * \brief class des salles de jeu où évolue le joueur.
@@ -22,7 +25,7 @@ class Salle
 {
 private:
     //cree un tableau de CaseSalle
-    CaseSalle grille[15][27]; /**< \a grille contient les CaseSalle composant la Salle. */
+    CaseSalle grille[cases_hauteur][cases_largeur]; /**< \a grille contient les CaseSalle composant la Salle. */
     int config; /**< \a config est la disposition de la Salle, correspondant à un int. */
     int difficulte; /**< \a difficulte est la difficulté de la Salle, calculée ou donnée au préalable. */
     ///TODO : vérifier l'implémentation de difficulte et la ranger dans les fichiers contenant les Salle (GARY ?)
@@ -47,6 +50,10 @@ public:
     Salle& operator = (Salle salle2);
 
     void afficher();
+
+    int get_cases_largeur();
+
+    int get_cases_hauteur();
 };
 
 #endif // SALLE_H_INCLUDED
