@@ -2,13 +2,18 @@
 \label{classZone}\index{Zone@{Zone}}
 
 
+Gère l\textquotesingle{}instance où crapahute \hyperlink{classPerso}{Perso}. Une seule \hyperlink{classZone}{Zone} sera en général générée à chaque instant. Elle contient des informations sur toutes les \hyperlink{classSalle}{Salle} de l\textquotesingle{}instance (rangées dans un tableau 11$\ast$11) et instancie toutes les \hyperlink{classSalle}{Salle} où \hyperlink{classPerso}{Perso} évoluera.  
+
+
+
+
 {\ttfamily \#include $<$Zone.\+h$>$}
 
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
 \hyperlink{classZone_a37c9721c0d592a7a231f4e6dbae93277}{Zone} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Consctructeur Le Constructeur basique de \hyperlink{classZone}{Zone}, mettant la position actuelle du \hyperlink{classPerso}{Perso} en 5,5 et vidant toutes les \hyperlink{classSalle}{Salle}. \end{DoxyCompactList}\item 
 \hyperlink{classZone_a47c33a8aad7a0c17ff8ab213aad492f7}{Zone} (int posx, int posy, int niv)
 \item 
 \hyperlink{classSalle}{Salle} \hyperlink{classZone_a6b28456d584e884cdeceaf6d4dcedbd1}{get\+\_\+salle} (int x, int y)
@@ -33,6 +38,9 @@ void \hyperlink{classZone_a0f61f5c9028db56ef251371818b31b35}{vider\+\_\+salle} (
 \end{DoxyCompactItemize}
 
 
+\subsection{Detailed Description}
+Gère l\textquotesingle{}instance où crapahute \hyperlink{classPerso}{Perso}. Une seule \hyperlink{classZone}{Zone} sera en général générée à chaque instant. Elle contient des informations sur toutes les \hyperlink{classSalle}{Salle} de l\textquotesingle{}instance (rangées dans un tableau 11$\ast$11) et instancie toutes les \hyperlink{classSalle}{Salle} où \hyperlink{classPerso}{Perso} évoluera. 
+
 \subsection{Constructor \& Destructor Documentation}
 \index{Zone@{Zone}!Zone@{Zone}}
 \index{Zone@{Zone}!Zone@{Zone}}
@@ -41,6 +49,10 @@ void \hyperlink{classZone_a0f61f5c9028db56ef251371818b31b35}{vider\+\_\+salle} (
 {}
 \end{DoxyParamCaption}
 )}\hypertarget{classZone_a37c9721c0d592a7a231f4e6dbae93277}{}\label{classZone_a37c9721c0d592a7a231f4e6dbae93277}
+
+
+Consctructeur Le Constructeur basique de \hyperlink{classZone}{Zone}, mettant la position actuelle du \hyperlink{classPerso}{Perso} en 5,5 et vidant toutes les \hyperlink{classSalle}{Salle}. 
+
 \index{Zone@{Zone}!Zone@{Zone}}
 \index{Zone@{Zone}!Zone@{Zone}}
 \subsubsection[{\texorpdfstring{Zone(int posx, int posy, int niv)}{Zone(int posx, int posy, int niv)}}]{\setlength{\rightskip}{0pt plus 5cm}Zone\+::\+Zone (

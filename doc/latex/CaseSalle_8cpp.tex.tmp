@@ -6,6 +6,8 @@ Code source pour le module \hyperlink{classCaseSalle}{Case\+Salle}.
 
 
 {\ttfamily \#include $<$iostream$>$}\\*
+{\ttfamily \#include $<$string$>$}\\*
+{\ttfamily \#include $<$stdlib.\+h$>$}\\*
 {\ttfamily \#include \char`\"{}Case\+Salle.\+h\char`\"{}}\\*
 Include dependency graph for Case\+Salle.\+cpp\+:
 % FIG 0

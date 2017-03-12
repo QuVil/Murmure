@@ -23,9 +23,9 @@ class Salle
 private:
     //cree un tableau de CaseSalle
     CaseSalle grille[15][27]; /**< \a grille contient les CaseSalle composant la Salle. */
-
-    //config correspond a la disposition de la salle, numerote par un nombre
-    int config;
+    int config; /**< \a config est la disposition de la Salle, correspondant à un int. */
+    int difficulte; /**< \a difficulte est la difficulté de la Salle, calculée ou donnée au préalable. */
+    ///TODO : vérifier l'implémentation de difficulte et la ranger dans les fichiers contenant les Salle (GARY ?)
 
 public:
     Salle();

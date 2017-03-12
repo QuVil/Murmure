@@ -1,17 +1,34 @@
 #ifndef ZONE_H_INCLUDED
 #define ZONE_H_INCLUDED
 
+/**
+ * \file Zone.h
+ * \brief Header de la class Zone.
+ * \author Quentin.V
+ * \version 0.1
+ * \date 12 mars 2017
+ *
+ */
+
 #include "Salle.h"
 #include <string>
 
 using namespace std;
 
+/**
+ * \class Zone
+ * \brief Gère l'instance où crapahute Perso.
+ * Une seule Zone sera en général générée à chaque instant.
+ * Elle contient des informations sur toutes les Salle de l'instance
+ * (rangées dans un tableau 11*11) et instancie toutes les Salle où
+ * Perso évoluera.
+ */
 class Zone
 {
 private:
-    Salle carte[11][11];
-    int niveau_zone;
-    int salle_actuelle_x, salle_actuelle_y;
+    Salle carte[11][11]; /**< \a contient toutes les Salle de la Zone dans un tableau. */
+    int niveau_zone; /**< \a niveau_zone agit comme indicateur de difficulté et comme nom de Zone. */
+    int salle_actuelle_x, salle_actuelle_y; /**< les coordonnées de la Salle où se trouve le Perso. */
 
 public:
     //constructeur de base, avec toutes les salles vides et le nom "Zone"

@@ -1,8 +1,22 @@
+/**
+ * \file Zone.cpp
+ * \brief Code source pour le module Zone
+ * \author Quentin.V
+ * \version 0.1
+ * \date 12 mars 2017
+ * TODO : Finir de commenter les méthodes présentes.
+ */
+
 #include <iostream>
 
 #include "Zone.h"
 #include "Fichier.h"
 
+/**
+ * \brief Consctructeur
+ * Le Constructeur basique de Zone, mettant la position
+ * actuelle du Perso en 5,5 et vidant toutes les Salle.
+ */
 Zone::Zone()
 {
     niveau_zone = 1;
