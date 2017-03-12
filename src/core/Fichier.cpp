@@ -100,7 +100,7 @@ void Fichier::charger(Salle & s)
     for(int i=0;i<15;i++)
     {
         //compte les retours à la ligne donc <= 21 pour avoir le bon compte
-        for(int j=0;j<=21;j++)
+        for(int j=0;j<=27;j++)
         {
             tampon=fichier.get();
             //cout << tampon;

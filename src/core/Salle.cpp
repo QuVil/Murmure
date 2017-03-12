@@ -98,9 +98,9 @@ void Salle::vider()
  */
 Salle& Salle::operator = (Salle salle2)
     {
-        for (int i=0; i<20; ++i)
+        for (int i=0; i<15; ++i)
         {
-            for (int j=0; j<15; ++j)
+            for (int j=0; j<27; ++j)
                 grille[i][j] = salle2.get_case(i, j);
         }
         config = salle2.get_config();
@@ -115,7 +115,7 @@ void Salle::afficher()
 {
     for(int i=0;i<15;i++)
     {
-        for(int j=0;j<21;j++)
+        for(int j=0;j<27;j++)
         {
             grille[i][j].afficher();
             std::cout << " ";

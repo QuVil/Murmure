@@ -22,7 +22,7 @@ class Salle
 {
 private:
     //cree un tableau de CaseSalle
-    CaseSalle grille[15][21]; /**< \a grille contient les CaseSalle composant la Salle. */
+    CaseSalle grille[15][27]; /**< \a grille contient les CaseSalle composant la Salle. */
 
     //config correspond a la disposition de la salle, numerote par un nombre
     int config;

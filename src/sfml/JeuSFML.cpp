@@ -13,10 +13,10 @@ JeuSFML::JeuSFML()
     desktop = sf::VideoMode::getDesktopMode();
     window.create(sf::VideoMode(desktop.width, desktop.height, desktop.bitsPerPixel), "Murmure",sf::Style::Fullscreen);
 
-    if(desktop.width/21 <desktop.height/15){scale = desktop.width/21;}
+    if(desktop.width/27 <desktop.height/15){scale = desktop.width/27;}
     else{scale = desktop.height/15;}
     //std::cout << desktop.width << " " << desktop.height << " " << desktop.bitsPerPixel << std::endl;
-    posx0salle = (desktop.width -21*scale)/2;
+    posx0salle = (desktop.width -27*scale)/2;
     posy0salle = (desktop.height - 15*scale)/2;
 }
 
@@ -57,7 +57,7 @@ void JeuSFML::afficher_salle()
     CaseSalle c;
     for(int i=0;i<15;i++)
     {
-        for(int j=0;j<21;j++)
+        for(int j=0;j<27;j++)
         {
             c=jeu.get_salle().get_case(i,j);
             CaseSFML C(posx0salle +j*scale,
