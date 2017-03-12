@@ -22,7 +22,7 @@
 class CaseSalle
 {
 private:
-        int type;
+        int type; /**< \a type de la CaseSalle. */
         // 0 : normal
         // 1 : porte
         // 2 : trou
