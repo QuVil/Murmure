@@ -70,6 +70,19 @@
 					<SilentBuild command="$make -f $makefile $target &gt; $(CMD_NULL)" />
 				</MakeCommands>
 			</Target>
+			<Target title="murmure_test_q">
+				<Option output="bin/murmure_test_q" prefix_auto="1" extension_auto="1" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<MakeCommands>
+					<Build command="$make -f $makefile $target" />
+					<CompileFile command="$make -f $makefile $file" />
+					<Clean command="$make -f $makefile clean" />
+					<DistClean command="$make -f $makefile distclean$target" />
+					<AskRebuildNeeded command="$make -q -f $makefile $target" />
+					<SilentBuild command="$make -f $makefile $target &gt; $(CMD_NULL)" />
+				</MakeCommands>
+			</Target>
 		</Build>
 		<Compiler>
 			<Add option="-Wall" />
@@ -77,34 +90,145 @@
 		<Unit filename="Makefile">
 			<Option target="murmure_txt" />
 		</Unit>
-		<Unit filename="src/core/CaseSalle.cpp" />
-		<Unit filename="src/core/CaseSalle.h" />
-		<Unit filename="src/core/Fichier.cpp" />
-		<Unit filename="src/core/Fichier.h" />
-		<Unit filename="src/core/Jeu.cpp" />
-		<Unit filename="src/core/Jeu.h" />
-		<Unit filename="src/core/Perso.cpp" />
-		<Unit filename="src/core/Perso.h" />
-		<Unit filename="src/core/Salle.cpp" />
-		<Unit filename="src/core/Salle.h" />
-		<Unit filename="src/core/Zone.cpp" />
-		<Unit filename="src/core/Zone.h" />
-		<Unit filename="src/core/ZoneGen.cpp" />
-		<Unit filename="src/core/ZoneGen.h" />
-		<Unit filename="src/sfml/CarteSFML.cpp" />
-		<Unit filename="src/sfml/CarteSFML.h" />
-		<Unit filename="src/sfml/CaseSFML.cpp" />
-		<Unit filename="src/sfml/CaseSFML.h" />
-		<Unit filename="src/sfml/JeuSFML.cpp" />
-		<Unit filename="src/sfml/JeuSFML.h" />
+		<Unit filename="src/core/CaseSalle.cpp">
+			<Option target="murmure_txt" />
+			<Option target="murmure_test" />
+			<Option target="murmure_sfml" />
+			<Option target="murmure_gen_test" />
+		</Unit>
+		<Unit filename="src/core/CaseSalle.h">
+			<Option target="murmure_txt" />
+			<Option target="murmure_test" />
+			<Option target="murmure_sfml" />
+			<Option target="murmure_gen_test" />
+		</Unit>
+		<Unit filename="src/core/Fichier.cpp">
+			<Option target="murmure_txt" />
+			<Option target="murmure_test" />
+			<Option target="murmure_sfml" />
+			<Option target="murmure_gen_test" />
+		</Unit>
+		<Unit filename="src/core/Fichier.h">
+			<Option target="murmure_txt" />
+			<Option target="murmure_test" />
+			<Option target="murmure_sfml" />
+			<Option target="murmure_gen_test" />
+		</Unit>
+		<Unit filename="src/core/Jeu.cpp">
+			<Option target="murmure_txt" />
+			<Option target="murmure_test" />
+			<Option target="murmure_sfml" />
+			<Option target="murmure_gen_test" />
+		</Unit>
+		<Unit filename="src/core/Jeu.h">
+			<Option target="murmure_txt" />
+			<Option target="murmure_test" />
+			<Option target="murmure_sfml" />
+			<Option target="murmure_gen_test" />
+		</Unit>
+		<Unit filename="src/core/Perso.cpp">
+			<Option target="murmure_txt" />
+			<Option target="murmure_test" />
+			<Option target="murmure_sfml" />
+			<Option target="murmure_gen_test" />
+		</Unit>
+		<Unit filename="src/core/Perso.h">
+			<Option target="murmure_txt" />
+			<Option target="murmure_test" />
+			<Option target="murmure_sfml" />
+			<Option target="murmure_gen_test" />
+		</Unit>
+		<Unit filename="src/core/Salle.cpp">
+			<Option target="murmure_txt" />
+			<Option target="murmure_test" />
+			<Option target="murmure_sfml" />
+			<Option target="murmure_gen_test" />
+		</Unit>
+		<Unit filename="src/core/Salle.h">
+			<Option target="murmure_txt" />
+			<Option target="murmure_test" />
+			<Option target="murmure_sfml" />
+			<Option target="murmure_gen_test" />
+		</Unit>
+		<Unit filename="src/core/Zone.cpp">
+			<Option target="murmure_txt" />
+			<Option target="murmure_test" />
+			<Option target="murmure_sfml" />
+			<Option target="murmure_gen_test" />
+		</Unit>
+		<Unit filename="src/core/Zone.h">
+			<Option target="murmure_txt" />
+			<Option target="murmure_test" />
+			<Option target="murmure_sfml" />
+			<Option target="murmure_gen_test" />
+		</Unit>
+		<Unit filename="src/core/ZoneGen.cpp">
+			<Option target="murmure_txt" />
+			<Option target="murmure_test" />
+			<Option target="murmure_sfml" />
+			<Option target="murmure_gen_test" />
+		</Unit>
+		<Unit filename="src/core/ZoneGen.h">
+			<Option target="murmure_txt" />
+			<Option target="murmure_test" />
+			<Option target="murmure_sfml" />
+			<Option target="murmure_gen_test" />
+		</Unit>
+		<Unit filename="src/sfml/CarteSFML.cpp">
+			<Option target="murmure_txt" />
+			<Option target="murmure_test" />
+			<Option target="murmure_sfml" />
+			<Option target="murmure_gen_test" />
+		</Unit>
+		<Unit filename="src/sfml/CarteSFML.h">
+			<Option target="murmure_txt" />
+			<Option target="murmure_test" />
+			<Option target="murmure_sfml" />
+			<Option target="murmure_gen_test" />
+		</Unit>
+		<Unit filename="src/sfml/CaseSFML.cpp">
+			<Option target="murmure_txt" />
+			<Option target="murmure_test" />
+			<Option target="murmure_sfml" />
+			<Option target="murmure_gen_test" />
+		</Unit>
+		<Unit filename="src/sfml/CaseSFML.h">
+			<Option target="murmure_txt" />
+			<Option target="murmure_test" />
+			<Option target="murmure_sfml" />
+			<Option target="murmure_gen_test" />
+		</Unit>
+		<Unit filename="src/sfml/JeuSFML.cpp">
+			<Option target="murmure_txt" />
+			<Option target="murmure_test" />
+			<Option target="murmure_sfml" />
+			<Option target="murmure_gen_test" />
+		</Unit>
+		<Unit filename="src/sfml/JeuSFML.h">
+			<Option target="murmure_txt" />
+			<Option target="murmure_test" />
+			<Option target="murmure_sfml" />
+			<Option target="murmure_gen_test" />
+		</Unit>
 		<Unit filename="src/sfml/mainSFML.cpp">
 			<Option target="murmure_txt" />
 			<Option target="murmure_test" />
 		</Unit>
+		<Unit filename="src/test/mainTest.cpp">
+			<Option target="murmure_txt" />
+			<Option target="murmure_test" />
+			<Option target="murmure_sfml" />
+			<Option target="murmure_gen_test" />
+		</Unit>
 		<Unit filename="src/testing/generation_tests.cpp">
 			<Option target="murmure_test" />
 		</Unit>
-		<Unit filename="src/testing/generation_tests.h" />
+		<Unit filename="src/testing/generation_tests.h">
+			<Option target="murmure_txt" />
+			<Option target="murmure_test" />
+			<Option target="murmure_sfml" />
+			<Option target="murmure_gen_test" />
+		</Unit>
 		<Unit filename="src/testing/map_testing.cpp">
 			<Option target="murmure_txt" />
 			<Option target="murmure_test" />

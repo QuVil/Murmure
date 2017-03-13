@@ -1,4 +1,4 @@
-CORE = core/Fichier.cpp core/CaseSalle.cpp core/Salle.cpp core/Jeu.cpp core/ZoneGen.cpp
+CORE = core/Fichier.cpp core/CaseSalle.cpp core/Salle.cpp core/Jeu.cpp core/ZoneGen.cpp core/Perso.cpp
 
 SRCS_TXT = $(CORE) txt/mainTxt.cpp
 FINAL_TARGET_TXT = murmure_txt
@@ -11,6 +11,9 @@ FINAL_TARGET_SFML = murmure_sfml
 
 SRCS_GEN_TEST = $(CORE) testing/generation_tests.cpp
 FINAL_TARGET_GEN_TEST = murmure_gen_test
+
+SRCS_TEST_Q = $(CORE) test/mainTest.cpp
+FINAL_TARGET_TEST_Q = murmure_test_q
 
 ifeq ($(OS),Windows_NT)
 	INCLUDE_DIR_SFML = 	-Ilib\SFML-2.4.2\SFLM-2.4.2_Windows-MinGW-6.1.0\include
@@ -30,9 +33,9 @@ CPPFLAGS 			= -Wall -ggdb   #-O2   # pour optimiser
 OBJ_DIR 			= obj
 SRC_DIR 			= src
 BIN_DIR 			= bin
-INCLUDE_DIR			= -Isrc -Isrc/core -Isrc/txt -Isrc/sfml
+INCLUDE_DIR			= -Isrc -Isrc/core -Isrc/txt -Isrc/sfml -Isrc/test
 
-default: make_dir $(BIN_DIR)/$(FINAL_TARGET_TXT) $(BIN_DIR)/$(FINAL_TARGET_TEST) $(BIN_DIR)/$(FINAL_TARGET_SFML) $(BIN_DIR)/$(FINAL_TARGET_GEN_TEST)
+default: make_dir $(BIN_DIR)/$(FINAL_TARGET_TXT) $(BIN_DIR)/$(FINAL_TARGET_TEST) $(BIN_DIR)/$(FINAL_TARGET_SFML) $(BIN_DIR)/$(FINAL_TARGET_GEN_TEST) $(BIN_DIR)/$(FINAL_TARGET_TEST_Q)
 
 $(FINAL_TARGET_TXT) : make_dir $(BIN_DIR)/$(FINAL_TARGET_TXT)
 
@@ -42,12 +45,14 @@ $(FINAL_TARGET_SFML) : make_dir $(BIN_DIR)/$(FINAL_TARGET_SFML)
 
 $(FINAL_TARGET_GEN_TEST) : make_dir $(BIN_DIR)/$(FINAL_TARGET_GEN_TEST)
 
+$(FINAL_TARGET_TEST_Q) : make_dir $(BIN_DIR)/$(FINAL_TARGET_TEST_Q)
+
 make_dir:
 ifeq ($(OS),Windows_NT)
-	if not exist $(OBJ_DIR) mkdir $(OBJ_DIR) $(OBJ_DIR)\txt $(OBJ_DIR)\testing $(OBJ_DIR)\sfml $(OBJ_DIR)\core
+	if not exist $(OBJ_DIR) mkdir $(OBJ_DIR) $(OBJ_DIR)\txt $(OBJ_DIR)\testing $(OBJ_DIR)\sfml $(OBJ_DIR)\test $(OBJ_DIR)\core
 	if not exist $(BIN_DIR) mkdir $(BIN_DIR)
 else
-	test -d $(OBJ_DIR) || mkdir -p $(OBJ_DIR) $(OBJ_DIR)/txt $(OBJ_DIR)/testing $(OBJ_DIR)/sfml $(OBJ_DIR)/core
+	test -d $(OBJ_DIR) || mkdir -p $(OBJ_DIR) $(OBJ_DIR)/txt $(OBJ_DIR)/testing $(OBJ_DIR)/sfml $(OBJ_DIR)/test $(OBJ_DIR)/core
 	test -d $(BIN_DIR) || mkdir $(BIN_DIR)
 endif
 
@@ -60,6 +65,9 @@ $(BIN_DIR)/$(FINAL_TARGET_TEST): $(SRCS_TEST:%.cpp=$(OBJ_DIR)/%.o)
 $(BIN_DIR)/$(FINAL_TARGET_GEN_TEST): $(SRCS_GEN_TEST:%.cpp=$(OBJ_DIR)/%.o)
 	$(LD) $+ -o $@ $(LDFLAGS)
 
+$(BIN_DIR)/$(FINAL_TARGET_TEST_Q): $(SRCS_TEST_Q:%.cpp=$(OBJ_DIR)/%.o)
+	$(LD) $+ -o $@ $(LDFLAGS)
+
 $(BIN_DIR)/$(FINAL_TARGET_SFML): $(SRCS_SFML:%.cpp=$(OBJ_DIR)/%.o)
 	$(LD) $+ -o $@ $(LDFLAGS) $(LIBS_SFML)
 
@@ -68,7 +76,7 @@ $(OBJ_DIR)/%.o: $(SRC_DIR)/%.cpp
 
 clean:
 ifeq ($(OS),Windows_NT)
-	del /f $(OBJ_DIR)\txt\*.o $(OBJ_DIR)\core\*.o $(BIN_DIR)\$(FINAL_TARGET_SFML).exe $(BIN_DIR)\$(FINAL_TARGET_GEN_TEST).exe $(BIN_DIR)\$(FINAL_TARGET_TXT).exe $(BIN_DIR)\$(FINAL_TARGET_TEST).exe
+	del /f $(OBJ_DIR)\txt\*.o $(OBJ_DIR)\core\*.o $(BIN_DIR)\$(FINAL_TARGET_SFML).exe $(BIN_DIR)\$(FINAL_TARGET_GEN_TEST).exe $(BIN_DIR)\$(FINAL_TARGET_TXT).exe $(BIN_DIR)\$(FINAL_TARGET_TEST).exe $(BIN_DIR)\$(FINAL_TARGET_TEST_Q).exe
 else
-	rm -rf $(OBJ_DIR) $(BIN_DIR)/$(FINAL_TARGET_TXT) $(BIN_DIR)/$(FINAL_TARGET_SFML) $(BIN_DIR)/$(FINAL_TARGET_TEST) $(BIN_DIR)/$(FINAL_TARGET_GEN_TEST)
+	rm -rf $(OBJ_DIR) $(BIN_DIR)/$(FINAL_TARGET_TXT) $(BIN_DIR)/$(FINAL_TARGET_SFML) $(BIN_DIR)/$(FINAL_TARGET_TEST) $(BIN_DIR)/$(FINAL_TARGET_GEN_TEST) $(BIN_DIR)/$(FINAL_TARGET_TEST_Q)
 endif
