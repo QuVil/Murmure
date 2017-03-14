@@ -122,7 +122,7 @@ void Fichier::charger(ZoneGen & z)
     //Cree un chemin relatif qui pointe sur la configuration en fonction
     //de la valeur config de la salle (par defaut 1)
     stringstream ss;
-    ss << chemin << "Zone/" << z.get_patterne() << ".cfg";
+    ss << chemin << "ZoneGen/" << z.get_patterne() << ".cfg";
     string path = ss.str();
 
     ifstream fichier((path).c_str(), ios::in);
@@ -147,8 +147,36 @@ void Fichier::charger(ZoneGen & z)
     fichier.close();
 }
 
+/**
+void Fichier::charger(Zone & z)
+{
+    //Cree un chemin relatif qui pointe sur la configuration en fonction
+    //de la valeur config de la salle (par defaut 1)
+    stringstream ss;
+    ss << chemin << "Zone/" << z.get_patterne() << ".cfg";
+    string path = ss.str();
 
+    ifstream fichier((path).c_str(), ios::in);
+    assert(fichier);
 
+    char tampon;
+
+    for(int i=0;i<11;i++)
+    {
+        //compte les retours à la ligne donc <= 21 pour avoir le bon compte
+        for(int j=0;j<11;j++)
+        {
+            tampon=fichier.get();
+            //cout << tampon;
+            z.set_salle(i, j, tampon - '0');;
+            //cout << (int) tampon << endl;
+        }
+        // voir la fonction charger(Salle)
+        tampon=fichier.get();
+    }
+
+    fichier.close();
+}*/
 
 
 
