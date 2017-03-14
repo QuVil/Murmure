@@ -365,7 +365,7 @@ void ZoneGen::iterer(string meth /* = "" */)
             {
                 if (carte[i][j] == 0 && (i !=5 || j != 5))
                 {
-                    int nb_aleat = rand() % 15;
+                    int nb_aleat = rand() % 14;
                     if (nb_aleat == 12)
                     {
                         carte[i][j] = 1;
@@ -374,7 +374,7 @@ void ZoneGen::iterer(string meth /* = "" */)
 
                 if (carte[i][j] == 1 && (i !=5 || j != 5))
                 {
-                    int nb_aleat = rand() % 25;
+                    int nb_aleat = rand() % 20;
                     if (nb_aleat == 7)
                     {
                         carte[i][j] = 0;
@@ -384,19 +384,24 @@ void ZoneGen::iterer(string meth /* = "" */)
         }
     }
 
-    if (methode == "epuration")
+    if (methode == "epuration" || methode == "extension")
     {
-        cout<<"epuration en cours..."<<endl;
+        int v_haut, v_bas, v_gauche, v_droite = 0; //de quel côté sont les voisins ?
         for (int i=0; i<11; ++i)
         {
             for (int j=0; j<11; ++j)
             {
+                v_haut = 0;
+                v_bas = 0;
+                v_gauche = 0;
+                v_droite = 0;
                 int voisins = 0;
                 if (i>0)
                 {
                     if (carte[i-1][j] == 1)
                     {
                         voisins++;
+                        v_haut = 1;
                     }
                 }
 
@@ -405,6 +410,7 @@ void ZoneGen::iterer(string meth /* = "" */)
                     if (carte[i+1][j] == 1)
                     {
                         voisins++;
+                        v_bas = 1;
                     }
                 }
 
@@ -413,6 +419,7 @@ void ZoneGen::iterer(string meth /* = "" */)
                     if (carte[i][j-1] == 1)
                     {
                         voisins++;
+                        v_gauche = 1;
                     }
                 }
 
@@ -421,12 +428,46 @@ void ZoneGen::iterer(string meth /* = "" */)
                     if (carte[i][j+1] == 1)
                     {
                         voisins++;
+                        v_droite = 1;
                     }
                 }
 
-                if (voisins == 0 && carte[i][j] == 1)
+                if (methode == "epuration" && voisins == 0 && carte[i][j] == 1)
                 {
                     carte[i][j] = 0;
+                }
+
+                if (methode == "extension" && voisins == 1 && carte[i][j] == 1 && i>0 && i<10 && j>0 && j<10)
+                {
+                    int nb_aleat = rand() % 4;
+                    if (v_haut == 1 && nb_aleat == 3)
+                    {
+                        carte[i+1][j] = 1;
+                        cout<<"extension à bas"<<endl;
+                    }
+
+                    if (v_bas == 1 && nb_aleat == 2)
+                    {
+                        carte[i-1][j] = 1;
+                        cout<<"extension à haut"<<endl;
+                    }
+
+                    if (v_gauche == 1 && nb_aleat == 1)
+                    {
+                        int nb_bonus = rand() % 1;
+
+                        if (nb_bonus == 0)
+                        {
+                            carte[i][j+1] = 1;
+                            cout<<"extension à droite"<<endl;
+                        }
+                    }
+
+                    if (v_droite == 1 && nb_aleat == 0)
+                    {
+                        carte[i][j-1] = 1;
+                        cout<<"extension à gauche"<<endl;
+                    }
                 }
             }
         }

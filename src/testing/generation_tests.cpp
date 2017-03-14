@@ -453,7 +453,7 @@ public:
 int main()
 {
     CarteGen carte_test;
-    carte_test.initialisation_gen("hub", "voisins");
+    carte_test.initialisation_gen("carre", "voisins");
     carte_test.iterer();
     carte_test.iterer();
     carte_test.iterer();
