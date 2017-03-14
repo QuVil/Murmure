@@ -130,7 +130,7 @@ void Fichier::charger(ZoneGen & z)
     for(int i=0;i<11;i++)
     {
         //compte les retours à la ligne donc <= 21 pour avoir le bon compte
-        for(int j=0;j<11;j++)
+        for(int j=0;j<=11;j++)
         {
             tampon=fichier.get();
             //cout << tampon;
