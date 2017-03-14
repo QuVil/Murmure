@@ -100,7 +100,7 @@ void Fichier::charger(Salle & s)
     for(int i=0;i<s.get_cases_hauteur();i++)
     {
         //compte les retours à la ligne donc <= 21 pour avoir le bon compte
-        for(int j=0;j<=s.get_cases_largeur();j++)
+        for(int j=0;j<s.get_cases_largeur();j++)
         {
             tampon=fichier.get();
             //cout << tampon;
@@ -109,6 +109,9 @@ void Fichier::charger(Salle & s)
                                tampon - '0');
             //cout << (int) tampon << endl;
         }
+        // récupere juste le caractere de changement de ligne
+        // (qui ne sert à rien ici)
+        tampon=fichier.get();
     }
 
     fichier.close();
@@ -130,13 +133,15 @@ void Fichier::charger(ZoneGen & z)
     for(int i=0;i<11;i++)
     {
         //compte les retours à la ligne donc <= 21 pour avoir le bon compte
-        for(int j=0;j<=11;j++)
+        for(int j=0;j<11;j++)
         {
             tampon=fichier.get();
             //cout << tampon;
             z.set_salle(i, j, tampon - '0');;
             //cout << (int) tampon << endl;
         }
+        // voir la fonction charger(Salle)
+        tampon=fichier.get();
     }
 
     fichier.close();
