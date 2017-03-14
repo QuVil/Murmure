@@ -6,6 +6,7 @@
 #include <iostream>
 #include <string>
 #include <time.h>
+#include "Zone.h"
 
 using namespace std;
 
@@ -21,6 +22,8 @@ class ZoneGen
         bool valide; //valide = la carte est-elle jouable ?
         //patternes : croix, carre, h, vide, hub
         //methodes : voisins, bruit, aleatoire, epuration
+        int posx_dep; //coordonnées de la salle de départ
+        int posy_dep;
 
 
     public:
@@ -29,6 +32,10 @@ class ZoneGen
         ZoneGen(string pat, string met);
 
         int get_etat(int x, int y) const;
+
+        int get_posx_dep() const;
+
+        int get_posy_dep() const;
 
         int nb_cases ()const;
 

@@ -11,6 +11,7 @@
  */
 
 #include "Salle.h"
+#include "ZoneGen.h"
 #include <string>
 
 using namespace std;
@@ -36,6 +37,9 @@ public:
 
     //crée une instance de zone en passant en paramètre les coordonnées de la salle actuelle et son nom
     Zone(int posx, int posy, int niv);
+
+    //constructeur depuis un modèle de génération de type ZoneGen
+    Zone(const ZoneGen &z);
 
     //renvoie la salle x,y
     Salle get_salle(int x, int y);
@@ -65,6 +69,7 @@ public:
 
     //Vide la salle actuelle (je vois pas pourquoi on s'en servirait mais eh...
     void vider_salle();
+
 };
 
 #endif // ZONE_H_INCLUDED

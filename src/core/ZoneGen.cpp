@@ -1,6 +1,7 @@
 #include <iostream>
 
 #include "ZoneGen.h"
+
 #include "Fichier.h"
 
 ZoneGen::ZoneGen()
@@ -29,6 +30,16 @@ ZoneGen::ZoneGen(string pat, string met)
 int ZoneGen::get_etat(int x, int y) const
 {
     return carte[x][y];
+}
+
+int ZoneGen::get_posx_dep() const
+{
+    return posx_dep;
+}
+
+int ZoneGen::get_posy_dep() const
+{
+    return posy_dep;
 }
 
 int ZoneGen::nb_cases ()const

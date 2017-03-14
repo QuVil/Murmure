@@ -40,6 +40,20 @@ Zone::Zone(int posx, int posy, int niv = 1)
     salle_actuelle_y = posy;
 }
 
+Zone::Zone(const ZoneGen &z)
+{
+    salle_actuelle_x = z.get_posx_dep();
+    salle_actuelle_y = z.get_posy_dep();
+
+    for (int i=0; i<11; ++i)
+    {
+        for (int j=0; j<11; ++j)
+        {
+            carte[i][j].set_config(z.get_etat(i, j));
+        }
+    }
+}
+
 Salle Zone::get_salle(int x, int y)
 {
     return carte[x][y];
