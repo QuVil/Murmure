@@ -57,6 +57,8 @@ class ZoneGen
         void valider();
 
         void afficher_validation() const;
+
+        void placer_boss();
 };
 
 #endif // ZONEGEN_H_INCLUDED

@@ -21,9 +21,10 @@ int main(int argc, char ** argv)
     cout<<"nb cases : "<<generateur.get_nb_cases()<<endl;
 
     generateur.valider();
-    cout<<"Voici la carte de validation :"<<endl;
-    generateur.afficher_validation();
-    cout<<"la carte est-elle valide ? : "<<generateur.is_valide();
+    cout<<"la carte est-elle valide ? : "<<generateur.is_valide()<<endl;
+    generateur.placer_boss();
+    cout<<"validite : "<<generateur.is_valide()<<endl;
+    generateur.afficher_carte();
     return 0;
 }
 

@@ -191,6 +191,8 @@ void ZoneGen::afficher_carte()const
         {
             if (carte[i][j] == 0)
                 cout<<"- ";
+            else if (carte[i][j] == 2)
+                cout<<"8 ";
             else
                 cout<<"X ";
         }
@@ -594,25 +596,109 @@ void ZoneGen::valider_recursif(int i, int j)
     }
 }
 
-void ZoneGen::afficher_validation() const
+void ZoneGen::placer_boss()
 {
-    for (int i=0; i<11; ++i)
+    bool boss_est_place = false;
+    srand (time(NULL));
+    int coin_recherche = rand() % 2;
+    if (coin_recherche == 0)
+    {
+        for (int i=0; i<11; ++i)
         {
             for (int j=0; j<11; ++j)
             {
-                if (carte_validation[i][j] == 1)
+                int voisins = 0;
+                if (i>0)
                 {
-                    cout<<"x ";
+                    if (carte[i-1][j] == 1)
+                    {
+                        voisins++;
+                    }
                 }
-                else if (carte_validation[i][j] == 2)
+
+                if (i<10)
                 {
-                    cout<<"X ";
+                    if (carte[i+1][j] == 1)
+                    {
+                        voisins++;
+                    }
                 }
-                else
+
+                if (j>0)
                 {
-                    cout<<"- ";
+                    if (carte[i][j-1] == 1)
+                    {
+                        voisins++;
+                    }
+                }
+
+                if (j<10)
+                {
+                    if (carte[i][j+1] == 1)
+                    {
+                        voisins++;
+                    }
+                }
+                if (voisins == 1 && carte[i][j] == 1 && !boss_est_place)
+                {
+                    boss_est_place = true;
+                    carte[i][j] = 2;
                 }
             }
-            cout<<endl;
         }
+    }
+
+    else if (coin_recherche == 1)
+    {
+        for (int i=10; i>=0; --i)
+        {
+            for (int j=10; j>=0; --j)
+            {
+                int voisins = 0;
+                if (i>0)
+                {
+                    if (carte[i-1][j] == 1)
+                    {
+                        voisins++;
+                    }
+                }
+
+                if (i<10)
+                {
+                    if (carte[i+1][j] == 1)
+                    {
+                        voisins++;
+                    }
+                }
+
+                if (j>0)
+                {
+                    if (carte[i][j-1] == 1)
+                    {
+                        voisins++;
+                    }
+                }
+
+                if (j<10)
+                {
+                    if (carte[i][j+1] == 1)
+                    {
+                        voisins++;
+                    }
+                }
+
+                if (voisins == 1 && carte[i][j] == 1 && !boss_est_place)
+                {
+                    boss_est_place = true;
+                    carte[i][j] = 2;
+                }
+            }
+        }
+    }
+
+    if (!boss_est_place)
+    {
+        valide = false;
+    }
+
 }
