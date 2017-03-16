@@ -12,11 +12,7 @@
 #include "Zone.h"
 #include "Fichier.h"
 
-/**
- * \brief Consctructeur
- * Le Constructeur basique de Zone, mettant la position
- * actuelle du Perso en 5,5 et vidant toutes les Salle.
- */
+//constructeur de base, avec toutes les salles vides et le nom "Zone"
 Zone::Zone()
 {
     niveau_zone = 1;
@@ -32,6 +28,7 @@ Zone::Zone()
     salle_actuelle_y = 5;
 }
 
+//crée une instance de zone en passant en paramètre les coordonnées de la salle actuelle et son nom
 Zone::Zone(int posx, int posy, int niv = 1)
 {
     niveau_zone = niv;

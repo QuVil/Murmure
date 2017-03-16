@@ -12,8 +12,8 @@
 
 #include "CaseSalle.h"
 
-const int cases_largeur = 27;
-const int cases_hauteur = 15;
+const int cases_largeur = 17;
+const int cases_hauteur = 9;
 
 /**
  * \class Salle
@@ -31,28 +31,89 @@ private:
     ///TODO : vérifier l'implémentation de difficulte et la ranger dans les fichiers contenant les Salle (GARY ?)
 
 public:
+
+    /**
+     * \brief Consctructeur
+     * Le Constructeur basique de Salle donnant la \a config 1 à l'instance
+     * créée, et créant son fichier modèle.
+     */
     Salle();
 
+    /**
+     * \brief Consctructeur avec \a config
+     * Le Constructeur avec paramètre, donnant à l'instance la \a config donnée.
+     * \param[in] conf : la \a config donnée à la nouvelle instance.
+     * \todo : potentiellement ajouter le paramètre fichier pour copie (GARY ?)
+     */
     Salle(int conf);
 
+    /**
+     * \brief Accesseur de case dans la grille.
+     * \param[in] i : coordonnée de la ligne de la case désirée.
+     * \param[in] j : coordonnée de la colonne de la case désirée.
+     * \return renvoie la CaseSalle i,j de la grille de l'instance.
+     * \warning l'accesseur renvoyant une copie, attention à ne pas vouloir utiliser un membre.
+     */
     CaseSalle get_case(int i,int j);
 
+    /**
+     * \brief Mutateur de case dans la grille.
+     * \param[in] i : coordonnée de la ligne de la case à changer.
+     * \param[in] j : coordonnée de la colonne de la case à changer.
+     * \param[in] c : la CaseSalle pour remplacer la case i,j.
+     */
     void set_case(int i, int j, CaseSalle c);
 
+    /**
+     * \brief Accesseur de la \a config.
+     * \return la \a config (un int) de la Salle.
+     */
     int get_config();
 
+    /**
+     * \brief Mutateur de la \a config.
+     * \param[in] c : nouvelle config.
+     */
     void set_config(int c);
 
+    /**
+     * \brief Procédure de remplissage de Salle.
+     * Techniquement, remplir() est un mutateur de \a config
+     * avec paramètre fixé.
+     */
     void remplir();
 
+
+    /**
+     * \brief Procédure de vidage de Salle.
+     * Techniquement, vider() est un mutateur de \a config
+     * avec paramètre fixé.
+     */
     void vider();
 
+    /**
+     * \brief Surcharge d'affectation de Salle.
+     * Surcharge de l'operateur = pour affecter des Salle entre elles.
+     * \param[in] salle2 : La Salle dont les membres -ici les CaseSalle de la grille et la \a config- doivent être copiés.
+     */
     Salle& operator = (Salle salle2);
 
+    /**
+     * \brief Affichage de Salle.
+     * Procedure d'affichage de la Salle en mode txt.
+     */
     void afficher();
 
+    /**
+     * \brief Accesseur du nb de cases en largeur.
+     * \return \a nb_cases_largeur de la Salle.
+     */
     int get_cases_largeur();
 
+    /**
+     * \brief Accesseur du nb de cases en hauteur.
+     * \return \a nb_cases_hauteur de la Salle.
+     */
     int get_cases_hauteur();
 };
 

@@ -32,7 +32,12 @@ private:
     int salle_actuelle_x, salle_actuelle_y; /**< les coordonnées de la Salle où se trouve le Perso. */
 
 public:
-    //constructeur de base, avec toutes les salles vides et le nom "Zone"
+
+    /**
+     * \brief Consctructeur
+     * Le Constructeur basique de Zone, mettant la position
+     * actuelle du Perso en 5,5 et vidant toutes les Salle.
+     */
     Zone();
 
     //crée une instance de zone en passant en paramètre les coordonnées de la salle actuelle et son nom
