@@ -13,6 +13,7 @@ class ZoneGen
 {
     private:
         int carte[11][11];
+        int carte_validation[11][11];
 
         string patterne; //patterne = le motif de base de la carte à sa création
         string methode;  //methode = méthode d'itération de création de carte
@@ -24,6 +25,7 @@ class ZoneGen
         int posx_dep; //coordonnées de la salle de départ
         int posy_dep;
 
+        void valider_recursif(int i, int j);
 
     public:
         ZoneGen();
@@ -32,11 +34,15 @@ class ZoneGen
 
         int get_etat(int x, int y) const;
 
+        bool is_valide() const;
+
         int get_posx_dep() const;
 
         int get_posy_dep() const;
 
-        int nb_cases ()const;
+        int get_nb_cases() const;
+
+        bool is_nb_cases_assez(int nb_voulu) const;
 
         void initialisation_gen(string pat, string met);
 
@@ -47,6 +53,10 @@ class ZoneGen
         string get_patterne();
 
         void set_salle(int i, int j, int salle);
+
+        void valider();
+
+        void afficher_validation() const;
 };
 
 #endif // ZONEGEN_H_INCLUDED

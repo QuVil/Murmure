@@ -32,6 +32,11 @@ int ZoneGen::get_etat(int x, int y) const
     return carte[x][y];
 }
 
+bool ZoneGen::is_valide()const
+{
+    return valide;
+}
+
 int ZoneGen::get_posx_dep() const
 {
     return posx_dep;
@@ -42,9 +47,9 @@ int ZoneGen::get_posy_dep() const
     return posy_dep;
 }
 
-int ZoneGen::nb_cases ()const
+int ZoneGen::get_nb_cases() const
 {
-    int nb =0;
+    int nb = 0;
     for (int i=0; i<11; ++i)
     {
         for (int j=0; j<11; ++j)
@@ -56,6 +61,23 @@ int ZoneGen::nb_cases ()const
         }
     }
     return nb;
+}
+
+bool ZoneGen::is_nb_cases_assez (int nb_voulu)const
+{
+    int nb = 0;
+    for (int i=0; i<11; ++i)
+    {
+        for (int j=0; j<11; ++j)
+        {
+            if (carte[i][j] == 1)
+            {
+                nb++;
+            }
+        }
+    }
+    if (nb >= nb_voulu){return true;}
+    else{return false;}
 }
 
 void ZoneGen::initialisation_gen(string pat, string met)
@@ -181,7 +203,6 @@ void ZoneGen::iterer(string meth /* = "" */)
     if (meth != "" && meth != " ") //Si on passe une methode => changement de la methode
     {
         methode = meth;
-        cout<<"methode changee"<<endl;
     }
     //itere la creation de la carte selon la méthode donnée dans l'instance au temps t
     if (pret_iteration == false)
@@ -454,13 +475,11 @@ void ZoneGen::iterer(string meth /* = "" */)
                     if (v_haut == 1 && nb_aleat == 3)
                     {
                         carte[i+1][j] = 1;
-                        cout<<"extension à bas"<<endl;
                     }
 
                     if (v_bas == 1 && nb_aleat == 2)
                     {
                         carte[i-1][j] = 1;
-                        cout<<"extension à haut"<<endl;
                     }
 
                     if (v_gauche == 1 && nb_aleat == 1)
@@ -470,14 +489,12 @@ void ZoneGen::iterer(string meth /* = "" */)
                         if (nb_bonus == 0)
                         {
                             carte[i][j+1] = 1;
-                            cout<<"extension à droite"<<endl;
                         }
                     }
 
                     if (v_droite == 1 && nb_aleat == 0)
                     {
                         carte[i][j-1] = 1;
-                        cout<<"extension à gauche"<<endl;
                     }
                 }
             }
@@ -493,4 +510,109 @@ string ZoneGen::get_patterne()
 void ZoneGen::set_salle(int i, int j, int salle)
 {
     carte[i][j] = salle;
+}
+
+void ZoneGen::valider()
+{
+    for (int i=0; i<11; ++i)
+    {
+        for (int j=0; j<11; ++j)
+        {
+            carte_validation[i][j] = carte[i][j];
+        }
+    }
+    int test = 0;
+    int i = 0;
+    int j = 0;
+
+    while(test < 1 && (i<11 && j<12))
+    {
+        cout<<"case testee : "<<i<<", "<<j<<endl;
+        test = carte_validation[i][j];
+
+        if (test < 1)
+        {
+            cout<<"incrementation"<<endl;
+            if(i < 10)
+            {
+                ++i;
+            }
+            else if ((i = 10) && (j<11))
+            {
+                i = 0;
+                ++j;
+            }
+        }
+    }
+    cout<<"case depart : "<<i<<", "<<j<<endl;
+    valider_recursif(i, j);
+
+    //second parcours pour check si la carte est valide :
+    bool carte_est_valide = true;
+    for (int i=0; i<11; ++i)
+        {
+            for (int j=0; j<11; ++j)
+            {
+                if (carte_validation[i][j] == 1)
+                {
+                    carte_est_valide = false;
+                }
+            }
+        }
+    valide = carte_est_valide;
+}
+
+void ZoneGen::valider_recursif(int i, int j)
+{
+    if (carte_validation[i][j] == 0 || carte_validation[i][j] == 2)
+    {
+        //cas d'arrêt
+    }
+    else
+    {
+        if (carte_validation[i][j] == 1)
+        {
+            carte_validation[i][j] = 2;
+        }
+
+        if (i>0)
+        {
+            valider_recursif(i-1, j);
+        }
+        if (i<10)
+        {
+            valider_recursif(i+1, j);
+        }
+        if (j>0)
+        {
+            valider_recursif(i, j-1);
+        }
+        if (j<10)
+        {
+            valider_recursif(i, j+1);
+        }
+    }
+}
+
+void ZoneGen::afficher_validation() const
+{
+    for (int i=0; i<11; ++i)
+        {
+            for (int j=0; j<11; ++j)
+            {
+                if (carte_validation[i][j] == 1)
+                {
+                    cout<<"x ";
+                }
+                else if (carte_validation[i][j] == 2)
+                {
+                    cout<<"X ";
+                }
+                else
+                {
+                    cout<<"- ";
+                }
+            }
+            cout<<endl;
+        }
 }
