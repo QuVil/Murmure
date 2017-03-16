@@ -20,9 +20,28 @@ private:
     float pos_y; /**< \a pos_y détermine où se trouve Perso dans une Salle; par rapport au point en haut à gauche du sprite. */
 
     float pv_max; /**< \a pv_max est le nombre de coeurs maximum du Perso. */
-    float pv_actuel; /**< \a pv_actuel est la "lose condition" si elle atteint 0, et doit être < pv_max. */
+    float pv_actuel; /**< \a pv_actuel est la "lose condition" si elle atteint 0, et doit être plus petit que pv_max. */
 
 public:
+
+    Perso();
+
+    Perso(std::string n);
+
+    float get_angle_regard()const;
+
+    float get_vitesse()const;
+
+    float get_angle_mouvement()const;
+
+    float get_pos_x()const;
+
+    float get_pos_y()const;
+
+    float get_pv_max()const;
+
+    float get_pv_actuel()const;
+
 
 };
 
