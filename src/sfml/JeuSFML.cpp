@@ -48,7 +48,7 @@ void JeuSFML::SFML_boucle()
                 }
             }
         }
-        window.clear(sf::Color::White);
+        window.clear(sf::Color::Black);
 
         afficher_salle();
 
