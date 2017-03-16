@@ -15,12 +15,12 @@ JeuSFML::JeuSFML()
     /*
     if(desktop.width/jeu.get_salle().get_cases_largeur() <desktop.height/jeu.get_salle().get_cases_hauteur()){scale = desktop.width/jeu.get_salle().get_cases_largeur();}
     else{scale = desktop.height/jeu.get_salle().get_cases_hauteur();}*/
-    scale_salle_largeur = desktop.width/jeu.get_salle().get_cases_largeur();
-    scale_salle_hauteur = desktop.height/jeu.get_salle().get_cases_hauteur();
+    scale_salle_largeur = desktop.width/jeu.get_salle().get_nb_cases_largeur();
+    scale_salle_hauteur = desktop.height/jeu.get_salle().get_nb_cases_hauteur();
     //std::cout << desktop.width << " " << desktop.height << " " << desktop.bitsPerPixel << std::endl;
 
-    posx0salle = (desktop.width -jeu.get_salle().get_cases_largeur()*scale_salle_largeur)/2;
-    posy0salle = (desktop.height - jeu.get_salle().get_cases_hauteur()*scale_salle_hauteur)/2;
+    posx0salle = (desktop.width -jeu.get_salle().get_nb_cases_largeur()*scale_salle_largeur)/2;
+    posy0salle = (desktop.height - jeu.get_salle().get_nb_cases_hauteur()*scale_salle_hauteur)/2;
 
 }
 
@@ -59,9 +59,9 @@ void JeuSFML::SFML_boucle()
 void JeuSFML::afficher_salle()
 {
     CaseSalle c;
-    for(int i=0;i<jeu.get_salle().get_cases_hauteur();i++)
+    for(int i=0;i<jeu.get_salle().get_nb_cases_hauteur();i++)
     {
-        for(int j=0;j<jeu.get_salle().get_cases_largeur();j++)
+        for(int j=0;j<jeu.get_salle().get_nb_cases_largeur();j++)
         {
             c=jeu.get_salle().get_case(i,j);
             /*

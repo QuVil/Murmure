@@ -60,9 +60,9 @@ void Salle::vider()
 
 Salle& Salle::operator = (Salle salle2)
     {
-        for (int i=0; i<cases_hauteur; ++i)
+        for (int i=0; i<nb_cases_hauteur; ++i)
         {
-            for (int j=0; j<cases_largeur; ++j)
+            for (int j=0; j<nb_cases_largeur; ++j)
                 grille[i][j] = salle2.get_case(i, j);
         }
         config = salle2.get_config();
@@ -71,9 +71,9 @@ Salle& Salle::operator = (Salle salle2)
 
 void Salle::afficher()
 {
-    for(int i=0;i<cases_hauteur;i++)
+    for(int i=0;i<nb_cases_hauteur;i++)
     {
-        for(int j=0;j<cases_largeur;j++)
+        for(int j=0;j<nb_cases_largeur;j++)
         {
             grille[i][j].afficher();
             std::cout << " ";
@@ -82,13 +82,13 @@ void Salle::afficher()
     }
 }
 
-int Salle::get_cases_largeur()
+int Salle::get_nb_cases_largeur()
 {
-    return cases_largeur;
+    return nb_cases_largeur;
 }
 
-int Salle::get_cases_hauteur()
+int Salle::get_nb_cases_hauteur()
 {
-    return cases_hauteur;
+    return nb_cases_hauteur;
 }
 

@@ -97,10 +97,10 @@ void Fichier::charger(Salle & s)
 
     char tampon;
 
-    for(int i=0;i<s.get_cases_hauteur();i++)
+    for(int i=0;i<s.get_nb_cases_hauteur();i++)
     {
         //compte les retours à la ligne donc <= 21 pour avoir le bon compte
-        for(int j=0;j<s.get_cases_largeur();j++)
+        for(int j=0;j<s.get_nb_cases_largeur();j++)
         {
             tampon=fichier.get();
             //cout << tampon;
