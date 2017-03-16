@@ -1,255 +1,588 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.0//EN" "http://www.w3.org/TR/2001/PR-SVG-20010719/DTD/svg10.dtd">
-<svg width="80cm" height="38cm" viewBox="-264 -206 1583 752" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-  <g>
-    <rect style="fill: #ffffff" x="511.002" y="319.75" width="148.6" height="28"/>
-    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="511.002" y="319.75" width="148.6" height="28"/>
-    <text font-size="16" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:700" x="585.302" y="338.75">Salle</text>
-    <rect style="fill: #ffffff" x="511.002" y="347.75" width="148.6" height="52"/>
-    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="511.002" y="347.75" width="148.6" height="52"/>
-    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="514.002" y="361.75">+grille: CaseSalle</text>
-    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="514.002" y="377.75">+etat_vide: bool</text>
-    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="514.002" y="393.75">+theme: string</text>
-    <rect style="fill: #ffffff" x="511.002" y="399.75" width="148.6" height="8"/>
-    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="511.002" y="399.75" width="148.6" height="8"/>
-  </g>
-  <g>
-    <rect style="fill: #ffffff" x="807.002" y="264.75" width="179.4" height="28"/>
-    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="807.002" y="264.75" width="179.4" height="28"/>
-    <text font-size="16" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:700" x="896.702" y="283.75">Zone</text>
-    <rect style="fill: #ffffff" x="807.002" y="292.75" width="179.4" height="68"/>
-    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="807.002" y="292.75" width="179.4" height="68"/>
-    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="810.002" y="306.75">+carte: Salle</text>
-    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="810.002" y="322.75">+nom: string</text>
-    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="810.002" y="338.75">+salle_actuelle_x: int</text>
-    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="810.002" y="354.75">+salle_actuelle_y: int</text>
-    <rect style="fill: #ffffff" x="807.002" y="360.75" width="179.4" height="8"/>
-    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="807.002" y="360.75" width="179.4" height="8"/>
-  </g>
-  <g>
-    <rect style="fill: #ffffff" x="50.002" y="361.75" width="97.05" height="28"/>
-    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="50.002" y="361.75" width="97.05" height="28"/>
-    <text font-size="16" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:700" x="98.527" y="380.75">CaseSalle</text>
-    <rect style="fill: #ffffff" x="50.002" y="389.75" width="97.05" height="20"/>
-    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="50.002" y="389.75" width="97.05" height="20"/>
-    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="53.002" y="403.75">+motif: int</text>
-    <rect style="fill: #ffffff" x="50.002" y="409.75" width="97.05" height="8"/>
-    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="50.002" y="409.75" width="97.05" height="8"/>
-  </g>
-  <g>
-    <rect style="fill: #ffffff" x="325.004" y="27.75" width="116.9" height="28"/>
-    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="325.004" y="27.75" width="116.9" height="28"/>
-    <text font-size="16" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:700" x="383.454" y="46.75">Personnage</text>
-    <rect style="fill: #ffffff" x="325.004" y="55.75" width="116.9" height="36"/>
-    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="325.004" y="55.75" width="116.9" height="36"/>
-    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="328.004" y="69.75">+arme1</text>
-    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="328.004" y="85.75">+arme2</text>
-    <rect style="fill: #ffffff" x="325.004" y="91.75" width="116.9" height="8"/>
-    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="325.004" y="91.75" width="116.9" height="8"/>
-  </g>
-  <g>
-    <rect style="fill: #ffffff" x="95.004" y="-18.25" width="57.8" height="28"/>
-    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="95.004" y="-18.25" width="57.8" height="28"/>
-    <text font-size="16" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:700" x="123.904" y="0.75">Arme</text>
-    <rect style="fill: #ffffff" x="95.004" y="9.75" width="57.8" height="8"/>
-    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="95.004" y="9.75" width="57.8" height="8"/>
-    <rect style="fill: #ffffff" x="95.004" y="17.75" width="57.8" height="8"/>
-    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="95.004" y="17.75" width="57.8" height="8"/>
-  </g>
-  <g>
-    <rect style="fill: #ffffff" x="-23.998" y="501.75" width="94.35" height="28"/>
-    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="-23.998" y="501.75" width="94.35" height="28"/>
-    <text font-size="16" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:700" x="23.177" y="520.75">CarteGen</text>
-    <rect style="fill: #ffffff" x="-23.998" y="529.75" width="94.35" height="8"/>
-    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="-23.998" y="529.75" width="94.35" height="8"/>
-    <rect style="fill: #ffffff" x="-23.998" y="537.75" width="94.35" height="8"/>
-    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="-23.998" y="537.75" width="94.35" height="8"/>
-  </g>
-  <g>
-    <rect style="fill: #ffffff" x="-163.998" y="387.75" width="75.55" height="28"/>
-    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="-163.998" y="387.75" width="75.55" height="28"/>
-    <text font-size="16" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:700" x="-126.223" y="406.75">Modele</text>
-    <rect style="fill: #ffffff" x="-163.998" y="415.75" width="75.55" height="8"/>
-    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="-163.998" y="415.75" width="75.55" height="8"/>
-    <rect style="fill: #ffffff" x="-163.998" y="423.75" width="75.55" height="8"/>
-    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="-163.998" y="423.75" width="75.55" height="8"/>
-  </g>
-  <g>
-    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="-69.2025,409.75 -48.2212,409.75 -48.2212,523.75 -25.0039,523.75 "/>
-    <polygon style="fill: #ffffff" points="-69.2025,401.75 -85.2025,409.75 -69.2025,417.75 "/>
-    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="-69.2025,401.75 -85.2025,409.75 -69.2025,417.75 "/>
-  </g>
-  <g>
-    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="23.177,482.508 23.177,427.25 896.702,427.25 896.702,369.756 "/>
-    <polygon style="fill: #ffffff" points="15.177,482.508 23.177,498.508 31.177,482.508 "/>
-    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="15.177,482.508 23.177,498.508 31.177,482.508 "/>
-  </g>
-  <g>
-    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="166.294,389.75 337.025,389.75 337.025,363.75 509.993,363.75 "/>
-    <polygon style="fill: #ffffff" points="166.294,381.75 150.294,389.75 166.294,397.75 "/>
-    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="166.294,381.75 150.294,389.75 166.294,397.75 "/>
-  </g>
-  <g>
-    <rect style="fill: #ffffff" x="-155.998" y="189.75" width="71.6" height="28"/>
-    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="-155.998" y="189.75" width="71.6" height="28"/>
-    <text font-size="16" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:700" x="-120.198" y="208.75">Fichier</text>
-    <rect style="fill: #ffffff" x="-155.998" y="217.75" width="71.6" height="8"/>
-    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="-155.998" y="217.75" width="71.6" height="8"/>
-    <rect style="fill: #ffffff" x="-155.998" y="225.75" width="71.6" height="8"/>
-    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="-155.998" y="225.75" width="71.6" height="8"/>
-  </g>
-  <g>
-    <rect style="fill: #ffffff" x="805.002" y="21.5" width="38.2" height="28"/>
-    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="805.002" y="21.5" width="38.2" height="28"/>
-    <text font-size="16" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:700" x="824.102" y="40.5">Jeu</text>
-    <rect style="fill: #ffffff" x="805.002" y="49.5" width="38.2" height="8"/>
-    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="805.002" y="49.5" width="38.2" height="8"/>
-    <rect style="fill: #ffffff" x="805.002" y="57.5" width="38.2" height="8"/>
-    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="805.002" y="57.5" width="38.2" height="8"/>
-  </g>
-  <g>
-    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="896.702,245.507 896.702,157.125 824.102,157.125 824.102,66.5056 "/>
-    <polygon style="fill: #ffffff" points="888.702,245.507 896.702,261.507 904.702,245.507 "/>
-    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="888.702,245.507 896.702,261.507 904.702,245.507 "/>
-  </g>
-  <g>
-    <rect style="fill: #ffffff" x="1179" y="-127.25" width="138.85" height="28"/>
-    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="1179" y="-127.25" width="138.85" height="28"/>
-    <text font-size="16" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:700" x="1248.43" y="-108.25">MenuPrincipal</text>
-    <rect style="fill: #ffffff" x="1179" y="-99.25" width="138.85" height="8"/>
-    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="1179" y="-99.25" width="138.85" height="8"/>
-    <rect style="fill: #ffffff" x="1179" y="-91.25" width="138.85" height="8"/>
-    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="1179" y="-91.25" width="138.85" height="8"/>
-  </g>
-  <g>
-    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="824.102,2.25832 824.102,-38.875 1248.43,-38.875 1248.43,-82.2444 "/>
-    <polygon style="fill: #ffffff" points="816.102,2.25832 824.102,18.2583 832.102,2.25832 "/>
-    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="816.102,2.25832 824.102,18.2583 832.102,2.25832 "/>
-  </g>
-  <g>
-    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="461.147,63.75 631.452,63.75 631.452,43.5 803.992,43.5 "/>
-    <polygon style="fill: #ffffff" points="461.147,55.75 445.147,63.75 461.147,71.75 "/>
-    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="461.147,55.75 445.147,63.75 461.147,71.75 "/>
-  </g>
-  <g>
-    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="-120.198,170.508 -120.198,99.75 123.904,99.75 123.904,26.7556 "/>
-    <polygon style="fill: #ffffff" points="-128.198,170.508 -120.198,186.508 -112.198,170.508 "/>
-    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="-128.198,170.508 -120.198,186.508 -112.198,170.508 "/>
-  </g>
-  <g>
-    <rect style="fill: #ffffff" x="702.002" y="-204.25" width="179.8" height="28"/>
-    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="702.002" y="-204.25" width="179.8" height="28"/>
-    <text font-size="16" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:700" x="791.902" y="-185.25">DeplacementPerso</text>
-    <rect style="fill: #ffffff" x="702.002" y="-176.25" width="179.8" height="8"/>
-    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="702.002" y="-176.25" width="179.8" height="8"/>
-    <rect style="fill: #ffffff" x="702.002" y="-168.25" width="179.8" height="8"/>
-    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="702.002" y="-168.25" width="179.8" height="8"/>
-  </g>
-  <g>
-    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="791.902,-141.008 791.902,-58.2517 383.454,-58.2517 383.454,26.741 "/>
-    <polygon style="fill: #ffffff" points="799.902,-141.008 791.902,-157.008 783.902,-141.008 "/>
-    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="799.902,-141.008 791.902,-157.008 783.902,-141.008 "/>
-  </g>
-  <g>
-    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="678.847,363.75 741.304,363.75 741.304,316.75 805.996,316.75 "/>
-    <polygon style="fill: #ffffff" points="678.847,355.75 662.847,363.75 678.847,371.75 "/>
-    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="678.847,355.75 662.847,363.75 678.847,371.75 "/>
-  </g>
-  <g>
-    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="-120.198,170.508 -120.198,136.752 383.454,136.752 383.454,100.759 "/>
-    <polygon style="fill: #ffffff" points="-128.198,170.508 -120.198,186.508 -112.198,170.508 "/>
-    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="-128.198,170.508 -120.198,186.508 -112.198,170.508 "/>
-  </g>
-  <g>
-    <rect style="fill: #ffffff" x="96.002" y="292.75" width="148.6" height="28"/>
-    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="96.002" y="292.75" width="148.6" height="28"/>
-    <text font-size="16" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:700" x="170.302" y="311.75">Ennemi</text>
-    <rect style="fill: #ffffff" x="96.002" y="320.75" width="148.6" height="20"/>
-    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="96.002" y="320.75" width="148.6" height="20"/>
-    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="99.002" y="334.75">-est_affiche: bool</text>
-    <rect style="fill: #ffffff" x="96.002" y="340.75" width="148.6" height="8"/>
-    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="96.002" y="340.75" width="148.6" height="8"/>
-  </g>
-  <g>
-    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="-120.198,252.992 -120.198,271.249 170.302,271.249 170.302,291.743 "/>
-    <polygon style="fill: #ffffff" points="-112.198,252.992 -120.198,236.992 -128.198,252.992 "/>
-    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="-112.198,252.992 -120.198,236.992 -128.198,252.992 "/>
-  </g>
-  <g>
-    <rect style="fill: #ffffff" x="206.002" y="138.75" width="195.55" height="28"/>
-    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="206.002" y="138.75" width="195.55" height="28"/>
-    <text font-size="16" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:700" x="303.777" y="157.75">DeplacementEnnemi</text>
-    <rect style="fill: #ffffff" x="206.002" y="166.75" width="195.55" height="8"/>
-    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="206.002" y="166.75" width="195.55" height="8"/>
-    <rect style="fill: #ffffff" x="206.002" y="174.75" width="195.55" height="8"/>
-    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="206.002" y="174.75" width="195.55" height="8"/>
-  </g>
-  <g>
-    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="303.777,201.992 303.777,245.749 170.302,245.749 170.302,291.743 "/>
-    <polygon style="fill: #ffffff" points="311.777,201.992 303.777,185.992 295.777,201.992 "/>
-    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="311.777,201.992 303.777,185.992 295.777,201.992 "/>
-  </g>
-  <g>
-    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="-120.198,252.992 -120.198,318.75 -126.223,318.75 -126.223,386.744 "/>
-    <polygon style="fill: #ffffff" points="-112.198,252.992 -120.198,236.992 -128.198,252.992 "/>
-    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="-112.198,252.992 -120.198,236.992 -128.198,252.992 "/>
-  </g>
-  <g>
-    <rect style="fill: #ffffff" x="-262.998" y="-185.25" width="59.05" height="28"/>
-    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="-262.998" y="-185.25" width="59.05" height="28"/>
-    <text font-size="16" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:700" x="-233.473" y="-166.25">Objet</text>
-    <rect style="fill: #ffffff" x="-262.998" y="-157.25" width="59.05" height="8"/>
-    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="-262.998" y="-157.25" width="59.05" height="8"/>
-    <rect style="fill: #ffffff" x="-262.998" y="-149.25" width="59.05" height="8"/>
-    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="-262.998" y="-149.25" width="59.05" height="8"/>
-  </g>
-  <g>
-    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="172.047,3.75 246.904,3.75 246.904,63.75 323.997,63.75 "/>
-    <polygon style="fill: #ffffff" points="172.047,-4.25 156.047,3.75 172.047,11.75 "/>
-    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="172.047,-4.25 156.047,3.75 172.047,11.75 "/>
-  </g>
-  <g>
-    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="-233.473,-122.008 -233.473,-48.7517 383.454,-48.7517 383.454,26.741 "/>
-    <polygon style="fill: #ffffff" points="-225.473,-122.008 -233.473,-138.008 -241.473,-122.008 "/>
-    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="-225.473,-122.008 -233.473,-138.008 -241.473,-122.008 "/>
-  </g>
-  <g>
-    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="-175.243,211.75 -187.974,211.75 -187.974,-163.25 -202.941,-163.25 "/>
-    <polygon style="fill: #ffffff" points="-175.243,219.75 -159.243,211.75 -175.243,203.75 "/>
-    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="-175.243,219.75 -159.243,211.75 -175.243,203.75 "/>
-  </g>
-  <g>
-    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="-120.198,252.992 -120.198,305.749 98.527,305.749 98.527,360.743 "/>
-    <polygon style="fill: #ffffff" points="-112.198,252.992 -120.198,236.992 -128.198,252.992 "/>
-    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="-112.198,252.992 -120.198,236.992 -128.198,252.992 "/>
-  </g>
-  <g>
-    <line style="fill: none; fill-opacity:0; stroke-width: 2; stroke-dasharray: 8; stroke: #000000" x1="555.032" y1="318.761" x2="412.089" y2="106.31"/>
-    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="423.298,114.012 410.218,103.528 415.001,119.594 "/>
-    <text font-size="12.7998" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="481.69" y="205.754">{}</text>
-  </g>
-  <g>
-    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="170.302,367.993 170.302,389.75 148.058,389.75 "/>
-    <polygon style="fill: #ffffff" points="178.302,367.993 170.302,351.993 162.302,367.993 "/>
-    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="178.302,367.993 170.302,351.993 162.302,367.993 "/>
-  </g>
-  <g>
-    <rect style="fill: #ffffff" x="-101.998" y="-0.25" width="96" height="28"/>
-    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="-101.998" y="-0.25" width="96" height="28"/>
-    <text font-size="16" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:700" x="-53.998" y="18.75">Projectile</text>
-    <rect style="fill: #ffffff" x="-101.998" y="27.75" width="96" height="20"/>
-    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="-101.998" y="27.75" width="96" height="20"/>
-    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="-98.998" y="41.75">+degat: int</text>
-    <rect style="fill: #ffffff" x="-101.998" y="47.75" width="96" height="8"/>
-    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="-101.998" y="47.75" width="96" height="8"/>
-  </g>
-  <g>
-    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="12.2381,37.75 52.4974,37.75 52.4974,320.75 94.9928,320.75 "/>
-    <polygon style="fill: #ffffff" points="12.2381,29.75 -3.76193,37.75 12.2381,45.75 "/>
-    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="12.2381,29.75 -3.76193,37.75 12.2381,45.75 "/>
-  </g>
-  <g>
-    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke-dasharray: 8; stroke: #000000" points="824.102,66.5056 824.102,123.625 -120.198,123.625 -120.198,182.039 "/>
-    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="-125.198,169.392 -120.198,185.392 -115.198,169.392 "/>
-  </g>
+<!-- Created by diasvg.py -->
+<svg width="97.952cm" height="68.473cm" viewBox="-24.329 3.980 73.623 72.453"
+ xmlns="http://www.w3.org/2000/svg"
+ xmlns:xlink="http://www.w3.org/1999/xlink">
+<rect x="17.849" y="28.353" width="7.815" height="1.400" fill="#FFFFFF" stroke="none" stroke-width="0"/>
+<rect x="17.849" y="28.353" width="7.815" height="1.400" fill="none" stroke="#000000" stroke-width="0.100" />
+<text x="21.756" y="29.303"  fill="#000000" text-anchor="middle" font-size="1.00" font-family="sans" font-style="normal" font-weight="700">
+Jeu</text>
+<rect x="17.849" y="29.753" width="7.815" height="2.600" fill="#FFFFFF" stroke="none" stroke-width="0"/>
+<rect x="17.849" y="29.753" width="7.815" height="2.600" fill="none" stroke="#000000" stroke-width="0.100" />
+<text x="17.999" y="30.453"  fill="#000000" text-anchor="start" font-size="0.80" font-family="monospace" font-style="normal" font-weight="400">
+-zone: Zone</text>
+<text x="17.999" y="31.253"  fill="#000000" text-anchor="start" font-size="0.80" font-family="monospace" font-style="normal" font-weight="400">
+-perso: Perso</text>
+<text x="17.999" y="32.053"  fill="#000000" text-anchor="start" font-size="0.80" font-family="monospace" font-style="normal" font-weight="400">
+-pause: bool</text>
+<rect x="17.849" y="32.353" width="7.815" height="3.400" fill="#FFFFFF" stroke="none" stroke-width="0"/>
+<rect x="17.849" y="32.353" width="7.815" height="3.400" fill="none" stroke="#000000" stroke-width="0.100" />
+<text x="17.999" y="33.053"  fill="#000000" text-anchor="start" font-size="0.80" font-family="monospace" font-style="normal" font-weight="400">
++Jeu(): constructor</text>
+<text x="17.999" y="33.853"  fill="#000000" text-anchor="start" font-size="0.80" font-family="monospace" font-style="normal" font-weight="400">
++get_salle(): Salle</text>
+<text x="17.999" y="34.653"  fill="#000000" text-anchor="start" font-size="0.80" font-family="monospace" font-style="normal" font-weight="400">
++init(): void</text>
+<text x="17.999" y="35.453"  fill="#000000" text-anchor="start" font-size="0.80" font-family="monospace" font-style="normal" font-weight="400">
++pause(): void</text>
+<rect x="8.274" y="5.557" width="23.215" height="1.400" fill="#FFFFFF" stroke="none" stroke-width="0"/>
+<rect x="8.274" y="5.557" width="23.215" height="1.400" fill="none" stroke="#000000" stroke-width="0.100" />
+<text x="19.882" y="6.507"  fill="#000000" text-anchor="middle" font-size="1.00" font-family="sans" font-style="normal" font-weight="700">
+Zone</text>
+<rect x="8.274" y="6.957" width="23.215" height="3.400" fill="#FFFFFF" stroke="none" stroke-width="0"/>
+<rect x="8.274" y="6.957" width="23.215" height="3.400" fill="none" stroke="#000000" stroke-width="0.100" />
+<text x="8.424" y="7.657"  fill="#000000" text-anchor="start" font-size="0.80" font-family="monospace" font-style="normal" font-weight="400">
+-carte: Salle[11][11]</text>
+<text x="8.424" y="8.457"  fill="#000000" text-anchor="start" font-size="0.80" font-family="monospace" font-style="normal" font-weight="400">
+-niveau_zone: int</text>
+<text x="8.424" y="9.257"  fill="#000000" text-anchor="start" font-size="0.80" font-family="monospace" font-style="normal" font-weight="400">
+-salle_actuelle_x: int</text>
+<text x="8.424" y="10.057"  fill="#000000" text-anchor="start" font-size="0.80" font-family="monospace" font-style="normal" font-weight="400">
+-salle_actuelle_y: int</text>
+<rect x="8.274" y="10.357" width="23.215" height="9.800" fill="#FFFFFF" stroke="none" stroke-width="0"/>
+<rect x="8.274" y="10.357" width="23.215" height="9.800" fill="none" stroke="#000000" stroke-width="0.100" />
+<text x="8.424" y="11.057"  fill="#000000" text-anchor="start" font-size="0.80" font-family="monospace" font-style="normal" font-weight="400">
++Zone(): constructor</text>
+<text x="8.424" y="11.857"  fill="#000000" text-anchor="start" font-size="0.80" font-family="monospace" font-style="normal" font-weight="400">
++Zone(in posx:int,in posy:int,in niv:int): constructor</text>
+<text x="8.424" y="12.657"  fill="#000000" text-anchor="start" font-size="0.80" font-family="monospace" font-style="normal" font-weight="400">
++Zone(in z:ZoneGen): constructor</text>
+<text x="8.424" y="13.457"  fill="#000000" text-anchor="start" font-size="0.80" font-family="monospace" font-style="normal" font-weight="400">
++get_salle(in x:int,in y:int): Salle</text>
+<text x="8.424" y="14.257"  fill="#000000" text-anchor="start" font-size="0.80" font-family="monospace" font-style="normal" font-weight="400">
++get_salle(): Salle</text>
+<text x="8.424" y="15.057"  fill="#000000" text-anchor="start" font-size="0.80" font-family="monospace" font-style="normal" font-weight="400">
++set_salle(in x:int,in y:int,in nouvelle_salle:Salle): void</text>
+<text x="8.424" y="15.857"  fill="#000000" text-anchor="start" font-size="0.80" font-family="monospace" font-style="normal" font-weight="400">
++get_salle_actuelle_x(): int</text>
+<text x="8.424" y="16.657"  fill="#000000" text-anchor="start" font-size="0.80" font-family="monospace" font-style="normal" font-weight="400">
++get_salle_actuelle_y(): int</text>
+<text x="8.424" y="17.457"  fill="#000000" text-anchor="start" font-size="0.80" font-family="monospace" font-style="normal" font-weight="400">
++remplir_salle(in x:int,in y:int): void</text>
+<text x="8.424" y="18.257"  fill="#000000" text-anchor="start" font-size="0.80" font-family="monospace" font-style="normal" font-weight="400">
++remplir_salle(): void</text>
+<text x="8.424" y="19.057"  fill="#000000" text-anchor="start" font-size="0.80" font-family="monospace" font-style="normal" font-weight="400">
++vider_salle(in x:int,in y:int): void</text>
+<text x="8.424" y="19.857"  fill="#000000" text-anchor="start" font-size="0.80" font-family="monospace" font-style="normal" font-weight="400">
++vider_salle(): void</text>
+<rect x="38.226" y="6.772" width="21.290" height="1.400" fill="#FFFFFF" stroke="none" stroke-width="0"/>
+<rect x="38.226" y="6.772" width="21.290" height="1.400" fill="none" stroke="#000000" stroke-width="0.100" />
+<text x="48.871" y="7.722"  fill="#000000" text-anchor="middle" font-size="1.00" font-family="sans" font-style="normal" font-weight="700">
+ZoneGen</text>
+<rect x="38.226" y="8.172" width="21.290" height="5.800" fill="#FFFFFF" stroke="none" stroke-width="0"/>
+<rect x="38.226" y="8.172" width="21.290" height="5.800" fill="none" stroke="#000000" stroke-width="0.100" />
+<text x="38.376" y="8.872"  fill="#000000" text-anchor="start" font-size="0.80" font-family="monospace" font-style="normal" font-weight="400">
+-carte: int[11][11]</text>
+<text x="38.376" y="9.672"  fill="#000000" text-anchor="start" font-size="0.80" font-family="monospace" font-style="normal" font-weight="400">
+-patterne: string</text>
+<text x="38.376" y="10.472"  fill="#000000" text-anchor="start" font-size="0.80" font-family="monospace" font-style="normal" font-weight="400">
+-methode: string</text>
+<text x="38.376" y="11.272"  fill="#000000" text-anchor="start" font-size="0.80" font-family="monospace" font-style="normal" font-weight="400">
+-pret_iteration: bool</text>
+<text x="38.376" y="12.072"  fill="#000000" text-anchor="start" font-size="0.80" font-family="monospace" font-style="normal" font-weight="400">
+-valide: bool</text>
+<text x="38.376" y="12.872"  fill="#000000" text-anchor="start" font-size="0.80" font-family="monospace" font-style="normal" font-weight="400">
+-posx_dep: int</text>
+<text x="38.376" y="13.672"  fill="#000000" text-anchor="start" font-size="0.80" font-family="monospace" font-style="normal" font-weight="400">
+-posy_dep: int</text>
+<rect x="38.226" y="13.972" width="21.290" height="9.000" fill="#FFFFFF" stroke="none" stroke-width="0"/>
+<rect x="38.226" y="13.972" width="21.290" height="9.000" fill="none" stroke="#000000" stroke-width="0.100" />
+<text x="38.376" y="14.672"  fill="#000000" text-anchor="start" font-size="0.80" font-family="monospace" font-style="normal" font-weight="400">
++ZoneGen(): constructor</text>
+<text x="38.376" y="15.472"  fill="#000000" text-anchor="start" font-size="0.80" font-family="monospace" font-style="normal" font-weight="400">
++ZoneGen(in pat:string,in met:string): constructor</text>
+<text x="38.376" y="16.272"  fill="#000000" text-anchor="start" font-size="0.80" font-family="monospace" font-style="normal" font-weight="400">
++get_etat(in x:int,in y:int): int</text>
+<text x="38.376" y="17.072"  fill="#000000" text-anchor="start" font-size="0.80" font-family="monospace" font-style="normal" font-weight="400">
++get_posx_dep(): int</text>
+<text x="38.376" y="17.872"  fill="#000000" text-anchor="start" font-size="0.80" font-family="monospace" font-style="normal" font-weight="400">
++get_posy_dep(): int</text>
+<text x="38.376" y="18.672"  fill="#000000" text-anchor="start" font-size="0.80" font-family="monospace" font-style="normal" font-weight="400">
++nb_cases(): int</text>
+<text x="38.376" y="19.472"  fill="#000000" text-anchor="start" font-size="0.80" font-family="monospace" font-style="normal" font-weight="400">
++initialisation_gen(in pat:string,in met:string): void</text>
+<text x="38.376" y="20.272"  fill="#000000" text-anchor="start" font-size="0.80" font-family="monospace" font-style="normal" font-weight="400">
++iterer(in met:string=&quot;&quot;): void</text>
+<text x="38.376" y="21.072"  fill="#000000" text-anchor="start" font-size="0.80" font-family="monospace" font-style="normal" font-weight="400">
++get_patterne(): string</text>
+<text x="38.376" y="21.872"  fill="#000000" text-anchor="start" font-size="0.80" font-family="monospace" font-style="normal" font-weight="400">
++set_salle(in i:int,in j:int,in salle:int): void</text>
+<text x="38.376" y="22.672"  fill="#000000" text-anchor="start" font-size="0.80" font-family="monospace" font-style="normal" font-weight="400">
++valider(): void</text>
+<rect x="39.842" y="24.617" width="21.290" height="1.400" fill="#FFFFFF" stroke="none" stroke-width="0"/>
+<rect x="39.842" y="24.617" width="21.290" height="1.400" fill="none" stroke="#000000" stroke-width="0.100" />
+<text x="50.487" y="25.567"  fill="#000000" text-anchor="middle" font-size="1.00" font-family="sans" font-style="normal" font-weight="700">
+Salle</text>
+<rect x="39.842" y="26.017" width="21.290" height="2.600" fill="#FFFFFF" stroke="none" stroke-width="0"/>
+<rect x="39.842" y="26.017" width="21.290" height="2.600" fill="none" stroke="#000000" stroke-width="0.100" />
+<text x="39.992" y="26.717"  fill="#000000" text-anchor="start" font-size="0.80" font-family="monospace" font-style="normal" font-weight="400">
++grille: CaseSalle[nb_cases_largeur][nb_cases_hauteur]</text>
+<text x="39.992" y="27.517"  fill="#000000" text-anchor="start" font-size="0.80" font-family="monospace" font-style="normal" font-weight="400">
++config: int</text>
+<text x="39.992" y="28.317"  fill="#000000" text-anchor="start" font-size="0.80" font-family="monospace" font-style="normal" font-weight="400">
++difficulte: int</text>
+<rect x="39.842" y="28.617" width="21.290" height="10.600" fill="#FFFFFF" stroke="none" stroke-width="0"/>
+<rect x="39.842" y="28.617" width="21.290" height="10.600" fill="none" stroke="#000000" stroke-width="0.100" />
+<text x="39.992" y="29.317"  fill="#000000" text-anchor="start" font-size="0.80" font-family="monospace" font-style="normal" font-weight="400">
++Salle(): constructor</text>
+<text x="39.992" y="30.117"  fill="#000000" text-anchor="start" font-size="0.80" font-family="monospace" font-style="normal" font-weight="400">
++Salle(in conf:int): constructor</text>
+<text x="39.992" y="30.917"  fill="#000000" text-anchor="start" font-size="0.80" font-family="monospace" font-style="normal" font-weight="400">
++get_salle(in i:int,in j:int): CaseSalle</text>
+<text x="39.992" y="31.717"  fill="#000000" text-anchor="start" font-size="0.80" font-family="monospace" font-style="normal" font-weight="400">
++set_case(in i:int,in j:int,in c:CaseSalle): void</text>
+<text x="39.992" y="32.517"  fill="#000000" text-anchor="start" font-size="0.80" font-family="monospace" font-style="normal" font-weight="400">
++get_config(): int</text>
+<text x="39.992" y="33.317"  fill="#000000" text-anchor="start" font-size="0.80" font-family="monospace" font-style="normal" font-weight="400">
++set_config(in c:int): int</text>
+<text x="39.992" y="34.117"  fill="#000000" text-anchor="start" font-size="0.80" font-family="monospace" font-style="normal" font-weight="400">
++remplir(): void</text>
+<text x="39.992" y="34.917"  fill="#000000" text-anchor="start" font-size="0.80" font-family="monospace" font-style="normal" font-weight="400">
++vider(): void</text>
+<text x="39.992" y="35.717"  fill="#000000" text-anchor="start" font-size="0.80" font-family="monospace" font-style="normal" font-weight="400">
++operator =(in salle2:Salle): Salle</text>
+<text x="39.992" y="36.517"  fill="#000000" text-anchor="start" font-size="0.80" font-family="monospace" font-style="normal" font-weight="400">
++afficher(): void</text>
+<text x="39.992" y="37.317"  fill="#000000" text-anchor="start" font-size="0.80" font-family="monospace" font-style="normal" font-weight="400">
++get_nb_cases_largeur(): int</text>
+<text x="39.992" y="38.117"  fill="#000000" text-anchor="start" font-size="0.80" font-family="monospace" font-style="normal" font-weight="400">
++get_nb_cases_hauteur(): int</text>
+<text x="39.992" y="38.917"  fill="#000000" text-anchor="start" font-size="0.80" font-family="monospace" font-style="normal" font-weight="400">
++creer_ennemi(in nombre:int): void</text>
+<rect x="15.437" y="45.784" width="12.820" height="1.400" fill="#FFFFFF" stroke="none" stroke-width="0"/>
+<rect x="15.437" y="45.784" width="12.820" height="1.400" fill="none" stroke="#000000" stroke-width="0.100" />
+<text x="21.847" y="46.734"  fill="#000000" text-anchor="middle" font-size="1.00" font-family="sans" font-style="normal" font-weight="700">
+Fichier</text>
+<rect x="15.437" y="47.184" width="12.820" height="1.800" fill="#FFFFFF" stroke="none" stroke-width="0"/>
+<rect x="15.437" y="47.184" width="12.820" height="1.800" fill="none" stroke="#000000" stroke-width="0.100" />
+<text x="15.587" y="47.884"  fill="#000000" text-anchor="start" font-size="0.80" font-family="monospace" font-style="normal" font-weight="400">
+-chemin: string</text>
+<text x="15.587" y="48.684"  fill="#000000" text-anchor="start" font-size="0.80" font-family="monospace" font-style="normal" font-weight="400">
+-index_file: string</text>
+<rect x="15.437" y="48.984" width="12.820" height="7.400" fill="#FFFFFF" stroke="none" stroke-width="0"/>
+<rect x="15.437" y="48.984" width="12.820" height="7.400" fill="none" stroke="#000000" stroke-width="0.100" />
+<text x="15.587" y="49.684"  fill="#000000" text-anchor="start" font-size="0.80" font-family="monospace" font-style="normal" font-weight="400">
++Fichier(): constructor</text>
+<text x="15.587" y="50.484"  fill="#000000" text-anchor="start" font-size="0.80" font-family="monospace" font-style="normal" font-weight="400">
++creation_index(): void</text>
+<text x="15.587" y="51.284"  fill="#000000" text-anchor="start" font-size="0.80" font-family="monospace" font-style="normal" font-weight="400">
++charger(inout s:Salle): void</text>
+<text x="15.587" y="52.084"  fill="#000000" text-anchor="start" font-size="0.80" font-family="monospace" font-style="normal" font-weight="400">
++charger(inout z:ZoneGen): void</text>
+<text x="15.587" y="52.884"  fill="#000000" text-anchor="start" font-size="0.80" font-family="monospace" font-style="normal" font-weight="400">
++charger(inout z:Zone): void</text>
+<text x="15.587" y="53.684"  fill="#000000" text-anchor="start" font-size="0.80" font-family="monospace" font-style="normal" font-weight="400">
++charger(inout p:Perso): void</text>
+<text x="15.587" y="54.484"  fill="#000000" text-anchor="start" font-size="0.80" font-family="monospace" font-style="normal" font-weight="400">
++charger(inout a:Arme): void</text>
+<text x="15.587" y="55.284"  fill="#000000" text-anchor="start" font-size="0.80" font-family="monospace" font-style="normal" font-weight="400">
++charger(inout s:SalleGen): void</text>
+<text x="15.587" y="56.084"  fill="#000000" text-anchor="start" font-size="0.80" font-family="monospace" font-style="normal" font-weight="400">
++charger(inout e:Ennemi): void</text>
+<rect x="44.101" y="53.564" width="15.130" height="1.400" fill="#FFFFFF" stroke="none" stroke-width="0"/>
+<rect x="44.101" y="53.564" width="15.130" height="1.400" fill="none" stroke="#000000" stroke-width="0.100" />
+<text x="51.666" y="54.514"  fill="#000000" text-anchor="middle" font-size="1.00" font-family="sans" font-style="normal" font-weight="700">
+CaseSalle</text>
+<rect x="44.101" y="54.964" width="15.130" height="1.000" fill="#FFFFFF" stroke="none" stroke-width="0"/>
+<rect x="44.101" y="54.964" width="15.130" height="1.000" fill="none" stroke="#000000" stroke-width="0.100" />
+<text x="44.251" y="55.664"  fill="#000000" text-anchor="start" font-size="0.80" font-family="monospace" font-style="normal" font-weight="400">
++type: int</text>
+<rect x="44.101" y="55.964" width="15.130" height="5.800" fill="#FFFFFF" stroke="none" stroke-width="0"/>
+<rect x="44.101" y="55.964" width="15.130" height="5.800" fill="none" stroke="#000000" stroke-width="0.100" />
+<text x="44.251" y="56.664"  fill="#000000" text-anchor="start" font-size="0.80" font-family="monospace" font-style="normal" font-weight="400">
++CaseSalle(): constructor</text>
+<text x="44.251" y="57.464"  fill="#000000" text-anchor="start" font-size="0.80" font-family="monospace" font-style="normal" font-weight="400">
++CaseSalle(in t:int): constructor</text>
+<text x="44.251" y="58.264"  fill="#000000" text-anchor="start" font-size="0.80" font-family="monospace" font-style="normal" font-weight="400">
++operator =(in c:CaseSalle): CaseSalle</text>
+<text x="44.251" y="59.064"  fill="#000000" text-anchor="start" font-size="0.80" font-family="monospace" font-style="normal" font-weight="400">
++get_type(): int</text>
+<text x="44.251" y="59.864"  fill="#000000" text-anchor="start" font-size="0.80" font-family="monospace" font-style="normal" font-weight="400">
++get_type_string(): string</text>
+<text x="44.251" y="60.664"  fill="#000000" text-anchor="start" font-size="0.80" font-family="monospace" font-style="normal" font-weight="400">
++set_type(in t:int): int</text>
+<text x="44.251" y="61.464"  fill="#000000" text-anchor="start" font-size="0.80" font-family="monospace" font-style="normal" font-weight="400">
++()</text>
+<rect x="-24.279" y="27.941" width="16.285" height="1.400" fill="#FFFFFF" stroke="none" stroke-width="0"/>
+<rect x="-24.279" y="27.941" width="16.285" height="1.400" fill="none" stroke="#000000" stroke-width="0.100" />
+<text x="-16.137" y="28.891"  fill="#000000" text-anchor="middle" font-size="1.00" font-family="sans" font-style="normal" font-weight="700">
+Perso</text>
+<rect x="-24.279" y="29.341" width="16.285" height="8.200" fill="#FFFFFF" stroke="none" stroke-width="0"/>
+<rect x="-24.279" y="29.341" width="16.285" height="8.200" fill="none" stroke="#000000" stroke-width="0.100" />
+<text x="-24.129" y="30.041"  fill="#000000" text-anchor="start" font-size="0.80" font-family="monospace" font-style="normal" font-weight="400">
+-nom: string</text>
+<text x="-24.129" y="30.841"  fill="#000000" text-anchor="start" font-size="0.80" font-family="monospace" font-style="normal" font-weight="400">
+-angle_regard: float</text>
+<text x="-24.129" y="31.641"  fill="#000000" text-anchor="start" font-size="0.80" font-family="monospace" font-style="normal" font-weight="400">
+-vitesse: float</text>
+<text x="-24.129" y="32.441"  fill="#000000" text-anchor="start" font-size="0.80" font-family="monospace" font-style="normal" font-weight="400">
+-angle_mouvement: float</text>
+<text x="-24.129" y="33.241"  fill="#000000" text-anchor="start" font-size="0.80" font-family="monospace" font-style="normal" font-weight="400">
+-pos_x: float</text>
+<text x="-24.129" y="34.041"  fill="#000000" text-anchor="start" font-size="0.80" font-family="monospace" font-style="normal" font-weight="400">
+-pos_y: float</text>
+<text x="-24.129" y="34.841"  fill="#000000" text-anchor="start" font-size="0.80" font-family="monospace" font-style="normal" font-weight="400">
+-pv_max: float</text>
+<text x="-24.129" y="35.641"  fill="#000000" text-anchor="start" font-size="0.80" font-family="monospace" font-style="normal" font-weight="400">
+-pv_actuel: float</text>
+<text x="-24.129" y="36.441"  fill="#000000" text-anchor="start" font-size="0.80" font-family="monospace" font-style="normal" font-weight="400">
+-arme1: Arme</text>
+<text x="-24.129" y="37.241"  fill="#000000" text-anchor="start" font-size="0.80" font-family="monospace" font-style="normal" font-weight="400">
+-arme2: Arme</text>
+<rect x="-24.279" y="37.541" width="16.285" height="11.400" fill="#FFFFFF" stroke="none" stroke-width="0"/>
+<rect x="-24.279" y="37.541" width="16.285" height="11.400" fill="none" stroke="#000000" stroke-width="0.100" />
+<text x="-24.129" y="38.241"  fill="#000000" text-anchor="start" font-size="0.80" font-family="monospace" font-style="normal" font-weight="400">
++Perso(): constructor</text>
+<text x="-24.129" y="39.041"  fill="#000000" text-anchor="start" font-size="0.80" font-family="monospace" font-style="normal" font-weight="400">
++Perso(in s:string): constructor</text>
+<text x="-24.129" y="39.841"  fill="#000000" text-anchor="start" font-size="0.80" font-family="monospace" font-style="normal" font-weight="400">
++get_nom(): string</text>
+<text x="-24.129" y="40.641"  fill="#000000" text-anchor="start" font-size="0.80" font-family="monospace" font-style="normal" font-weight="400">
++get_angle_regard(): float</text>
+<text x="-24.129" y="41.441"  fill="#000000" text-anchor="start" font-size="0.80" font-family="monospace" font-style="normal" font-weight="400">
++get_vitesse(): float</text>
+<text x="-24.129" y="42.241"  fill="#000000" text-anchor="start" font-size="0.80" font-family="monospace" font-style="normal" font-weight="400">
++get_angle_mouvement(): float</text>
+<text x="-24.129" y="43.041"  fill="#000000" text-anchor="start" font-size="0.80" font-family="monospace" font-style="normal" font-weight="400">
++get_posx(): float</text>
+<text x="-24.129" y="43.841"  fill="#000000" text-anchor="start" font-size="0.80" font-family="monospace" font-style="normal" font-weight="400">
++get_posy(): float</text>
+<text x="-24.129" y="44.641"  fill="#000000" text-anchor="start" font-size="0.80" font-family="monospace" font-style="normal" font-weight="400">
++get_pv_max(): float</text>
+<text x="-24.129" y="45.441"  fill="#000000" text-anchor="start" font-size="0.80" font-family="monospace" font-style="normal" font-weight="400">
++get_pv_actuel(): float</text>
+<text x="-24.129" y="46.241"  fill="#000000" text-anchor="start" font-size="0.80" font-family="monospace" font-style="normal" font-weight="400">
++deplacement(in x:float,in y:float): void</text>
+<text x="-24.129" y="47.041"  fill="#000000" text-anchor="start" font-size="0.80" font-family="monospace" font-style="normal" font-weight="400">
++rotation(in x:float,in y:float): void</text>
+<text x="-24.129" y="47.841"  fill="#000000" text-anchor="start" font-size="0.80" font-family="monospace" font-style="normal" font-weight="400">
++tirer1(): void</text>
+<text x="-24.129" y="48.641"  fill="#000000" text-anchor="start" font-size="0.80" font-family="monospace" font-style="normal" font-weight="400">
++tirer2(): void</text>
+<polyline fill="none" stroke="#000000" stroke-width="0.100"  points="19.882,21.119 19.882,24.655 21.756,24.655 21.756,28.302 "/>
+<polygon fill="#FFFFFF" stroke="none" stroke-width="0.100" points="20.282,21.119 19.882,20.319 19.482,21.119 "/>
+<polygon fill="none" stroke="#000000" stroke-width="0.100"  points="20.282,21.119 19.882,20.319 19.482,21.119 "/>
+<polyline fill="none" stroke="#000000" stroke-width="0.100" stroke-dasharray="0.40,0.40" points="37.264,14.872 34.458,14.872 34.458,12.857 31.540,12.857 "/>
+<polygon fill="#FFFFFF" stroke="none" stroke-width="0.100" points="37.264,15.272 38.064,14.872 37.264,14.472 "/>
+<polygon fill="none" stroke="#000000" stroke-width="0.100"  points="37.264,15.272 38.064,14.872 37.264,14.472 "/>
+<polyline fill="none" stroke="#000000" stroke-width="0.100"  points="38.880,31.917 35.240,31.917 35.240,18.857 31.489,18.857 "/>
+<polygon fill="#FFFFFF" stroke="none" stroke-width="0.100" points="38.880,32.317 39.680,31.917 38.880,31.517 "/>
+<polygon fill="none" stroke="#000000" stroke-width="0.100"  points="38.880,32.317 39.680,31.917 38.880,31.517 "/>
+<polyline fill="none" stroke="#000000" stroke-width="0.100"  points="51.666,52.602 51.666,45.990 50.487,45.990 50.487,39.268 "/>
+<polygon fill="#FFFFFF" stroke="none" stroke-width="0.100" points="51.266,52.602 51.666,53.402 52.066,52.602 "/>
+<polygon fill="none" stroke="#000000" stroke-width="0.100"  points="51.266,52.602 51.666,53.402 52.066,52.602 "/>
+<rect x="54.593" y="48.022" width="18.980" height="1.400" fill="#FFFFFF" stroke="none" stroke-width="0"/>
+<rect x="54.593" y="48.022" width="18.980" height="1.400" fill="none" stroke="#000000" stroke-width="0.100" />
+<text x="64.083" y="48.972"  fill="#000000" text-anchor="middle" font-size="1.00" font-family="sans" font-style="normal" font-weight="700">
+SalleGen(en cours)</text>
+<rect x="54.593" y="49.422" width="18.980" height="1.000" fill="#FFFFFF" stroke="none" stroke-width="0"/>
+<rect x="54.593" y="49.422" width="18.980" height="1.000" fill="none" stroke="#000000" stroke-width="0.100" />
+<text x="54.743" y="50.122"  fill="#000000" text-anchor="start" font-size="0.80" font-family="monospace" font-style="normal" font-weight="400">
++grille: int[nb_cases_largeur][nb_cases_hauteur]</text>
+<rect x="54.593" y="50.422" width="18.980" height="1.000" fill="#FFFFFF" stroke="none" stroke-width="0"/>
+<rect x="54.593" y="50.422" width="18.980" height="1.000" fill="none" stroke="#000000" stroke-width="0.100" />
+<text x="54.743" y="51.122"  fill="#000000" text-anchor="start" font-size="0.80" font-family="monospace" font-style="normal" font-weight="400">
++SalleGen(): constructor</text>
+<polyline fill="none" stroke="#000000" stroke-width="0.100" stroke-dasharray="0.40,0.40" points="64.083,47.060 64.083,35.517 61.132,35.517 "/>
+<polygon fill="#FFFFFF" stroke="none" stroke-width="0.100" points="63.683,47.060 64.083,47.860 64.483,47.060 "/>
+<polygon fill="none" stroke="#000000" stroke-width="0.100"  points="63.683,47.060 64.083,47.860 64.483,47.060 "/>
+<rect x="-23.764" y="13.688" width="12.050" height="1.400" fill="#FFFFFF" stroke="none" stroke-width="0"/>
+<rect x="-23.764" y="13.688" width="12.050" height="1.400" fill="none" stroke="#000000" stroke-width="0.100" />
+<text x="-17.739" y="14.638"  fill="#000000" text-anchor="middle" font-size="1.00" font-family="sans" font-style="normal" font-weight="700">
+Arme</text>
+<rect x="-23.764" y="15.088" width="12.050" height="3.400" fill="#FFFFFF" stroke="none" stroke-width="0"/>
+<rect x="-23.764" y="15.088" width="12.050" height="3.400" fill="none" stroke="#000000" stroke-width="0.100" />
+<text x="-23.614" y="15.788"  fill="#000000" text-anchor="start" font-size="0.80" font-family="monospace" font-style="normal" font-weight="400">
++nom: string</text>
+<text x="-23.614" y="16.588"  fill="#000000" text-anchor="start" font-size="0.80" font-family="monospace" font-style="normal" font-weight="400">
++degat: int</text>
+<text x="-23.614" y="17.388"  fill="#000000" text-anchor="start" font-size="0.80" font-family="monospace" font-style="normal" font-weight="400">
++nb_munition_total: int</text>
+<text x="-23.614" y="18.188"  fill="#000000" text-anchor="start" font-size="0.80" font-family="monospace" font-style="normal" font-weight="400">
++nb_munition_actuel: int</text>
+<rect x="-23.764" y="18.488" width="12.050" height="5.800" fill="#FFFFFF" stroke="none" stroke-width="0"/>
+<rect x="-23.764" y="18.488" width="12.050" height="5.800" fill="none" stroke="#000000" stroke-width="0.100" />
+<text x="-23.614" y="19.188"  fill="#000000" text-anchor="start" font-size="0.80" font-family="monospace" font-style="normal" font-weight="400">
++Arme(): constructor</text>
+<text x="-23.614" y="19.988"  fill="#000000" text-anchor="start" font-size="0.80" font-family="monospace" font-style="normal" font-weight="400">
++tirer(in i:int=1): void</text>
+<text x="-23.614" y="20.788"  fill="#000000" text-anchor="start" font-size="0.80" font-family="monospace" font-style="normal" font-weight="400">
++get_degat(): int</text>
+<text x="-23.614" y="21.588"  fill="#000000" text-anchor="start" font-size="0.80" font-family="monospace" font-style="normal" font-weight="400">
++get_munition_actuelle(): void</text>
+<text x="-23.614" y="22.388"  fill="#000000" text-anchor="start" font-size="0.80" font-family="monospace" font-style="normal" font-weight="400">
++get_munitions_total()</text>
+<text x="-23.614" y="23.188"  fill="#000000" text-anchor="start" font-size="0.80" font-family="monospace" font-style="normal" font-weight="400">
++get_munition_actuel(): void</text>
+<text x="-23.614" y="23.988"  fill="#000000" text-anchor="start" font-size="0.80" font-family="monospace" font-style="normal" font-weight="400">
++get_nom(): void</text>
+<polyline fill="none" stroke="#000000" stroke-width="0.100"  points="-17.739,25.250 -17.739,26.515 -16.137,26.515 -16.137,27.891 "/>
+<polygon fill="#FFFFFF" stroke="none" stroke-width="0.100" points="-17.339,25.250 -17.739,24.450 -18.139,25.250 "/>
+<polygon fill="none" stroke="#000000" stroke-width="0.100"  points="-17.339,25.250 -17.739,24.450 -18.139,25.250 "/>
+<rect x="24.532" y="58.943" width="9.355" height="1.400" fill="#FFFFFF" stroke="none" stroke-width="0"/>
+<rect x="24.532" y="58.943" width="9.355" height="1.400" fill="none" stroke="#000000" stroke-width="0.100" />
+<text x="29.209" y="59.893"  fill="#000000" text-anchor="middle" font-size="1.00" font-family="sans" font-style="normal" font-weight="700">
+Ennemi</text>
+<rect x="24.532" y="60.343" width="9.355" height="5.800" fill="#FFFFFF" stroke="none" stroke-width="0"/>
+<rect x="24.532" y="60.343" width="9.355" height="5.800" fill="none" stroke="#000000" stroke-width="0.100" />
+<text x="24.682" y="61.043"  fill="#000000" text-anchor="start" font-size="0.80" font-family="monospace" font-style="normal" font-weight="400">
++niveau: int</text>
+<text x="24.682" y="61.843"  fill="#000000" text-anchor="start" font-size="0.80" font-family="monospace" font-style="normal" font-weight="400">
++type: int</text>
+<text x="24.682" y="62.643"  fill="#000000" text-anchor="start" font-size="0.80" font-family="monospace" font-style="normal" font-weight="400">
++arme: Arme</text>
+<text x="24.682" y="63.443"  fill="#000000" text-anchor="start" font-size="0.80" font-family="monospace" font-style="normal" font-weight="400">
++pv_max: float</text>
+<text x="24.682" y="64.243"  fill="#000000" text-anchor="start" font-size="0.80" font-family="monospace" font-style="normal" font-weight="400">
++pv_actuel: float</text>
+<text x="24.682" y="65.043"  fill="#000000" text-anchor="start" font-size="0.80" font-family="monospace" font-style="normal" font-weight="400">
++pos_x: float</text>
+<text x="24.682" y="65.843"  fill="#000000" text-anchor="start" font-size="0.80" font-family="monospace" font-style="normal" font-weight="400">
++pos_y: float</text>
+<rect x="24.532" y="66.143" width="9.355" height="5.800" fill="#FFFFFF" stroke="none" stroke-width="0"/>
+<rect x="24.532" y="66.143" width="9.355" height="5.800" fill="none" stroke="#000000" stroke-width="0.100" />
+<text x="24.682" y="66.843"  fill="#000000" text-anchor="start" font-size="0.80" font-family="monospace" font-style="normal" font-weight="400">
++Ennemi(): constructor</text>
+<text x="24.682" y="67.643"  fill="#000000" text-anchor="start" font-size="0.80" font-family="monospace" font-style="normal" font-weight="400">
++get_pos_x(): float</text>
+<text x="24.682" y="68.443"  fill="#000000" text-anchor="start" font-size="0.80" font-family="monospace" font-style="normal" font-weight="400">
++get_pos_y(): float</text>
+<text x="24.682" y="69.243"  fill="#000000" text-anchor="start" font-size="0.80" font-family="monospace" font-style="normal" font-weight="400">
++get_pv_max(): float</text>
+<text x="24.682" y="70.043"  fill="#000000" text-anchor="start" font-size="0.80" font-family="monospace" font-style="normal" font-weight="400">
++get_pv_actuel(): float</text>
+<text x="24.682" y="70.843"  fill="#000000" text-anchor="start" font-size="0.80" font-family="monospace" font-style="normal" font-weight="400">
++get_type(): int</text>
+<text x="24.682" y="71.643"  fill="#000000" text-anchor="start" font-size="0.80" font-family="monospace" font-style="normal" font-weight="400">
++get_arme(): Arme</text>
+<polyline fill="none" stroke="#000000" stroke-width="0.100" stroke-dasharray="0.40,0.40" points="34.799,58.943 37.264,58.943 37.264,34.717 39.842,34.717 "/>
+<polygon fill="#FFFFFF" stroke="none" stroke-width="0.100" points="34.799,58.543 33.999,58.943 34.799,59.343 "/>
+<polygon fill="none" stroke="#000000" stroke-width="0.100"  points="34.799,58.543 33.999,58.943 34.799,59.343 "/>
+<polyline fill="none" stroke="#000000" stroke-width="0.100"  points="-7.032,38.441 5.327,38.441 5.327,32.053 17.798,32.053 "/>
+<polygon fill="#FFFFFF" stroke="none" stroke-width="0.100" points="-7.032,38.041 -7.832,38.441 -7.032,38.841 "/>
+<polygon fill="none" stroke="#000000" stroke-width="0.100"  points="-7.032,38.041 -7.832,38.441 -7.032,38.841 "/>
+<polyline fill="none" stroke="#000000" stroke-width="0.100" stroke-dasharray="0.40,0.40" points="14.525,55.884 13.587,55.884 13.587,65.443 24.482,65.443 "/>
+<polygon fill="#FFFFFF" stroke="none" stroke-width="0.100" points="14.525,56.284 15.325,55.884 14.525,55.484 "/>
+<polygon fill="none" stroke="#000000" stroke-width="0.100"  points="14.525,56.284 15.325,55.884 14.525,55.484 "/>
+<polyline fill="none" stroke="#000000" stroke-width="0.100" stroke-dasharray="0.40,0.40" points="29.219,51.084 41.825,51.084 41.825,49.722 54.543,49.722 "/>
+<polygon fill="#FFFFFF" stroke="none" stroke-width="0.100" points="29.219,50.684 28.419,51.084 29.219,51.484 "/>
+<polygon fill="none" stroke="#000000" stroke-width="0.100"  points="29.219,50.684 28.419,51.084 29.219,51.484 "/>
+<polyline fill="none" stroke="#000000" stroke-width="0.100" stroke-dasharray="0.40,0.40" points="14.475,51.084 12.350,51.084 12.350,38.717 39.842,38.717 "/>
+<polygon fill="#FFFFFF" stroke="none" stroke-width="0.100" points="14.475,51.484 15.275,51.084 14.475,50.684 "/>
+<polygon fill="none" stroke="#000000" stroke-width="0.100"  points="14.475,51.484 15.275,51.084 14.475,50.684 "/>
+<polyline fill="none" stroke="#000000" stroke-width="0.100" stroke-dasharray="0.40,0.40" points="14.525,53.484 10.087,53.484 10.087,21.672 38.226,21.672 "/>
+<polygon fill="#FFFFFF" stroke="none" stroke-width="0.100" points="14.525,53.884 15.325,53.484 14.525,53.084 "/>
+<polygon fill="none" stroke="#000000" stroke-width="0.100"  points="14.525,53.884 15.325,53.484 14.525,53.084 "/>
+<polyline fill="none" stroke="#000000" stroke-width="0.100" stroke-dasharray="0.40,0.40" points="14.525,48.484 9.026,48.484 9.026,41.241 -7.994,41.241 "/>
+<polygon fill="#FFFFFF" stroke="none" stroke-width="0.100" points="14.525,48.884 15.325,48.484 14.525,48.084 "/>
+<polygon fill="none" stroke="#000000" stroke-width="0.100"  points="14.525,48.884 15.325,48.484 14.525,48.084 "/>
+<polyline fill="none" stroke="#000000" stroke-width="0.100" stroke-dasharray="0.40,0.40" points="14.525,46.484 6.834,46.484 6.834,18.988 -11.664,18.988 "/>
+<polygon fill="#FFFFFF" stroke="none" stroke-width="0.100" points="14.525,46.884 15.325,46.484 14.525,46.084 "/>
+<polygon fill="none" stroke="#000000" stroke-width="0.100"  points="14.525,46.884 15.325,46.484 14.525,46.084 "/>
+<polyline fill="none" stroke="#000000" stroke-width="0.100" stroke-dasharray="0.40,0.40" points="29.169,47.684 32.539,47.684 32.539,15.657 31.489,15.657 "/>
+<polygon fill="#FFFFFF" stroke="none" stroke-width="0.100" points="29.169,47.284 28.369,47.684 29.169,48.084 "/>
+<polygon fill="none" stroke="#000000" stroke-width="0.100"  points="29.169,47.284 28.369,47.684 29.169,48.084 "/>
+<rect x="-5.695" y="19.899" width="10.125" height="1.400" fill="#FFFFFF" stroke="none" stroke-width="0"/>
+<rect x="-5.695" y="19.899" width="10.125" height="1.400" fill="none" stroke="#0000FF" stroke-width="0.100" />
+<text x="-0.632" y="20.849"  fill="#000000" text-anchor="middle" font-size="1.00" font-family="sans" font-style="normal" font-weight="700">
+JeuSFML</text>
+<rect x="-5.695" y="21.299" width="10.125" height="5.800" fill="#FFFFFF" stroke="none" stroke-width="0"/>
+<rect x="-5.695" y="21.299" width="10.125" height="5.800" fill="none" stroke="#0000FF" stroke-width="0.100" />
+<text x="-5.545" y="21.999"  fill="#000000" text-anchor="start" font-size="0.80" font-family="monospace" font-style="normal" font-weight="400">
+-window: RenderWindow</text>
+<text x="-5.545" y="22.799"  fill="#000000" text-anchor="start" font-size="0.80" font-family="monospace" font-style="normal" font-weight="400">
+-desktop: VideoMode</text>
+<text x="-5.545" y="23.599"  fill="#000000" text-anchor="start" font-size="0.80" font-family="monospace" font-style="normal" font-weight="400">
+-scale_salle_largeur: int</text>
+<text x="-5.545" y="24.399"  fill="#000000" text-anchor="start" font-size="0.80" font-family="monospace" font-style="normal" font-weight="400">
+-scale_salle_hauteur: int</text>
+<text x="-5.545" y="25.199"  fill="#000000" text-anchor="start" font-size="0.80" font-family="monospace" font-style="normal" font-weight="400">
+-posx0_salle: int</text>
+<text x="-5.545" y="25.999"  fill="#000000" text-anchor="start" font-size="0.80" font-family="monospace" font-style="normal" font-weight="400">
+-posy0_salle: int</text>
+<text x="-5.545" y="26.799"  fill="#000000" text-anchor="start" font-size="0.80" font-family="monospace" font-style="normal" font-weight="400">
+-jeu: Jeu</text>
+<rect x="-5.695" y="27.099" width="10.125" height="5.000" fill="#FFFFFF" stroke="none" stroke-width="0"/>
+<rect x="-5.695" y="27.099" width="10.125" height="5.000" fill="none" stroke="#0000FF" stroke-width="0.100" />
+<text x="-5.545" y="27.799"  fill="#000000" text-anchor="start" font-size="0.80" font-family="monospace" font-style="normal" font-weight="400">
++JeuSFML(): constructor</text>
+<text x="-5.545" y="28.599"  fill="#000000" text-anchor="start" font-size="0.80" font-family="monospace" font-style="normal" font-weight="400">
++SFML_boucle(): void</text>
+<text x="-5.545" y="29.399"  fill="#000000" text-anchor="start" font-size="0.80" font-family="monospace" font-style="normal" font-weight="400">
+-afficher_carte(): void</text>
+<text x="-5.545" y="30.199"  fill="#000000" text-anchor="start" font-size="0.80" font-family="monospace" font-style="normal" font-weight="400">
+-afficher_salle(): void</text>
+<text x="-5.545" y="30.999"  fill="#000000" text-anchor="start" font-size="0.80" font-family="monospace" font-style="normal" font-weight="400">
+-afficher_perso(): void</text>
+<text x="-5.545" y="31.799"  fill="#000000" text-anchor="start" font-size="0.80" font-family="monospace" font-style="normal" font-weight="400">
+-afficher_ennemi(): void</text>
+<rect x="40.323" y="63.103" width="20.905" height="1.400" fill="#FFFFFF" stroke="none" stroke-width="0"/>
+<rect x="40.323" y="63.103" width="20.905" height="1.400" fill="none" stroke="#0000FF" stroke-width="0.100" />
+<text x="50.776" y="64.053"  fill="#000000" text-anchor="middle" font-size="1.00" font-family="sans" font-style="normal" font-weight="700">
+CasesSFML</text>
+<rect x="40.323" y="64.503" width="20.905" height="2.600" fill="#FFFFFF" stroke="none" stroke-width="0"/>
+<rect x="40.323" y="64.503" width="20.905" height="2.600" fill="none" stroke="#0000FF" stroke-width="0.100" />
+<text x="40.473" y="65.203"  fill="#000000" text-anchor="start" font-size="0.80" font-family="monospace" font-style="normal" font-weight="400">
++casesfml: VertexArray</text>
+<text x="40.473" y="66.003"  fill="#000000" text-anchor="start" font-size="0.80" font-family="monospace" font-style="normal" font-weight="400">
++texture: Texture</text>
+<text x="40.473" y="66.803"  fill="#000000" text-anchor="start" font-size="0.80" font-family="monospace" font-style="normal" font-weight="400">
++states: RenderStates</text>
+<rect x="40.323" y="67.103" width="20.905" height="5.000" fill="#FFFFFF" stroke="none" stroke-width="0"/>
+<rect x="40.323" y="67.103" width="20.905" height="5.000" fill="none" stroke="#0000FF" stroke-width="0.100" />
+<text x="40.473" y="67.803"  fill="#000000" text-anchor="start" font-size="0.80" font-family="monospace" font-style="normal" font-weight="400">
++CaseSFML(): constructor</text>
+<text x="40.473" y="68.603"  fill="#000000" text-anchor="start" font-size="0.80" font-family="monospace" font-style="normal" font-weight="400">
++CaseSFML(in posX:int,in posY:int,in largeur:int,</text>
+<text x="40.473" y="69.403"  fill="#000000" text-anchor="start" font-size="0.80" font-family="monospace" font-style="normal" font-weight="400">
+          in hauteur:int,in type:string): constructor</text>
+<text x="40.473" y="70.203"  fill="#000000" text-anchor="start" font-size="0.80" font-family="monospace" font-style="normal" font-weight="400">
++get_casesfml(): VertexArray</text>
+<text x="40.473" y="71.003"  fill="#000000" text-anchor="start" font-size="0.80" font-family="monospace" font-style="normal" font-weight="400">
++get_texture(): Texture</text>
+<text x="40.473" y="71.803"  fill="#000000" text-anchor="start" font-size="0.80" font-family="monospace" font-style="normal" font-weight="400">
++get_states(): RenderStates</text>
+<rect x="-17.388" y="4.130" width="21.290" height="1.400" fill="#FFFFFF" stroke="none" stroke-width="0"/>
+<rect x="-17.388" y="4.130" width="21.290" height="1.400" fill="none" stroke="#0000FF" stroke-width="0.100" />
+<text x="-6.743" y="5.080"  fill="#000000" text-anchor="middle" font-size="1.00" font-family="sans" font-style="normal" font-weight="700">
+CarteSFML</text>
+<rect x="-17.388" y="5.530" width="21.290" height="2.600" fill="#FFFFFF" stroke="none" stroke-width="0"/>
+<rect x="-17.388" y="5.530" width="21.290" height="2.600" fill="none" stroke="#0000FF" stroke-width="0.100" />
+<text x="-17.238" y="6.230"  fill="#000000" text-anchor="start" font-size="0.80" font-family="monospace" font-style="normal" font-weight="400">
+-sallesfml: VertexArray</text>
+<text x="-17.238" y="7.030"  fill="#000000" text-anchor="start" font-size="0.80" font-family="monospace" font-style="normal" font-weight="400">
+-texture: Texture</text>
+<text x="-17.238" y="7.830"  fill="#000000" text-anchor="start" font-size="0.80" font-family="monospace" font-style="normal" font-weight="400">
+-states: RenderStates</text>
+<rect x="-17.388" y="8.130" width="21.290" height="5.000" fill="#FFFFFF" stroke="none" stroke-width="0"/>
+<rect x="-17.388" y="8.130" width="21.290" height="5.000" fill="none" stroke="#0000FF" stroke-width="0.100" />
+<text x="-17.238" y="8.830"  fill="#000000" text-anchor="start" font-size="0.80" font-family="monospace" font-style="normal" font-weight="400">
++CarteSFML(): constructor</text>
+<text x="-17.238" y="9.630"  fill="#000000" text-anchor="start" font-size="0.80" font-family="monospace" font-style="normal" font-weight="400">
++CarteSFML(in posX:int,in posY:int,in hauteur:int,</text>
+<text x="-17.238" y="10.430"  fill="#000000" text-anchor="start" font-size="0.80" font-family="monospace" font-style="normal" font-weight="400">
+           in largeur:int,in type:string): constructor</text>
+<text x="-17.238" y="11.230"  fill="#000000" text-anchor="start" font-size="0.80" font-family="monospace" font-style="normal" font-weight="400">
++get_sallesfml(): VertexArray</text>
+<text x="-17.238" y="12.030"  fill="#000000" text-anchor="start" font-size="0.80" font-family="monospace" font-style="normal" font-weight="400">
++get_texture(): Texture</text>
+<text x="-17.238" y="12.830"  fill="#000000" text-anchor="start" font-size="0.80" font-family="monospace" font-style="normal" font-weight="400">
++get_states(): RenderStates</text>
+<rect x="-15.408" y="55.325" width="19.365" height="1.400" fill="#FFFFFF" stroke="none" stroke-width="0"/>
+<rect x="-15.408" y="55.325" width="19.365" height="1.400" fill="none" stroke="#0000FF" stroke-width="0.100" />
+<text x="-5.725" y="56.275"  fill="#000000" text-anchor="middle" font-size="1.00" font-family="sans" font-style="normal" font-weight="700">
+PersoSFML</text>
+<rect x="-15.408" y="56.725" width="19.365" height="2.600" fill="#FFFFFF" stroke="none" stroke-width="0"/>
+<rect x="-15.408" y="56.725" width="19.365" height="2.600" fill="none" stroke="#0000FF" stroke-width="0.100" />
+<text x="-15.258" y="57.425"  fill="#000000" text-anchor="start" font-size="0.80" font-family="monospace" font-style="normal" font-weight="400">
++persosfml: VertexArray</text>
+<text x="-15.258" y="58.225"  fill="#000000" text-anchor="start" font-size="0.80" font-family="monospace" font-style="normal" font-weight="400">
++texure: Texture</text>
+<text x="-15.258" y="59.025"  fill="#000000" text-anchor="start" font-size="0.80" font-family="monospace" font-style="normal" font-weight="400">
++states: RenderStates</text>
+<rect x="-15.408" y="59.325" width="19.365" height="1.800" fill="#FFFFFF" stroke="none" stroke-width="0"/>
+<rect x="-15.408" y="59.325" width="19.365" height="1.800" fill="none" stroke="#0000FF" stroke-width="0.100" />
+<text x="-15.258" y="60.025"  fill="#000000" text-anchor="start" font-size="0.80" font-family="monospace" font-style="normal" font-weight="400">
++PersoSFML(): constructor</text>
+<text x="-15.258" y="60.825"  fill="#000000" text-anchor="start" font-size="0.80" font-family="monospace" font-style="normal" font-weight="400">
++PersoSFML(in posX:int,in posY:int,): constructor</text>
+<polyline fill="none" stroke="#0000FF" stroke-width="0.100" stroke-dasharray="0.40,0.40" points="-16.319,60.625 -17.258,60.625 -17.258,54.833 -16.137,54.833 -16.137,48.992 "/>
+<polygon fill="#FFFFFF" stroke="none" stroke-width="0.100" points="-16.319,61.025 -15.519,60.625 -16.319,60.225 "/>
+<polygon fill="none" stroke="#0000FF" stroke-width="0.100"  points="-16.319,61.025 -15.519,60.625 -16.319,60.225 "/>
+<polyline fill="none" stroke="#0000FF" stroke-width="0.100" stroke-dasharray="0.40,0.40" points="16.937,29.053 10.739,29.053 10.739,29.199 4.430,29.199 "/>
+<polygon fill="#FFFFFF" stroke="none" stroke-width="0.100" points="16.937,29.453 17.737,29.053 16.937,28.653 "/>
+<polygon fill="none" stroke="#0000FF" stroke-width="0.100"  points="16.937,29.453 17.737,29.053 16.937,28.653 "/>
+<polyline fill="none" stroke="#0000FF" stroke-width="0.100" stroke-dasharray="0.40,0.40" points="4.814,4.830 34.078,4.830 34.078,9.857 31.489,9.857 "/>
+<polygon fill="#FFFFFF" stroke="none" stroke-width="0.100" points="4.814,4.430 4.014,4.830 4.814,5.230 "/>
+<polygon fill="none" stroke="#0000FF" stroke-width="0.100"  points="4.814,4.430 4.014,4.830 4.814,5.230 "/>
+<polyline fill="none" stroke="#0000FF" stroke-width="0.100" stroke-dasharray="0.40,0.40" points="62.140,71.603 63.647,71.603 63.647,57.664 59.281,57.664 "/>
+<polygon fill="#FFFFFF" stroke="none" stroke-width="0.100" points="62.140,71.203 61.340,71.603 62.140,72.003 "/>
+<polygon fill="none" stroke="#0000FF" stroke-width="0.100"  points="62.140,71.203 61.340,71.603 62.140,72.003 "/>
+<polyline fill="none" stroke="#0000FF" stroke-width="0.100" stroke-dasharray="0.40,0.40" points="5.342,29.999 5.935,29.999 5.935,58.225 4.006,58.225 "/>
+<polygon fill="#FFFFFF" stroke="none" stroke-width="0.100" points="5.342,29.599 4.542,29.999 5.342,30.399 "/>
+<polygon fill="none" stroke="#0000FF" stroke-width="0.100"  points="5.342,29.599 4.542,29.999 5.342,30.399 "/>
+<polyline fill="none" stroke="#0000FF" stroke-width="0.100" stroke-dasharray="0.40,0.40" points="5.342,26.599 37.896,26.599 37.896,66.603 40.323,66.603 "/>
+<polygon fill="#FFFFFF" stroke="none" stroke-width="0.100" points="5.342,26.199 4.542,26.599 5.342,26.999 "/>
+<polygon fill="none" stroke="#0000FF" stroke-width="0.100"  points="5.342,26.199 4.542,26.599 5.342,26.999 "/>
+<polyline fill="none" stroke="#0000FF" stroke-width="0.100" stroke-dasharray="0.40,0.40" points="-6.656,25.999 -6.510,25.999 -6.510,11.830 -17.388,11.830 "/>
+<polygon fill="#FFFFFF" stroke="none" stroke-width="0.100" points="-6.656,26.399 -5.856,25.999 -6.656,25.599 "/>
+<polygon fill="none" stroke="#0000FF" stroke-width="0.100"  points="-6.656,26.399 -5.856,25.999 -6.656,25.599 "/>
+<rect x="4.238" y="68.194" width="10.850" height="1.400" fill="#FFFFFF" stroke="none" stroke-width="0"/>
+<rect x="4.238" y="68.194" width="10.850" height="1.400" fill="none" stroke="#0000FF" stroke-width="0.100" />
+<text x="9.663" y="69.144"  fill="#000000" text-anchor="middle" font-size="1.00" font-family="sans" font-style="normal" font-weight="700">
+EnnemiSFML(en cours)</text>
+<rect x="4.238" y="69.594" width="10.850" height="0.400" fill="#FFFFFF" stroke="none" stroke-width="0"/>
+<rect x="4.238" y="69.594" width="10.850" height="0.400" fill="none" stroke="#0000FF" stroke-width="0.100" />
+<rect x="4.238" y="69.994" width="10.850" height="0.400" fill="#FFFFFF" stroke="none" stroke-width="0"/>
+<rect x="4.238" y="69.994" width="10.850" height="0.400" fill="none" stroke="#0000FF" stroke-width="0.100" />
+<polyline fill="none" stroke="#0000FF" stroke-width="0.100" stroke-dasharray="0.40,0.40" points="23.620,69.843 19.435,69.843 19.435,69.294 15.138,69.294 "/>
+<polygon fill="#FFFFFF" stroke="none" stroke-width="0.100" points="23.620,70.243 24.420,69.843 23.620,69.443 "/>
+<polygon fill="none" stroke="#0000FF" stroke-width="0.100"  points="23.620,70.243 24.420,69.843 23.620,69.443 "/>
+<rect x="21.633" y="41.183" width="8.203" height="1.400" fill="#FFFFFF" stroke="none" stroke-width="0"/>
+<rect x="21.633" y="41.183" width="8.203" height="1.400" fill="none" stroke="#008000" stroke-width="0.100" />
+<text x="25.734" y="42.133"  fill="#000000" text-anchor="middle" font-size="1.00" font-family="sans" font-style="normal" font-weight="700">
+JeuTXT(en cours)</text>
+<rect x="21.633" y="42.583" width="8.203" height="0.400" fill="#FFFFFF" stroke="none" stroke-width="0"/>
+<rect x="21.633" y="42.583" width="8.203" height="0.400" fill="none" stroke="#008000" stroke-width="0.100" />
+<rect x="21.633" y="42.983" width="8.203" height="0.400" fill="#FFFFFF" stroke="none" stroke-width="0"/>
+<rect x="21.633" y="42.983" width="8.203" height="0.400" fill="none" stroke="#008000" stroke-width="0.100" />
+<polyline fill="none" stroke="#008000" stroke-width="0.100" stroke-dasharray="0.40,0.40" points="26.575,33.653 30.885,33.653 30.885,41.883 29.835,41.883 "/>
+<polygon fill="#FFFFFF" stroke="none" stroke-width="0.100" points="26.575,33.253 25.775,33.653 26.575,34.053 "/>
+<polygon fill="none" stroke="#008000" stroke-width="0.100"  points="26.575,33.253 25.775,33.653 26.575,34.053 "/>
+<rect x="0.278" y="63.810" width="10.130" height="1.400" fill="#FFFFFF" stroke="none" stroke-width="0"/>
+<rect x="0.278" y="63.810" width="10.130" height="1.400" fill="none" stroke="#008000" stroke-width="0.100" />
+<text x="5.343" y="64.760"  fill="#000000" text-anchor="middle" font-size="1.00" font-family="sans" font-style="normal" font-weight="700">
+EnnemiTXT(en cours)</text>
+<rect x="0.278" y="65.210" width="10.130" height="0.400" fill="#FFFFFF" stroke="none" stroke-width="0"/>
+<rect x="0.278" y="65.210" width="10.130" height="0.400" fill="none" stroke="#008000" stroke-width="0.100" />
+<rect x="0.278" y="65.610" width="10.130" height="0.400" fill="#FFFFFF" stroke="none" stroke-width="0"/>
+<rect x="0.278" y="65.610" width="10.130" height="0.400" fill="none" stroke="#008000" stroke-width="0.100" />
+<polyline fill="none" stroke="#008000" stroke-width="0.100" stroke-dasharray="0.40,0.40" points="23.620,64.043 17.095,64.043 17.095,64.910 10.458,64.910 "/>
+<polygon fill="#FFFFFF" stroke="none" stroke-width="0.100" points="23.620,64.443 24.420,64.043 23.620,63.643 "/>
+<polygon fill="none" stroke="#008000" stroke-width="0.100"  points="23.620,64.443 24.420,64.043 23.620,63.643 "/>
+<rect x="-4.389" y="50.234" width="10.062" height="1.400" fill="#FFFFFF" stroke="none" stroke-width="0"/>
+<rect x="-4.389" y="50.234" width="10.062" height="1.400" fill="none" stroke="#008000" stroke-width="0.100" />
+<text x="0.642" y="51.184"  fill="#000000" text-anchor="middle" font-size="1.00" font-family="sans" font-style="normal" font-weight="700">
+PersoSFML(en cours)</text>
+<rect x="-4.389" y="51.634" width="10.062" height="0.400" fill="#FFFFFF" stroke="none" stroke-width="0"/>
+<rect x="-4.389" y="51.634" width="10.062" height="0.400" fill="none" stroke="#008000" stroke-width="0.100" />
+<rect x="-4.389" y="52.034" width="10.062" height="0.400" fill="#FFFFFF" stroke="none" stroke-width="0"/>
+<rect x="-4.389" y="52.034" width="10.062" height="0.400" fill="none" stroke="#008000" stroke-width="0.100" />
+<polyline fill="none" stroke="#008000" stroke-width="0.100" stroke-dasharray="0.40,0.40" points="-7.082,46.041 -6.004,46.041 -6.004,51.224 -4.813,51.224 "/>
+<polygon fill="#FFFFFF" stroke="none" stroke-width="0.100" points="-7.082,45.641 -7.882,46.041 -7.082,46.441 "/>
+<polygon fill="none" stroke="#008000" stroke-width="0.100"  points="-7.082,45.641 -7.882,46.041 -7.082,46.441 "/>
+<rect x="40.300" y="46.840" width="8.938" height="1.400" fill="#FFFFFF" stroke="none" stroke-width="0"/>
+<rect x="40.300" y="46.840" width="8.938" height="1.400" fill="none" stroke="#008000" stroke-width="0.100" />
+<text x="44.769" y="47.790"  fill="#000000" text-anchor="middle" font-size="1.00" font-family="sans" font-style="normal" font-weight="700">
+CaseTXT(en cours)</text>
+<rect x="40.300" y="48.240" width="8.938" height="0.400" fill="#FFFFFF" stroke="none" stroke-width="0"/>
+<rect x="40.300" y="48.240" width="8.938" height="0.400" fill="none" stroke="#008000" stroke-width="0.100" />
+<rect x="40.300" y="48.640" width="8.938" height="0.400" fill="#FFFFFF" stroke="none" stroke-width="0"/>
+<rect x="40.300" y="48.640" width="8.938" height="0.400" fill="none" stroke="#008000" stroke-width="0.100" />
+<polyline fill="none" stroke="#008000" stroke-width="0.100" stroke-dasharray="0.40,0.40" points="43.189,58.064 39.200,58.064 39.200,47.940 40.250,47.940 "/>
+<polygon fill="#FFFFFF" stroke="none" stroke-width="0.100" points="43.189,58.464 43.989,58.064 43.189,57.664 "/>
+<polygon fill="none" stroke="#008000" stroke-width="0.100"  points="43.189,58.464 43.989,58.064 43.189,57.664 "/>
+<rect x="-1.985" y="14.595" width="9.240" height="1.400" fill="#FFFFFF" stroke="none" stroke-width="0"/>
+<rect x="-1.985" y="14.595" width="9.240" height="1.400" fill="none" stroke="#008000" stroke-width="0.100" />
+<text x="2.635" y="15.545"  fill="#000000" text-anchor="middle" font-size="1.00" font-family="sans" font-style="normal" font-weight="700">
+CarteTXT(en cours)</text>
+<rect x="-1.985" y="15.995" width="9.240" height="0.400" fill="#FFFFFF" stroke="none" stroke-width="0"/>
+<rect x="-1.985" y="15.995" width="9.240" height="0.400" fill="none" stroke="#008000" stroke-width="0.100" />
+<rect x="-1.985" y="16.395" width="9.240" height="0.400" fill="#FFFFFF" stroke="none" stroke-width="0"/>
+<rect x="-1.985" y="16.395" width="9.240" height="0.400" fill="none" stroke="#008000" stroke-width="0.100" />
+<polyline fill="none" stroke="#008000" stroke-width="0.100" stroke-dasharray="0.40,0.40" points="7.362,9.857 7.491,9.857 7.491,15.295 7.255,15.295 "/>
+<polygon fill="#FFFFFF" stroke="none" stroke-width="0.100" points="7.362,10.257 8.162,9.857 7.362,9.457 "/>
+<polygon fill="none" stroke="#008000" stroke-width="0.100"  points="7.362,10.257 8.162,9.857 7.362,9.457 "/>
+<polyline fill="none" stroke="#008000" stroke-width="0.100" stroke-dasharray="0.40,0.40" points="0.642,49.272 0.642,42.880 21.633,42.880 21.633,43.383 "/>
+<polygon fill="#FFFFFF" stroke="none" stroke-width="0.100" points="0.242,49.272 0.642,50.072 1.042,49.272 "/>
+<polygon fill="none" stroke="#008000" stroke-width="0.100"  points="0.242,49.272 0.642,50.072 1.042,49.272 "/>
+<polyline fill="none" stroke="#008000" stroke-width="0.100" stroke-dasharray="0.40,0.40" points="20.671,42.283 13.289,42.283 13.289,64.510 10.408,64.510 "/>
+<polygon fill="#FFFFFF" stroke="none" stroke-width="0.100" points="20.671,42.683 21.471,42.283 20.671,41.883 "/>
+<polygon fill="none" stroke="#008000" stroke-width="0.100"  points="20.671,42.683 21.471,42.283 20.671,41.883 "/>
+<polyline fill="none" stroke="#008000" stroke-width="0.100" stroke-dasharray="0.40,0.40" points="39.389,47.540 35.068,47.540 35.068,41.883 29.835,41.883 "/>
+<polygon fill="#FFFFFF" stroke="none" stroke-width="0.100" points="39.389,47.940 40.189,47.540 39.389,47.140 "/>
+<polygon fill="none" stroke="#008000" stroke-width="0.100"  points="39.389,47.940 40.189,47.540 39.389,47.140 "/>
+<polyline fill="none" stroke="#008000" stroke-width="0.100" stroke-dasharray="0.40,0.40" points="2.635,17.757 2.635,22.656 21.756,22.656 21.756,28.303 "/>
+<polygon fill="#FFFFFF" stroke="none" stroke-width="0.100" points="3.035,17.757 2.635,16.957 2.235,17.757 "/>
+<polygon fill="none" stroke="#008000" stroke-width="0.100"  points="3.035,17.757 2.635,16.957 2.235,17.757 "/>
 </svg>
