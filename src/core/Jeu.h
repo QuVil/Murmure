@@ -1,8 +1,6 @@
 #ifndef JEU_H_INCLUDED
 #define JEU_H_INCLUDED
 
-#include <iostream>
-
 #include "Salle.h"
 
 class Jeu
@@ -13,7 +11,7 @@ private:
 public:
     Jeu();
 
-    Salle get_salle() const;
+    Salle get_salle();
 };
 
 #endif // JEU_H_INCLUDED

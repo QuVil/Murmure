@@ -28,6 +28,8 @@ public:
 
     Perso(std::string n);
 
+    std::string get_nom()const;
+
     float get_angle_regard()const;
 
     float get_vitesse()const;

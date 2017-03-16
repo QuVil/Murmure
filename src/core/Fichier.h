@@ -7,6 +7,7 @@
 #include "Salle.h"
 #include "ZoneGen.h"
 #include "Zone.h"
+#include "Perso.h"
 
 class Fichier
 {
@@ -27,6 +28,8 @@ public:
     void charger(ZoneGen & z);
 
     void charger(Zone & z);
+
+    void charger(Perso & p);
 };
 
 #endif // FICHIER_H_INCLUDED

@@ -4,10 +4,9 @@
 
 Jeu::Jeu()
 {
-
 }
 
-Salle Jeu::get_salle() const
+Salle Jeu::get_salle()
 {
     return salle;
 }

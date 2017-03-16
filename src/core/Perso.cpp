@@ -17,6 +17,11 @@ Perso::Perso(string n)
     //fichier.charger(*this);
 }
 
+string Perso::get_nom()const
+{
+    return nom;
+}
+
 float Perso::get_angle_regard()const
 {
     return angle_regard;
