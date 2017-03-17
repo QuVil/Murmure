@@ -23,7 +23,7 @@ void \hyperlink{classSalle_ac0ce53372cead99268609aba57d0fff2}{set\+\_\+case} (in
 int \hyperlink{classSalle_a9268968ab5741a35da4e52399a4be0b7}{get\+\_\+config} ()
 \begin{DoxyCompactList}\small\item\em Accesseur de la {\itshape config}. \end{DoxyCompactList}\item 
 void \hyperlink{classSalle_a3d8b62393fd9cfa15bb385e187e72189}{set\+\_\+config} (int c)
-\item 
+\begin{DoxyCompactList}\small\item\em Mutateur de la {\itshape config}. \end{DoxyCompactList}\item 
 void \hyperlink{classSalle_ae6fd7211225455d887859f983e3bddce}{remplir} ()
 \begin{DoxyCompactList}\small\item\em Procédure de remplissage de \hyperlink{classSalle}{Salle}. Techniquement, \hyperlink{classSalle_ae6fd7211225455d887859f983e3bddce}{remplir()} est un mutateur de {\itshape config} avec paramètre fixé. \end{DoxyCompactList}\item 
 void \hyperlink{classSalle_ae8248a5ded8514be67a29efdeb70af96}{vider} ()
@@ -31,7 +31,11 @@ void \hyperlink{classSalle_ae8248a5ded8514be67a29efdeb70af96}{vider} ()
 \hyperlink{classSalle}{Salle} \& \hyperlink{classSalle_a315947e357a3fd958b40eb087a82c4d7}{operator=} (\hyperlink{classSalle}{Salle} salle2)
 \begin{DoxyCompactList}\small\item\em Surcharge d\textquotesingle{}affectation de \hyperlink{classSalle}{Salle}. Surcharge de l\textquotesingle{}operateur = pour affecter des \hyperlink{classSalle}{Salle} entre elles. \end{DoxyCompactList}\item 
 void \hyperlink{classSalle_a50ed839f1a93753fddf6171ef343a0bb}{afficher} ()
-\begin{DoxyCompactList}\small\item\em Affichage de \hyperlink{classSalle}{Salle}. Procedure d\textquotesingle{}affichage de la \hyperlink{classSalle}{Salle}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Affichage de \hyperlink{classSalle}{Salle}. Procedure d\textquotesingle{}affichage de la \hyperlink{classSalle}{Salle} en mode txt. \end{DoxyCompactList}\item 
+int \hyperlink{classSalle_a938849a06f5906cc6b3a66e979f02a9a}{get\+\_\+nb\+\_\+cases\+\_\+largeur} ()
+\begin{DoxyCompactList}\small\item\em Accesseur du nb de cases en largeur. \end{DoxyCompactList}\item 
+int \hyperlink{classSalle_a80ca41c533d0ec567b1d4e78779225ba}{get\+\_\+nb\+\_\+cases\+\_\+hauteur} ()
+\begin{DoxyCompactList}\small\item\em Accesseur du nb de cases en hauteur. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
@@ -79,7 +83,7 @@ Consctructeur avec {\itshape config} Le Constructeur avec paramètre, donnant à
 )}\hypertarget{classSalle_a50ed839f1a93753fddf6171ef343a0bb}{}\label{classSalle_a50ed839f1a93753fddf6171ef343a0bb}
 
 
-Affichage de \hyperlink{classSalle}{Salle}. Procedure d\textquotesingle{}affichage de la \hyperlink{classSalle}{Salle}. 
+Affichage de \hyperlink{classSalle}{Salle}. Procedure d\textquotesingle{}affichage de la \hyperlink{classSalle}{Salle} en mode txt. 
 
 \index{Salle@{Salle}!get\+\_\+case@{get\+\_\+case}}
 \index{get\+\_\+case@{get\+\_\+case}!Salle@{Salle}}
@@ -119,6 +123,34 @@ Accesseur de la {\itshape config}.
 
 \begin{DoxyReturn}{Returns}
 la {\itshape config} (un int) de la \hyperlink{classSalle}{Salle}. 
+\end{DoxyReturn}
+\index{Salle@{Salle}!get\+\_\+nb\+\_\+cases\+\_\+hauteur@{get\+\_\+nb\+\_\+cases\+\_\+hauteur}}
+\index{get\+\_\+nb\+\_\+cases\+\_\+hauteur@{get\+\_\+nb\+\_\+cases\+\_\+hauteur}!Salle@{Salle}}
+\subsubsection[{\texorpdfstring{get\+\_\+nb\+\_\+cases\+\_\+hauteur()}{get_nb_cases_hauteur()}}]{\setlength{\rightskip}{0pt plus 5cm}int Salle\+::get\+\_\+nb\+\_\+cases\+\_\+hauteur (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classSalle_a80ca41c533d0ec567b1d4e78779225ba}{}\label{classSalle_a80ca41c533d0ec567b1d4e78779225ba}
+
+
+Accesseur du nb de cases en hauteur. 
+
+\begin{DoxyReturn}{Returns}
+{\itshape nb\+\_\+cases\+\_\+hauteur} de la \hyperlink{classSalle}{Salle}. 
+\end{DoxyReturn}
+\index{Salle@{Salle}!get\+\_\+nb\+\_\+cases\+\_\+largeur@{get\+\_\+nb\+\_\+cases\+\_\+largeur}}
+\index{get\+\_\+nb\+\_\+cases\+\_\+largeur@{get\+\_\+nb\+\_\+cases\+\_\+largeur}!Salle@{Salle}}
+\subsubsection[{\texorpdfstring{get\+\_\+nb\+\_\+cases\+\_\+largeur()}{get_nb_cases_largeur()}}]{\setlength{\rightskip}{0pt plus 5cm}int Salle\+::get\+\_\+nb\+\_\+cases\+\_\+largeur (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classSalle_a938849a06f5906cc6b3a66e979f02a9a}{}\label{classSalle_a938849a06f5906cc6b3a66e979f02a9a}
+
+
+Accesseur du nb de cases en largeur. 
+
+\begin{DoxyReturn}{Returns}
+{\itshape nb\+\_\+cases\+\_\+largeur} de la \hyperlink{classSalle}{Salle}. 
 \end{DoxyReturn}
 \index{Salle@{Salle}!operator=@{operator=}}
 \index{operator=@{operator=}!Salle@{Salle}}
@@ -176,6 +208,15 @@ Mutateur de case dans la grille.
 \item[{int}]{c}
 \end{DoxyParamCaption}
 )}\hypertarget{classSalle_a3d8b62393fd9cfa15bb385e187e72189}{}\label{classSalle_a3d8b62393fd9cfa15bb385e187e72189}
+
+
+Mutateur de la {\itshape config}. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em c} & \+: nouvelle config. \\
+\hline
+\end{DoxyParams}
 \index{Salle@{Salle}!vider@{vider}}
 \index{vider@{vider}!Salle@{Salle}}
 \subsubsection[{\texorpdfstring{vider()}{vider()}}]{\setlength{\rightskip}{0pt plus 5cm}void Salle\+::vider (

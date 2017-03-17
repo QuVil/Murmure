@@ -36,4 +36,16 @@ digraph "/home/quentin/Murmure/src/core/Fichier.cpp"
   Node13 -> Node7 [color="midnightblue",fontsize="10",style="solid"];
   Node13 -> Node15 [color="midnightblue",fontsize="10",style="solid"];
   Node15 [label="time.h",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled"];
+  Node9 -> Node16 [color="midnightblue",fontsize="10",style="solid"];
+  Node16 [label="Zone.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$Zone_8h.html",tooltip="Header de la class Zone. "];
+  Node16 -> Node11 [color="midnightblue",fontsize="10",style="solid"];
+  Node16 -> Node13 [color="midnightblue",fontsize="10",style="solid"];
+  Node16 -> Node7 [color="midnightblue",fontsize="10",style="solid"];
+  Node9 -> Node17 [color="midnightblue",fontsize="10",style="solid"];
+  Node17 [label="Perso.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$Perso_8h.html"];
+  Node17 -> Node7 [color="midnightblue",fontsize="10",style="solid"];
+  Node9 -> Node18 [color="midnightblue",fontsize="10",style="solid"];
+  Node18 [label="Modele.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$Modele_8h.html",tooltip="Header du module Modele. "];
+  Node18 -> Node13 [color="midnightblue",fontsize="10",style="solid"];
+  Node18 -> Node7 [color="midnightblue",fontsize="10",style="solid"];
 }

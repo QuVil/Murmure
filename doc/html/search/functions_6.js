@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['nb_5fcases',['nb_cases',['../classZoneGen.html#a3ea00a6d8fdecab9d4d7ad09f9737378',1,'ZoneGen']]]
+  ['modele',['Modele',['../classModele.html#ae9d6a289deaebe7e8eeda46693d79d23',1,'Modele::Modele()'],['../classModele.html#a14085f4c7825d488f349f262dcc35d13',1,'Modele::Modele(std::string nom)']]]
 ];

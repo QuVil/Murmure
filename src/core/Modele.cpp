@@ -1,3 +1,11 @@
+/**
+ * \file Modele.cpp
+ * \brief fichier source du module Modele.
+ * \author Quentin.V
+ * \version 0.1
+ * \date 17 mars 2017
+ *
+ */
 #include "Modele.h"
 #include "Fichier.h"
 

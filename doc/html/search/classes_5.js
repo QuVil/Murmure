@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['zone',['Zone',['../classZone.html',1,'']]],
-  ['zonegen',['ZoneGen',['../classZoneGen.html',1,'']]]
+  ['salle',['Salle',['../classSalle.html',1,'']]]
 ];

@@ -1,0 +1,86 @@
+\hypertarget{classModele}{}\section{Modele Class Reference}
+\label{classModele}\index{Modele@{Modele}}
+
+
+class gérant une \hyperlink{classZoneGen}{Zone\+Gen} pour générer une \hyperlink{classZone}{Zone} facilement. Grâce à \hyperlink{classModele}{Modele}, il est possible de créer et générer une \hyperlink{classZone}{Zone} en seulement quelques lignes. Une instance de \hyperlink{classModele}{Modele} contient un générateur de type \hyperlink{classZoneGen}{Zone\+Gen} et un tableau d\textquotesingle{}entiers correspondant aux opérations nécessaire à la génération de la \hyperlink{classZone}{Zone} voulue.  
+
+
+
+
+{\ttfamily \#include $<$Modele.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classModele_ae9d6a289deaebe7e8eeda46693d79d23}{Modele} ()
+\begin{DoxyCompactList}\small\item\em Constructeur basique de \hyperlink{classModele}{Modele}. En pratique, ce constructeur ne sera J\+A\+M\+A\+IS utilisé. \end{DoxyCompactList}\item 
+\hyperlink{classModele_a14085f4c7825d488f349f262dcc35d13}{Modele} (std\+::string nom)
+\begin{DoxyCompactList}\small\item\em Constructeur de \hyperlink{classModele}{Modele} avec nom de fichier en paramètre. Le constructeur charge directement depuis un fichier le {\itshape tableau\+\_\+modele}, ce qui permet d\textquotesingle{}utiliser directement \hyperlink{classModele_aa7d12b096f73bd3cbd25f6ca8ba64662}{generer\+\_\+zone()}. \end{DoxyCompactList}\item 
+void \hyperlink{classModele_aa7d12b096f73bd3cbd25f6ca8ba64662}{generer\+\_\+zone} ()
+\begin{DoxyCompactList}\small\item\em procédure principale du module. génère le membre {\itshape generateur} à l\textquotesingle{}aide de {\itshape tableau\+\_\+modele}. La \hyperlink{classZoneGen}{Zone\+Gen} pourra alors être transférée comme \hyperlink{classZone}{Zone}. \end{DoxyCompactList}\item 
+void \hyperlink{classModele_a510474330d38950422a86055aa411cab}{afficher\+\_\+tests} () const 
+\begin{DoxyCompactList}\small\item\em T\+O\+DO\+: se débarasser de \hyperlink{classModele_a510474330d38950422a86055aa411cab}{afficher\+\_\+tests()} qui n\textquotesingle{}est qu\textquotesingle{}une procédure temporaire. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+class gérant une \hyperlink{classZoneGen}{Zone\+Gen} pour générer une \hyperlink{classZone}{Zone} facilement. Grâce à \hyperlink{classModele}{Modele}, il est possible de créer et générer une \hyperlink{classZone}{Zone} en seulement quelques lignes. Une instance de \hyperlink{classModele}{Modele} contient un générateur de type \hyperlink{classZoneGen}{Zone\+Gen} et un tableau d\textquotesingle{}entiers correspondant aux opérations nécessaire à la génération de la \hyperlink{classZone}{Zone} voulue. 
+
+\subsection{Constructor \& Destructor Documentation}
+\index{Modele@{Modele}!Modele@{Modele}}
+\index{Modele@{Modele}!Modele@{Modele}}
+\subsubsection[{\texorpdfstring{Modele()}{Modele()}}]{\setlength{\rightskip}{0pt plus 5cm}Modele\+::\+Modele (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classModele_ae9d6a289deaebe7e8eeda46693d79d23}{}\label{classModele_ae9d6a289deaebe7e8eeda46693d79d23}
+
+
+Constructeur basique de \hyperlink{classModele}{Modele}. En pratique, ce constructeur ne sera J\+A\+M\+A\+IS utilisé. 
+
+\index{Modele@{Modele}!Modele@{Modele}}
+\index{Modele@{Modele}!Modele@{Modele}}
+\subsubsection[{\texorpdfstring{Modele(std\+::string nom)}{Modele(std::string nom)}}]{\setlength{\rightskip}{0pt plus 5cm}Modele\+::\+Modele (
+\begin{DoxyParamCaption}
+\item[{std\+::string}]{nom}
+\end{DoxyParamCaption}
+)}\hypertarget{classModele_a14085f4c7825d488f349f262dcc35d13}{}\label{classModele_a14085f4c7825d488f349f262dcc35d13}
+
+
+Constructeur de \hyperlink{classModele}{Modele} avec nom de fichier en paramètre. Le constructeur charge directement depuis un fichier le {\itshape tableau\+\_\+modele}, ce qui permet d\textquotesingle{}utiliser directement \hyperlink{classModele_aa7d12b096f73bd3cbd25f6ca8ba64662}{generer\+\_\+zone()}. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em nom} & \+: nom du \hyperlink{classFichier}{Fichier} contenant le {\itshape tableau\+\_\+modele} du \hyperlink{classModele}{Modele}. \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\index{Modele@{Modele}!afficher\+\_\+tests@{afficher\+\_\+tests}}
+\index{afficher\+\_\+tests@{afficher\+\_\+tests}!Modele@{Modele}}
+\subsubsection[{\texorpdfstring{afficher\+\_\+tests() const }{afficher_tests() const }}]{\setlength{\rightskip}{0pt plus 5cm}void Modele\+::afficher\+\_\+tests (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\hypertarget{classModele_a510474330d38950422a86055aa411cab}{}\label{classModele_a510474330d38950422a86055aa411cab}
+
+
+T\+O\+DO\+: se débarasser de \hyperlink{classModele_a510474330d38950422a86055aa411cab}{afficher\+\_\+tests()} qui n\textquotesingle{}est qu\textquotesingle{}une procédure temporaire. 
+
+\index{Modele@{Modele}!generer\+\_\+zone@{generer\+\_\+zone}}
+\index{generer\+\_\+zone@{generer\+\_\+zone}!Modele@{Modele}}
+\subsubsection[{\texorpdfstring{generer\+\_\+zone()}{generer_zone()}}]{\setlength{\rightskip}{0pt plus 5cm}void Modele\+::generer\+\_\+zone (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classModele_aa7d12b096f73bd3cbd25f6ca8ba64662}{}\label{classModele_aa7d12b096f73bd3cbd25f6ca8ba64662}
+
+
+procédure principale du module. génère le membre {\itshape generateur} à l\textquotesingle{}aide de {\itshape tableau\+\_\+modele}. La \hyperlink{classZoneGen}{Zone\+Gen} pourra alors être transférée comme \hyperlink{classZone}{Zone}. 
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/quentin/\+Murmure/src/core/\hyperlink{Modele_8h}{Modele.\+h}\item 
+/home/quentin/\+Murmure/src/core/\hyperlink{Modele_8cpp}{Modele.\+cpp}\end{DoxyCompactItemize}
