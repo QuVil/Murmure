@@ -90,7 +90,6 @@ void Modele::generer_zone()
                 met = "voisins";
             }
             generateur.iterer(met);
-            generateur.afficher_carte();
             ++i;
         }
         generateur.valider();
@@ -98,4 +97,9 @@ void Modele::generer_zone()
         generateur.teste_nb_cases_trop(nb_max);
         generateur.placer_boss();
     }
+}
+
+void Modele::afficher_tests()const
+{
+    generateur.afficher_carte();
 }

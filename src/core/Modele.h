@@ -23,7 +23,7 @@ public:
 
     void generer_zone();
 
-
+    void afficher_tests()const;
 };
 
 #endif // MODELE_H_INCLUDED

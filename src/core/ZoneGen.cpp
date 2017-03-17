@@ -630,6 +630,7 @@ void ZoneGen::placer_boss()
                         voisins++;
                     }
                 }
+
                 if (voisins == 1 && carte[i][j] == 1 && !boss_est_place)
                 {
                     boss_est_place = true;

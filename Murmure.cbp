@@ -126,6 +126,18 @@
 			<Option target="murmure_sfml" />
 			<Option target="murmure_gen_test" />
 		</Unit>
+		<Unit filename="src/core/Modele.cpp">
+			<Option target="murmure_test" />
+			<Option target="murmure_sfml" />
+			<Option target="murmure_gen_test" />
+			<Option target="murmure_test_q" />
+		</Unit>
+		<Unit filename="src/core/Modele.h">
+			<Option target="murmure_test" />
+			<Option target="murmure_sfml" />
+			<Option target="murmure_gen_test" />
+			<Option target="murmure_test_q" />
+		</Unit>
 		<Unit filename="src/core/Perso.cpp">
 			<Option target="murmure_txt" />
 			<Option target="murmure_test" />
