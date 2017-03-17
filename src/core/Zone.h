@@ -7,14 +7,12 @@
  * \author Quentin.V
  * \version 0.1
  * \date 12 mars 2017
- *
+ * TODO : Finir de commenter les méthodes présentes.
  */
 
 #include "Salle.h"
 #include "ZoneGen.h"
 #include <string>
-
-using namespace std;
 
 /**
  * \class Zone
@@ -75,7 +73,7 @@ public:
     //Vide la salle actuelle (je vois pas pourquoi on s'en servirait mais eh...
     void vider_salle();
 
-    void zone_depuis_modele();
+    void zone_depuis_modele(std::string nom);
 };
 
 #endif // ZONE_H_INCLUDED

@@ -4,7 +4,6 @@
  * \author Quentin.V
  * \version 0.1
  * \date 12 mars 2017
- * TODO : Finir de commenter les méthodes présentes.
  */
 
 #include <iostream>
@@ -28,7 +27,8 @@ Zone::Zone()
     salle_actuelle_y = 5;
 }
 
-//crée une instance de zone en passant en paramètre les coordonnées de la salle actuelle et son nom
+//crée une instance de zone en passant en paramètre les coordonnées de la salle
+//actuelle et son nom
 Zone::Zone(int posx, int posy, int niv = 1)
 {
     niveau_zone = niv;
@@ -108,8 +108,16 @@ void Zone::vider_salle()
     carte[salle_actuelle_x][salle_actuelle_y].vider();
 }
 
-void zone_depuis_modele()
+void Zone::zone_depuis_modele(std::string nom)
 {
-    Modele mod;
+    Modele mod(nom);
+    mod.generer_zone();
+    for (int i=0; i<11; ++i)
+    {
+        for (int j=0; j<11; ++j)
+        {
+            carte[i][j].set_config(mod.get_salle_generateur(i, j));
+        }
+    }
 
 }

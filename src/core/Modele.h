@@ -16,34 +16,34 @@
 /**
  * \class Modele
  * \brief class gerant une ZoneGen pour generer une Zone facilement.
- * Grace à Modele, il est possible de créer et générer une Zone en
+ * Grace Ã  Modele, il est possible de crÃ©er et gÃ©nÃ©rer une Zone en
  * seulement quelques lignes.
  * Une instance de Modele contient un generateur de type ZoneGen et un
- * tableau d'entiers correspondant aux operations necessaire à la generation
+ * tableau d'entiers correspondant aux operations necessaire Ã  la generation
  * de la Zone voulue.
  */
 class Modele
 {
 private:
-    ZoneGen generateur; /**< \a generateur permet la génération de la Zone.*/
+    ZoneGen generateur; /**< \a generateur permet la gÃ©nÃ©ration de la Zone.*/
     int tableau_modele[23];/**< \a tableau_modele contient la suite d'instuctions pour le modele.*/
     //Les deux premiers entiers sont le nb minimum et max de cases desirees
     //Puis le patterne de base:
     //1=croix, 2=carre, 3=vide, 4=h, 5=hub
 
-    // Ensuite, les iterations à faire :
+    // Ensuite, les iterations Ã  faire :
     //1=voisins, 2=bruit_neg, 3=bruit_pos, 4=aleatoire, 5=epuration, 6=extension
 
 public:
 
     /**
      * \brief Constructeur basique de Modele.
-     * En pratique, ce constructeur ne sera JAMAIS utilisé.
+     * En pratique, ce constructeur ne sera JAMAIS utilisÃ©.
      */
     Modele();
 
     /**
-     * \brief Constructeur de Modele avec nom de fichier en paramètre.
+     * \brief Constructeur de Modele avec nom de fichier en paramÃ¨tre.
      * Le constructeur charge directement depuis un fichier le \a tableau_modele,
      * ce qui permet d'utiliser directement generer_zone().
      * \param[in] nom : nom du Fichier contenant le \a tableau_modele du Modele.
@@ -51,13 +51,21 @@ public:
     Modele(std::string nom);
 
     /**
-     * \brief procédure principale du module.
-     * génère le membre \a generateur à l'aide de \a tableau_modele.
-     * La ZoneGen pourra alors être transférée comme Zone.
+     * \brief procÃ©dure principale du module.
+     * gÃ©nÃ¨re le membre \a generateur Ã  l'aide de \a tableau_modele.
+     * La ZoneGen pourra alors Ãªtre transfÃ©rÃ©e comme Zone.
      */
     void generer_zone();
 
-    ///TODO: se débarasser de afficher_tests() qui n'est qu'une procédure temporaire.
+    /**
+     * \brief Accesseur de la config d'une 'salle' de \a generateur.
+     * \param[in] x : coordonnee x de la 'salle' dont on veut la config.
+     * \param[in] y : coordonnee y de la 'salle' dont on veut la config.
+     * \return la config de la 'salle' dÃ©sirÃ©e.
+     */
+    int get_salle_generateur(int x, int y)const;
+
+    ///TODO: se dÃ©barasser de afficher_tests() qui n'est qu'une procÃ©dure temporaire.
     void afficher_tests()const;
 };
 

@@ -1,13 +1,14 @@
 #include <iostream>
-#include "Modele.h"
+#include "Zone.h"
 
 using namespace std;
 
 int main(int argc, char ** argv)
 {
-    Modele mod;
-    mod.generer_zone();
-    mod.afficher_tests();
+    Zone z;
+
+
+
     return 0;
 }
 

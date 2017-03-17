@@ -107,6 +107,11 @@ void Modele::generer_zone()
     }
 }
 
+int Modele::get_salle_generateur(int x, int y)const
+{
+    return generateur.get_etat(x, y);
+}
+
 void Modele::afficher_tests()const
 {
     generateur.afficher_carte();
