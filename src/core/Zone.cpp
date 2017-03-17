@@ -82,9 +82,9 @@ void Zone::afficher_zone()
     {
         for (int j=0; j<11; ++j)
         {
-            cout<<carte[i][j].get_config()<<" ";
+            std::cout<<carte[i][j].get_config()<<" ";
         }
-        cout<<endl;
+        std::cout<<endl;
     }
 }
 
