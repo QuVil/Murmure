@@ -84,7 +84,7 @@ void Zone::afficher_zone()
         {
             std::cout<<carte[i][j].get_config()<<" ";
         }
-        std::cout<<endl;
+        std::cout<<std::endl;
     }
 }
 

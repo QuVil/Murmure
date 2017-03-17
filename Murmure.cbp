@@ -114,6 +114,8 @@
 		<Unit filename="src/core/Salle.h" />
 		<Unit filename="src/core/Zone.cpp" />
 		<Unit filename="src/core/Zone.h">
+			<Option compile="1" />
+			<Option link="1" />
 			<Option target="murmure_test_q" />
 		</Unit>
 		<Unit filename="src/core/ZoneGen.cpp" />
