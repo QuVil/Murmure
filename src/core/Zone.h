@@ -75,6 +75,7 @@ public:
     //Vide la salle actuelle (je vois pas pourquoi on s'en servirait mais eh...
     void vider_salle();
 
+    void zone_depuis_modele();
 };
 
 #endif // ZONE_H_INCLUDED

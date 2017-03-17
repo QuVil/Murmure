@@ -107,3 +107,9 @@ void Zone::vider_salle()
 {
     carte[salle_actuelle_x][salle_actuelle_y].vider();
 }
+
+void zone_depuis_modele()
+{
+    Modele mod;
+
+}

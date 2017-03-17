@@ -147,6 +147,11 @@ void Fichier::charger(ZoneGen & z)
     fichier.close();
 }
 
+void Fichier::charger(Modele &m)
+{
+
+}
+
 /**
 void Fichier::charger(Zone & z)
 {

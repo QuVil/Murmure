@@ -80,6 +80,23 @@ bool ZoneGen::is_nb_cases_assez (int nb_voulu)const
     else{return false;}
 }
 
+bool ZoneGen::is_nb_cases_trop(int nb_voulu) const
+{
+    int nb = 0;
+    for (int i=0; i<11; ++i)
+    {
+        for (int j=0; j<11; ++j)
+        {
+            if (carte[i][j] == 1)
+            {
+                nb++;
+            }
+        }
+    }
+    if (nb >= nb_voulu){return false;}
+    else{return true;}
+}
+
 void ZoneGen::initialisation_gen(string pat, string met)
 {
     //Vérifie qu'un patterne et une méthode valides soient entrées, et dessine le patterne de base.
@@ -175,7 +192,8 @@ void ZoneGen::initialisation_gen(string pat, string met)
         terminate();
     }*/
 
-    if (!(methode == "voisins" || methode == "bruit" || methode == "aleatoire" || methode == "epuration"))
+    if (!(methode == "voisins" || methode == "bruit_pos" || methode == "aleatoire" || methode == "epuration"
+          || methode == "bruit_neg" || methode == "extension"))
     {
         cout<<"error : Invalid method"<<endl;
         terminate();
@@ -700,5 +718,15 @@ void ZoneGen::placer_boss()
     {
         valide = false;
     }
+}
 
+void ZoneGen::vider_carte()
+{
+    for (int i=0; i<11; ++i)
+    {
+        for (int j=0; j<11; ++j)
+        {
+            carte[i][j] = 0;
+        }
+    }
 }

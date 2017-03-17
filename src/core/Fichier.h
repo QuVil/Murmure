@@ -30,6 +30,8 @@ public:
     void charger(Zone & z);
 
     void charger(Perso & p);
+
+    void charger(Modele & m);
 };
 
 #endif // FICHIER_H_INCLUDED

@@ -2,15 +2,13 @@
 #include "Fichier.h"
 #include <string>
 
-using namespace std;
-
 Perso::Perso()
 {
     angle_mouvement = 0;
     angle_regard = 0;
 }
 
-Perso::Perso(string n)
+Perso::Perso(std::string n)
 {
     nom = n;
     Fichier fichier;
