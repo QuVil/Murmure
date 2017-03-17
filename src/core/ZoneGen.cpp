@@ -19,14 +19,6 @@ ZoneGen::ZoneGen()
     valide = false;
 }
 
-ZoneGen::ZoneGen(string pat, string met)
-{
-    patterne = pat;
-    methode = met;
-    pret_iteration = false;
-    valide = false;
-}
-
 int ZoneGen::get_etat(int x, int y) const
 {
     return carte[x][y];
@@ -63,7 +55,7 @@ int ZoneGen::get_nb_cases() const
     return nb;
 }
 
-bool ZoneGen::is_nb_cases_assez (int nb_voulu)const
+void ZoneGen::teste_nb_cases_assez (int nb_voulu)
 {
     int nb = 0;
     for (int i=0; i<11; ++i)
@@ -76,11 +68,11 @@ bool ZoneGen::is_nb_cases_assez (int nb_voulu)const
             }
         }
     }
-    if (nb >= nb_voulu){return true;}
-    else{return false;}
+    if (nb < nb_voulu)
+        valide = false;
 }
 
-bool ZoneGen::is_nb_cases_trop(int nb_voulu) const
+void ZoneGen::teste_nb_cases_trop(int nb_voulu)
 {
     int nb = 0;
     for (int i=0; i<11; ++i)
@@ -93,30 +85,14 @@ bool ZoneGen::is_nb_cases_trop(int nb_voulu) const
             }
         }
     }
-    if (nb >= nb_voulu){return false;}
-    else{return true;}
+    if (nb >= nb_voulu)
+        valide = false;
 }
 
 void ZoneGen::initialisation_gen(string pat, string met)
 {
-    //Vérifie qu'un patterne et une méthode valides soient entrées, et dessine le patterne de base.
-    if (patterne == " ")
-    {
-        patterne = pat;
-    }
-    else
-    {
-        cout<<"patterne deja choisi : "<<patterne<<endl;
-    }
-
-    if (methode == " ")
-    {
-        methode = met;
-    }
-    else
-    {
-        cout<<"methode deja choisie : "<<methode<<endl;
-    }
+    patterne = pat;
+    methode = met;
 
     Fichier fichier;
     fichier.charger(*this);
@@ -547,12 +523,10 @@ void ZoneGen::valider()
 
     while(test < 1 && (i<11 && j<12))
     {
-        cout<<"case testee : "<<i<<", "<<j<<endl;
         test = carte_validation[i][j];
 
         if (test < 1)
         {
-            cout<<"incrementation"<<endl;
             if(i < 10)
             {
                 ++i;
@@ -564,7 +538,6 @@ void ZoneGen::valider()
             }
         }
     }
-    cout<<"case depart : "<<i<<", "<<j<<endl;
     valider_recursif(i, j);
 
     //second parcours pour check si la carte est valide :
@@ -729,4 +702,5 @@ void ZoneGen::vider_carte()
             carte[i][j] = 0;
         }
     }
+    pret_iteration = false;
 }

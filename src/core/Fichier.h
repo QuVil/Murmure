@@ -8,6 +8,7 @@
 #include "ZoneGen.h"
 #include "Zone.h"
 #include "Perso.h"
+#include "Modele.h"
 
 class Fichier
 {

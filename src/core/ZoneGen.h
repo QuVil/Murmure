@@ -28,8 +28,6 @@ class ZoneGen
     public:
         ZoneGen();
 
-        ZoneGen(std::string pat, std::string met);
-
         int get_etat(int x, int y) const;
 
         bool is_valide() const;
@@ -40,9 +38,9 @@ class ZoneGen
 
         int get_nb_cases() const;
 
-        bool is_nb_cases_assez(int nb_voulu) const;
+        void teste_nb_cases_assez(int nb_voulu);
 
-        bool is_nb_cases_trop(int nb_voulu) const;
+        void teste_nb_cases_trop(int nb_voulu);
 
         void initialisation_gen(std::string pat, std::string met);
 
