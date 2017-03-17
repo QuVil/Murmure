@@ -86,10 +86,12 @@ void ZoneGen::teste_nb_cases_trop(int nb_voulu)
         }
     }
     if (nb >= nb_voulu)
+    {
         valide = false;
+    }
 }
 
-void ZoneGen::initialisation_gen(string pat, string met)
+void ZoneGen::initialisation_gen(std::string pat, std::string met)
 {
     patterne = pat;
     methode = met;
@@ -171,8 +173,8 @@ void ZoneGen::initialisation_gen(string pat, string met)
     if (!(methode == "voisins" || methode == "bruit_pos" || methode == "aleatoire" || methode == "epuration"
           || methode == "bruit_neg" || methode == "extension"))
     {
-        cout<<"error : Invalid method"<<endl;
-        terminate();
+        std::cout<<"error : Invalid method"<<std::endl;
+        std::terminate();
     }
     pret_iteration = true;
 }
@@ -184,17 +186,17 @@ void ZoneGen::afficher_carte()const
         for (int j=0; j<11; ++j)
         {
             if (carte[i][j] == 0)
-                cout<<"- ";
+                std::cout<<"- ";
             else if (carte[i][j] == 2)
-                cout<<"8 ";
+                std::cout<<"8 ";
             else
-                cout<<"X ";
+                std::cout<<"X ";
         }
-        cout<<endl;
+        std::cout<<std::endl;
     }
 }
 
-void ZoneGen::iterer(string meth /* = "" */)
+void ZoneGen::iterer(std::string meth /* = "" */)
 {
     if (meth != "" && meth != " ") //Si on passe une methode => changement de la methode
     {
@@ -202,7 +204,7 @@ void ZoneGen::iterer(string meth /* = "" */)
     }
     //itere la creation de la carte selon la méthode donnée dans l'instance au temps t
     if (pret_iteration == false)
-        cout<<"erreur : modele potentiellement non initialise..."<<endl;
+        std::cout<<"erreur : modele potentiellement non initialise..."<<std::endl;
     srand (time(NULL));
 
     if (methode == "voisins")
@@ -498,7 +500,7 @@ void ZoneGen::iterer(string meth /* = "" */)
     }
 }
 
-string ZoneGen::get_patterne()
+std::string ZoneGen::get_patterne()
 {
     return patterne;
 }

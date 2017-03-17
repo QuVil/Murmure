@@ -32,7 +32,7 @@ public:
 
     void charger(Perso & p);
 
-    void charger(Modele & m);
+    void charger(Modele & m, std::string nom);
 };
 
 #endif // FICHIER_H_INCLUDED

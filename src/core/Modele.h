@@ -51,6 +51,16 @@ public:
     Modele(std::string nom);
 
     /**
+     * \brief Mutateur d'une case tableau_modele.
+     * \param[in] x : nouveau int qui sera place dans la case.
+     * \param[in] i : numero de la case de tableau_modele.
+     */
+    void set_tableau_modele_i (int x, int i)
+    {
+        tableau_modele[i] = x;
+    }
+
+    /**
      * \brief procédure principale du module.
      * génère le membre \a generateur à l'aide de \a tableau_modele.
      * La ZoneGen pourra alors être transférée comme Zone.

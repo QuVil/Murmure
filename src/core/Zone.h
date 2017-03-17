@@ -74,6 +74,8 @@ public:
     void vider_salle();
 
     void zone_depuis_modele(std::string nom);
+
+    void zone_depuis_random_modele();
 };
 
 #endif // ZONE_H_INCLUDED

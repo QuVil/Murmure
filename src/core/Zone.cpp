@@ -7,6 +7,9 @@
  */
 
 #include <iostream>
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
 
 #include "Zone.h"
 #include "Fichier.h"
@@ -112,6 +115,7 @@ void Zone::zone_depuis_modele(std::string nom)
 {
     Modele mod(nom);
     mod.generer_zone();
+
     for (int i=0; i<11; ++i)
     {
         for (int j=0; j<11; ++j)
@@ -119,5 +123,21 @@ void Zone::zone_depuis_modele(std::string nom)
             carte[i][j].set_config(mod.get_salle_generateur(i, j));
         }
     }
+}
 
+void Zone::zone_depuis_random_modele()
+{
+    std::string nom_aleat;
+    srand (time(NULL));
+    int nb_aleat = rand() % 1;
+
+    switch(nb_aleat)
+    {
+        case 0:
+            nom_aleat = "test";
+        default:
+            nom_aleat = "defaut";
+    }
+
+    zone_depuis_modele(nom_aleat);
 }

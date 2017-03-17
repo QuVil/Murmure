@@ -4,7 +4,7 @@
 int main(int argc, char ** argv)
 {
     Zone z;
-    z.afficher_zone();
+    z.zone_depuis_modele("test");
 
 
     return 0;

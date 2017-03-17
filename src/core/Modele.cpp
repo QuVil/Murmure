@@ -11,7 +11,7 @@
 
 Modele::Modele()
 {
-    for (int i=0; i<23; ++i)
+    for (int i=11; i<23; ++i)
     {
         tableau_modele[i] = 0;
     }
@@ -36,11 +36,13 @@ Modele::Modele(std::string nom)
         tableau_modele[i] = 0;
     }
     Fichier fichier;
-    fichier.charger(*this);
+    fichier.charger(*this, nom);
 }
 
 void Modele::generer_zone()
 {
+    std::cout<<"Generation de la zone"<<std::endl; //verbose à retirer...
+
     int nb_min = tableau_modele[0];
     int nb_max = tableau_modele[1];
 
@@ -66,6 +68,7 @@ void Modele::generer_zone()
         pat = "carre";
     }
 
+    int k=0; //Si la boucle tourne plus de 100 000 fois, c'est qu'il y a un souci...
     while (!generateur.is_valide())
     {
         generateur.vider_carte();
@@ -104,7 +107,19 @@ void Modele::generer_zone()
         generateur.teste_nb_cases_assez(nb_min);
         generateur.teste_nb_cases_trop(nb_max);
         generateur.placer_boss();
+
+        k++;
+        if (k > 100000)
+        {
+            break;
+        }
+        else if (k % 100 == 0)
+        {
+            std::cout<<"."<<std::endl;
+        }
     }
+    if (!generateur.is_valide()) {std::cout<<"Woops... la generation a echoue."<<std::endl;}
+    else{generateur.afficher_carte();}
 }
 
 int Modele::get_salle_generateur(int x, int y)const
