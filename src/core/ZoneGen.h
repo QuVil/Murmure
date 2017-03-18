@@ -86,6 +86,8 @@ class ZoneGen
         void placer_depart();
 
         void placer_clef();
+
+        void placer_objet();
 };
 
 #endif // ZONEGEN_H_INCLUDED

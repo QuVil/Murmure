@@ -199,9 +199,11 @@ void ZoneGen::afficher_carte()const
             else if (carte[i][j] == 2)
                 std::cout<<"b ";
             else if (carte[i][j] == 3)
-                std::cout<<"o ";
+                std::cout<<"c ";
             else if (carte[i][j] == 4)
                 std::cout<<"d ";
+            else if (carte[i][j] == 5)
+                std::cout<<"o ";
             else
                 std::cout<<"X ";
         }
@@ -218,7 +220,6 @@ void ZoneGen::iterer(std::string meth /* = "" */)
     //itere la creation de la carte selon la méthode donnée dans l'instance au temps t
     if (pret_iteration == false)
         std::cout<<"erreur : modele potentiellement non initialise..."<<std::endl;
-    srand (time(NULL));
 
     if (methode == "voisins")
     {
@@ -605,7 +606,6 @@ void ZoneGen::valider_recursif(int i, int j)
 void ZoneGen::placer_boss()
 {
     bool boss_est_place = false;
-    srand (time(NULL));
     int coin_recherche = rand() % 2;
     if (coin_recherche == 0)
     {
@@ -777,7 +777,6 @@ void ZoneGen::placer_depart()
     int nb_break = 0;
     while (!dep_place)
     {
-        srand (time(NULL));
         int i_aleat = rand() % 11;
         int j_aleat = rand() % 11;
 
@@ -833,4 +832,27 @@ void ZoneGen::placer_clef()
     }
     assert(dist_max_i != posx_dep || dist_max_j != posy_dep);
     carte[dist_max_i][dist_max_j] = 3;
+}
+
+void ZoneGen::placer_objet()
+{
+    bool obj_place = false;
+    int nb_break = 0;
+    while (!obj_place)
+    {
+        int i_aleat = rand() % 11;
+        int j_aleat = rand() % 11;
+
+        if (carte[i_aleat][j_aleat] == 1)
+        {
+            carte[i_aleat][j_aleat] = 5;
+            obj_place = true;
+        }
+        else if (nb_break > 10000)
+        {
+            valide = false;
+            break;
+        }
+        nb_break++;
+    }
 }

@@ -109,6 +109,7 @@ void Modele::generer_zone()
         generateur.placer_boss();
         generateur.placer_depart();
         generateur.placer_clef();
+        generateur.placer_objet();
 
         k++;
         if (k > 100000)
