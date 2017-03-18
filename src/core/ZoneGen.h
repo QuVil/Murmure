@@ -61,6 +61,10 @@ class ZoneGen
         void vider_carte();
 
         void placer_depart();
+
+        int calculer_distance(int x_dep, int y_dep, int x_arr, int y_arr) const;
+
+        void placer_objet();
 };
 
 #endif // ZONEGEN_H_INCLUDED

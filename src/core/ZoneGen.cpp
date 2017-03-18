@@ -1,8 +1,9 @@
 #include <iostream>
+#include <cassert>
 
 #include "ZoneGen.h"
-
 #include "Fichier.h"
+
 
 ZoneGen::ZoneGen()
 {
@@ -188,9 +189,11 @@ void ZoneGen::afficher_carte()const
             if (carte[i][j] == 0)
                 std::cout<<"- ";
             else if (carte[i][j] == 2)
-                std::cout<<"8 ";
+                std::cout<<"B ";
+            else if (carte[i][j] == 3)
+                std::cout<<"O ";
             else if (carte[i][j] == 4)
-                std::cout<<"0 ";
+                std::cout<<"D ";
             else
                 std::cout<<"X ";
         }
@@ -784,4 +787,43 @@ void ZoneGen::placer_depart()
         }
         nb_break++;
     }
+}
+
+int ZoneGen::calculer_distance (int x_dep, int y_dep, int x_arr, int y_arr) const
+{
+    int dist_x = x_arr - x_dep;
+    int dist_y = y_arr - y_dep;
+
+    if (dist_x < 0){dist_x = 0 - dist_x;}
+    if (dist_y < 0){dist_y = 0 - dist_y;}
+
+    return (dist_x + dist_y);
+}
+
+void ZoneGen::placer_objet()
+{
+    int dist_max = 0;
+    int dist_tampon = 0;
+    int dist_max_i = 0;
+    int dist_max_j = 0;
+
+    for (int i=0; i<11; ++i)
+    {
+        for (int j=0; j<11; ++j)
+        {
+            if (carte[i][j] == 1)
+            {
+                dist_tampon = calculer_distance(posx_dep, posy_dep, i, j);
+                std::cout<<dist_tampon<<std::endl;
+                if (dist_tampon > dist_max)
+                {
+                    dist_max = dist_tampon;
+                    dist_max_i = i;
+                    dist_max_j = j;
+                }
+            }
+        }
+    }
+    assert(dist_max_i != posx_dep || dist_max_j != posy_dep);
+    carte[dist_max_i][dist_max_j] = 3;
 }

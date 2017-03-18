@@ -108,6 +108,7 @@ void Modele::generer_zone()
         generateur.teste_nb_cases_trop(nb_max);
         generateur.placer_boss();
         generateur.placer_depart();
+        generateur.placer_objet();
 
         k++;
         if (k > 100000)
