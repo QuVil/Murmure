@@ -125,11 +125,11 @@ void Zone::zone_depuis_modele(std::string nom)
     }
 }
 
-void Zone::zone_depuis_random_modele()
+void Zone::zone_depuis_modele_aleatoire()
 {
     std::string nom_aleat;
     srand (time(NULL));
-    int nb_aleat = rand() % 1;
+    int nb_aleat = rand() % 2;
 
     switch(nb_aleat)
     {
