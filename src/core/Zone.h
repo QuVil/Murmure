@@ -5,9 +5,8 @@
  * \file Zone.h
  * \brief Header de la class Zone.
  * \author Quentin.V
- * \version 0.1
- * \date 12 mars 2017
- * TODO : Finir de commenter les méthodes présentes.
+ * \version 0.2
+ * \date 18 mars 2017
  */
 
 #include "Salle.h"
@@ -25,7 +24,7 @@
 class Zone
 {
 private:
-    Salle carte[11][11]; /**< \a contient toutes les Salle de la Zone dans un tableau. */
+    Salle carte[11][11]; /**< \a carte contient toutes les Salle de la Zone dans un tableau. */
     int niveau_zone; /**< \a niveau_zone agit comme indicateur de difficulté et comme nom de Zone. */
     int salle_actuelle_x, salle_actuelle_y; /**< les coordonnées de la Salle où se trouve le Perso. */
 

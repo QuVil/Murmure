@@ -2,8 +2,8 @@
  * \file Zone.cpp
  * \brief Code source pour le module Zone
  * \author Quentin.V
- * \version 0.1
- * \date 12 mars 2017
+ * \version 0.2
+ * \date 18 mars 2017
  */
 
 #include <iostream>

@@ -1,3 +1,11 @@
+/**
+ * \file ZoneGen.cpp
+ * \brief fichier source de la class ZoneGen.
+ * \author Quentin.V
+ * \version 0.3
+ * \date 18 mars 2017
+ */
+
 #include <iostream>
 #include <cassert>
 
@@ -189,11 +197,11 @@ void ZoneGen::afficher_carte()const
             if (carte[i][j] == 0)
                 std::cout<<"- ";
             else if (carte[i][j] == 2)
-                std::cout<<"B ";
+                std::cout<<"b ";
             else if (carte[i][j] == 3)
-                std::cout<<"O ";
+                std::cout<<"o ";
             else if (carte[i][j] == 4)
-                std::cout<<"D ";
+                std::cout<<"d ";
             else
                 std::cout<<"X ";
         }
@@ -772,7 +780,7 @@ void ZoneGen::placer_depart()
         srand (time(NULL));
         int i_aleat = rand() % 11;
         int j_aleat = rand() % 11;
-        std::cout<<i_aleat<<" "<<j_aleat<<std::endl;
+
         if (carte[i_aleat][j_aleat] == 1)
         {
             carte[i_aleat][j_aleat] = 4;
@@ -800,7 +808,7 @@ int ZoneGen::calculer_distance (int x_dep, int y_dep, int x_arr, int y_arr) cons
     return (dist_x + dist_y);
 }
 
-void ZoneGen::placer_objet()
+void ZoneGen::placer_clef()
 {
     int dist_max = 0;
     int dist_tampon = 0;
@@ -814,7 +822,6 @@ void ZoneGen::placer_objet()
             if (carte[i][j] == 1)
             {
                 dist_tampon = calculer_distance(posx_dep, posy_dep, i, j);
-                std::cout<<dist_tampon<<std::endl;
                 if (dist_tampon > dist_max)
                 {
                     dist_max = dist_tampon;

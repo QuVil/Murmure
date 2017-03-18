@@ -1,29 +1,52 @@
 #ifndef ZONEGEN_H_INCLUDED
 #define ZONEGEN_H_INCLUDED
 
+/**
+ * \file ZoneGen.h
+ * \brief Header de la class ZoneGen.
+ * \author Quentin.V
+ * \version 0.3
+ * \date 18 mars 2017
+ */
+ ///TODO : Finir la doc de ZoneGen...
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
 #include <iostream>
 #include <string>
 
+/**
+ * \class ZoneGen
+ * \brief class principale de generation de carte pour Zone.
+ * ZoneGen est une classe de transition entre Modele et Zone,
+ * instanciant un generateur contenant une carte semblable aux
+ * Zones. Le generateur applique un patterne de base sur sa carte,
+ * puis 'itere' dessus avec differentes methodes.
+ * une procedure permet ensuite de valider() la carte, en verifiant
+ * que toutes les salles sont connectees, puis place le boss et l'objet
+ * de la Zone.
+ */
 class ZoneGen
 {
     private:
-        int carte[11][11];
-        int carte_validation[11][11];
+        int carte[11][11]; /**< \a carte est l'equivalent du meme attribut de Zone, mais en int (par optimisation). */
+        int carte_validation[11][11]; /**< \a carte_validation sert uniquement pour valider() la \a carte.*/
 
-        std::string patterne; //patterne = le motif de base de la carte à sa création
-        std::string methode;  //methode = méthode d'itération de création de carte
-
-        bool pret_iteration;  //pret_iteration = l'instance est-elle prête à itérer ?
-        bool valide; //valide = la carte est-elle jouable ?
+        std::string patterne; /**< \a patterne est le motif de base applique au debut de la creation de carte.*/
+        std::string methode;  /**< \a methode contient la methode d'iteration actuelle du generateur.*/
         //patternes : croix, carre, h, vide, hub
         //methodes : voisins, bruit_neg, bruit_pos, aleatoire, epuration, extension
-        int posx_dep; //coordonnées de la salle de départ
-        int posy_dep;
+
+        bool pret_iteration;  /**< determine si la carte a ete initialisee.*/
+        bool valide; /**< determine si la carte est jouable (un seul 'bloc' de salles).*/
+
+        int posx_dep; /**< contient la coordonnee x de la salle de depart de la Zone.*/
+        int posy_dep; /**< contient la coordonnee y de la salle de depart de la Zone.*/
 
         void valider_recursif(int i, int j);
+
+        int calculer_distance(int x_dep, int y_dep, int x_arr, int y_arr) const;
 
     public:
         ZoneGen();
@@ -62,9 +85,7 @@ class ZoneGen
 
         void placer_depart();
 
-        int calculer_distance(int x_dep, int y_dep, int x_arr, int y_arr) const;
-
-        void placer_objet();
+        void placer_clef();
 };
 
 #endif // ZONEGEN_H_INCLUDED
