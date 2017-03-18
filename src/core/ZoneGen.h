@@ -59,6 +59,8 @@ class ZoneGen
         void placer_boss();
 
         void vider_carte();
+
+        void placer_depart();
 };
 
 #endif // ZONEGEN_H_INCLUDED

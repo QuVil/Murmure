@@ -189,6 +189,8 @@ void ZoneGen::afficher_carte()const
                 std::cout<<"- ";
             else if (carte[i][j] == 2)
                 std::cout<<"8 ";
+            else if (carte[i][j] == 4)
+                std::cout<<"0 ";
             else
                 std::cout<<"X ";
         }
@@ -706,4 +708,80 @@ void ZoneGen::vider_carte()
         }
     }
     pret_iteration = false;
+}
+
+void ZoneGen::placer_depart()
+{
+    bool dep_place = false;
+
+    //On regarde s'il y a une Salle avec 4 voisins -auquel cas on y placera la salle de départ.
+    for (int i=0; i<11; ++i)
+    {
+        for (int j=0; j<11; ++j)
+        {
+            int voisins = 0;
+            if (i>0)
+            {
+                if (carte[i-1][j] == 1)
+                {
+                    voisins++;
+                }
+            }
+
+            if (i<10)
+            {
+                if (carte[i+1][j] == 1)
+                {
+                    voisins++;
+                }
+            }
+
+            if (j>0)
+            {
+                if (carte[i][j-1] == 1)
+                {
+                    voisins++;
+                }
+            }
+
+            if (j<10)
+            {
+                if (carte[i][j+1] == 1)
+                {
+                    voisins++;
+                }
+            }
+
+            if (voisins == 4 && carte[i][j] == 1 && !dep_place)
+            {
+                dep_place = true;
+                carte[i][j] = 4;
+                posx_dep = i;
+                posy_dep = j;
+            }
+        }
+    }
+
+    //Sinon, on la met aléatoirement sur la carte.
+    int nb_break = 0;
+    while (!dep_place)
+    {
+        srand (time(NULL));
+        int i_aleat = rand() % 11;
+        int j_aleat = rand() % 11;
+        std::cout<<i_aleat<<" "<<j_aleat<<std::endl;
+        if (carte[i_aleat][j_aleat] == 1)
+        {
+            carte[i_aleat][j_aleat] = 4;
+            dep_place = true;
+            posx_dep = i_aleat;
+            posy_dep = j_aleat;
+        }
+        else if (nb_break > 10000)
+        {
+            valide = false;
+            break;
+        }
+        nb_break++;
+    }
 }
