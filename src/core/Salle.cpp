@@ -15,7 +15,6 @@
 Salle::Salle()
 {
     config = 1;
-
     Fichier fichier;
     fichier.charger(*this);
 }
@@ -23,7 +22,6 @@ Salle::Salle()
 Salle::Salle(int conf)
 {
     config = conf;
-
     Fichier fichier;
     fichier.charger(*this);
 }

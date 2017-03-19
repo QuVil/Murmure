@@ -17,7 +17,7 @@ SalleGen::SalleGen()
     {
         for (int j=0; j<17; ++j)
         {
-            grille[i][j] = 0;
+            grille[i][j] = 'n';
         }
     }
 }
@@ -35,7 +35,7 @@ SalleGen::SalleGen(bool p_h, bool p_b, bool p_g, bool p_d, int conf)
     {
         for (int j=0; j<17; ++j)
         {
-            grille[i][j] = 0;
+            grille[i][j] = 'n';
         }
     }
 }
@@ -51,19 +51,19 @@ void SalleGen::initialisation_gen()
     {
         for (int i=0; i<9; ++i)
         {
-            grille[i][0] = 3;
-            grille[i][16] = 3;
+            grille[i][0] = 'm';
+            grille[i][16] = 'm';
         }
         for (int j=0; j<17; ++j)
         {
-            grille[0][j] = 3;
-            grille[8][j] = 3;
+            grille[0][j] = 'm';
+            grille[8][j] = 'm';
         }
 
-        if (p_haut){grille[0][8] = 1;}
-        if (p_bas){grille[8][8] = 1;}
-        if (p_gauche){grille[4][0] = 1;}
-        if (p_droite){grille[4][16] = 1;}
+        if (p_haut){grille[0][8] = 'p';}
+        if (p_bas){grille[8][8] = 'p';}
+        if (p_gauche){grille[4][0] = 'p';}
+        if (p_droite){grille[4][16] = 'p';}
     }
 }
 
@@ -90,7 +90,7 @@ void SalleGen::placer_clef()
         {
             for (int j=0; j<17; ++j)
             {
-                if (grille[i][j] == 4){clef_placee = true;}
+                if (grille[i][j] == 'c'){clef_placee = true;}
             }
         }
 
@@ -102,9 +102,9 @@ void SalleGen::placer_clef()
             {
                 int i_aleat = rand() % 3 + 3;
                 int j_aleat = rand() % 11 + 3;
-                if (grille[i_aleat][j_aleat] == 0)
+                if (grille[i_aleat][j_aleat] == 'n')
                 {
-                    grille[i_aleat][j_aleat] = 4;
+                    grille[i_aleat][j_aleat] = 'c';
                     clef_placee = true;
                 }
 
@@ -119,10 +119,10 @@ void SalleGen::placer_clef()
     }
 }
 
-void SalleGen::placer_amas(int type, int taille) // type = 2 ou 5, taille entre 0 et 4
+void SalleGen::placer_amas(char type, int taille) // type = 2 ou 5, taille entre 0 et 4
 {
     assert(taille < 5 && taille >= 0);
-    assert(type == 2 || type == 5);
+    assert(type == 'r' || type == 't');
     int depart_amas = rand() % 10; //l'amas commence-t-il dans les coins ou au centre ?
     int i_dep, j_dep;
 
@@ -151,12 +151,12 @@ void SalleGen::placer_amas(int type, int taille) // type = 2 ou 5, taille entre 
     placer_amas_recursif(i_dep, j_dep, type, taille);
 }
 
-void SalleGen::placer_amas_recursif(int i, int j, int type, int taille)
+void SalleGen::placer_amas_recursif(int i, int j, char type, int taille)
 {
     //cas d'arrêt
-    if (grille[i][j] == 1 || grille[i][j] == 3 || grille[i-1][j] == 1 || grille[i+1][j] == 1
-        || grille[i][j-1] == 1 || grille[i][j+1] == 1 || grille[i+1][j+1] == 1
-        || grille[i-1][j-1] == 1 || grille[i+1][j-1] == 1 || grille[i-1][j+1] == 1 || grille[i][j] == type)
+    if (grille[i][j] == 'p' || grille[i][j] == 'm' || grille[i-1][j] == 'p' || grille[i+1][j] == 'p'
+        || grille[i][j-1] == 'p' || grille[i][j+1] == 'p' || grille[i+1][j+1] == 'p'
+        || grille[i-1][j-1] == 'p' || grille[i+1][j-1] == 'p' || grille[i-1][j+1] == 'p' || grille[i][j] == type)
     {
         //rien
     }
@@ -224,7 +224,7 @@ void SalleGen::valider()
     {
         for (int j=0; j<17; ++j)
         {
-            if (grille_validation[i][j] == 1)
+            if (grille_validation[i][j] == 'p')
             {
                 valide = false;
             }
@@ -235,17 +235,17 @@ void SalleGen::valider()
 void SalleGen::valider_recursif(int i, int j)
 {
     //cas d'arrêt
-    if (grille_validation[i][j] == 1)
+    if (grille_validation[i][j] == 'p')
     {
-        grille_validation[i][j] = -1;
+        grille_validation[i][j] = '*';
     }
-    else if (grille_validation[i][j] == 3 || grille_validation[i][j] == 2)
+    else if (grille_validation[i][j] == 'm' || grille_validation[i][j] == 't')
     {
         //rien
     }
     else
     {
-        grille_validation[i][j] = 2;
+        grille_validation[i][j] = 't';
 
         if (i < 8)
         {

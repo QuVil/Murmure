@@ -6,15 +6,15 @@
 class SalleGen
 {
 private:
-    int grille[9][17];
-    int grille_validation[9][17];
+    char grille[9][17];
+    char grille_validation[9][17];
     bool p_haut, p_bas, p_gauche, p_droite;
     int config;
-    //0=normal, 1=porte, 2=trou, 3=mur, 4=clef, 5=buisson/rocher
+    //n=normal, p=porte, t=trou, m=mur, c=clef, r=buisson/rocher
 
     bool valide;
 
-    void placer_amas_recursif(int i, int j, int type, int taille);
+    void placer_amas_recursif(int i, int j, char type, int taille);
 
     void valider_recursif(int i, int j);
 
@@ -32,7 +32,7 @@ public:
 
     void placer_clef();
 
-    void placer_amas(int type, int taille = 2);
+    void placer_amas(char type, int taille = 2);
 
     void valider();
 
