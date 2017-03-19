@@ -2,6 +2,8 @@
 #define PERSO_H_INCLUDED
 
 #include <string>
+#include "VecteurM.h"
+#include "Coord2D.h"
 
 class Perso
 {
@@ -11,13 +13,9 @@ private:
     //Arme arme1;
     //Arme arme2;
 
-    float angle_regard; /**< \a angle_regard de 0 à 360°, où 0 est à droite. */
+    VecteurM deplacement, orientation, resultante;
 
-    float vitesse; /**< \a vitesse du Perso, comme coefficient d'une vitesse de base. */
-    float angle_mouvement; /**< \a angle_mouvement est calculé comme angle_regard, mais pour le déplacement. */
-
-    float pos_x; /**< \a pos_x détermine où se trouve Perso dans une Salle; par rapport au point en haut à gauche du sprite. */
-    float pos_y; /**< \a pos_y détermine où se trouve Perso dans une Salle; par rapport au point en haut à gauche du sprite. */
+    Coord2D position, position_old;
 
     float pv_max; /**< \a pv_max est le nombre de coeurs maximum du Perso. */
     float pv_actuel; /**< \a pv_actuel est la "lose condition" si elle atteint 0, et doit être plus petit que pv_max. */
@@ -30,11 +28,11 @@ public:
 
     std::string get_nom()const;
 
-    float get_angle_regard()const;
+    void set_deplacement(const VecteurM &v);
 
-    float get_vitesse()const;
+    void set_orientation(const VecteurM &v);
 
-    float get_angle_mouvement()const;
+    Coord2D get_pos()const;
 
     float get_pos_x()const;
 

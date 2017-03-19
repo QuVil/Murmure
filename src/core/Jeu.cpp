@@ -4,9 +4,15 @@
 
 Jeu::Jeu()
 {
+    zone.zone_depuis_modele_aleatoire();
 }
 
-Salle Jeu::get_salle()
+Salle Jeu::get_salle()const
 {
-    return salle;
+    return zone.get_salle();
+}
+
+Zone Jeu::get_zone()const
+{
+    return zone;
 }

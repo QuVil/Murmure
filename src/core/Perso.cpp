@@ -1,11 +1,12 @@
 #include "Perso.h"
 #include "Fichier.h"
+#include "Salle.h"
 #include <string>
 
 Perso::Perso()
 {
-    angle_mouvement = 0;
-    angle_regard = 0;
+    position.set_x(17/2);
+    position.set_y(9/2);
 }
 
 Perso::Perso(std::string n)
@@ -20,25 +21,31 @@ std::string Perso::get_nom()const
     return nom;
 }
 
-float Perso::get_angle_regard()const
+void Perso::set_deplacement(const VecteurM& v)
 {
-    return angle_regard;
+    deplacement = v;
 }
 
-float Perso::get_vitesse()const
+void Perso::set_orientation(const VecteurM& v)
 {
-    return vitesse;
+    orientation = v;
 }
 
-float Perso::get_angle_mouvement() const
+Coord2D Perso::get_pos() const
 {
-    return angle_mouvement;
+    return position;
 }
 
+
+
+float Perso::get_pos_x() const
+{
+    return position.get_x();
+}
 
 float Perso::get_pos_y() const
 {
-    return pos_y;
+    return position.get_y();
 }
 
 float Perso::get_pv_max() const

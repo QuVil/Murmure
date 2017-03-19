@@ -64,7 +64,7 @@ public:
      * \brief Accesseur de Salle actuelle.
      * \return la Salle actuelle.
      */
-    Salle get_salle();
+    Salle get_salle()const;
 
     /**
      * \brief Mutateur de Salle de la \a carte.
