@@ -131,6 +131,8 @@ public:
      * \return \a nb_cases_hauteur de la Salle.
      */
     int get_nb_cases_hauteur();
+
+    std::string get_config_string()const;
 };
 
 #endif // SALLE_H_INCLUDED

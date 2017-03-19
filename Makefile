@@ -6,7 +6,7 @@ FINAL_TARGET_TXT = murmure_txt
 SRCS_TEST = $(CORE) testing/map_testing.cpp
 FINAL_TARGET_TEST = murmure_test
 
-SRCS_SFML = $(CORE) sfml/mainSFML.cpp sfml/JeuSFML.cpp sfml/CaseSFML.cpp
+SRCS_SFML = $(CORE) sfml/mainSFML.cpp sfml/JeuSFML.cpp sfml/CaseSFML.cpp sfml/CarteAffSFML.cpp
 FINAL_TARGET_SFML = murmure_sfml
 
 SRCS_GEN_TEST = $(CORE) testing/generation_tests.cpp

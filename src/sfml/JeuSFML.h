@@ -26,6 +26,9 @@ private:
 
     /// SALLE
 
+    int scale_carte_largeur, scale_carte_hauteur;
+    int posx0carte, posy0carte;
+
 
     Jeu jeu;
 

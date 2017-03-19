@@ -102,3 +102,30 @@ int Salle::get_nb_cases_hauteur()
     return nb_cases_hauteur;
 }
 
+std::string Salle::get_config_string() const
+{
+    switch(config)
+    {
+        case 0:
+            return "vide";
+            break;
+        case 1:
+            return "normal";
+            break;
+        case 2:
+            return "boss";
+            break;
+        case 3:
+            return "clef";
+            break;
+        case 4:
+            return "depart";
+            break;
+        case 5:
+            return "objet";
+            break;
+        default:
+            return "vide";
+            break;
+    }
+}

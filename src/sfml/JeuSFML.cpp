@@ -5,6 +5,7 @@
 #include "CaseSalle.h"
 
 #include "CaseSFML.h"
+#include "CarteAffSFML.h"
 #include "JeuSFML.h"
 
 JeuSFML::JeuSFML()
@@ -22,6 +23,11 @@ JeuSFML::JeuSFML()
     posx0salle = (desktop.width -jeu.get_salle().get_nb_cases_largeur()*scale_salle_largeur)/2;
     posy0salle = (desktop.height - jeu.get_salle().get_nb_cases_hauteur()*scale_salle_hauteur)/2;
 
+    scale_carte_largeur = desktop.width/11;
+    scale_carte_hauteur = desktop.height/11;
+
+    posx0carte = (desktop.width - 11*scale_carte_largeur)/2;
+    posy0carte = (desktop.height - 11*scale_carte_hauteur)/2;
 }
 
 void JeuSFML::SFML_boucle()
@@ -46,12 +52,24 @@ void JeuSFML::SFML_boucle()
                 {
                     window.close();
                 }
+
+                if(event.key.code == sf::Keyboard::M)
+                {
+                    afficher_carte();
+                }
+
+                if(event.key.code == sf::Keyboard::S)
+                {
+                    afficher_salle();
+                }
             }
+
+
         }
+
+
         window.clear(sf::Color::Black);
-
-        afficher_salle();
-
+        afficher_carte();
         window.display();
     }
 }
@@ -82,5 +100,22 @@ void JeuSFML::afficher_salle()
 
 void JeuSFML::afficher_carte()
 {
-
+    for(int i=0;i<11;i++)
+    {
+        for(int j=0;j<11;j++)
+        {
+            /*
+            CaseSFML C(posx0salle +j*scale,
+                                   posy0salle +i*scale,
+                                   scale,
+                                   scale,
+                                   c.get_type_string());*/
+            CarteAffSFML C(posx0carte + j*scale_carte_largeur,
+                                        posy0carte + i*scale_carte_hauteur,
+                                        scale_carte_largeur,
+                                        scale_carte_hauteur,
+                                        jeu.get_zone().get_salle(i, j).get_config_string());
+            window.draw(C.get_cartesallesfml(),C.get_states());
+        }
+    }
 }
