@@ -22,13 +22,13 @@
 class CaseSalle
 {
 private:
-        int type; /**< \a type de la CaseSalle. */
-        // 0 : normal
-        // 1 : porte
-        // 2 : trou
-        // 3 : mur
-        // 4 : clef
-        // 5 : rocher/buisson
+        char type; /**< \a type de la CaseSalle. */
+        // n : normal
+        // p : porte
+        // t : trou
+        // m : mur
+        // c : clef
+        // r : rocher/buisson
 
 
 
@@ -45,7 +45,7 @@ public:
      * Constructeur prenant le type de CaseSalle désiré en parametre.
      * \param[in] t : le \a type qui sera affecte a la nouvelle instance.
      */
-    CaseSalle(const int & t);
+    CaseSalle(const char & t);
 
     /**
      * \brief Destructeur

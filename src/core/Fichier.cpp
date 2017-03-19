@@ -106,7 +106,7 @@ void Fichier::charger(Salle & s)
             //cout << tampon;
             s.set_case(i,
                                j,
-                               tampon - '0');
+                               tampon);
             //cout << (int) tampon << endl;
         }
         // récupere juste le caractere de changement de ligne

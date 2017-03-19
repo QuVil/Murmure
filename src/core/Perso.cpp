@@ -15,7 +15,7 @@ Perso::Perso(std::string n)
     //fichier.charger(*this);
 }
 
-string Perso::get_nom()const
+std::string Perso::get_nom()const
 {
     return nom;
 }

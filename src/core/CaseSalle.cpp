@@ -15,11 +15,11 @@
 
 CaseSalle::CaseSalle()
 {
-    type = 0;
+    type = 'n';
 }
 
 
-CaseSalle::CaseSalle(const int& t)
+CaseSalle::CaseSalle(const char& t)
 {
     type = t;
 }
@@ -40,16 +40,20 @@ std::string CaseSalle::get_type_string()
 {
     switch(type)
     {
-        case 0 : return "normal";
-                       break;
-        case 1 : return "porte";
-                       break;
-        case 2 : return "trou";
-                       break;
-        case 3 : return "mur";
-                       break;
+        case 'n' : return "normal";
+                    break;
+        case 'p' : return "porte";
+                    break;
+        case 't' : return "trou";
+                    break;
+        case 'm' : return "mur";
+                    break;
+        case 'c' : return "clef";
+                    break;
+        case 'r' : return "rocher";
+                    break;
         default : return "normal";
-                          break;
+                    break;
     }
 }
 
