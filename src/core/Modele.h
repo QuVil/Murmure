@@ -4,7 +4,7 @@
 /**
  * \file Modele.h
  * \brief Header du module Modele.
- * \author Quentin.V
+ * \author Quentin.V & Gary.S
  * \version 0.1
  * \date 17 mars 2017
  *

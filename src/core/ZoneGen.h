@@ -4,7 +4,7 @@
 /**
  * \file ZoneGen.h
  * \brief Header de la class ZoneGen.
- * \author Quentin.V
+ * \author Quentin.V & Gary.S
  * \version 0.3
  * \date 18 mars 2017
  */

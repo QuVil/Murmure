@@ -4,7 +4,7 @@
 /**
  * \file Zone.h
  * \brief Header de la class Zone.
- * \author Quentin.V
+ * \author Quentin.V & Gary.S
  * \version 0.2
  * \date 18 mars 2017
  */

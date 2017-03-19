@@ -5,7 +5,7 @@
 /**
  * \file CaseSalle.h
  * \brief Header du module CaseSalle.
- * \author Quentin.V
+ * \author Quentin.V & Gary.S
  * \version 0.1
  * \date 11 mars 2017
  *

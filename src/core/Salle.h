@@ -4,7 +4,7 @@
 /**
  * \file Salle.h
  * \brief Header du module Salle.
- * \author Quentin.V
+ * \author Quentin.V & Gary.S
  * \version 0.1
  * \date 11 mars 2017
  *
