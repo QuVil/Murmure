@@ -40,6 +40,11 @@ SalleGen::SalleGen(bool p_h, bool p_b, bool p_g, bool p_d, int conf)
     }
 }
 
+bool SalleGen::is_valide() const
+{
+    return valide;
+}
+
 void SalleGen::initialisation_gen()
 {
     if (!(config == 0))
@@ -117,7 +122,8 @@ void SalleGen::placer_clef()
 void SalleGen::placer_amas(int type, int taille) // type = 2 ou 5, taille entre 0 et 4
 {
     assert(taille < 5 && taille >= 0);
-    int depart_amas = rand() % 9; //l'amas commence-t-il dans les coins ou au centre ?
+    assert(type == 2 || type == 5);
+    int depart_amas = rand() % 10; //l'amas commence-t-il dans les coins ou au centre ?
     int i_dep, j_dep;
 
     switch (depart_amas)
@@ -142,7 +148,6 @@ void SalleGen::placer_amas(int type, int taille) // type = 2 ou 5, taille entre 
         j_dep = rand() % 11 + 3;
         break;
     }
-    std::cout<<i_dep<<", "<<j_dep<<" recursivite"<<std::endl;
     placer_amas_recursif(i_dep, j_dep, type, taille);
 }
 
@@ -153,7 +158,7 @@ void SalleGen::placer_amas_recursif(int i, int j, int type, int taille)
         || grille[i][j-1] == 1 || grille[i][j+1] == 1 || grille[i+1][j+1] == 1
         || grille[i-1][j-1] == 1 || grille[i+1][j-1] == 1 || grille[i-1][j+1] == 1 || grille[i][j] == type)
     {
-        std::cout<<"fin de recursivite en "<<i<<" "<<j<<std::endl;
+        //rien
     }
     else
     {
@@ -198,5 +203,77 @@ void SalleGen::placer_amas_recursif(int i, int j, int type, int taille)
         {
             placer_amas_recursif(i+1, j-1, type, taille);
         }
+    }
+}
+
+void SalleGen::valider()
+{
+    for (int i=0; i<9; ++i)
+    {
+        for (int j=0; j<17; ++j)
+        {
+            grille_validation[i][j] = grille[i][j];
+        }
+    }
+
+    int i_dep = 1;
+    int j_dep = 8;
+    valider_recursif(i_dep, j_dep);
+    valide = true;
+    for (int i=0; i<9; ++i)
+    {
+        for (int j=0; j<17; ++j)
+        {
+            if (grille_validation[i][j] == 1)
+            {
+                valide = false;
+            }
+        }
+    }
+}
+
+void SalleGen::valider_recursif(int i, int j)
+{
+    //cas d'arrêt
+    if (grille_validation[i][j] == 1)
+    {
+        grille_validation[i][j] = -1;
+    }
+    else if (grille_validation[i][j] == 3 || grille_validation[i][j] == 2)
+    {
+        //rien
+    }
+    else
+    {
+        grille_validation[i][j] = 2;
+
+        if (i < 8)
+        {
+            valider_recursif(i+1, j);
+        }
+        if (i > 0)
+        {
+            valider_recursif(i-1, j);
+        }
+        if (j < 16)
+        {
+            valider_recursif(i, j+1);
+        }
+        if (j > 0)
+        {
+            valider_recursif(i, j-1);
+        }
+    }
+}
+
+void SalleGen::afficher_validation() const
+{
+    for (int i=0; i<9; ++i)
+    {
+        for (int j=0; j<17; ++j)
+        {
+            std::cout<<grille_validation[i][j]<<" ";
+        }
+        std::cout<<std::endl;
     }
 }
