@@ -28,6 +28,7 @@ private:
         // 2 : trou
         // 3 : mur
         // 4 : clef
+        // 5 : rocher/buisson
 
 
 

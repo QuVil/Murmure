@@ -2,6 +2,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
+#include <cassert>
 
 #include "SalleGen.h"
 
@@ -109,6 +110,93 @@ void SalleGen::placer_clef()
                 }
                 ++nb_break;
             }
+        }
+    }
+}
+
+void SalleGen::placer_amas(int type, int taille) // type = 2 ou 5, taille entre 0 et 4
+{
+    assert(taille < 5 && taille >= 0);
+    int depart_amas = rand() % 9; //l'amas commence-t-il dans les coins ou au centre ?
+    int i_dep, j_dep;
+
+    switch (depart_amas)
+    {
+    case 0:
+        i_dep = 2;
+        j_dep = 2;
+        break;
+    case 1:
+        i_dep = 1;
+        j_dep = 14;
+        break;
+    case 2:
+        i_dep = 6;
+        j_dep = 2;
+        break;
+    case 3:
+        i_dep = 6;
+        j_dep = 14;
+    default:
+        i_dep = rand() % 3 + 3;
+        j_dep = rand() % 11 + 3;
+        break;
+    }
+    std::cout<<i_dep<<", "<<j_dep<<" recursivite"<<std::endl;
+    placer_amas_recursif(i_dep, j_dep, type, taille);
+}
+
+void SalleGen::placer_amas_recursif(int i, int j, int type, int taille)
+{
+    //cas d'arrêt
+    if (grille[i][j] == 1 || grille[i][j] == 3 || grille[i-1][j] == 1 || grille[i+1][j] == 1
+        || grille[i][j-1] == 1 || grille[i][j+1] == 1 || grille[i+1][j+1] == 1
+        || grille[i-1][j-1] == 1 || grille[i+1][j-1] == 1 || grille[i-1][j+1] == 1 || grille[i][j] == type)
+    {
+        std::cout<<"fin de recursivite en "<<i<<" "<<j<<std::endl;
+    }
+    else
+    {
+        grille[i][j] = type;
+        int aleat_continue = rand() % (5 - taille);
+        if (aleat_continue == 2)
+        {
+            placer_amas_recursif(i+1, j, type, taille);
+        }
+        aleat_continue = rand() % (5 - taille);
+        if (aleat_continue == 1)
+        {
+            placer_amas_recursif(i-1, j, type, taille);
+        }
+        aleat_continue = rand() % (5 - taille);
+        if (aleat_continue == 0)
+        {
+            placer_amas_recursif(i, j-1, type, taille);
+        }
+        aleat_continue = rand() % (5 - taille);
+        if (aleat_continue == 2)
+        {
+            placer_amas_recursif(i, j+1, type, taille);
+        }
+        aleat_continue = rand() % (9 - taille);
+        if (aleat_continue == 4)
+        {
+            placer_amas_recursif(i+1, j+1, type, taille);
+        }
+        aleat_continue = rand() % (9 - taille);
+        if (aleat_continue == 2)
+        {
+            placer_amas_recursif(i-1, j+1, type, taille);
+        }
+        aleat_continue = rand() % (9 - taille);
+        if (aleat_continue == 6)
+        {
+            placer_amas_recursif(i-1, j-1, type, taille);
+        }
+        aleat_continue = rand() % (9 - taille);
+        if (aleat_continue == 3)
+        {
+            placer_amas_recursif(i+1, j-1, type, taille);
         }
     }
 }
