@@ -28,6 +28,7 @@ private:
     CaseSalle grille[nb_cases_hauteur][nb_cases_largeur]; /**< \a grille contient les CaseSalle composant la Salle. */
     int config; /**< \a config est la disposition de la Salle, correspondant à un int. */
     int difficulte; /**< \a difficulte est la difficulté de la Salle, calculée ou donnée au préalable. */
+    bool deja_visitee; /**< determine si la Salle a deja ete visitee par le Perso. */
     ///TODO : vérifier l'implémentation de difficulte et la ranger dans les fichiers contenant les Salle (GARY ?)
 
 public:
@@ -75,6 +76,18 @@ public:
      * \param[in] c : nouvelle config.
      */
     void set_config(int c);
+
+    /**
+     * \brief Accesseur de \a deja_visitee.
+     * \return l'attribut \a deja_visitee.
+     */
+    bool is_deja_visitee()const;
+
+    /**
+     * \brief Mutateur de \a deja_visitee.
+     * \param[in] visite : la nouvelle valeur de \a deja_visitee.
+     */
+    void set_deja_visitee(bool visite);
 
     /**
      * \brief Procédure de remplissage de Salle.

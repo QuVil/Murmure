@@ -48,6 +48,16 @@ void Salle::set_config(int c)
     config = c;
 }
 
+bool Salle::is_deja_visitee()const
+{
+    return deja_visitee;
+}
+
+void Salle::set_deja_visitee(bool visite)
+{
+    deja_visitee = visite;
+}
+
 void Salle::remplir()
 {
     config = 1;

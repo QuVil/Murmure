@@ -112,6 +112,8 @@
 		<Unit filename="src/core/Perso.h" />
 		<Unit filename="src/core/Salle.cpp" />
 		<Unit filename="src/core/Salle.h" />
+		<Unit filename="src/core/SalleGen.cpp" />
+		<Unit filename="src/core/SalleGen.h" />
 		<Unit filename="src/core/Zone.cpp" />
 		<Unit filename="src/core/Zone.h">
 			<Option compile="1" />
