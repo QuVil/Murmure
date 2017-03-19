@@ -59,7 +59,7 @@ Salle Zone::get_salle(int x, int y)
     return carte[x][y];
 }
 
-Salle Zone::get_salle()
+Salle Zone::get_salle()const
 {
     return carte[salle_actuelle_x][salle_actuelle_y];
 }

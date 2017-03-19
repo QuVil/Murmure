@@ -14,6 +14,8 @@ private:
     sf::RenderWindow window;
     // parametres de l'ecran
     sf::VideoMode desktop;
+
+    /// CASESALLE
     //echelle a laquelle on va charger les textures
     // (en fonction de la taille de l'ecran)
     int scale_salle_largeur, scale_salle_hauteur;
@@ -21,6 +23,9 @@ private:
     // positions initiales des cases de la salle pour
     // centrer au mieux la salle sur l'ecran
     int posx0salle,posy0salle;
+
+    /// SALLE
+
 
     Jeu jeu;
 

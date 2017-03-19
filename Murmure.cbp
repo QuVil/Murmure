@@ -92,6 +92,8 @@
 		</Unit>
 		<Unit filename="src/core/CaseSalle.cpp" />
 		<Unit filename="src/core/CaseSalle.h" />
+		<Unit filename="src/core/Coord2D.cpp" />
+		<Unit filename="src/core/Coord2D.h" />
 		<Unit filename="src/core/Fichier.cpp" />
 		<Unit filename="src/core/Fichier.h" />
 		<Unit filename="src/core/Jeu.cpp" />
@@ -114,6 +116,8 @@
 		<Unit filename="src/core/Salle.h" />
 		<Unit filename="src/core/SalleGen.cpp" />
 		<Unit filename="src/core/SalleGen.h" />
+		<Unit filename="src/core/VecteurM.cpp" />
+		<Unit filename="src/core/VecteurM.h" />
 		<Unit filename="src/core/Zone.cpp" />
 		<Unit filename="src/core/Zone.h">
 			<Option compile="1" />
