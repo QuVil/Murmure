@@ -27,6 +27,8 @@ private:
         // 1 : porte
         // 2 : trou
         // 3 : mur
+        // 4 : clef
+
 
 
 public:

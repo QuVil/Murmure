@@ -26,7 +26,10 @@ class Salle
 private:
     //cree un tableau de CaseSalle
     CaseSalle grille[nb_cases_hauteur][nb_cases_largeur]; /**< \a grille contient les CaseSalle composant la Salle. */
+
     int config; /**< \a config est la disposition de la Salle, correspondant à un int. */
+    //0=vide, 1=normal, 2=boss, 3=clef, 4=depart, 5=objet
+
     int difficulte; /**< \a difficulte est la difficulté de la Salle, calculée ou donnée au préalable. */
     bool deja_visitee; /**< determine si la Salle a deja ete visitee par le Perso. */
     ///TODO : vérifier l'implémentation de difficulte et la ranger dans les fichiers contenant les Salle (GARY ?)
