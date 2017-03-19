@@ -39,6 +39,11 @@ Modele::Modele(std::string nom)
     fichier.charger(*this, nom);
 }
 
+void Modele::set_tableau_modele_i(int x, int i)
+{
+    tableau_modele[i] = x;
+}
+
 void Modele::generer_zone()
 {
     std::cout<<"Generation de la zone"<<std::endl; //verbose à retirer...

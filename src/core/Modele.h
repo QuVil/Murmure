@@ -55,10 +55,7 @@ public:
      * \param[in] x : nouveau int qui sera place dans la case.
      * \param[in] i : numero de la case de tableau_modele.
      */
-    void set_tableau_modele_i (int x, int i)
-    {
-        tableau_modele[i] = x;
-    }
+    void set_tableau_modele_i (int x, int i);
 
     /**
      * \brief procédure principale du module.
