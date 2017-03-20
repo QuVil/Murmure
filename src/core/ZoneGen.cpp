@@ -499,9 +499,9 @@ std::string ZoneGen::get_patterne()
     return patterne;
 }
 
-void ZoneGen::set_salle(int i, int j, int salle)
+void ZoneGen::set_etat(int i, int j, int etat)
 {
-    carte[i][j] = salle;
+    carte[i][j] = etat;
 }
 
 void ZoneGen::valider()

@@ -77,10 +77,10 @@ class ZoneGen
         ZoneGen();
 
         /**
-        * \brief Accesseur d'une 'case' de la grille
-        * \param[in] x : coordonnees x de la case.
-        * \param[in] y : coordonnees y de la case.
-        * \return l'entier correspondant à la 'case' x,y.
+        * \brief Accesseur d'une 'salle' de la grille
+        * \param[in] x : coordonnees x de la salle.
+        * \param[in] y : coordonnees y de la salle.
+        * \return l'entier correspondant à la 'salle' x,y.
         */
         int get_etat(int x, int y) const;
 
@@ -159,20 +159,68 @@ class ZoneGen
         */
         std::string get_patterne();
 
-        void set_salle(int i, int j, int salle);
+        /**
+        * \brief Mutateur d'une 'salle' de la \a carte (int).
+        * \param[in] i : coordonnee x de la 'salle'.
+        * \param[in] j : coordonnee y de la 'salle'.
+        * \param[in] salle : l'int qui remplacera le carte[i][j] actuel.
+        */
+        void set_etat(int i, int j, int etat);
 
+        /**
+        * \brief Procédure de validation de la \a carte.
+        * Recopie \a carte dans \a carte_validation, puis cherche
+        * une salle pour commencer la récursivité et appelle valider_recursif()
+        * sur cette salle.
+        * Ensuite, vérifie que toutes les salles sont peintes et détermine l'état
+        * de validité de la \a carte.
+        */
         void valider();
 
+        /**
+        * \brief Affiche \a carte_validation dans la console (txt)
+        * Ceci est une procédure de test -- elle est à détruire en release.
+        */
         void afficher_validation() const;
 
+        /**
+        * \brief place une salle de boss dans la \a carte.
+        * La recherche de boss se fait ainsi : une variable aleatoire
+        * decide en premier lieu si la recherche se fait dans le sens de
+        * lecture ou dans le sens inverse (pour plus de variation).
+        * Ensuite, on cherche une salle n'ayant qu'une seule salle adjacente.
+        * Si aucune salle n'est valable, l'attribut \a valide est passé sur
+        * false (ce qui implique que la carte est invalidée et repasse à la génération).
+        */
         void placer_boss();
 
+        /**
+        * \brief vide la \a carte.
+        * Met toute la \a carte sur 0, et passe \a pret_iteration sur false.
+        */
         void vider_carte();
 
+        /**
+        * \brief Place la salle de départ.
+        * Fonctionne sur le même principe que placer_boss().
+        * Cherche une salle avec 4 salles adjacentes. Mais s'il n'en existe pas,
+        * place le départ aléatoirement au lieu d'invalider la carte.
+        */
         void placer_depart();
 
+        /**
+        * \brief Place la clef du boss.
+        * La clef du boss est toujours le plus loin possible du départ (ce qui
+        * implique qu'elle sera parfois à côté du boss). La procédure utilise donc
+        * logiquement calculer_distance().
+        */
         void placer_clef();
 
+        /**
+        * \brief Place une salle d'objet.
+        * L'objet est simplement placé sur une salle aléatoirement, pourvu qu'elle
+        * ne soit pas déjà utilisée à d'autres fins.
+        */
         void placer_objet();
 };
 

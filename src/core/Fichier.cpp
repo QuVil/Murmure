@@ -137,7 +137,7 @@ void Fichier::charger(ZoneGen & z)
         {
             tampon=fichier.get();
             //cout << tampon;
-            z.set_salle(i, j, tampon - '0');;
+            z.set_etat(i, j, tampon - '0');;
             //cout << (int) tampon << endl;
         }
         // voir la fonction charger(Salle)
