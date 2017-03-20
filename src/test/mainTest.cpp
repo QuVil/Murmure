@@ -6,9 +6,10 @@ int main(int argc, char ** argv)
 {
     srand(time (NULL));
 
-    //Zone z;
-    //z.zone_depuis_modele_aleatoire();
+    Zone z;
+    z.zone_depuis_modele_aleatoire();
 
+/*
     SalleGen s_generateur(1, 1, 1, 1, 3);
 
     s_generateur.initialisation_gen();
@@ -23,7 +24,7 @@ int main(int argc, char ** argv)
     s_generateur.valider();
     s_generateur.afficher_validation();
     std::cout<<s_generateur.is_valide();
-
+*/
     return 0;
 }
 

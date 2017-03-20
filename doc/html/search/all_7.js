@@ -1,5 +1,6 @@
 var searchData=
 [
-  ['nb_5fcases_5fhauteur',['nb_cases_hauteur',['../Salle_8h.html#aa804d7181c016030111785b924565c2f',1,'Salle.h']]],
-  ['nb_5fcases_5flargeur',['nb_cases_largeur',['../Salle_8h.html#a2f60bea6b273360aea8e977df91c9ba3',1,'Salle.h']]]
+  ['modele',['Modele',['../classModele.html',1,'Modele'],['../classModele.html#ae9d6a289deaebe7e8eeda46693d79d23',1,'Modele::Modele()'],['../classModele.html#a14085f4c7825d488f349f262dcc35d13',1,'Modele::Modele(std::string nom)']]],
+  ['modele_2ecpp',['Modele.cpp',['../Modele_8cpp.html',1,'']]],
+  ['modele_2eh',['Modele.h',['../Modele_8h.html',1,'']]]
 ];

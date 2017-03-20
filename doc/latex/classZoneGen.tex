@@ -2,6 +2,11 @@
 \label{classZoneGen}\index{Zone\+Gen@{Zone\+Gen}}
 
 
+T\+O\+DO \+: Finir la doc de \hyperlink{classZoneGen}{Zone\+Gen}...  
+
+
+
+
 {\ttfamily \#include $<$Zone\+Gen.\+h$>$}
 
 \subsection*{Public Member Functions}
@@ -29,7 +34,7 @@ void \hyperlink{classZoneGen_a79aa554fa5bee5bd1e0af2a1a505fa57}{afficher\+\_\+ca
 \item 
 void \hyperlink{classZoneGen_a63dfaff24d4686702b22937606da1e04}{iterer} (std\+::string meth=\char`\"{}\char`\"{})
 \item 
-std\+::string \hyperlink{classZoneGen_a20afde8860019abd7889ad39c5d5fc81}{get\+\_\+patterne} ()
+std\+::string \hyperlink{classZoneGen_ab1d84dcb2654e8339cd325cf15fcf9ca}{get\+\_\+patterne} ()
 \item 
 void \hyperlink{classZoneGen_aa03a1c3ef5639b0cde15811db92ed3d7}{set\+\_\+salle} (int i, int j, int salle)
 \item 
@@ -40,8 +45,19 @@ void \hyperlink{classZoneGen_a57bde599d7912da9ee574d5f94c3ea48}{afficher\+\_\+va
 void \hyperlink{classZoneGen_a2e14ba96367ade514d250c4ae1aa5025}{placer\+\_\+boss} ()
 \item 
 void \hyperlink{classZoneGen_ab288110fafd009f569ab27d65d35b3ed}{vider\+\_\+carte} ()
+\item 
+void \hyperlink{classZoneGen_aadf5a70af191ddd5f5875878831a5b63}{placer\+\_\+depart} ()
+\item 
+void \hyperlink{classZoneGen_a14f00aefb1e1c0a33bddeda26c9168ca}{placer\+\_\+clef} ()
+\item 
+void \hyperlink{classZoneGen_a56263320aa237d125e4737c21a4c6fa6}{placer\+\_\+objet} ()
 \end{DoxyCompactItemize}
 
+
+\subsection{Detailed Description}
+T\+O\+DO \+: Finir la doc de \hyperlink{classZoneGen}{Zone\+Gen}... 
+
+class principale de generation de carte pour \hyperlink{classZone}{Zone}. \hyperlink{classZoneGen}{Zone\+Gen} est une classe de transition entre \hyperlink{classModele}{Modele} et \hyperlink{classZone}{Zone}, instanciant un generateur contenant une carte semblable aux Zones. Le generateur applique un patterne de base sur sa carte, puis \textquotesingle{}itere\textquotesingle{} dessus avec differentes methodes. une procedure permet ensuite de \hyperlink{classZoneGen_ad0f167f538f4e9f3e12908421297250f}{valider()} la carte, en verifiant que toutes les salles sont connectees, puis place le boss et l\textquotesingle{}objet de la \hyperlink{classZone}{Zone}. 
 
 \subsection{Constructor \& Destructor Documentation}
 \index{Zone\+Gen@{Zone\+Gen}!Zone\+Gen@{Zone\+Gen}}
@@ -85,11 +101,11 @@ void \hyperlink{classZoneGen_ab288110fafd009f569ab27d65d35b3ed}{vider\+\_\+carte
 ) const}\hypertarget{classZoneGen_a76588fc3a5d361a213ec28692b8abcdc}{}\label{classZoneGen_a76588fc3a5d361a213ec28692b8abcdc}
 \index{Zone\+Gen@{Zone\+Gen}!get\+\_\+patterne@{get\+\_\+patterne}}
 \index{get\+\_\+patterne@{get\+\_\+patterne}!Zone\+Gen@{Zone\+Gen}}
-\subsubsection[{\texorpdfstring{get\+\_\+patterne()}{get_patterne()}}]{\setlength{\rightskip}{0pt plus 5cm}string Zone\+Gen\+::get\+\_\+patterne (
+\subsubsection[{\texorpdfstring{get\+\_\+patterne()}{get_patterne()}}]{\setlength{\rightskip}{0pt plus 5cm}std\+::string Zone\+Gen\+::get\+\_\+patterne (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
-)}\hypertarget{classZoneGen_a20afde8860019abd7889ad39c5d5fc81}{}\label{classZoneGen_a20afde8860019abd7889ad39c5d5fc81}
+)}\hypertarget{classZoneGen_ab1d84dcb2654e8339cd325cf15fcf9ca}{}\label{classZoneGen_ab1d84dcb2654e8339cd325cf15fcf9ca}
 \index{Zone\+Gen@{Zone\+Gen}!get\+\_\+posx\+\_\+dep@{get\+\_\+posx\+\_\+dep}}
 \index{get\+\_\+posx\+\_\+dep@{get\+\_\+posx\+\_\+dep}!Zone\+Gen@{Zone\+Gen}}
 \subsubsection[{\texorpdfstring{get\+\_\+posx\+\_\+dep() const }{get_posx_dep() const }}]{\setlength{\rightskip}{0pt plus 5cm}int Zone\+Gen\+::get\+\_\+posx\+\_\+dep (
@@ -133,6 +149,27 @@ void \hyperlink{classZoneGen_ab288110fafd009f569ab27d65d35b3ed}{vider\+\_\+carte
 {}
 \end{DoxyParamCaption}
 )}\hypertarget{classZoneGen_a2e14ba96367ade514d250c4ae1aa5025}{}\label{classZoneGen_a2e14ba96367ade514d250c4ae1aa5025}
+\index{Zone\+Gen@{Zone\+Gen}!placer\+\_\+clef@{placer\+\_\+clef}}
+\index{placer\+\_\+clef@{placer\+\_\+clef}!Zone\+Gen@{Zone\+Gen}}
+\subsubsection[{\texorpdfstring{placer\+\_\+clef()}{placer_clef()}}]{\setlength{\rightskip}{0pt plus 5cm}void Zone\+Gen\+::placer\+\_\+clef (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classZoneGen_a14f00aefb1e1c0a33bddeda26c9168ca}{}\label{classZoneGen_a14f00aefb1e1c0a33bddeda26c9168ca}
+\index{Zone\+Gen@{Zone\+Gen}!placer\+\_\+depart@{placer\+\_\+depart}}
+\index{placer\+\_\+depart@{placer\+\_\+depart}!Zone\+Gen@{Zone\+Gen}}
+\subsubsection[{\texorpdfstring{placer\+\_\+depart()}{placer_depart()}}]{\setlength{\rightskip}{0pt plus 5cm}void Zone\+Gen\+::placer\+\_\+depart (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classZoneGen_aadf5a70af191ddd5f5875878831a5b63}{}\label{classZoneGen_aadf5a70af191ddd5f5875878831a5b63}
+\index{Zone\+Gen@{Zone\+Gen}!placer\+\_\+objet@{placer\+\_\+objet}}
+\index{placer\+\_\+objet@{placer\+\_\+objet}!Zone\+Gen@{Zone\+Gen}}
+\subsubsection[{\texorpdfstring{placer\+\_\+objet()}{placer_objet()}}]{\setlength{\rightskip}{0pt plus 5cm}void Zone\+Gen\+::placer\+\_\+objet (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classZoneGen_a56263320aa237d125e4737c21a4c6fa6}{}\label{classZoneGen_a56263320aa237d125e4737c21a4c6fa6}
 \index{Zone\+Gen@{Zone\+Gen}!set\+\_\+salle@{set\+\_\+salle}}
 \index{set\+\_\+salle@{set\+\_\+salle}!Zone\+Gen@{Zone\+Gen}}
 \subsubsection[{\texorpdfstring{set\+\_\+salle(int i, int j, int salle)}{set_salle(int i, int j, int salle)}}]{\setlength{\rightskip}{0pt plus 5cm}void Zone\+Gen\+::set\+\_\+salle (

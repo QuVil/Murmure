@@ -24,6 +24,10 @@ int \hyperlink{classSalle_a9268968ab5741a35da4e52399a4be0b7}{get\+\_\+config} ()
 \begin{DoxyCompactList}\small\item\em Accesseur de la {\itshape config}. \end{DoxyCompactList}\item 
 void \hyperlink{classSalle_a3d8b62393fd9cfa15bb385e187e72189}{set\+\_\+config} (int c)
 \begin{DoxyCompactList}\small\item\em Mutateur de la {\itshape config}. \end{DoxyCompactList}\item 
+bool \hyperlink{classSalle_aae34ded2001c65b0f3c8473d14c57471}{is\+\_\+deja\+\_\+visitee} () const 
+\begin{DoxyCompactList}\small\item\em Accesseur de {\itshape deja\+\_\+visitee}. \end{DoxyCompactList}\item 
+void \hyperlink{classSalle_a2c5dfa8f0e6b6c427203812d8d91524a}{set\+\_\+deja\+\_\+visitee} (bool visite)
+\begin{DoxyCompactList}\small\item\em Mutateur de {\itshape deja\+\_\+visitee}. \end{DoxyCompactList}\item 
 void \hyperlink{classSalle_ae6fd7211225455d887859f983e3bddce}{remplir} ()
 \begin{DoxyCompactList}\small\item\em Procédure de remplissage de \hyperlink{classSalle}{Salle}. Techniquement, \hyperlink{classSalle_ae6fd7211225455d887859f983e3bddce}{remplir()} est un mutateur de {\itshape config} avec paramètre fixé. \end{DoxyCompactList}\item 
 void \hyperlink{classSalle_ae8248a5ded8514be67a29efdeb70af96}{vider} ()
@@ -35,7 +39,9 @@ void \hyperlink{classSalle_a50ed839f1a93753fddf6171ef343a0bb}{afficher} ()
 int \hyperlink{classSalle_a938849a06f5906cc6b3a66e979f02a9a}{get\+\_\+nb\+\_\+cases\+\_\+largeur} ()
 \begin{DoxyCompactList}\small\item\em Accesseur du nb de cases en largeur. \end{DoxyCompactList}\item 
 int \hyperlink{classSalle_a80ca41c533d0ec567b1d4e78779225ba}{get\+\_\+nb\+\_\+cases\+\_\+hauteur} ()
-\begin{DoxyCompactList}\small\item\em Accesseur du nb de cases en hauteur. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Accesseur du nb de cases en hauteur. \end{DoxyCompactList}\item 
+std\+::string \hyperlink{classSalle_ac8e706275a4d3545eb33a6f446a554a1}{get\+\_\+config\+\_\+string} () const 
+\end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
@@ -124,6 +130,13 @@ Accesseur de la {\itshape config}.
 \begin{DoxyReturn}{Returns}
 la {\itshape config} (un int) de la \hyperlink{classSalle}{Salle}. 
 \end{DoxyReturn}
+\index{Salle@{Salle}!get\+\_\+config\+\_\+string@{get\+\_\+config\+\_\+string}}
+\index{get\+\_\+config\+\_\+string@{get\+\_\+config\+\_\+string}!Salle@{Salle}}
+\subsubsection[{\texorpdfstring{get\+\_\+config\+\_\+string() const }{get_config_string() const }}]{\setlength{\rightskip}{0pt plus 5cm}std\+::string Salle\+::get\+\_\+config\+\_\+string (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\hypertarget{classSalle_ac8e706275a4d3545eb33a6f446a554a1}{}\label{classSalle_ac8e706275a4d3545eb33a6f446a554a1}
 \index{Salle@{Salle}!get\+\_\+nb\+\_\+cases\+\_\+hauteur@{get\+\_\+nb\+\_\+cases\+\_\+hauteur}}
 \index{get\+\_\+nb\+\_\+cases\+\_\+hauteur@{get\+\_\+nb\+\_\+cases\+\_\+hauteur}!Salle@{Salle}}
 \subsubsection[{\texorpdfstring{get\+\_\+nb\+\_\+cases\+\_\+hauteur()}{get_nb_cases_hauteur()}}]{\setlength{\rightskip}{0pt plus 5cm}int Salle\+::get\+\_\+nb\+\_\+cases\+\_\+hauteur (
@@ -151,6 +164,20 @@ Accesseur du nb de cases en largeur.
 
 \begin{DoxyReturn}{Returns}
 {\itshape nb\+\_\+cases\+\_\+largeur} de la \hyperlink{classSalle}{Salle}. 
+\end{DoxyReturn}
+\index{Salle@{Salle}!is\+\_\+deja\+\_\+visitee@{is\+\_\+deja\+\_\+visitee}}
+\index{is\+\_\+deja\+\_\+visitee@{is\+\_\+deja\+\_\+visitee}!Salle@{Salle}}
+\subsubsection[{\texorpdfstring{is\+\_\+deja\+\_\+visitee() const }{is_deja_visitee() const }}]{\setlength{\rightskip}{0pt plus 5cm}bool Salle\+::is\+\_\+deja\+\_\+visitee (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\hypertarget{classSalle_aae34ded2001c65b0f3c8473d14c57471}{}\label{classSalle_aae34ded2001c65b0f3c8473d14c57471}
+
+
+Accesseur de {\itshape deja\+\_\+visitee}. 
+
+\begin{DoxyReturn}{Returns}
+l\textquotesingle{}attribut {\itshape deja\+\_\+visitee}. 
 \end{DoxyReturn}
 \index{Salle@{Salle}!operator=@{operator=}}
 \index{operator=@{operator=}!Salle@{Salle}}
@@ -215,6 +242,22 @@ Mutateur de la {\itshape config}.
 
 \begin{DoxyParams}[1]{Parameters}
 \mbox{\tt in}  & {\em c} & \+: nouvelle config. \\
+\hline
+\end{DoxyParams}
+\index{Salle@{Salle}!set\+\_\+deja\+\_\+visitee@{set\+\_\+deja\+\_\+visitee}}
+\index{set\+\_\+deja\+\_\+visitee@{set\+\_\+deja\+\_\+visitee}!Salle@{Salle}}
+\subsubsection[{\texorpdfstring{set\+\_\+deja\+\_\+visitee(bool visite)}{set_deja_visitee(bool visite)}}]{\setlength{\rightskip}{0pt plus 5cm}void Salle\+::set\+\_\+deja\+\_\+visitee (
+\begin{DoxyParamCaption}
+\item[{bool}]{visite}
+\end{DoxyParamCaption}
+)}\hypertarget{classSalle_a2c5dfa8f0e6b6c427203812d8d91524a}{}\label{classSalle_a2c5dfa8f0e6b6c427203812d8d91524a}
+
+
+Mutateur de {\itshape deja\+\_\+visitee}. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em visite} & \+: la nouvelle valeur de {\itshape deja\+\_\+visitee}. \\
 \hline
 \end{DoxyParams}
 \index{Salle@{Salle}!vider@{vider}}

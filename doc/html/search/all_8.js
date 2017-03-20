@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['operator_3d',['operator=',['../classCaseSalle.html#a8494bda87f21c608d7da7bb510c0e525',1,'CaseSalle::operator=()'],['../classSalle.html#a315947e357a3fd958b40eb087a82c4d7',1,'Salle::operator=()']]]
+  ['nb_5fcases_5fhauteur',['nb_cases_hauteur',['../Salle_8h.html#aa804d7181c016030111785b924565c2f',1,'Salle.h']]],
+  ['nb_5fcases_5flargeur',['nb_cases_largeur',['../Salle_8h.html#a2f60bea6b273360aea8e977df91c9ba3',1,'Salle.h']]]
 ];

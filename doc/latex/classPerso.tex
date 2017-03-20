@@ -11,13 +11,13 @@
 \item 
 \hyperlink{classPerso_a25afa33fb28da6526c48cca6d96cb65c}{Perso} (std\+::string n)
 \item 
-std\+::string \hyperlink{classPerso_a704596adbb32eb2f8f2853a388a869ab}{get\+\_\+nom} () const 
+std\+::string \hyperlink{classPerso_a33d916b6f92b8dace29b86ef42b55de0}{get\+\_\+nom} () const 
 \item 
-float \hyperlink{classPerso_ab16a060fccc4963543945147ade446fe}{get\+\_\+angle\+\_\+regard} () const 
+void \hyperlink{classPerso_aee94c6fa0d07ebe5d27207aa11552a22}{set\+\_\+deplacement} (const \hyperlink{classVecteurM}{VecteurM} \&v)
 \item 
-float \hyperlink{classPerso_a06e766e6a8b5e0fec0dd19c3c302f790}{get\+\_\+vitesse} () const 
+void \hyperlink{classPerso_abd42a00f2f2110cadc68001e570ae3f7}{set\+\_\+orientation} (const \hyperlink{classVecteurM}{VecteurM} \&v)
 \item 
-float \hyperlink{classPerso_a14dc583aa66695527951d791b478e2e8}{get\+\_\+angle\+\_\+mouvement} () const 
+\hyperlink{classCoord2D}{Coord2D} \hyperlink{classPerso_a5190c85261ab0e6f5825b1a5d23042f7}{get\+\_\+pos} () const 
 \item 
 float \hyperlink{classPerso_ab03b733beb68cf443e281ee1272b56df}{get\+\_\+pos\+\_\+x} () const 
 \item 
@@ -47,27 +47,20 @@ float \hyperlink{classPerso_aa7ca3080d319f62908c10f777fe93811}{get\+\_\+pv\+\_\+
 
 
 \subsection{Member Function Documentation}
-\index{Perso@{Perso}!get\+\_\+angle\+\_\+mouvement@{get\+\_\+angle\+\_\+mouvement}}
-\index{get\+\_\+angle\+\_\+mouvement@{get\+\_\+angle\+\_\+mouvement}!Perso@{Perso}}
-\subsubsection[{\texorpdfstring{get\+\_\+angle\+\_\+mouvement() const }{get_angle_mouvement() const }}]{\setlength{\rightskip}{0pt plus 5cm}float Perso\+::get\+\_\+angle\+\_\+mouvement (
-\begin{DoxyParamCaption}
-{}
-\end{DoxyParamCaption}
-) const}\hypertarget{classPerso_a14dc583aa66695527951d791b478e2e8}{}\label{classPerso_a14dc583aa66695527951d791b478e2e8}
-\index{Perso@{Perso}!get\+\_\+angle\+\_\+regard@{get\+\_\+angle\+\_\+regard}}
-\index{get\+\_\+angle\+\_\+regard@{get\+\_\+angle\+\_\+regard}!Perso@{Perso}}
-\subsubsection[{\texorpdfstring{get\+\_\+angle\+\_\+regard() const }{get_angle_regard() const }}]{\setlength{\rightskip}{0pt plus 5cm}float Perso\+::get\+\_\+angle\+\_\+regard (
-\begin{DoxyParamCaption}
-{}
-\end{DoxyParamCaption}
-) const}\hypertarget{classPerso_ab16a060fccc4963543945147ade446fe}{}\label{classPerso_ab16a060fccc4963543945147ade446fe}
 \index{Perso@{Perso}!get\+\_\+nom@{get\+\_\+nom}}
 \index{get\+\_\+nom@{get\+\_\+nom}!Perso@{Perso}}
-\subsubsection[{\texorpdfstring{get\+\_\+nom() const }{get_nom() const }}]{\setlength{\rightskip}{0pt plus 5cm}string Perso\+::get\+\_\+nom (
+\subsubsection[{\texorpdfstring{get\+\_\+nom() const }{get_nom() const }}]{\setlength{\rightskip}{0pt plus 5cm}std\+::string Perso\+::get\+\_\+nom (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
-) const}\hypertarget{classPerso_a704596adbb32eb2f8f2853a388a869ab}{}\label{classPerso_a704596adbb32eb2f8f2853a388a869ab}
+) const}\hypertarget{classPerso_a33d916b6f92b8dace29b86ef42b55de0}{}\label{classPerso_a33d916b6f92b8dace29b86ef42b55de0}
+\index{Perso@{Perso}!get\+\_\+pos@{get\+\_\+pos}}
+\index{get\+\_\+pos@{get\+\_\+pos}!Perso@{Perso}}
+\subsubsection[{\texorpdfstring{get\+\_\+pos() const }{get_pos() const }}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Coord2D} Perso\+::get\+\_\+pos (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\hypertarget{classPerso_a5190c85261ab0e6f5825b1a5d23042f7}{}\label{classPerso_a5190c85261ab0e6f5825b1a5d23042f7}
 \index{Perso@{Perso}!get\+\_\+pos\+\_\+x@{get\+\_\+pos\+\_\+x}}
 \index{get\+\_\+pos\+\_\+x@{get\+\_\+pos\+\_\+x}!Perso@{Perso}}
 \subsubsection[{\texorpdfstring{get\+\_\+pos\+\_\+x() const }{get_pos_x() const }}]{\setlength{\rightskip}{0pt plus 5cm}float Perso\+::get\+\_\+pos\+\_\+x (
@@ -96,13 +89,20 @@ float \hyperlink{classPerso_aa7ca3080d319f62908c10f777fe93811}{get\+\_\+pv\+\_\+
 {}
 \end{DoxyParamCaption}
 ) const}\hypertarget{classPerso_a5a56b6db9d25cf6c34ebb16d31a0b7a5}{}\label{classPerso_a5a56b6db9d25cf6c34ebb16d31a0b7a5}
-\index{Perso@{Perso}!get\+\_\+vitesse@{get\+\_\+vitesse}}
-\index{get\+\_\+vitesse@{get\+\_\+vitesse}!Perso@{Perso}}
-\subsubsection[{\texorpdfstring{get\+\_\+vitesse() const }{get_vitesse() const }}]{\setlength{\rightskip}{0pt plus 5cm}float Perso\+::get\+\_\+vitesse (
+\index{Perso@{Perso}!set\+\_\+deplacement@{set\+\_\+deplacement}}
+\index{set\+\_\+deplacement@{set\+\_\+deplacement}!Perso@{Perso}}
+\subsubsection[{\texorpdfstring{set\+\_\+deplacement(const Vecteur\+M \&v)}{set_deplacement(const VecteurM &v)}}]{\setlength{\rightskip}{0pt plus 5cm}void Perso\+::set\+\_\+deplacement (
 \begin{DoxyParamCaption}
-{}
+\item[{const {\bf VecteurM} \&}]{v}
 \end{DoxyParamCaption}
-) const}\hypertarget{classPerso_a06e766e6a8b5e0fec0dd19c3c302f790}{}\label{classPerso_a06e766e6a8b5e0fec0dd19c3c302f790}
+)}\hypertarget{classPerso_aee94c6fa0d07ebe5d27207aa11552a22}{}\label{classPerso_aee94c6fa0d07ebe5d27207aa11552a22}
+\index{Perso@{Perso}!set\+\_\+orientation@{set\+\_\+orientation}}
+\index{set\+\_\+orientation@{set\+\_\+orientation}!Perso@{Perso}}
+\subsubsection[{\texorpdfstring{set\+\_\+orientation(const Vecteur\+M \&v)}{set_orientation(const VecteurM &v)}}]{\setlength{\rightskip}{0pt plus 5cm}void Perso\+::set\+\_\+orientation (
+\begin{DoxyParamCaption}
+\item[{const {\bf VecteurM} \&}]{v}
+\end{DoxyParamCaption}
+)}\hypertarget{classPerso_abd42a00f2f2110cadc68001e570ae3f7}{}\label{classPerso_abd42a00f2f2110cadc68001e570ae3f7}
 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}

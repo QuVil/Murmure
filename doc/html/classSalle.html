@@ -116,6 +116,12 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a3d8b62393fd9cfa15bb385e187e72189"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSalle.html#a3d8b62393fd9cfa15bb385e187e72189">set_config</a> (int c)</td></tr>
 <tr class="memdesc:a3d8b62393fd9cfa15bb385e187e72189"><td class="mdescLeft">&#160;</td><td class="mdescRight">Mutateur de la <em>config</em>.  <a href="#a3d8b62393fd9cfa15bb385e187e72189">More...</a><br /></td></tr>
 <tr class="separator:a3d8b62393fd9cfa15bb385e187e72189"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aae34ded2001c65b0f3c8473d14c57471"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSalle.html#aae34ded2001c65b0f3c8473d14c57471">is_deja_visitee</a> () const </td></tr>
+<tr class="memdesc:aae34ded2001c65b0f3c8473d14c57471"><td class="mdescLeft">&#160;</td><td class="mdescRight">Accesseur de <em>deja_visitee</em>.  <a href="#aae34ded2001c65b0f3c8473d14c57471">More...</a><br /></td></tr>
+<tr class="separator:aae34ded2001c65b0f3c8473d14c57471"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2c5dfa8f0e6b6c427203812d8d91524a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSalle.html#a2c5dfa8f0e6b6c427203812d8d91524a">set_deja_visitee</a> (bool visite)</td></tr>
+<tr class="memdesc:a2c5dfa8f0e6b6c427203812d8d91524a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Mutateur de <em>deja_visitee</em>.  <a href="#a2c5dfa8f0e6b6c427203812d8d91524a">More...</a><br /></td></tr>
+<tr class="separator:a2c5dfa8f0e6b6c427203812d8d91524a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae6fd7211225455d887859f983e3bddce"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSalle.html#ae6fd7211225455d887859f983e3bddce">remplir</a> ()</td></tr>
 <tr class="memdesc:ae6fd7211225455d887859f983e3bddce"><td class="mdescLeft">&#160;</td><td class="mdescRight">Procédure de remplissage de <a class="el" href="classSalle.html" title="class des salles de jeu où évolue le joueur. Salle dépend de CaseSalle et se compose d&#39;une grille de ...">Salle</a>. Techniquement, <a class="el" href="classSalle.html#ae6fd7211225455d887859f983e3bddce" title="Procédure de remplissage de Salle. Techniquement, remplir() est un mutateur de config avec paramètre ...">remplir()</a> est un mutateur de <em>config</em> avec paramètre fixé.  <a href="#ae6fd7211225455d887859f983e3bddce">More...</a><br /></td></tr>
 <tr class="separator:ae6fd7211225455d887859f983e3bddce"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -134,6 +140,8 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a80ca41c533d0ec567b1d4e78779225ba"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSalle.html#a80ca41c533d0ec567b1d4e78779225ba">get_nb_cases_hauteur</a> ()</td></tr>
 <tr class="memdesc:a80ca41c533d0ec567b1d4e78779225ba"><td class="mdescLeft">&#160;</td><td class="mdescRight">Accesseur du nb de cases en hauteur.  <a href="#a80ca41c533d0ec567b1d4e78779225ba">More...</a><br /></td></tr>
 <tr class="separator:a80ca41c533d0ec567b1d4e78779225ba"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac8e706275a4d3545eb33a6f446a554a1"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSalle.html#ac8e706275a4d3545eb33a6f446a554a1">get_config_string</a> () const </td></tr>
+<tr class="separator:ac8e706275a4d3545eb33a6f446a554a1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>class des salles de jeu où évolue le joueur. <a class="el" href="classSalle.html" title="class des salles de jeu où évolue le joueur. Salle dépend de CaseSalle et se compose d&#39;une grille de ...">Salle</a> dépend de <a class="el" href="classCaseSalle.html" title="class des cases qui composent les salles dans le jeu. Une Salle de base est composée d&#39;un tableau de ...">CaseSalle</a> et se compose d'une grille de <a class="el" href="classCaseSalle.html" title="class des cases qui composent les salles dans le jeu. Une Salle de base est composée d&#39;un tableau de ...">CaseSalle</a>, dont les bords sont des murs. </p>
@@ -254,6 +262,21 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="ac8e706275a4d3545eb33a6f446a554a1"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string Salle::get_config_string </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a class="anchor" id="a80ca41c533d0ec567b1d4e78779225ba"></a>
 <div class="memitem">
 <div class="memproto">
@@ -287,6 +310,24 @@ Public Member Functions</h2></td></tr>
 
 <p>Accesseur du nb de cases en largeur. </p>
 <dl class="section return"><dt>Returns</dt><dd><em>nb_cases_largeur</em> de la <a class="el" href="classSalle.html" title="class des salles de jeu où évolue le joueur. Salle dépend de CaseSalle et se compose d&#39;une grille de ...">Salle</a>. </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="aae34ded2001c65b0f3c8473d14c57471"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Salle::is_deja_visitee </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Accesseur de <em>deja_visitee</em>. </p>
+<dl class="section return"><dt>Returns</dt><dd>l'attribut <em>deja_visitee</em>. </dd></dl>
 
 </div>
 </div>
@@ -391,6 +432,30 @@ Public Member Functions</h2></td></tr>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">c</td><td>: nouvelle config. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a2c5dfa8f0e6b6c427203812d8d91524a"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Salle::set_deja_visitee </td>
+          <td>(</td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>visite</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Mutateur de <em>deja_visitee</em>. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">visite</td><td>: la nouvelle valeur de <em>deja_visitee</em>. </td></tr>
   </table>
   </dd>
 </dl>

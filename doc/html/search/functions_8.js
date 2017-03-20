@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['perso',['Perso',['../classPerso.html#a33aebfa5c1b957d87f81da39536121e8',1,'Perso::Perso()'],['../classPerso.html#a25afa33fb28da6526c48cca6d96cb65c',1,'Perso::Perso(std::string n)']]],
-  ['placer_5fboss',['placer_boss',['../classZoneGen.html#a2e14ba96367ade514d250c4ae1aa5025',1,'ZoneGen']]]
+  ['operator_2b',['operator+',['../classVecteurM.html#ab3732e83997d1e73d368efb213aa2391',1,'VecteurM']]],
+  ['operator_3d',['operator=',['../classCaseSalle.html#a8494bda87f21c608d7da7bb510c0e525',1,'CaseSalle::operator=()'],['../classSalle.html#a315947e357a3fd958b40eb087a82c4d7',1,'Salle::operator=()'],['../classVecteurM.html#aaf887f5632128c2c346ad2bd73581a7e',1,'VecteurM::operator=()']]]
 ];

@@ -66,34 +66,14 @@ int ZoneGen::get_nb_cases() const
 
 void ZoneGen::teste_nb_cases_assez (int nb_voulu)
 {
-    int nb = 0;
-    for (int i=0; i<11; ++i)
-    {
-        for (int j=0; j<11; ++j)
-        {
-            if (carte[i][j] == 1)
-            {
-                nb++;
-            }
-        }
-    }
+    int nb = get_nb_cases();
     if (nb < nb_voulu)
         valide = false;
 }
 
 void ZoneGen::teste_nb_cases_trop(int nb_voulu)
 {
-    int nb = 0;
-    for (int i=0; i<11; ++i)
-    {
-        for (int j=0; j<11; ++j)
-        {
-            if (carte[i][j] == 1)
-            {
-                nb++;
-            }
-        }
-    }
+    int nb = get_nb_cases();
     if (nb >= nb_voulu)
     {
         valide = false;

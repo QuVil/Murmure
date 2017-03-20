@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['fichier',['Fichier',['../classFichier.html#ace018349629e9c136aff5421c1e72c4f',1,'Fichier']]]
+  ['diminuer_5finertie',['diminuer_inertie',['../classVecteurM.html#ab385a7598e1fbe3508ca2f3eb2ed1540',1,'VecteurM']]]
 ];
