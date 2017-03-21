@@ -57,6 +57,12 @@ std::string CaseSalle::get_type_string()
     }
 }
 
+char CaseSalle::get_type_char() const
+{
+    return type;
+}
+
+
 void CaseSalle::afficher()
 {
     std::cout << type;

@@ -60,6 +60,8 @@ public:
      */
     std::string get_type_string();
 
+    char get_type_char()const;
+
     /**
      * \brief Surcharge d'affectation de CaseSalle.
      * Surcharge de l'operateur = pour affecter des CaseSalle entre elles.
