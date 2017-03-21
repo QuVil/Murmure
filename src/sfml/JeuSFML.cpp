@@ -17,6 +17,7 @@ JeuSFML::JeuSFML()
     /*
     if(desktop.width/jeu.get_salle().get_cases_largeur() <desktop.height/jeu.get_salle().get_cases_hauteur()){scale = desktop.width/jeu.get_salle().get_cases_largeur();}
     else{scale = desktop.height/jeu.get_salle().get_cases_hauteur();}*/
+
     scale_salle_largeur = desktop.width/jeu.get_salle().get_nb_cases_largeur();
     scale_salle_hauteur = desktop.height/jeu.get_salle().get_nb_cases_hauteur();
     //std::cout << desktop.width << " " << desktop.height << " " << desktop.bitsPerPixel << std::endl;
@@ -36,7 +37,7 @@ JeuSFML::JeuSFML()
 void JeuSFML::SFML_boucle()
 {
     init();
-    charger_salle();
+    //charger_salle();
     // on fait tourner le programme jusqu'à ce que la fenêtre soit fermée
     while (window.isOpen())
     {
@@ -65,7 +66,7 @@ void JeuSFML::SFML_boucle()
 
                 if(event.key.code == sf::Keyboard::S)
                 {
-                    afficher_salle();
+                    dessiner_salle();
                 }
             }
 
@@ -74,7 +75,7 @@ void JeuSFML::SFML_boucle()
 
 
         window.clear(sf::Color::Black);
-        afficher_salle();
+        dessiner_salle();
         window.display();
     }
 }
@@ -108,46 +109,30 @@ void JeuSFML::charger_salle()
 
 void JeuSFML::dessiner_salle()
 {
-
-}
-
-void JeuSFML::redessiner_salle()
-{
-
-}
-
-void JeuSFML::mettre_a_jour_salle()
-{
-
-}
-
-
-
-void JeuSFML::afficher_salle()
-{
-    //CaseSalle c;
     for(int i=0;i<9;i++)
     {
         for(int j=0;j<17;j++)
         {
-            //c=jeu.get_salle().get_case(i,j);
-            /*
-            CaseSFML C(posx0salle +j*scale,
-                                   posy0salle +i*scale,
-                                   scale,
-                                   scale,
-                                   c.get_type_string());*/
-                                   /*
-            CaseSFML C(posx0salle + j*scale_salle_largeur,
-                                   posy0salle + i*scale_salle_hauteur,
-                                   scale_salle_largeur,
-                                   scale_salle_hauteur,
-                                   c.get_type_string());
-            window.draw(C.get_casesfml(),C.get_states());*/
-            window.draw(casesfml[i][j].get_casesfml(), casesfml[i][j].get_states());
-            //window.draw(casesfml[i][j].get_casesfml(), &textures.retourne_texture_caseSFML(jeu.get_salle().get_case(i, j).get_type_char()));
+            // met les textures dans les cases
+            //casesfml[i][j].set_texture(textures.retourne_texture_caseSFML(jeu.get_salle().get_case(i, j).get_type_char()));
+            // dessine les cases
+            //window.draw(casesfml[i][j].get_casesfml(), casesfml[i][j].get_states());
+            //window.draw(casesfml[i][j].get_casesfml(),& textures.retourne_texture_caseSFML(jeu.get_salle().get_case(i, j).get_type_char()));
+            window.draw(casesfml[i][j].get_casesfml(),textures.retourne_rendu_texture_caseSFML(jeu.get_salle().get_case(i, j).get_type_char()));
         }
     }
+}
+
+void JeuSFML::redessiner_salle()
+{
+        for(int i=0;i<9;i++)
+        {
+            for(int j=0;j<17;j++)
+            {
+                // redessine directement les cases sans recalculer les textures
+                window.draw(casesfml[i][j].get_casesfml(), casesfml[i][j].get_states());
+            }
+        }
 }
 
 void JeuSFML::afficher_carte()
