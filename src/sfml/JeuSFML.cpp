@@ -119,7 +119,11 @@ void JeuSFML::dessiner_salle()
             //window.draw(casesfml[i][j].get_casesfml(), casesfml[i][j].get_states());
             //window.draw(casesfml[i][j].get_casesfml(),& textures.retourne_texture_caseSFML(jeu.get_salle().get_case(i, j).get_type_char()));
             window.draw(casesfml[i][j].get_casesfml(),
-                                    textures.retourne_rendu_texture_caseSFML(jeu.get_salle().get_case(i, j).get_type_char()));
+                        textures.retourne_rendu_texture_caseSFML(jeu.get_salle().get_case(i, j).get_type_char(),
+                                                                 i,
+                                                                 j,
+                                                                 jeu.get_zone().get_salle_actuelle_x(),
+                                                                 jeu.get_zone().get_salle_actuelle_y()));
         }
     }
 }
