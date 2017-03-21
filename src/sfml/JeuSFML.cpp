@@ -32,6 +32,7 @@ JeuSFML::JeuSFML()
 
 void JeuSFML::SFML_boucle()
 {
+    init();
     // on fait tourner le programme jusqu'à ce que la fenêtre soit fermée
     while (window.isOpen())
     {
@@ -74,26 +75,71 @@ void JeuSFML::SFML_boucle()
     }
 }
 
+
+void JeuSFML::init()
+{
+    for(int i=0;i<9;i++)
+    {
+        for(int j=0;j<17;j++)
+        {
+            casesfml[i][j].init(posx0salle + j*scale_salle_largeur,
+                                          posy0salle + i*scale_salle_hauteur,
+                                          scale_salle_largeur,
+                                          scale_salle_hauteur);
+        }
+    }
+}
+
+void JeuSFML::charger_salle()
+{
+    for(int i=0;i<9;i++)
+    {
+        for(int j=0;j<17;j++)
+        {
+            casesfml[i][j].charger_salle(jeu.get_salle().get_case(i,j).get_type_string());
+        }
+    }
+}
+
+void JeuSFML::dessiner_salle()
+{
+
+}
+
+void JeuSFML::redessiner_salle()
+{
+
+}
+
+void JeuSFML::mettre_a_jour_salle()
+{
+
+}
+
+
+
 void JeuSFML::afficher_salle()
 {
-    CaseSalle c;
+    //CaseSalle c;
     for(int i=0;i<jeu.get_salle().get_nb_cases_hauteur();i++)
     {
         for(int j=0;j<jeu.get_salle().get_nb_cases_largeur();j++)
         {
-            c=jeu.get_salle().get_case(i,j);
+            //c=jeu.get_salle().get_case(i,j);
             /*
             CaseSFML C(posx0salle +j*scale,
                                    posy0salle +i*scale,
                                    scale,
                                    scale,
                                    c.get_type_string());*/
+                                   /*
             CaseSFML C(posx0salle + j*scale_salle_largeur,
                                    posy0salle + i*scale_salle_hauteur,
                                    scale_salle_largeur,
                                    scale_salle_hauteur,
                                    c.get_type_string());
-            window.draw(C.get_casesfml(),C.get_states());
+            window.draw(C.get_casesfml(),C.get_states());*/
+            window.draw(casesfml[i][j].get_casesfml(), casesfml[i][j].get_states());
         }
     }
 }
@@ -116,6 +162,7 @@ void JeuSFML::afficher_carte()
                                         scale_carte_hauteur,
                                         jeu.get_zone().get_salle(i, j).get_config_string());
             window.draw(C.get_cartesallesfml(),C.get_states());
+
         }
     }
 }

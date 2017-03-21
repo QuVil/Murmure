@@ -26,19 +26,25 @@ private:
 
     /// SALLE
 
+    CaseSFML casesfml[17][9];
     int scale_carte_largeur, scale_carte_hauteur;
     int posx0carte, posy0carte;
 
 
     Jeu jeu;
 
-    void afficher_salle();
+    void charger_salle();
+    void dessiner_salle();
+    void redessiner_salle();
+    void mettre_a_jour_salle();
 
+    void afficher_salle();
     void afficher_carte();
 
 public:
     JeuSFML();
 
+    void init();
     void SFML_boucle();
 };
 
