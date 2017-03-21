@@ -291,7 +291,7 @@ void SalleGen::placer_ennemi()
         int nb_break = 0;
         while (!ennemi_place)
         {
-            int emplacement_bloc = rand() % 8; //l'ennemi est-il dans un coin ou au milieu ?
+            int emplacement_bloc = rand() % 10; //l'ennemi est-il dans un coin ou au milieu ?
             int i_dep, j_dep;
 
             switch (emplacement_bloc)
@@ -329,5 +329,55 @@ void SalleGen::placer_ennemi()
             ++nb_break;
         }
     }
+}
 
+//exactement la même que celle de ZoneGen. Peut-être trouver une implémentation +propre ?
+int SalleGen::calculer_distance(int x_dep, int y_dep, int x_arr, int y_arr) const
+{
+    int dist_x = x_arr - x_dep;
+    int dist_y = y_arr - y_dep;
+
+    if (dist_x < 0){dist_x = 0 - dist_x;}
+    if (dist_y < 0){dist_y = 0 - dist_y;}
+
+    return (dist_x + dist_y);
+}
+
+int SalleGen::calculer_distance_porte(int x, int y) const
+{
+    int dist_g = calculer_distance(x, y, 4, 0);
+    int dist_d = calculer_distance(x, y, 4, 16);
+    int dist_h = calculer_distance(x, y, 0, 8);
+    int dist_b = calculer_distance(x, y, 8, 8);
+    return std::min(dist_b, std::min(dist_g, std::min(dist_h, dist_d)));
+}
+
+
+void SalleGen::calculer_difficulte()
+{
+    int diff = 0;
+    for (int i=0; i<9; ++i)
+    {
+        for (int j=0; j<17; ++j)
+        {
+            switch (grille[i][j])
+            {
+                case 'e':
+                    diff += 25 - calculer_distance_porte(i, j)*2;
+                    break;
+                case 'r':
+                    diff += std::max(4 - calculer_distance_porte(i, j), 0);
+                    break;
+                case 't':
+                    diff += std::max(7 - calculer_distance_porte(i, j), 0);
+                    break;
+                case 'c':
+                    diff += 3;
+                default:
+                    break;
+            }
+        }
+    }
+    std::cout<<diff<<std::endl;
+    difficulte_approx = diff;
 }

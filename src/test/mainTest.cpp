@@ -20,13 +20,12 @@ int main(int argc, char ** argv)
     s_generateur.placer_amas('t', 1);
     s_generateur.placer_clef();
     s_generateur.placer_ennemi();
+    s_generateur.placer_ennemi();
 
     s_generateur.afficher_tests();
     std::cout<<std::endl;
     std::cout<<std::endl;
-    s_generateur.valider();
-    s_generateur.afficher_validation();
-    std::cout<<s_generateur.is_valide();
+    s_generateur.calculer_difficulte();
 
     return 0;
 }

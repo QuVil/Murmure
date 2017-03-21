@@ -23,7 +23,6 @@ private:
 
     void valider_recursif(int i, int j);
 
-
 public:
     SalleGen();
 
@@ -44,6 +43,12 @@ public:
     void afficher_validation()const;
 
     void placer_ennemi();
+
+    int calculer_distance(int x_dep, int y_dep, int x_arr, int y_arr)const;
+
+    int calculer_distance_porte(int x, int y)const;
+
+    void calculer_difficulte();
 
 };
 
