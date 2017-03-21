@@ -127,7 +127,6 @@ void Modele::generer_zone()
         }
     }
     if (!generateur.is_valide()) {std::cout<<"Woops... la generation a echoue."<<std::endl;}
-    else{generateur.afficher_carte();}
 }
 
 int Modele::get_salle_generateur(int x, int y)const

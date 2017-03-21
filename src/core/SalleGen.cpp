@@ -13,6 +13,8 @@ SalleGen::SalleGen()
     p_gauche = false;
     p_droite = false;
 
+    difficulte_approx = 0;
+    difficulte_voulue = -1;
     for (int i=0; i<9; ++i)
     {
         for (int j=0; j<17; ++j)
@@ -22,7 +24,7 @@ SalleGen::SalleGen()
     }
 }
 
-SalleGen::SalleGen(bool p_h, bool p_b, bool p_g, bool p_d, int conf)
+SalleGen::SalleGen(bool p_h, bool p_b, bool p_g, bool p_d, int conf, int diff)
 {
     p_haut = p_h;
     p_bas = p_b;
@@ -30,6 +32,8 @@ SalleGen::SalleGen(bool p_h, bool p_b, bool p_g, bool p_d, int conf)
     p_droite = p_d;
 
     config = conf;
+    difficulte_voulue = 0;
+    difficulte_voulue = diff;
 
     for (int i=0; i<9; ++i)
     {
@@ -122,6 +126,7 @@ void SalleGen::placer_clef()
 void SalleGen::placer_amas(char type, int taille) // type = 2 ou 5, taille entre 0 et 4
 {
     assert(taille < 5 && taille >= 0);
+    //au passage, la taille 4 est une mauvaise idée.
     assert(type == 'r' || type == 't');
     int depart_amas = rand() % 10; //l'amas commence-t-il dans les coins ou au centre ?
     int i_dep, j_dep;
@@ -276,4 +281,53 @@ void SalleGen::afficher_validation() const
         }
         std::cout<<std::endl;
     }
+}
+
+void SalleGen::placer_ennemi()
+{
+    if (config != 4 && config != 2 && config != 0)
+    {
+        bool ennemi_place = false;
+        int nb_break = 0;
+        while (!ennemi_place)
+        {
+            int emplacement_bloc = rand() % 8; //l'ennemi est-il dans un coin ou au milieu ?
+            int i_dep, j_dep;
+
+            switch (emplacement_bloc)
+            {
+            case 0:
+                //coin en haut à gauche.
+                i_dep = rand() % 2 + 1;
+                j_dep = rand() % 2 + 1;
+                break;
+            case 1:
+                i_dep = rand() % 2 + 1;
+                j_dep = rand() % 2 + 14;
+                break;
+            case 2:
+                i_dep = rand() % 2 + 6;
+                j_dep = rand() % 2 + 1;
+                break;
+            case 3:
+                i_dep = rand() % 2 + 6;
+                j_dep = rand() % 2 + 14;;
+            default:
+                i_dep = rand() % 3 + 3;
+                j_dep = rand() % 11 + 3;
+                break;
+            }
+            if (grille[i_dep][j_dep] == 'n')
+            {
+                grille[i_dep][j_dep] = 'e';
+                ennemi_place = true;
+            }
+            else if (nb_break > 10000)
+            {
+                break;
+            }
+            ++nb_break;
+        }
+    }
+
 }

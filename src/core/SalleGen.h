@@ -7,10 +7,15 @@ class SalleGen
 {
 private:
     char grille[9][17];
+    //n=normal, p=porte, t=trou, m=mur, c=clef, r=buisson/rocher, e=ennemi (indéterminé)
+
     char grille_validation[9][17];
     bool p_haut, p_bas, p_gauche, p_droite;
     int config;
-    //n=normal, p=porte, t=trou, m=mur, c=clef, r=buisson/rocher
+    //0=vide, 1=normal, 2=boss, 3=clef, 4=depart, 5=objet
+
+    int difficulte_approx;
+    int difficulte_voulue;
 
     bool valide;
 
@@ -22,7 +27,7 @@ private:
 public:
     SalleGen();
 
-    SalleGen(bool p_h, bool p_b, bool p_g, bool p_d, int conf);
+    SalleGen(bool p_h, bool p_b, bool p_g, bool p_d, int conf, int diff);
 
     bool is_valide()const;
 
@@ -37,6 +42,8 @@ public:
     void valider();
 
     void afficher_validation()const;
+
+    void placer_ennemi();
 
 };
 

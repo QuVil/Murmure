@@ -85,7 +85,18 @@ void Zone::afficher_zone()
     {
         for (int j=0; j<11; ++j)
         {
-            std::cout<<carte[i][j].get_config()<<" ";
+            if (carte[i][j].get_config() == 0)
+                std::cout<<"- ";
+            else if (carte[i][j].get_config() == 2)
+                std::cout<<"b ";
+            else if (carte[i][j].get_config() == 3)
+                std::cout<<"c ";
+            else if (carte[i][j].get_config() == 4)
+                std::cout<<"d ";
+            else if (carte[i][j].get_config() == 5)
+                std::cout<<"o ";
+            else
+                std::cout<<"X ";
         }
         std::cout<<std::endl;
     }
@@ -184,7 +195,7 @@ void Zone::zone_depuis_modele_aleatoire(int taille/* = 0 */)
                     nom_aleat = "test_vide";
                     break;
                 case 1:
-                    nom_aleat = "test_vide";
+                    nom_aleat = "test_hub";
                     break;
                 default:
                     nom_aleat = "defaut";
