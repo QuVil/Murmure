@@ -14,7 +14,7 @@ private:
     sf::Texture normal;
     sf::Texture herbe[nb_texture_herbe_caseSFML];
     sf::Texture defaut;
-    sf::Texture mur_1[8];/**< \a textures differentes du mur, compter les textures partant de la case en haut à gaughe (coin) et parcourir dans le sens des aiguilles d'une montre */
+    sf::Texture mur_1[8]; /**< \a textures differentes du mur, compter les textures partant de la case en haut à gaughe (coin) et parcourir dans le sens des aiguilles d'une montre */
     sf::Texture trou;
     sf::Texture porte;
     sf::Texture rocher;
