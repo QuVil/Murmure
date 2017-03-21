@@ -28,17 +28,16 @@ private:
     /// CARTEAFF
     int scale_carte_largeur, scale_carte_hauteur;
     int posx0carte, posy0carte;
+    //CarteAffSFML carteaffsfml[11][11];
 
 
     Jeu jeu;
 
-    void charger_salle();
-    void dessiner_salle();
-    void redessiner_salle();
-    void mettre_a_jour_salle();
+    void init_caseSFML();
+    void init_carteAffSFML();
 
-    void afficher_salle();
-    void afficher_carte();
+    void dessiner_salle();
+    void dessiner_carte();
 
 public:
     JeuSFML();

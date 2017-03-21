@@ -61,7 +61,7 @@ void JeuSFML::SFML_boucle()
 
                 if(event.key.code == sf::Keyboard::M)
                 {
-                    afficher_carte();
+                    //afficher_carte();
                 }
 
                 if(event.key.code == sf::Keyboard::S)
@@ -95,29 +95,12 @@ void JeuSFML::init()
     }
 }
 
-void JeuSFML::charger_salle()
-{
-    for(int i=0;i<9;i++)
-    {
-        for(int j=0;j<17;j++)
-        {
-            //casesfml[i][j].charger_salle(jeu.get_salle().get_case(i,j).get_type_string());
-            //casesfml[i][j].set_texture(textures.retourne_texture_caseSFML(jeu.get_salle().get_case(i, j).get_type_char()));
-        }
-    }
-}
-
 void JeuSFML::dessiner_salle()
 {
     for(int i=0;i<9;i++)
     {
         for(int j=0;j<17;j++)
         {
-            // met les textures dans les cases
-            //casesfml[i][j].set_texture(textures.retourne_texture_caseSFML(jeu.get_salle().get_case(i, j).get_type_char()));
-            // dessine les cases
-            //window.draw(casesfml[i][j].get_casesfml(), casesfml[i][j].get_states());
-            //window.draw(casesfml[i][j].get_casesfml(),& textures.retourne_texture_caseSFML(jeu.get_salle().get_case(i, j).get_type_char()));
             window.draw(casesfml[i][j].get_casesfml(),
                         textures.retourne_rendu_texture_caseSFML(jeu.get_salle().get_case(i, j).get_type_char(),
                                                                  i,
@@ -128,19 +111,8 @@ void JeuSFML::dessiner_salle()
     }
 }
 
-void JeuSFML::redessiner_salle()
-{
-        for(int i=0;i<9;i++)
-        {
-            for(int j=0;j<17;j++)
-            {
-                // redessine directement les cases sans recalculer les textures
-                //window.draw(casesfml[i][j].get_casesfml(), casesfml[i][j].get_states());
-            }
-        }
-}
 
-void JeuSFML::afficher_carte()
+void JeuSFML::dessiner_carte()
 {
     for(int i=0;i<11;i++)
     {

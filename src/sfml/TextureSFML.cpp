@@ -40,7 +40,6 @@ void TextureSFML::charger_textures_caseSFML()
         ss << "data/res/CaseSalle/herbe_" << i << ".png";
         path = ss.str();
         herbe[i].loadFromFile(path);
-        if(!herbe[i].loadFromFile(path)){std::cout << "kek" << std::endl;}
     }
 
     for(int i=0;i<8;i++)
