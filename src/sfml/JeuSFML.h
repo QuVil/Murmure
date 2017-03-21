@@ -11,6 +11,7 @@
 class JeuSFML
 {
 private:
+    //integralite des textures du jeu
     TextureSFML textures;
     // fenetre qu'on utilisera
     sf::RenderWindow window;
@@ -18,17 +19,13 @@ private:
     sf::VideoMode desktop;
 
     /// CASESALLE
-    //echelle a laquelle on va charger les textures
-    // (en fonction de la taille de l'ecran)
+    //echelle a laquelle on va charger les textures (en fonction de la taille de l'ecran)
     int scale_salle_largeur, scale_salle_hauteur;
-
-    // positions initiales des cases de la salle pour
-    // centrer au mieux la salle sur l'ecran
+    // positions initiales des cases de la salle pour centrer au mieux la salle sur l'ecran
     int posx0salle,posy0salle;
-
-    /// SALLE
-
     CaseSFML casesfml[9][17];
+
+    /// CARTEAFF
     int scale_carte_largeur, scale_carte_hauteur;
     int posx0carte, posy0carte;
 

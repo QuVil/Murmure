@@ -102,7 +102,7 @@ void JeuSFML::charger_salle()
         for(int j=0;j<17;j++)
         {
             //casesfml[i][j].charger_salle(jeu.get_salle().get_case(i,j).get_type_string());
-            casesfml[i][j].set_texture(textures.retourne_texture_caseSFML(jeu.get_salle().get_case(i, j).get_type_char()));
+            //casesfml[i][j].set_texture(textures.retourne_texture_caseSFML(jeu.get_salle().get_case(i, j).get_type_char()));
         }
     }
 }
@@ -118,7 +118,8 @@ void JeuSFML::dessiner_salle()
             // dessine les cases
             //window.draw(casesfml[i][j].get_casesfml(), casesfml[i][j].get_states());
             //window.draw(casesfml[i][j].get_casesfml(),& textures.retourne_texture_caseSFML(jeu.get_salle().get_case(i, j).get_type_char()));
-            window.draw(casesfml[i][j].get_casesfml(),textures.retourne_rendu_texture_caseSFML(jeu.get_salle().get_case(i, j).get_type_char()));
+            window.draw(casesfml[i][j].get_casesfml(),
+                                    textures.retourne_rendu_texture_caseSFML(jeu.get_salle().get_case(i, j).get_type_char()));
         }
     }
 }
@@ -130,7 +131,7 @@ void JeuSFML::redessiner_salle()
             for(int j=0;j<17;j++)
             {
                 // redessine directement les cases sans recalculer les textures
-                window.draw(casesfml[i][j].get_casesfml(), casesfml[i][j].get_states());
+                //window.draw(casesfml[i][j].get_casesfml(), casesfml[i][j].get_states());
             }
         }
 }
