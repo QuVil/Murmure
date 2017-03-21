@@ -124,7 +124,8 @@
 		</Unit>
 		<Unit filename="src/core/ZoneGen.cpp" />
 		<Unit filename="src/core/ZoneGen.h" />
-		<Unit filename="src/sfml/CarteSFML.h" />
+		<Unit filename="src/sfml/CarteAffSFML.cpp" />
+		<Unit filename="src/sfml/CarteAffSFML.h" />
 		<Unit filename="src/sfml/CaseSFML.cpp" />
 		<Unit filename="src/sfml/CaseSFML.h" />
 		<Unit filename="src/sfml/JeuSFML.cpp" />
