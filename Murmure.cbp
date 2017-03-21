@@ -110,6 +110,8 @@
 			<Option target="murmure_gen_test" />
 			<Option target="murmure_test_q" />
 		</Unit>
+		<Unit filename="src/core/ModeleSalle.cpp" />
+		<Unit filename="src/core/ModeleSalle.h" />
 		<Unit filename="src/core/Perso.cpp" />
 		<Unit filename="src/core/Perso.h" />
 		<Unit filename="src/core/Salle.cpp" />

@@ -28,6 +28,8 @@ public:
 
     SalleGen(bool p_h, bool p_b, bool p_g, bool p_d, int conf, int diff);
 
+    int get_type(int i, int j)const;
+
     bool is_valide()const;
 
     void initialisation_gen();

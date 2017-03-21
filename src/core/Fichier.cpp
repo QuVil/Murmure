@@ -184,6 +184,43 @@ void Fichier::charger(Modele &m, std::string nom)
     fichier.close();
 }
 
+void Fichier::charger(ModeleSalle &m, std::string nom)
+{
+    //Cree un chemin relatif qui pointe sur la configuration en fonction
+    //de la valeur config de la salle (par defaut 1)
+    stringstream ss;
+    ss << chemin << "ModeleSalle/" << nom << ".cfg";
+    string path = ss.str();
+
+    ifstream fichier((path).c_str(), ios::in);
+    assert(fichier);
+
+    char tampon, tampon2;
+    int tamp, tamp2;
+
+    for (int i=0; i<2; ++i)
+    {
+        tampon = fichier.get();
+        tampon2 = fichier.get();
+        tamp = tampon - '0';
+        tamp2 = tampon2 - '0';
+        tamp = tamp*10 + tamp2;
+        m.set_tableau_modele_i(tamp, i);
+        tampon = fichier.get();
+    }
+
+    for(int i=2; i<23; i++)
+    {
+        tampon=fichier.get();
+
+        tamp = tampon - '0';
+        m.set_tableau_modele_i(tamp, i);
+        tampon=fichier.get();
+    }
+
+    fichier.close();
+}
+
 /**
 void Fichier::charger(Zone & z)
 {

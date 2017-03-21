@@ -9,6 +9,7 @@
 #include "Zone.h"
 #include "Perso.h"
 #include "Modele.h"
+#include "ModeleSalle.h"
 
 class Fichier
 {
@@ -33,6 +34,8 @@ public:
     void charger(Perso & p);
 
     void charger(Modele & m, std::string nom);
+
+    void charger(ModeleSalle & m, std::string nom);
 };
 
 #endif // FICHIER_H_INCLUDED

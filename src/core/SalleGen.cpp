@@ -44,6 +44,11 @@ SalleGen::SalleGen(bool p_h, bool p_b, bool p_g, bool p_d, int conf, int diff)
     }
 }
 
+int SalleGen::get_type(int i, int j) const
+{
+    return grille[i][j];
+}
+
 bool SalleGen::is_valide() const
 {
     return valide;
