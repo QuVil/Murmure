@@ -1,4 +1,5 @@
 #include "TextureSFML.h"
+#include <iostream>
 
 TextureSFML::TextureSFML()
 {

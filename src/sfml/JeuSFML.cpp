@@ -10,6 +10,7 @@
 
 JeuSFML::JeuSFML()
 {
+    //jeu.get_zone().afficher_zone();
     // cherche les parametres de l'utilisateur (resolution)
     desktop = sf::VideoMode::getDesktopMode();
     window.create(sf::VideoMode(desktop.width, desktop.height, desktop.bitsPerPixel), "Murmure",sf::Style::Fullscreen);
