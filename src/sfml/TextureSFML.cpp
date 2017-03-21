@@ -1,5 +1,6 @@
 #include "TextureSFML.h"
 #include <string>
+#include <iostream>
 #include <sstream>
 #include <stdio.h>
 #include <stdlib.h>
@@ -35,13 +36,18 @@ void TextureSFML::charger_textures_caseSFML()
 
     for(int i=0; i<nb_texture_herbe_caseSFML;i++)
     {
+        ss.str("");
         ss << "data/res/CaseSalle/herbe_" << i << ".png";
+        path = ss.str();
         herbe[i].loadFromFile(path);
+        if(!herbe[i].loadFromFile(path)){std::cout << "kek" << std::endl;}
     }
 
     for(int i=0;i<8;i++)
     {
+        ss.str("");
         ss << "data/res/CaseSalle/mur_1_" << i << ".png";
+        path = ss.str();
         mur_1[i].loadFromFile(path);
     }
 }
@@ -103,7 +109,7 @@ sf::RenderStates TextureSFML::retourne_rendu_texture_caseSFML(const char& type, 
                 break;
             case 'p':
                 if(j == 0) {casesfml[i][j].texture =&porte;}
-                else if(j == 8) {casesfml[i][j].texture =&porte;}
+                else if(j == 16) {casesfml[i][j].texture =&porte;}
                 break;
             case 't':
                 casesfml[i][j].texture =&trou;
@@ -113,16 +119,17 @@ sf::RenderStates TextureSFML::retourne_rendu_texture_caseSFML(const char& type, 
                 break;
             case 'm':
                 if(j == 0) {casesfml[i][j].texture =&mur_1[7];}
-                else if(j == 8) {casesfml[i][j].texture =&mur_1[3];}
+                else if(j == 16) {casesfml[i][j].texture =&mur_1[3];}
                 break;
             default:
                 casesfml[i][j].texture =&defaut;
                 break;
             }
         }
+        //casesfml[i][j].texture = &defaut;
         // enregistrer la salle pour ne pas la recalculer
         // ensuite
-        if((i == 8)&&( j == 17))
+        if((i == 8)&&( j == 16))
         {
             salle_act_x = x;
             salle_act_y = y;
