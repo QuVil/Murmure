@@ -5,13 +5,13 @@
 int main(int argc, char ** argv)
 {
     srand(time (NULL));
-/*
+
     Zone z;
-    z.zone_depuis_modele("test_hub");
+    z.zone_depuis_modele_aleatoire(0);
     z.afficher_zone();
-*/
 
 
+/*
     SalleGen s_generateur(1, 1, 1, 1, 3, 50);
 
     s_generateur.initialisation_gen();
@@ -26,6 +26,9 @@ int main(int argc, char ** argv)
     std::cout<<std::endl;
     std::cout<<std::endl;
     s_generateur.calculer_difficulte();
+    s_generateur.valider();
+    s_generateur.afficher_validation();
+    std::cout<<s_generateur.is_valide();*/
 
     return 0;
 }

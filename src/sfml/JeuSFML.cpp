@@ -10,6 +10,7 @@
 
 JeuSFML::JeuSFML()
 {
+    //jeu.get_zone().afficher_zone();
     // cherche les parametres de l'utilisateur (resolution)
     desktop = sf::VideoMode::getDesktopMode();
     window.create(sf::VideoMode(desktop.width, desktop.height, desktop.bitsPerPixel), "Murmure",sf::Style::Fullscreen);
@@ -28,11 +29,14 @@ JeuSFML::JeuSFML()
 
     posx0carte = (desktop.width - 11*scale_carte_largeur)/2;
     posy0carte = (desktop.height - 11*scale_carte_hauteur)/2;
+
+    textures.charger_textures_caseSFML();
 }
 
 void JeuSFML::SFML_boucle()
 {
     init();
+    charger_salle();
     // on fait tourner le programme jusqu'à ce que la fenêtre soit fermée
     while (window.isOpen())
     {
@@ -70,7 +74,7 @@ void JeuSFML::SFML_boucle()
 
 
         window.clear(sf::Color::Black);
-        afficher_carte();
+        afficher_salle();
         window.display();
     }
 }
@@ -96,7 +100,8 @@ void JeuSFML::charger_salle()
     {
         for(int j=0;j<17;j++)
         {
-            casesfml[i][j].charger_salle(jeu.get_salle().get_case(i,j).get_type_string());
+            //casesfml[i][j].charger_salle(jeu.get_salle().get_case(i,j).get_type_string());
+            casesfml[i][j].set_texture(textures.retourne_texture_caseSFML(jeu.get_salle().get_case(i, j).get_type_char()));
         }
     }
 }
@@ -121,9 +126,9 @@ void JeuSFML::mettre_a_jour_salle()
 void JeuSFML::afficher_salle()
 {
     //CaseSalle c;
-    for(int i=0;i<jeu.get_salle().get_nb_cases_hauteur();i++)
+    for(int i=0;i<9;i++)
     {
-        for(int j=0;j<jeu.get_salle().get_nb_cases_largeur();j++)
+        for(int j=0;j<17;j++)
         {
             //c=jeu.get_salle().get_case(i,j);
             /*
@@ -140,6 +145,7 @@ void JeuSFML::afficher_salle()
                                    c.get_type_string());
             window.draw(C.get_casesfml(),C.get_states());*/
             window.draw(casesfml[i][j].get_casesfml(), casesfml[i][j].get_states());
+            //window.draw(casesfml[i][j].get_casesfml(), &textures.retourne_texture_caseSFML(jeu.get_salle().get_case(i, j).get_type_char()));
         }
     }
 }

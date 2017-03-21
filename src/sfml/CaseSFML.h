@@ -31,6 +31,8 @@ public:
     sf::Texture get_texture();
 
     sf::RenderStates get_states();
+
+    void set_texture(const sf::Texture &texture2);
 };
 
 #endif // CASESFML_H_INCLUDED

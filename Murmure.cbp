@@ -130,6 +130,8 @@
 		<Unit filename="src/sfml/CaseSFML.h" />
 		<Unit filename="src/sfml/JeuSFML.cpp" />
 		<Unit filename="src/sfml/JeuSFML.h" />
+		<Unit filename="src/sfml/TextureSFML.cpp" />
+		<Unit filename="src/sfml/TextureSFML.h" />
 		<Unit filename="src/sfml/mainSFML.cpp">
 			<Option target="murmure_txt" />
 			<Option target="murmure_test" />

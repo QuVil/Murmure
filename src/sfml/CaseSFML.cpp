@@ -68,14 +68,14 @@ void CaseSFML::init(int posX, int posY, int largeur, int hauteur)
 
 void CaseSFML::charger_salle(const std::string& type)
 {
+/*
     std::stringstream ss;
     ss << "data/res/CaseSalle/" << type << ".png";
     std::string path = ss.str();
     texture.loadFromFile(path);
 
-    states.texture = &texture;
+    states.texture = &texture;*/
 }
-
 
 
 sf::VertexArray CaseSFML::get_casesfml()
@@ -90,5 +90,11 @@ sf::Texture CaseSFML::get_texture()
 
 sf::RenderStates CaseSFML::get_states()
 {
+    states.texture = &texture;
     return states;
+}
+
+void CaseSFML::set_texture(const sf::Texture& texture2)
+{
+    texture = texture2;
 }

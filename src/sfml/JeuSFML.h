@@ -6,10 +6,12 @@
 #include <SFML/Graphics.hpp>
 
 #include "CaseSFML.h"
+#include "TextureSFML.h"
 
 class JeuSFML
 {
 private:
+    TextureSFML textures;
     // fenetre qu'on utilisera
     sf::RenderWindow window;
     // parametres de l'ecran
@@ -26,7 +28,7 @@ private:
 
     /// SALLE
 
-    CaseSFML casesfml[17][9];
+    CaseSFML casesfml[9][17];
     int scale_carte_largeur, scale_carte_hauteur;
     int posx0carte, posy0carte;
 
