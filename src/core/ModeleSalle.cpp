@@ -73,8 +73,8 @@ void ModeleSalle::generer_salle()
             i++;
         }
 
-        generateur.valider();
         generateur.placer_clef();
+        generateur.valider();
 
         ecart_diff = generateur.get_difficulte_approx() - generateur.get_difficulte_voulue();
         if (ecart_diff < 0){ecart_diff = 0 - ecart_diff;}

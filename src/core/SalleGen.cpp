@@ -257,7 +257,7 @@ void SalleGen::valider()
     {
         for (int j=0; j<17; ++j)
         {
-            if (grille_validation[i][j] == 'p')
+            if (grille_validation[i][j] == 'p' || grille_validation[i][j] == 'c')
             {
                 valide = false;
             }
@@ -270,11 +270,12 @@ void SalleGen::valider()
 void SalleGen::valider_recursif(int i, int j)
 {
     //cas d'arrêt
-    if (grille_validation[i][j] == 'p')
+    if (grille_validation[i][j] == 'p' || grille_validation[i][j] == 'c')
     {
         grille_validation[i][j] = '*';
+        //on garde les portes en tête pour vérifier qu'elles soient toutes atteignables.
     }
-    else if (grille_validation[i][j] == 'm' || grille_validation[i][j] == 't')
+    else if (grille_validation[i][j] == 'm' || grille_validation[i][j] == 't' || grille_validation[i][j] == 'r')
     {
         //rien
     }

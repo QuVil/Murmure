@@ -141,3 +141,72 @@ void Salle::salle_depuis_modele(std::string nom)
         }
     }
 }
+
+void Salle::salle_depuis_modele_aleatoire(int diff /*= 0 */)
+{
+    //diff est la difficulte approximative (le salle générée ne sera pas exactement de difficulte = diff...)
+    std::string nom_aleat;
+    //Si la difficulte n'est pas spécifiée ou =0 : au pif
+    if (diff == 0)
+    {
+        int nb_aleat = rand() % 1;
+
+        switch(nb_aleat)
+        {
+            case 1:
+                break;
+            default:
+                nom_aleat = "defaut";
+                break;
+        }
+    }
+    else
+    {
+        //Sinon, on discrimine en fonction de la difficulte...
+        //La configuration de cette procédure est à faire à la main à chaque nouveau ModeleSalle
+        //dans les fichiers. Oui c'est embêtant, mais moins que les autres alternatives je suppose.
+        if (diff < 40)
+        {
+            int nb_aleat40 = rand() % 1;
+
+            switch(nb_aleat40)
+            {
+                case 1:
+                    break;
+                default:
+                    nom_aleat = "defaut";
+                    break;
+            }
+        }
+        else if (diff < 90)
+        {
+            int nb_aleat90 = rand() % 1;
+            switch(nb_aleat90)
+            {
+                case 1:
+                    break;
+                default:
+                    nom_aleat = "defaut";
+                    break;
+            }
+        }
+        else if (diff >= 90)
+        {
+            int nb_aleat91 = rand() % 1;
+            switch(nb_aleat91)
+            {
+                case 1:
+                    break;
+                default:
+                    nom_aleat = "defaut";
+                    break;
+            }
+        }
+        else //si la difficulte spécifiée est incorrecte, on prend le modele par defaut.
+        {
+            nom_aleat = "defaut";
+        }
+    }
+
+    salle_depuis_modele(nom_aleat);
+}

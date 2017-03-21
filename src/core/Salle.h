@@ -137,6 +137,8 @@ public:
 
     void salle_depuis_modele(std::string nom);
 
+    void salle_depuis_modele_aleatoire(int diff = 0);
+
 };
 
 #endif // SALLE_H_INCLUDED
