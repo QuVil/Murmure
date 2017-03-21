@@ -172,7 +172,7 @@ void Fichier::charger(Modele &m, std::string nom)
         tampon = fichier.get();
     }
 
-    for(int i=2; i<23; i++)
+    for(int i=2; i<23; ++i)
     {
         tampon=fichier.get();
 
@@ -195,29 +195,29 @@ void Fichier::charger(ModeleSalle &m, std::string nom)
     ifstream fichier((path).c_str(), ios::in);
     assert(fichier);
 
-    char tampon, tampon2;
-    int tamp, tamp2;
+    char tampon, tampon2, tampon3;
+    int tamp, tamp2, tamp3;
 
-    for (int i=0; i<2; ++i)
-    {
-        tampon = fichier.get();
-        tampon2 = fichier.get();
-        tamp = tampon - '0';
-        tamp2 = tampon2 - '0';
-        tamp = tamp*10 + tamp2;
-        m.set_tableau_modele_i(tamp, i);
-        tampon = fichier.get();
-    }
+    tampon = fichier.get();
+    tampon2 = fichier.get();
+    tampon3 = fichier.get();
 
-    for(int i=2; i<23; i++)
+    tamp = tampon - '0';
+    tamp2 = tampon2 - '0';
+    tamp3 = tampon3 - '0';
+    tamp = tamp*100 + tamp2*10 + tamp3;
+
+
+    m.set_tableau_modele_i(tamp, 0);
+    tampon = fichier.get();
+
+    for(int i=1; i<22; ++i)
     {
         tampon=fichier.get();
-
         tamp = tampon - '0';
         m.set_tableau_modele_i(tamp, i);
         tampon=fichier.get();
     }
-
     fichier.close();
 }
 

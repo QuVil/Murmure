@@ -32,6 +32,14 @@ public:
 
     bool is_valide()const;
 
+    void set_valide(bool v);
+
+    int get_difficulte_voulue() const;
+
+    int get_difficulte_approx() const;
+
+    void set_difficulte_voulue(int diff);
+
     void initialisation_gen();
 
     void afficher_tests()const;
@@ -51,6 +59,12 @@ public:
     int calculer_distance_porte(int x, int y)const;
 
     void calculer_difficulte();
+
+    void vider_salle();
+
+    void placer_portes(int h, int b, int g, int d);
+
+    void set_config(int c);
 
 };
 

@@ -1,15 +1,15 @@
 #include <iostream>
 #include "Zone.h"
-#include "SalleGen.h"
+#include "Salle.h"
 
 int main(int argc, char ** argv)
 {
     srand(time (NULL));
-
+/*
     Zone z;
     z.zone_depuis_modele_aleatoire(0);
     z.afficher_zone();
-
+*/
 
 /*
     SalleGen s_generateur(1, 1, 1, 1, 3, 50);
@@ -28,7 +28,11 @@ int main(int argc, char ** argv)
     s_generateur.calculer_difficulte();
     s_generateur.valider();
     s_generateur.afficher_validation();
-    std::cout<<s_generateur.is_valide();*/
+    std::cout<<s_generateur.is_valide();
+*/
+    Salle s;
+    s.salle_depuis_modele("defaut");
+    s.afficher();
 
     return 0;
 }

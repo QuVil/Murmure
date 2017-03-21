@@ -11,6 +11,7 @@
  */
 
 #include "CaseSalle.h"
+#include "SalleGen.h"
 
 const int nb_cases_largeur = 17;
 const int nb_cases_hauteur = 9;
@@ -133,6 +134,9 @@ public:
     int get_nb_cases_hauteur();
 
     std::string get_config_string()const;
+
+    void salle_depuis_modele(std::string nom);
+
 };
 
 #endif // SALLE_H_INCLUDED

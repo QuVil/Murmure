@@ -127,3 +127,17 @@ std::string Salle::get_config_string() const
             break;
     }
 }
+
+void Salle::salle_depuis_modele(std::string nom)
+{
+    ModeleSalle mod_s(nom);
+    mod_s.generer_salle();
+
+    for (int i=0; i<9; ++i)
+    {
+        for (int j=0; j<17; ++j)
+        {
+            grille[i][j].set_type(mod_s.get_case_generateur(i, j));
+        }
+    }
+}

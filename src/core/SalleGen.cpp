@@ -13,6 +13,7 @@ SalleGen::SalleGen()
     p_gauche = false;
     p_droite = false;
 
+    valide = false;
     difficulte_approx = 0;
     difficulte_voulue = -1;
     for (int i=0; i<9; ++i)
@@ -31,6 +32,7 @@ SalleGen::SalleGen(bool p_h, bool p_b, bool p_g, bool p_d, int conf, int diff)
     p_gauche = p_g;
     p_droite = p_d;
 
+    valide = false;
     config = conf;
     difficulte_voulue = 0;
     difficulte_voulue = diff;
@@ -53,6 +55,27 @@ bool SalleGen::is_valide() const
 {
     return valide;
 }
+
+void SalleGen::set_valide(bool v)
+{
+    valide = v;
+}
+
+int SalleGen::get_difficulte_voulue() const
+{
+    return difficulte_voulue;
+}
+
+int SalleGen::get_difficulte_approx() const
+{
+    return difficulte_approx;
+}
+
+void SalleGen::set_difficulte_voulue(int diff)
+{
+    difficulte_voulue = diff;
+}
+
 
 void SalleGen::initialisation_gen()
 {
@@ -240,6 +263,8 @@ void SalleGen::valider()
             }
         }
     }
+    calculer_difficulte();
+
 }
 
 void SalleGen::valider_recursif(int i, int j)
@@ -383,6 +408,29 @@ void SalleGen::calculer_difficulte()
             }
         }
     }
-    std::cout<<diff<<std::endl;
     difficulte_approx = diff;
+}
+
+void SalleGen::vider_salle()
+{
+    for (int i=1; i<8; ++i)
+    {
+        for (int j=1; j<16; ++j)
+        {
+            grille[i][j] = 'n';
+        }
+    }
+}
+
+void SalleGen::placer_portes(int h, int b, int g, int d)
+{
+    if (h == 1){p_haut = true;}
+    if (b == 1){p_bas = true;}
+    if (g == 1){p_gauche = true;}
+    if (d == 1){p_droite = true;}
+}
+
+void SalleGen::set_config(int c)
+{
+    config = c;
 }

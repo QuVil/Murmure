@@ -8,11 +8,12 @@ class ModeleSalle
 private:
     SalleGen generateur;
 
-    int tableau_modele[10];
-    //0e entier : difficulte voulue (moyenne)
+    int tableau_modele[22];
+    //0e entier : difficulte voulue (moyenne) sur 3 chiffres (ex : 057)
+    //ensuite : la config en 1ere position, puis les 4 bool de portes (haut bas gauche droite)
     //puis les actions à faire : 1 pour placer un ennemi, 2 pour placer un amas de rochers,
     //3 pour un amas de trous. Après un placement d'amas, on met un int entre 0 et 4 pour sa taille.
-    //un -1 sert à marquer l'arrêt des actions.
+    //un 9 sert à marquer l'arrêt des actions.
 
 public:
     ModeleSalle();
