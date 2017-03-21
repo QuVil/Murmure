@@ -125,26 +125,95 @@ void Zone::zone_depuis_modele(std::string nom)
     }
 }
 
-void Zone::zone_depuis_modele_aleatoire()
+void Zone::zone_depuis_modele_aleatoire(int taille/* = 0 */)
 {
+    //taille est entre 1 et 3 si elle est spécifiée. 1=normal, 2=grand, 3=immense.
     std::string nom_aleat;
-    int nb_aleat = rand() % 3;
-
-    switch(nb_aleat)
+    //Si la taille générale n'est pas spécifiée, on prend vraiment au hasard.
+    if (taille == 0)
     {
-        case 0:
-            nom_aleat = "test";
-            break;
-        case 1:
-            nom_aleat = "test_vide";
-            break;
-        case 2:
-            nom_aleat = "test_croix";
-            break;
-        default:
-            nom_aleat = "defaut";
-            break;
+        int nb_aleat = rand() % 5;
+
+        switch(nb_aleat)
+        {
+            case 0:
+                nom_aleat = "test";
+                break;
+            case 1:
+                nom_aleat = "test_vide";
+                break;
+            case 2:
+                nom_aleat = "test_croix";
+                break;
+            case 3:
+                nom_aleat = "test_h";
+                break;
+            default:
+                nom_aleat = "defaut";
+                break;
+        }
     }
+    else
+    {
+        //Sinon, on discrimine en fonction de la taille...
+        //La configuration de cette procédure est à faire à la main à chaque nouveau Modele
+        //dans les fichiers. Oui c'est embêtant, mais moins que les autres alternatives je suppose.
+        if (taille == 1) //si la taille est sur 'normale'
+        {
+            int nb_aleat1 = rand() % 2;
+
+            switch(nb_aleat1)
+            {
+                case 0:
+                    nom_aleat = "test_croix";
+                    break;
+                case 1:
+                    nom_aleat = "test_h";
+                    break;
+                default:
+                    nom_aleat = "defaut";
+                    break;
+            }
+        }
+        else if (taille == 2) //si la taille est sur 'grande'
+        {
+            int nb_aleat2 = rand() % 3;
+            switch(nb_aleat2)
+            {
+                case 0:
+                    nom_aleat = "test_vide";
+                    break;
+                case 1:
+                    nom_aleat = "test_vide";
+                    break;
+                default:
+                    nom_aleat = "defaut";
+                    break;
+            }
+        }
+        else if (taille == 3) //si la taille est sur 'immense'
+        {
+            int nb_aleat3 = rand() % 2;
+            switch(nb_aleat3)
+            {
+                case 0:
+                    nom_aleat = "test";
+                    break;
+                case 1:
+                    nom_aleat = "test";
+                    break;
+                default:
+                    nom_aleat = "defaut";
+                    break;
+            }
+        }
+        else //si la taille spécifiée est incorrecte, on prend le modele par defaut.
+        {
+            nom_aleat = "defaut";
+        }
+    }
+
+
 
     zone_depuis_modele(nom_aleat);
 }

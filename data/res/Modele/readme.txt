@@ -6,4 +6,29 @@ Les fichiers de configuration de Modele sont agencés comme suit :
 minimum et maximum de salles dans la Zone respectivement.
 
 ->3e int : le patterne de base pour la Zone :
-	+1 : 
+	+1 : croix
+	+2 : carré
+	+3 : vide
+	+4 : en forme de h
+	+5 : hub
+
+->ensuite, 20 int représentant les itérations à appliquer au patterne de base :
+	+1 : voisins
+	+2 : bruit_neg
+	+3 : bruit_pos
+	+4 : aleatoire
+	+5 : epuration
+	+6 : extension
+une fois la série d'itérations voulue complète, on termine la série avec des 0.
+
+--------------------------------------------------------------------------------
+exemple : 
+20 70 4 1 1 1 1 1 5 4 4 5 6 0 0 0 0 0 0 0 0 0 0
+
+tentera de générer une Zone avec entre 20 et 70 salles, partant d'un patterne
+en H et suivant les itérations suivantes :
+voisins, voisins, voisins, voisins, voisins, epuration, aleatoire, aleatoire,
+epuration, extension.
+
+Au bout d'un certain nombre de tentatives de générations, il est possible que
+le modèle échoue. Ce nombre peut être réglé dans Modele.cpp -je crois.

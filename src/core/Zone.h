@@ -128,7 +128,7 @@ public:
      * Crée un Modele aléatoirement et génère la Zone procéduralement à
      * partir de ce Modele.
      */
-    void zone_depuis_modele_aleatoire();
+    void zone_depuis_modele_aleatoire(int taille = 0);
 };
 
 #endif // ZONE_H_INCLUDED

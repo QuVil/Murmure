@@ -7,7 +7,7 @@ int main(int argc, char ** argv)
     srand(time (NULL));
 
     Zone z;
-    z.zone_depuis_modele_aleatoire();
+    z.zone_depuis_modele("test_h");
 
 /*
     SalleGen s_generateur(1, 1, 1, 1, 3);
