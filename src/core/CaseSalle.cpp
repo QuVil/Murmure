@@ -62,6 +62,11 @@ char CaseSalle::get_type_char() const
     return type;
 }
 
+void CaseSalle::set_type(char t)
+{
+    type = t;
+}
+
 
 void CaseSalle::afficher()
 {

@@ -63,6 +63,13 @@ public:
     char get_type_char()const;
 
     /**
+     * \brief Mutateur de \a type
+     * Mutateur du membre \a type de la CaseSalle.
+     * \param[in] t : le nouveau type de la CaseSalle.
+     */
+    void set_type(char t);
+
+    /**
      * \brief Surcharge d'affectation de CaseSalle.
      * Surcharge de l'operateur = pour affecter des CaseSalle entre elles.
      * \param[in] c : La CaseSalle dont les membres -ici \a type- doivent etre copies.

@@ -227,4 +227,8 @@ void Zone::zone_depuis_modele_aleatoire(int taille/* = 0 */)
 
 
     zone_depuis_modele(nom_aleat);
+    ///TODO : ces lignes de tests doivent être changées / supprimées...
+    CaseSalle case_test;
+    case_test.set_type('t');
+    carte[salle_actuelle_x][salle_actuelle_y].set_case(3, 5, case_test);
 }
