@@ -60,6 +60,7 @@ void JeuSFML::init_carteAffSFML()
 
 void JeuSFML::SFML_boucle()
 {
+    int mode = 1;
     //init();
     //charger_salle();
     // on fait tourner le programme jusqu'à ce que la fenêtre soit fermée
@@ -85,12 +86,12 @@ void JeuSFML::SFML_boucle()
 
                 if(event.key.code == sf::Keyboard::M)
                 {
-                    //afficher_carte();
+                    mode = 1;
                 }
 
                 if(event.key.code == sf::Keyboard::S)
                 {
-                    dessiner_salle();
+                    mode = 2;
                 }
             }
 
@@ -99,13 +100,26 @@ void JeuSFML::SFML_boucle()
 
 
         window.clear(sf::Color::Black);
-        dessiner_carte();
+        afficher(mode);
         window.display();
     }
 }
 
-
-
+void JeuSFML::afficher(const int& mode)
+{
+    switch(mode)
+    {
+    case 1:
+        dessiner_salle();
+        break;
+    case 2:
+        dessiner_carte();
+        break;
+    default:
+        dessiner_salle();
+        break;
+    }
+}
 
 void JeuSFML::dessiner_salle()
 {

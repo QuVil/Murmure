@@ -33,6 +33,8 @@ private:
 
     Jeu jeu;
 
+    void afficher(const int &mode);
+
     void init_caseSFML();
     void init_carteAffSFML();
 
