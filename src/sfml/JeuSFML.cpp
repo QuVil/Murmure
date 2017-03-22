@@ -14,16 +14,19 @@ JeuSFML::JeuSFML()
     // cherche les parametres de l'utilisateur (resolution)
     desktop = sf::VideoMode::getDesktopMode();
     window.create(sf::VideoMode(desktop.width, desktop.height, desktop.bitsPerPixel), "Murmure",sf::Style::Fullscreen);
-    /*
-    if(desktop.width/jeu.get_salle().get_cases_largeur() <desktop.height/jeu.get_salle().get_cases_hauteur()){scale = desktop.width/jeu.get_salle().get_cases_largeur();}
-    else{scale = desktop.height/jeu.get_salle().get_cases_hauteur();}*/
 
-    scale_salle_largeur = desktop.width/17;
-    scale_salle_hauteur = desktop.height/9;
+    temps_frame = sf::seconds(1/60); // en seconde
+
+    if(desktop.width/17 <desktop.height/9){scale_salle = desktop.width/17;}
+    else{scale_salle = desktop.height/9;}
+
+    //scale_salle_largeur = desktop.width/17;
+    //scale_salle_hauteur = desktop.height/9;
     //std::cout << desktop.width << " " << desktop.height << " " << desktop.bitsPerPixel << std::endl;
 
-    posx0salle = (desktop.width -17*scale_salle_largeur)/2;
-    posy0salle = (desktop.height - 9*scale_salle_hauteur)/2;
+    posx0salle = (desktop.width -17*scale_salle)/2;
+    posy0salle = 0;
+    //posy0salle = (desktop.height - 9*scale_salle);
 
     scale_carte_largeur = desktop.width/11;
     scale_carte_hauteur = desktop.height/11;
@@ -34,9 +37,11 @@ JeuSFML::JeuSFML()
 
 void JeuSFML::init()
 {
-    init_caseSFML();
     textures.charger_textures_caseSFML();
     textures.charger_textures_carteAffSFML();
+    textures.charger_texture_perso();
+    init_caseSFML();
+    init_persoSFML();
 }
 
 void JeuSFML::init_caseSFML()
@@ -45,10 +50,10 @@ void JeuSFML::init_caseSFML()
     {
         for(int j=0;j<17;j++)
         {
-            casesfml[i][j].init(posx0salle + j*scale_salle_largeur,
-                                          posy0salle + i*scale_salle_hauteur,
-                                          scale_salle_largeur,
-                                          scale_salle_hauteur);
+            casesfml[i][j].init(posx0salle + j*scale_salle,
+                                          posy0salle + i*scale_salle,
+                                          scale_salle,
+                                          scale_salle);
         }
     }
 }
@@ -58,9 +63,16 @@ void JeuSFML::init_carteAffSFML()
 
 }
 
+void JeuSFML::init_persoSFML()
+{
+    persosfml.set_texture(textures.retourne_texture_perso());
+}
+
+
 void JeuSFML::SFML_boucle()
 {
     int mode = 1;
+    clock.restart();
     //init();
     //charger_salle();
     // on fait tourner le programme jusqu'à ce que la fenêtre soit fermée
@@ -89,7 +101,7 @@ void JeuSFML::SFML_boucle()
                     mode = 1;
                 }
 
-                if(event.key.code == sf::Keyboard::S)
+                if(event.key.code == sf::Keyboard::P)
                 {
                     mode = 2;
                 }
@@ -110,7 +122,14 @@ void JeuSFML::afficher(const int& mode)
     switch(mode)
     {
     case 1:
-        dessiner_salle();
+        if(clock.getElapsedTime() >= temps_frame)
+        {
+            //std::cout << "kek" << std::endl;
+            recupere_mouvements();
+            dessiner_salle();
+            dessiner_perso();
+            clock.restart();
+        }
         break;
     case 2:
         dessiner_carte();
@@ -145,19 +164,6 @@ void JeuSFML::dessiner_carte()
     {
         for(int j=0;j<11;j++)
         {
-            /*
-            CaseSFML C(posx0salle +j*scale,
-                                   posy0salle +i*scale,
-                                   scale,
-                                   scale,
-                                   c.get_type_string());*/
-                                   /*
-            CarteAffSFML C(posx0carte + j*scale_carte_largeur,
-                                        posy0carte + i*scale_carte_hauteur,
-                                        scale_carte_largeur,
-                                        scale_carte_hauteur,
-                                        jeu.get_zone().get_salle(i, j).get_config_string());*/
-            //window.draw(cartget_cartesallesfml(),C.get_states());
             c.init(posx0carte +i*scale_carte_largeur,
                       posy0carte +j*scale_carte_hauteur,
                       scale_carte_largeur,
@@ -167,3 +173,24 @@ void JeuSFML::dessiner_carte()
         }
     }
 }
+
+void JeuSFML::dessiner_perso()
+{
+    persosfml.mettre_a_jour(jeu.get_perso());
+    window.draw(persosfml.get_persosfml());
+}
+
+
+void JeuSFML::recupere_mouvements()
+{
+    // Clavier
+    // Attention l'axe Y pointe vers le bas
+    float x, y;
+    if(sf::Keyboard::isKeyPressed(sf::Keyboard::Q)) {x = x - 100;}
+    if(sf::Keyboard::isKeyPressed(sf::Keyboard::D)) {x = x + 100;}
+    if(sf::Keyboard::isKeyPressed(sf::Keyboard::Z)) {y = y - 100;}
+    if(sf::Keyboard::isKeyPressed(sf::Keyboard::S)) {y = y + 100;}
+    jeu.get_perso().set_deplacement(x, y);
+    //std::cout << "axe x : " << x << " axe y : " << y << std::endl;
+}
+

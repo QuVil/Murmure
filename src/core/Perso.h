@@ -13,9 +13,11 @@ private:
     //Arme arme1;
     //Arme arme2;
 
-    VecteurM deplacement, orientation, resultante;
+    VecteurM orientation, resultante;
 
     Coord2D position, position_old;
+
+    float coefficient_reducteur;
 
     float pv_max; /**< \a pv_max est le nombre de coeurs maximum du Perso. */
     float pv_actuel; /**< \a pv_actuel est la "lose condition" si elle atteint 0, et doit être plus petit que pv_max. */
@@ -29,6 +31,8 @@ public:
     std::string get_nom()const;
 
     void set_deplacement(const VecteurM &v);
+
+    void set_deplacement(const float &x, const float &y);
 
     void set_orientation(const VecteurM &v);
 
