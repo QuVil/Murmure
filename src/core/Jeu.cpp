@@ -16,3 +16,8 @@ Zone Jeu::get_zone()const
 {
     return zone;
 }
+
+Perso Jeu::get_perso() const
+{
+    return perso;
+}

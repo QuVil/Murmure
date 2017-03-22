@@ -19,7 +19,7 @@ private:
     sf::Texture porte;
     sf::Texture rocher;
 
-    // CerteAffSFML
+    // CarteAffSFML
     sf::Texture actuel;
     sf::Texture boss;
     sf::Texture clef;
@@ -28,6 +28,8 @@ private:
     sf::Texture objet;
     sf::Texture vide;
 
+    // Perso
+    sf::Texture perso;
 
 public:
     TextureSFML();
@@ -36,9 +38,15 @@ public:
 
     void charger_textures_carteAffSFML();
 
+    void charger_texture_perso();
+
     sf::RenderStates retourne_rendu_texture_caseSFML(const char & type, const int &i, const int &j, const int &x, const int &y);
 
     sf::RenderStates retourne_rendu_texture_carteAffSFML(const int & config);
+
+    sf::RenderStates retourne_rendu_texture_perso(const sf::Transform &t);
+
+    sf::Texture& retourne_texture_perso();
 };
 
 #endif // TEXTURESFML_H_INCLUDED

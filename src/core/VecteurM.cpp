@@ -6,6 +6,12 @@ VecteurM::VecteurM()
     y = 0;
 }
 
+VecteurM::VecteurM(const float& x2, const float& y2)
+{
+    x = x2;
+    y = y2;
+}
+
 VecteurM& VecteurM::operator=(const VecteurM& v2)
 {
     x = v2.x;
@@ -25,4 +31,24 @@ void VecteurM::diminuer_inertie(const float& coeff)
 {
     x = x* coeff;
     y = y* coeff;
+}
+
+void VecteurM::set_x(const float& a)
+{
+    x = a;
+}
+
+void VecteurM::set_y(const float& b)
+{
+    y = b;
+}
+
+float VecteurM::get_x() const
+{
+    return x;
+}
+
+float VecteurM::get_y() const
+{
+    return y;
 }

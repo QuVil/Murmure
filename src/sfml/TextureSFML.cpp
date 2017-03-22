@@ -78,6 +78,13 @@ void TextureSFML::charger_textures_carteAffSFML()
     vide.loadFromFile(path);
 }
 
+void TextureSFML::charger_texture_perso()
+{
+    std::string path;
+    path = "data/res/Perso/skin/green.png";
+    perso.loadFromFile(path);
+}
+
 sf::RenderStates TextureSFML::retourne_rendu_texture_carteAffSFML(const int& config)
 {
     sf::RenderStates render;
@@ -189,3 +196,19 @@ sf::RenderStates TextureSFML::retourne_rendu_texture_caseSFML(const char& type, 
     }
     return casesfml[i][j];
 }
+
+sf::RenderStates TextureSFML::retourne_rendu_texture_perso(const sf::Transform& t)
+{
+    sf::RenderStates render;
+    render.texture = &perso;
+    render.transform = t;
+    return render;
+}
+
+sf::Texture& TextureSFML::retourne_texture_perso()
+{
+    return perso;
+}
+
+
+

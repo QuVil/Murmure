@@ -37,3 +37,9 @@ float Coord2D::get_y() const
 {
     return y;
 }
+
+void Coord2D::deplacer(const VecteurM& vect, const float& coeff)
+{
+    x = vect.get_x() * coeff;
+    y = vect.get_y() * coeff;
+}
