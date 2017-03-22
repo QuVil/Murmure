@@ -138,3 +138,14 @@ void Modele::afficher_tests()const
 {
     generateur.afficher_carte();
 }
+
+int Modele::get_gen_posx_dep()
+{
+    return generateur.get_posx_dep();
+}
+
+int Modele::get_gen_posy_dep()
+{
+    return generateur.get_posy_dep();
+}
+

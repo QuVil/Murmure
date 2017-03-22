@@ -27,8 +27,8 @@ private:
     Salle carte[11][11]; /**< \a carte contient toutes les Salle de la Zone dans un tableau. */
     int niveau_zone; /**< \a niveau_zone agit comme indicateur de difficulté et comme nom de Zone. */
     int salle_actuelle_x, salle_actuelle_y; /**< les coordonnées de la Salle où se trouve le Perso. */
-    bool zone_generee;
-    int difficulte_moyenne;
+    bool zone_generee; /**< la zone est-elle générée (ne considère que la structure et pas l'intérieur des salles) */
+    int difficulte_moyenne; /**< la difficulte moyenne des Salles -un peu étrangement utilisée pour le moment... */
 
 public:
 
@@ -129,9 +129,18 @@ public:
      * \brief Appelle zone_depuis_modele avec un nom aléatoire.
      * Crée un Modele aléatoirement et génère la Zone procéduralement à
      * partir de ce Modele.
+     * \param[in] taille : la taille générale (0->4) de la Zone.
      */
     void zone_depuis_modele_aleatoire(int taille /*= 0*/);
 
+    /**
+     * \brief genere la Salle i,j de la Zone.
+     * fait appel à Salle::salle_depuis_modele() ou à
+     * Fichier::charger(Salle s, const int id) aléatoirement.
+     * Tente aussi de respecter à peu près la difficulté moyenne désirée.
+     * \param[in] i : coordonnee i de la Salle
+     * \param[in] j : coordonnee j de la Salle
+     */
     void generer_salle(int i, int j);
 
     void generer_toutes_les_salles();

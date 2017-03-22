@@ -140,6 +140,8 @@ void Zone::zone_depuis_modele(std::string nom)
             carte[i][j].set_config(mod.get_salle_generateur(i, j));
         }
     }
+    salle_actuelle_x = mod.get_gen_posx_dep();
+    salle_actuelle_y = mod.get_gen_posy_dep();
     zone_generee = true;
 }
 
@@ -236,7 +238,6 @@ void Zone::zone_depuis_modele_aleatoire(int taille =0)
 
 void Zone::generer_salle(int i, int j)
 {
-    std::cout<<zone_generee<<std::endl;
     int diff = (niveau_zone*100 + difficulte_moyenne) / 2;
 
     if (carte[i][j].get_config() != 0)
@@ -299,6 +300,12 @@ void Zone::generer_salle(int i, int j)
                 break;
             }
             fichier.charger(carte[i][j], id_aleat);
+            CaseSalle porte;
+            porte.set_type('p');
+            if (p_h){carte[i][j].set_case(0, 8, porte);}
+            if (p_b){carte[i][j].set_case(8, 8, porte);}
+            if (p_g){carte[i][j].set_case(4, 0, porte);}
+            if (p_d){carte[i][j].set_case(4, 16, porte);}
         }
     }
 

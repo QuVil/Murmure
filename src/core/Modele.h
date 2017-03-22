@@ -74,6 +74,10 @@ public:
 
     ///TODO: se débarasser de afficher_tests() qui n'est qu'une procédure temporaire.
     void afficher_tests()const;
+
+    int get_gen_posx_dep();
+
+    int get_gen_posy_dep();
 };
 
 #endif // MODELE_H_INCLUDED
