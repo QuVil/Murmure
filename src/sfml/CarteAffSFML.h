@@ -12,19 +12,12 @@ class CarteAffSFML
 {
 private:
     sf::VertexArray cartesallesfml;
-    sf::Texture texture;
-    sf::RenderStates states;
 public:
     CarteAffSFML();
 
-    //posX,posY correspondent  au pixel haut gauche
-    CarteAffSFML(int posX,int posY, int largeur, int hauteur, const std::string & type);
+    void init(int posX,int posY, int largeur, int hauteur);
 
     sf::VertexArray get_cartesallesfml();
-
-    sf::Texture get_texture();
-
-    sf::RenderStates get_states();
 };
 
 #endif // CARTEAFFSFML_H_INCLUDED

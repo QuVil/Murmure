@@ -11,15 +11,22 @@ private:
     // CaseSFML
     int salle_act_x, salle_act_y;
     sf::RenderStates casesfml[9][17];
-    sf::Texture normal;
+    sf::Texture normal_CaseSFML;
     sf::Texture herbe[nb_texture_herbe_caseSFML];
     sf::Texture defaut;
-    sf::Texture mur_1[8]; /**< \a textures differentes du mur, compter les textures partant de la case en haut à gaughe (coin) et parcourir dans le sens des aiguilles d'une montre */
+    sf::Texture mur_1[8]; /**< \a textures differentes du mur, compter les textures partant de la case en haut Ã  gaughe (coin) et parcourir dans le sens des aiguilles d'une montre */
     sf::Texture trou;
     sf::Texture porte;
     sf::Texture rocher;
 
-    void creation_tableau_textures_caseSFML();
+    // CerteAffSFML
+    sf::Texture actuel;
+    sf::Texture boss;
+    sf::Texture clef;
+    sf::Texture depart;
+    sf::Texture normal;
+    sf::Texture objet;
+    sf::Texture vide;
 
 
 public:
@@ -27,7 +34,11 @@ public:
 
     void charger_textures_caseSFML();
 
+    void charger_textures_carteAffSFML();
+
     sf::RenderStates retourne_rendu_texture_caseSFML(const char & type, const int &i, const int &j, const int &x, const int &y);
+
+    sf::RenderStates retourne_rendu_texture_carteAffSFML(const int & config);
 };
 
 #endif // TEXTURESFML_H_INCLUDED

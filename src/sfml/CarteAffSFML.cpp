@@ -15,7 +15,7 @@ CarteAffSFML::CarteAffSFML()
     cartesallesfml[3].position = sf::Vector2f(0, 0);
 }
 
-CarteAffSFML::CarteAffSFML(int posX, int posY, int largeur, int hauteur,const std::string & type)
+void CarteAffSFML::init(int posX, int posY, int largeur, int hauteur)
 {
     cartesallesfml.resize(4);
     cartesallesfml.setPrimitiveType(sf::Quads);
@@ -28,26 +28,9 @@ CarteAffSFML::CarteAffSFML(int posX, int posY, int largeur, int hauteur,const st
     cartesallesfml[1].texCoords = sf::Vector2f(64, 0);
     cartesallesfml[2].texCoords = sf::Vector2f(64,33);
     cartesallesfml[3].texCoords = sf::Vector2f(0,33);
-
-    std::stringstream ss;
-    ss << "data/res/CarteAff/" << type << ".png";
-    std::string path = ss.str();
-    texture.loadFromFile(path);
-
-    states.texture = &texture;
 }
 
 sf::VertexArray CarteAffSFML::get_cartesallesfml()
 {
     return cartesallesfml;
-}
-
-sf::Texture CarteAffSFML::get_texture()
-{
-    return texture;
-}
-
-sf::RenderStates CarteAffSFML::get_states()
-{
-    return states;
 }

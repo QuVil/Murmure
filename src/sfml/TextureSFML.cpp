@@ -20,7 +20,7 @@ void TextureSFML::charger_textures_caseSFML()
     salle_act_y = -1;
 
     path = "data/res/CaseSalle/normal.png";
-    normal.loadFromFile(path);
+    normal_CaseSFML.loadFromFile(path);
 
     path = "data/res/CaseSalle/defaut.png";
     defaut.loadFromFile(path);
@@ -48,6 +48,62 @@ void TextureSFML::charger_textures_caseSFML()
         ss << "data/res/CaseSalle/mur_1_" << i << ".png";
         path = ss.str();
         mur_1[i].loadFromFile(path);
+    }
+}
+
+
+void TextureSFML::charger_textures_carteAffSFML()
+{
+    std::string path;
+
+    path = "data/res/CarteAff/actuel.png";
+    actuel.loadFromFile(path);
+
+    path = "data/res/CarteAff/boss.png";
+    boss.loadFromFile(path);
+
+    path = "data/res/CarteAff/clef.png";
+    clef.loadFromFile(path);
+
+    path = "data/res/CarteAff/depart.png";
+    depart.loadFromFile(path);
+
+    path = "data/res/CarteAff/normal.png";
+    normal.loadFromFile(path);
+
+    path = "data/res/CarteAff/objet.png";
+    objet.loadFromFile(path);
+
+    path = "data/res/CarteAff/vide.png";
+    vide.loadFromFile(path);
+}
+
+sf::RenderStates TextureSFML::retourne_rendu_texture_carteAffSFML(const int& config)
+{
+    sf::RenderStates render;
+    switch(config)
+    {
+    case 0:
+        render.texture = &vide;
+        return render;
+    case 1:
+        render.texture = &normal;
+        return render;
+    case 2:
+        render.texture = &boss;
+        return render;
+    case 3:
+        render.texture = &clef;
+        return render;
+    case 4:
+        render.texture = &depart;
+        return render;
+    case 5:
+        render.texture = &objet;
+        return render;
+    default:
+        render.texture = &defaut;
+        return render;
     }
 }
 
@@ -125,42 +181,11 @@ sf::RenderStates TextureSFML::retourne_rendu_texture_caseSFML(const char& type, 
                 break;
             }
         }
-        //casesfml[i][j].texture = &defaut;
-        // enregistrer la salle pour ne pas la recalculer
-        // ensuite
         if((i == 8)&&( j == 16))
         {
             salle_act_x = x;
             salle_act_y = y;
         }
     }
-    //sf::RenderStates render;
-    /*
-    switch(type)
-    {
-        case 'n' :
-                    render.texture = &normal;
-                    break;
-        case 'p' :
-                    render.texture = &porte;
-                    break;
-        case 't' :
-                    render.texture = &trou;
-                    break;
-        case 'm' :
-                    render.texture = &mur;
-                    break;
-
-        case 'c' :
-                    return "clef";
-                    break;
-        case 'r' :
-                    render.texture = &rocher;
-                    break;
-        default :
-                    render.texture = &normal;
-                    break;
-    }*/
-    //render.texture = &casesfml[i][j];
     return casesfml[i][j];
 }
