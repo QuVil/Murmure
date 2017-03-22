@@ -40,9 +40,12 @@ void ModeleSalle::set_tableau_modele_i(int x, int i)
 
 void ModeleSalle::generer_salle()
 {
+    int nb_break = 0;
+
     generateur.set_difficulte_voulue(tableau_modele[0]);
     int ecart_diff_acceptable = 5;
     int ecart_diff;
+
     generateur.placer_portes(tableau_modele[2], tableau_modele[3], tableau_modele[4], tableau_modele[5]);
     generateur.set_config(tableau_modele[1]);
 
@@ -83,6 +86,11 @@ void ModeleSalle::generer_salle()
             generateur.set_valide(false);
             ecart_diff_acceptable += 1;
         }
+        if (nb_break > 200000)
+        {
+            break;
+        }
+        else{++nb_break;}
     }
 }
 

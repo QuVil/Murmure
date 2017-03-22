@@ -26,6 +26,7 @@ Zone::Zone()
             carte[i][j].vider();
         }
     }
+    zone_generee = false;
     salle_actuelle_x = 5;
     salle_actuelle_y = 5;
 }
@@ -36,6 +37,7 @@ Zone::Zone(int posx, int posy, int niv = 1)
 {
     niveau_zone = niv;
 
+    zone_generee = false;
     salle_actuelle_x = posx;
     salle_actuelle_y = posy;
 }
@@ -44,6 +46,8 @@ Zone::Zone(const ZoneGen &z)
 {
     salle_actuelle_x = z.get_posx_dep();
     salle_actuelle_y = z.get_posy_dep();
+
+    zone_generee = true;
 
     for (int i=0; i<11; ++i)
     {
@@ -134,6 +138,7 @@ void Zone::zone_depuis_modele(std::string nom)
             carte[i][j].set_config(mod.get_salle_generateur(i, j));
         }
     }
+    zone_generee = true;
 }
 
 void Zone::zone_depuis_modele_aleatoire(int taille/* = 0 */)
@@ -226,3 +231,31 @@ void Zone::zone_depuis_modele_aleatoire(int taille/* = 0 */)
 
     zone_depuis_modele(nom_aleat);
 }
+
+void Zone::generer_salle(int i, int j)
+{
+    std::cout<<zone_generee<<std::endl;
+    if (zone_generee)
+    {
+        if (carte[i][j].get_config() != 0)
+        {
+            //la Salle est prête pour la génération...
+            //on détermine si la Salle sera chargée (prédéterminée) ou générée (procéduralement)
+            int type_generation = rand() % 2;
+            if (type_generation == 0)
+            {
+                //On génère la Salle...
+                carte[i][j].salle_depuis_modele_aleatoire(0);
+            }
+            else
+            {
+                //On charge une Salle aléatoirement...
+                // il faut garder à jour ce nombre, représentant l'id le plus haut des Salles prégénérées !!!
+                int id_aleat = rand() % 1;
+                Fichier fichier;
+                fichier.charger(carte[i][j], id_aleat);
+            }
+        }
+    }
+}
+

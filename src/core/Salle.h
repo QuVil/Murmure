@@ -135,8 +135,22 @@ public:
 
     std::string get_config_string()const;
 
+    /**
+     * \brief Genere une Salle proceduralement.
+     * Permet, en une seule ligne, de generer la Salle selon un ModeleSalle determine.
+     * prend le ModeleSalle 'nom', le charge, genere la SalleGen puis la transforme
+     * en Salle.
+     * \param[in] nom : le nom du ModeleSalle à utiliser.
+     */
     void salle_depuis_modele(std::string nom);
 
+    /**
+     * \brief Genere une Salle proceduralement selon un ModeleSalle pseudo-aleatoire.
+     * Permet, en une seule ligne, de generer la Salle selon un ModeleSalle determine.
+     * prend le ModeleSalle 'nom', le charge, genere la SalleGen puis la transforme
+     * en Salle.
+     * \param[in] diff : la difficulte approximatie voulue.
+     */
     void salle_depuis_modele_aleatoire(int diff = 0);
 
 };

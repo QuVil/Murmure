@@ -27,6 +27,7 @@ private:
     Salle carte[11][11]; /**< \a carte contient toutes les Salle de la Zone dans un tableau. */
     int niveau_zone; /**< \a niveau_zone agit comme indicateur de difficulté et comme nom de Zone. */
     int salle_actuelle_x, salle_actuelle_y; /**< les coordonnées de la Salle où se trouve le Perso. */
+    bool zone_generee;
 
 public:
 
@@ -129,6 +130,8 @@ public:
      * partir de ce Modele.
      */
     void zone_depuis_modele_aleatoire(int taille = 0);
+
+    void generer_salle(int i, int j);
 };
 
 #endif // ZONE_H_INCLUDED
