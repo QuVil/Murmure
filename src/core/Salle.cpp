@@ -128,10 +128,10 @@ std::string Salle::get_config_string() const
     }
 }
 
-void Salle::salle_depuis_modele(std::string nom)
+void Salle::salle_depuis_modele(std::string nom, bool p_h, bool p_b, bool p_g, bool p_d, int conf)
 {
     ModeleSalle mod_s(nom);
-    mod_s.generer_salle();
+    mod_s.generer_salle(p_h, p_b, p_g, p_d, conf);
 
     for (int i=0; i<9; ++i)
     {
@@ -140,11 +140,12 @@ void Salle::salle_depuis_modele(std::string nom)
             grille[i][j].set_type(mod_s.get_case_generateur(i, j));
         }
     }
+    difficulte = mod_s.get_difficulte();
 }
 
-void Salle::salle_depuis_modele_aleatoire(int diff /*= 0 */)
+void Salle::salle_depuis_modele_aleatoire(bool p_h, bool p_b, bool p_g, bool p_d, int conf, int diff /*= 0 */)
 {
-    //diff est la difficulte approximative (le salle générée ne sera pas exactement de difficulte = diff...)
+    //diff est la difficulte approximative (la salle générée ne sera pas exactement de difficulte = diff...)
     std::string nom_aleat;
     //Si la difficulte n'est pas spécifiée ou =0 : au pif
     if (diff == 0)
@@ -208,5 +209,5 @@ void Salle::salle_depuis_modele_aleatoire(int diff /*= 0 */)
         }
     }
 
-    salle_depuis_modele(nom_aleat);
+    salle_depuis_modele(nom_aleat, p_h, p_b, p_g, p_d, conf);
 }

@@ -142,7 +142,7 @@ public:
      * en Salle.
      * \param[in] nom : le nom du ModeleSalle à utiliser.
      */
-    void salle_depuis_modele(std::string nom);
+    void salle_depuis_modele(std::string nom, bool p_h, bool p_b, bool p_g, bool p_d, int conf);
 
     /**
      * \brief Genere une Salle proceduralement selon un ModeleSalle pseudo-aleatoire.
@@ -151,7 +151,7 @@ public:
      * en Salle.
      * \param[in] diff : la difficulte approximatie voulue.
      */
-    void salle_depuis_modele_aleatoire(int diff = 0);
+    void salle_depuis_modele_aleatoire(bool p_h, bool p_b, bool p_g, bool p_d, int conf, int diff = 0);
 
 };
 

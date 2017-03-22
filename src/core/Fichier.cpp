@@ -84,6 +84,7 @@ void Fichier::creation_index()
     index.close();
 }*/
 
+
 void Fichier::charger(Salle & s)
 {
     //Cree un chemin relatif qui pointe sur la configuration en fonction
@@ -117,6 +118,7 @@ void Fichier::charger(Salle & s)
     fichier.close();
 }
 
+
 void Fichier::charger(Salle& s, const int& id)
 {
     //Cree un chemin relatif qui pointe sur la configuration en fonction
@@ -124,6 +126,10 @@ void Fichier::charger(Salle& s, const int& id)
     stringstream ss;
     ss << chemin << "Salle/" << s.get_config() << "_" << id << ".cfg";
     string path = ss.str();
+
+    //à delete
+    std::cout<<ss<<std::endl;
+    //^
 
     ifstream fichier((path).c_str(), ios::in);
     assert(fichier);
@@ -137,9 +143,7 @@ void Fichier::charger(Salle& s, const int& id)
         {
             tampon=fichier.get();
             //cout << tampon;
-            s.set_case(i,
-                               j,
-                               tampon);
+            s.set_case(i, j, tampon);
             //cout << (int) tampon << endl;
         }
         // récupere juste le caractere de changement de ligne

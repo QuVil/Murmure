@@ -9,16 +9,6 @@ ModeleSalle::ModeleSalle()
     {
         tableau_modele[i] = 0;
     }
-    tableau_modele[0] = 80;
-    tableau_modele[1] = 1;
-    tableau_modele[2] = 0;
-    tableau_modele[3] = 1;
-    tableau_modele[4] = 1;
-    tableau_modele[5] = 1;
-    tableau_modele[6] = 2;
-    tableau_modele[7] = 2;
-    tableau_modele[8] = 1;
-    tableau_modele[9] = 9;
 }
 
 ModeleSalle::ModeleSalle(std::string nom)
@@ -30,7 +20,6 @@ ModeleSalle::ModeleSalle(std::string nom)
 
     Fichier fichier;
     fichier.charger(*this, nom);
-    ///TODO : faire la fonction charger (bah ouais).
 }
 
 void ModeleSalle::set_tableau_modele_i(int x, int i)
@@ -38,7 +27,7 @@ void ModeleSalle::set_tableau_modele_i(int x, int i)
     tableau_modele[i] = x;
 }
 
-void ModeleSalle::generer_salle()
+void ModeleSalle::generer_salle(bool p_h, bool p_b, bool p_g, bool p_d, int conf)
 {
     int nb_break = 0;
 
@@ -46,14 +35,14 @@ void ModeleSalle::generer_salle()
     int ecart_diff_acceptable = 5;
     int ecart_diff;
 
-    generateur.placer_portes(tableau_modele[2], tableau_modele[3], tableau_modele[4], tableau_modele[5]);
-    generateur.set_config(tableau_modele[1]);
+    generateur.placer_portes(p_h, p_b, p_g, p_d);
+    generateur.set_config(conf);
 
     while (!generateur.is_valide())
     {
         generateur.vider_salle();
         generateur.initialisation_gen();
-        int i=6;
+        int i=2;
         while (tableau_modele[i] != 9)
         {
             switch (tableau_modele[i])
@@ -102,4 +91,9 @@ int ModeleSalle::get_case_generateur(int x, int y) const
 void ModeleSalle::afficher_tests() const
 {
     generateur.afficher_tests();
+}
+
+int ModeleSalle::get_difficulte() const
+{
+    return generateur.get_difficulte_approx();
 }

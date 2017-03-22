@@ -27,6 +27,7 @@ Zone::Zone()
         }
     }
     zone_generee = false;
+    difficulte_moyenne = 0;
     salle_actuelle_x = 5;
     salle_actuelle_y = 5;
 }
@@ -38,6 +39,7 @@ Zone::Zone(int posx, int posy, int niv = 1)
     niveau_zone = niv;
 
     zone_generee = false;
+    difficulte_moyenne = 0;
     salle_actuelle_x = posx;
     salle_actuelle_y = posy;
 }
@@ -141,7 +143,7 @@ void Zone::zone_depuis_modele(std::string nom)
     zone_generee = true;
 }
 
-void Zone::zone_depuis_modele_aleatoire(int taille/* = 0 */)
+void Zone::zone_depuis_modele_aleatoire(int taille =0)
 {
     //taille est entre 1 et 3 si elle est spécifiée. 1=normal, 2=grand, 3=immense.
     std::string nom_aleat;
@@ -235,27 +237,87 @@ void Zone::zone_depuis_modele_aleatoire(int taille/* = 0 */)
 void Zone::generer_salle(int i, int j)
 {
     std::cout<<zone_generee<<std::endl;
-    if (zone_generee)
+    int diff = (niveau_zone*100 + difficulte_moyenne) / 2;
+
+    if (carte[i][j].get_config() != 0)
     {
-        if (carte[i][j].get_config() != 0)
+        //On récupère les portes à poser en faisant attention aux Segmentation Fault...
+        bool p_h, p_b, p_g, p_d;
+        if (i>0)
         {
-            //la Salle est prête pour la génération...
-            //on détermine si la Salle sera chargée (prédéterminée) ou générée (procéduralement)
-            int type_generation = rand() % 2;
-            if (type_generation == 0)
+            if (carte[i-1][j].get_config() != 0){p_h = true;}
+        }
+        if (i<11)
+        {
+            if (carte[i+1][j].get_config() != 0){p_b = true;}
+        }
+        if (j>0)
+        {
+            if (carte[i][j-1].get_config() != 0){p_g = true;}
+        }
+        if (j<11)
+        {
+            if (carte[i][j+1].get_config() != 0){p_d = true;}
+        }
+
+        //la Salle est prête pour la génération...
+        //on détermine si la Salle sera chargée (prédéterminée) ou générée (procéduralement)
+
+        int type_generation = rand() % 2;
+        if (type_generation == 0 && (carte[i][j].get_config() == 1 || carte[i][j].get_config() == 3))
+        {
+            //On génère la Salle...
+            carte[i][j].salle_depuis_modele_aleatoire(p_h, p_b, p_g, p_d, carte[i][j].get_config(), diff);
+        }
+        else
+        {
+            //On charge une Salle aléatoirement...
+
+            Fichier fichier;
+
+            // il faut garder à jour ces nombres, représentant l'id le plus haut des Salles prégénérées !!!
+            int id_aleat;
+            switch(carte[i][j].get_config())
             {
-                //On génère la Salle...
-                carte[i][j].salle_depuis_modele_aleatoire(0);
+            case 1:
+                id_aleat = rand() % 1; //id le plus haut des Salles normales
+                break;
+            case 2:
+                id_aleat = rand() % 1; //id le plus haut des Salles de Boss
+                break;
+            case 3:
+                id_aleat = rand() % 1; //id le plus haut des Salles de Clef
+                break;
+            case 4:
+                id_aleat = rand() % 1; //id le plus haut des Salles de Depart
+                break;
+            case 5:
+                id_aleat = rand() % 1; //id le plus haut des Salles d' Objet
+                break;
+            default:
+                id_aleat = rand() % 1; //le minimum des nb précédents... en cas de souci.
+                break;
             }
-            else
-            {
-                //On charge une Salle aléatoirement...
-                // il faut garder à jour ce nombre, représentant l'id le plus haut des Salles prégénérées !!!
-                int id_aleat = rand() % 1;
-                Fichier fichier;
-                fichier.charger(carte[i][j], id_aleat);
-            }
+            fichier.charger(carte[i][j], id_aleat);
+        }
+    }
+
+
+}
+
+void Zone::generer_toutes_les_salles()
+{
+    for (int i=0; i<11; ++i)
+    {
+        for (int j=0; j<11; ++j)
+        {
+            generer_salle(i, j);
         }
     }
 }
 
+void Zone::generer_et_remplir(int taille =0)
+{
+    zone_depuis_modele_aleatoire(taille);
+    generer_toutes_les_salles();
+}

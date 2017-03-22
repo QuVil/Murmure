@@ -31,7 +31,7 @@ int main(int argc, char ** argv)
     std::cout<<s_generateur.is_valide();
 */
     Salle s;
-    s.salle_depuis_modele_aleatoire();
+    s.salle_depuis_modele_aleatoire(1, 0, 1, 0, 1, 0);
     s.afficher();
 
     return 0;

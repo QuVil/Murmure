@@ -27,7 +27,7 @@ public:
 
     void charger(Salle & s);
 
-    void charger(Salle &s, const int &conf, const int &id);
+    void charger(Salle &s, const int &id);
 
     void charger(ZoneGen & z);
 

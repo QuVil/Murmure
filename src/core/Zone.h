@@ -28,6 +28,7 @@ private:
     int niveau_zone; /**< \a niveau_zone agit comme indicateur de difficulté et comme nom de Zone. */
     int salle_actuelle_x, salle_actuelle_y; /**< les coordonnées de la Salle où se trouve le Perso. */
     bool zone_generee;
+    int difficulte_moyenne;
 
 public:
 
@@ -129,9 +130,13 @@ public:
      * Crée un Modele aléatoirement et génère la Zone procéduralement à
      * partir de ce Modele.
      */
-    void zone_depuis_modele_aleatoire(int taille = 0);
+    void zone_depuis_modele_aleatoire(int taille /*= 0*/);
 
     void generer_salle(int i, int j);
+
+    void generer_toutes_les_salles();
+
+    void generer_et_remplir(int taille /*= 0*/);
 };
 
 #endif // ZONE_H_INCLUDED
