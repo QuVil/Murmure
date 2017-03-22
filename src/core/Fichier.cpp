@@ -117,12 +117,12 @@ void Fichier::charger(Salle & s)
     fichier.close();
 }
 
-void Fichier::charger(Salle& s, const int& conf, const int& id)
+void Fichier::charger(Salle& s, const int& id)
 {
     //Cree un chemin relatif qui pointe sur la configuration en fonction
     //de la valeur config de la salle (par defaut 1)
     stringstream ss;
-    ss << chemin << "Salle/" << conf << "_" << id << ".cfg";
+    ss << chemin << "Salle/" << s.get_config() << "_" << id << ".cfg";
     string path = ss.str();
 
     ifstream fichier((path).c_str(), ios::in);
