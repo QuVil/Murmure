@@ -117,6 +117,40 @@ void Fichier::charger(Salle & s)
     fichier.close();
 }
 
+void Fichier::charger(Salle& s, const int& conf, const int& id)
+{
+    //Cree un chemin relatif qui pointe sur la configuration en fonction
+    //de la valeur config de la salle (par defaut 1)
+    stringstream ss;
+    ss << chemin << "Salle/" << conf << "_" << id << ".cfg";
+    string path = ss.str();
+
+    ifstream fichier((path).c_str(), ios::in);
+    assert(fichier);
+
+    char tampon;
+
+    for(int i=0;i<s.get_nb_cases_hauteur();i++)
+    {
+        //compte les retours à la ligne donc <= 21 pour avoir le bon compte
+        for(int j=0;j<s.get_nb_cases_largeur();j++)
+        {
+            tampon=fichier.get();
+            //cout << tampon;
+            s.set_case(i,
+                               j,
+                               tampon);
+            //cout << (int) tampon << endl;
+        }
+        // récupere juste le caractere de changement de ligne
+        // (qui ne sert à rien ici)
+        tampon=fichier.get();
+    }
+
+    fichier.close();
+}
+
+
 void Fichier::charger(ZoneGen & z)
 {
     //Cree un chemin relatif qui pointe sur la configuration en fonction
