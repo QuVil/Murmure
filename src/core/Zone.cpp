@@ -328,3 +328,52 @@ void Zone::generer_et_remplir(int taille =0)
     zone_depuis_modele_aleatoire(taille);
     generer_toutes_les_salles();
 }
+
+void Zone::changer_de_salle(char direction)
+{
+    switch (direction)
+    {
+    case 'h':
+        if (salle_actuelle_x>0)
+        {
+            if (carte[salle_actuelle_x-1][salle_actuelle_y].get_config() != 0)
+            {
+                salle_actuelle_x--;
+            }
+        }
+        break;
+
+    case 'b':
+        if (salle_actuelle_x<11)
+        {
+            if (carte[salle_actuelle_x+1][salle_actuelle_y].get_config() != 0)
+            {
+                salle_actuelle_x++;
+            }
+        }
+        break;
+
+    case 'g':
+        if (salle_actuelle_y>0)
+        {
+            if (carte[salle_actuelle_x][salle_actuelle_y-1].get_config() != 0)
+            {
+                salle_actuelle_y--;
+            }
+        }
+        break;
+
+    case 'd':
+        if (salle_actuelle_y<11)
+        {
+            if (carte[salle_actuelle_x][salle_actuelle_y+1].get_config() != 0)
+            {
+                salle_actuelle_y++;
+            }
+        }
+        break;
+    default:
+        break;
+    }
+}
+

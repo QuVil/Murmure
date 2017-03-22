@@ -146,6 +146,8 @@ public:
     void generer_toutes_les_salles();
 
     void generer_et_remplir(int taille /*= 0*/);
+
+    void changer_de_salle(char direction)
 };
 
 #endif // ZONE_H_INCLUDED
