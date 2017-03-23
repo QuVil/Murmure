@@ -1,4 +1,4 @@
-CORE = core/Fichier.cpp core/CaseSalle.cpp core/Salle.cpp core/Zone.cpp core/Jeu.cpp core/ZoneGen.cpp core/Perso.cpp core/Modele.cpp core/SalleGen.cpp core/Coord2D.cpp core/VecteurM.cpp core/ModeleSalle.cpp
+CORE = core/Fichier.cpp core/CaseSalle.cpp core/Salle.cpp core/Zone.cpp core/Jeu.cpp core/ZoneGen.cpp core/Perso.cpp core/Modele.cpp core/SalleGen.cpp core/Coord2D.cpp core/VecteurM.cpp core/ModeleSalle.cpp core/Objet.cpp core/Ennemi.cpp core/Projectile.cpp
 
 SRCS_TXT = $(CORE) txt/mainTxt.cpp
 FINAL_TARGET_TXT = murmure_txt

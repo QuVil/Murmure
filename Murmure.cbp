@@ -94,6 +94,8 @@
 		<Unit filename="src/core/CaseSalle.h" />
 		<Unit filename="src/core/Coord2D.cpp" />
 		<Unit filename="src/core/Coord2D.h" />
+		<Unit filename="src/core/Ennemi.cpp" />
+		<Unit filename="src/core/Ennemi.h" />
 		<Unit filename="src/core/Fichier.cpp" />
 		<Unit filename="src/core/Fichier.h" />
 		<Unit filename="src/core/Jeu.cpp" />
@@ -112,8 +114,12 @@
 		</Unit>
 		<Unit filename="src/core/ModeleSalle.cpp" />
 		<Unit filename="src/core/ModeleSalle.h" />
+		<Unit filename="src/core/Objet.cpp" />
+		<Unit filename="src/core/Objet.h" />
 		<Unit filename="src/core/Perso.cpp" />
 		<Unit filename="src/core/Perso.h" />
+		<Unit filename="src/core/Projectile.cpp" />
+		<Unit filename="src/core/Projectile.h" />
 		<Unit filename="src/core/Salle.cpp" />
 		<Unit filename="src/core/Salle.h" />
 		<Unit filename="src/core/SalleGen.cpp" />

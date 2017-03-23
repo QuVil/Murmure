@@ -22,7 +22,7 @@ Objet::Objet(std::string n, char rar, char t_e[8], int por[8])
     }
 }
 
-string Objet::get_nom() const
+std::string Objet::get_nom() const
 {
     return nom;
 }
@@ -34,15 +34,15 @@ char Objet::get_rarete() const
 
 char Objet::get_type_effet_i(int i) const
 {
-    return type_effet[i]
+    return type_effet[i];
 }
 
 int Objet::get_portee_effet_i(int i) const
 {
-    return portee_effet[i]
+    return portee_effet[i];
 }
 
-void Objet::set_nom(std:string n)
+void Objet::set_nom(std::string n)
 {
     nom = n;
 }
@@ -59,5 +59,5 @@ void Objet::set_type_effet_i(int i, char e)
 
 void Objet::set_portee_effet_i(int i, int p)
 {
-    portee_effet[i] = e;
+    portee_effet[i] = p;
 }
