@@ -44,6 +44,8 @@ public:
 
     Coord2D get_pos()const;
 
+    float get_orientation_degre()const;
+
     float get_pos_x()const;
 
     float get_pos_y()const;

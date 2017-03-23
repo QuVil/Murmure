@@ -3,6 +3,7 @@
 #include "Salle.h"
 #include <string>
 #include <iostream>
+#include <math.h>
 
 Perso::Perso()
 {
@@ -114,4 +115,9 @@ void Perso::soigner(float soin)
     {
         pv_actuel = pv_max;
     }
+}
+
+float Perso::get_orientation_degre() const
+{
+    return (atan2(orientation.get_x(), orientation.get_y())/M_PI) * 180;
 }
