@@ -250,19 +250,19 @@ void Zone::generer_salle(int i, int j)
         p_b = false;
         if (i>0)
         {
-            if (carte[i-1][j].get_config() != 0){p_h = true;}
+            if (carte[i-1][j].get_config() != 0){p_g = true;}
         }
         if (i<11)
         {
-            if (carte[i+1][j].get_config() != 0){p_b = true;}
+            if (carte[i+1][j].get_config() != 0){p_d = true;}
         }
         if (j>0)
         {
-            if (carte[i][j-1].get_config() != 0){p_g = true;}
+            if (carte[i][j-1].get_config() != 0){p_h = true;}
         }
         if (j<11)
         {
-            if (carte[i][j+1].get_config() != 0){p_d = true;}
+            if (carte[i][j+1].get_config() != 0){p_b = true;}
         }
 
         //la Salle est prête pour la génération...

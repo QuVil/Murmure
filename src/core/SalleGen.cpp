@@ -264,7 +264,6 @@ void SalleGen::valider()
         }
     }
     calculer_difficulte();
-
 }
 
 void SalleGen::valider_recursif(int i, int j)
