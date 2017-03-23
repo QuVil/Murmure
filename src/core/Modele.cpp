@@ -46,7 +46,7 @@ void Modele::set_tableau_modele_i(int x, int i)
 
 void Modele::generer_zone()
 {
-    std::cout<<"Generation de la zone"<<std::endl; //verbose à retirer...
+    //std::cout<<"Generation de la zone"<<std::endl; //verbose à retirer...
 
     int nb_min = tableau_modele[0];
     int nb_max = tableau_modele[1];

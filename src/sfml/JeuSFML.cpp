@@ -13,14 +13,16 @@ JeuSFML::JeuSFML()
     //jeu.get_zone().afficher_zone();
     // cherche les parametres de l'utilisateur (resolution)
     desktop = sf::VideoMode::getDesktopMode();
-    //window.create(sf::VideoMode(desktop.width, desktop.height, desktop.bitsPerPixel), "Murmure",sf::Style::Fullscreen);
-    window.create(sf::VideoMode(desktop.width, desktop.height, desktop.bitsPerPixel), "Murmure",sf::Style::Close);
+    window.create(sf::VideoMode(desktop.width, desktop.height, desktop.bitsPerPixel), "Murmure",sf::Style::Fullscreen);
+    //window.create(sf::VideoMode(desktop.width, desktop.height, desktop.bitsPerPixel), "Murmure",sf::Style::Close);
 
     temps_frame = sf::seconds((float) 1/70); // en seconde
     //window.setVerticalSyncEnabled(true);
     window.setFramerateLimit(60);
 
     taille_cases = desktop.width / 17;
+
+    //window.setMouseCursorVisible(false);
 
     salle_act_x = -1;
     salle_act_y = -1;
@@ -104,7 +106,7 @@ void JeuSFML::SFML_boucle()
             if(event.type == sf::Event::KeyPressed)
             {
                 // si appuie sur "echape" -> ferme la fenetre
-                if(event.key.code == sf::Keyboard::Escape)
+                if((event.key.code == sf::Keyboard::Escape))
                 {
                     window.close();
                 }
@@ -263,21 +265,39 @@ void JeuSFML::recupere_mouvements()
 {
     // Clavier
     // Attention l'axe Y pointe vers le bas
-
     float x = 0;
     float y = 0;
-    if(sf::Keyboard::isKeyPressed(sf::Keyboard::Q)) {x = x - 100;}
-    if(sf::Keyboard::isKeyPressed(sf::Keyboard::D)) {x = x + 100;}
-    if(sf::Keyboard::isKeyPressed(sf::Keyboard::Z)) {y = y - 100;}
-    if(sf::Keyboard::isKeyPressed(sf::Keyboard::S)) {y = y + 100;}
+
+    if(sf::Joystick::isConnected(0))
+    {
+        x = sf::Joystick::getAxisPosition(0, sf::Joystick::X);
+        y = sf::Joystick::getAxisPosition(0, sf::Joystick::Y);
+    }
+    else
+    {
+        if(sf::Keyboard::isKeyPressed(sf::Keyboard::Q)) {x = x - 100;}
+        if(sf::Keyboard::isKeyPressed(sf::Keyboard::D)) {x = x + 100;}
+        if(sf::Keyboard::isKeyPressed(sf::Keyboard::Z)) {y = y - 100;}
+        if(sf::Keyboard::isKeyPressed(sf::Keyboard::S)) {y = y + 100;}
+    }
+
     jeu.deplacer_perso(x, y);
 
     sf::Vector2i souris;
     souris = sf::Mouse::getPosition(window);
 
     VecteurM orientation;
-    orientation.set_x(souris.x - jeu.get_perso().get_pos_x());
-    orientation.set_y(souris.y - jeu.get_perso().get_pos_y());
+    if(sf::Joystick::isConnected(0))
+    {
+        orientation.set_x(sf::Joystick::getAxisPosition(0, sf::Joystick::U));
+        orientation.set_y(sf::Joystick::getAxisPosition(0, sf::Joystick::V));
+    }
+    else
+    {
+        orientation.set_x(souris.x - jeu.get_perso().get_pos_x());
+        orientation.set_y(souris.y - jeu.get_perso().get_pos_y());
+    }
+
 
     jeu.definir_orientation_perso(orientation);
 
