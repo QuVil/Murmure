@@ -36,6 +36,8 @@ public:
 
     void set_orientation(const VecteurM &v);
 
+    void set_position(const int &x, const int &y);
+
     Coord2D get_pos()const;
 
     float get_pos_x()const;

@@ -12,8 +12,10 @@ void PersoSFML::set_texture(const sf::Texture& texture)
 
 void PersoSFML::mettre_a_jour(const Perso &perso)
 {
+    /*
     persosfml.setPosition(perso.get_pos_x(),
-                                           perso.get_pos_y());
+                                           perso.get_pos_y());*/
+    persosfml.setPosition(perso.get_pos_x(), perso.get_pos_y());
 }
 
 sf::Sprite PersoSFML::get_persosfml()

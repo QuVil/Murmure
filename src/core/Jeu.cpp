@@ -27,6 +27,10 @@ void Jeu::deplacer_perso(const float& x, const float& y)
     perso.set_deplacement(x, y);
 }
 
+void Jeu::definir_position_perso(const float& x, const float& y)
+{
+    perso.set_position(x, y);
+}
 
 void  Jeu::zone_changer_salle(const char& c)
 {

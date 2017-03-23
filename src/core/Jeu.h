@@ -22,6 +22,8 @@ public:
 
     void deplacer_perso(const float &x, const float &y);
 
+    void definir_position_perso(const float &x, const float &y);
+
     void zone_changer_salle(const char &c);
 };
 

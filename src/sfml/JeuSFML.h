@@ -16,6 +16,8 @@ private:
     TextureSFML textures;
     // fenetre qu'on utilisera
     sf::RenderWindow window;
+    sf::RenderTexture buffer;
+    sf::Sprite static_sprite_buffer;
     // parametres de l'ecran
     sf::VideoMode desktop;
 
@@ -36,6 +38,7 @@ private:
     int posx0carte, posy0carte;
     //CarteAffSFML carteaffsfml[11][11];
 
+    int taille_cases;
     PersoSFML persosfml;
     Jeu jeu;
 
