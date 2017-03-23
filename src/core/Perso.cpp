@@ -6,8 +6,8 @@
 
 Perso::Perso()
 {
-    position.set_x(17/2);
-    position.set_y(9/2);
+    position.set_x((float)17/2);
+    position.set_y((float)9/2);
     orientation.set_x(0);
     orientation.set_y(0);
     resultante.set_x(0);
@@ -38,6 +38,7 @@ void Perso::set_deplacement(const float& x, const float& y)
     VecteurM deplacement(x, y);
     resultante = resultante + deplacement;
     position.deplacer(resultante, coefficient_reducteur);
+    std::cout << position.get_x() << " " << position.get_y() << std::endl;
 }
 
 

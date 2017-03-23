@@ -42,7 +42,7 @@ public:
 
     sf::RenderStates retourne_rendu_texture_caseSFML(const char & type, const int &i, const int &j, const int &x, const int &y);
 
-    sf::RenderStates retourne_rendu_texture_carteAffSFML(const int & config);
+    sf::RenderStates retourne_rendu_texture_carteAffSFML(const int & config, const bool &salle_act);
 
     sf::RenderStates retourne_rendu_texture_perso(const sf::Transform &t);
 

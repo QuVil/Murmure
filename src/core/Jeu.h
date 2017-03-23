@@ -14,11 +14,15 @@ private:
 public:
     Jeu();
 
-    Salle get_salle()const;
+    Salle get_salle();
 
-    Zone get_zone()const;
+    Zone get_zone();
 
-    Perso get_perso()const;
+    Perso get_perso();
+
+    void deplacer_perso(const float &x, const float &y);
+
+    void zone_changer_salle(const char &c);
 };
 
 #endif // JEU_H_INCLUDED

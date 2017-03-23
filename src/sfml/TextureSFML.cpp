@@ -85,9 +85,14 @@ void TextureSFML::charger_texture_perso()
     perso.loadFromFile(path);
 }
 
-sf::RenderStates TextureSFML::retourne_rendu_texture_carteAffSFML(const int& config)
+sf::RenderStates TextureSFML::retourne_rendu_texture_carteAffSFML(const int& config, const bool &salle_act)
 {
     sf::RenderStates render;
+    if(salle_act)
+    {
+        render.texture = &actuel;
+        return render;
+    }
     switch(config)
     {
     case 0:

@@ -281,7 +281,7 @@ void Zone::generer_salle(int i, int j)
             switch(carte[i][j].get_config())
             {
             case 1:
-                id_aleat = rand() % 1; //id le plus haut des Salles normales
+                id_aleat = rand() % 2; //id le plus haut des Salles normales
                 break;
             case 2:
                 id_aleat = rand() % 1; //id le plus haut des Salles de Boss
@@ -290,7 +290,8 @@ void Zone::generer_salle(int i, int j)
                 id_aleat = rand() % 1; //id le plus haut des Salles de Clef
                 break;
             case 4:
-                id_aleat = rand() % 1; //id le plus haut des Salles de Depart
+                id_aleat = rand() % 2; //id le plus haut des Salles de Depart
+                std::cout<<id_aleat;
                 break;
             case 5:
                 id_aleat = rand() % 1; //id le plus haut des Salles d' Objet

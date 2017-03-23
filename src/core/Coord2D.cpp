@@ -40,6 +40,6 @@ float Coord2D::get_y() const
 
 void Coord2D::deplacer(const VecteurM& vect, const float& coeff)
 {
-    x = vect.get_x() * coeff;
-    y = vect.get_y() * coeff;
+    x = vect.get_x() * coeff + x;
+    y = vect.get_y() * coeff + y;
 }

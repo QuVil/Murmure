@@ -13,9 +13,13 @@ JeuSFML::JeuSFML()
     //jeu.get_zone().afficher_zone();
     // cherche les parametres de l'utilisateur (resolution)
     desktop = sf::VideoMode::getDesktopMode();
-    window.create(sf::VideoMode(desktop.width, desktop.height, desktop.bitsPerPixel), "Murmure",sf::Style::Fullscreen);
+    //window.create(sf::VideoMode(desktop.width, desktop.height, desktop.bitsPerPixel), "Murmure",sf::Style::Fullscreen);
+    window.create(sf::VideoMode(desktop.width, desktop.height, desktop.bitsPerPixel), "Murmure",sf::Style::Close);
 
-    temps_frame = sf::seconds(1/60); // en seconde
+    temps_frame = sf::seconds((float) 1/10); // en seconde
+    window.setVerticalSyncEnabled(true);
+    window.setFramerateLimit(10);
+
 
     if(desktop.width/17 <desktop.height/9){scale_salle = desktop.width/17;}
     else{scale_salle = desktop.height/9;}
@@ -111,7 +115,7 @@ void JeuSFML::SFML_boucle()
         }
 
 
-        window.clear(sf::Color::Black);
+        //window.clear(sf::Color::Black);
         afficher(mode);
         window.display();
     }
@@ -160,16 +164,19 @@ void JeuSFML::dessiner_salle()
 void JeuSFML::dessiner_carte()
 {
     CarteAffSFML c;
+    bool salle_act = false;
     for(int i=0;i<11;i++)
     {
         for(int j=0;j<11;j++)
         {
+            if((jeu.get_zone().get_salle_actuelle_x() == i)&&(jeu.get_zone().get_salle_actuelle_y() == j)) {salle_act = true;}
+            else {salle_act = false;}
             c.init(posx0carte +i*scale_carte_largeur,
                       posy0carte +j*scale_carte_hauteur,
                       scale_carte_largeur,
                       scale_carte_hauteur);
             window.draw(c.get_cartesallesfml(),
-                                     textures.retourne_rendu_texture_carteAffSFML(jeu.get_zone().get_salle(i, j).get_config()));
+                                     textures.retourne_rendu_texture_carteAffSFML(jeu.get_zone().get_salle(i, j).get_config(), salle_act));
         }
     }
 }
@@ -185,12 +192,20 @@ void JeuSFML::recupere_mouvements()
 {
     // Clavier
     // Attention l'axe Y pointe vers le bas
-    float x, y;
+
+    float x = 0;
+    float y = 0;
     if(sf::Keyboard::isKeyPressed(sf::Keyboard::Q)) {x = x - 100;}
     if(sf::Keyboard::isKeyPressed(sf::Keyboard::D)) {x = x + 100;}
     if(sf::Keyboard::isKeyPressed(sf::Keyboard::Z)) {y = y - 100;}
     if(sf::Keyboard::isKeyPressed(sf::Keyboard::S)) {y = y + 100;}
-    jeu.get_perso().set_deplacement(x, y);
+
+    if(sf::Keyboard::isKeyPressed(sf::Keyboard::Up)) {jeu.zone_changer_salle('h');}
+    if(sf::Keyboard::isKeyPressed(sf::Keyboard::Down)) {jeu.zone_changer_salle('b');}
+    if(sf::Keyboard::isKeyPressed(sf::Keyboard::Left)) {jeu.zone_changer_salle('g');}
+    if(sf::Keyboard::isKeyPressed(sf::Keyboard::Right)) {jeu.zone_changer_salle('d');}
+    jeu.deplacer_perso(x, y);
     //std::cout << "axe x : " << x << " axe y : " << y << std::endl;
+    //std::cout << jeu.get_zone().get_salle_actuelle_x() << " " << jeu.get_zone().get_salle_actuelle_y() << std::endl;
 }
 
