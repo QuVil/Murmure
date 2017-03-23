@@ -5,12 +5,10 @@
 int main(int argc, char ** argv)
 {
     srand(time (NULL));
-/*
-    Zone z;
-    z.zone_depuis_modele_aleatoire(0);
-    z.afficher_zone();
-*/
 
+    Zone z;
+    z.generer_et_remplir(0);
+    z.get_salle(z.get_salle_actuelle_x(), z.get_salle_actuelle_y()).afficher();
 /*
     SalleGen s_generateur(1, 1, 1, 1, 3, 50);
 
@@ -30,10 +28,11 @@ int main(int argc, char ** argv)
     s_generateur.afficher_validation();
     std::cout<<s_generateur.is_valide();
 */
+/*
     Salle s;
     s.salle_depuis_modele_aleatoire(1, 0, 1, 0, 1, 0);
     s.afficher();
-
+*/
     return 0;
 }
 

@@ -128,7 +128,7 @@ void Fichier::charger(Salle& s, const int& id)
     string path = ss.str();
 
     //à delete
-    std::cout<<ss<<std::endl;
+    //std::cout<<ss<<std::endl;
     //^
 
     ifstream fichier((path).c_str(), ios::in);
