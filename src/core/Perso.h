@@ -40,6 +40,8 @@ public:
 
     void set_position(const int &x, const int &y);
 
+    void revenir_ancienne_position();
+
     Coord2D get_pos()const;
 
     float get_pos_x()const;
@@ -49,6 +51,8 @@ public:
     float get_pv_max()const;
 
     float get_pv_actuel()const;
+
+    VecteurM get_orientation()const;
 
     void infliger_degats(float degats);
 

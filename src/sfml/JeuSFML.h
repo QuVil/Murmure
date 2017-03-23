@@ -16,14 +16,16 @@ private:
     TextureSFML textures;
     // fenetre qu'on utilisera
     sf::RenderWindow window;
-    sf::RenderTexture buffer;
-    sf::Sprite static_sprite_buffer;
+    sf::RenderTexture buffer_salle, buffer_carte;
+    sf::Sprite sprite_salle,sprite_carte;
     // parametres de l'ecran
     sf::VideoMode desktop;
 
     sf::Clock clock;
 
     sf::Time temps_frame;
+
+    int salle_act_x, salle_act_y;
 
     /// CASESALLE
     //echelle a laquelle on va charger les textures (en fonction de la taille de l'ecran)
@@ -43,6 +45,7 @@ private:
     Jeu jeu;
 
     void recupere_mouvements();
+    void recupere_collisions();
 
     void afficher(const int &mode);
 

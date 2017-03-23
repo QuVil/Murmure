@@ -38,7 +38,8 @@ void Perso::set_deplacement(const VecteurM& v)
 
 void Perso::set_deplacement(const float& x, const float& y)
 {
-
+    position_old.set_x(position.get_x());
+    position_old.set_y(position.get_y());
     VecteurM deplacement(x, y);
     //std::cout << deplacement.get_x() << " " << deplacement.get_y() << std::endl;
     //resultante = deplacement + resultante;
@@ -65,6 +66,13 @@ void Perso::set_position(const int& x, const int& y)
     position.set_y(y);
 }
 
+
+void Perso::revenir_ancienne_position()
+{
+    position.set_x(position_old.get_x());
+    position.set_y(position_old.get_y());
+}
+
 float Perso::get_pos_x() const
 {
     return position.get_x();
@@ -83,6 +91,11 @@ float Perso::get_pv_max() const
 float Perso::get_pv_actuel() const
 {
     return pv_actuel;
+}
+
+VecteurM Perso::get_orientation() const
+{
+    return orientation;
 }
 
 void Perso::infliger_degats(float degats)

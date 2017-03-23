@@ -4,6 +4,7 @@
 #include "Zone.h"
 #include "Salle.h"
 #include "Perso.h"
+#include "VecteurM.h"
 
 class Jeu
 {
@@ -23,6 +24,8 @@ public:
     void deplacer_perso(const float &x, const float &y);
 
     void definir_position_perso(const float &x, const float &y);
+
+    void definir_orientation_perso(const VecteurM &v);
 
     void zone_changer_salle(const char &c);
 };
