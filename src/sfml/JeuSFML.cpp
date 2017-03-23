@@ -200,10 +200,10 @@ void JeuSFML::recupere_mouvements()
     if(sf::Keyboard::isKeyPressed(sf::Keyboard::Z)) {y = y - 100;}
     if(sf::Keyboard::isKeyPressed(sf::Keyboard::S)) {y = y + 100;}
 
-    if(sf::Keyboard::isKeyPressed(sf::Keyboard::Up)) {jeu.zone_changer_salle('h');}
-    if(sf::Keyboard::isKeyPressed(sf::Keyboard::Down)) {jeu.zone_changer_salle('b');}
-    if(sf::Keyboard::isKeyPressed(sf::Keyboard::Left)) {jeu.zone_changer_salle('g');}
-    if(sf::Keyboard::isKeyPressed(sf::Keyboard::Right)) {jeu.zone_changer_salle('d');}
+    if(sf::Keyboard::isKeyPressed(sf::Keyboard::Up)) {jeu.zone_changer_salle('g');}
+    if(sf::Keyboard::isKeyPressed(sf::Keyboard::Down)) {jeu.zone_changer_salle('d');}
+    if(sf::Keyboard::isKeyPressed(sf::Keyboard::Left)) {jeu.zone_changer_salle('h');}
+    if(sf::Keyboard::isKeyPressed(sf::Keyboard::Right)) {jeu.zone_changer_salle('b');}
     jeu.deplacer_perso(x, y);
     //std::cout << "axe x : " << x << " axe y : " << y << std::endl;
     //std::cout << jeu.get_zone().get_salle_actuelle_x() << " " << jeu.get_zone().get_salle_actuelle_y() << std::endl;
