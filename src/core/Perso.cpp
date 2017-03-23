@@ -38,7 +38,8 @@ void Perso::set_deplacement(const float& x, const float& y)
 
     VecteurM deplacement(x, y);
     //std::cout << deplacement.get_x() << " " << deplacement.get_y() << std::endl;
-    resultante = deplacement + resultante;
+    //resultante = deplacement + resultante;
+    resultante = deplacement;
     //std::cout << resultante.get_x() << " " << resultante.get_y() << std::endl;
     position.deplacer(resultante, coefficient_reducteur);
     //std::cout << position.get_x() << " " << position.get_y() << std::endl;
@@ -55,7 +56,11 @@ Coord2D Perso::get_pos() const
     return position;
 }
 
-
+void Perso::set_position(const int& x, const int& y)
+{
+    position.set_x(x);
+    position.set_y(y);
+}
 
 float Perso::get_pos_x() const
 {
