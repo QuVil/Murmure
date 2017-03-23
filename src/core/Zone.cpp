@@ -244,6 +244,10 @@ void Zone::generer_salle(int i, int j)
     {
         //On récupère les portes à poser en faisant attention aux Segmentation Fault...
         bool p_h, p_b, p_g, p_d;
+        p_h = false;
+        p_d = false;
+        p_g = false;
+        p_b = false;
         if (i>0)
         {
             if (carte[i-1][j].get_config() != 0){p_h = true;}
@@ -291,7 +295,6 @@ void Zone::generer_salle(int i, int j)
                 break;
             case 4:
                 id_aleat = rand() % 2; //id le plus haut des Salles de Depart
-                std::cout<<id_aleat;
                 break;
             case 5:
                 id_aleat = rand() % 1; //id le plus haut des Salles d' Objet

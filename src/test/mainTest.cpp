@@ -8,7 +8,6 @@ int main(int argc, char ** argv)
 
     Zone z;
     z.generer_et_remplir(0);
-    z.get_salle(z.get_salle_actuelle_x(), z.get_salle_actuelle_y()).afficher();
 /*
     SalleGen s_generateur(1, 1, 1, 1, 3, 50);
 
