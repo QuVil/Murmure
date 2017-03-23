@@ -96,7 +96,6 @@
 		<Unit filename="src/core/Coord2D.h" />
 		<Unit filename="src/core/Fichier.cpp" />
 		<Unit filename="src/core/Fichier.h" />
-		<Unit filename="src/core/Jeu.cpp" />
 		<Unit filename="src/core/Jeu.h" />
 		<Unit filename="src/core/Modele.cpp">
 			<Option target="murmure_test" />
