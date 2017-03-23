@@ -14,11 +14,14 @@ Perso::Perso()
     resultante.set_y(0);
 
     coefficient_reducteur = (float)1/10;
+
+    vivant = true;
 }
 
 Perso::Perso(std::string n)
 {
     nom = n;
+    vivant = true;
     Fichier fichier;
     //fichier.charger(*this);
 }
@@ -80,4 +83,22 @@ float Perso::get_pv_max() const
 float Perso::get_pv_actuel() const
 {
     return pv_actuel;
+}
+
+void Perso::infliger_degats(float degats)
+{
+    pv_actuel -= degats;
+    if (pv_actuel < 0)
+    {
+        vivant = false;
+    }
+}
+
+void Perso::soigner(float soin)
+{
+    pv_actuel += soin;
+    if (pv_actuel > pv_max)
+    {
+        pv_actuel = pv_max;
+    }
 }

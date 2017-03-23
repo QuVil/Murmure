@@ -22,6 +22,8 @@ private:
     float pv_max; /**< \a pv_max est le nombre de coeurs maximum du Perso. */
     float pv_actuel; /**< \a pv_actuel est la "lose condition" si elle atteint 0, et doit être plus petit que pv_max. */
 
+    bool vivant;
+
 public:
 
     Perso();
@@ -48,7 +50,9 @@ public:
 
     float get_pv_actuel()const;
 
+    void infliger_degats(float degats);
 
+    void soigner(float soin);
 };
 
 #endif // PERSO_H_INCLUDED
