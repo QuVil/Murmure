@@ -238,7 +238,13 @@ void Zone::zone_depuis_modele_aleatoire(int taille =0)
 
 void Zone::generer_salle(int i, int j)
 {
-    int diff = (niveau_zone*100 + difficulte_moyenne) / 2;
+    int diff_aleat = rand() % 3;
+    //La difficulte moyenne est prise en compte 2 fois sur 3.
+    int diff = 0;
+    if (diff_aleat !=0)
+    {
+        diff = (niveau_zone*100 + difficulte_moyenne) / 2;
+    }
 
     if (carte[i][j].get_config() != 0)
     {
@@ -312,8 +318,6 @@ void Zone::generer_salle(int i, int j)
             if (p_d){carte[i][j].set_case(4, 16, porte);}
         }
     }
-
-
 }
 
 void Zone::generer_toutes_les_salles()
@@ -348,7 +352,7 @@ void Zone::changer_de_salle(char direction)
         break;
 
     case 'b':
-        if (salle_actuelle_x<11)
+        if (salle_actuelle_x<10)
         {
             if (carte[salle_actuelle_x+1][salle_actuelle_y].get_config() != 0)
             {
@@ -368,7 +372,7 @@ void Zone::changer_de_salle(char direction)
         break;
 
     case 'd':
-        if (salle_actuelle_y<11)
+        if (salle_actuelle_y<10)
         {
             if (carte[salle_actuelle_x][salle_actuelle_y+1].get_config() != 0)
             {

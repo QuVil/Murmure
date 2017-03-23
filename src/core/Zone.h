@@ -143,6 +143,10 @@ public:
      */
     void generer_salle(int i, int j);
 
+    /**
+     * \brief Genere toutes les Salle de la Zone.
+     * appelle simplement generer_salle sur toute la carte.
+     */
     void generer_toutes_les_salles();
 
     void generer_et_remplir(int taille /*= 0*/);

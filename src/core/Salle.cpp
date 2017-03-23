@@ -150,11 +150,15 @@ void Salle::salle_depuis_modele_aleatoire(bool p_h, bool p_b, bool p_g, bool p_d
     //Si la difficulte n'est pas spécifiée ou =0 : au pif
     if (diff == 0)
     {
-        int nb_aleat = rand() % 1;
+        int nb_aleat = rand() % 2;
 
         switch(nb_aleat)
         {
+            case 0:
+                nom_aleat = "trous";
+                break;
             case 1:
+                nom_aleat = "defaut";
                 break;
             default:
                 nom_aleat = "defaut";
@@ -196,7 +200,8 @@ void Salle::salle_depuis_modele_aleatoire(bool p_h, bool p_b, bool p_g, bool p_d
             int nb_aleat91 = rand() % 1;
             switch(nb_aleat91)
             {
-                case 1:
+                case 0:
+                    nom_aleat = "trous";
                     break;
                 default:
                     nom_aleat = "defaut";
