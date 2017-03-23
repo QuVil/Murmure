@@ -16,9 +16,9 @@ JeuSFML::JeuSFML()
     //window.create(sf::VideoMode(desktop.width, desktop.height, desktop.bitsPerPixel), "Murmure",sf::Style::Fullscreen);
     window.create(sf::VideoMode(desktop.width, desktop.height, desktop.bitsPerPixel), "Murmure",sf::Style::Close);
 
-    temps_frame = sf::seconds((float) 1/10); // en seconde
+    temps_frame = sf::seconds((float) 1/100); // en seconde
     window.setVerticalSyncEnabled(true);
-    window.setFramerateLimit(10);
+    window.setFramerateLimit(100);
 
 
     if(desktop.width/17 <desktop.height/9){scale_salle = desktop.width/17;}
@@ -115,7 +115,7 @@ void JeuSFML::SFML_boucle()
         }
 
 
-        //window.clear(sf::Color::Black);
+        //window.clear();
         afficher(mode);
         window.display();
     }

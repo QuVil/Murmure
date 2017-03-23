@@ -1,4 +1,5 @@
 #include "Coord2D.h"
+#include <iostream>
 
 Coord2D::Coord2D()
 {
@@ -42,4 +43,6 @@ void Coord2D::deplacer(const VecteurM& vect, const float& coeff)
 {
     x = vect.get_x() * coeff + x;
     y = vect.get_y() * coeff + y;
+    //std::cout << x << " " << y << std::endl;
+    //std::cout << vect.get_x() << " " << vect.get_y() << std::endl;
 }

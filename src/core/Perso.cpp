@@ -13,7 +13,7 @@ Perso::Perso()
     resultante.set_x(0);
     resultante.set_y(0);
 
-    coefficient_reducteur = 1/50;
+    coefficient_reducteur = (float)1/10;
 }
 
 Perso::Perso(std::string n)
@@ -35,10 +35,13 @@ void Perso::set_deplacement(const VecteurM& v)
 
 void Perso::set_deplacement(const float& x, const float& y)
 {
+
     VecteurM deplacement(x, y);
-    resultante = resultante + deplacement;
+    //std::cout << deplacement.get_x() << " " << deplacement.get_y() << std::endl;
+    resultante = deplacement + resultante;
+    //std::cout << resultante.get_x() << " " << resultante.get_y() << std::endl;
     position.deplacer(resultante, coefficient_reducteur);
-    std::cout << position.get_x() << " " << position.get_y() << std::endl;
+    //std::cout << position.get_x() << " " << position.get_y() << std::endl;
 }
 
 
