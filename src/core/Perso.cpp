@@ -14,6 +14,9 @@ Perso::Perso()
     resultante.set_x(0);
     resultante.set_y(0);
 
+    pos_case_x = 8;
+    pos_case_y = 4;
+
     coefficient_reducteur = (float)1/10;
 
     vivant = true;
@@ -120,4 +123,41 @@ void Perso::soigner(float soin)
 float Perso::get_orientation_degre() const
 {
     return (atan2(orientation.get_x(), orientation.get_y())/M_PI) * 180;
+}
+
+int Perso::get_pos_case_x() const
+{
+    return pos_case_x;
+}
+
+int Perso::get_pos_case_y() const
+{
+    return pos_case_y;
+}
+
+void Perso::deplacer_txt(char direction)
+{
+    switch (direction)
+    {
+    case 'g':
+        pos_case_x--;
+        break;
+    case 'd':
+        pos_case_x++;
+        break;
+    case 'h':
+        pos_case_y--;
+        break;
+    case 'b':
+        pos_case_y++;
+        break;
+    default:
+        break;
+    }
+}
+
+void Perso::placer_txt(int x, int y)
+{
+    pos_case_x = x;
+    pos_case_y = y;
 }

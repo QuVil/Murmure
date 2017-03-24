@@ -28,6 +28,10 @@ public:
     void definir_orientation_perso(const VecteurM &v);
 
     void zone_changer_salle(const char &c);
+
+    void deplacer_perso_txt(char direction);
+
+    void placer_perso_txt(int x, int y);
 };
 
 #endif // JEU_H_INCLUDED

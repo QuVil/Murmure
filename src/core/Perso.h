@@ -24,6 +24,9 @@ private:
 
     bool vivant;
 
+    int pos_case_x;
+    int pos_case_y;
+
 public:
 
     Perso();
@@ -59,6 +62,14 @@ public:
     void infliger_degats(float degats);
 
     void soigner(float soin);
+
+    int get_pos_case_x() const;
+
+    int get_pos_case_y() const;
+
+    void deplacer_txt(char direction);
+
+    void placer_txt(int x, int y);
 };
 
 #endif // PERSO_H_INCLUDED

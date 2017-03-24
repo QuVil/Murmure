@@ -158,9 +158,17 @@
 			<Option target="murmure_test" />
 			<Option target="murmure_test_q" />
 		</Unit>
+		<Unit filename="src/txt/JeuTxt.cpp" />
+		<Unit filename="src/txt/JeuTxt.h" />
 		<Unit filename="src/txt/mainTxt.cpp">
 			<Option target="murmure_txt" />
 			<Option target="murmure_test_q" />
+		</Unit>
+		<Unit filename="src/txt/winTxt.cpp">
+			<Option target="murmure_txt" />
+		</Unit>
+		<Unit filename="src/txt/winTxt.h">
+			<Option target="murmure_txt" />
 		</Unit>
 		<Extensions>
 			<code_completion />

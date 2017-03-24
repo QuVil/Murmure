@@ -41,3 +41,14 @@ void  Jeu::zone_changer_salle(const char& c)
 {
     zone.changer_de_salle(c);
 }
+
+void Jeu::deplacer_perso_txt(char direction)
+{
+    perso.deplacer_txt(direction);
+}
+
+void Jeu::placer_perso_txt(int x, int y)
+{
+    perso.placer_txt(x, y);
+}
+
