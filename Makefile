@@ -16,9 +16,9 @@ SRCS_TEST_Q = $(CORE) test/mainTest.cpp
 FINAL_TARGET_TEST_Q = murmure_test_q
 
 ifeq ($(OS),Windows_NT)
-	INCLUDE_DIR_SFML = 	-Ilib\SFML-2.4.2\SFLM-2.4.2_Windows-MinGW-6.1.0\include
+	INCLUDE_DIR_SFML = 	-Ilib\SFML-2.4.2\SFML-2.4.2_Windows-MinGW-4.9.2\include
 	LIBS_SFML = 	-Llib \
-			-Llib\SFML-2.4.2\SFLM-2.4.2_Windows-MinGW-6.1.0\lib \
+			-Llib\SFML-2.4.2\SFML-2.4.2_Windows-MinGW-4.9.2\lib \
 			-lsfml-graphics -lsfml-window -lsfml-system
 else
 	INCLUDE_DIR_SFML = -Ilib/SFML-2.4.2/SFML-2.4.2_Linux-gcc-5.4.0/include

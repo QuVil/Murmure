@@ -1,5 +1,6 @@
 #include "JeuTxt.h"
 #include <unistd.h>
+//#include <windows.h>
 
 void JeuTxt::txtAff(WinTXT & win, Jeu & jeu)
 {
@@ -31,9 +32,9 @@ void JeuTxt::boucle_txt()
 	    txtAff(win,jeu);
 
         #ifdef _WIN32
-        Sleep(100);
+            sleep(100);
 		#else
-		usleep(100000);
+            usleep(100000);
         #endif // WIN32
 
 		c = win.getCh();
