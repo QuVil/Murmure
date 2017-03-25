@@ -5,6 +5,9 @@
 
 #include <SFML/Graphics.hpp>
 
+
+#include <sstream>
+
 #include "CaseSFML.h"
 #include "PersoSFML.h"
 #include "TextureSFML.h"
@@ -25,8 +28,12 @@ private:
 
     sf::Time temps_frame;
 
-    int FPS;
-    int taille_cases;
+    sf::Font police_test;
+    sf::Text text_fps;
+    sf::Text text_posx, text_posy;
+    std::stringstream text_fps_stringstream;
+    int fps_actuel;
+
     int val_max_deplacement;
 
     int salle_act_x, salle_act_y;
@@ -56,10 +63,12 @@ private:
     void init_persoSFML();
     void init_caseSFML();
     void init_carteAffSFML();
+    void init_texte();
 
     void dessiner_salle();
     void dessiner_carte();
     void dessiner_perso();
+    void ecrire_texte();
 
 public:
     JeuSFML();

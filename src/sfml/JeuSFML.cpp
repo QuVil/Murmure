@@ -1,6 +1,7 @@
 #include <iostream>
 
 #include <SFML/Graphics.hpp>
+#include <SFML/System.hpp>
 
 #include "CaseSalle.h"
 
@@ -17,35 +18,33 @@ JeuSFML::JeuSFML()
     desktop = sf::VideoMode::getDesktopMode();
     window.create(sf::VideoMode(desktop.width, desktop.height, desktop.bitsPerPixel), "Murmure",sf::Style::Fullscreen);
     //window.create(sf::VideoMode(desktop.width, desktop.height, desktop.bitsPerPixel), "Murmure",sf::Style::Close);
-    FPS = 100;
+    //FPS = 100;
 
-    temps_frame = sf::seconds((float) 1/FPS); // en seconde
+    //temps_frame = sf::seconds((float) 1/FPS); // en seconde
     window.setVerticalSyncEnabled(true);
     //window.setFramerateLimit(60);
 
     //window.setMouseCursorVisible(false);
 
+
     salle_act_x = -1;
     salle_act_y = -1;
-
+    /////////////////////////////////////////////////////////////////////////
     buffer.create(desktop.width, desktop.height);
     buffer_salle.create(desktop.width, desktop.height);
     buffer_carte.create(desktop.width, desktop.height);
 
+    /////////////////////////////////////////////////////////////////////////
+    val_max_deplacement = 100;
+
+    /////////////////////////////////////////////////////////////////////////
     if(desktop.width/17 <desktop.height/9){scale_salle = desktop.width/17;}
     else{scale_salle = desktop.height/9;}
 
-    taille_cases = desktop.width / 17;
-    val_max_deplacement = 100;
-
-    //scale_salle_largeur = desktop.width/17;
-    //scale_salle_hauteur = desktop.height/9;
-    //std::cout << desktop.width << " " << desktop.height << " " << desktop.bitsPerPixel << std::endl;
-
     posx0salle = (desktop.width -17*scale_salle)/2;
     posy0salle = 0;
-    //posy0salle = (desktop.height - 9*scale_salle);
 
+    /////////////////////////////////////////////////////////////////////////
     scale_carte_largeur = desktop.width/11;
     scale_carte_hauteur = desktop.height/11;
 
@@ -60,6 +59,7 @@ void JeuSFML::init()
     textures.charger_texture_perso();
     init_caseSFML();
     init_persoSFML();
+    init_texte();
 }
 
 void JeuSFML::init_caseSFML()
@@ -81,10 +81,31 @@ void JeuSFML::init_carteAffSFML()
 
 }
 
+void JeuSFML::init_texte()
+{
+    police_test.loadFromFile("data/res/Font/Ubuntu-B.ttf");
+
+    text_fps.setFont(police_test);
+    text_fps.setPosition(0, 9*scale_salle);
+    text_fps.setCharacterSize(24);
+    text_fps.setFillColor(sf::Color::White);
+
+    text_posx.setFont(police_test);
+    text_posx.setPosition(2 * scale_salle, 9*scale_salle);
+    text_posx.setCharacterSize(24);
+    text_posx.setFillColor(sf::Color::White);
+
+    text_posy.setFont(police_test);
+    text_posy.setPosition(2 * scale_salle, 9*scale_salle + 24);
+    text_posy.setCharacterSize(24);
+    text_posy.setFillColor(sf::Color::White);
+}
+
+
 void JeuSFML::init_persoSFML()
 {
     persosfml.set_texture(textures.retourne_texture_perso());
-    jeu.definir_position_perso(jeu.get_perso().get_pos_x()*taille_cases, jeu.get_perso().get_pos_y()*taille_cases);
+    jeu.definir_position_perso(jeu.get_perso().get_pos_x()*scale_salle, jeu.get_perso().get_pos_y()*scale_salle);
 }
 
 
@@ -149,18 +170,15 @@ void JeuSFML::afficher(const int& mode)
     switch(mode)
     {
     case 1:
-        //if(clock.getElapsedTime() >= temps_frame)
-        //{
-            //std::cout << clock.getElapsedTime().asSeconds() << std::endl;
-            temps_frame = clock.restart();
-            buffer.clear();
-            window.clear();
-            //std::cout << "kek" << std::endl;
-            recupere_mouvements();
-            recupere_collisions();
-            dessiner_salle();
-            dessiner_perso();
-        //}
+        temps_frame = clock.restart();
+        //std::cout << temps_frame.asSeconds() << std::endl;
+        buffer.clear();
+        window.clear();
+        recupere_mouvements();
+        recupere_collisions();
+        dessiner_salle();
+        dessiner_perso();
+        ecrire_texte();
         break;
     case 2:
         dessiner_carte();
@@ -170,6 +188,28 @@ void JeuSFML::afficher(const int& mode)
         break;
     }
 }
+
+void JeuSFML::ecrire_texte()
+{
+    text_fps_stringstream.str("");
+    fps_actuel = (int) 1/temps_frame.asSeconds();
+    text_fps_stringstream << fps_actuel << " FPS";
+    //text_fps_string = std::to_string(fps_actuel) + " FPS";
+    text_fps.setString(text_fps_stringstream.str());
+    buffer.draw(text_fps);
+    //std::cout << text_fps_stringstream.str() << std::endl;
+    text_fps_stringstream.str("");
+    text_fps_stringstream << "POS X : " << jeu.get_perso().get_pos_x();
+    text_posx.setString(text_fps_stringstream.str());
+
+    text_fps_stringstream.str("");
+    text_fps_stringstream << "POS Y : " << jeu.get_perso().get_pos_y();
+    text_posy.setString(text_fps_stringstream.str());
+
+    buffer.draw(text_posx);
+    buffer.draw(text_posy);
+}
+
 
 void JeuSFML::dessiner_salle()
 {
@@ -239,7 +279,7 @@ void JeuSFML::recupere_collisions()
         if(hitbox_perso.intersects(hitbox_porte_haut))
         {
             jeu.zone_changer_salle('g');
-            jeu.definir_position_perso(taille_cases * (8+1.0/2.0),taille_cases * (7 +1.0/2.0));
+            jeu.definir_position_perso(scale_salle * (8+1.0/2.0),scale_salle * (7 +1.0/2.0));
         }
     }
     if(jeu.get_salle().get_case(4,0).get_type_char()  == 'p')
@@ -248,7 +288,7 @@ void JeuSFML::recupere_collisions()
         if(hitbox_perso.intersects(hitbox_porte_gauche))
         {
             jeu.zone_changer_salle('h');
-            jeu.definir_position_perso(taille_cases * (15 + 1.0/2.0), taille_cases * (4 +1.0/2.0));
+            jeu.definir_position_perso(scale_salle * (15 + 1.0/2.0), scale_salle * (4 +1.0/2.0));
         }
     }
     if(jeu.get_salle().get_case(4,16).get_type_char()  == 'p')
@@ -257,7 +297,7 @@ void JeuSFML::recupere_collisions()
         if(hitbox_perso.intersects(hitbox_porte_droite))
         {
             jeu.zone_changer_salle('b');
-            jeu.definir_position_perso(taille_cases * (1 +1.0/2.0),taille_cases * (4+ 1.0/2.0));
+            jeu.definir_position_perso(scale_salle * (1 +1.0/2.0),scale_salle * (4+ 1.0/2.0));
         }
     }
     if(jeu.get_salle().get_case(8,8).get_type_char()  == 'p')
@@ -266,7 +306,7 @@ void JeuSFML::recupere_collisions()
         if(hitbox_perso.intersects(hitbox_porte_bas))
         {
             jeu.zone_changer_salle('d');
-            jeu.definir_position_perso(taille_cases * (8 + 1.0/2.0), taille_cases * (1 + 1.0/2.0));
+            jeu.definir_position_perso(scale_salle * (8 + 1.0/2.0), scale_salle * (1 + 1.0/2.0));
         }
     }
 }
