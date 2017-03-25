@@ -83,6 +83,7 @@ void TextureSFML::charger_texture_perso()
     std::string path;
     path = "data/res/Perso/skin/green.png";
     perso.loadFromFile(path);
+    perso.setSmooth(true);
 }
 
 sf::RenderStates TextureSFML::retourne_rendu_texture_carteAffSFML(const int& config, const bool &salle_act)

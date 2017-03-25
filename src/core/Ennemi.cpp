@@ -13,7 +13,7 @@ Ennemi::Ennemi()
     vivant = true;
 }
 
-Ennemi::infliger_degats(float degats)
+void Ennemi::infliger_degats(float degats)
 {
     pv_actuel -= degats;
     if (pv_actuel < 0)

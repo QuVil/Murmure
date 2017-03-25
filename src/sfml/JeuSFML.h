@@ -16,8 +16,8 @@ private:
     TextureSFML textures;
     // fenetre qu'on utilisera
     sf::RenderWindow window;
-    sf::RenderTexture buffer_salle, buffer_carte;
-    sf::Sprite sprite_salle,sprite_carte;
+    sf::RenderTexture buffer, buffer_salle, buffer_carte;
+    sf::Sprite sprite_buffer, sprite_salle,sprite_carte;
     // parametres de l'ecran
     sf::VideoMode desktop;
 

@@ -16,7 +16,7 @@ JeuSFML::JeuSFML()
     window.create(sf::VideoMode(desktop.width, desktop.height, desktop.bitsPerPixel), "Murmure",sf::Style::Fullscreen);
     //window.create(sf::VideoMode(desktop.width, desktop.height, desktop.bitsPerPixel), "Murmure",sf::Style::Close);
 
-    temps_frame = sf::seconds((float) 1/70); // en seconde
+    temps_frame = sf::seconds((float) 1/100); // en seconde
     window.setVerticalSyncEnabled(true);
     //window.setFramerateLimit(60);
 
@@ -27,6 +27,7 @@ JeuSFML::JeuSFML()
     salle_act_x = -1;
     salle_act_y = -1;
 
+    buffer.create(desktop.width, desktop.height);
     buffer_salle.create(desktop.width, desktop.height);
     buffer_carte.create(desktop.width, desktop.height);
 
@@ -124,12 +125,14 @@ void JeuSFML::SFML_boucle()
 
 
         }
-
+        buffer.clear();
         //
-        window.clear();
         afficher(mode);
+        buffer.display();
+        window.clear();
         //buffer.display();
-
+        sprite_buffer.setTexture(buffer.getTexture());
+        window.draw(sprite_buffer);
         //sf::Sprite sprite(buffer.getTexture());
         //static_sprite_buffer.setTexture(buffer.getTexture());
         //window.draw(sprite);
@@ -185,7 +188,7 @@ void JeuSFML::dessiner_salle()
         sprite_salle.setTexture(buffer_salle.getTexture());
     }
     //sf::Sprite sprite(buffer.getTexture());
-    window.draw(sprite_salle);
+    buffer.draw(sprite_salle);
 }
 
 
@@ -209,14 +212,14 @@ void JeuSFML::dessiner_carte()
     }
     buffer_carte.display();
     sprite_carte.setTexture(buffer_carte.getTexture());
-    window.draw(sprite_carte);
+    buffer.draw(sprite_carte);
 }
 
 void JeuSFML::dessiner_perso()
 {
     persosfml.mettre_a_jour(jeu.get_perso());
     //persosfml.get_persosfml().setPosition(jeu.get_perso().get_pos_x(), jeu.get_perso().get_pos_y());
-    window.draw(persosfml.get_persosfml());
+    buffer.draw(persosfml.get_persosfml());
 }
 
 void JeuSFML::recupere_collisions()
