@@ -63,6 +63,7 @@ public:
 
     void soigner(float soin);
 
+    //_____________________MODE TXT__________________________
     int get_pos_case_x() const;
 
     int get_pos_case_y() const;
@@ -70,6 +71,7 @@ public:
     void deplacer_txt(char direction);
 
     void placer_txt(int x, int y);
+    //_______________________________________________________
 };
 
 #endif // PERSO_H_INCLUDED
