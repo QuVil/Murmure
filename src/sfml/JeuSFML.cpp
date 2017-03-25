@@ -17,8 +17,8 @@ JeuSFML::JeuSFML()
     //window.create(sf::VideoMode(desktop.width, desktop.height, desktop.bitsPerPixel), "Murmure",sf::Style::Close);
 
     temps_frame = sf::seconds((float) 1/70); // en seconde
-    //window.setVerticalSyncEnabled(true);
-    window.setFramerateLimit(60);
+    window.setVerticalSyncEnabled(true);
+    //window.setFramerateLimit(60);
 
     taille_cases = desktop.width / 17;
 
@@ -178,7 +178,7 @@ void JeuSFML::dessiner_salle()
                                                                      jeu.get_zone().get_salle_actuelle_y()));
             }
         }
-        //std::cout << "kek" << std::endl;
+        std::cout << "kek" << std::endl;
         salle_act_x = jeu.get_zone().get_salle_actuelle_x();
         salle_act_y = jeu.get_zone().get_salle_actuelle_y();
         buffer_salle.display();
@@ -271,7 +271,9 @@ void JeuSFML::recupere_mouvements()
     if(sf::Joystick::isConnected(0))
     {
         x = sf::Joystick::getAxisPosition(0, sf::Joystick::X);
+        if((x >= -15)&&(x <= 15)) {x = 0;}
         y = sf::Joystick::getAxisPosition(0, sf::Joystick::Y);
+        if((y >= -15)&&(y <= 15)) {y = 0;}
     }
     else
     {
@@ -283,17 +285,26 @@ void JeuSFML::recupere_mouvements()
 
     jeu.deplacer_perso(x, y);
 
-    sf::Vector2i souris;
-    souris = sf::Mouse::getPosition(window);
+    x = 0;
+    y = 0;
 
     VecteurM orientation;
     if(sf::Joystick::isConnected(0))
     {
-        orientation.set_x(sf::Joystick::getAxisPosition(0, sf::Joystick::U));
-        orientation.set_y(sf::Joystick::getAxisPosition(0, sf::Joystick::V));
+        x = sf::Joystick::getAxisPosition(0, sf::Joystick::U);
+        if((x >= -15)&&(x <= 15)) {x = 0;}
+        y = sf::Joystick::getAxisPosition(0, sf::Joystick::R);
+        if((y >= -15)&&(y <= 15)) {y = 0;}
+        orientation.set_x(x);
+        // Windows :
+        orientation.set_y(y);
+        // Linux
+        //orientation.set_y(sf::Joystick::getAxisPosition(0, sf::Joystick::V));
     }
     else
     {
+        sf::Vector2i souris;
+        souris = sf::Mouse::getPosition(window);
         orientation.set_x(souris.x - jeu.get_perso().get_pos_x());
         orientation.set_y(souris.y - jeu.get_perso().get_pos_y());
     }

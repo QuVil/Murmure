@@ -56,7 +56,10 @@ void Perso::set_deplacement(const float& x, const float& y)
 
 void Perso::set_orientation(const VecteurM& v)
 {
-    orientation = v;
+    if((v.get_x() != 0)&&(v.get_y() != 0))
+    {
+        orientation = v;
+    }
 }
 
 Coord2D Perso::get_pos() const
