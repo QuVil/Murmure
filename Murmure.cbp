@@ -43,7 +43,7 @@
 			</Target>
 			<Target title="murmure_sfml">
 				<Option output="bin/murmure_sfml" prefix_auto="1" extension_auto="1" />
-				<Option type="0" />
+				<Option type="1" />
 				<Option compiler="gcc" />
 				<ExtraCommands>
 					<Add after="export LD_LIBRARY_PATH=lib/SFML-2.4.2/SFML-2.4.2_Linux-gcc-5.4.0/lib &amp;&amp; bin/murmure_sfml" />

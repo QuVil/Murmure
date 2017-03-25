@@ -8,6 +8,8 @@
 #include "CarteAffSFML.h"
 #include "JeuSFML.h"
 
+
+
 JeuSFML::JeuSFML()
 {
     //jeu.get_zone().afficher_zone();
@@ -15,12 +17,11 @@ JeuSFML::JeuSFML()
     desktop = sf::VideoMode::getDesktopMode();
     window.create(sf::VideoMode(desktop.width, desktop.height, desktop.bitsPerPixel), "Murmure",sf::Style::Fullscreen);
     //window.create(sf::VideoMode(desktop.width, desktop.height, desktop.bitsPerPixel), "Murmure",sf::Style::Close);
+    FPS = 100;
 
-    temps_frame = sf::seconds((float) 1/100); // en seconde
+    temps_frame = sf::seconds((float) 1/FPS); // en seconde
     window.setVerticalSyncEnabled(true);
     //window.setFramerateLimit(60);
-
-    taille_cases = desktop.width / 17;
 
     //window.setMouseCursorVisible(false);
 
@@ -33,6 +34,9 @@ JeuSFML::JeuSFML()
 
     if(desktop.width/17 <desktop.height/9){scale_salle = desktop.width/17;}
     else{scale_salle = desktop.height/9;}
+
+    taille_cases = desktop.width / 17;
+    val_max_deplacement = 100;
 
     //scale_salle_largeur = desktop.width/17;
     //scale_salle_hauteur = desktop.height/9;
@@ -125,11 +129,11 @@ void JeuSFML::SFML_boucle()
 
 
         }
-        buffer.clear();
+
         //
         afficher(mode);
         buffer.display();
-        window.clear();
+
         //buffer.display();
         sprite_buffer.setTexture(buffer.getTexture());
         window.draw(sprite_buffer);
@@ -145,15 +149,18 @@ void JeuSFML::afficher(const int& mode)
     switch(mode)
     {
     case 1:
-        if(clock.getElapsedTime() >= temps_frame)
-        {
+        //if(clock.getElapsedTime() >= temps_frame)
+        //{
+            //std::cout << clock.getElapsedTime().asSeconds() << std::endl;
+            temps_frame = clock.restart();
+            buffer.clear();
+            window.clear();
             //std::cout << "kek" << std::endl;
             recupere_mouvements();
             recupere_collisions();
             dessiner_salle();
             dessiner_perso();
-            clock.restart();
-        }
+        //}
         break;
     case 2:
         dessiner_carte();
@@ -280,12 +287,15 @@ void JeuSFML::recupere_mouvements()
     }
     else
     {
-        if(sf::Keyboard::isKeyPressed(sf::Keyboard::Q)) {x = x - 100;}
-        if(sf::Keyboard::isKeyPressed(sf::Keyboard::D)) {x = x + 100;}
-        if(sf::Keyboard::isKeyPressed(sf::Keyboard::Z)) {y = y - 100;}
-        if(sf::Keyboard::isKeyPressed(sf::Keyboard::S)) {y = y + 100;}
+        if(sf::Keyboard::isKeyPressed(sf::Keyboard::Q)) {x = x - val_max_deplacement;}
+        if(sf::Keyboard::isKeyPressed(sf::Keyboard::D)) {x = x + val_max_deplacement;}
+        if(sf::Keyboard::isKeyPressed(sf::Keyboard::Z)) {y = y - val_max_deplacement;}
+        if(sf::Keyboard::isKeyPressed(sf::Keyboard::S)) {y = y + val_max_deplacement;}
     }
 
+    x = (float) (x*scale_salle*temps_frame.asSeconds()) /val_max_deplacement;
+    y = (float) (y*scale_salle*temps_frame.asSeconds()) /val_max_deplacement;
+    std::cout << x << " " << y << std::endl;
     jeu.deplacer_perso(x, y);
 
     x = 0;

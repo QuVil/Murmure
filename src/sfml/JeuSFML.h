@@ -25,6 +25,10 @@ private:
 
     sf::Time temps_frame;
 
+    int FPS;
+    int taille_cases;
+    int val_max_deplacement;
+
     int salle_act_x, salle_act_y;
 
     /// CASESALLE
@@ -40,7 +44,7 @@ private:
     int posx0carte, posy0carte;
     //CarteAffSFML carteaffsfml[11][11];
 
-    int taille_cases;
+
     PersoSFML persosfml;
     Jeu jeu;
 

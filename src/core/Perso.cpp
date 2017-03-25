@@ -17,7 +17,7 @@ Perso::Perso()
     pos_case_x = 8;
     pos_case_y = 4;
 
-    coefficient_reducteur = (float)1/10;
+    coefficient_reducteur = (float) 1;
 
     vivant = true;
 }
