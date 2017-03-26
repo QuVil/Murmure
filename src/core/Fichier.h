@@ -33,7 +33,7 @@ public:
 
     void charger(Zone & z);
 
-    void charger(Perso & p);
+    void charger(Perso & p, const std::string &n);
 
     void charger(Modele & m, std::string nom);
 

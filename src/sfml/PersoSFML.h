@@ -16,8 +16,6 @@ public:
     void mettre_a_jour(const Perso &perso);
 
     sf::Sprite get_persosfml();
-
-    sf::Transform get_transformation_perso();
 };
 
 #endif // PERSOSFML_H_INCLUDED

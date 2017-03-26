@@ -290,10 +290,10 @@ void Fichier::charger(Zone & z)
     fichier.close();
 }*/
 
-void Fichier::charger(Perso & p)
+void Fichier::charger(Perso & p,const std::string &n)
 {
     std::stringstream ss;
-    ss << chemin << "Perso/cfg/" << p.get_nom() << ".cfg";
+    ss << chemin << "Perso/cfg/" << n << ".cfg";
     std::string path = ss.str();
 
     std::ifstream fichier((path).c_str(), std::ios::in);
@@ -301,6 +301,8 @@ void Fichier::charger(Perso & p)
 
     std::stringstream buffer;
     buffer << fichier.rdbuf();
+
+    //std::cout << buffer.str() << std::endl;
 
     int valeur_int;
     std::istringstream is_file(buffer.str());

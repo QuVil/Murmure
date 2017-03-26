@@ -24,8 +24,3 @@ sf::Sprite PersoSFML::get_persosfml()
 {
     return persosfml;
 }
-
-sf::Transform PersoSFML::get_transformation_perso()
-{
-
-}

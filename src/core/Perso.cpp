@@ -27,7 +27,7 @@ Perso::Perso(std::string n)
     nom = n;
     vivant = true;
     Fichier fichier;
-    fichier.charger(*this);
+    fichier.charger(*this, n);
 
     position.set_x((float)17/2);
     position.set_y((float)9/2);
@@ -168,9 +168,8 @@ void Perso::set_pv_max(const int& p)
 
 void Perso::charger_perso(const std::string& n)
 {
-    nom = n;
     Fichier fichier;
-    fichier.charger(*this);
+    fichier.charger(*this, n);
 }
 
 void Perso::deplacer_txt(char direction)
