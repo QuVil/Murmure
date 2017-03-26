@@ -11,7 +11,7 @@ private:
 
 public:
 
-    void txtAff(WinTXT & win, Jeu & jeu);
+    void txtAff(WinTXT & win, Jeu & jeu, char mod);
 
     void boucle_txt();
 

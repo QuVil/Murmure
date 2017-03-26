@@ -7,22 +7,34 @@
 #endif // WIN32
 
 
-void JeuTxt::txtAff(WinTXT & win, Jeu & jeu)
+void JeuTxt::txtAff(WinTXT & win, Jeu & jeu, char mod)
 {
 	win.clear();
-
-    // Affichage de la Salle
-	for(int i=0; i<nb_cases_hauteur; ++i)
-	{
-        for(int j=0; j<nb_cases_largeur; ++j)
+    switch(mod)
+    {
+    case 'j':
+        // Affichage de la Salle
+        for(int i=0; i<nb_cases_hauteur; ++i)
         {
-            win.print(j, i, jeu.get_salle().get_case(i, j).get_type_char());
+            for(int j=0; j<nb_cases_largeur; ++j)
+            {
+                win.print(j, i, jeu.get_salle().get_case(i, j).get_type_char());
+            }
         }
-	}
 
-    // Affichage du Perso
-	win.print(jeu.get_perso().get_pos_case_x(), jeu.get_perso().get_pos_case_y(), 'G');
-
+        // Affichage du Perso
+        win.print(jeu.get_perso().get_pos_case_x(), jeu.get_perso().get_pos_case_y(), 'G');
+        break;
+    case 'm':
+        //Affichage de la Carte
+        for(int i=0; i<11; i+=2)
+        {
+            for(int j=0; j<11; j++)
+            {
+                win.print(j, i, (jeu.get_zone().get_salle(i, j).get_config() + '0'));
+            }
+        }
+    }
 	win.draw();
 }
 
@@ -32,10 +44,11 @@ void JeuTxt::boucle_txt()
 
     bool ok = true;
 	int c;
+	char mode = 'j';
 
-	do {
-	    txtAff(win,jeu);
-
+	do
+	{
+        txtAff(win, jeu, mode);
         #ifdef _WIN32
             Sleep(100);
 		#else
@@ -99,7 +112,13 @@ void JeuTxt::boucle_txt()
         case 'a':
             ok = false;
             break;
+        case 'm':
+            if (mode == 'j'){mode = 'm';}
+            else{mode = 'j';}
+            break;
+        default:
+            break;
 		}
-        txtAff(win, jeu);
+
 	} while (ok);
 }
