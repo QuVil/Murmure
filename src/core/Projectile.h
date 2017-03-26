@@ -9,7 +9,7 @@ class Projectile
 private:
     int id_projectile;
 
-    float degats;
+    int degats;
 
     VecteurM orientation, resultante;
 
@@ -17,6 +17,9 @@ private:
 
 public:
 
+    Projectile();
+
+    Projectile(int id, int deg);
 
 };
 

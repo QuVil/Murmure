@@ -90,6 +90,8 @@
 		<Unit filename="Makefile">
 			<Option target="murmure_txt" />
 		</Unit>
+		<Unit filename="src/core/Arme.cpp" />
+		<Unit filename="src/core/Arme.h" />
 		<Unit filename="src/core/CaseSalle.cpp" />
 		<Unit filename="src/core/CaseSalle.h" />
 		<Unit filename="src/core/Coord2D.cpp" />
