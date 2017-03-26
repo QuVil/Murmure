@@ -3,6 +3,7 @@
 
 #include "VecteurM.h"
 #include "Coord2D.h"
+#include "VecteurM.h"
 
 class Projectile
 {
@@ -11,9 +12,11 @@ private:
 
     int degats;
 
-    VecteurM orientation, resultante;
+    float vitesse;
 
-    Coord2D position, position_old;
+    VecteurM orientation;
+
+    Coord2D position;
 
 public:
 
