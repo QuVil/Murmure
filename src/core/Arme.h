@@ -20,7 +20,7 @@ private:
 public:
     Arme();
 
-    void tirer();
+    void tirer(float pos_x, float pos_y);
 
 };
 

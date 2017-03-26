@@ -12,7 +12,7 @@ Arme::Arme()
     liste_balles.reserve(20);
 }
 
-void Arme::tirer(float pos_x, float pos_y, /*orientation ?*/)
+void Arme::tirer(float pos_x, float pos_y /*,orientation ?*/)
 {
     Projectile p(id_projectiles, degats_projectiles);
 
