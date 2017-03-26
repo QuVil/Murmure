@@ -27,7 +27,7 @@ void JeuTxt::txtAff(WinTXT & win, Jeu & jeu, char mod)
         break;
     case 'm':
         //Affichage de la Carte
-        for(int i=0; i<11; i+=2)
+        for(int i=0; i<11; i++)
         {
             for(int j=0; j<11; j++)
             {
