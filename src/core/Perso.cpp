@@ -17,6 +17,8 @@ Perso::Perso()
     pos_case_x = 8;
     pos_case_y = 4;
 
+    taille = (float) 1;
+
     coefficient_vitesse = (float) 1;
 
     vivant = true;
@@ -150,13 +152,17 @@ int Perso::get_pos_case_y() const
     return pos_case_y;
 }
 
+float Perso::get_taille() const
+{
+    return taille;
+}
 
 void Perso::set_nom(const std::string& n)
 {
     nom = n;
 }
 
-void Perso::set_coefficient_vitesse(const int& c)
+void Perso::set_coefficient_vitesse(const float& c)
 {
     coefficient_vitesse = c;
 }
@@ -164,6 +170,11 @@ void Perso::set_coefficient_vitesse(const int& c)
 void Perso::set_pv_max(const int& p)
 {
     pv_max = p;
+}
+
+void Perso::set_taille(const float& t)
+{
+    taille = t;
 }
 
 void Perso::charger_perso(const std::string& n)

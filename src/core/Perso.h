@@ -19,6 +19,8 @@ private:
 
     float coefficient_vitesse;
 
+    float taille;
+
     float pv_max; /**< \a pv_max est le nombre de coeurs maximum du Perso. */
     float pv_actuel; /**< \a pv_actuel est la "lose condition" si elle atteint 0, et doit être plus petit que pv_max. */
 
@@ -59,6 +61,8 @@ public:
 
     float get_pv_actuel()const;
 
+    float get_taille()const;
+
     VecteurM get_orientation()const;
 
     void infliger_degats(float degats);
@@ -67,9 +71,11 @@ public:
 
     void set_nom(const std::string &n);
 
-    void set_coefficient_vitesse(const int &c);
+    void set_coefficient_vitesse(const float &c);
 
     void set_pv_max(const int &p);
+
+    void set_taille(const float &t);
 
     void charger_perso(const std::string &n);
 

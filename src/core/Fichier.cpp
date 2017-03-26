@@ -305,6 +305,7 @@ void Fichier::charger(Perso & p,const std::string &n)
     //std::cout << buffer.str() << std::endl;
 
     int valeur_int;
+    float valeur_float;
     std::istringstream is_file(buffer.str());
     std::string ligne;
     std::string variable;
@@ -326,8 +327,13 @@ void Fichier::charger(Perso & p,const std::string &n)
             }
             else if(variable.compare("coefficient_vitesse") == 0)
             {
-              valeur_int = atoi(valeur.c_str());
-              p.set_coefficient_vitesse(valeur_int);
+              valeur_float = atof(valeur.c_str());
+              p.set_coefficient_vitesse(valeur_float);
+            }
+            else if(variable.compare("taille") == 0)
+            {
+                valeur_float = atof(valeur.c_str());
+                p.set_taille(valeur_float);
             }
             else
             {

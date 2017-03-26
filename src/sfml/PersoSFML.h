@@ -11,7 +11,7 @@ private:
 public:
     PersoSFML();
 
-    void set_texture(const sf::Texture & texture);
+    void charge_perso(const sf::Texture & texture, const int &taille_case, const float &taille_perso);
 
     void mettre_a_jour(const Perso &perso);
 

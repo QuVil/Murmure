@@ -1,14 +1,17 @@
 #include "PersoSFML.h"
+#include <iostream>
 
 PersoSFML::PersoSFML()
 {
 
 }
 
-void PersoSFML::set_texture(const sf::Texture& texture)
+void PersoSFML::charge_perso(const sf::Texture& texture,const int &taille_case, const float &taille_perso)
 {
     persosfml.setTexture(texture);
-    persosfml.setOrigin(32,32);
+    persosfml.setOrigin(texture.getSize().x/2,texture.getSize().y/2);
+    //std::cout << 0.6*taille_case/texture.getSize().x << " " << 0.6*taille_case/texture.getSize().y << std::endl;
+    persosfml.setScale(taille_perso*taille_case/texture.getSize().x, taille_perso*taille_case/texture.getSize().y);
 }
 
 void PersoSFML::mettre_a_jour(const Perso &perso)

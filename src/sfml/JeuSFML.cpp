@@ -105,8 +105,8 @@ void JeuSFML::init_texte()
 void JeuSFML::init_persoSFML()
 {
     jeu.changer_perso("Green");
-    persosfml.set_texture(textures.retourne_texture_perso());
-    jeu.definir_position_perso(jeu.get_perso().get_pos_x()*scale_salle, jeu.get_perso().get_pos_y()*scale_salle);
+    persosfml.charge_perso(textures.retourne_texture_perso(),scale_salle,jeu.get_perso().get_taille());
+    jeu.definir_position_perso(jeu.get_perso().get_pos_x()*scale_salle + posx0salle, jeu.get_perso().get_pos_y()*scale_salle + posy0salle);
 }
 
 void JeuSFML::SFML_boucle()
