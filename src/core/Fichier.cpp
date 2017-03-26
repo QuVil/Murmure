@@ -3,15 +3,15 @@
 #include <dirent.h>
 #include <sys/types.h>
 #include <stdio.h>
+#include <stdlib.h>
 #include <string>
 #include <sstream>
 
 #include "Fichier.h"
 
-using namespace std;
 
-const string CHEMIN="data/res/";
-const string INDEX_FILE="index.cfg";
+const std::string CHEMIN="data/res/";
+const std::string INDEX_FILE="index.cfg";
 
 Fichier::Fichier()
 {
@@ -89,11 +89,11 @@ void Fichier::charger(Salle & s)
 {
     //Cree un chemin relatif qui pointe sur la configuration en fonction
     //de la valeur config de la salle (par defaut 1)
-    stringstream ss;
+    std::stringstream ss;
     ss << chemin << "Salle/" << s.get_config() << ".cfg";
-    string path = ss.str();
+    std::string path = ss.str();
 
-    ifstream fichier((path).c_str(), ios::in);
+    std::ifstream fichier((path).c_str(), std::ios::in);
     assert(fichier);
 
     char tampon;
@@ -123,15 +123,15 @@ void Fichier::charger(Salle& s, const int& id)
 {
     //Cree un chemin relatif qui pointe sur la configuration en fonction
     //de la valeur config de la salle (par defaut 1)
-    stringstream ss;
+    std::stringstream ss;
     ss << chemin << "Salle/" << s.get_config() << "_" << id << ".cfg";
-    string path = ss.str();
+    std::string path = ss.str();
 
     //à delete
     //std::cout<<ss<<std::endl;
     //^
 
-    ifstream fichier((path).c_str(), ios::in);
+    std::ifstream fichier((path).c_str(), std::ios::in);
     assert(fichier);
 
     char tampon;
@@ -159,11 +159,11 @@ void Fichier::charger(ZoneGen & z)
 {
     //Cree un chemin relatif qui pointe sur la configuration en fonction
     //de la valeur config de la salle (par defaut 1)
-    stringstream ss;
+    std::stringstream ss;
     ss << chemin << "ZoneGen/" << z.get_patterne() << ".cfg";
-    string path = ss.str();
+    std::string path = ss.str();
 
-    ifstream fichier((path).c_str(), ios::in);
+    std::ifstream fichier((path).c_str(), std::ios::in);
     assert(fichier);
 
     char tampon;
@@ -189,11 +189,11 @@ void Fichier::charger(Modele &m, std::string nom)
 {
     //Cree un chemin relatif qui pointe sur la configuration en fonction
     //de la valeur config de la salle (par defaut 1)
-    stringstream ss;
+    std::stringstream ss;
     ss << chemin << "Modele/" << nom << ".cfg";
-    string path = ss.str();
+    std::string path = ss.str();
 
-    ifstream fichier((path).c_str(), ios::in);
+    std::ifstream fichier((path).c_str(), std::ios::in);
     assert(fichier);
 
     char tampon, tampon2;
@@ -226,11 +226,11 @@ void Fichier::charger(ModeleSalle &m, std::string nom)
 {
     //Cree un chemin relatif qui pointe sur la configuration en fonction
     //de la valeur config de la salle (par defaut 1)
-    stringstream ss;
+    std::stringstream ss;
     ss << chemin << "ModeleSalle/" << nom << ".cfg";
-    string path = ss.str();
+    std::string path = ss.str();
 
-    ifstream fichier((path).c_str(), ios::in);
+    std::ifstream fichier((path).c_str(), std::ios::in);
     assert(fichier);
 
     char tampon, tampon2, tampon3;
@@ -290,37 +290,51 @@ void Fichier::charger(Zone & z)
     fichier.close();
 }*/
 
-
-/*
 void Fichier::charger(Perso & p)
 {
-    //Cree un chemin relatif qui pointe sur la configuration en fonction
-    //de la valeur config de la salle (par defaut 1)
-    stringstream ss;
-    ss << chemin << "Perso/" << p.get << ".cfg";
-    string path = ss.str();
+    std::stringstream ss;
+    ss << chemin << "Perso/cfg/" << p.get_nom() << ".cfg";
+    std::string path = ss.str();
 
-    ifstream fichier((path).c_str(), ios::in);
+    std::ifstream fichier((path).c_str(), std::ios::in);
     assert(fichier);
 
-    char tampon;
+    std::stringstream buffer;
+    buffer << fichier.rdbuf();
 
-    for(int i=0;i<11;i++)
+    int valeur_int;
+    std::istringstream is_file(buffer.str());
+    std::string ligne;
+    std::string variable;
+    std::string valeur;
+    while( std::getline(is_file, ligne) )
     {
-        //compte les retours à la ligne donc <= 21 pour avoir le bon compte
-        for(int j=0;j<11;j++)
+        std::istringstream is_line(ligne);
+        if( std::getline(is_line, variable, '=') )
         {
-            tampon=fichier.get();
-            //cout << tampon;
-            z.set_salle(i, j, tampon - '0');;
-            //cout << (int) tampon << endl;
+            assert(std::getline(is_line, valeur));
+            if(variable.compare("nom") == 0)
+            {
+              p.set_nom(valeur);
+            }
+            else if(variable.compare("pv_max") == 0)
+            {
+              valeur_int = atoi(valeur.c_str());
+              p.set_pv_max(valeur_int);
+            }
+            else if(variable.compare("coefficient_vitesse") == 0)
+            {
+              valeur_int = atoi(valeur.c_str());
+              p.set_coefficient_vitesse(valeur_int);
+            }
+            else
+            {
+              std::cout << "Mauvaise Valeur" << std::endl;
+              exit(0);
+            }
         }
-        // voir la fonction charger(Salle)
-        tampon=fichier.get();
     }
-
-    fichier.close();
-}*/
+}
 
 
 

@@ -22,7 +22,7 @@ JeuSFML::JeuSFML()
 
     //temps_frame = sf::seconds((float) 1/FPS); // en seconde
     window.setVerticalSyncEnabled(true);
-    //window.setFramerateLimit(60);
+    //window.setFramerateLimit(50);
 
     //window.setMouseCursorVisible(false);
 
@@ -91,7 +91,7 @@ void JeuSFML::init_texte()
     text_fps.setFillColor(sf::Color::White);
 
     text_posx.setFont(police_test);
-    text_posx.setPosition(2 * scale_salle, 9*scale_salle);
+    text_posx.setPosition(2 * scale_salle, 9*scale_salle );
     text_posx.setCharacterSize(24);
     text_posx.setFillColor(sf::Color::White);
 
@@ -104,10 +104,10 @@ void JeuSFML::init_texte()
 
 void JeuSFML::init_persoSFML()
 {
+    jeu.changer_perso("Green");
     persosfml.set_texture(textures.retourne_texture_perso());
     jeu.definir_position_perso(jeu.get_perso().get_pos_x()*scale_salle, jeu.get_perso().get_pos_y()*scale_salle);
 }
-
 
 void JeuSFML::SFML_boucle()
 {
@@ -335,7 +335,7 @@ void JeuSFML::recupere_mouvements()
 
     x = (float) (x*scale_salle*temps_frame.asSeconds()) /val_max_deplacement;
     y = (float) (y*scale_salle*temps_frame.asSeconds()) /val_max_deplacement;
-    std::cout << x << " " << y << std::endl;
+    //std::cout << x << " " << y << std::endl;
     jeu.deplacer_perso(x, y);
 
     x = 0;

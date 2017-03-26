@@ -21,6 +21,8 @@ public:
 
     Perso get_perso();
 
+    void changer_perso(const std::string &n);
+
     void deplacer_perso(const float &x, const float &y);
 
     void definir_position_perso(const float &x, const float &y);

@@ -17,7 +17,7 @@ private:
 
     Coord2D position, position_old;
 
-    float coefficient_reducteur;
+    float coefficient_vitesse;
 
     float pv_max; /**< \a pv_max est le nombre de coeurs maximum du Perso. */
     float pv_actuel; /**< \a pv_actuel est la "lose condition" si elle atteint 0, et doit être plus petit que pv_max. */
@@ -47,6 +47,8 @@ public:
 
     Coord2D get_pos()const;
 
+    float get_coefficient_vitesse()const;
+
     float get_orientation_degre()const;
 
     float get_pos_x()const;
@@ -62,6 +64,14 @@ public:
     void infliger_degats(float degats);
 
     void soigner(float soin);
+
+    void set_nom(const std::string &n);
+
+    void set_coefficient_vitesse(const int &c);
+
+    void set_pv_max(const int &p);
+
+    void charger_perso(const std::string &n);
 
     //_____________________MODE TXT__________________________
     int get_pos_case_x() const;

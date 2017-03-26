@@ -22,6 +22,11 @@ Perso Jeu::get_perso()
     return perso;
 }
 
+void Jeu::changer_perso(const std::string& n)
+{
+    perso.charger_perso(n);
+}
+
 void Jeu::deplacer_perso(const float& x, const float& y)
 {
     perso.set_deplacement(x, y);

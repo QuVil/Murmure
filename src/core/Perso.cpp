@@ -17,7 +17,7 @@ Perso::Perso()
     pos_case_x = 8;
     pos_case_y = 4;
 
-    coefficient_reducteur = (float) 1;
+    coefficient_vitesse = (float) 1;
 
     vivant = true;
 }
@@ -27,7 +27,14 @@ Perso::Perso(std::string n)
     nom = n;
     vivant = true;
     Fichier fichier;
-    //fichier.charger(*this);
+    fichier.charger(*this);
+
+    position.set_x((float)17/2);
+    position.set_y((float)9/2);
+    orientation.set_x(0);
+    orientation.set_y(0);
+    resultante.set_x(0);
+    resultante.set_y(0);
 }
 
 std::string Perso::get_nom()const
@@ -49,7 +56,7 @@ void Perso::set_deplacement(const float& x, const float& y)
     //resultante = deplacement + resultante;
     resultante = deplacement;
     //std::cout << resultante.get_x() << " " << resultante.get_y() << std::endl;
-    position.deplacer(resultante, coefficient_reducteur);
+    position.deplacer(resultante, coefficient_vitesse);
     //std::cout << position.get_x() << " " << position.get_y() << std::endl;
 }
 
@@ -78,6 +85,11 @@ void Perso::revenir_ancienne_position()
 {
     position.set_x(position_old.get_x());
     position.set_y(position_old.get_y());
+}
+
+float Perso::get_coefficient_vitesse() const
+{
+    return coefficient_vitesse;
 }
 
 float Perso::get_pos_x() const
@@ -136,6 +148,29 @@ int Perso::get_pos_case_x() const
 int Perso::get_pos_case_y() const
 {
     return pos_case_y;
+}
+
+
+void Perso::set_nom(const std::string& n)
+{
+    nom = n;
+}
+
+void Perso::set_coefficient_vitesse(const int& c)
+{
+    coefficient_vitesse = c;
+}
+
+void Perso::set_pv_max(const int& p)
+{
+    pv_max = p;
+}
+
+void Perso::charger_perso(const std::string& n)
+{
+    nom = n;
+    Fichier fichier;
+    fichier.charger(*this);
 }
 
 void Perso::deplacer_txt(char direction)
