@@ -47,6 +47,8 @@ public:
     sf::RenderStates retourne_rendu_texture_perso(const sf::Transform &t);
 
     sf::Texture& retourne_texture_perso();
+
+    sf::Texture& retourne_texture_caseSFML(const char & type, const int &i, const int &j);
 };
 
 #endif // TEXTURESFML_H_INCLUDED

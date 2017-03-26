@@ -211,6 +211,81 @@ sf::RenderStates TextureSFML::retourne_rendu_texture_perso(const sf::Transform& 
     return render;
 }
 
+sf::Texture& TextureSFML::retourne_texture_caseSFML(const char& type, const int& i, const int& j)
+{
+    if(i == 0)
+    {
+        if(type == 'm')
+        {
+            switch(j)
+            {
+            case 0:
+                return mur_1[0];
+                break;
+            case 16:
+                return mur_1[2];
+                break;
+            default:
+                return mur_1[1];
+                break;
+            }
+        }
+        else
+        {
+            return porte;
+        }
+    }
+    else if(i == 8)
+    {
+        if(type == 'm')
+        {
+            switch(j)
+            {
+            case 0:
+                return mur_1[6];
+                break;
+            case 16:
+                return mur_1[4];
+                break;
+            default:
+                return mur_1[5];
+                break;
+            }
+        }
+        else
+        {
+            return porte;
+        }
+    }
+    else
+    {
+        switch(type)
+        {
+        case 'n':
+            return herbe[rand() % nb_texture_herbe_caseSFML];
+            break;
+        case 'p':
+            if(j == 0) {return porte;}
+            else if(j == 16) {return porte;}
+            break;
+        case 't':
+            return trou;
+            break;
+        case 'r':
+            return rocher;
+            break;
+        case 'm':
+            if(j == 0) {return mur_1[7];}
+            else if(j == 16) {return mur_1[3];}
+            break;
+        default:
+            return defaut;
+            break;
+        }
+    }
+    return defaut;
+}
+
 sf::Texture& TextureSFML::retourne_texture_perso()
 {
     return perso;

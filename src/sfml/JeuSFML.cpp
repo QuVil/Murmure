@@ -222,16 +222,22 @@ void JeuSFML::dessiner_salle()
     if((salle_act_x != jeu.get_zone().get_salle_actuelle_x())||(salle_act_y != jeu.get_zone().get_salle_actuelle_y()))
     {
         buffer_salle.clear();
+        sf::Texture *texture_salle;
         for(int i=0;i<9;i++)
         {
             for(int j=0;j<17;j++)
             {
+                texture_salle = &textures.retourne_texture_caseSFML(jeu.get_salle().get_case(i, j).get_type_char(),
+                                                                         i,
+                                                                         j);
+                                                                         /*
                 buffer_salle.draw(casesfml[i][j].get_casesfml(),
                             textures.retourne_rendu_texture_caseSFML(jeu.get_salle().get_case(i, j).get_type_char(),
                                                                      i,
                                                                      j,
                                                                      jeu.get_zone().get_salle_actuelle_x(),
-                                                                     jeu.get_zone().get_salle_actuelle_y()));
+                                                                     jeu.get_zone().get_salle_actuelle_y()));*/
+                buffer_salle.draw(casesfml[i][j].get_casesfml(), texture_salle);
             }
         }
         std::cout << "kek" << std::endl;
