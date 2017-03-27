@@ -163,19 +163,19 @@ void SalleGen::placer_amas(char type, int taille) // type = 2 ou 5, taille entre
     switch (depart_amas)
     {
     case 0:
-        i_dep = 2;
-        j_dep = 2;
+        i_dep = rand() % 2 + 2;
+        j_dep = rand() % 2 + 2;
         break;
     case 1:
         i_dep = 1;
         j_dep = 14;
         break;
     case 2:
-        i_dep = 6;
-        j_dep = 2;
+        i_dep = rand() % 2 + 6;
+        j_dep = rand() % 2 + 2;
         break;
     case 3:
-        i_dep = 6;
+        i_dep = rand() % 2 + 6;
         j_dep = 14;
     default:
         i_dep = rand() % 3 + 3;

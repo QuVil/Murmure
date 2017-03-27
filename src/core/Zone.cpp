@@ -152,7 +152,7 @@ void Zone::zone_depuis_modele_aleatoire(int taille =0)
     //Si la taille générale n'est pas spécifiée, on prend vraiment au hasard.
     if (taille == 0)
     {
-        int nb_aleat = rand() % 5;
+        int nb_aleat = rand() % 7;
 
         switch(nb_aleat)
         {
@@ -167,6 +167,12 @@ void Zone::zone_depuis_modele_aleatoire(int taille =0)
                 break;
             case 3:
                 nom_aleat = "test_h";
+                break;
+            case 4:
+                nom_aleat = "h_3";
+                break;
+            case 5:
+                nom_aleat = "test_hub";
                 break;
             default:
                 nom_aleat = "defaut";
@@ -220,7 +226,7 @@ void Zone::zone_depuis_modele_aleatoire(int taille =0)
                     nom_aleat = "test";
                     break;
                 case 1:
-                    nom_aleat = "test";
+                    nom_aleat = "h_3";
                     break;
                 default:
                     nom_aleat = "defaut";
