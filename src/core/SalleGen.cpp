@@ -158,6 +158,7 @@ void SalleGen::placer_amas(char type, int taille) // type = 2 ou 5, taille entre
     assert(type == 'r' || type == 't');
     int depart_amas = rand() % 10; //l'amas commence-t-il dans les coins ou au centre ?
     int i_dep, j_dep;
+    int dist_dep = taille + 2;
 
     switch (depart_amas)
     {
@@ -181,13 +182,13 @@ void SalleGen::placer_amas(char type, int taille) // type = 2 ou 5, taille entre
         j_dep = rand() % 11 + 3;
         break;
     }
-    placer_amas_recursif(i_dep, j_dep, type, taille);
+    placer_amas_recursif(i_dep, j_dep, type, taille, dist_dep);
 }
 
-void SalleGen::placer_amas_recursif(int i, int j, char type, int taille)
+void SalleGen::placer_amas_recursif(int i, int j, char type, int taille, int dist_dep)
 {
     //cas d'arrêt
-    if (grille[i][j] == 'p' || grille[i][j] == 'm' || grille[i-1][j] == 'p' || grille[i+1][j] == 'p'
+    if (dist_dep <= 0 || grille[i][j] == 'p' || grille[i][j] == 'm' || grille[i-1][j] == 'p' || grille[i+1][j] == 'p'
         || grille[i][j-1] == 'p' || grille[i][j+1] == 'p' || grille[i+1][j+1] == 'p'
         || grille[i-1][j-1] == 'p' || grille[i+1][j-1] == 'p' || grille[i-1][j+1] == 'p' || grille[i][j] == type)
     {
@@ -199,42 +200,42 @@ void SalleGen::placer_amas_recursif(int i, int j, char type, int taille)
         int aleat_continue = rand() % (5 - taille);
         if (aleat_continue == 2)
         {
-            placer_amas_recursif(i+1, j, type, taille);
+            placer_amas_recursif(i+1, j, type, taille, dist_dep -1);
         }
         aleat_continue = rand() % (5 - taille);
         if (aleat_continue == 1)
         {
-            placer_amas_recursif(i-1, j, type, taille);
+            placer_amas_recursif(i-1, j, type, taille, dist_dep -1);
         }
         aleat_continue = rand() % (5 - taille);
         if (aleat_continue == 0)
         {
-            placer_amas_recursif(i, j-1, type, taille);
+            placer_amas_recursif(i, j-1, type, taille, dist_dep -1);
         }
         aleat_continue = rand() % (5 - taille);
         if (aleat_continue == 2)
         {
-            placer_amas_recursif(i, j+1, type, taille);
+            placer_amas_recursif(i, j+1, type, taille, dist_dep -1);
         }
         aleat_continue = rand() % (9 - taille);
         if (aleat_continue == 4)
         {
-            placer_amas_recursif(i+1, j+1, type, taille);
+            placer_amas_recursif(i+1, j+1, type, taille, dist_dep -1);
         }
         aleat_continue = rand() % (9 - taille);
         if (aleat_continue == 2)
         {
-            placer_amas_recursif(i-1, j+1, type, taille);
+            placer_amas_recursif(i-1, j+1, type, taille, dist_dep -1);
         }
         aleat_continue = rand() % (9 - taille);
         if (aleat_continue == 6)
         {
-            placer_amas_recursif(i-1, j-1, type, taille);
+            placer_amas_recursif(i-1, j-1, type, taille, dist_dep -1);
         }
         aleat_continue = rand() % (9 - taille);
         if (aleat_continue == 3)
         {
-            placer_amas_recursif(i+1, j-1, type, taille);
+            placer_amas_recursif(i+1, j-1, type, taille, dist_dep -1);
         }
     }
 }

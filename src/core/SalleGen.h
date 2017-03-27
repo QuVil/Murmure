@@ -19,7 +19,7 @@ private:
 
     bool valide;
 
-    void placer_amas_recursif(int i, int j, char type, int taille);
+    void placer_amas_recursif(int i, int j, char type, int taille, int dist_dep);
 
     void valider_recursif(int i, int j);
 

@@ -55,7 +55,7 @@ int ZoneGen::get_nb_cases() const
     {
         for (int j=0; j<11; ++j)
         {
-            if (carte[i][j] == 1)
+            if (carte[i][j] != 0)
             {
                 nb++;
             }
@@ -68,7 +68,9 @@ void ZoneGen::teste_nb_cases_assez (int nb_voulu)
 {
     int nb = get_nb_cases();
     if (nb < nb_voulu)
+    {
         valide = false;
+    }
 }
 
 void ZoneGen::teste_nb_cases_trop(int nb_voulu)
@@ -634,7 +636,6 @@ void ZoneGen::placer_boss()
             }
         }
     }
-
     else if (coin_recherche == 1)
     {
         for (int i=10; i>=0; --i)
