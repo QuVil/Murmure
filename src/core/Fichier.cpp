@@ -119,12 +119,13 @@ void Fichier::charger(Salle & s)
 }
 
 
-void Fichier::charger(Salle& s, const int& id)
+void Fichier::charger(Salle& s, const int& id, const int& conf)
 {
     //Cree un chemin relatif qui pointe sur la configuration en fonction
     //de la valeur config de la salle (par defaut 1)
     std::stringstream ss;
-    ss << chemin << "Salle/" << s.get_config() << "_" << id << ".cfg";
+    std::cout<<chemin << "Salle/" << conf << "_" << id << ".cfg"<<std::endl;
+    ss << chemin << "Salle/" << conf << "_" << id << ".cfg";
     std::string path = ss.str();
 
     //à delete

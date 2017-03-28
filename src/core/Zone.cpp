@@ -297,7 +297,7 @@ void Zone::generer_salle(int i, int j)
             switch(carte[i][j].get_config())
             {
             case 1:
-                id_aleat = rand() % 2; //id le plus haut des Salles normales
+                id_aleat = rand() % 5; //id le plus haut des Salles normales
                 break;
             case 2:
                 id_aleat = rand() % 1; //id le plus haut des Salles de Boss
@@ -315,7 +315,8 @@ void Zone::generer_salle(int i, int j)
                 id_aleat = rand() % 1; //le minimum des nb précédents... en cas de souci.
                 break;
             }
-            fichier.charger(carte[i][j], id_aleat);
+            int conf = carte[i][j].get_config();
+            fichier.charger(carte[i][j], id_aleat, conf);
             CaseSalle porte;
             porte.set_type('p');
             if (p_h){carte[i][j].set_case(0, 8, porte);}
