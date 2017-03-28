@@ -31,6 +31,9 @@ private:
     // Perso
     sf::Texture perso;
 
+    // Curseur
+    sf::Texture curseur;
+
 public:
     TextureSFML();
 
@@ -40,11 +43,15 @@ public:
 
     void charger_texture_perso();
 
+    void charger_texture_curseur();
+
     sf::RenderStates retourne_rendu_texture_caseSFML(const char & type, const int &i, const int &j, const int &x, const int &y);
 
     sf::RenderStates retourne_rendu_texture_carteAffSFML(const int & config, const bool &salle_act);
 
     sf::RenderStates retourne_rendu_texture_perso(const sf::Transform &t);
+
+    sf::Texture& retourne_texture_curseur();
 
     sf::Texture& retourne_texture_perso();
 

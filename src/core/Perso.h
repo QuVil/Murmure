@@ -3,6 +3,7 @@
 
 #include <string>
 #include "VecteurM.h"
+#include "Arme.h"
 #include "Coord2D.h"
 
 class Perso
@@ -10,7 +11,9 @@ class Perso
 private:
     std::string nom;
     ///TODO : implémenter Arme puis revenir un coup sur Perso.
-    //Arme arme1;
+    int id_arme1;
+    int nv_arme1;
+    Arme arme1;
     //Arme arme2;
 
     VecteurM orientation, resultante;
@@ -76,6 +79,10 @@ public:
     void set_pv_max(const int &p);
 
     void set_taille(const float &t);
+
+    void set_id_arme1(const int &i);
+
+    void set_nv_arme1(const int &i);
 
     void charger_perso(const std::string &n);
 

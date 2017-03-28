@@ -86,6 +86,14 @@ void TextureSFML::charger_texture_perso()
     perso.setSmooth(true);
 }
 
+void TextureSFML::charger_texture_curseur()
+{
+    std::string path;
+    path = "data/res/Autre/Curseur/curseur.png";
+    curseur.loadFromFile(path);
+    //curseur.setSmooth(true);
+}
+
 sf::RenderStates TextureSFML::retourne_rendu_texture_carteAffSFML(const int& config, const bool &salle_act)
 {
     sf::RenderStates render;
@@ -289,6 +297,12 @@ sf::Texture& TextureSFML::retourne_texture_caseSFML(const char& type, const int&
 sf::Texture& TextureSFML::retourne_texture_perso()
 {
     return perso;
+}
+
+
+sf::Texture& TextureSFML::retourne_texture_curseur()
+{
+    return curseur;
 }
 
 

@@ -4,6 +4,7 @@
 #include <fstream>
 #include <string>
 
+#include "Arme.h"
 #include "Salle.h"
 #include "ZoneGen.h"
 #include "Zone.h"
@@ -32,6 +33,8 @@ public:
     void charger(ZoneGen & z);
 
     void charger(Zone & z);
+
+    void charger(Arme &a, const int &id_arme, const int &nv_arme);
 
     void charger(Perso & p, const std::string &n);
 
