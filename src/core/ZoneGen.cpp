@@ -494,6 +494,57 @@ void ZoneGen::iterer(std::string meth /* = "" */)
             }
         }
     }
+
+    if (methode == "bruit_neg" || methode == "bruit_pos")
+    {
+        //On stocke le type de bruit dans un int pour une utilisation plus simple
+        int type_bruit;
+        if (methode == "bruit_pos")
+        {
+            type_bruit = 1;
+        }else
+        {
+            type_bruit = 2;
+        }
+
+        int carte_bruit[11][11];
+        for (int i=0; i<11; ++i)
+        {
+            for (int j=0; j<11; ++j)
+            {
+                if (carte[i][j] == 1)
+                {
+                    int aleat_grad = rand() % 7;
+                    aleat_grad *= type_bruit;
+
+                    switch (aleat_grad)
+                    {
+                        case 0:
+                            if (i>0)
+                                carte_bruit[i-1][j] = type_bruit;
+                            break;
+                        case 2:
+                            if (i<10)
+                                carte_bruit[i+1][j] = type_bruit;
+                            break;
+                        case 4:
+                            if (j>0)
+                                carte_bruit[i][j-1] = type_bruit;
+                            break;
+                        case 6:
+                            if (j<10)
+                                carte_bruit[i][j+1] = type_bruit;
+                            break;
+                    }
+                }
+
+                std::cout<<carte_bruit[i][j]<<" ";
+            }
+            std::cout<<std::endl;
+        }
+
+
+    }
 }
 
 std::string ZoneGen::get_patterne()

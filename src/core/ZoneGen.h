@@ -35,7 +35,7 @@ class ZoneGen
 
         std::string patterne; /**< \a patterne est le motif de base applique au debut de la creation de carte.*/
         std::string methode;  /**< \a methode contient la methode d'iteration actuelle du generateur.*/
-        //patternes : croix, carre, h, vide, hub
+        //patternes : croix, carre, h, vide, hub, huit
         //methodes : voisins, bruit_neg, bruit_pos, aleatoire, epuration, extension
 
         bool pret_iteration;  /**< determine si la carte a ete initialisee.*/

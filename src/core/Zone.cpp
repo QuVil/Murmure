@@ -152,7 +152,7 @@ void Zone::zone_depuis_modele_aleatoire(int taille =0)
     //Si la taille générale n'est pas spécifiée, on prend vraiment au hasard.
     if (taille == 0)
     {
-        int nb_aleat = rand() % 7;
+        int nb_aleat = rand() % 10;
 
         switch(nb_aleat)
         {
@@ -174,6 +174,15 @@ void Zone::zone_depuis_modele_aleatoire(int taille =0)
             case 5:
                 nom_aleat = "test_hub";
                 break;
+            case 6:
+                nom_aleat = "test_huit";
+                break;
+            case 7:
+                nom_aleat = "test_vertical";
+                break;
+            case 8:
+                nom_aleat = "test_diagonale";
+                break;
             default:
                 nom_aleat = "defaut";
                 break;
@@ -186,7 +195,7 @@ void Zone::zone_depuis_modele_aleatoire(int taille =0)
         //dans les fichiers. Oui c'est embêtant, mais moins que les autres alternatives je suppose.
         if (taille == 1) //si la taille est sur 'normale'
         {
-            int nb_aleat1 = rand() % 2;
+            int nb_aleat1 = rand() % 4;
 
             switch(nb_aleat1)
             {
@@ -195,6 +204,12 @@ void Zone::zone_depuis_modele_aleatoire(int taille =0)
                     break;
                 case 1:
                     nom_aleat = "test_h";
+                    break;
+                case 2:
+                    nom_aleat = "test_vertical";
+                    break;
+                case 3:
+                    nom_aleat = "test_diagonale";
                     break;
                 default:
                     nom_aleat = "defaut";
@@ -211,6 +226,9 @@ void Zone::zone_depuis_modele_aleatoire(int taille =0)
                     break;
                 case 1:
                     nom_aleat = "test_hub";
+                    break;
+                case 2:
+                    nom_aleat = "test_huit";
                     break;
                 default:
                     nom_aleat = "defaut";

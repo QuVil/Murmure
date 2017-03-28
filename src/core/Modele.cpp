@@ -69,6 +69,15 @@ void Modele::generer_zone()
     case 5:
         pat = "hub";
         break;
+    case 6:
+        pat = "huit";
+        break;
+    case 7:
+        pat = "vertical";
+        break;
+    case 8:
+        pat = "diagonale";
+        break;
     default:
         pat = "carre";
     }

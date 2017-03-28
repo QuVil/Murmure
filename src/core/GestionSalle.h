@@ -1,11 +1,15 @@
 #ifndef GESTIONSALLE_H_INCLUDED
 #define GESTIONSALLE_H_INCLUDED
 
+#include <vector>
+
 class GestionSalle
 {
-public:
-
 private:
+
+
+
+public:
 
 
 };

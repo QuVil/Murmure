@@ -4,15 +4,9 @@
 #include <vector>
 #include "Projectile.h"
 
-
-typedef std::vector<Projectile> vect_proj;
-
 class Arme
 {
 private:
-
-    int taille_liste;
-    vect_proj liste_balles;
 
     int id_projectiles;
     int degats_projectiles;

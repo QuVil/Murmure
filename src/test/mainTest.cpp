@@ -7,14 +7,18 @@
 int main(int argc, char ** argv)
 {
     srand(time (NULL));
-/*
-    Zone z;
-    z.generer_et_remplir(0);
-*/
 
+    ZoneGen zg;
+    zg.initialisation_gen("h", "bruit_neg");
+    zg.afficher_carte();
+    zg.iterer();
+    zg.afficher_carte();
+
+/*
     ModeleSalle m_s("test");
     m_s.generer_salle(1, 0, 1, 0, 1);
     m_s.afficher_tests();
+*/
 /*
     SalleGen s_generateur(1, 1, 1, 1, 3, 50);
 
