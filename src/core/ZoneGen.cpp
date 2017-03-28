@@ -507,7 +507,17 @@ void ZoneGen::iterer(std::string meth /* = "" */)
             type_bruit = 2;
         }
 
+        //initialisation de la carte de bruit
         int carte_bruit[11][11];
+        for (int i=0; i<11; ++i)
+        {
+            for (int j=0; j<11; ++j)
+            {
+                carte_bruit[i][j] = 0;
+            }
+        }
+
+        //construction de la carte de bruit
         for (int i=0; i<11; ++i)
         {
             for (int j=0; j<11; ++j)
@@ -535,14 +545,69 @@ void ZoneGen::iterer(std::string meth /* = "" */)
                             if (j<10)
                                 carte_bruit[i][j+1] = type_bruit;
                             break;
+                        default:
+                            break;
+                    }
+                    if (aleat_grad < 2)
+                    {
+                        carte_bruit[i][j] = 2;
                     }
                 }
-
-                std::cout<<carte_bruit[i][j]<<" ";
+                else if (carte[i][j] == 0)
+                {
+                    int aleat_grad = rand() % 32;
+                    switch (aleat_grad)
+                    {
+                        case 0:
+                            if (i>0)
+                                carte_bruit[i-1][j] = type_bruit;
+                            break;
+                        case 2:
+                            if (i<10)
+                                carte_bruit[i+1][j] = type_bruit;
+                            break;
+                        case 4:
+                            if (j>0)
+                                carte_bruit[i][j-1] = type_bruit;
+                            break;
+                        case 6:
+                            if (j<10)
+                                carte_bruit[i][j+1] = type_bruit;
+                            break;
+                        default:
+                            break;
+                    }
+                    if ((aleat_grad < 6 && type_bruit == 1) || (aleat_grad < 2 && type_bruit == 2))
+                    {
+                        carte_bruit[i][j] = 1;
+                    }
+                }
             }
-            std::cout<<std::endl;
         }
 
+        //traduction de la carte de bruit en modifications de la carte
+        for (int i=0; i<11; ++i)
+        {
+            for (int j=0; j<11; ++j)
+            {
+                if (carte_bruit[i][j] == 1 && carte[i][j] == 0)
+                {
+                    int remplacement = rand() % 3;
+                    if (remplacement == 1)
+                    {
+                        carte[i][j] = 1;
+                    }
+                }
+                if (carte_bruit[i][j] == 2 && carte[i][j] == 1)
+                {
+                    int remplacement = rand() % 3;
+                    if (remplacement == 1)
+                    {
+                        carte[i][j] = 0;
+                    }
+                }
+            }
+        }
 
     }
 }

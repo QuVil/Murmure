@@ -6,14 +6,20 @@
 
 int main(int argc, char ** argv)
 {
-    srand(time (NULL));
 
+    srand(time (NULL));
+/*
+    Modele m;
+    m.generer_zone();
+    m.afficher_tests();
+    */
+/*
     ZoneGen zg;
     zg.initialisation_gen("h", "bruit_neg");
     zg.afficher_carte();
     zg.iterer();
     zg.afficher_carte();
-
+*/
 /*
     ModeleSalle m_s("test");
     m_s.generer_salle(1, 0, 1, 0, 1);
@@ -38,6 +44,10 @@ int main(int argc, char ** argv)
     s_generateur.afficher_validation();
     std::cout<<s_generateur.is_valide();
 */
+
+    Zone z;
+    z.generer_et_remplir(0);
+    z.afficher_zone();
 /*
     Salle s;
     s.salle_depuis_modele_aleatoire(1, 0, 1, 0, 1, 0);
