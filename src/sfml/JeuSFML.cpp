@@ -107,6 +107,16 @@ void JeuSFML::init_texte()
     text_posy.setPosition(2 * scale_salle, 9*scale_salle + 24);
     text_posy.setCharacterSize(24);
     text_posy.setFillColor(sf::Color::White);
+
+    text_mouseposx.setFont(police_test);
+    text_mouseposx.setPosition(4 * scale_salle, 9*scale_salle);
+    text_mouseposx.setCharacterSize(24);
+    text_mouseposx.setFillColor(sf::Color::White);
+
+    text_mouseposy.setFont(police_test);
+    text_mouseposy.setPosition(4 * scale_salle, 9*scale_salle + 24);
+    text_mouseposy.setCharacterSize(24);
+    text_mouseposy.setFillColor(sf::Color::White);
 }
 
 /*
@@ -220,8 +230,18 @@ void JeuSFML::ecrire_texte()
     text_fps_stringstream << "POS Y : " << jeu.get_perso().get_pos_y();
     text_posy.setString(text_fps_stringstream.str());
 
+    text_fps_stringstream.str("");
+    text_fps_stringstream << "POS X SOURIS : " << sf::Mouse::getPosition(window).x;
+    text_mouseposx.setString(text_fps_stringstream.str());
+
+    text_fps_stringstream.str("");
+    text_fps_stringstream << "POS Y SOURIS : " << sf::Mouse::getPosition(window).y;
+    text_mouseposy.setString(text_fps_stringstream.str());
+
     buffer.draw(text_posx);
     buffer.draw(text_posy);
+    buffer.draw(text_mouseposx);
+    buffer.draw(text_mouseposy);
 }
 
 
@@ -248,7 +268,7 @@ void JeuSFML::dessiner_salle()
                 buffer_salle.draw(casesfml[i][j].get_casesfml(), texture_salle);
             }
         }
-        std::cout << "kek" << std::endl;
+        //std::cout << "kek" << std::endl;
         salle_act_x = jeu.get_zone().get_salle_actuelle_x();
         salle_act_y = jeu.get_zone().get_salle_actuelle_y();
         buffer_salle.display();
@@ -361,8 +381,8 @@ void JeuSFML::recupere_mouvements()
         if(sf::Keyboard::isKeyPressed(sf::Keyboard::S)) {y = y + val_max_deplacement;}
     }
 
-    x = (float) (x*scale_salle*temps_frame.asSeconds()) /(val_max_deplacement) *10;
-    y = (float) (y*scale_salle*temps_frame.asSeconds()) /(val_max_deplacement) *10;
+    x = (float) (x*scale_salle*temps_frame.asSeconds()) /(val_max_deplacement/10);
+    y = (float) (y*scale_salle*temps_frame.asSeconds()) /(val_max_deplacement/10);
     //std::cout << x << " " << y << std::endl;
     jeu.deplacer_perso(x, y);
 

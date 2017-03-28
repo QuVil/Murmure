@@ -34,6 +34,7 @@ private:
     sf::Font police_test;
     sf::Text text_fps;
     sf::Text text_posx, text_posy;
+    sf::Text text_mouseposx,text_mouseposy;
     std::stringstream text_fps_stringstream;
     int fps_actuel;
 

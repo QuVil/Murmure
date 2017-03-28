@@ -23,7 +23,6 @@ public:
     Projectile();
 
     Projectile(int id, int deg);
-
 };
 
 #endif // PROJECTILE_H_INCLUDED
