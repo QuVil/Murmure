@@ -284,7 +284,7 @@ void Fichier::charger(Zone & z)
             z.set_salle(i, j, tampon - '0');;
             //cout << (int) tampon << endl;
         }
-        // voir la fonction charger(Salle)
+        // voir l/a fonction charger(Salle)
         tampon=fichier.get();
     }
 
