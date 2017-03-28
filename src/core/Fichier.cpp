@@ -124,7 +124,6 @@ void Fichier::charger(Salle& s, const int& id, const int& conf)
     //Cree un chemin relatif qui pointe sur la configuration en fonction
     //de la valeur config de la salle (par defaut 1)
     std::stringstream ss;
-    std::cout<<chemin << "Salle/" << conf << "_" << id << ".cfg"<<std::endl;
     ss << chemin << "Salle/" << conf << "_" << id << ".cfg";
     std::string path = ss.str();
 
