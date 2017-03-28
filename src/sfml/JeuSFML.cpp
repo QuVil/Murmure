@@ -22,10 +22,11 @@ JeuSFML::JeuSFML()
     window.create(sf::VideoMode(desktop.width, desktop.height, desktop.bitsPerPixel), "Murmure",sf::Style::Fullscreen,settings);
     //window.create(sf::VideoMode(desktop.width, desktop.height, desktop.bitsPerPixel), "Murmure",sf::Style::Close);
     //FPS = 100;
-
+    //window.setMouseCursorVisible(false);
+    view = window.getView();
     //temps_frame = sf::seconds((float) 1/FPS); // en seconde
-    //window.setVerticalSyncEnabled(true);
-    window.setFramerateLimit(50);
+    window.setVerticalSyncEnabled(true);
+    //window.setFramerateLimit(50);
 
     //window.setMouseCursorVisible(false);
     /////////////////////////////////////////////////////////////////////////
@@ -63,6 +64,7 @@ void JeuSFML::init()
     textures.charger_textures_caseSFML();
     textures.charger_textures_carteAffSFML();
     textures.charger_texture_perso();
+    //textures.charger_texture_curseur();
     init_caseSFML();
     init_persoSFML();
     init_texte();
@@ -107,6 +109,11 @@ void JeuSFML::init_texte()
     text_posy.setFillColor(sf::Color::White);
 }
 
+/*
+void JeuSFML::init_curseur()
+{
+    curseur.setTexture(textures.retourne_texture_curseur());
+}*/
 
 void JeuSFML::init_persoSFML()
 {
@@ -159,9 +166,9 @@ void JeuSFML::SFML_boucle()
 
         //
         afficher(mode);
-        buffer.display();
 
-        //buffer.display();
+        window.setView(view);
+        buffer.display();
         sprite_buffer.setTexture(buffer.getTexture());
         window.draw(sprite_buffer);
         //sf::Sprite sprite(buffer.getTexture());
@@ -184,6 +191,7 @@ void JeuSFML::afficher(const int& mode)
         recupere_collisions();
         dessiner_salle();
         dessiner_perso();
+        //dessiner_curseur();
         ecrire_texte();
         break;
     case 2:
@@ -281,6 +289,14 @@ void JeuSFML::dessiner_perso()
     buffer.draw(persosfml.get_persosfml());
 }
 
+/*
+void JeuSFML::dessiner_curseur()
+{
+    std::cout << "loo" << std::endl;
+    curseur.setPosition(static_cast<sf::Vector2f>(sf::Mouse::getPosition(window)));
+    buffer.draw(curseur);
+}*/
+
 void JeuSFML::recupere_collisions()
 {
     sf::FloatRect hitbox_perso = persosfml.get_persosfml().getGlobalBounds();
@@ -345,8 +361,8 @@ void JeuSFML::recupere_mouvements()
         if(sf::Keyboard::isKeyPressed(sf::Keyboard::S)) {y = y + val_max_deplacement;}
     }
 
-    x = (float) (x*scale_salle*temps_frame.asSeconds()) /val_max_deplacement;
-    y = (float) (y*scale_salle*temps_frame.asSeconds()) /val_max_deplacement;
+    x = (float) (x*scale_salle*temps_frame.asSeconds()) /(val_max_deplacement) *10;
+    y = (float) (y*scale_salle*temps_frame.asSeconds()) /(val_max_deplacement) *10;
     //std::cout << x << " " << y << std::endl;
     jeu.deplacer_perso(x, y);
 

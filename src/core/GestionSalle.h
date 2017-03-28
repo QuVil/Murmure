@@ -1,12 +1,17 @@
 #ifndef GESTIONSALLE_H_INCLUDED
 #define GESTIONSALLE_H_INCLUDED
 
+#include "Ennemi.h"
+#include "Projectile.h"
+
+#include <list>
+
 class GestionSalle
 {
-public:
-
 private:
-
+    std::list <Ennemi> ennemis;
+    std::list <Projectile> projectiles;
+public:
 
 };
 

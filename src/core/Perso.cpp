@@ -177,10 +177,22 @@ void Perso::set_taille(const float& t)
     taille = t;
 }
 
+void Perso::set_id_arme1(const int& i)
+{
+    id_arme1 = i;
+}
+
+void Perso::set_nv_arme1(const int& i)
+{
+    nv_arme1 = i;
+}
+
 void Perso::charger_perso(const std::string& n)
 {
     Fichier fichier;
     fichier.charger(*this, n);
+
+    arme1.charger(id_arme1, nv_arme1);
 }
 
 void Perso::deplacer_txt(char direction)

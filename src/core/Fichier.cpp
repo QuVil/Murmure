@@ -290,6 +290,65 @@ void Fichier::charger(Zone & z)
     fichier.close();
 }*/
 
+void Fichier::charger(Arme& a, const int& id_arme, const int& nv_arme)
+{
+    std::stringstream ss;
+    ss << chemin << "Arme/cfg/" << id_arme << "_" << nv_arme << ".cfg";
+    std::string path = ss.str();
+
+    std::ifstream fichier((path).c_str(), std::ios::in);
+    assert(fichier);
+
+    std::stringstream buffer;
+    buffer << fichier.rdbuf();
+
+    //std::cout << buffer.str() << std::endl;
+
+    int valeur_int;
+    std::istringstream is_file(buffer.str());
+    std::string ligne;
+    std::string variable;
+    std::string valeur;
+    while( std::getline(is_file, ligne) )
+    {
+        std::istringstream is_line(ligne);
+        if( std::getline(is_line, variable, '=') )
+        {
+            assert(std::getline(is_line, valeur));
+            if(variable.compare("id_arme") == 0)
+            {
+                valeur_int = atoi(valeur.c_str());
+                a.set_id_arme(valeur_int);
+            }
+            else if(variable.compare("nv_arme") == 0)
+            {
+                valeur_int = atoi(valeur.c_str());
+                a.set_nv_arme(valeur_int);
+            }
+            else if(variable.compare("id_projectiles") == 0)
+            {
+                valeur_int = atoi(valeur.c_str());
+                a.set_id_projectiles(valeur_int);
+            }
+            else if(variable.compare("degats_projectiles") == 0)
+            {
+                valeur_int = atoi(valeur.c_str());
+                a.set_degats_projectiles(valeur_int);
+            }
+            else if(variable.compare("munitions_max") == 0)
+            {
+                valeur_int = atoi(valeur.c_str());
+                a.set_munitions_max(valeur_int);
+            }
+            else
+            {
+              std::cout << variable << " : Mauvaise Valeur (Perso)" << std::endl;
+              exit(0);
+            }
+        }
+    }
+}
+
 void Fichier::charger(Perso & p,const std::string &n)
 {
     std::stringstream ss;
@@ -335,9 +394,19 @@ void Fichier::charger(Perso & p,const std::string &n)
                 valeur_float = atof(valeur.c_str());
                 p.set_taille(valeur_float);
             }
+            else if(variable.compare("id_arme1") == 0)
+            {
+              valeur_int = atoi(valeur.c_str());
+              p.set_id_arme1(valeur_int);
+            }
+            else if(variable.compare("nv_arme1") == 0)
+            {
+              valeur_int = atoi(valeur.c_str());
+              p.set_nv_arme1(valeur_int);
+            }
             else
             {
-              std::cout << "Mauvaise Valeur" << std::endl;
+              std::cout << variable << " : Mauvaise Valeur (Arme)" << std::endl;
               exit(0);
             }
         }

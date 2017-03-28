@@ -24,6 +24,9 @@ private:
     // parametres de l'ecran
     sf::VideoMode desktop;
 
+    sf::Sprite curseur;
+    sf::View view;
+
     sf::Clock clock;
 
     sf::Time temps_frame;
@@ -39,10 +42,7 @@ private:
     int salle_act_x, salle_act_y;
 
     /// CASESALLE
-    //echelle a laquelle on va charger les textures (en fonction de la taille de l'ecran)
-    //int scale_salle_largeur, scale_salle_hauteur;
     int scale_salle;
-    // positions initiales des cases de la salle pour centrer au mieux la salle sur l'ecran
     int posx0salle,posy0salle;
     CaseSFML casesfml[9][17];
 
@@ -60,11 +60,13 @@ private:
 
     void afficher(const int &mode);
 
+    void init_curseur();
     void init_persoSFML();
     void init_caseSFML();
     void init_carteAffSFML();
     void init_texte();
 
+    void dessiner_curseur();
     void dessiner_salle();
     void dessiner_carte();
     void dessiner_perso();
