@@ -5,12 +5,14 @@
 #include "Salle.h"
 #include "Perso.h"
 #include "VecteurM.h"
+#include "GestionSalle.h"
 
 class Jeu
 {
 private:
     Zone zone;
     Perso perso;
+    GestionSalle salle_actuelle;
 
 public:
     Jeu();
@@ -34,6 +36,8 @@ public:
     void deplacer_perso_txt(char direction);
 
     void placer_perso_txt(int x, int y);
+
+    void ajouter_projectile_perso(const int &arme);
 };
 
 #endif // JEU_H_INCLUDED

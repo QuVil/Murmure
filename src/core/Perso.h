@@ -5,6 +5,8 @@
 #include "VecteurM.h"
 #include "Arme.h"
 #include "Coord2D.h"
+#include "Objet.h"
+#include "Projectile.h"
 
 #include <list>
 
@@ -34,7 +36,7 @@ private:
     int pos_case_x;
     int pos_case_y;
 
-    std::list <*Objet> objets_perso;
+    std::list <Objet *> objets_perso;
 
 public:
 
@@ -89,6 +91,8 @@ public:
     void set_nv_arme1(const int &i);
 
     void charger_perso(const std::string &n);
+
+    Projectile* tirer_1();
 
     //_____________________MODE TXT__________________________
     int get_pos_case_x() const;

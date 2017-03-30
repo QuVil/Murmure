@@ -57,3 +57,13 @@ void Jeu::placer_perso_txt(int x, int y)
     perso.placer_txt(x, y);
 }
 
+void Jeu::ajouter_projectile_perso(const int& arme)
+{
+    // arme = 1 -> arme1 du perso
+    switch(arme)
+    {
+    case 1:
+        salle_actuelle.ajouter_projectile(perso.tirer_1());
+        break;
+    }
+}

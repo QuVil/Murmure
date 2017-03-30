@@ -222,3 +222,9 @@ void Perso::placer_txt(int x, int y)
     pos_case_x = x;
     pos_case_y = y;
 }
+
+Projectile* Perso::tirer_1()
+{
+    return arme1.tirer(orientation, position);
+}
+

@@ -2,6 +2,8 @@
 #define ARME_H_INCLUDED
 
 #include "Projectile.h"
+#include "VecteurM.h"
+#include "Coord2D.h"
 
 class Arme
 {
@@ -10,6 +12,9 @@ private:
     int nv_arme;
     int id_projectiles;
     int degats_projectiles;
+    int type;
+    float vitesse;
+    float taille_projectile;
 
     int munitions_max;
     int munitions_restantes;
@@ -29,7 +34,11 @@ public:
 
     void set_munitions_max(const int &i);
 
-    void tirer(float pos_x, float pos_y);
+    void set_type(const int &i);
+
+    void set_vitesse(const float &v);
+
+    Projectile* tirer(const VecteurM &orientation, const Coord2D &position);
 
 };
 

@@ -424,4 +424,9 @@ void JeuSFML::recupere_mouvements()
     if(sf::Keyboard::isKeyPressed(sf::Keyboard::Right)) {jeu.zone_changer_salle('b');}
     //std::cout << "axe x : " << x << " axe y : " << y << std::endl;
     //std::cout << jeu.get_zone().get_salle_actuelle_x() << " " << jeu.get_zone().get_salle_actuelle_y() << std::endl;
+
+    if (sf::Mouse::isButtonPressed(sf::Mouse::Left))
+    {
+        jeu.ajouter_projectile_perso(1);
+    }
 }

@@ -10,13 +10,15 @@ class GestionSalle
 {
 private:
     std::list <Ennemi> ennemis;
-    std::list <Projectile> projectiles;
+    std::list <Projectile *> projectiles;
 public:
+    GestionSalle();
 
+    ~GestionSalle();
 
-public:
+    void ajouter_projectile(Projectile * p);
 
-
+    void mise_a_jour_projectiles(const float &vitesse_frame);
 };
 
 #endif // GESTIONSALLE_H_INCLUDED
