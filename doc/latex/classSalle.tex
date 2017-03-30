@@ -41,7 +41,11 @@ int \hyperlink{classSalle_a938849a06f5906cc6b3a66e979f02a9a}{get\+\_\+nb\+\_\+ca
 int \hyperlink{classSalle_a80ca41c533d0ec567b1d4e78779225ba}{get\+\_\+nb\+\_\+cases\+\_\+hauteur} ()
 \begin{DoxyCompactList}\small\item\em Accesseur du nb de cases en hauteur. \end{DoxyCompactList}\item 
 std\+::string \hyperlink{classSalle_ac8e706275a4d3545eb33a6f446a554a1}{get\+\_\+config\+\_\+string} () const 
-\end{DoxyCompactItemize}
+\item 
+void \hyperlink{classSalle_a6eaf8452709243464f7919b53bccc0b3}{salle\+\_\+depuis\+\_\+modele} (std\+::string nom, bool p\+\_\+h, bool p\+\_\+b, bool p\+\_\+g, bool p\+\_\+d, int conf)
+\begin{DoxyCompactList}\small\item\em Genere une \hyperlink{classSalle}{Salle} proceduralement. Permet, en une seule ligne, de generer la \hyperlink{classSalle}{Salle} selon un \hyperlink{classModeleSalle}{Modele\+Salle} determine. prend le \hyperlink{classModeleSalle}{Modele\+Salle} \textquotesingle{}nom\textquotesingle{}, le charge, genere la \hyperlink{classSalleGen}{Salle\+Gen} puis la transforme en \hyperlink{classSalle}{Salle}. \end{DoxyCompactList}\item 
+void \hyperlink{classSalle_aee514de189a50abde0370f8a7848fb4e}{salle\+\_\+depuis\+\_\+modele\+\_\+aleatoire} (bool p\+\_\+h, bool p\+\_\+b, bool p\+\_\+g, bool p\+\_\+d, int conf, int diff=0)
+\begin{DoxyCompactList}\small\item\em Genere une \hyperlink{classSalle}{Salle} proceduralement selon un \hyperlink{classModeleSalle}{Modele\+Salle} pseudo-\/aleatoire. Permet, en une seule ligne, de generer la \hyperlink{classSalle}{Salle} selon un \hyperlink{classModeleSalle}{Modele\+Salle} determine. prend le \hyperlink{classModeleSalle}{Modele\+Salle} \textquotesingle{}nom\textquotesingle{}, le charge, genere la \hyperlink{classSalleGen}{Salle\+Gen} puis la transforme en \hyperlink{classSalle}{Salle}. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
@@ -206,6 +210,48 @@ Surcharge d\textquotesingle{}affectation de \hyperlink{classSalle}{Salle}. Surch
 
 Procédure de remplissage de \hyperlink{classSalle}{Salle}. Techniquement, \hyperlink{classSalle_ae6fd7211225455d887859f983e3bddce}{remplir()} est un mutateur de {\itshape config} avec paramètre fixé. 
 
+\index{Salle@{Salle}!salle\+\_\+depuis\+\_\+modele@{salle\+\_\+depuis\+\_\+modele}}
+\index{salle\+\_\+depuis\+\_\+modele@{salle\+\_\+depuis\+\_\+modele}!Salle@{Salle}}
+\subsubsection[{\texorpdfstring{salle\+\_\+depuis\+\_\+modele(std\+::string nom, bool p\+\_\+h, bool p\+\_\+b, bool p\+\_\+g, bool p\+\_\+d, int conf)}{salle_depuis_modele(std::string nom, bool p_h, bool p_b, bool p_g, bool p_d, int conf)}}]{\setlength{\rightskip}{0pt plus 5cm}void Salle\+::salle\+\_\+depuis\+\_\+modele (
+\begin{DoxyParamCaption}
+\item[{std\+::string}]{nom, }
+\item[{bool}]{p\+\_\+h, }
+\item[{bool}]{p\+\_\+b, }
+\item[{bool}]{p\+\_\+g, }
+\item[{bool}]{p\+\_\+d, }
+\item[{int}]{conf}
+\end{DoxyParamCaption}
+)}\hypertarget{classSalle_a6eaf8452709243464f7919b53bccc0b3}{}\label{classSalle_a6eaf8452709243464f7919b53bccc0b3}
+
+
+Genere une \hyperlink{classSalle}{Salle} proceduralement. Permet, en une seule ligne, de generer la \hyperlink{classSalle}{Salle} selon un \hyperlink{classModeleSalle}{Modele\+Salle} determine. prend le \hyperlink{classModeleSalle}{Modele\+Salle} \textquotesingle{}nom\textquotesingle{}, le charge, genere la \hyperlink{classSalleGen}{Salle\+Gen} puis la transforme en \hyperlink{classSalle}{Salle}. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em nom} & \+: le nom du \hyperlink{classModeleSalle}{Modele\+Salle} à utiliser. \\
+\hline
+\end{DoxyParams}
+\index{Salle@{Salle}!salle\+\_\+depuis\+\_\+modele\+\_\+aleatoire@{salle\+\_\+depuis\+\_\+modele\+\_\+aleatoire}}
+\index{salle\+\_\+depuis\+\_\+modele\+\_\+aleatoire@{salle\+\_\+depuis\+\_\+modele\+\_\+aleatoire}!Salle@{Salle}}
+\subsubsection[{\texorpdfstring{salle\+\_\+depuis\+\_\+modele\+\_\+aleatoire(bool p\+\_\+h, bool p\+\_\+b, bool p\+\_\+g, bool p\+\_\+d, int conf, int diff=0)}{salle_depuis_modele_aleatoire(bool p_h, bool p_b, bool p_g, bool p_d, int conf, int diff=0)}}]{\setlength{\rightskip}{0pt plus 5cm}void Salle\+::salle\+\_\+depuis\+\_\+modele\+\_\+aleatoire (
+\begin{DoxyParamCaption}
+\item[{bool}]{p\+\_\+h, }
+\item[{bool}]{p\+\_\+b, }
+\item[{bool}]{p\+\_\+g, }
+\item[{bool}]{p\+\_\+d, }
+\item[{int}]{conf, }
+\item[{int}]{diff = {\ttfamily 0}}
+\end{DoxyParamCaption}
+)}\hypertarget{classSalle_aee514de189a50abde0370f8a7848fb4e}{}\label{classSalle_aee514de189a50abde0370f8a7848fb4e}
+
+
+Genere une \hyperlink{classSalle}{Salle} proceduralement selon un \hyperlink{classModeleSalle}{Modele\+Salle} pseudo-\/aleatoire. Permet, en une seule ligne, de generer la \hyperlink{classSalle}{Salle} selon un \hyperlink{classModeleSalle}{Modele\+Salle} determine. prend le \hyperlink{classModeleSalle}{Modele\+Salle} \textquotesingle{}nom\textquotesingle{}, le charge, genere la \hyperlink{classSalleGen}{Salle\+Gen} puis la transforme en \hyperlink{classSalle}{Salle}. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em diff} & \+: la difficulte approximatie voulue. \\
+\hline
+\end{DoxyParams}
 \index{Salle@{Salle}!set\+\_\+case@{set\+\_\+case}}
 \index{set\+\_\+case@{set\+\_\+case}!Salle@{Salle}}
 \subsubsection[{\texorpdfstring{set\+\_\+case(int i, int j, Case\+Salle c)}{set_case(int i, int j, CaseSalle c)}}]{\setlength{\rightskip}{0pt plus 5cm}void Salle\+::set\+\_\+case (

@@ -13,13 +13,19 @@ void \hyperlink{classFichier_a8e2a8489a8ffea882d4e0ccbb63b6db5}{creation\+\_\+in
 \item 
 void \hyperlink{classFichier_a066bf6c08b447e930afdd6f1bd5b36a6}{charger} (\hyperlink{classSalle}{Salle} \&s)
 \item 
+void \hyperlink{classFichier_a0c22388e17ed0a2915ab81e390612dbc}{charger} (\hyperlink{classSalle}{Salle} \&s, const int \&id, const int \&conf)
+\item 
 void \hyperlink{classFichier_af8ddba9c428687f989b782ea64d9eeab}{charger} (\hyperlink{classZoneGen}{Zone\+Gen} \&z)
 \item 
 void \hyperlink{classFichier_a4b61b1529d46332087fd494723cebed9}{charger} (\hyperlink{classZone}{Zone} \&z)
 \item 
-void \hyperlink{classFichier_a36f5aadbb4b6a687f4733a9a57d89b61}{charger} (\hyperlink{classPerso}{Perso} \&p)
+void \hyperlink{classFichier_a142312981d9a5934e431033450aed3f4}{charger} (\hyperlink{classArme}{Arme} \&a, const int \&id\+\_\+arme, const int \&nv\+\_\+arme)
+\item 
+void \hyperlink{classFichier_a24944040e870bdd87d5cd2a70dbf44e4}{charger} (\hyperlink{classPerso}{Perso} \&p, const std\+::string \&n)
 \item 
 void \hyperlink{classFichier_aed5c72a3a8289e51f6724dcd683fbcbd}{charger} (\hyperlink{classModele}{Modele} \&m, std\+::string nom)
+\item 
+void \hyperlink{classFichier_a5dd17206285977ead14f689d085af32c}{charger} (\hyperlink{classModeleSalle}{Modele\+Salle} \&m, std\+::string nom)
 \end{DoxyCompactItemize}
 
 
@@ -43,6 +49,15 @@ void \hyperlink{classFichier_aed5c72a3a8289e51f6724dcd683fbcbd}{charger} (\hyper
 )}\hypertarget{classFichier_a066bf6c08b447e930afdd6f1bd5b36a6}{}\label{classFichier_a066bf6c08b447e930afdd6f1bd5b36a6}
 \index{Fichier@{Fichier}!charger@{charger}}
 \index{charger@{charger}!Fichier@{Fichier}}
+\subsubsection[{\texorpdfstring{charger(\+Salle \&s, const int \&id, const int \&conf)}{charger(Salle &s, const int &id, const int &conf)}}]{\setlength{\rightskip}{0pt plus 5cm}void Fichier\+::charger (
+\begin{DoxyParamCaption}
+\item[{{\bf Salle} \&}]{s, }
+\item[{const int \&}]{id, }
+\item[{const int \&}]{conf}
+\end{DoxyParamCaption}
+)}\hypertarget{classFichier_a0c22388e17ed0a2915ab81e390612dbc}{}\label{classFichier_a0c22388e17ed0a2915ab81e390612dbc}
+\index{Fichier@{Fichier}!charger@{charger}}
+\index{charger@{charger}!Fichier@{Fichier}}
 \subsubsection[{\texorpdfstring{charger(\+Zone\+Gen \&z)}{charger(ZoneGen &z)}}]{\setlength{\rightskip}{0pt plus 5cm}void Fichier\+::charger (
 \begin{DoxyParamCaption}
 \item[{{\bf Zone\+Gen} \&}]{z}
@@ -57,11 +72,29 @@ void \hyperlink{classFichier_aed5c72a3a8289e51f6724dcd683fbcbd}{charger} (\hyper
 )}\hypertarget{classFichier_a4b61b1529d46332087fd494723cebed9}{}\label{classFichier_a4b61b1529d46332087fd494723cebed9}
 \index{Fichier@{Fichier}!charger@{charger}}
 \index{charger@{charger}!Fichier@{Fichier}}
-\subsubsection[{\texorpdfstring{charger(\+Perso \&p)}{charger(Perso &p)}}]{\setlength{\rightskip}{0pt plus 5cm}void Fichier\+::charger (
+\subsubsection[{\texorpdfstring{charger(\+Arme \&a, const int \&id\+\_\+arme, const int \&nv\+\_\+arme)}{charger(Arme &a, const int &id_arme, const int &nv_arme)}}]{\setlength{\rightskip}{0pt plus 5cm}void Fichier\+::charger (
 \begin{DoxyParamCaption}
-\item[{{\bf Perso} \&}]{p}
+\item[{{\bf Arme} \&}]{a, }
+\item[{const int \&}]{id\+\_\+arme, }
+\item[{const int \&}]{nv\+\_\+arme}
 \end{DoxyParamCaption}
-)}\hypertarget{classFichier_a36f5aadbb4b6a687f4733a9a57d89b61}{}\label{classFichier_a36f5aadbb4b6a687f4733a9a57d89b61}
+)}\hypertarget{classFichier_a142312981d9a5934e431033450aed3f4}{}\label{classFichier_a142312981d9a5934e431033450aed3f4}
+void \hyperlink{classFichier_a4b61b1529d46332087fd494723cebed9}{Fichier\+::charger(\+Zone \& z)} \{ Cree un chemin relatif qui pointe sur la configuration en fonction de la valeur config de la salle (par defaut 1) stringstream ss; ss $<$$<$ chemin $<$$<$ \char`\"{}\+Zone/\char`\"{} $<$$<$ z.\+get\+\_\+patterne() $<$$<$ \char`\"{}.\+cfg\char`\"{}; string path = ss.\+str();
+
+ifstream fichier((path).c\+\_\+str(), ios\+::in); assert(fichier);
+
+char tampon;
+
+for(int i=0;i$<$11;i++) \{ compte les retours à la ligne donc $<$= 21 pour avoir le bon compte for(int j=0;j$<$11;j++) \{ tampon=fichier.\+get(); cout $<$$<$ tampon; z.\+set\+\_\+salle(i, j, tampon -\/ \textquotesingle{}0\textquotesingle{});; cout $<$$<$ (int) tampon $<$$<$ endl; \} voir l/a fonction charger(\+Salle) tampon=fichier.\+get(); \}
+
+fichier.\+close(); \} \index{Fichier@{Fichier}!charger@{charger}}
+\index{charger@{charger}!Fichier@{Fichier}}
+\subsubsection[{\texorpdfstring{charger(\+Perso \&p, const std\+::string \&n)}{charger(Perso &p, const std::string &n)}}]{\setlength{\rightskip}{0pt plus 5cm}void Fichier\+::charger (
+\begin{DoxyParamCaption}
+\item[{{\bf Perso} \&}]{p, }
+\item[{const std\+::string \&}]{n}
+\end{DoxyParamCaption}
+)}\hypertarget{classFichier_a24944040e870bdd87d5cd2a70dbf44e4}{}\label{classFichier_a24944040e870bdd87d5cd2a70dbf44e4}
 \index{Fichier@{Fichier}!charger@{charger}}
 \index{charger@{charger}!Fichier@{Fichier}}
 \subsubsection[{\texorpdfstring{charger(\+Modele \&m, std\+::string nom)}{charger(Modele &m, std::string nom)}}]{\setlength{\rightskip}{0pt plus 5cm}void Fichier\+::charger (
@@ -70,6 +103,14 @@ void \hyperlink{classFichier_aed5c72a3a8289e51f6724dcd683fbcbd}{charger} (\hyper
 \item[{std\+::string}]{nom}
 \end{DoxyParamCaption}
 )}\hypertarget{classFichier_aed5c72a3a8289e51f6724dcd683fbcbd}{}\label{classFichier_aed5c72a3a8289e51f6724dcd683fbcbd}
+\index{Fichier@{Fichier}!charger@{charger}}
+\index{charger@{charger}!Fichier@{Fichier}}
+\subsubsection[{\texorpdfstring{charger(\+Modele\+Salle \&m, std\+::string nom)}{charger(ModeleSalle &m, std::string nom)}}]{\setlength{\rightskip}{0pt plus 5cm}void Fichier\+::charger (
+\begin{DoxyParamCaption}
+\item[{{\bf Modele\+Salle} \&}]{m, }
+\item[{std\+::string}]{nom}
+\end{DoxyParamCaption}
+)}\hypertarget{classFichier_a5dd17206285977ead14f689d085af32c}{}\label{classFichier_a5dd17206285977ead14f689d085af32c}
 \index{Fichier@{Fichier}!creation\+\_\+index@{creation\+\_\+index}}
 \index{creation\+\_\+index@{creation\+\_\+index}!Fichier@{Fichier}}
 \subsubsection[{\texorpdfstring{creation\+\_\+index()}{creation_index()}}]{\setlength{\rightskip}{0pt plus 5cm}void Fichier\+::creation\+\_\+index (

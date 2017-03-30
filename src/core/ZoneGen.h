@@ -58,13 +58,14 @@ class ZoneGen
         void valider_recursif(int i, int j);
 
         /**
-        * \brief Calcule la distance entre deux points.
+        * \brief Calcule la distance entre deux salles.
         * Prend les coordonnees de deux points et renvoie la distance (Manhattan)
         * entre les points.
         * \param[in] x_dep : coordonnee x du point de depart de la distance.
         * \param[in] y_dep : coordonnee y du point de depart de la distance.
         * \param[in] x_arr : coordonnee x du point d'arrivee de la distance.
         * \param[in] y_arr : coordonnee y du point d'arrivee de la distance.
+        * \return : la distance Manhattan séparant les deux salles.
         */
         int calculer_distance(int x_dep, int y_dep, int x_arr, int y_arr) const;
 

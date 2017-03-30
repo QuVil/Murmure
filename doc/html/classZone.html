@@ -139,9 +139,19 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a411c8abc6ba0b85239bea9aa2daac45c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classZone.html#a411c8abc6ba0b85239bea9aa2daac45c">zone_depuis_modele</a> (std::string nom)</td></tr>
 <tr class="memdesc:a411c8abc6ba0b85239bea9aa2daac45c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Remplit les <em>config</em> de la <em>carte</em>. Crée un <a class="el" href="classModele.html" title="class gerant une ZoneGen pour generer une Zone facilement. Grace à Modele, il est possible de créer e...">Modele</a> à partir de <em>nom</em> et génère la <a class="el" href="classZone.html" title="Gère l&#39;instance où crapahute Perso. Une seule Zone sera en général générée à chaque instant...">Zone</a> procéduralement à partir de ce <a class="el" href="classModele.html" title="class gerant une ZoneGen pour generer une Zone facilement. Grace à Modele, il est possible de créer e...">Modele</a>.  <a href="#a411c8abc6ba0b85239bea9aa2daac45c">More...</a><br /></td></tr>
 <tr class="separator:a411c8abc6ba0b85239bea9aa2daac45c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae84c7f436dbd31453bb8663eeef19a77"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classZone.html#ae84c7f436dbd31453bb8663eeef19a77">zone_depuis_modele_aleatoire</a> ()</td></tr>
-<tr class="memdesc:ae84c7f436dbd31453bb8663eeef19a77"><td class="mdescLeft">&#160;</td><td class="mdescRight">Appelle zone_depuis_modele avec un nom aléatoire. Crée un <a class="el" href="classModele.html" title="class gerant une ZoneGen pour generer une Zone facilement. Grace à Modele, il est possible de créer e...">Modele</a> aléatoirement et génère la <a class="el" href="classZone.html" title="Gère l&#39;instance où crapahute Perso. Une seule Zone sera en général générée à chaque instant...">Zone</a> procéduralement à partir de ce <a class="el" href="classModele.html" title="class gerant une ZoneGen pour generer une Zone facilement. Grace à Modele, il est possible de créer e...">Modele</a>.  <a href="#ae84c7f436dbd31453bb8663eeef19a77">More...</a><br /></td></tr>
-<tr class="separator:ae84c7f436dbd31453bb8663eeef19a77"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a64b87f18b343a38b40a2fbf9220b3994"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classZone.html#a64b87f18b343a38b40a2fbf9220b3994">zone_depuis_modele_aleatoire</a> (int taille)</td></tr>
+<tr class="memdesc:a64b87f18b343a38b40a2fbf9220b3994"><td class="mdescLeft">&#160;</td><td class="mdescRight">Appelle zone_depuis_modele avec un nom aléatoire. Crée un <a class="el" href="classModele.html" title="class gerant une ZoneGen pour generer une Zone facilement. Grace à Modele, il est possible de créer e...">Modele</a> aléatoirement et génère la <a class="el" href="classZone.html" title="Gère l&#39;instance où crapahute Perso. Une seule Zone sera en général générée à chaque instant...">Zone</a> procéduralement à partir de ce <a class="el" href="classModele.html" title="class gerant une ZoneGen pour generer une Zone facilement. Grace à Modele, il est possible de créer e...">Modele</a>.  <a href="#a64b87f18b343a38b40a2fbf9220b3994">More...</a><br /></td></tr>
+<tr class="separator:a64b87f18b343a38b40a2fbf9220b3994"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2a149ff3989dbe48c1dd1822f158da8e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classZone.html#a2a149ff3989dbe48c1dd1822f158da8e">generer_salle</a> (int i, int j)</td></tr>
+<tr class="memdesc:a2a149ff3989dbe48c1dd1822f158da8e"><td class="mdescLeft">&#160;</td><td class="mdescRight">genere la <a class="el" href="classSalle.html" title="class des salles de jeu où évolue le joueur. Salle dépend de CaseSalle et se compose d&#39;une grille de ...">Salle</a> i,j de la <a class="el" href="classZone.html" title="Gère l&#39;instance où crapahute Perso. Une seule Zone sera en général générée à chaque instant...">Zone</a>. fait appel à <a class="el" href="classSalle.html#a6eaf8452709243464f7919b53bccc0b3" title="Genere une Salle proceduralement. Permet, en une seule ligne, de generer la Salle selon un ModeleSall...">Salle::salle_depuis_modele()</a> ou à Fichier::charger(Salle s, const int id) aléatoirement. Tente aussi de respecter à peu près la difficulté moyenne désirée.  <a href="#a2a149ff3989dbe48c1dd1822f158da8e">More...</a><br /></td></tr>
+<tr class="separator:a2a149ff3989dbe48c1dd1822f158da8e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a91c45becbd6371aecf0b26ee68bb06f5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classZone.html#a91c45becbd6371aecf0b26ee68bb06f5">generer_toutes_les_salles</a> ()</td></tr>
+<tr class="memdesc:a91c45becbd6371aecf0b26ee68bb06f5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Genere toutes les <a class="el" href="classSalle.html" title="class des salles de jeu où évolue le joueur. Salle dépend de CaseSalle et se compose d&#39;une grille de ...">Salle</a> de la <a class="el" href="classZone.html" title="Gère l&#39;instance où crapahute Perso. Une seule Zone sera en général générée à chaque instant...">Zone</a>. appelle simplement generer_salle sur toute la carte.  <a href="#a91c45becbd6371aecf0b26ee68bb06f5">More...</a><br /></td></tr>
+<tr class="separator:a91c45becbd6371aecf0b26ee68bb06f5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a55883c546c6359642a9b50ad4ba48c78"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classZone.html#a55883c546c6359642a9b50ad4ba48c78">generer_et_remplir</a> (int taille)</td></tr>
+<tr class="separator:a55883c546c6359642a9b50ad4ba48c78"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5563c71779d4c897df21da0f5a01df8d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classZone.html#a5563c71779d4c897df21da0f5a01df8d">changer_de_salle</a> (char direction)</td></tr>
+<tr class="separator:a5563c71779d4c897df21da0f5a01df8d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Gère l'instance où crapahute <a class="el" href="classPerso.html">Perso</a>. Une seule <a class="el" href="classZone.html" title="Gère l&#39;instance où crapahute Perso. Une seule Zone sera en général générée à chaque instant...">Zone</a> sera en général générée à chaque instant. Elle contient des informations sur toutes les <a class="el" href="classSalle.html" title="class des salles de jeu où évolue le joueur. Salle dépend de CaseSalle et se compose d&#39;une grille de ...">Salle</a> de l'instance (rangées dans un tableau 11*11) et instancie toutes les <a class="el" href="classSalle.html" title="class des salles de jeu où évolue le joueur. Salle dépend de CaseSalle et se compose d&#39;une grille de ...">Salle</a> où <a class="el" href="classPerso.html">Perso</a> évoluera. </p>
@@ -244,6 +254,90 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Affiche la <a class="el" href="classZone.html" title="Gère l&#39;instance où crapahute Perso. Une seule Zone sera en général générée à chaque instant...">Zone</a> (txt). Affiche la <a class="el" href="classZone.html" title="Gère l&#39;instance où crapahute Perso. Une seule Zone sera en général générée à chaque instant...">Zone</a> dans la console en version txt. </p>
+
+</div>
+</div>
+<a class="anchor" id="a5563c71779d4c897df21da0f5a01df8d"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Zone::changer_de_salle </td>
+          <td>(</td>
+          <td class="paramtype">char&#160;</td>
+          <td class="paramname"><em>direction</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a55883c546c6359642a9b50ad4ba48c78"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Zone::generer_et_remplir </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>taille</em> = <code>0</code></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a2a149ff3989dbe48c1dd1822f158da8e"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Zone::generer_salle </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>i</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>j</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>genere la <a class="el" href="classSalle.html" title="class des salles de jeu où évolue le joueur. Salle dépend de CaseSalle et se compose d&#39;une grille de ...">Salle</a> i,j de la <a class="el" href="classZone.html" title="Gère l&#39;instance où crapahute Perso. Une seule Zone sera en général générée à chaque instant...">Zone</a>. fait appel à <a class="el" href="classSalle.html#a6eaf8452709243464f7919b53bccc0b3" title="Genere une Salle proceduralement. Permet, en une seule ligne, de generer la Salle selon un ModeleSall...">Salle::salle_depuis_modele()</a> ou à Fichier::charger(Salle s, const int id) aléatoirement. Tente aussi de respecter à peu près la difficulté moyenne désirée. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">i</td><td>: coordonnee i de la <a class="el" href="classSalle.html" title="class des salles de jeu où évolue le joueur. Salle dépend de CaseSalle et se compose d&#39;une grille de ...">Salle</a> </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">j</td><td>: coordonnee j de la <a class="el" href="classSalle.html" title="class des salles de jeu où évolue le joueur. Salle dépend de CaseSalle et se compose d&#39;une grille de ...">Salle</a> </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a91c45becbd6371aecf0b26ee68bb06f5"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Zone::generer_toutes_les_salles </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Genere toutes les <a class="el" href="classSalle.html" title="class des salles de jeu où évolue le joueur. Salle dépend de CaseSalle et se compose d&#39;une grille de ...">Salle</a> de la <a class="el" href="classZone.html" title="Gère l&#39;instance où crapahute Perso. Une seule Zone sera en général générée à chaque instant...">Zone</a>. appelle simplement generer_salle sur toute la carte. </p>
 
 </div>
 </div>
@@ -505,20 +599,27 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="ae84c7f436dbd31453bb8663eeef19a77"></a>
+<a class="anchor" id="a64b87f18b343a38b40a2fbf9220b3994"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
           <td class="memname">void Zone::zone_depuis_modele_aleatoire </td>
           <td>(</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>taille</em> = <code>0</code></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 <p>Appelle zone_depuis_modele avec un nom aléatoire. Crée un <a class="el" href="classModele.html" title="class gerant une ZoneGen pour generer une Zone facilement. Grace à Modele, il est possible de créer e...">Modele</a> aléatoirement et génère la <a class="el" href="classZone.html" title="Gère l&#39;instance où crapahute Perso. Une seule Zone sera en général générée à chaque instant...">Zone</a> procéduralement à partir de ce <a class="el" href="classModele.html" title="class gerant une ZoneGen pour generer une Zone facilement. Grace à Modele, il est possible de créer e...">Modele</a>. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">taille</td><td>: la taille générale (0-&gt;4) de la <a class="el" href="classZone.html" title="Gère l&#39;instance où crapahute Perso. Une seule Zone sera en général générée à chaque instant...">Zone</a>. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
