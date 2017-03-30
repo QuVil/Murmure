@@ -6,6 +6,8 @@
 #include "Arme.h"
 #include "Coord2D.h"
 
+#include <list>
+
 class Perso
 {
 private:
@@ -31,6 +33,8 @@ private:
 
     int pos_case_x;
     int pos_case_y;
+
+    std::list <*Objet> objets_perso;
 
 public:
 

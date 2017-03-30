@@ -323,35 +323,40 @@ void SalleGen::placer_ennemi()
         int nb_break = 0;
         while (!ennemi_place)
         {
-            int emplacement_bloc = rand() % 10; //l'ennemi est-il dans un coin ou au milieu ?
-            int i_dep, j_dep;
+            int emplacement_bloc = rand() % 8; //l'ennemi est-il dans un coin ou au milieu ?
+            int i, j;
 
             switch (emplacement_bloc)
             {
             case 0:
                 //coin en haut à gauche.
-                i_dep = rand() % 2 + 1;
-                j_dep = rand() % 2 + 1;
+                i = rand() % 2 + 1;
+                j = rand() % 2 + 1;
                 break;
             case 1:
-                i_dep = rand() % 2 + 1;
-                j_dep = rand() % 2 + 14;
+                //coin en haut à droite.
+                i = rand() % 2 + 1;
+                j = rand() % 2 + 14;
                 break;
             case 2:
-                i_dep = rand() % 2 + 6;
-                j_dep = rand() % 2 + 1;
+                //coin en bas à gauche.
+                i = rand() % 2 + 6;
+                j = rand() % 2 + 1;
                 break;
             case 3:
-                i_dep = rand() % 2 + 6;
-                j_dep = rand() % 2 + 14;;
+                //coin en bas à droite.
+                i = rand() % 2 + 6;
+                j = rand() % 2 + 14;;
             default:
-                i_dep = rand() % 3 + 3;
-                j_dep = rand() % 11 + 3;
+                //au milieu.
+                i = rand() % 3 + 3;
+                j = rand() % 11 + 3;
                 break;
             }
-            if (grille[i_dep][j_dep] == 'n')
+            if (grille[i][j] == 'n' && grille[i-1][j] == 'n' && grille[i+1][j] == 'n'
+                && grille[i][j-1] == 'n' && grille[i][j+1] == 'n')
             {
-                grille[i_dep][j_dep] = 'e';
+                grille[i][j] = 'e';
                 ennemi_place = true;
             }
             else if (nb_break > 10000)
