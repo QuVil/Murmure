@@ -260,7 +260,7 @@ void JeuSFML::dessiner_salle()
                                                                          j);
                 if(casesfml[i][j].get_taille_texture() != (int) texture_salle->getSize().x)
                 {
-                    std::cout << "coucou" << std::endl;
+                    std::cout <<"i :" << i << " j: " << j << " " << casesfml[i][j].get_taille_texture() << std::endl;
                     casesfml[i][j].mettre_a_jour_taille_texture((int) texture_salle->getSize().x);
                 }
                                                                          /*

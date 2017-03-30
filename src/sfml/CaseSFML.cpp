@@ -21,6 +21,8 @@ void CaseSFML::init(int posX, int posY, int largeur, int hauteur)
 {
     // cf ici pour les textures + couleurs des VertexArrays
     // https://maksimdan.gitbooks.io/sfml-and-gamedevelopement/content/vertex_arrays.html
+    taille = 500;
+
     casesfml.resize(4);
     casesfml.setPrimitiveType(sf::Quads);
     casesfml[0].position = sf::Vector2f(posX,posY);
@@ -29,11 +31,9 @@ void CaseSFML::init(int posX, int posY, int largeur, int hauteur)
     casesfml[3].position = sf::Vector2f(posX, posY+hauteur);
 
     casesfml[0].texCoords = sf::Vector2f(0,0);
-    casesfml[1].texCoords = sf::Vector2f(64, 0);
-    casesfml[2].texCoords = sf::Vector2f(64, 64);
-    casesfml[3].texCoords = sf::Vector2f(0, 64);
-
-    taille = 64;
+    casesfml[1].texCoords = sf::Vector2f(taille, 0);
+    casesfml[2].texCoords = sf::Vector2f(taille, taille);
+    casesfml[3].texCoords = sf::Vector2f(0, taille);
 /*
     casesfml[0].color = sf::Color::Blue;
     casesfml[1].color = sf::Color::Blue;
