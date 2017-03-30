@@ -5,6 +5,7 @@
 #include "VecteurM.h"
 #include "Arme.h"
 #include "Coord2D.h"
+#include "Objet.h"
 
 #include <list>
 
@@ -34,7 +35,7 @@ private:
     int pos_case_x;
     int pos_case_y;
 
-    std::list <*Objet> objets_perso;
+    std::list <Objet*> objets_perso;
 
 public:
 

@@ -1,3 +1,12 @@
+/**
+ * \file SalleGen.cpp
+ * \brief Code source du module SalleGen.
+ * \author Quentin.V & Gary.S
+ * \version 0.1
+ * \date 21 mars 2017
+ *
+ */
+
 #include <iostream>
 #include <stdio.h>
 #include <stdlib.h>
@@ -152,7 +161,7 @@ void SalleGen::placer_clef()
     }
 }
 
-void SalleGen::placer_amas(char type, int taille) // type = 2 ou 5, taille entre 0 et 4
+void SalleGen::placer_amas(char type, int taille /* =2 */) // type = 2 ou 5, taille entre 0 et 4
 {
     assert(taille < 5 && taille >= 0);
     //au passage, la taille 4 est une mauvaise idée.

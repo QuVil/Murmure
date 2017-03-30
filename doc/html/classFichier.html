@@ -101,14 +101,20 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a8e2a8489a8ffea882d4e0ccbb63b6db5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a066bf6c08b447e930afdd6f1bd5b36a6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFichier.html#a066bf6c08b447e930afdd6f1bd5b36a6">charger</a> (<a class="el" href="classSalle.html">Salle</a> &amp;s)</td></tr>
 <tr class="separator:a066bf6c08b447e930afdd6f1bd5b36a6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0c22388e17ed0a2915ab81e390612dbc"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFichier.html#a0c22388e17ed0a2915ab81e390612dbc">charger</a> (<a class="el" href="classSalle.html">Salle</a> &amp;s, const int &amp;id, const int &amp;conf)</td></tr>
+<tr class="separator:a0c22388e17ed0a2915ab81e390612dbc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af8ddba9c428687f989b782ea64d9eeab"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFichier.html#af8ddba9c428687f989b782ea64d9eeab">charger</a> (<a class="el" href="classZoneGen.html">ZoneGen</a> &amp;z)</td></tr>
 <tr class="separator:af8ddba9c428687f989b782ea64d9eeab"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4b61b1529d46332087fd494723cebed9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFichier.html#a4b61b1529d46332087fd494723cebed9">charger</a> (<a class="el" href="classZone.html">Zone</a> &amp;z)</td></tr>
 <tr class="separator:a4b61b1529d46332087fd494723cebed9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a36f5aadbb4b6a687f4733a9a57d89b61"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFichier.html#a36f5aadbb4b6a687f4733a9a57d89b61">charger</a> (<a class="el" href="classPerso.html">Perso</a> &amp;p)</td></tr>
-<tr class="separator:a36f5aadbb4b6a687f4733a9a57d89b61"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a142312981d9a5934e431033450aed3f4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFichier.html#a142312981d9a5934e431033450aed3f4">charger</a> (<a class="el" href="classArme.html">Arme</a> &amp;a, const int &amp;id_arme, const int &amp;nv_arme)</td></tr>
+<tr class="separator:a142312981d9a5934e431033450aed3f4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a24944040e870bdd87d5cd2a70dbf44e4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFichier.html#a24944040e870bdd87d5cd2a70dbf44e4">charger</a> (<a class="el" href="classPerso.html">Perso</a> &amp;p, const std::string &amp;n)</td></tr>
+<tr class="separator:a24944040e870bdd87d5cd2a70dbf44e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aed5c72a3a8289e51f6724dcd683fbcbd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFichier.html#aed5c72a3a8289e51f6724dcd683fbcbd">charger</a> (<a class="el" href="classModele.html">Modele</a> &amp;m, std::string nom)</td></tr>
 <tr class="separator:aed5c72a3a8289e51f6724dcd683fbcbd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5dd17206285977ead14f689d085af32c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFichier.html#a5dd17206285977ead14f689d085af32c">charger</a> (<a class="el" href="classModeleSalle.html">ModeleSalle</a> &amp;m, std::string nom)</td></tr>
+<tr class="separator:a5dd17206285977ead14f689d085af32c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="ace018349629e9c136aff5421c1e72c4f"></a>
@@ -137,6 +143,38 @@ Public Member Functions</h2></td></tr>
           <td class="paramtype"><a class="el" href="classSalle.html">Salle</a> &amp;&#160;</td>
           <td class="paramname"><em>s</em></td><td>)</td>
           <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a0c22388e17ed0a2915ab81e390612dbc"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Fichier::charger </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classSalle.html">Salle</a> &amp;&#160;</td>
+          <td class="paramname"><em>s</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int &amp;&#160;</td>
+          <td class="paramname"><em>id</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int &amp;&#160;</td>
+          <td class="paramname"><em>conf</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -175,7 +213,44 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a36f5aadbb4b6a687f4733a9a57d89b61"></a>
+<a class="anchor" id="a142312981d9a5934e431033450aed3f4"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Fichier::charger </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classArme.html">Arme</a> &amp;&#160;</td>
+          <td class="paramname"><em>a</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int &amp;&#160;</td>
+          <td class="paramname"><em>id_arme</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int &amp;&#160;</td>
+          <td class="paramname"><em>nv_arme</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>void <a class="el" href="classFichier.html#a4b61b1529d46332087fd494723cebed9">Fichier::charger(Zone &amp; z)</a> { Cree un chemin relatif qui pointe sur la configuration en fonction de la valeur config de la salle (par defaut 1) stringstream ss; ss &lt;&lt; chemin &lt;&lt; "Zone/" &lt;&lt; z.get_patterne() &lt;&lt; ".cfg"; string path = ss.str();</p>
+<p>ifstream fichier((path).c_str(), ios::in); assert(fichier);</p>
+<p>char tampon;</p>
+<p>for(int i=0;i&lt;11;i++) { compte les retours à la ligne donc &lt;= 21 pour avoir le bon compte for(int j=0;j&lt;11;j++) { tampon=fichier.get(); cout &lt;&lt; tampon; z.set_salle(i, j, tampon - '0');; cout &lt;&lt; (int) tampon &lt;&lt; endl; } voir l/a fonction charger(Salle) tampon=fichier.get(); }</p>
+<p>fichier.close(); } </p>
+
+</div>
+</div>
+<a class="anchor" id="a24944040e870bdd87d5cd2a70dbf44e4"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -183,8 +258,18 @@ Public Member Functions</h2></td></tr>
           <td class="memname">void Fichier::charger </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="classPerso.html">Perso</a> &amp;&#160;</td>
-          <td class="paramname"><em>p</em></td><td>)</td>
+          <td class="paramname"><em>p</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>n</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -199,6 +284,32 @@ Public Member Functions</h2></td></tr>
           <td class="memname">void Fichier::charger </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="classModele.html">Modele</a> &amp;&#160;</td>
+          <td class="paramname"><em>m</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>nom</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a5dd17206285977ead14f689d085af32c"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Fichier::charger </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classModeleSalle.html">ModeleSalle</a> &amp;&#160;</td>
           <td class="paramname"><em>m</em>, </td>
         </tr>
         <tr>

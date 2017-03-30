@@ -40,8 +40,16 @@ void \hyperlink{classZone_a0f61f5c9028db56ef251371818b31b35}{vider\+\_\+salle} (
 \item 
 void \hyperlink{classZone_a411c8abc6ba0b85239bea9aa2daac45c}{zone\+\_\+depuis\+\_\+modele} (std\+::string nom)
 \begin{DoxyCompactList}\small\item\em Remplit les {\itshape config} de la {\itshape carte}. Crée un \hyperlink{classModele}{Modele} à partir de {\itshape nom} et génère la \hyperlink{classZone}{Zone} procéduralement à partir de ce \hyperlink{classModele}{Modele}. \end{DoxyCompactList}\item 
-void \hyperlink{classZone_ae84c7f436dbd31453bb8663eeef19a77}{zone\+\_\+depuis\+\_\+modele\+\_\+aleatoire} ()
-\begin{DoxyCompactList}\small\item\em Appelle zone\+\_\+depuis\+\_\+modele avec un nom aléatoire. Crée un \hyperlink{classModele}{Modele} aléatoirement et génère la \hyperlink{classZone}{Zone} procéduralement à partir de ce \hyperlink{classModele}{Modele}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+void \hyperlink{classZone_a64b87f18b343a38b40a2fbf9220b3994}{zone\+\_\+depuis\+\_\+modele\+\_\+aleatoire} (int taille)
+\begin{DoxyCompactList}\small\item\em Appelle zone\+\_\+depuis\+\_\+modele avec un nom aléatoire. Crée un \hyperlink{classModele}{Modele} aléatoirement et génère la \hyperlink{classZone}{Zone} procéduralement à partir de ce \hyperlink{classModele}{Modele}. \end{DoxyCompactList}\item 
+void \hyperlink{classZone_a2a149ff3989dbe48c1dd1822f158da8e}{generer\+\_\+salle} (int i, int j)
+\begin{DoxyCompactList}\small\item\em genere la \hyperlink{classSalle}{Salle} i,j de la \hyperlink{classZone}{Zone}. fait appel à \hyperlink{classSalle_a6eaf8452709243464f7919b53bccc0b3}{Salle\+::salle\+\_\+depuis\+\_\+modele()} ou à Fichier\+::charger(\+Salle s, const int id) aléatoirement. Tente aussi de respecter à peu près la difficulté moyenne désirée. \end{DoxyCompactList}\item 
+void \hyperlink{classZone_a91c45becbd6371aecf0b26ee68bb06f5}{generer\+\_\+toutes\+\_\+les\+\_\+salles} ()
+\begin{DoxyCompactList}\small\item\em Genere toutes les \hyperlink{classSalle}{Salle} de la \hyperlink{classZone}{Zone}. appelle simplement generer\+\_\+salle sur toute la carte. \end{DoxyCompactList}\item 
+void \hyperlink{classZone_a55883c546c6359642a9b50ad4ba48c78}{generer\+\_\+et\+\_\+remplir} (int taille)
+\item 
+void \hyperlink{classZone_a5563c71779d4c897df21da0f5a01df8d}{changer\+\_\+de\+\_\+salle} (char direction)
+\end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
@@ -110,6 +118,50 @@ Consctructeur depuis un generateur \hyperlink{classZoneGen}{Zone\+Gen}.
 
 
 Affiche la \hyperlink{classZone}{Zone} (txt). Affiche la \hyperlink{classZone}{Zone} dans la console en version txt. 
+
+\index{Zone@{Zone}!changer\+\_\+de\+\_\+salle@{changer\+\_\+de\+\_\+salle}}
+\index{changer\+\_\+de\+\_\+salle@{changer\+\_\+de\+\_\+salle}!Zone@{Zone}}
+\subsubsection[{\texorpdfstring{changer\+\_\+de\+\_\+salle(char direction)}{changer_de_salle(char direction)}}]{\setlength{\rightskip}{0pt plus 5cm}void Zone\+::changer\+\_\+de\+\_\+salle (
+\begin{DoxyParamCaption}
+\item[{char}]{direction}
+\end{DoxyParamCaption}
+)}\hypertarget{classZone_a5563c71779d4c897df21da0f5a01df8d}{}\label{classZone_a5563c71779d4c897df21da0f5a01df8d}
+\index{Zone@{Zone}!generer\+\_\+et\+\_\+remplir@{generer\+\_\+et\+\_\+remplir}}
+\index{generer\+\_\+et\+\_\+remplir@{generer\+\_\+et\+\_\+remplir}!Zone@{Zone}}
+\subsubsection[{\texorpdfstring{generer\+\_\+et\+\_\+remplir(int taille)}{generer_et_remplir(int taille)}}]{\setlength{\rightskip}{0pt plus 5cm}void Zone\+::generer\+\_\+et\+\_\+remplir (
+\begin{DoxyParamCaption}
+\item[{int}]{taille = {\ttfamily 0}}
+\end{DoxyParamCaption}
+)}\hypertarget{classZone_a55883c546c6359642a9b50ad4ba48c78}{}\label{classZone_a55883c546c6359642a9b50ad4ba48c78}
+\index{Zone@{Zone}!generer\+\_\+salle@{generer\+\_\+salle}}
+\index{generer\+\_\+salle@{generer\+\_\+salle}!Zone@{Zone}}
+\subsubsection[{\texorpdfstring{generer\+\_\+salle(int i, int j)}{generer_salle(int i, int j)}}]{\setlength{\rightskip}{0pt plus 5cm}void Zone\+::generer\+\_\+salle (
+\begin{DoxyParamCaption}
+\item[{int}]{i, }
+\item[{int}]{j}
+\end{DoxyParamCaption}
+)}\hypertarget{classZone_a2a149ff3989dbe48c1dd1822f158da8e}{}\label{classZone_a2a149ff3989dbe48c1dd1822f158da8e}
+
+
+genere la \hyperlink{classSalle}{Salle} i,j de la \hyperlink{classZone}{Zone}. fait appel à \hyperlink{classSalle_a6eaf8452709243464f7919b53bccc0b3}{Salle\+::salle\+\_\+depuis\+\_\+modele()} ou à Fichier\+::charger(\+Salle s, const int id) aléatoirement. Tente aussi de respecter à peu près la difficulté moyenne désirée. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em i} & \+: coordonnee i de la \hyperlink{classSalle}{Salle} \\
+\hline
+\mbox{\tt in}  & {\em j} & \+: coordonnee j de la \hyperlink{classSalle}{Salle} \\
+\hline
+\end{DoxyParams}
+\index{Zone@{Zone}!generer\+\_\+toutes\+\_\+les\+\_\+salles@{generer\+\_\+toutes\+\_\+les\+\_\+salles}}
+\index{generer\+\_\+toutes\+\_\+les\+\_\+salles@{generer\+\_\+toutes\+\_\+les\+\_\+salles}!Zone@{Zone}}
+\subsubsection[{\texorpdfstring{generer\+\_\+toutes\+\_\+les\+\_\+salles()}{generer_toutes_les_salles()}}]{\setlength{\rightskip}{0pt plus 5cm}void Zone\+::generer\+\_\+toutes\+\_\+les\+\_\+salles (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classZone_a91c45becbd6371aecf0b26ee68bb06f5}{}\label{classZone_a91c45becbd6371aecf0b26ee68bb06f5}
+
+
+Genere toutes les \hyperlink{classSalle}{Salle} de la \hyperlink{classZone}{Zone}. appelle simplement generer\+\_\+salle sur toute la carte. 
 
 \index{Zone@{Zone}!get\+\_\+salle@{get\+\_\+salle}}
 \index{get\+\_\+salle@{get\+\_\+salle}!Zone@{Zone}}
@@ -271,15 +323,20 @@ Remplit les {\itshape config} de la {\itshape carte}. Crée un \hyperlink{classM
 \end{DoxyParams}
 \index{Zone@{Zone}!zone\+\_\+depuis\+\_\+modele\+\_\+aleatoire@{zone\+\_\+depuis\+\_\+modele\+\_\+aleatoire}}
 \index{zone\+\_\+depuis\+\_\+modele\+\_\+aleatoire@{zone\+\_\+depuis\+\_\+modele\+\_\+aleatoire}!Zone@{Zone}}
-\subsubsection[{\texorpdfstring{zone\+\_\+depuis\+\_\+modele\+\_\+aleatoire()}{zone_depuis_modele_aleatoire()}}]{\setlength{\rightskip}{0pt plus 5cm}void Zone\+::zone\+\_\+depuis\+\_\+modele\+\_\+aleatoire (
+\subsubsection[{\texorpdfstring{zone\+\_\+depuis\+\_\+modele\+\_\+aleatoire(int taille)}{zone_depuis_modele_aleatoire(int taille)}}]{\setlength{\rightskip}{0pt plus 5cm}void Zone\+::zone\+\_\+depuis\+\_\+modele\+\_\+aleatoire (
 \begin{DoxyParamCaption}
-{}
+\item[{int}]{taille = {\ttfamily 0}}
 \end{DoxyParamCaption}
-)}\hypertarget{classZone_ae84c7f436dbd31453bb8663eeef19a77}{}\label{classZone_ae84c7f436dbd31453bb8663eeef19a77}
+)}\hypertarget{classZone_a64b87f18b343a38b40a2fbf9220b3994}{}\label{classZone_a64b87f18b343a38b40a2fbf9220b3994}
 
 
 Appelle zone\+\_\+depuis\+\_\+modele avec un nom aléatoire. Crée un \hyperlink{classModele}{Modele} aléatoirement et génère la \hyperlink{classZone}{Zone} procéduralement à partir de ce \hyperlink{classModele}{Modele}. 
 
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em taille} & \+: la taille générale (0-\/$>$4) de la \hyperlink{classZone}{Zone}. \\
+\hline
+\end{DoxyParams}
 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}

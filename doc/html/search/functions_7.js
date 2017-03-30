@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['modele',['Modele',['../classModele.html#ae9d6a289deaebe7e8eeda46693d79d23',1,'Modele::Modele()'],['../classModele.html#a14085f4c7825d488f349f262dcc35d13',1,'Modele::Modele(std::string nom)']]]
+  ['jeu',['Jeu',['../classJeu.html#acc5795ee00edf75516d3dfe65be3e6d6',1,'Jeu']]],
+  ['jeusfml',['JeuSFML',['../classJeuSFML.html#af00080626f925aba89490c49589c71bd',1,'JeuSFML']]]
 ];

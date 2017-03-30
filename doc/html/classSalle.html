@@ -142,6 +142,12 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a80ca41c533d0ec567b1d4e78779225ba"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac8e706275a4d3545eb33a6f446a554a1"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSalle.html#ac8e706275a4d3545eb33a6f446a554a1">get_config_string</a> () const </td></tr>
 <tr class="separator:ac8e706275a4d3545eb33a6f446a554a1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6eaf8452709243464f7919b53bccc0b3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSalle.html#a6eaf8452709243464f7919b53bccc0b3">salle_depuis_modele</a> (std::string nom, bool p_h, bool p_b, bool p_g, bool p_d, int conf)</td></tr>
+<tr class="memdesc:a6eaf8452709243464f7919b53bccc0b3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Genere une <a class="el" href="classSalle.html" title="class des salles de jeu où évolue le joueur. Salle dépend de CaseSalle et se compose d&#39;une grille de ...">Salle</a> proceduralement. Permet, en une seule ligne, de generer la <a class="el" href="classSalle.html" title="class des salles de jeu où évolue le joueur. Salle dépend de CaseSalle et se compose d&#39;une grille de ...">Salle</a> selon un <a class="el" href="classModeleSalle.html">ModeleSalle</a> determine. prend le <a class="el" href="classModeleSalle.html">ModeleSalle</a> 'nom', le charge, genere la <a class="el" href="classSalleGen.html" title="analogue de ZoneGen pour les objets type Salle. Peremet de generer une Salle en plaçant des amas de t...">SalleGen</a> puis la transforme en <a class="el" href="classSalle.html" title="class des salles de jeu où évolue le joueur. Salle dépend de CaseSalle et se compose d&#39;une grille de ...">Salle</a>.  <a href="#a6eaf8452709243464f7919b53bccc0b3">More...</a><br /></td></tr>
+<tr class="separator:a6eaf8452709243464f7919b53bccc0b3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aee514de189a50abde0370f8a7848fb4e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSalle.html#aee514de189a50abde0370f8a7848fb4e">salle_depuis_modele_aleatoire</a> (bool p_h, bool p_b, bool p_g, bool p_d, int conf, int diff=0)</td></tr>
+<tr class="memdesc:aee514de189a50abde0370f8a7848fb4e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Genere une <a class="el" href="classSalle.html" title="class des salles de jeu où évolue le joueur. Salle dépend de CaseSalle et se compose d&#39;une grille de ...">Salle</a> proceduralement selon un <a class="el" href="classModeleSalle.html">ModeleSalle</a> pseudo-aleatoire. Permet, en une seule ligne, de generer la <a class="el" href="classSalle.html" title="class des salles de jeu où évolue le joueur. Salle dépend de CaseSalle et se compose d&#39;une grille de ...">Salle</a> selon un <a class="el" href="classModeleSalle.html">ModeleSalle</a> determine. prend le <a class="el" href="classModeleSalle.html">ModeleSalle</a> 'nom', le charge, genere la <a class="el" href="classSalleGen.html" title="analogue de ZoneGen pour les objets type Salle. Peremet de generer une Salle en plaçant des amas de t...">SalleGen</a> puis la transforme en <a class="el" href="classSalle.html" title="class des salles de jeu où évolue le joueur. Salle dépend de CaseSalle et se compose d&#39;une grille de ...">Salle</a>.  <a href="#aee514de189a50abde0370f8a7848fb4e">More...</a><br /></td></tr>
+<tr class="separator:aee514de189a50abde0370f8a7848fb4e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>class des salles de jeu où évolue le joueur. <a class="el" href="classSalle.html" title="class des salles de jeu où évolue le joueur. Salle dépend de CaseSalle et se compose d&#39;une grille de ...">Salle</a> dépend de <a class="el" href="classCaseSalle.html" title="class des cases qui composent les salles dans le jeu. Une Salle de base est composée d&#39;un tableau de ...">CaseSalle</a> et se compose d'une grille de <a class="el" href="classCaseSalle.html" title="class des cases qui composent les salles dans le jeu. Une Salle de base est composée d&#39;un tableau de ...">CaseSalle</a>, dont les bords sont des murs. </p>
@@ -369,6 +375,122 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Procédure de remplissage de <a class="el" href="classSalle.html" title="class des salles de jeu où évolue le joueur. Salle dépend de CaseSalle et se compose d&#39;une grille de ...">Salle</a>. Techniquement, <a class="el" href="classSalle.html#ae6fd7211225455d887859f983e3bddce" title="Procédure de remplissage de Salle. Techniquement, remplir() est un mutateur de config avec paramètre ...">remplir()</a> est un mutateur de <em>config</em> avec paramètre fixé. </p>
+
+</div>
+</div>
+<a class="anchor" id="a6eaf8452709243464f7919b53bccc0b3"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Salle::salle_depuis_modele </td>
+          <td>(</td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>nom</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>p_h</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>p_b</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>p_g</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>p_d</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>conf</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Genere une <a class="el" href="classSalle.html" title="class des salles de jeu où évolue le joueur. Salle dépend de CaseSalle et se compose d&#39;une grille de ...">Salle</a> proceduralement. Permet, en une seule ligne, de generer la <a class="el" href="classSalle.html" title="class des salles de jeu où évolue le joueur. Salle dépend de CaseSalle et se compose d&#39;une grille de ...">Salle</a> selon un <a class="el" href="classModeleSalle.html">ModeleSalle</a> determine. prend le <a class="el" href="classModeleSalle.html">ModeleSalle</a> 'nom', le charge, genere la <a class="el" href="classSalleGen.html" title="analogue de ZoneGen pour les objets type Salle. Peremet de generer une Salle en plaçant des amas de t...">SalleGen</a> puis la transforme en <a class="el" href="classSalle.html" title="class des salles de jeu où évolue le joueur. Salle dépend de CaseSalle et se compose d&#39;une grille de ...">Salle</a>. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">nom</td><td>: le nom du <a class="el" href="classModeleSalle.html">ModeleSalle</a> à utiliser. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="aee514de189a50abde0370f8a7848fb4e"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Salle::salle_depuis_modele_aleatoire </td>
+          <td>(</td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>p_h</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>p_b</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>p_g</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>p_d</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>conf</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>diff</em> = <code>0</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Genere une <a class="el" href="classSalle.html" title="class des salles de jeu où évolue le joueur. Salle dépend de CaseSalle et se compose d&#39;une grille de ...">Salle</a> proceduralement selon un <a class="el" href="classModeleSalle.html">ModeleSalle</a> pseudo-aleatoire. Permet, en une seule ligne, de generer la <a class="el" href="classSalle.html" title="class des salles de jeu où évolue le joueur. Salle dépend de CaseSalle et se compose d&#39;une grille de ...">Salle</a> selon un <a class="el" href="classModeleSalle.html">ModeleSalle</a> determine. prend le <a class="el" href="classModeleSalle.html">ModeleSalle</a> 'nom', le charge, genere la <a class="el" href="classSalleGen.html" title="analogue de ZoneGen pour les objets type Salle. Peremet de generer une Salle en plaçant des amas de t...">SalleGen</a> puis la transforme en <a class="el" href="classSalle.html" title="class des salles de jeu où évolue le joueur. Salle dépend de CaseSalle et se compose d&#39;une grille de ...">Salle</a>. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">diff</td><td>: la difficulte approximatie voulue. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
