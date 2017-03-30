@@ -19,9 +19,11 @@ void Arme::charger(const int& id, const int& nv)
     fichier.charger(*this, id, nv);
 }
 
-void Arme::tirer(float pos_x, float pos_y /*,orientation ?*/)
+Projectile* Arme::retourne_projectile(const VecteurM &orientation, const Coord2D &position)
 {
-
+    munitions_restantes --;
+    Projectile * p = new Projectile(id_arme, type, degats_projectiles, vitesse, orientation, position);
+    return p;
 }
 
 void Arme::set_id_arme(const int& i)
@@ -34,6 +36,11 @@ void Arme::set_nv_arme(const int& i)
     nv_arme = i;
 }
 
+void Arme::set_type(const int& i)
+{
+    type = i;
+}
+
 void Arme::set_id_projectiles(const int& i)
 {
     id_projectiles = i;
@@ -44,7 +51,13 @@ void Arme::set_degats_projectiles(const int& i)
     degats_projectiles = i;
 }
 
+void Arme::set_vitesse(const float& v)
+{
+    vitesse = v;
+}
+
 void Arme::set_munitions_max(const int& i)
 {
     munitions_max = i;
 }
+

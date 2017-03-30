@@ -86,6 +86,8 @@ public:
 
     void charger_perso(const std::string &n);
 
+    Projectile tirer_1();
+
     //_____________________MODE TXT__________________________
     int get_pos_case_x() const;
 

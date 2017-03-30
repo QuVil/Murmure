@@ -305,6 +305,7 @@ void Fichier::charger(Arme& a, const int& id_arme, const int& nv_arme)
     //std::cout << buffer.str() << std::endl;
 
     int valeur_int;
+    float valeur_float;
     std::istringstream is_file(buffer.str());
     std::string ligne;
     std::string variable;
@@ -325,6 +326,11 @@ void Fichier::charger(Arme& a, const int& id_arme, const int& nv_arme)
                 valeur_int = atoi(valeur.c_str());
                 a.set_nv_arme(valeur_int);
             }
+            else if(variable.compare("type") == 0)
+            {
+                valeur_int = atoi(valeur.c_str());
+                a.set_type(valeur_int);
+            }
             else if(variable.compare("id_projectiles") == 0)
             {
                 valeur_int = atoi(valeur.c_str());
@@ -339,6 +345,11 @@ void Fichier::charger(Arme& a, const int& id_arme, const int& nv_arme)
             {
                 valeur_int = atoi(valeur.c_str());
                 a.set_munitions_max(valeur_int);
+            }
+            else if(variable.compare("vitesse") == 0)
+            {
+                valeur_float = atol(valeur.c_str());
+                a.set_vitesse(valeur_float);
             }
             else
             {

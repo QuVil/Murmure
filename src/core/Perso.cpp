@@ -187,6 +187,11 @@ void Perso::set_nv_arme1(const int& i)
     nv_arme1 = i;
 }
 
+Projectile Perso::tirer_1()
+{
+    return arme1.retourne_projectile(orientation, position);
+}
+
 void Perso::charger_perso(const std::string& n)
 {
     Fichier fichier;
