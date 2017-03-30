@@ -288,7 +288,7 @@ void Zone::generer_salle(int i, int j)
         {
             if (carte[i-1][j].get_config() != 0){p_g = true;}
         }
-        if (i<11)
+        if (i<10)
         {
             if (carte[i+1][j].get_config() != 0){p_d = true;}
         }
@@ -296,7 +296,7 @@ void Zone::generer_salle(int i, int j)
         {
             if (carte[i][j-1].get_config() != 0){p_h = true;}
         }
-        if (j<11)
+        if (j<10)
         {
             if (carte[i][j+1].get_config() != 0){p_b = true;}
         }

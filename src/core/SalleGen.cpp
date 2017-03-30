@@ -23,6 +23,7 @@ SalleGen::SalleGen()
             grille[i][j] = 'n';
         }
     }
+    //On n'a même pas à placer les murs, initialisation_gen s'en charge.
 }
 
 SalleGen::SalleGen(bool p_h, bool p_b, bool p_g, bool p_d, int conf, int diff)

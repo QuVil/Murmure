@@ -173,6 +173,8 @@
 			<Option target="murmure_gen_test" />
 			<Option target="murmure_test_q" />
 		</Unit>
+		<Unit filename="src/core/GestionSalle.cpp" />
+		<Unit filename="src/core/GestionSalle.h" />
 		<Unit filename="src/core/Jeu.cpp">
 			<Option target="murmure_txt" />
 			<Option target="murmure_test" />
