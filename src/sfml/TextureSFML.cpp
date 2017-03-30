@@ -42,6 +42,14 @@ void TextureSFML::charger_textures_caseSFML()
         herbe[i].loadFromFile(path);
     }
 
+    for(int i=0; i<nb_texture_sol_caseSFML;i++)
+    {
+        ss.str("");
+        ss << "data/res/CaseSalle/sol_" << i << ".png";
+        path = ss.str();
+        sol[i].loadFromFile(path);
+    }
+
     for(int i=0;i<8;i++)
     {
         ss.str("");
@@ -181,7 +189,7 @@ sf::RenderStates TextureSFML::retourne_rendu_texture_caseSFML(const char& type, 
             switch(type)
             {
             case 'n':
-                casesfml[i][j].texture =&herbe[rand() % nb_texture_herbe_caseSFML];
+                casesfml[i][j].texture =&sol[rand() % nb_texture_sol_caseSFML];
                 break;
             case 'p':
                 if(j == 0) {casesfml[i][j].texture =&porte;}
@@ -270,7 +278,7 @@ sf::Texture& TextureSFML::retourne_texture_caseSFML(const char& type, const int&
         switch(type)
         {
         case 'n':
-            return herbe[rand() % nb_texture_herbe_caseSFML];
+            return sol[rand() % nb_texture_sol_caseSFML];
             break;
         case 'p':
             if(j == 0) {return porte;}

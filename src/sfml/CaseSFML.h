@@ -14,12 +14,18 @@ class CaseSFML
 {
 private:
     sf::VertexArray casesfml;
+
+    int taille;
 public:
     CaseSFML();
 
     void init(int posX,int posY, int largeur, int hauteur);
 
+    void mettre_a_jour_taille_texture(const int &t);
+
     sf::VertexArray get_casesfml();
+
+    int get_taille_texture();
 };
 
 #endif // CASESFML_H_INCLUDED
