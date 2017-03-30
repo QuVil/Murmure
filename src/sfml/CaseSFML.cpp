@@ -13,6 +13,8 @@ CaseSFML::CaseSFML()
     casesfml[1].position = sf::Vector2f(0, 0);
     casesfml[2].position = sf::Vector2f(0, 0);
     casesfml[3].position = sf::Vector2f(0, 0);
+
+    taille = 0;
 }
 
 void CaseSFML::init(int posX, int posY, int largeur, int hauteur)
@@ -30,6 +32,8 @@ void CaseSFML::init(int posX, int posY, int largeur, int hauteur)
     casesfml[1].texCoords = sf::Vector2f(64, 0);
     casesfml[2].texCoords = sf::Vector2f(64, 64);
     casesfml[3].texCoords = sf::Vector2f(0, 64);
+
+    taille = 64;
 /*
     casesfml[0].color = sf::Color::Blue;
     casesfml[1].color = sf::Color::Blue;
@@ -37,8 +41,22 @@ void CaseSFML::init(int posX, int posY, int largeur, int hauteur)
     casesfml[3].color = sf::Color::Blue;*/
 }
 
+void CaseSFML::mettre_a_jour_taille_texture(const int& t)
+{
+    casesfml[0].texCoords = sf::Vector2f(0,0);
+    casesfml[1].texCoords = sf::Vector2f(t, 0);
+    casesfml[2].texCoords = sf::Vector2f(t, t);
+    casesfml[3].texCoords = sf::Vector2f(0, t);
+
+    taille = t;
+}
 
 sf::VertexArray CaseSFML::get_casesfml()
 {
     return casesfml;
+}
+
+int CaseSFML::get_taille_texture()
+{
+    return taille;
 }

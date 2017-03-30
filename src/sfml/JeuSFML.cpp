@@ -258,6 +258,11 @@ void JeuSFML::dessiner_salle()
                 texture_salle = &textures.retourne_texture_caseSFML(jeu.get_salle().get_case(i, j).get_type_char(),
                                                                          i,
                                                                          j);
+                if(casesfml[i][j].get_taille_texture() != (int) texture_salle->getSize().x)
+                {
+                    std::cout << "coucou" << std::endl;
+                    casesfml[i][j].mettre_a_jour_taille_texture((int) texture_salle->getSize().x);
+                }
                                                                          /*
                 buffer_salle.draw(casesfml[i][j].get_casesfml(),
                             textures.retourne_rendu_texture_caseSFML(jeu.get_salle().get_case(i, j).get_type_char(),

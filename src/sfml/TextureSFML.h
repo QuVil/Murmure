@@ -4,6 +4,7 @@
 #include <SFML/Graphics.hpp>
 
 const int nb_texture_herbe_caseSFML= 7;
+const int nb_texture_sol_caseSFML= 6;
 
 class TextureSFML
 {
@@ -13,6 +14,7 @@ private:
     sf::RenderStates casesfml[9][17];
     sf::Texture normal_CaseSFML;
     sf::Texture herbe[nb_texture_herbe_caseSFML];
+    sf::Texture sol[nb_texture_sol_caseSFML];
     sf::Texture defaut;
     sf::Texture mur_1[8]; /**< \a textures differentes du mur, compter les textures partant de la case en haut à gaughe (coin) et parcourir dans le sens des aiguilles d'une montre */
     sf::Texture trou;
