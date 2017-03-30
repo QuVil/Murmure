@@ -215,20 +215,8 @@
 			<Option target="murmure_gen_test" />
 			<Option target="murmure_test_q" />
 		</Unit>
-		<Unit filename="src/core/Objet.cpp">
-			<Option target="murmure_txt" />
-			<Option target="murmure_test" />
-			<Option target="murmure_sfml" />
-			<Option target="murmure_gen_test" />
-			<Option target="murmure_test_q" />
-		</Unit>
-		<Unit filename="src/core/Objet.h">
-			<Option target="murmure_txt" />
-			<Option target="murmure_test" />
-			<Option target="murmure_sfml" />
-			<Option target="murmure_gen_test" />
-			<Option target="murmure_test_q" />
-		</Unit>
+		<Unit filename="src/core/Objet.cpp" />
+		<Unit filename="src/core/Objet.h" />
 		<Unit filename="src/core/Perso.cpp">
 			<Option target="murmure_txt" />
 			<Option target="murmure_test" />
@@ -379,6 +367,8 @@
 			<Option target="murmure_gen_test" />
 			<Option target="murmure_test_q" />
 		</Unit>
+		<Unit filename="src/sfml/ProjectileSFML.cpp" />
+		<Unit filename="src/sfml/ProjectileSFML.h" />
 		<Unit filename="src/sfml/SelecPersoSFML.cpp">
 			<Option target="murmure_txt" />
 			<Option target="murmure_test" />

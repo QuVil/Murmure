@@ -7,10 +7,12 @@
 
 
 #include <sstream>
+#include <list>
 
 #include "CaseSFML.h"
 #include "PersoSFML.h"
 #include "TextureSFML.h"
+#include "ProjectileSFML.h"
 
 class JeuSFML
 {
@@ -28,8 +30,12 @@ private:
     sf::View view;
 
     sf::Clock clock;
+    sf::Clock timer_arme1_perso;
 
     sf::Time temps_frame;
+
+    float vitesse_base_deplacement;
+    float vitesse_base;
 
     sf::Font police_test;
     sf::Text text_fps;
@@ -41,8 +47,8 @@ private:
     int val_max_deplacement;
 
     int salle_act_x, salle_act_y;
-
     /// CASESALLE
+
     int scale_salle;
     int posx0salle,posy0salle;
     CaseSFML casesfml[9][17];
@@ -50,14 +56,18 @@ private:
     /// CARTEAFF
     int scale_carte_largeur, scale_carte_hauteur;
     int posx0carte, posy0carte;
-    //CarteAffSFML carteaffsfml[11][11];
 
+    /// PROJECTILES
+
+    std::list <ProjectileSFML *> projectilesfml;
 
     PersoSFML persosfml;
+
     Jeu jeu;
 
     void recupere_mouvements();
     void recupere_collisions();
+    void avancer_jeu();
 
     void afficher(const int &mode);
 
@@ -65,16 +75,20 @@ private:
     void init_persoSFML();
     void init_caseSFML();
     void init_carteAffSFML();
+    void init_projectileSFML();
     void init_texte();
 
     void dessiner_curseur();
     void dessiner_salle();
     void dessiner_carte();
     void dessiner_perso();
+    void dessiner_projectiles();
     void ecrire_texte();
 
 public:
     JeuSFML();
+
+    ~JeuSFML();
 
     void init();
     void SFML_boucle();

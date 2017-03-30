@@ -1,4 +1,5 @@
 #include <iostream>
+#include <list>
 
 #include <SFML/Graphics.hpp>
 #include <SFML/System.hpp>
@@ -26,7 +27,7 @@ JeuSFML::JeuSFML()
     view = window.getView();
     //temps_frame = sf::seconds((float) 1/FPS); // en seconde
     window.setVerticalSyncEnabled(true);
-    //window.setFramerateLimit(50);
+    //window.setFramerateLimit(2);
 
     //window.setMouseCursorVisible(false);
     /////////////////////////////////////////////////////////////////////////
@@ -59,11 +60,21 @@ JeuSFML::JeuSFML()
     posy0carte = (desktop.height - 11*scale_carte_hauteur)/2;
 }
 
+JeuSFML::~JeuSFML()
+{
+    for(std::list<ProjectileSFML *>::iterator it_sfml = projectilesfml.begin(); it_sfml != projectilesfml.end(); ++it_sfml)
+    {
+        delete (*it_sfml);
+        it_sfml = projectilesfml.erase(it_sfml);
+    }
+}
+
 void JeuSFML::init()
 {
     textures.charger_textures_caseSFML();
     textures.charger_textures_carteAffSFML();
     textures.charger_texture_perso();
+    textures.charger_texture_projectile();
     //textures.charger_texture_curseur();
     init_caseSFML();
     init_persoSFML();
@@ -85,6 +96,11 @@ void JeuSFML::init_caseSFML()
 }
 
 void JeuSFML::init_carteAffSFML()
+{
+
+}
+
+void JeuSFML::init_projectileSFML()
 {
 
 }
@@ -136,6 +152,7 @@ void JeuSFML::SFML_boucle()
 {
     int mode = 1;
     clock.restart();
+    timer_arme1_perso.restart();
 
     //init();
     //charger_salle();
@@ -154,7 +171,7 @@ void JeuSFML::SFML_boucle()
 
             if(event.type == sf::Event::KeyPressed)
             {
-                // si appuie sur "echape" -> ferme la fenetre
+                // si appuie sur "echape" -> ferme la fenetre(*it_sfml)->get_position().get_x()
                 if((event.key.code == sf::Keyboard::Escape))
                 {
                     window.close();
@@ -197,10 +214,10 @@ void JeuSFML::afficher(const int& mode)
         //std::cout << temps_frame.asSeconds() << std::endl;
         buffer.clear();
         window.clear();
-        recupere_mouvements();
-        recupere_collisions();
+        avancer_jeu();
         dessiner_salle();
         dessiner_perso();
+        dessiner_projectiles();
         //dessiner_curseur();
         ecrire_texte();
         break;
@@ -260,7 +277,6 @@ void JeuSFML::dessiner_salle()
                                                                          j);
                 if(casesfml[i][j].get_taille_texture() != (int) texture_salle->getSize().x)
                 {
-                    std::cout <<"i :" << i << " j: " << j << " " << casesfml[i][j].get_taille_texture() << std::endl;
                     casesfml[i][j].mettre_a_jour_taille_texture((int) texture_salle->getSize().x);
                 }
                                                                          /*
@@ -314,6 +330,41 @@ void JeuSFML::dessiner_perso()
     buffer.draw(persosfml.get_persosfml());
 }
 
+void JeuSFML::dessiner_projectiles()
+{
+    std::list <Projectile *> * proj = jeu.retourne_projectiles();
+    std::list<Projectile *>::iterator it_jeu;
+    std::list<ProjectileSFML *>::iterator it_sfml;
+    it_jeu = proj->begin();
+    for (it_sfml=projectilesfml.begin(); it_sfml != projectilesfml.end(); ++it_sfml)
+    {
+        while(((*it_jeu)->get_position() != (*it_sfml)->get_projectile()->get_position())&&(it_sfml != projectilesfml.end()))
+        {
+            std::cout << "Hello darkness my old friend" << std::endl;
+            delete (*it_sfml);
+            it_sfml = projectilesfml.erase(it_sfml);
+        }
+        if(((*it_jeu)->get_position() == (*it_sfml)->get_projectile()->get_position()))
+        {
+            //std::cout << "MATCH :D " << std::endl;
+            ++it_jeu;
+        }
+    }
+    for(std::list<Projectile *>::iterator it_jeu2 = it_jeu; it_jeu2 != proj->end(); ++it_jeu2)
+    {
+        ProjectileSFML *p = new ProjectileSFML();
+        p->init((*it_jeu2), textures.retourne_texture_projectile(),scale_salle);
+        projectilesfml.push_back(p);
+    }
+    for(it_sfml = projectilesfml.begin(); it_sfml != projectilesfml.end(); ++it_sfml)
+    {
+        //std::cout << "et on dessine " << std::endl;
+        (*it_sfml)->mise_a_jour_position();
+        //std::cout << (*it_sfml)->get_projectile()->get_position().get_x() << " " << (*it_sfml)->get_projectile()->get_position().get_y() << std::endl;
+        buffer.draw((*it_sfml)->retourne_projectilesfml());
+    }
+}
+
 /*
 void JeuSFML::dessiner_curseur()
 {
@@ -321,6 +372,13 @@ void JeuSFML::dessiner_curseur()
     curseur.setPosition(static_cast<sf::Vector2f>(sf::Mouse::getPosition(window)));
     buffer.draw(curseur);
 }*/
+
+void JeuSFML::avancer_jeu()
+{
+    recupere_collisions();
+    recupere_mouvements();
+}
+
 
 void JeuSFML::recupere_collisions()
 {
@@ -366,6 +424,8 @@ void JeuSFML::recupere_collisions()
 
 void JeuSFML::recupere_mouvements()
 {
+    vitesse_base_deplacement = (scale_salle*temps_frame.asSeconds()) /(val_max_deplacement/10);
+    vitesse_base = (scale_salle*temps_frame.asSeconds());
     // Clavier
     // Attention l'axe Y pointe vers le bas
     float x = 0;
@@ -386,8 +446,8 @@ void JeuSFML::recupere_mouvements()
         if(sf::Keyboard::isKeyPressed(sf::Keyboard::S)) {y = y + val_max_deplacement;}
     }
 
-    x = (float) (x*scale_salle*temps_frame.asSeconds()) /(val_max_deplacement/10);
-    y = (float) (y*scale_salle*temps_frame.asSeconds()) /(val_max_deplacement/10);
+    x = (float) x * vitesse_base_deplacement;
+    y = (float) y * vitesse_base_deplacement;
     //std::cout << x << " " << y << std::endl;
     jeu.deplacer_perso(x, y);
 
@@ -425,8 +485,11 @@ void JeuSFML::recupere_mouvements()
     //std::cout << "axe x : " << x << " axe y : " << y << std::endl;
     //std::cout << jeu.get_zone().get_salle_actuelle_x() << " " << jeu.get_zone().get_salle_actuelle_y() << std::endl;
 
-    if (sf::Mouse::isButtonPressed(sf::Mouse::Left))
+    jeu.avancer_jeu(vitesse_base);
+
+    if (sf::Mouse::isButtonPressed(sf::Mouse::Left)&&((timer_arme1_perso.getElapsedTime().asSeconds()==0)||(timer_arme1_perso.getElapsedTime().asSeconds()>=jeu.get_perso().get_arme1()->get_cadence_tir())))
     {
         jeu.ajouter_projectile_perso(1);
+        timer_arme1_perso.restart();
     }
 }

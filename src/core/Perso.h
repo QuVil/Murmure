@@ -6,10 +6,8 @@
 #include "Arme.h"
 #include "Coord2D.h"
 #include "Objet.h"
-<<<<<<< HEAD
 #include "Projectile.h"
-=======
->>>>>>> db014e9922ad39281d26efbcadaf3ed1938528b7
+
 
 #include <list>
 
@@ -39,11 +37,7 @@ private:
     int pos_case_x;
     int pos_case_y;
 
-<<<<<<< HEAD
-    std::list <Objet *> objets_perso;
-=======
     std::list <Objet*> objets_perso;
->>>>>>> db014e9922ad39281d26efbcadaf3ed1938528b7
 
 public:
 
@@ -98,6 +92,8 @@ public:
     void set_nv_arme1(const int &i);
 
     void charger_perso(const std::string &n);
+
+    Arme * get_arme1();
 
     Projectile* tirer_1();
 

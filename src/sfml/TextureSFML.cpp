@@ -102,6 +102,13 @@ void TextureSFML::charger_texture_curseur()
     //curseur.setSmooth(true);
 }
 
+void TextureSFML::charger_texture_projectile()
+{
+    std::string path;
+    path = "data/res/Projectile/skins/1.png";
+    proj_1.loadFromFile(path);
+}
+
 sf::RenderStates TextureSFML::retourne_rendu_texture_carteAffSFML(const int& config, const bool &salle_act)
 {
     sf::RenderStates render;
@@ -313,5 +320,9 @@ sf::Texture& TextureSFML::retourne_texture_curseur()
     return curseur;
 }
 
+sf::Texture& TextureSFML::retourne_texture_projectile()
+{
+    return proj_1;
+}
 
 

@@ -19,6 +19,8 @@ public:
     void ajouter_projectile(Projectile * p);
 
     void mise_a_jour_projectiles(const float &vitesse_frame);
+
+    std::list <Projectile *> * get_projectiles();
 };
 
 #endif // GESTIONSALLE_H_INCLUDED

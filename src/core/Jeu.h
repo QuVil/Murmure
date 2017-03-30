@@ -7,6 +7,8 @@
 #include "VecteurM.h"
 #include "GestionSalle.h"
 
+#include <list>
+
 class Jeu
 {
 private:
@@ -38,6 +40,10 @@ public:
     void placer_perso_txt(int x, int y);
 
     void ajouter_projectile_perso(const int &arme);
+
+    void avancer_jeu(const float &vitesse_base);
+
+    std::list <Projectile *> * retourne_projectiles();
 };
 
 #endif // JEU_H_INCLUDED

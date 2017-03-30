@@ -14,6 +14,8 @@ private:
     int degats;
 
     float vitesse;
+    float taille_projectile;
+    float angle_orientation;
 
     VecteurM orientation;
 
@@ -22,9 +24,17 @@ private:
 public:
     Projectile();
 
-    Projectile(const int &p_id, const int &p_type, const int &p_degat, const float &p_vitesse, const VecteurM &p_orientation, const Coord2D &p_position);
+    Projectile(const int &p_id, const int &p_type, const int &p_degat, const float &p_vitesse, const float &p_taille, const VecteurM &p_orientation, const Coord2D &p_position);
 
     void avancer(const float &vitesse_frame);
+
+    float get_orientation_degre()const;
+
+    float get_orientation_radian()const;
+
+    float get_taille_projectile()const;
+
+    Coord2D get_position()const;
 };
 
 #endif // PROJECTILE_H_INCLUDED

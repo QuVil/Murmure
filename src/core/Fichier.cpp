@@ -348,8 +348,18 @@ void Fichier::charger(Arme& a, const int& id_arme, const int& nv_arme)
             }
             else if(variable.compare("vitesse") == 0)
             {
-                valeur_float = atol(valeur.c_str());
+                valeur_float = atof(valeur.c_str());
                 a.set_vitesse(valeur_float);
+            }
+            else if(variable.compare("taille_projectile") == 0)
+            {
+                valeur_float = atof(valeur.c_str());
+                a.set_taille_projectile(valeur_float);
+            }
+            else if(variable.compare("cadence_tir") == 0)
+            {
+                valeur_float = atof(valeur.c_str());
+                a.set_cadence_tir(valeur_float);
             }
             else
             {

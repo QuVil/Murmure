@@ -13,6 +13,16 @@ Coord2D::Coord2D(float a, float b)
     y = b;
 }
 
+bool Coord2D::operator==(const Coord2D& c2)
+{
+    return ((x==c2.x)&&(y==c2.y));
+}
+
+bool Coord2D::operator!=(const Coord2D& c2)
+{
+    return ((x!=c2.x)||(y!=c2.y));
+}
+
 void Coord2D::coord_set(float a, float b)
 {
     x = a;

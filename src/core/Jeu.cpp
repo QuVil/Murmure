@@ -67,3 +67,13 @@ void Jeu::ajouter_projectile_perso(const int& arme)
         break;
     }
 }
+
+void Jeu::avancer_jeu(const float &vitesse_base)
+{
+    salle_actuelle.mise_a_jour_projectiles(vitesse_base);
+}
+
+std::list <Projectile *> * Jeu::retourne_projectiles()
+{
+    return salle_actuelle.get_projectiles();
+}

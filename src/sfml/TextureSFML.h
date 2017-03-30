@@ -36,6 +36,9 @@ private:
     // Curseur
     sf::Texture curseur;
 
+    // Projectile
+    sf::Texture proj_1;
+
 public:
     TextureSFML();
 
@@ -46,6 +49,8 @@ public:
     void charger_texture_perso();
 
     void charger_texture_curseur();
+
+    void charger_texture_projectile();
 
     sf::RenderStates retourne_rendu_texture_caseSFML(const char & type, const int &i, const int &j, const int &x, const int &y);
 
@@ -58,6 +63,8 @@ public:
     sf::Texture& retourne_texture_perso();
 
     sf::Texture& retourne_texture_caseSFML(const char & type, const int &i, const int &j);
+
+    sf::Texture& retourne_texture_projectile();
 };
 
 #endif // TEXTURESFML_H_INCLUDED

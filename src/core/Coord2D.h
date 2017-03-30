@@ -13,6 +13,10 @@ public:
 
     Coord2D(float a, float b);
 
+    bool operator ==(const Coord2D &c2);
+
+    bool operator !=(const Coord2D& c2);
+
     void coord_set(float a, float b);
 
     void deplacer(const VecteurM &vect, const float &coeff);

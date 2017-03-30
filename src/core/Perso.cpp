@@ -228,3 +228,7 @@ Projectile* Perso::tirer_1()
     return arme1.tirer(orientation, position);
 }
 
+Arme* Perso::get_arme1()
+{
+    return &arme1;
+}

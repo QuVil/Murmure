@@ -11,14 +11,18 @@ class ProjectileSFML
 {
 private:
     sf::Sprite projectilesfml;
+
+    Projectile * projectile;
 public:
     ProjectileSFML();
 
-    void init(const Projectile &p, const sf::Texture & texture,const int &scale_salle);
+    void init(Projectile * p, const sf::Texture & texture,const int &scale_salle);
 
-    void mise_a_jour_position(const Coord2D &position);
+    void mise_a_jour_position();
 
     sf::Sprite retourne_projectilesfml();
+
+    Projectile * get_projectile();
 };
 
 #endif // PROJECTILESFML_H_INCLUDED

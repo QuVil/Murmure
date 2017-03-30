@@ -15,6 +15,7 @@ private:
     int type;
     float vitesse;
     float taille_projectile;
+    float cadence_tir;
 
     int munitions_max;
     int munitions_restantes;
@@ -38,7 +39,13 @@ public:
 
     void set_vitesse(const float &v);
 
+    void set_taille_projectile(const float &t);
+
+    void set_cadence_tir(const float &c);
+
     Projectile* tirer(const VecteurM &orientation, const Coord2D &position);
+
+    float get_cadence_tir()const;
 
 };
 
