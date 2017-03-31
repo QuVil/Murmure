@@ -7,10 +7,9 @@
 class Projectile
 {
 private:
+    bool collision;
     int id_projectile;
-
     int type;
-
     int degats;
 
     float vitesse;

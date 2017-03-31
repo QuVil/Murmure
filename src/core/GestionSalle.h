@@ -11,6 +11,8 @@ class GestionSalle
 private:
     std::list <Ennemi> ennemis;
     std::list <Projectile *> projectiles;
+
+    int taille_case;
 public:
     GestionSalle();
 

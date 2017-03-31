@@ -25,9 +25,6 @@ void TextureSFML::charger_textures_caseSFML()
     path = "data/res/CaseSalle/defaut.png";
     defaut.loadFromFile(path);
 
-    path = "data/res/CaseSalle/porte.png";
-    porte.loadFromFile(path);
-
     path = "data/res/CaseSalle/rocher.png";
     rocher.loadFromFile(path);
 
@@ -56,6 +53,14 @@ void TextureSFML::charger_textures_caseSFML()
         ss << "data/res/CaseSalle/mur_1_" << i << ".png";
         path = ss.str();
         mur_1[i].loadFromFile(path);
+    }
+
+    for(int i=0;i<4;i++)
+    {
+        ss.str("");
+        ss << "data/res/CaseSalle/porte_1_" << i << ".png";
+        path = ss.str();
+        porte[i].loadFromFile(path);
     }
 }
 
@@ -166,7 +171,7 @@ sf::RenderStates TextureSFML::retourne_rendu_texture_caseSFML(const char& type, 
             }
             else
             {
-                casesfml[i][j].texture =&porte;
+                //casesfml[i][j].texture =&porte;
             }
         }
         else if(i == 8)
@@ -188,7 +193,7 @@ sf::RenderStates TextureSFML::retourne_rendu_texture_caseSFML(const char& type, 
             }
             else
             {
-                casesfml[i][j].texture =&porte;
+                //casesfml[i][j].texture =&porte;
             }
         }
         else
@@ -199,8 +204,8 @@ sf::RenderStates TextureSFML::retourne_rendu_texture_caseSFML(const char& type, 
                 casesfml[i][j].texture =&sol[rand() % nb_texture_sol_caseSFML];
                 break;
             case 'p':
-                if(j == 0) {casesfml[i][j].texture =&porte;}
-                else if(j == 16) {casesfml[i][j].texture =&porte;}
+                //if(j == 0) {casesfml[i][j].texture =&porte;}
+                //else if(j == 16) {casesfml[i][j].texture =&porte;}
                 break;
             case 't':
                 casesfml[i][j].texture =&trou;
@@ -255,7 +260,7 @@ sf::Texture& TextureSFML::retourne_texture_caseSFML(const char& type, const int&
         }
         else
         {
-            return porte;
+            return porte[0];
         }
     }
     else if(i == 8)
@@ -277,7 +282,7 @@ sf::Texture& TextureSFML::retourne_texture_caseSFML(const char& type, const int&
         }
         else
         {
-            return porte;
+            return porte[2];
         }
     }
     else
@@ -288,8 +293,8 @@ sf::Texture& TextureSFML::retourne_texture_caseSFML(const char& type, const int&
             return sol[rand() % nb_texture_sol_caseSFML];
             break;
         case 'p':
-            if(j == 0) {return porte;}
-            else if(j == 16) {return porte;}
+            if(j == 0) {return porte[3];}
+            else if(j == 16) {return porte[1];}
             break;
         case 't':
             return trou;

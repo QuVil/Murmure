@@ -17,6 +17,7 @@ GestionSalle::~GestionSalle()
 
 void GestionSalle::ajouter_projectile(Projectile* p)
 {
+    if(p->get_position().get_x())
     projectiles.push_back(p);
 }
 
