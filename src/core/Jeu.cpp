@@ -68,9 +68,9 @@ void Jeu::ajouter_projectile_perso(const int& arme)
     }
 }
 
-void Jeu::avancer_jeu(const float &vitesse_base)
+void Jeu::avancer_jeu(const float &vitesse_base, const int &taille_case)
 {
-    salle_actuelle.mise_a_jour_projectiles(vitesse_base);
+    salle_actuelle.mise_a_jour_projectiles(vitesse_base, taille_case);
 }
 
 std::list <Projectile *> * Jeu::retourne_projectiles()

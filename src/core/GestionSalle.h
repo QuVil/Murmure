@@ -18,7 +18,7 @@ public:
 
     void ajouter_projectile(Projectile * p);
 
-    void mise_a_jour_projectiles(const float &vitesse_frame);
+    void mise_a_jour_projectiles(const float &vitesse_frame, const int &taille_case);
 
     std::list <Projectile *> * get_projectiles();
 };

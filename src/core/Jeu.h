@@ -41,7 +41,7 @@ public:
 
     void ajouter_projectile_perso(const int &arme);
 
-    void avancer_jeu(const float &vitesse_base);
+    void avancer_jeu(const float &vitesse_base, const int &taille_case);
 
     std::list <Projectile *> * retourne_projectiles();
 };

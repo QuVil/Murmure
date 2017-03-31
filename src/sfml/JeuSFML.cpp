@@ -133,6 +133,11 @@ void JeuSFML::init_texte()
     text_mouseposy.setPosition(4 * scale_salle, 9*scale_salle + 24);
     text_mouseposy.setCharacterSize(24);
     text_mouseposy.setFillColor(sf::Color::White);
+
+    text_projectiles.setFont(police_test);
+    text_projectiles.setPosition(7 * scale_salle, 9*scale_salle);
+    text_projectiles.setCharacterSize(24);
+    text_projectiles.setFillColor(sf::Color::White);
 }
 
 /*
@@ -255,10 +260,15 @@ void JeuSFML::ecrire_texte()
     text_fps_stringstream << "POS Y SOURIS : " << sf::Mouse::getPosition(window).y;
     text_mouseposy.setString(text_fps_stringstream.str());
 
+    text_fps_stringstream.str("");
+    text_fps_stringstream << "NB DE PROJ. : " << projectilesfml.size();
+    text_projectiles.setString(text_fps_stringstream.str());
+
     buffer.draw(text_posx);
     buffer.draw(text_posy);
     buffer.draw(text_mouseposx);
     buffer.draw(text_mouseposy);
+    buffer.draw(text_projectiles);
 }
 
 
@@ -340,9 +350,18 @@ void JeuSFML::dessiner_projectiles()
     {
         while(((*it_jeu)->get_position() != (*it_sfml)->get_projectile()->get_position())&&(it_sfml != projectilesfml.end()))
         {
-            std::cout << "Hello darkness my old friend" << std::endl;
+            //std::cout << "Hello darkness my old friend" << std::endl;
             delete (*it_sfml);
-            it_sfml = projectilesfml.erase(it_sfml);
+            if(projectilesfml.size() == 1)
+            {
+                projectilesfml.clear();
+                break;
+                it_sfml = projectilesfml.end();
+            }
+            else
+            {
+                it_sfml = projectilesfml.erase(it_sfml);
+            }
         }
         if(((*it_jeu)->get_position() == (*it_sfml)->get_projectile()->get_position()))
         {
@@ -350,6 +369,7 @@ void JeuSFML::dessiner_projectiles()
             ++it_jeu;
         }
     }
+    std::cout << "on arrive là" << std::endl;
     for(std::list<Projectile *>::iterator it_jeu2 = it_jeu; it_jeu2 != proj->end(); ++it_jeu2)
     {
         ProjectileSFML *p = new ProjectileSFML();
@@ -485,7 +505,7 @@ void JeuSFML::recupere_mouvements()
     //std::cout << "axe x : " << x << " axe y : " << y << std::endl;
     //std::cout << jeu.get_zone().get_salle_actuelle_x() << " " << jeu.get_zone().get_salle_actuelle_y() << std::endl;
 
-    jeu.avancer_jeu(vitesse_base);
+    jeu.avancer_jeu(vitesse_base,scale_salle);
 
     if (sf::Mouse::isButtonPressed(sf::Mouse::Left)&&((timer_arme1_perso.getElapsedTime().asSeconds()==0)||(timer_arme1_perso.getElapsedTime().asSeconds()>=jeu.get_perso().get_arme1()->get_cadence_tir())))
     {
