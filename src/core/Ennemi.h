@@ -10,15 +10,12 @@ class Ennemi
 private:
     std::string nom;
     std::string type_ia;
-    ///TODO : choisir si Ennemi utilise une Arme ou tire les Projectile manuellement
-    //Arme arme1;
-    //Arme arme2;
 
     VecteurM orientation, resultante;
 
     Coord2D position, position_old;
 
-    float coefficient_reducteur;
+    float coefficient_vitesse;
 
     float pv_actuel;
 
@@ -34,15 +31,31 @@ public:
 
     void soigner(float soin);
 
-    //___________________MODE TXT____________________________
-    int get_pos_case_x() const;
+    void set_deplacement(const VecteurM &v);
 
-    int get_pos_case_y() const;
+    void set_deplacement(const float &x, const float &y);
 
-    void deplacer_txt(char direction);
+    void set_orientation(const VecteurM &v);
 
-    void placer_txt(int x, int y);
-    //_______________________________________________________
+    void set_position(const int &x, const int &y);
+
+    void revenir_ancienne_position();
+
+    Coord2D get_pos()const;
+
+    float get_coefficient_vitesse()const;
+
+    float get_orientation_degre()const;
+
+    float get_pos_x()const;
+
+    float get_pos_y()const;
+
+    float get_pv_actuel()const;
+
+    VecteurM get_orientation() const;
+
+    void set_coefficient_vitesse(const float &c);
 };
 
 #endif // ENNEMI_H_INCLUDED

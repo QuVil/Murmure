@@ -9,8 +9,10 @@
 class GestionSalle
 {
 private:
+
     std::list <Ennemi> ennemis;
     std::list <Projectile *> projectiles;
+
 public:
     GestionSalle();
 

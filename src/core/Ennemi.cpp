@@ -27,39 +27,72 @@ void Ennemi::soigner(float soin)
     pv_actuel += soin;
 }
 
-int Ennemi::get_pos_case_x() const
+void Ennemi::set_deplacement(const float& x, const float& y)
 {
-    return pos_case_x;
+    position_old.set_x(position.get_x());
+    position_old.set_y(position.get_y());
+    VecteurM deplacement(x, y);
+    //std::cout << deplacement.get_x() << " " << deplacement.get_y() << std::endl;
+    //resultante = deplacement + resultante;
+    resultante = deplacement;
+    //std::cout << resultante.get_x() << " " << resultante.get_y() << std::endl;
+    position.deplacer(resultante, coefficient_vitesse);
+    //std::cout << position.get_x() << " " << position.get_y() << std::endl;
 }
 
-int Ennemi::get_pos_case_y() const
-{
-    return pos_case_y;
-}
 
-void Ennemi::deplacer_txt(char direction)
+void Ennemi::set_orientation(const VecteurM& v)
 {
-    switch (direction)
+    if((v.get_x() != 0)&&(v.get_y() != 0))
     {
-    case 'g':
-        pos_case_x--;
-        break;
-    case 'd':
-        pos_case_x++;
-        break;
-    case 'h':
-        pos_case_y--;
-        break;
-    case 'b':
-        pos_case_y++;
-        break;
-    default:
-        break;
+        orientation = v;
     }
 }
 
-void Ennemi::placer_txt(int x, int y)
+Coord2D Ennemi::get_pos() const
 {
-    pos_case_x = x;
-    pos_case_y = y;
+    return position;
+}
+
+void Ennemi::set_position(const int& x, const int& y)
+{
+    position.set_x(x);
+    position.set_y(y);
+}
+
+
+void Ennemi::revenir_ancienne_position()
+{
+    position.set_x(position_old.get_x());
+    position.set_y(position_old.get_y());
+}
+
+float Ennemi::get_coefficient_vitesse() const
+{
+    return coefficient_vitesse;
+}
+
+float Ennemi::get_pos_x() const
+{
+    return position.get_x();
+}
+
+float Ennemi::get_pos_y() const
+{
+    return position.get_y();
+}
+
+float Ennemi::get_pv_actuel() const
+{
+    return pv_actuel;
+}
+
+VecteurM Ennemi::get_orientation() const
+{
+    return orientation;
+}
+
+void Ennemi::set_coefficient_vitesse(const float& c)
+{
+    coefficient_vitesse = c;
 }
