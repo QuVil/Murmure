@@ -81,3 +81,8 @@ std::list <Projectile *> * Jeu::retourne_projectiles()
 {
     return salle_actuelle.get_projectiles();
 }
+
+Perso* Jeu::retourne_perso_ptr()
+{
+    return &perso;
+}

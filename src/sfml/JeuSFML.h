@@ -13,6 +13,7 @@
 #include "PersoSFML.h"
 #include "TextureSFML.h"
 #include "ProjectileSFML.h"
+#include "HitboxSFML.h"
 
 class JeuSFML
 {
@@ -78,6 +79,7 @@ private:
     void init_carteAffSFML();
     void init_projectileSFML();
     void init_texte();
+    void init_hitbox();
 
     void dessiner_curseur();
     void dessiner_salle();

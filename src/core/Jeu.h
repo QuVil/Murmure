@@ -44,6 +44,8 @@ public:
     void avancer_jeu(const float &vitesse_base, const int &taille_case);
 
     std::list <Projectile *> * retourne_projectiles();
+
+    Perso * retourne_perso_ptr();
 };
 
 #endif // JEU_H_INCLUDED

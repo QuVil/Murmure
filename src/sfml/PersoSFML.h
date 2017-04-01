@@ -8,12 +8,14 @@ class PersoSFML
 {
 private:
     sf::Sprite persosfml;
+
+    Perso * perso;
 public:
     PersoSFML();
 
-    void charge_perso(const sf::Texture & texture, const int &taille_case, const float &taille_perso);
+    void charge_perso(Perso * p,const sf::Texture & texture, const int &taille_case);
 
-    void mettre_a_jour(const Perso &perso);
+    void mettre_a_jour();
 
     sf::Sprite get_persosfml();
 };

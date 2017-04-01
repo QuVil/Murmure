@@ -149,7 +149,7 @@ void JeuSFML::init_curseur()
 void JeuSFML::init_persoSFML()
 {
     jeu.changer_perso("Green");
-    persosfml.charge_perso(textures.retourne_texture_perso(),scale_salle,jeu.get_perso().get_taille());
+    persosfml.charge_perso(jeu.retourne_perso_ptr(), textures.retourne_texture_perso(),scale_salle);
     jeu.definir_position_perso(jeu.get_perso().get_pos_x()*scale_salle + posx0salle, jeu.get_perso().get_pos_y()*scale_salle + posy0salle);
 }
 
@@ -335,7 +335,7 @@ void JeuSFML::dessiner_carte()
 
 void JeuSFML::dessiner_perso()
 {
-    persosfml.mettre_a_jour(jeu.get_perso());
+    persosfml.mettre_a_jour();
     //persosfml.get_persosfml().setPosition(jeu.get_perso().get_pos_x(), jeu.get_perso().get_pos_y());
     buffer.draw(persosfml.get_persosfml());
 }
