@@ -1,9 +1,10 @@
-#include "GestionSalle.h"
+ #include "GestionSalle.h"
 #include <iostream>
 
 GestionSalle::GestionSalle()
 {
-
+    salle_actuelle_jeu = NULL;
+    salle_actuelle_pointee = false;
 }
 
 GestionSalle::~GestionSalle()
@@ -13,10 +14,12 @@ GestionSalle::~GestionSalle()
         delete &it;
         it = projectiles.erase(it);
     }
+    delete salle_actuelle_jeu;
 }
 
 void GestionSalle::ajouter_projectile(Projectile* p)
 {
+    if(p->get_position().get_x())
     projectiles.push_back(p);
 }
 
@@ -46,4 +49,31 @@ void GestionSalle::mise_a_jour_projectiles(const float& vitesse_frame, const int
 std::list <Projectile *> * GestionSalle::get_projectiles()
 {
     return &projectiles;
+}
+
+void GestionSalle::initialise_salle_actuelle(Salle* adresse_salle)
+{
+    salle_actuelle_jeu = adresse_salle;
+    std::cout<<salle_actuelle_jeu;
+}
+
+void GestionSalle::maj_changement_salle()
+{
+    for (int i=0; i<nb_cases_hauteur; ++i)
+    {
+        for (int j=0; j<nb_cases_largeur; ++j)
+        {
+            switch (salle_actuelle_jeu->get_case(i, j).get_type_char())
+            {
+                case 'e':
+                    Ennemi e;
+                    ennemis.push_back(e);
+                    break;
+                case 'c':
+                    break;
+                default:
+                    break;
+            }
+        }
+    }
 }

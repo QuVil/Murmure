@@ -19,6 +19,7 @@ Projectile::Projectile(const int& p_id, const int& p_type, const int& p_degat, c
     orientation = p_orientation;
     position = p_position;
     angle_orientation = atan2(orientation.get_x(),orientation.get_y());
+    collision = false;
 }
 
 void Projectile::avancer(const float &vitesse_frame)

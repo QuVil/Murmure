@@ -5,6 +5,10 @@
 Jeu::Jeu()
 {
     zone.generer_et_remplir(0);
+
+    Salle* adresse_test = zone.get_salle_ptr();
+    salle_actuelle.initialise_salle_actuelle(adresse_test);
+
 }
 
 Salle Jeu::get_salle()

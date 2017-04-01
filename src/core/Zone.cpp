@@ -70,6 +70,12 @@ Salle Zone::get_salle()const
     return carte[salle_actuelle_x][salle_actuelle_y];
 }
 
+Salle* Zone::get_salle_ptr()
+{
+    return &carte[salle_actuelle_x][salle_actuelle_y];
+}
+
+
 void Zone::set_salle(int x, int y, const Salle &nouvelle_salle)
 {
     carte[x][y] = nouvelle_salle;

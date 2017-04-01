@@ -69,6 +69,12 @@ public:
     Salle get_salle()const;
 
     /**
+     * \brief Accesseur de l'adresse de la Salle actuelle.
+     * \return l'adresse de la Salle actuelle.
+     */
+    Salle* get_salle_ptr();
+
+    /**
      * \brief Mutateur de Salle de la \a carte.
      * \param[in] x : les coordonnees x de la Salle à changer.
      * \param[in] y : les coordonnees y de la Salle à changer.

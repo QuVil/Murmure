@@ -27,7 +27,7 @@ JeuSFML::JeuSFML()
     view = window.getView();
     //temps_frame = sf::seconds((float) 1/FPS); // en seconde
     window.setVerticalSyncEnabled(true);
-    //window.setFramerateLimit(2);
+    //window.setFramerateLimit(60);
 
     //window.setMouseCursorVisible(false);
     /////////////////////////////////////////////////////////////////////////
@@ -369,7 +369,6 @@ void JeuSFML::dessiner_projectiles()
             ++it_jeu;
         }
     }
-    std::cout << "on arrive là" << std::endl;
     for(std::list<Projectile *>::iterator it_jeu2 = it_jeu; it_jeu2 != proj->end(); ++it_jeu2)
     {
         ProjectileSFML *p = new ProjectileSFML();

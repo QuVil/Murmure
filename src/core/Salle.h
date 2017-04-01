@@ -152,7 +152,6 @@ public:
      * \param[in] diff : la difficulte approximatie voulue.
      */
     void salle_depuis_modele_aleatoire(bool p_h, bool p_b, bool p_g, bool p_d, int conf, int diff = 0);
-
 };
 
 #endif // SALLE_H_INCLUDED
