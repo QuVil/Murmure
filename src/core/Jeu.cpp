@@ -11,9 +11,9 @@ Jeu::Jeu()
 
 }
 
-Salle Jeu::get_salle()
+Salle* Jeu::get_salle_actuelle()
 {
-    return zone.get_salle();
+    return salle_actuelle.get_salle_ptr();
 }
 
 Zone Jeu::get_zone()

@@ -12,15 +12,17 @@ class HitboxSFML
 private:
     CaseSFML * casesalle;
     PersoSFML * perso;
-    std::list<ProjectileSFML> * projectiles;
+    std::list<ProjectileSFML*> * projectiles;
 
     sf::FloatRect perso_hb;
-    sf::IntRect casesalle_hb[9][17];
+    sf::FloatRect casesalle_hb[9][17];
     std::list<sf::FloatRect *> projectiles_hb;
+
+    void actualise_hb_perso();
 public:
     HitboxSFML();
 
-    void init(CaseSFML * p_casesalle, PersoSFML * p_perso, ProjectileSFML * p_projectiles);
+    void init(CaseSFML * p_casesalle, PersoSFML * p_perso, std::list<ProjectileSFML*> * p_projectiles);
 
     void changer_salle();
 

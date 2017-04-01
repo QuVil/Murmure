@@ -19,7 +19,7 @@ private:
 public:
     Jeu();
 
-    Salle get_salle();
+    Salle* get_salle_actuelle();
 
     Zone get_zone();
 

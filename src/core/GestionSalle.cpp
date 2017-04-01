@@ -49,7 +49,7 @@ std::list <Projectile *> * GestionSalle::get_projectiles()
 void GestionSalle::initialise_salle_actuelle(Salle* adresse_salle)
 {
     salle_actuelle_jeu = adresse_salle;
-    std::cout<<salle_actuelle_jeu;
+    //std::cout<<salle_actuelle_jeu;
 }
 
 void GestionSalle::maj_changement_salle()
@@ -67,4 +67,9 @@ void GestionSalle::maj_changement_salle()
             }
         }
     }
+}
+
+Salle* GestionSalle::get_salle_ptr()
+{
+    return salle_actuelle_jeu;
 }

@@ -49,18 +49,19 @@ private:
     int val_max_deplacement;
 
     int salle_act_x, salle_act_y;
-    /// CASESALLE
 
+    HitboxSFML hitboxes;
+
+    /// CASESALLE
     int scale_salle;
     int posx0salle,posy0salle;
-    CaseSFML casesfml[9][17];
+    CaseSFML casesfml[9*17];
 
     /// CARTEAFF
     int scale_carte_largeur, scale_carte_hauteur;
     int posx0carte, posy0carte;
 
     /// PROJECTILES
-
     std::list <ProjectileSFML *> projectilesfml;
 
     PersoSFML persosfml;
@@ -88,6 +89,9 @@ private:
     void dessiner_projectiles();
     void ecrire_texte();
 
+    void actualiser_salle();
+    void actualiser_projectiles();
+    void actualiser_perso();
 public:
     JeuSFML();
 
