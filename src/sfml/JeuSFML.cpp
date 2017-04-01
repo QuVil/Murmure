@@ -342,31 +342,40 @@ void JeuSFML::dessiner_perso()
 
 void JeuSFML::dessiner_projectiles()
 {
-    std::list <Projectile *> * proj = jeu.retourne_projectiles();
+    std::list<Projectile *> * proj = jeu.retourne_projectiles();
     std::list<Projectile *>::iterator it_jeu;
     std::list<ProjectileSFML *>::iterator it_sfml;
     it_jeu = proj->begin();
-    for (it_sfml=projectilesfml.begin(); it_sfml != projectilesfml.end(); ++it_sfml)
+    for(it_sfml=projectilesfml.begin(); it_sfml != projectilesfml.end(); ++it_sfml)
     {
-        while(((*it_jeu)->get_position() != (*it_sfml)->get_projectile()->get_position())&&(it_sfml != projectilesfml.end()))
+        if(it_jeu == proj->end())
         {
-            //std::cout << "Hello darkness my old friend" << std::endl;
-            delete (*it_sfml);
-            if(projectilesfml.size() == 1)
+            while(it_sfml != projectilesfml.end())
             {
-                projectilesfml.clear();
+                delete (*it_sfml);
+                it_sfml = projectilesfml.erase(it_sfml);
+            }
+            break;
+        }
+        else
+        {
+            while((*it_jeu)->get_position() != (*it_sfml)->get_projectile()->get_position())
+            {
+                delete (*it_sfml);
+                it_sfml = projectilesfml.erase(it_sfml);
+                if(it_sfml == projectilesfml.end())
+                {
+                    break;
+                }
+            }
+            if(it_sfml == projectilesfml.end())
+            {
                 break;
-                it_sfml = projectilesfml.end();
             }
             else
             {
-                it_sfml = projectilesfml.erase(it_sfml);
+                ++it_jeu;
             }
-        }
-        if(((*it_jeu)->get_position() == (*it_sfml)->get_projectile()->get_position()))
-        {
-            //std::cout << "MATCH :D " << std::endl;
-            ++it_jeu;
         }
     }
     for(std::list<Projectile *>::iterator it_jeu2 = it_jeu; it_jeu2 != proj->end(); ++it_jeu2)
@@ -377,9 +386,7 @@ void JeuSFML::dessiner_projectiles()
     }
     for(it_sfml = projectilesfml.begin(); it_sfml != projectilesfml.end(); ++it_sfml)
     {
-        //std::cout << "et on dessine " << std::endl;
         (*it_sfml)->mise_a_jour_position();
-        //std::cout << (*it_sfml)->get_projectile()->get_position().get_x() << " " << (*it_sfml)->get_projectile()->get_position().get_y() << std::endl;
         buffer.draw((*it_sfml)->retourne_projectilesfml());
     }
 }

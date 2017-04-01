@@ -11,7 +11,7 @@ GestionSalle::~GestionSalle()
 {
     for (std::list<Projectile *>::iterator it=projectiles.begin(); it != projectiles.end(); ++it)
     {
-        delete &it;
+        delete (*it);
         it = projectiles.erase(it);
     }
     delete salle_actuelle_jeu;
@@ -32,17 +32,8 @@ void GestionSalle::mise_a_jour_projectiles(const float& vitesse_frame, const int
         (*it)->avancer(vitesse_frame);
         if(((*it)->get_position().get_x()<0)||((*it)->get_position().get_x()>17*taille_case)||((*it)->get_position().get_y()<0)||((*it)->get_position().get_y()>9*taille_case))
         {
-            delete &it;
-            if(projectiles.size() == 1)
-            {
-                projectiles.clear();
-                break;
-                //it = projectiles.end();
-            }
-            else
-            {
-                it = projectiles.erase(it);
-            }
+            delete (*it);
+            it = projectiles.erase(it);
         }
     }
 }
@@ -63,16 +54,12 @@ void GestionSalle::maj_changement_salle()
     {
         for (int j=0; j<nb_cases_largeur; ++j)
         {
-            switch (salle_actuelle_jeu->get_case(i, j).get_type_char())
+            char tests_case = salle_actuelle_jeu->get_case(i, j).get_type_char();
+
+            if (tests_case == 'e')
             {
-                case 'e':
-                    Ennemi e;
-                    ennemis.push_back(e);
-                    break;
-                case 'c':
-                    break;
-                default:
-                    break;
+                Ennemi* e = new Ennemi;
+                ennemis.push_back(e);
             }
         }
     }
