@@ -20,8 +20,8 @@ JeuSFML::JeuSFML()
     settings.antialiasingLevel = 0;
 
     desktop = sf::VideoMode::getDesktopMode();
-    //window.create(sf::VideoMode(desktop.width, desktop.height, desktop.bitsPerPixel), "Murmure",sf::Style::Fullscreen,settings);
-    window.create(sf::VideoMode(desktop.width, desktop.height, desktop.bitsPerPixel), "Murmure",sf::Style::Close);
+    window.create(sf::VideoMode(desktop.width, desktop.height, desktop.bitsPerPixel), "Murmure",sf::Style::Fullscreen,settings);
+    //window.create(sf::VideoMode(desktop.width, desktop.height, desktop.bitsPerPixel), "Murmure",sf::Style::Close);
     //FPS = 100;
     //window.setMouseCursorVisible(false);
     view = window.getView();
@@ -342,7 +342,7 @@ void JeuSFML::dessiner_perso()
 
 void JeuSFML::dessiner_projectiles()
 {
-    std::list <Projectile *> * proj = jeu.retourne_projectiles();
+    std::list<Projectile *> * proj = jeu.retourne_projectiles();
     std::list<Projectile *>::iterator it_jeu;
     std::list<ProjectileSFML *>::iterator it_sfml;
     it_jeu = proj->begin();

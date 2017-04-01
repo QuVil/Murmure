@@ -10,7 +10,7 @@ GestionSalle::~GestionSalle()
 {
     for (std::list<Projectile *>::iterator it=projectiles.begin(); it != projectiles.end(); ++it)
     {
-        delete &it;
+        delete (*it);
         it = projectiles.erase(it);
     }
 }
@@ -30,7 +30,7 @@ void GestionSalle::mise_a_jour_projectiles(const float& vitesse_frame, const int
         (*it)->avancer(vitesse_frame);
         if(((*it)->get_position().get_x()<0)||((*it)->get_position().get_x()>17*taille_case)||((*it)->get_position().get_y()<0)||((*it)->get_position().get_y()>9*taille_case))
         {
-            delete &it;
+            delete (*it);
             it = projectiles.erase(it);
         }
     }
