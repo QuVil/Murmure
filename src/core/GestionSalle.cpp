@@ -14,7 +14,11 @@ GestionSalle::~GestionSalle()
         delete (*it);
         it = projectiles.erase(it);
     }
-    delete salle_actuelle_jeu;
+    for (std::list<Ennemi *>::iterator it=ennemis.begin(); it != ennemis.end(); ++it)
+    {
+        delete (*it);
+        it = ennemis.erase(it);
+    }
 }
 
 void GestionSalle::ajouter_projectile(Projectile* p)
