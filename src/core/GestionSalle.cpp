@@ -31,16 +31,7 @@ void GestionSalle::mise_a_jour_projectiles(const float& vitesse_frame, const int
         if(((*it)->get_position().get_x()<0)||((*it)->get_position().get_x()>17*taille_case)||((*it)->get_position().get_y()<0)||((*it)->get_position().get_y()>9*taille_case))
         {
             delete &it;
-            if(projectiles.size() == 1)
-            {
-                projectiles.clear();
-                break;
-                //it = projectiles.end();
-            }
-            else
-            {
-                it = projectiles.erase(it);
-            }
+            it = projectiles.erase(it);
         }
     }
 }

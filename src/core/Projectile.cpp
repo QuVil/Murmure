@@ -2,6 +2,7 @@
 #include "math.h"
 
 #include <iostream>
+#include <cassert>
 
 Projectile::Projectile()
 {
@@ -48,5 +49,6 @@ float Projectile::get_taille_projectile() const
 
 Coord2D Projectile::get_position() const
 {
+    //assert(position.get_x()>=0);
     return position;
 }
