@@ -80,7 +80,6 @@ private:
     void init_carteAffSFML();
     void init_projectileSFML();
     void init_texte();
-    void init_hitbox();
 
     void dessiner_curseur();
     void dessiner_salle();

@@ -10,23 +10,17 @@
 class HitboxSFML
 {
 private:
-    CaseSFML * casesalle;
-    PersoSFML * perso;
-    std::list<ProjectileSFML*> * projectiles;
-
-    sf::FloatRect perso_hb;
-    sf::FloatRect casesalle_hb[9][17];
-    std::list<sf::FloatRect *> projectiles_hb;
 
     void actualise_hb_perso();
 public:
     HitboxSFML();
 
-    void init(CaseSFML * p_casesalle, PersoSFML * p_perso, std::list<ProjectileSFML*> * p_projectiles);
+    ~HitboxSFML();
 
     void changer_salle();
 
-    void gere_collisions();
+    void perso_et_salle(PersoSFML * perso, CaseSFML * casesalle);
+    void projectiles_et_salle(std::list<ProjectileSFML *> * projectiles, CaseSFML * casesalle);
 };
 
 #endif // HITBOXSFML_H_INCLUDED

@@ -33,12 +33,21 @@ void GestionSalle::mise_a_jour_projectiles(const float& vitesse_frame, const int
     for (std::list<Projectile *>::iterator it=projectiles.begin(); it != projectiles.end(); ++it)
     {
         //std::cout << (*it)->get_position().get_x() << " " << (*it)->get_position().get_y() << std::endl;
-        (*it)->avancer(vitesse_frame);
-        if(((*it)->get_position().get_x()<0)||((*it)->get_position().get_x()>17*taille_case)||((*it)->get_position().get_y()<0)||((*it)->get_position().get_y()>9*taille_case))
+        if((*it)->get_collision())
         {
             delete (*it);
             it = projectiles.erase(it);
         }
+        else
+        {
+            (*it)->avancer(vitesse_frame);
+            if(((*it)->get_position().get_x()<0)||((*it)->get_position().get_x()>17*taille_case)||((*it)->get_position().get_y()<0)||((*it)->get_position().get_y()>9*taille_case))
+            {
+                delete (*it);
+                it = projectiles.erase(it);
+            }
+        }
+
     }
 }
 std::list <Projectile *> * GestionSalle::get_projectiles()

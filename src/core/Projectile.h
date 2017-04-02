@@ -27,11 +27,15 @@ public:
 
     void avancer(const float &vitesse_frame);
 
+    void set_collision();
+
     float get_orientation_degre()const;
 
     float get_orientation_radian()const;
 
     float get_taille_projectile()const;
+
+    bool get_collision()const;
 
     Coord2D get_position()const;
 };

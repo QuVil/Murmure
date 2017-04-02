@@ -18,6 +18,10 @@ public:
     void mettre_a_jour();
 
     sf::Sprite get_persosfml();
+
+    sf::Sprite * get_persosfml_ptr();
+
+    Perso * get_perso_ptr();
 };
 
 #endif // PERSOSFML_H_INCLUDED

@@ -24,3 +24,13 @@ sf::Sprite PersoSFML::get_persosfml()
 {
     return persosfml;
 }
+
+sf::Sprite* PersoSFML::get_persosfml_ptr()
+{
+    return &persosfml;
+}
+
+Perso* PersoSFML::get_perso_ptr()
+{
+    return perso;
+}
