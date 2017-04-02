@@ -327,10 +327,10 @@ void JeuSFML::dessiner_curseur()
 void JeuSFML::avancer_jeu()
 {
     recupere_mouvements();
-    recupere_collisions();
     actualiser_perso();
     actualiser_salle();
     actualiser_projectiles();
+    recupere_collisions();
 }
 
 void JeuSFML::actualiser_salle()
