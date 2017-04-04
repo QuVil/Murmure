@@ -1,6 +1,7 @@
 #include "Perso.h"
 #include "Fichier.h"
 #include "Salle.h"
+#include "Config.h"
 
 #include <string>
 #include <iostream>
@@ -8,8 +9,8 @@
 
 Perso::Perso()
 {
-    position.set_x((float)(17/2));
-    position.set_y((float)9/2);
+    position.set_x((float) taille_grille_largeur/2);
+    position.set_y((float) taille_grille_hauteur/2);
     orientation.set_x(0);
     orientation.set_y(0);
     resultante.set_x(0);

@@ -299,6 +299,9 @@ sf::Texture& TextureSFML::retourne_texture_caseSFML(const char& type, const int&
         case 'n':
             return sol[rand() % nb_texture_sol_caseSFML];
             break;
+        case 'e':
+            return sol[rand() % nb_texture_sol_caseSFML];
+            break;
         case 'p':
             if(j == 0) {return porte[3];}
             else if(j == 16) {return porte[1];}

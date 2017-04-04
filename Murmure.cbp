@@ -131,6 +131,7 @@
 			<Option target="murmure_gen_test" />
 			<Option target="murmure_test_q" />
 		</Unit>
+		<Unit filename="src/core/Config.h" />
 		<Unit filename="src/core/Coord2D.cpp">
 			<Option target="murmure_txt" />
 			<Option target="murmure_test" />

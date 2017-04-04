@@ -2,6 +2,8 @@
 
 #include "Fichier.h"
 #include "Salle.h"
+#include "Config.h"
+
 #include <string>
 #include <iostream>
 #include <math.h>
@@ -21,8 +23,8 @@ Ennemi::Ennemi(std::string ia, int case_x_app, int case_y_app)
     case_x_apparition = case_x_app;
     case_y_apparition = case_y_app;
 
-    position.set_x((float) case_y_app + 1/2);
-    position.set_y((float) case_x_app + 1/2);
+    position.set_x((float) (case_y_app + 1.0/2.0));
+    position.set_y((float) (case_x_app + 1.0/2.0));
 
     vivant = true;
 

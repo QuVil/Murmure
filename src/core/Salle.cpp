@@ -90,15 +90,6 @@ void Salle::afficher()
     }
 }
 
-int Salle::get_nb_cases_largeur()
-{
-    return nb_cases_largeur;
-}
-
-int Salle::get_nb_cases_hauteur()
-{
-    return nb_cases_hauteur;
-}
 
 std::string Salle::get_config_string() const
 {
