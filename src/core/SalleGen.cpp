@@ -326,7 +326,7 @@ void SalleGen::afficher_validation() const
 
 void SalleGen::placer_ennemi()
 {
-    if (config != 4 && config != 2 && config != 0)
+    if (config == 1 || config == 3)
     {
         bool ennemi_place = false;
         int nb_break = 0;

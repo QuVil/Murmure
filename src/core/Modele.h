@@ -29,7 +29,7 @@ private:
     int tableau_modele[23];/**< \a tableau_modele contient la suite d'instuctions pour le modele.*/
     //Les deux premiers entiers sont le nb minimum et max de cases desirees
     //Puis le patterne de base:
-    //1=croix, 2=carre, 3=vide, 4=h, 5=hub
+    //1=croix, 2=carre, 3=vide, 4=h, 5=hub, 6=en huit, 7=vertical, 8=diagonale
 
     // Ensuite, les iterations à faire :
     //1=voisins, 2=bruit_neg, 3=bruit_pos, 4=aleatoire, 5=epuration, 6=extension

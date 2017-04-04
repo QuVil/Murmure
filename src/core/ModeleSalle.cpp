@@ -52,11 +52,11 @@ void ModeleSalle::generer_salle(bool p_h, bool p_b, bool p_g, bool p_d, int conf
                     break;
                 case 2:
                     generateur.placer_amas('r', tableau_modele[i+1]);
-                    i++;
+                    i++; //On 'skip' l'entier suivant, il ne sert qu'à déterminer la taille de l'amas
                     break;
                 case 3:
                     generateur.placer_amas('t', tableau_modele[i+1]);
-                    i++;
+                    i++; //On 'skip' l'entier suivant, il ne sert qu'à déterminer la taille de l'amas
                     break;
                 default:
                     //rien

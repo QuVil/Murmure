@@ -8,7 +8,6 @@
  * \version 0.3
  * \date 18 mars 2017
  */
- ///TODO : Finir la doc de ZoneGen...
 
 #include <stdio.h>
 #include <stdlib.h>

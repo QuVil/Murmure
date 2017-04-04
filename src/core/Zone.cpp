@@ -275,7 +275,7 @@ void Zone::zone_depuis_modele_aleatoire(int taille =0)
 void Zone::generer_salle(int i, int j)
 {
     int diff_aleat = rand() % 3;
-    //La difficulte moyenne est prise en compte 2 fois sur 3.
+    //La difficulte moyenne est prise en compte avec 66% de chance.
     int diff = 0;
     if (diff_aleat !=0)
     {
