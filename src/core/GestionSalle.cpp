@@ -50,6 +50,9 @@ void GestionSalle::initialise_salle_actuelle(Salle* adresse_salle)
 
 void GestionSalle::maj_changement_salle()
 {
+    //On supprime les projectiles et les ennemis
+
+    //On ajoute les ennemis
     for (int i=0; i<nb_cases_hauteur; ++i)
     {
         for (int j=0; j<nb_cases_largeur; ++j)
