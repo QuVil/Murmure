@@ -57,6 +57,7 @@ void GestionSalle::initialise_salle_actuelle(Salle* adresse_salle)
 {
     //On supprime les projectiles et les ennemis avant de changer le pointeur de la Salle:
     vider_projectiles();
+    vider_ennemis(false);
 
     //On actualise le pointeur sur la nouvelle salle actuelle:
     salle_actuelle_jeu = adresse_salle;
