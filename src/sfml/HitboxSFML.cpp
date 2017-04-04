@@ -32,11 +32,13 @@ void HitboxSFML::perso_et_salle(PersoSFML* perso, CaseSFML* casesalle)
     perso_vertex[3].position = perso_transf.transformPoint(perso_vertex[3].position);
 
     sf::FloatRect perso_hb = perso_vertex.getBounds();*/
-    sf::FloatRect perso_rect = perso->get_persosfml().getLocalBounds();
+    sf::FloatRect perso_rect = perso->get_persosfml().getGlobalBounds();
 
     sf::Transform perso_transf;
-    perso_transf.combine(perso->get_persosfml().getTransform());
-    perso_transf.scale(sf::Vector2f(0.9, 0.9), perso->get_persosfml().getOrigin());
+    //perso_transf.position
+    // perso_transf.scale(sf::Vector2f(0.9, 0.9), perso->get_persosfml().getOrigin());
+    // perso_transf.translate(perso->get_persosfml().getPosition());
+
     //perso_transf.rotate(-perso->get_persosfml().getRotation(), perso->get_persosfml().getOrigin());
 
     sf::FloatRect perso_hb = perso_transf.transformRect(perso_rect);
@@ -80,11 +82,11 @@ void HitboxSFML::perso_et_salle(PersoSFML* perso, CaseSFML* casesalle)
 void HitboxSFML::projectiles_et_salle(std::list<ProjectileSFML*>* projectiles, CaseSFML* casesalle)
 {
     sf::FloatRect projectile_hb;
-    for(int i=0; i<9; i++)
+    for(std::list<ProjectileSFML *>::iterator it_sfml = projectiles->begin(); it_sfml != projectiles->end(); ++it_sfml)
     {
-        for(int j=0; j<17; j++)
+        for(int i=0; i<9; i++)
         {
-            for(std::list<ProjectileSFML *>::iterator it_sfml = projectiles->begin(); it_sfml != projectiles->end(); ++it_sfml)
+            for(int j=0; j<17; j++)
             {
                 projectile_hb = (*it_sfml)->retourne_projectilesfml().getGlobalBounds();
                 //std::cout << "coucou" << std::endl;

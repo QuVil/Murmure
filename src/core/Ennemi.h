@@ -19,6 +19,8 @@ private:
 
     float pv_actuel;
 
+    int taille;
+
     bool vivant;
 
     int pos_case_x;
@@ -52,6 +54,8 @@ public:
     float get_pos_y()const;
 
     float get_pv_actuel()const;
+
+    int get_taille()const;
 
     VecteurM get_orientation() const;
 

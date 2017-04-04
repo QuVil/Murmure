@@ -76,6 +76,7 @@ void GestionSalle::maj_changement_salle()
             {
                 Ennemi* e = new Ennemi;
                 ennemis.push_back(e);
+                std::cout << "bite" << std::endl;
             }
         }
     }

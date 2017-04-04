@@ -10,6 +10,8 @@ Ennemi::Ennemi()
 {
     type_ia = "chasseur";
 
+    taille = 1;
+
     vivant = true;
 }
 
@@ -85,6 +87,11 @@ float Ennemi::get_pos_y() const
 float Ennemi::get_pv_actuel() const
 {
     return pv_actuel;
+}
+
+int Ennemi::get_taille() const
+{
+    return taille;
 }
 
 VecteurM Ennemi::get_orientation() const

@@ -49,6 +49,8 @@ void Jeu::definir_orientation_perso(const VecteurM& v)
 void  Jeu::zone_changer_salle(const char& c)
 {
     zone.changer_de_salle(c);
+    Salle* adresse_test = zone.get_salle_ptr();
+    salle_actuelle.initialise_salle_actuelle(adresse_test);
     salle_actuelle.maj_changement_salle();
 }
 

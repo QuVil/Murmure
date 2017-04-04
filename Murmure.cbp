@@ -339,6 +339,8 @@
 			<Option target="murmure_gen_test" />
 			<Option target="murmure_test_q" />
 		</Unit>
+		<Unit filename="src/sfml/EnnemiSFML.cpp" />
+		<Unit filename="src/sfml/EnnemiSFML.h" />
 		<Unit filename="src/sfml/HitboxSFML.cpp" />
 		<Unit filename="src/sfml/HitboxSFML.h" />
 		<Unit filename="src/sfml/JeuSFML.cpp">
