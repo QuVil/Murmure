@@ -49,6 +49,7 @@ void Jeu::definir_orientation_perso(const VecteurM& v)
 void  Jeu::zone_changer_salle(const char& c)
 {
     zone.changer_de_salle(c);
+    salle_actuelle.maj_changement_salle();
 }
 
 void Jeu::deplacer_perso_txt(char direction)
