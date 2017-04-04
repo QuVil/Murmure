@@ -15,6 +15,24 @@ Ennemi::Ennemi()
     vivant = true;
 }
 
+Ennemi::Ennemi(std::string ia, int case_x_app, int case_y_app)
+{
+    type_ia = ia;
+    case_x_apparition = case_x_app;
+    case_y_apparition = case_y_app;
+}
+
+void Ennemi::set_deplacement(const VecteurM& v)
+{
+    ///TODO TODO TODO TODO TODO TODO TODO
+}
+
+float Ennemi::get_orientation_degre() const
+{
+    ///TODO TODO TODO TODO TODO TODO TODO
+}
+
+
 void Ennemi::infliger_degats(float degats)
 {
     pv_actuel -= degats;
@@ -103,3 +121,19 @@ void Ennemi::set_coefficient_vitesse(const float& c)
 {
     coefficient_vitesse = c;
 }
+
+int Ennemi::get_case_x_apparition() const
+{
+    return case_x_apparition;
+}
+
+int Ennemi::get_case_y_apparition() const
+{
+    return case_y_apparition;
+}
+
+bool Ennemi::is_vivant()
+{
+    return vivant;
+}
+

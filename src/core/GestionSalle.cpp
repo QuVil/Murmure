@@ -9,16 +9,8 @@ GestionSalle::GestionSalle()
 
 GestionSalle::~GestionSalle()
 {
-    for (std::list<Projectile *>::iterator it=projectiles.begin(); it != projectiles.end(); ++it)
-    {
-        delete (*it);
-        it = projectiles.erase(it);
-    }
-    for (std::list<Ennemi *>::iterator it=ennemis.begin(); it != ennemis.end(); ++it)
-    {
-        delete (*it);
-        it = ennemis.erase(it);
-    }
+    vider_projectiles();
+    vider_ennemis(true);
 }
 
 void GestionSalle::ajouter_projectile(Projectile* p)
@@ -57,14 +49,16 @@ std::list <Projectile *> * GestionSalle::get_projectiles()
 
 void GestionSalle::initialise_salle_actuelle(Salle* adresse_salle)
 {
+    //On supprime les projectiles et les ennemis avant de changer le pointeur de la Salle:
+    vider_projectiles();
+
+    //On actualise le pointeur sur la nouvelle salle actuelle:
     salle_actuelle_jeu = adresse_salle;
     //std::cout<<salle_actuelle_jeu;
 }
 
 void GestionSalle::maj_changement_salle()
 {
-    //On supprime les projectiles et les ennemis
-
     //On ajoute les ennemis
     for (int i=0; i<nb_cases_hauteur; ++i)
     {
@@ -74,7 +68,7 @@ void GestionSalle::maj_changement_salle()
 
             if (tests_case == 'e')
             {
-                Ennemi* e = new Ennemi;
+                Ennemi* e = new Ennemi("chasseur", i, j);
                 ennemis.push_back(e);
                 std::cout << "bite" << std::endl;
             }
@@ -85,4 +79,33 @@ void GestionSalle::maj_changement_salle()
 Salle* GestionSalle::get_salle_ptr()
 {
     return salle_actuelle_jeu;
+}
+
+void GestionSalle::vider_projectiles()
+{
+    for (std::list<Projectile *>::iterator it=projectiles.begin(); it != projectiles.end(); ++it)
+    {
+        delete (*it);
+        it = projectiles.erase(it);
+    }
+}
+
+void GestionSalle::vider_ennemis(bool dans_destructeur = false)
+{
+    for (std::list<Ennemi *>::iterator it=ennemis.begin(); it != ennemis.end(); ++it)
+    {
+        int case_x = (*it)->get_case_x_apparition();
+        int case_y = (*it)->get_case_y_apparition();
+
+        if (salle_actuelle_jeu->get_case(case_x, case_y).get_type_char() == 'e' && (*it)->is_vivant() == false)
+        {
+            CaseSalle case_normale;
+            case_normale.set_type('n');
+            salle_actuelle_jeu->set_case(case_x, case_y, case_normale);
+        }
+
+
+        delete (*it);
+        it = ennemis.erase(it);
+    }
 }
