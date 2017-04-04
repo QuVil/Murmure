@@ -11,9 +11,9 @@ Jeu::Jeu()
 
 }
 
-Salle Jeu::get_salle()
+Salle* Jeu::get_salle_actuelle()
 {
-    return zone.get_salle();
+    return salle_actuelle.get_salle_ptr();
 }
 
 Zone Jeu::get_zone()
@@ -80,4 +80,9 @@ void Jeu::avancer_jeu(const float &vitesse_base, const int &taille_case)
 std::list <Projectile *> * Jeu::retourne_projectiles()
 {
     return salle_actuelle.get_projectiles();
+}
+
+Perso* Jeu::retourne_perso_ptr()
+{
+    return &perso;
 }

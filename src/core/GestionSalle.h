@@ -33,6 +33,8 @@ public:
     void initialise_salle_actuelle(Salle* adresse_salle);
 
     void maj_changement_salle();
+
+    Salle* get_salle_ptr();
 };
 
 #endif // GESTIONSALLE_H_INCLUDED

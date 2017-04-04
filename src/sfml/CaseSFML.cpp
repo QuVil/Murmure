@@ -51,12 +51,22 @@ void CaseSFML::mettre_a_jour_taille_texture(const int& t)
     taille = t;
 }
 
-sf::VertexArray CaseSFML::get_casesfml()
+void CaseSFML::mettre_a_jour_type_case(const char& c)
+{
+    type_case = c;
+}
+
+sf::VertexArray CaseSFML::get_casesfml()const
 {
     return casesfml;
 }
 
-int CaseSFML::get_taille_texture()
+int CaseSFML::get_taille_texture()const
 {
     return taille;
+}
+
+char CaseSFML::get_type_case() const
+{
+    return type_case;
 }

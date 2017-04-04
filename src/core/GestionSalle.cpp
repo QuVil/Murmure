@@ -14,7 +14,11 @@ GestionSalle::~GestionSalle()
         delete (*it);
         it = projectiles.erase(it);
     }
-    delete salle_actuelle_jeu;
+    for (std::list<Ennemi *>::iterator it=ennemis.begin(); it != ennemis.end(); ++it)
+    {
+        delete (*it);
+        it = ennemis.erase(it);
+    }
 }
 
 void GestionSalle::ajouter_projectile(Projectile* p)
@@ -29,12 +33,21 @@ void GestionSalle::mise_a_jour_projectiles(const float& vitesse_frame, const int
     for (std::list<Projectile *>::iterator it=projectiles.begin(); it != projectiles.end(); ++it)
     {
         //std::cout << (*it)->get_position().get_x() << " " << (*it)->get_position().get_y() << std::endl;
-        (*it)->avancer(vitesse_frame);
-        if(((*it)->get_position().get_x()<0)||((*it)->get_position().get_x()>17*taille_case)||((*it)->get_position().get_y()<0)||((*it)->get_position().get_y()>9*taille_case))
+        if((*it)->get_collision())
         {
             delete (*it);
             it = projectiles.erase(it);
         }
+        else
+        {
+            (*it)->avancer(vitesse_frame);
+            if(((*it)->get_position().get_x()<0)||((*it)->get_position().get_x()>17*taille_case)||((*it)->get_position().get_y()<0)||((*it)->get_position().get_y()>9*taille_case))
+            {
+                delete (*it);
+                it = projectiles.erase(it);
+            }
+        }
+
     }
 }
 std::list <Projectile *> * GestionSalle::get_projectiles()
@@ -45,7 +58,7 @@ std::list <Projectile *> * GestionSalle::get_projectiles()
 void GestionSalle::initialise_salle_actuelle(Salle* adresse_salle)
 {
     salle_actuelle_jeu = adresse_salle;
-    std::cout<<salle_actuelle_jeu;
+    //std::cout<<salle_actuelle_jeu;
 }
 
 void GestionSalle::maj_changement_salle()
@@ -66,4 +79,9 @@ void GestionSalle::maj_changement_salle()
             }
         }
     }
+}
+
+Salle* GestionSalle::get_salle_ptr()
+{
+    return salle_actuelle_jeu;
 }

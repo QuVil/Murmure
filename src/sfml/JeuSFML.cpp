@@ -26,8 +26,8 @@ JeuSFML::JeuSFML()
     //window.setMouseCursorVisible(false);
     view = window.getView();
     //temps_frame = sf::seconds((float) 1/FPS); // en seconde
-    window.setVerticalSyncEnabled(true);
-    //window.setFramerateLimit(60);
+    //window.setVerticalSyncEnabled(true);
+    //window.setFramerateLimit(100);
 
     //window.setMouseCursorVisible(false);
     /////////////////////////////////////////////////////////////////////////
@@ -87,7 +87,7 @@ void JeuSFML::init_caseSFML()
     {
         for(int j=0;j<17;j++)
         {
-            casesfml[i][j].init(posx0salle + j*scale_salle,
+            casesfml[j + 17*i].init(posx0salle + j*scale_salle,
                                           posy0salle + i*scale_salle,
                                           scale_salle,
                                           scale_salle);
@@ -149,7 +149,7 @@ void JeuSFML::init_curseur()
 void JeuSFML::init_persoSFML()
 {
     jeu.changer_perso("Green");
-    persosfml.charge_perso(textures.retourne_texture_perso(),scale_salle,jeu.get_perso().get_taille());
+    persosfml.charge_perso(jeu.retourne_perso_ptr(), textures.retourne_texture_perso(),scale_salle);
     jeu.definir_position_perso(jeu.get_perso().get_pos_x()*scale_salle + posx0salle, jeu.get_perso().get_pos_y()*scale_salle + posy0salle);
 }
 
@@ -274,37 +274,6 @@ void JeuSFML::ecrire_texte()
 
 void JeuSFML::dessiner_salle()
 {
-    if((salle_act_x != jeu.get_zone().get_salle_actuelle_x())||(salle_act_y != jeu.get_zone().get_salle_actuelle_y()))
-    {
-        buffer_salle.clear();
-        sf::Texture *texture_salle;
-        for(int i=0;i<9;i++)
-        {
-            for(int j=0;j<17;j++)
-            {
-                texture_salle = &textures.retourne_texture_caseSFML(jeu.get_salle().get_case(i, j).get_type_char(),
-                                                                         i,
-                                                                         j);
-                if(casesfml[i][j].get_taille_texture() != (int) texture_salle->getSize().x)
-                {
-                    casesfml[i][j].mettre_a_jour_taille_texture((int) texture_salle->getSize().x);
-                }
-                                                                         /*
-                buffer_salle.draw(casesfml[i][j].get_casesfml(),
-                            textures.retourne_rendu_texture_caseSFML(jeu.get_salle().get_case(i, j).get_type_char(),
-                                                                     i,
-                                                                     j,
-                                                                     jeu.get_zone().get_salle_actuelle_x(),
-                                                                     jeu.get_zone().get_salle_actuelle_y()));*/
-                buffer_salle.draw(casesfml[i][j].get_casesfml(), texture_salle);
-            }
-        }
-        //std::cout << "kek" << std::endl;
-        salle_act_x = jeu.get_zone().get_salle_actuelle_x();
-        salle_act_y = jeu.get_zone().get_salle_actuelle_y();
-        buffer_salle.display();
-        sprite_salle.setTexture(buffer_salle.getTexture());
-    }
     //sf::Sprite sprite(buffer.getTexture());
     buffer.draw(sprite_salle);
 }
@@ -335,12 +304,64 @@ void JeuSFML::dessiner_carte()
 
 void JeuSFML::dessiner_perso()
 {
-    persosfml.mettre_a_jour(jeu.get_perso());
-    //persosfml.get_persosfml().setPosition(jeu.get_perso().get_pos_x(), jeu.get_perso().get_pos_y());
     buffer.draw(persosfml.get_persosfml());
 }
 
 void JeuSFML::dessiner_projectiles()
+{
+    for(std::list<ProjectileSFML *>::iterator it_sfml = projectilesfml.begin(); it_sfml != projectilesfml.end(); ++it_sfml)
+    {
+        (*it_sfml)->mise_a_jour_position();
+        buffer.draw((*it_sfml)->retourne_projectilesfml());
+    }
+}
+
+/*
+void JeuSFML::dessiner_curseur()
+{
+    std::cout << "loo" << std::endl;
+    curseur.setPosition(static_cast<sf::Vector2f>(sf::Mouse::getPosition(window)));
+    buffer.draw(curseur);
+}*/
+
+void JeuSFML::avancer_jeu()
+{
+    recupere_mouvements();
+    actualiser_perso();
+    actualiser_salle();
+    actualiser_projectiles();
+    recupere_collisions();
+}
+
+void JeuSFML::actualiser_salle()
+{
+    if((salle_act_x != jeu.get_zone().get_salle_actuelle_x())||(salle_act_y != jeu.get_zone().get_salle_actuelle_y()))
+    {
+        buffer_salle.clear();
+        sf::Texture *texture_salle;
+        for(int i=0;i<9;i++)
+        {
+            for(int j=0;j<17;j++)
+            {
+                texture_salle = &textures.retourne_texture_caseSFML(jeu.get_salle_actuelle()->get_case(i, j).get_type_char(),
+                                                                         i,
+                                                                         j);
+                if(casesfml[j + 17*i].get_taille_texture() != (int) texture_salle->getSize().x)
+                {
+                    casesfml[j + 17*i].mettre_a_jour_taille_texture((int) texture_salle->getSize().x);
+                }
+                casesfml[j + 17*i].mettre_a_jour_type_case(jeu.get_salle_actuelle()->get_case(i, j).get_type_char());
+                buffer_salle.draw(casesfml[j + 17*i].get_casesfml(), texture_salle);
+            }
+        }
+        salle_act_x = jeu.get_zone().get_salle_actuelle_x();
+        salle_act_y = jeu.get_zone().get_salle_actuelle_y();
+        buffer_salle.display();
+        sprite_salle.setTexture(buffer_salle.getTexture());
+    }
+}
+
+void JeuSFML::actualiser_projectiles()
 {
     std::list<Projectile *> * proj = jeu.retourne_projectiles();
     std::list<Projectile *>::iterator it_jeu;
@@ -384,30 +405,20 @@ void JeuSFML::dessiner_projectiles()
         p->init((*it_jeu2), textures.retourne_texture_projectile(),scale_salle);
         projectilesfml.push_back(p);
     }
-    for(it_sfml = projectilesfml.begin(); it_sfml != projectilesfml.end(); ++it_sfml)
-    {
-        (*it_sfml)->mise_a_jour_position();
-        buffer.draw((*it_sfml)->retourne_projectilesfml());
-    }
 }
 
-/*
-void JeuSFML::dessiner_curseur()
+void JeuSFML::actualiser_perso()
 {
-    std::cout << "loo" << std::endl;
-    curseur.setPosition(static_cast<sf::Vector2f>(sf::Mouse::getPosition(window)));
-    buffer.draw(curseur);
-}*/
-
-void JeuSFML::avancer_jeu()
-{
-    recupere_collisions();
-    recupere_mouvements();
+    persosfml.mettre_a_jour();
 }
+
 
 
 void JeuSFML::recupere_collisions()
 {
+    hitboxes.perso_et_salle(&persosfml, casesfml);
+    hitboxes.projectiles_et_salle(&projectilesfml, casesfml);
+    /*
     sf::FloatRect hitbox_perso = persosfml.get_persosfml().getGlobalBounds();
     if(jeu.get_salle().get_case(0,8).get_type_char() == 'p')
     {
@@ -445,7 +456,7 @@ void JeuSFML::recupere_collisions()
             jeu.zone_changer_salle('d');
             jeu.definir_position_perso(scale_salle * (8 + 1.0/2.0), scale_salle * (1 + 1.0/2.0));
         }
-    }
+    }*/
 }
 
 void JeuSFML::recupere_mouvements()

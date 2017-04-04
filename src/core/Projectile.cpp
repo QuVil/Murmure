@@ -32,6 +32,11 @@ void Projectile::avancer(const float &vitesse_frame)
     position.set_y(position.get_y() + vitesse_frame*vitesse*sin(-angle_orientation + M_PI_2));
 }
 
+void Projectile::set_collision()
+{
+    collision = true;
+}
+
 float Projectile::get_orientation_degre() const
 {
     return (atan2(orientation.get_x(), orientation.get_y())/M_PI) * 180;
@@ -51,4 +56,9 @@ Coord2D Projectile::get_position() const
 {
     //assert(position.get_x()>=0);
     return position;
+}
+
+bool Projectile::get_collision() const
+{
+    return collision;
 }
