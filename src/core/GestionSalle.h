@@ -35,6 +35,10 @@ public:
     void maj_changement_salle();
 
     Salle* get_salle_ptr();
+
+    void vider_projectiles();
+
+    void vider_ennemis(bool dans_destructeur /* =false */);
 };
 
 #endif // GESTIONSALLE_H_INCLUDED

@@ -21,11 +21,13 @@ private:
 
     bool vivant;
 
-    int pos_case_x;
-    int pos_case_y;
+    int case_x_apparition;
+    int case_y_apparition;
 
 public:
     Ennemi();
+
+    Ennemi(std::string ia, int case_x_app, int case_y_app);
 
     void infliger_degats(float degats);
 
@@ -56,6 +58,12 @@ public:
     VecteurM get_orientation() const;
 
     void set_coefficient_vitesse(const float &c);
+
+    int get_case_x_apparition()const;
+
+    int get_case_y_apparition()const;
+
+    bool is_vivant();
 };
 
 #endif // ENNEMI_H_INCLUDED
