@@ -42,9 +42,15 @@ void GestionSalle::mise_a_jour_projectiles(const float& vitesse_frame, const int
 
     }
 }
+
 std::list <Projectile *> * GestionSalle::get_projectiles()
 {
     return &projectiles;
+}
+
+std::list* GestionSalle::get_ennemis()
+{
+    return &ennemis;
 }
 
 void GestionSalle::initialise_salle_actuelle(Salle* adresse_salle)

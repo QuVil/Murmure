@@ -64,6 +64,9 @@ private:
     /// PROJECTILES
     std::list <ProjectileSFML *> projectilesfml;
 
+    /// ENNEMIS
+    std::list <EnnemiSFML *> ennemisfml;
+
     PersoSFML persosfml;
 
     Jeu jeu;

@@ -30,6 +30,8 @@ public:
 
     std::list <Projectile *> * get_projectiles();
 
+    std::list <Ennemi *> * get_ennemis();
+
     void initialise_salle_actuelle(Salle* adresse_salle);
 
     void maj_changement_salle();
