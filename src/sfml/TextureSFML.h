@@ -39,6 +39,9 @@ private:
     // Projectile
     sf::Texture proj_1;
 
+    // Ennemi
+    sf::Texture ennemi_1;
+
 public:
     TextureSFML();
 
@@ -51,6 +54,8 @@ public:
     void charger_texture_curseur();
 
     void charger_texture_projectile();
+
+    void charger_texture_ennemi();
 
     sf::RenderStates retourne_rendu_texture_caseSFML(const char & type, const int &i, const int &j, const int &x, const int &y);
 
@@ -65,6 +70,8 @@ public:
     sf::Texture& retourne_texture_caseSFML(const char & type, const int &i, const int &j);
 
     sf::Texture& retourne_texture_projectile();
+
+    sf::Texture& retourne_texture_ennemi();
 };
 
 #endif // TEXTURESFML_H_INCLUDED

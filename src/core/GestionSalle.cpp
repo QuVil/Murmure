@@ -19,7 +19,7 @@ void GestionSalle::ajouter_projectile(Projectile* p)
     projectiles.push_back(p);
 }
 
-void GestionSalle::mise_a_jour_projectiles(const float& vitesse_frame, const int &taille_case)
+void GestionSalle::mise_a_jour_projectiles(const float& vitesse_frame)
 {
     //std::cout << projectiles.size() << " <- taille des proj" << std::endl;
     for (std::list<Projectile *>::iterator it=projectiles.begin(); it != projectiles.end(); ++it)
@@ -33,7 +33,7 @@ void GestionSalle::mise_a_jour_projectiles(const float& vitesse_frame, const int
         else
         {
             (*it)->avancer(vitesse_frame);
-            if(((*it)->get_position().get_x()<0)||((*it)->get_position().get_x()>17*taille_case)||((*it)->get_position().get_y()<0)||((*it)->get_position().get_y()>9*taille_case))
+            if(((*it)->get_position().get_x()<0)||((*it)->get_position().get_x()>17)||((*it)->get_position().get_y()<0)||((*it)->get_position().get_y()>9))
             {
                 delete (*it);
                 it = projectiles.erase(it);
@@ -48,7 +48,7 @@ std::list <Projectile *> * GestionSalle::get_projectiles()
     return &projectiles;
 }
 
-std::list* GestionSalle::get_ennemis()
+std::list <Ennemi *> * GestionSalle::get_ennemis()
 {
     return &ennemis;
 }
@@ -77,7 +77,7 @@ void GestionSalle::maj_changement_salle()
             {
                 Ennemi* e = new Ennemi("chasseur", i, j);
                 ennemis.push_back(e);
-                std::cout << "bite" << std::endl;
+                //std::cout << "bite" << std::endl;
             }
         }
     }
@@ -101,6 +101,7 @@ void GestionSalle::vider_ennemis(bool dans_destructeur = false)
 {
     for (std::list<Ennemi *>::iterator it=ennemis.begin(); it != ennemis.end(); ++it)
     {
+        std::cout << "ennemi supprime" << std::endl;
         int case_x = (*it)->get_case_x_apparition();
         int case_y = (*it)->get_case_y_apparition();
 

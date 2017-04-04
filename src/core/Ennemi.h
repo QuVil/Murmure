@@ -45,7 +45,7 @@ public:
 
     void revenir_ancienne_position();
 
-    Coord2D get_pos()const;
+    Coord2D get_position()const;
 
     float get_coefficient_vitesse()const;
 
@@ -68,6 +68,8 @@ public:
     int get_case_y_apparition()const;
 
     bool is_vivant();
+
+    void set_mort();
 };
 
 #endif // ENNEMI_H_INCLUDED

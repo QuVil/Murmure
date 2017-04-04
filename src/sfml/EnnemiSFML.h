@@ -12,17 +12,17 @@ private:
 
     Ennemi * ennemi;
 public:
-    Ennemi();
+    EnnemiSFML();
 
-    void init(Ennemi * p_ennemi, sf::Texture * p_texture, const int &taille_case);
+    void init(Ennemi * p_ennemi,const sf::Texture &p_texture, const int &taille_case);
 
-    void mettre_a_jour_position();
+    void mettre_a_jour_position(const int &taille_case, const int &x0, const int &y0);
 
     sf::Sprite get_ennemisfml();
 
     sf::Sprite * get_ennemisfml_ptr();
 
-    Ennemi * get_ennemi_ptr();
+    Ennemi * get_ennemi();
 };
 
 #endif // ENNEMISFML_H_INCLUDED

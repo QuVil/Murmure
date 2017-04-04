@@ -20,6 +20,13 @@ Ennemi::Ennemi(std::string ia, int case_x_app, int case_y_app)
     type_ia = ia;
     case_x_apparition = case_x_app;
     case_y_apparition = case_y_app;
+
+    position.set_x((float) case_y_app + 1/2);
+    position.set_y((float) case_x_app + 1/2);
+
+    vivant = true;
+
+    taille = 1;
 }
 
 void Ennemi::set_deplacement(const VecteurM& v)
@@ -69,7 +76,7 @@ void Ennemi::set_orientation(const VecteurM& v)
     }
 }
 
-Coord2D Ennemi::get_pos() const
+Coord2D Ennemi::get_position() const
 {
     return position;
 }
@@ -137,3 +144,7 @@ bool Ennemi::is_vivant()
     return vivant;
 }
 
+void Ennemi::set_mort()
+{
+    vivant = false;
+}

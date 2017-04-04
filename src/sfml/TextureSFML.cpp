@@ -114,6 +114,13 @@ void TextureSFML::charger_texture_projectile()
     proj_1.loadFromFile(path);
 }
 
+void TextureSFML::charger_texture_ennemi()
+{
+    std::string path;
+    path = "data/res/Ennemi/skins/1.png";
+    ennemi_1.loadFromFile(path);
+}
+
 sf::RenderStates TextureSFML::retourne_rendu_texture_carteAffSFML(const int& config, const bool &salle_act)
 {
     sf::RenderStates render;
@@ -328,6 +335,11 @@ sf::Texture& TextureSFML::retourne_texture_curseur()
 sf::Texture& TextureSFML::retourne_texture_projectile()
 {
     return proj_1;
+}
+
+sf::Texture& TextureSFML::retourne_texture_ennemi()
+{
+    return ennemi_1;
 }
 
 

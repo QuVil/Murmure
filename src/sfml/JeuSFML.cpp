@@ -26,7 +26,7 @@ JeuSFML::JeuSFML()
     //window.setMouseCursorVisible(false);
     view = window.getView();
     //temps_frame = sf::seconds((float) 1/FPS); // en seconde
-    //window.setVerticalSyncEnabled(true);
+    window.setVerticalSyncEnabled(true);
     //window.setFramerateLimit(100);
 
     //window.setMouseCursorVisible(false);
@@ -67,6 +67,11 @@ JeuSFML::~JeuSFML()
         delete (*it_sfml);
         it_sfml = projectilesfml.erase(it_sfml);
     }
+    for(std::list<EnnemiSFML *>::iterator it_sfml = ennemisfml.begin(); it_sfml != ennemisfml.end(); ++it_sfml)
+    {
+        delete (*it_sfml);
+        it_sfml = ennemisfml.erase(it_sfml);
+    }
 }
 
 void JeuSFML::init()
@@ -75,6 +80,7 @@ void JeuSFML::init()
     textures.charger_textures_carteAffSFML();
     textures.charger_texture_perso();
     textures.charger_texture_projectile();
+    textures.charger_texture_ennemi();
     //textures.charger_texture_curseur();
     init_caseSFML();
     init_persoSFML();
@@ -101,6 +107,11 @@ void JeuSFML::init_carteAffSFML()
 }
 
 void JeuSFML::init_projectileSFML()
+{
+
+}
+
+void JeuSFML::init_ennemiSFML()
 {
 
 }
@@ -138,6 +149,11 @@ void JeuSFML::init_texte()
     text_projectiles.setPosition(7 * scale_salle, 9*scale_salle);
     text_projectiles.setCharacterSize(24);
     text_projectiles.setFillColor(sf::Color::White);
+
+    text_ennemis.setFont(police_test);
+    text_ennemis.setPosition(7 * scale_salle, 9*scale_salle + 24);
+    text_ennemis.setCharacterSize(24);
+    text_ennemis.setFillColor(sf::Color::White);
 }
 
 /*
@@ -150,7 +166,7 @@ void JeuSFML::init_persoSFML()
 {
     jeu.changer_perso("Green");
     persosfml.charge_perso(jeu.retourne_perso_ptr(), textures.retourne_texture_perso(),scale_salle);
-    jeu.definir_position_perso(jeu.get_perso().get_pos_x()*scale_salle + posx0salle, jeu.get_perso().get_pos_y()*scale_salle + posy0salle);
+    //jeu.definir_position_perso(jeu.get_perso().get_pos_x(), jeu.get_perso().get_pos_y());
 }
 
 void JeuSFML::SFML_boucle()
@@ -158,6 +174,7 @@ void JeuSFML::SFML_boucle()
     int mode = 1;
     clock.restart();
     timer_arme1_perso.restart();
+    timer_devmode_salles.restart();
 
     //init();
     //charger_salle();
@@ -223,6 +240,7 @@ void JeuSFML::afficher(const int& mode)
         dessiner_salle();
         dessiner_perso();
         dessiner_projectiles();
+        dessiner_ennemis();
         //dessiner_curseur();
         ecrire_texte();
         break;
@@ -264,11 +282,16 @@ void JeuSFML::ecrire_texte()
     text_fps_stringstream << "NB DE PROJ. : " << projectilesfml.size();
     text_projectiles.setString(text_fps_stringstream.str());
 
+    text_fps_stringstream.str("");
+    text_fps_stringstream << "NB ENNEMIS : " << ennemisfml.size();
+    text_ennemis.setString(text_fps_stringstream.str());
+
     buffer.draw(text_posx);
     buffer.draw(text_posy);
     buffer.draw(text_mouseposx);
     buffer.draw(text_mouseposy);
     buffer.draw(text_projectiles);
+    buffer.draw(text_ennemis);
 }
 
 
@@ -311,8 +334,18 @@ void JeuSFML::dessiner_projectiles()
 {
     for(std::list<ProjectileSFML *>::iterator it_sfml = projectilesfml.begin(); it_sfml != projectilesfml.end(); ++it_sfml)
     {
-        (*it_sfml)->mise_a_jour_position();
         buffer.draw((*it_sfml)->retourne_projectilesfml());
+    }
+}
+
+void JeuSFML::dessiner_ennemis()
+{
+    for(std::list<EnnemiSFML *>::iterator it_sfml = ennemisfml.begin(); it_sfml != ennemisfml.end(); ++it_sfml)
+    {
+        if((*it_sfml)->get_ennemi()->is_vivant())
+        {
+            buffer.draw((*it_sfml)->get_ennemisfml());
+        }
     }
 }
 
@@ -327,11 +360,11 @@ void JeuSFML::dessiner_curseur()
 void JeuSFML::avancer_jeu()
 {
     recupere_mouvements();
-    recupere_collisions();
     actualiser_perso();
     actualiser_salle();
     actualiser_projectiles();
-
+    actualiser_ennemis();
+    recupere_collisions();
 }
 
 void JeuSFML::actualiser_salle()
@@ -406,22 +439,80 @@ void JeuSFML::actualiser_projectiles()
         p->init((*it_jeu2), textures.retourne_texture_projectile(),scale_salle);
         projectilesfml.push_back(p);
     }
+    for(std::list<ProjectileSFML *>::iterator it_sfml = projectilesfml.begin(); it_sfml != projectilesfml.end(); ++it_sfml)
+    {
+        (*it_sfml)->mise_a_jour_position(scale_salle, posx0salle, posy0salle);
+    }
 }
+
+void JeuSFML::actualiser_ennemis()
+{
+    std::list<Ennemi *> * ennemis = jeu.retourne_ennemis();
+    std::list<Ennemi *>::iterator it_jeu;
+    std::list<EnnemiSFML *>::iterator it_sfml;
+    it_jeu = ennemis->begin();
+    for(it_sfml=ennemisfml.begin(); it_sfml != ennemisfml.end(); ++it_sfml)
+    {
+        if(it_jeu == ennemis->end())
+        {
+            while(it_sfml != ennemisfml.end())
+            {
+                delete (*it_sfml);
+                it_sfml = ennemisfml.erase(it_sfml);
+            }
+            break;
+        }
+        else
+        {
+            while((*it_jeu)->get_position() != (*it_sfml)->get_ennemi()->get_position())
+            {
+                delete (*it_sfml);
+                it_sfml = ennemisfml.erase(it_sfml);
+                if(it_sfml == ennemisfml.end())
+                {
+                    break;
+                }
+            }
+            if(it_sfml == ennemisfml.end())
+            {
+                break;
+            }
+            else
+            {
+                ++it_jeu;
+            }
+        }
+    }
+    for(std::list<Ennemi *>::iterator it_jeu2 = it_jeu; it_jeu2 != ennemis->end(); ++it_jeu2)
+    {
+        EnnemiSFML * e = new EnnemiSFML();
+        e->init((*it_jeu2), textures.retourne_texture_ennemi(),scale_salle);
+        ennemisfml.push_back(e);
+    }
+    for(std::list<EnnemiSFML *>::iterator it_sfml = ennemisfml.begin(); it_sfml != ennemisfml.end(); ++it_sfml)
+    {
+        (*it_sfml)->mettre_a_jour_position(scale_salle, posx0salle, posy0salle);
+        //std::cout << (*it_sfml)->get_ennemisfml().getPosition().x << " " << (*it_sfml)->get_ennemisfml().getPosition().y << std::endl;
+    }
+}
+
 
 void JeuSFML::actualiser_perso()
 {
-    persosfml.mettre_a_jour();
+    persosfml.mettre_a_jour(scale_salle, posx0salle, posy0salle);
 }
 
 
 
 void JeuSFML::recupere_collisions()
 {
-    hitboxes.perso_et_salle(&persosfml, casesfml);
+    //hitboxes.perso_et_salle(&persosfml, casesfml);
     hitboxes.projectiles_et_salle(&projectilesfml, casesfml);
+    hitboxes.projectiles_et_ennemis(&projectilesfml, &ennemisfml);
+
     /*
     sf::FloatRect hitbox_perso = persosfml.get_persosfml().getGlobalBounds();
-    if(jeu.get_salle().get_case(0,8).get_type_char() == 'p')
+    if(jeu->get_salle().get_case(0,8).get_type_char() == 'p')
     {
         //std::cout << "kek" << std::endl;
         sf::FloatRect hitbox_porte_haut = casesfml[0][8].get_casesfml().getBounds();
@@ -431,7 +522,7 @@ void JeuSFML::recupere_collisions()
             jeu.definir_position_perso(scale_salle * (8+1.0/2.0),scale_salle * (7 +1.0/2.0));
         }
     }
-    if(jeu.get_salle().get_case(4,0).get_type_char()  == 'p')
+    if(jeu->get_salle().get_case(4,0).get_type_char()  == 'p')
     {
         sf::FloatRect hitbox_porte_gauche = casesfml[4][0].get_casesfml().getBounds();
         if(hitbox_perso.intersects(hitbox_porte_gauche))
@@ -440,7 +531,7 @@ void JeuSFML::recupere_collisions()
             jeu.definir_position_perso(scale_salle * (15 + 1.0/2.0), scale_salle * (4 +1.0/2.0));
         }
     }
-    if(jeu.get_salle().get_case(4,16).get_type_char()  == 'p')
+    if(jeu->get_salle().get_case(4,16).get_type_char()  == 'p')
     {
         sf::FloatRect hitbox_porte_droite = casesfml[4][16].get_casesfml().getBounds();
         if(hitbox_perso.intersects(hitbox_porte_droite))
@@ -449,7 +540,7 @@ void JeuSFML::recupere_collisions()
             jeu.definir_position_perso(scale_salle * (1 +1.0/2.0),scale_salle * (4+ 1.0/2.0));
         }
     }
-    if(jeu.get_salle().get_case(8,8).get_type_char()  == 'p')
+    if(jeu->get_salle().get_case(8,8).get_type_char()  == 'p')
     {
         sf::FloatRect hitbox_porte_bas = casesfml[8][8].get_casesfml().getBounds();
         if(hitbox_perso.intersects(hitbox_porte_bas))
@@ -509,17 +600,23 @@ void JeuSFML::recupere_mouvements()
     {
         sf::Vector2i souris;
         souris = sf::Mouse::getPosition(window);
-        orientation.set_x(souris.x - jeu.get_perso().get_pos_x());
-        orientation.set_y(souris.y - jeu.get_perso().get_pos_y());
+        orientation.set_x(souris.x - jeu.get_perso().get_pos_x()*scale_salle);
+        orientation.set_y(souris.y - jeu.get_perso().get_pos_y()*scale_salle);
     }
 
 
     jeu.definir_orientation_perso(orientation);
 
-    if(sf::Keyboard::isKeyPressed(sf::Keyboard::Up)) {jeu.zone_changer_salle('g');}
-    if(sf::Keyboard::isKeyPressed(sf::Keyboard::Down)) {jeu.zone_changer_salle('d');}
-    if(sf::Keyboard::isKeyPressed(sf::Keyboard::Left)) {jeu.zone_changer_salle('h');}
-    if(sf::Keyboard::isKeyPressed(sf::Keyboard::Right)) {jeu.zone_changer_salle('b');}
+    if(timer_arme1_perso.getElapsedTime().asSeconds()>= 0.5)
+    {
+        if(sf::Keyboard::isKeyPressed(sf::Keyboard::Up)) {jeu.zone_changer_salle('g');}
+        if(sf::Keyboard::isKeyPressed(sf::Keyboard::Down)) {jeu.zone_changer_salle('d');}
+        if(sf::Keyboard::isKeyPressed(sf::Keyboard::Left)) {jeu.zone_changer_salle('h');}
+        if(sf::Keyboard::isKeyPressed(sf::Keyboard::Right)) {jeu.zone_changer_salle('b');}
+        timer_arme1_perso.restart();
+    }
+
+
     //std::cout << "axe x : " << x << " axe y : " << y << std::endl;
     //std::cout << jeu.get_zone().get_salle_actuelle_x() << " " << jeu.get_zone().get_salle_actuelle_y() << std::endl;
 

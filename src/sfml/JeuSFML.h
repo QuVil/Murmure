@@ -14,6 +14,7 @@
 #include "TextureSFML.h"
 #include "ProjectileSFML.h"
 #include "HitboxSFML.h"
+#include "EnnemiSFML.h"
 
 class JeuSFML
 {
@@ -32,6 +33,7 @@ private:
 
     sf::Clock clock;
     sf::Clock timer_arme1_perso;
+    sf::Clock timer_devmode_salles;
 
     sf::Time temps_frame;
 
@@ -43,6 +45,7 @@ private:
     sf::Text text_posx, text_posy;
     sf::Text text_mouseposx,text_mouseposy;
     sf::Text text_projectiles;
+    sf::Text text_ennemis;
     std::stringstream text_fps_stringstream;
     int fps_actuel;
 
@@ -82,6 +85,7 @@ private:
     void init_caseSFML();
     void init_carteAffSFML();
     void init_projectileSFML();
+    void init_ennemiSFML();
     void init_texte();
 
     void dessiner_curseur();
@@ -89,10 +93,12 @@ private:
     void dessiner_carte();
     void dessiner_perso();
     void dessiner_projectiles();
+    void dessiner_ennemis();
     void ecrire_texte();
 
     void actualiser_salle();
     void actualiser_projectiles();
+    void actualiser_ennemis();
     void actualiser_perso();
 public:
     JeuSFML();

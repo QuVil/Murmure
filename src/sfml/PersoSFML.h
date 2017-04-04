@@ -15,7 +15,7 @@ public:
 
     void charge_perso(Perso * p,const sf::Texture & texture, const int &taille_case);
 
-    void mettre_a_jour();
+    void mettre_a_jour(const int &taille_case, const int &x0, const int &y0);
 
     sf::Sprite get_persosfml();
 

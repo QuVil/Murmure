@@ -113,3 +113,26 @@ void HitboxSFML::projectiles_et_salle(std::list<ProjectileSFML*>* projectiles, C
     }
 }
 
+void HitboxSFML::projectiles_et_ennemis(std::list<ProjectileSFML*>* projectiles, std::list<EnnemiSFML*>* ennemis)
+{
+    sf::FloatRect projectile_hb;
+    sf::FloatRect ennemis_hb;
+    for(std::list<ProjectileSFML *>::iterator it_proj = projectiles->begin(); it_proj != projectiles->end(); ++it_proj)
+    {
+        projectile_hb = (*it_proj)->retourne_projectilesfml().getGlobalBounds();
+        for(std::list<EnnemiSFML *>::iterator it_ennemis = ennemis->begin(); it_ennemis != ennemis->end(); ++it_ennemis)
+        {
+            if((*it_ennemis)->get_ennemi()->is_vivant())
+            {
+                ennemis_hb = (*it_ennemis)->get_ennemisfml().getGlobalBounds();
+                if(projectile_hb.intersects(ennemis_hb))
+                {
+                    (*it_proj)->get_projectile()->set_collision();
+                    (*it_ennemis)->get_ennemi()->set_mort();
+                }
+            }
+        }
+    }
+}
+
+

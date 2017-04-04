@@ -4,6 +4,7 @@
 #include "PersoSFML.h"
 #include "ProjectileSFML.h"
 #include "CaseSFML.h"
+#include "EnnemiSFML.h"
 
 #include <list>
 
@@ -21,6 +22,7 @@ public:
 
     void perso_et_salle(PersoSFML * perso, CaseSFML * casesalle);
     void projectiles_et_salle(std::list<ProjectileSFML *> * projectiles, CaseSFML * casesalle);
+    void projectiles_et_ennemis(std::list<ProjectileSFML *> * projectiles, std::list<EnnemiSFML *> * ennemis);
 };
 
 #endif // HITBOXSFML_H_INCLUDED

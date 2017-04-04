@@ -9,6 +9,9 @@
 
 #include <list>
 
+const int taille_grille_largeur = 170000000;
+const int taille_grille_hauteur =  90000000;
+
 class Jeu
 {
 private:
@@ -24,6 +27,10 @@ public:
     Zone get_zone();
 
     Perso get_perso();
+
+    int grille_largeur();
+
+    int grille_hauteur();
 
     void changer_perso(const std::string &n);
 
@@ -44,6 +51,8 @@ public:
     void avancer_jeu(const float &vitesse_base, const int &taille_case);
 
     std::list <Projectile *> * retourne_projectiles();
+
+    std::list <Ennemi *> * retourne_ennemis();
 
     Perso * retourne_perso_ptr();
 };

@@ -14,9 +14,9 @@ void PersoSFML::charge_perso(Perso * p,const sf::Texture& texture,const int &tai
     persosfml.setScale(p->get_taille()*taille_case/texture.getSize().x, p->get_taille()*taille_case/texture.getSize().y);
 }
 
-void PersoSFML::mettre_a_jour()
+void PersoSFML::mettre_a_jour(const int &taille_case, const int &x0, const int &y0)
 {
-    persosfml.setPosition(perso->get_pos_x(), perso->get_pos_y());
+    persosfml.setPosition(perso->get_pos_x() * taille_case + x0, perso->get_pos_y() * taille_case + y0);
     persosfml.setRotation(-perso->get_orientation_degre()+ 180);
 }
 

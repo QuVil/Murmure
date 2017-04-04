@@ -18,7 +18,7 @@ public:
 
     void init(Projectile * p, const sf::Texture & texture,const int &scale_salle);
 
-    void mise_a_jour_position();
+    void mise_a_jour_position(const int &taille_case, const int &x0, const int &y0);
 
     sf::Sprite retourne_projectilesfml();
 

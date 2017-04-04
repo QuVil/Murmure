@@ -18,9 +18,9 @@ void ProjectileSFML::init(Projectile * p, const sf::Texture& texture,const int &
     projectilesfml.setPosition(projectile->get_position().get_x()*scale_salle, projectile->get_position().get_y()*scale_salle);
 }
 
-void ProjectileSFML::mise_a_jour_position()
+void ProjectileSFML::mise_a_jour_position(const int &taille_case, const int &x0, const int &y0)
 {
-    projectilesfml.setPosition(projectile->get_position().get_x(), projectile->get_position().get_y());
+    projectilesfml.setPosition(projectile->get_position().get_x()* taille_case + x0, projectile->get_position().get_y()*taille_case + y0);
 }
 
 sf::Sprite ProjectileSFML::retourne_projectilesfml()

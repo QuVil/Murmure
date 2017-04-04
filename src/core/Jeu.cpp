@@ -26,6 +26,17 @@ Perso Jeu::get_perso()
     return perso;
 }
 
+int Jeu::grille_largeur()
+{
+    return taille_grille_largeur;
+}
+
+int Jeu::grille_hauteur()
+{
+    return taille_grille_hauteur;
+}
+
+
 void Jeu::changer_perso(const std::string& n)
 {
     perso.charger_perso(n);
@@ -77,13 +88,19 @@ void Jeu::ajouter_projectile_perso(const int& arme)
 
 void Jeu::avancer_jeu(const float &vitesse_base, const int &taille_case)
 {
-    salle_actuelle.mise_a_jour_projectiles(vitesse_base, taille_case);
+    salle_actuelle.mise_a_jour_projectiles(vitesse_base);
 }
 
 std::list <Projectile *> * Jeu::retourne_projectiles()
 {
     return salle_actuelle.get_projectiles();
 }
+
+std::list <Ennemi *> * Jeu::retourne_ennemis()
+{
+    return salle_actuelle.get_ennemis();
+}
+
 
 Perso* Jeu::retourne_perso_ptr()
 {
