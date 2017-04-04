@@ -9,7 +9,7 @@ int main(int argc, char ** argv)
 
     srand(time (NULL));
 
-    Modele m("test_bruits");
+    Modele m("diagonale_1");
     m.generer_zone();
     m.afficher_tests();
 

@@ -495,7 +495,7 @@ void ZoneGen::iterer(std::string meth /* = "" */)
         }
     }
 
-    if (methode == "bruit_neg" || methode == "bruit_pos")
+    if (methode == "bruit_neg" || methode == "bruit_pos" && get_nb_cases() > 10)
     {
         //On stocke le type de bruit dans un int pour une utilisation plus simple
         int type_bruit;
@@ -525,7 +525,7 @@ void ZoneGen::iterer(std::string meth /* = "" */)
                 if (carte[i][j] == 1)
                 {
                     int aleat_grad = rand() % 7;
-                    aleat_grad *= type_bruit;
+                    aleat_grad = aleat_grad * type_bruit;
 
                     switch (aleat_grad)
                     {
@@ -703,10 +703,132 @@ void ZoneGen::valider_recursif(int i, int j)
 
 void ZoneGen::placer_boss()
 {
-    bool boss_est_place = false;
-    int coin_recherche = rand() % 2;
-    if (coin_recherche == 0)
+    if (valide)
     {
+        bool boss_est_place = false;
+        int coin_recherche = rand() % 2;
+        if (coin_recherche == 0)
+        {
+            for (int i=0; i<11; ++i)
+            {
+                for (int j=0; j<11; ++j)
+                {
+                    int voisins = 0;
+                    if (i>0)
+                    {
+                        if (carte[i-1][j] == 1)
+                        {
+                            voisins++;
+                        }
+                    }
+
+                    if (i<10)
+                    {
+                        if (carte[i+1][j] == 1)
+                        {
+                            voisins++;
+                        }
+                    }
+
+                    if (j>0)
+                    {
+                        if (carte[i][j-1] == 1)
+                        {
+                            voisins++;
+                        }
+                    }
+
+                    if (j<10)
+                    {
+                        if (carte[i][j+1] == 1)
+                        {
+                            voisins++;
+                        }
+                    }
+
+                    if (voisins == 1 && carte[i][j] == 1 && !boss_est_place)
+                    {
+                        boss_est_place = true;
+                        carte[i][j] = 2;
+                    }
+                }
+            }
+        }
+        else
+        {
+            for (int i=10; i>=0; --i)
+            {
+                for (int j=10; j>=0; --j)
+                {
+                    int voisins = 0;
+                    if (i>0)
+                    {
+                        if (carte[i-1][j] == 1)
+                        {
+                            voisins++;
+                        }
+                    }
+
+                    if (i<10)
+                    {
+                        if (carte[i+1][j] == 1)
+                        {
+                            voisins++;
+                        }
+                    }
+
+                    if (j>0)
+                    {
+                        if (carte[i][j-1] == 1)
+                        {
+                            voisins++;
+                        }
+                    }
+
+                    if (j<10)
+                    {
+                        if (carte[i][j+1] == 1)
+                        {
+                            voisins++;
+                        }
+                    }
+
+                    if (voisins == 1 && carte[i][j] == 1 && !boss_est_place)
+                    {
+                        boss_est_place = true;
+                        carte[i][j] = 2;
+                    }
+                }
+            }
+        }
+
+        if (!boss_est_place)
+        {
+            valide = false;
+        }
+    }
+
+}
+
+void ZoneGen::vider_carte()
+{
+    for (int i=0; i<11; ++i)
+    {
+        for (int j=0; j<11; ++j)
+        {
+            carte[i][j] = 0;
+        }
+    }
+    pret_iteration = false;
+}
+
+void ZoneGen::placer_depart()
+{
+    if (valide)
+    {
+        bool dep_place = false;
+
+        //On regarde s'il y a une Salle avec 4 voisins -auquel cas on y placera la salle de départ.
         for (int i=0; i<11; ++i)
         {
             for (int j=0; j<11; ++j)
@@ -744,153 +866,39 @@ void ZoneGen::placer_boss()
                     }
                 }
 
-                if (voisins == 1 && carte[i][j] == 1 && !boss_est_place)
+                if (voisins == 4 && carte[i][j] == 1 && !dep_place)
                 {
-                    boss_est_place = true;
-                    carte[i][j] = 2;
+                    dep_place = true;
+                    carte[i][j] = 4;
+                    posx_dep = i;
+                    posy_dep = j;
                 }
             }
         }
-    }
-    else if (coin_recherche == 1)
-    {
-        for (int i=10; i>=0; --i)
+
+        //Sinon, on la met aléatoirement sur la carte.
+        int nb_break = 0;
+        while (!dep_place)
         {
-            for (int j=10; j>=0; --j)
+            int i_aleat = rand() % 11;
+            int j_aleat = rand() % 11;
+
+            if (carte[i_aleat][j_aleat] == 1)
             {
-                int voisins = 0;
-                if (i>0)
-                {
-                    if (carte[i-1][j] == 1)
-                    {
-                        voisins++;
-                    }
-                }
-
-                if (i<10)
-                {
-                    if (carte[i+1][j] == 1)
-                    {
-                        voisins++;
-                    }
-                }
-
-                if (j>0)
-                {
-                    if (carte[i][j-1] == 1)
-                    {
-                        voisins++;
-                    }
-                }
-
-                if (j<10)
-                {
-                    if (carte[i][j+1] == 1)
-                    {
-                        voisins++;
-                    }
-                }
-
-                if (voisins == 1 && carte[i][j] == 1 && !boss_est_place)
-                {
-                    boss_est_place = true;
-                    carte[i][j] = 2;
-                }
-            }
-        }
-    }
-
-    if (!boss_est_place)
-    {
-        valide = false;
-    }
-}
-
-void ZoneGen::vider_carte()
-{
-    for (int i=0; i<11; ++i)
-    {
-        for (int j=0; j<11; ++j)
-        {
-            carte[i][j] = 0;
-        }
-    }
-    pret_iteration = false;
-}
-
-void ZoneGen::placer_depart()
-{
-    bool dep_place = false;
-
-    //On regarde s'il y a une Salle avec 4 voisins -auquel cas on y placera la salle de départ.
-    for (int i=0; i<11; ++i)
-    {
-        for (int j=0; j<11; ++j)
-        {
-            int voisins = 0;
-            if (i>0)
-            {
-                if (carte[i-1][j] == 1)
-                {
-                    voisins++;
-                }
-            }
-
-            if (i<10)
-            {
-                if (carte[i+1][j] == 1)
-                {
-                    voisins++;
-                }
-            }
-
-            if (j>0)
-            {
-                if (carte[i][j-1] == 1)
-                {
-                    voisins++;
-                }
-            }
-
-            if (j<10)
-            {
-                if (carte[i][j+1] == 1)
-                {
-                    voisins++;
-                }
-            }
-
-            if (voisins == 4 && carte[i][j] == 1 && !dep_place)
-            {
+                carte[i_aleat][j_aleat] = 4;
                 dep_place = true;
-                carte[i][j] = 4;
-                posx_dep = i;
-                posy_dep = j;
+                posx_dep = i_aleat;
+                posy_dep = j_aleat;
             }
+            else if (nb_break > 10000)
+            {
+                valide = false;
+                break;
+            }
+            nb_break++;
         }
     }
 
-    //Sinon, on la met aléatoirement sur la carte.
-    int nb_break = 0;
-    while (!dep_place)
-    {
-        int i_aleat = rand() % 11;
-        int j_aleat = rand() % 11;
-
-        if (carte[i_aleat][j_aleat] == 1)
-        {
-            carte[i_aleat][j_aleat] = 4;
-            dep_place = true;
-            posx_dep = i_aleat;
-            posy_dep = j_aleat;
-        }
-        else if (nb_break > 10000)
-        {
-            valide = false;
-            break;
-        }
-        nb_break++;
-    }
 }
 
 int ZoneGen::calculer_distance (int x_dep, int y_dep, int x_arr, int y_arr) const
@@ -910,6 +918,7 @@ void ZoneGen::placer_clef()
     int dist_tampon = 0;
     int dist_max_i = 0;
     int dist_max_j = 0;
+    int nb_break = 0;
 
     for (int i=0; i<11; ++i)
     {
@@ -927,29 +936,38 @@ void ZoneGen::placer_clef()
             }
         }
     }
-    assert(dist_max_i != posx_dep || dist_max_j != posy_dep);
-    carte[dist_max_i][dist_max_j] = 3;
+    if (dist_max_i != posx_dep || dist_max_j != posy_dep)
+    {
+        carte[dist_max_i][dist_max_j] = 3;
+    }
+    else
+    {
+        valide = false;
+    }
 }
 
 void ZoneGen::placer_objet()
 {
-    bool obj_place = false;
-    int nb_break = 0;
-    while (!obj_place)
+    if (valide)
     {
-        int i_aleat = rand() % 11;
-        int j_aleat = rand() % 11;
+        bool obj_place = false;
+        int nb_break = 0;
+        while (!obj_place)
+        {
+            int i_aleat = rand() % 11;
+            int j_aleat = rand() % 11;
 
-        if (carte[i_aleat][j_aleat] == 1)
-        {
-            carte[i_aleat][j_aleat] = 5;
-            obj_place = true;
+            if (carte[i_aleat][j_aleat] == 1)
+            {
+                carte[i_aleat][j_aleat] = 5;
+                obj_place = true;
+            }
+            else if (nb_break > 10000)
+            {
+                valide = false;
+                break;
+            }
+            nb_break++;
         }
-        else if (nb_break > 10000)
-        {
-            valide = false;
-            break;
-        }
-        nb_break++;
     }
 }

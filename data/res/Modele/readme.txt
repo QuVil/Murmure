@@ -11,6 +11,9 @@ minimum et maximum de salles dans la Zone respectivement.
 	+3 : vide
 	+4 : en forme de h
 	+5 : hub
+	+6 : en forme de huit
+	+7 : barre verticale
+	+8 : diagonale \
 
 ->ensuite, 20 int représentant les itérations à appliquer au patterne de base :
 	+1 : voisins
