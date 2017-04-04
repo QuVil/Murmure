@@ -20,6 +20,9 @@ minimum et maximum de salles dans la Zone respectivement.
 	+5 : epuration
 	+6 : extension
 une fois la série d'itérations voulue complète, on termine la série avec des 0.
+Il est important de bien compléter jusqu'à avoir 20 int (sans compter les 3
+premiers), quitte à ajouter des zéros jusqu'à la fin -- il s'agit d'éviter les
+SegFault--.
 
 --------------------------------------------------------------------------------
 exemple : 
@@ -32,3 +35,8 @@ epuration, extension.
 
 Au bout d'un certain nombre de tentatives de générations, il est possible que
 le modèle échoue. Ce nombre peut être réglé dans Modele.cpp -je crois.
+Cependant, il est peu probable que le Modele échoue, à moins que les conditions
+de la génération soient irréalistes (par exemple une Zone comprenant entre 1 et
+3 Salles mais itérant 5 fois sur le Modele.
+Pour créer de nouveaux modèles, vous pouvez vous baser sur ceux déjà existants.
+

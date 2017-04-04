@@ -8,11 +8,11 @@ int main(int argc, char ** argv)
 {
 
     srand(time (NULL));
-/*
-    Modele m;
+
+    Modele m("test_bruits");
     m.generer_zone();
     m.afficher_tests();
-    */
+
 /*
     ZoneGen zg;
     zg.initialisation_gen("h", "bruit_neg");
@@ -44,10 +44,11 @@ int main(int argc, char ** argv)
     s_generateur.afficher_validation();
     std::cout<<s_generateur.is_valide();
 */
-
+/*
     Zone z;
     z.generer_et_remplir(0);
     z.afficher_zone();
+*/
 /*
     Salle s;
     s.salle_depuis_modele_aleatoire(1, 0, 1, 0, 1, 0);

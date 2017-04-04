@@ -48,7 +48,11 @@ std::list <Projectile *> * GestionSalle::get_projectiles()
     return &projectiles;
 }
 
+<<<<<<< HEAD
 std::list <Ennemi *> * GestionSalle::get_ennemis()
+=======
+std::list<Ennemi *>* GestionSalle::get_ennemis()
+>>>>>>> 9f1e042bef939722d47095e8344f7319e5325bb5
 {
     return &ennemis;
 }
