@@ -70,6 +70,8 @@ public:
     bool is_vivant();
 
     void set_mort();
+
+    void trouver_chemin();
 };
 
 #endif // ENNEMI_H_INCLUDED

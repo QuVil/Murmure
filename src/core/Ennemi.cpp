@@ -148,3 +148,9 @@ void Ennemi::set_mort()
 {
     vivant = false;
 }
+
+void Ennemi::trouver_chemin()
+{
+    int x = rand() % 3;
+}
+
