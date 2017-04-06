@@ -71,7 +71,9 @@ public:
 
     void set_mort();
 
-    void trouver_chemin();
+    void trouver_chemin(float pos_x, float pos_y);
+
+    void deplacer_auto(Coord2D pos_perso);
 };
 
 #endif // ENNEMI_H_INCLUDED

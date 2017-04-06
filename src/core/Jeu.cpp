@@ -106,3 +106,8 @@ Perso* Jeu::retourne_perso_ptr()
 {
     return &perso;
 }
+
+void Jeu::deplace_ennemis_auto()
+{
+    salle_actuelle.deplacer_ennemis_auto(perso.get_pos());
+}

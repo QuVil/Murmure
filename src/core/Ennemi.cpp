@@ -39,6 +39,7 @@ void Ennemi::set_deplacement(const VecteurM& v)
 float Ennemi::get_orientation_degre() const
 {
     ///TODO TODO TODO TODO TODO TODO TODO
+    return 1.0;
 }
 
 
@@ -151,8 +152,28 @@ void Ennemi::set_mort()
     vivant = false;
 }
 
-void Ennemi::trouver_chemin()
+void Ennemi::trouver_chemin(float pos_x, float pos_y)
 {
-    int x = rand() % 3;
+    VecteurM deplacement;
+    if (type_ia == "chasseur")
+    {
+        //Si le Perso est juste à côté, il fonce dessus
+        if (abs(pos_x - position.get_x()) < 99 && abs(pos_y - position.get_y()) < 99)
+        {
+            std::cout<<"triggered";
+            deplacement.set_x(pos_x - position.get_x());
+            deplacement.set_y(pos_y - position.get_y());
+        }
+        //Sinon, ....
+        else
+        {
+            //rien
+        }
+    }
+}
+
+void Ennemi::deplacer_auto(Coord2D pos_perso)
+{
+    trouver_chemin(pos_perso.get_x(), pos_perso.get_y());
 }
 

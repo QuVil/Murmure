@@ -421,6 +421,11 @@
 			<Option target="murmure_gen_test" />
 			<Option target="murmure_test_q" />
 		</Unit>
+		<Unit filename="src/testing/dijkstra_tests">
+			<Option target="murmure_test" />
+			<Option target="murmure_sfml" />
+			<Option target="murmure_test_q" />
+		</Unit>
 		<Unit filename="src/testing/generation_tests.cpp">
 			<Option target="murmure_test" />
 			<Option target="murmure_test_q" />

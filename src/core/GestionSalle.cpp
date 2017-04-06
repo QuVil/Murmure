@@ -117,3 +117,12 @@ void GestionSalle::vider_ennemis(bool dans_destructeur = false)
         ennemis.erase(it);
     }
 }
+
+void GestionSalle::deplacer_ennemis_auto(Coord2D pos_perso)
+{
+    for (std::list<Ennemi *>::iterator it=ennemis.begin(); it != ennemis.end(); ++it)
+    {
+        (*it)->deplacer_auto(pos_perso);
+    }
+}
+

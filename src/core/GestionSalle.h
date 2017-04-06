@@ -41,6 +41,8 @@ public:
     void vider_projectiles();
 
     void vider_ennemis(bool dans_destructeur /* =false */);
+
+    void deplacer_ennemis_auto(Coord2D pos_perso);
 };
 
 #endif // GESTIONSALLE_H_INCLUDED

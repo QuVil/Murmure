@@ -52,6 +52,8 @@ public:
     std::list <Ennemi *> * retourne_ennemis();
 
     Perso * retourne_perso_ptr();
+
+    void deplace_ennemis_auto();
 };
 
 #endif // JEU_H_INCLUDED

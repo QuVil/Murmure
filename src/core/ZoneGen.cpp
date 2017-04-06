@@ -495,7 +495,7 @@ void ZoneGen::iterer(std::string meth /* = "" */)
         }
     }
 
-    if (methode == "bruit_neg" || methode == "bruit_pos" && get_nb_cases() > 10)
+    if ((methode == "bruit_neg" || methode == "bruit_pos") && get_nb_cases() > 10)
     {
         //On stocke le type de bruit dans un int pour une utilisation plus simple
         int type_bruit;
@@ -918,7 +918,6 @@ void ZoneGen::placer_clef()
     int dist_tampon = 0;
     int dist_max_i = 0;
     int dist_max_j = 0;
-    int nb_break = 0;
 
     for (int i=0; i<11; ++i)
     {
