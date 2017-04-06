@@ -15,7 +15,7 @@ private:
 public:
     CarteAffSFML();
 
-    void init(int posX,int posY, int largeur, int hauteur);
+    void init(const int &posX,const int &posY,const int &largeur,const int &hauteur, const int &hauteur_tex, const int &largeur_tex);
 
     sf::VertexArray get_cartesallesfml();
 };

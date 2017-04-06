@@ -324,6 +324,34 @@ sf::Texture& TextureSFML::retourne_texture_caseSFML(const char& type, const int&
     return defaut;
 }
 
+sf::Texture& TextureSFML::retourne_texture_carteAffSFML(const int& config)
+{
+    switch(config)
+    {
+    case 0:
+        return vide;
+        break;
+    case 1:
+        return normal;
+        break;
+    case 2:
+        return boss;
+        break;
+    case 3:
+        return clef;
+        break;
+    case 4:
+        return depart;
+        break;
+    case 5:
+        return objet;
+        break;
+    default:
+        return defaut;
+        break;
+    }
+}
+
 sf::Texture& TextureSFML::retourne_texture_perso()
 {
     return perso;

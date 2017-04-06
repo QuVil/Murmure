@@ -4,7 +4,7 @@
 #include <SFML/Graphics.hpp>
 
 const int nb_texture_herbe_caseSFML= 7;
-const int nb_texture_sol_caseSFML= 6;
+const int nb_texture_sol_caseSFML= 4;
 
 class TextureSFML
 {
@@ -68,6 +68,8 @@ public:
     sf::Texture& retourne_texture_perso();
 
     sf::Texture& retourne_texture_caseSFML(const char & type, const int &i, const int &j);
+
+    sf::Texture& retourne_texture_carteAffSFML(const int & config);
 
     sf::Texture& retourne_texture_projectile();
 

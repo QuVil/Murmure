@@ -20,8 +20,8 @@ JeuSFML::JeuSFML()
     settings.antialiasingLevel = 0;
 
     desktop = sf::VideoMode::getDesktopMode();
-    window.create(sf::VideoMode(desktop.width, desktop.height, desktop.bitsPerPixel), "Murmure",sf::Style::Fullscreen,settings);
-    //window.create(sf::VideoMode(desktop.width, desktop.height, desktop.bitsPerPixel), "Murmure",sf::Style::Close);
+    //window.create(sf::VideoMode(desktop.width, desktop.height, desktop.bitsPerPixel), "Murmure",sf::Style::Fullscreen,settings);
+    window.create(sf::VideoMode(desktop.width, desktop.height, desktop.bitsPerPixel), "Murmure",sf::Style::Close);
     //FPS = 100;
     //window.setMouseCursorVisible(false);
     view = window.getView();
@@ -305,19 +305,20 @@ void JeuSFML::dessiner_salle()
 void JeuSFML::dessiner_carte()
 {
     CarteAffSFML c;
-    bool salle_act = false;
+    sf::Texture *texture_carte;
     for(int i=0;i<11;i++)
     {
         for(int j=0;j<11;j++)
         {
-            if((jeu.get_zone().get_salle_actuelle_x() == i)&&(jeu.get_zone().get_salle_actuelle_y() == j)) {salle_act = true;}
-            else {salle_act = false;}
+            texture_carte = &textures.retourne_texture_carteAffSFML(jeu.get_zone().get_salle(i, j).get_config());
             c.init(posx0carte +i*scale_carte_largeur,
-                      posy0carte +j*scale_carte_hauteur,
-                      scale_carte_largeur,
-                      scale_carte_hauteur);
+                   posy0carte +j*scale_carte_hauteur,
+                   scale_carte_largeur,
+                   scale_carte_hauteur,
+                   texture_carte->getSize().y,
+                   texture_carte->getSize().x);
             buffer_carte.draw(c.get_cartesallesfml(),
-                                     textures.retourne_rendu_texture_carteAffSFML(jeu.get_zone().get_salle(i, j).get_config(), salle_act));
+                              texture_carte);
         }
     }
     buffer_carte.display();
@@ -506,7 +507,7 @@ void JeuSFML::actualiser_perso()
 
 void JeuSFML::recupere_collisions()
 {
-    //hitboxes.perso_et_salle(&persosfml, casesfml);
+    hitboxes.perso_et_salle(&persosfml, casesfml);
     hitboxes.projectiles_et_salle(&projectilesfml, casesfml);
     hitboxes.projectiles_et_ennemis(&projectilesfml, &ennemisfml);
 
