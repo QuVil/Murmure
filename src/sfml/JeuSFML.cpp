@@ -279,11 +279,11 @@ void JeuSFML::ecrire_texte()
     text_mouseposy.setString(text_fps_stringstream.str());
 
     text_fps_stringstream.str("");
-    text_fps_stringstream << "NB DE PROJ. : " << projectilesfml.size();
+    text_fps_stringstream << "NB DE PROJ. : " << projectilesfml.size() << " GESTSALLE : " << jeu.retourne_projectiles()->size();
     text_projectiles.setString(text_fps_stringstream.str());
 
     text_fps_stringstream.str("");
-    text_fps_stringstream << "NB ENNEMIS : " << ennemisfml.size();
+    text_fps_stringstream << "NB ENNEMIS SFML: " << ennemisfml.size() << " GESTSALLE : " << jeu.retourne_ennemis()->size();
     text_ennemis.setString(text_fps_stringstream.str());
 
     buffer.draw(text_posx);

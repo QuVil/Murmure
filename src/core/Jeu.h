@@ -9,9 +9,6 @@
 
 #include <list>
 
-const int taille_grille_largeur = 170000000;
-const int taille_grille_hauteur =  90000000;
-
 class Jeu
 {
 private:

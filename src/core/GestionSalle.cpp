@@ -48,7 +48,7 @@ std::list <Projectile *> * GestionSalle::get_projectiles()
     return &projectiles;
 }
 
-std::list<Ennemi *>* GestionSalle::get_ennemis()
+std::list <Ennemi *> * GestionSalle::get_ennemis()
 {
     return &ennemis;
 }
@@ -93,7 +93,7 @@ void GestionSalle::vider_projectiles()
     for (std::list<Projectile *>::iterator it=projectiles.begin(); it != projectiles.end(); ++it)
     {
         delete (*it);
-        it = projectiles.erase(it);
+        projectiles.erase(it);
     }
 }
 
@@ -114,6 +114,6 @@ void GestionSalle::vider_ennemis(bool dans_destructeur = false)
 
 
         delete (*it);
-        it = ennemis.erase(it);
+        ennemis.erase(it);
     }
 }

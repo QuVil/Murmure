@@ -13,8 +13,7 @@
 #include "CaseSalle.h"
 #include "SalleGen.h"
 
-const int nb_cases_largeur = 17;
-const int nb_cases_hauteur = 9;
+#include "Config.h"
 
 /**
  * \class Salle
@@ -120,18 +119,6 @@ public:
      * Procedure d'affichage de la Salle en mode txt.
      */
     void afficher();
-
-    /**
-     * \brief Accesseur du nb de cases en largeur.
-     * \return \a nb_cases_largeur de la Salle.
-     */
-    int get_nb_cases_largeur();
-
-    /**
-     * \brief Accesseur du nb de cases en hauteur.
-     * \return \a nb_cases_hauteur de la Salle.
-     */
-    int get_nb_cases_hauteur();
 
     std::string get_config_string()const;
 
