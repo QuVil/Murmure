@@ -18,7 +18,7 @@ void PersoSFML::charge_perso(Perso * p,const sf::Texture& texture,const int &tai
 
 void PersoSFML::mettre_a_jour(const float &taille_case, const int &x0, const int &y0)
 {
-    persosfml.setPosition(perso->get_pos_x() * taille_case + x0, perso->get_pos_y() * taille_case + y0);
+    persosfml.setPosition(perso->get_pos_x() * taille_case /facteur + x0, perso->get_pos_y() * taille_case/facteur + y0);
     //std::cout << perso->get_pos_x() * taille_case + x0 << " " << perso->get_pos_y() * taille_case + y0 << std::endl;
     persosfml.setRotation(-perso->get_orientation_degre()+ 180);
 }

@@ -23,14 +23,14 @@ Ennemi::Ennemi(std::string ia, int case_x_app, int case_y_app)
     case_x_apparition = case_x_app;
     case_y_apparition = case_y_app;
 
-    position.set_x((float) (case_y_app + 1.0/2.0));
-    position.set_y((float) (case_x_app + 1.0/2.0));
+    position.set_x((float) facteur*(case_y_app + 1.0/2.0));
+    position.set_y((float) facteur*(case_x_app + 1.0/2.0));
 
     vivant = true;
 
     taille = 1;
 
-    coefficient_vitesse = 0.01;
+    coefficient_vitesse = 40;
 }
 
 void Ennemi::set_deplacement(const VecteurM& v)
@@ -155,9 +155,9 @@ void Ennemi::trouver_chemin(const Coord2D &position_perso)
     VecteurM deplacement;
     if (type_ia == "chasseur")
     {
-        std::cout<<"triggered";
         position.set_x(position.get_x() - cos(-get_angle_perso(position_perso) + M_PI_2)* coefficient_vitesse);
         position.set_y(position.get_y() - sin(-get_angle_perso(position_perso) + M_PI_2)* coefficient_vitesse);
+        //std::cout << position.get_x() << " " << position.get_y() << std::endl;
     }
 }
 

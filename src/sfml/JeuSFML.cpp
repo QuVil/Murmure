@@ -5,6 +5,7 @@
 #include <SFML/System.hpp>
 
 #include "CaseSalle.h"
+#include "Config.h"
 
 #include "CaseSFML.h"
 #include "CarteAffSFML.h"
@@ -595,7 +596,7 @@ void JeuSFML::recupere_mouvements()
     x = (float) x * vitesse_base_deplacement;
     y = (float) y * vitesse_base_deplacement;
     //std::cout << x << " " << y << std::endl;
-    jeu.deplacer_perso(x, y);
+    jeu.deplacer_perso(x * facteur, y* facteur);
 
     x = 0;
     y = 0;
@@ -617,8 +618,8 @@ void JeuSFML::recupere_mouvements()
     {
         sf::Vector2i souris;
         souris = sf::Mouse::getPosition(window);
-        orientation.set_x(souris.x - jeu.get_perso().get_pos_x()*scale_salle);
-        orientation.set_y(souris.y - jeu.get_perso().get_pos_y()*scale_salle);
+        orientation.set_x(souris.x - jeu.get_perso().get_pos_x()*scale_salle/facteur);
+        orientation.set_y(souris.y - jeu.get_perso().get_pos_y()*scale_salle/facteur);
     }
 
 
