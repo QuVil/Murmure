@@ -37,3 +37,21 @@ Perso* PersoSFML::get_perso_ptr()
 {
     return perso;
 }
+
+VecteurM PersoSFML::get_taille() const
+{
+    VecteurM taille;
+    taille.set_x(persosfml.getScale().x * persosfml.getTexture()->getSize().x);
+    taille.set_y(persosfml.getScale().y * persosfml.getTexture()->getSize().y);
+    return taille;
+}
+
+Coord2D PersoSFML::get_position_hg() const
+{
+    Coord2D position_hg;
+    VecteurM taille = get_taille();
+    position_hg.set_x(persosfml.getPosition().x - taille.get_x()/2);
+    position_hg.set_y(persosfml.getPosition().y - taille.get_y()/2);
+    return position_hg;
+}
+

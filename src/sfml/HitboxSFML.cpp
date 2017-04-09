@@ -61,7 +61,9 @@ void HitboxSFML::perso_et_salle(PersoSFML* perso, CaseSFML* casesalle, const int
 
     sf::FloatRect perso_hb = perso_vertex.getBounds();*/
     std::list<CaseSFML *> cases_collision;
-    sf::FloatRect perso_rect = perso->get_persosfml().getGlobalBounds();
+    //sf::FloatRect perso_rect = perso->get_persosfml().getGlobalBounds();
+    //std::cout << perso->get_persosfml().getPosition().x << " " << perso->get_persosfml().getPosition().y << std::endl;
+    sf::FloatRect perso_rect(sf::Vector2f(perso->get_position_hg().get_x(),perso->get_position_hg().get_y()), sf::Vector2f(perso->get_taille().get_x(), perso->get_taille().get_y()));
 
     //sf::Transform perso_transf;
     //perso_transf.scale(sf::Vector2f(0.4 , 0.4), perso->get_persosfml().getOrigin());
@@ -111,6 +113,8 @@ void HitboxSFML::perso_et_salle(PersoSFML* perso, CaseSFML* casesalle, const int
         }
     }
 
+    std::cout << cases_collision.size() << std::endl;
+    std::cout << perso->get_persosfml().getScale().x * perso->get_persosfml().getTexture()->getSize().x << " " << perso->get_persosfml().getScale().y* perso->get_persosfml().getTexture()->getSize().y << std::endl;
     if(!cases_collision.empty())
     {
         bool collision = false;
@@ -121,7 +125,8 @@ void HitboxSFML::perso_et_salle(PersoSFML* perso, CaseSFML* casesalle, const int
         perso->get_perso_ptr()->set_deplacement(deplacement_perso.get_x(), 0);
         perso->mettre_a_jour(taille_case, x0, y0);
         //sf::FloatRect perso_rect_x = perso->get_persosfml().getGlobalBounds();
-        sf::FloatRect perso_rect_x(perso->get_persosfml().getPosition(), perso->get_persosfml().getScale());
+        //sf::FloatRect perso_rect_x(perso->get_persosfml().getPosition(), perso->get_persosfml().getScale());
+        sf::FloatRect perso_rect_x(sf::Vector2f(perso->get_position_hg().get_x(),perso->get_position_hg().get_y()), sf::Vector2f(perso->get_taille().get_x(), perso->get_taille().get_y()));
         for(std::list<CaseSFML *>::iterator it = cases_collision.begin(); it != cases_collision.end(); ++it)
         {
             if(perso_rect_x.intersects((*it)->get_casesfml().getBounds())){collision = true; break;}
@@ -134,7 +139,8 @@ void HitboxSFML::perso_et_salle(PersoSFML* perso, CaseSFML* casesalle, const int
             perso->get_perso_ptr()->set_deplacement(0, deplacement_perso.get_y());
             perso->mettre_a_jour(taille_case, x0, y0);
             //sf::FloatRect perso_rect_y = perso->get_persosfml().getGlobalBounds();
-            sf::FloatRect perso_rect_y(perso->get_persosfml().getPosition(), perso->get_persosfml().getScale());
+            //sf::FloatRect perso_rect_y(perso->get_persosfml().getPosition(), perso->get_persosfml().getScale());
+            sf::FloatRect perso_rect_y(sf::Vector2f(perso->get_position_hg().get_x(),perso->get_position_hg().get_y()), sf::Vector2f(perso->get_taille().get_x(), perso->get_taille().get_y()));
             collision = false;
             for(std::list<CaseSFML *>::iterator it = cases_collision.begin(); it != cases_collision.end(); ++it)
             {
@@ -143,7 +149,7 @@ void HitboxSFML::perso_et_salle(PersoSFML* perso, CaseSFML* casesalle, const int
             if(collision)
             {
                 perso->get_perso_ptr()->revenir_ancienne_position();
-                std::cout << "KKEEEEIK" << std::endl;
+                //std::cout << "KKEEEEIK" << std::endl;
             }
         }
     }
