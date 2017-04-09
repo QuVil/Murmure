@@ -596,7 +596,7 @@ void JeuSFML::recupere_mouvements()
     x = (float) x * vitesse_base_deplacement;
     y = (float) y * vitesse_base_deplacement;
     //std::cout << x << " " << y << std::endl;
-    jeu.deplacer_perso(x * facteur, y* facteur);
+    jeu.deplacer_perso(x, y);
 
     x = 0;
     y = 0;

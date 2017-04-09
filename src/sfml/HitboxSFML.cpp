@@ -113,8 +113,8 @@ void HitboxSFML::perso_et_salle(PersoSFML* perso, CaseSFML* casesalle, const int
         }
     }
 
-    std::cout << cases_collision.size() << std::endl;
-    std::cout << perso->get_persosfml().getScale().x * perso->get_persosfml().getTexture()->getSize().x << " " << perso->get_persosfml().getScale().y* perso->get_persosfml().getTexture()->getSize().y << std::endl;
+    //std::cout << cases_collision.size() << std::endl;
+    //std::cout << perso->get_persosfml().getScale().x * perso->get_persosfml().getTexture()->getSize().x << " " << perso->get_persosfml().getScale().y* perso->get_persosfml().getTexture()->getSize().y << std::endl;
     if(!cases_collision.empty())
     {
         bool collision = false;
