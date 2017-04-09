@@ -34,6 +34,7 @@ private:
     sf::Clock clock;
     sf::Clock timer_arme1_perso;
     sf::Clock timer_devmode_salles;
+    sf::Clock timer_acutalise_perso;
 
     sf::Time temps_frame;
 

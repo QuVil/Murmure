@@ -29,6 +29,8 @@ Ennemi::Ennemi(std::string ia, int case_x_app, int case_y_app)
     vivant = true;
 
     taille = 1;
+
+    coefficient_vitesse = 0.01;
 }
 
 void Ennemi::set_deplacement(const VecteurM& v)
@@ -57,16 +59,12 @@ void Ennemi::soigner(float soin)
     pv_actuel += soin;
 }
 
-void Ennemi::set_deplacement(const float& x, const float& y)
+void Ennemi::set_deplacement(const Coord2D &position_perso)
 {
     position_old.set_x(position.get_x());
     position_old.set_y(position.get_y());
-    VecteurM deplacement(x, y);
-    //std::cout << deplacement.get_x() << " " << deplacement.get_y() << std::endl;
-    //resultante = deplacement + resultante;
-    resultante = deplacement;
     //std::cout << resultante.get_x() << " " << resultante.get_y() << std::endl;
-    position.deplacer(resultante, coefficient_vitesse);
+    trouver_chemin(position_perso);
     //std::cout << position.get_x() << " " << position.get_y() << std::endl;
 }
 
@@ -152,28 +150,27 @@ void Ennemi::set_mort()
     vivant = false;
 }
 
-void Ennemi::trouver_chemin(float pos_x, float pos_y)
+void Ennemi::trouver_chemin(const Coord2D &position_perso)
 {
     VecteurM deplacement;
     if (type_ia == "chasseur")
     {
-        //Si le Perso est juste à côté, il fonce dessus
-        if (abs(pos_x - position.get_x()) < 99 && abs(pos_y - position.get_y()) < 99)
-        {
-            std::cout<<"triggered";
-            deplacement.set_x(pos_x - position.get_x());
-            deplacement.set_y(pos_y - position.get_y());
-        }
-        //Sinon, ....
-        else
-        {
-            //rien
-        }
+        std::cout<<"triggered";
+        position.set_x(position.get_x() - cos(-get_angle_perso(position_perso) + M_PI_2)* coefficient_vitesse);
+        position.set_y(position.get_y() - sin(-get_angle_perso(position_perso) + M_PI_2)* coefficient_vitesse);
     }
 }
 
+float Ennemi::get_angle_perso(const Coord2D &pos_perso) const
+{
+    return (atan2(position.get_x() - pos_perso.get_x(), position.get_y() - pos_perso.get_y())/M_PI) * 180;
+}
+
+
 void Ennemi::deplacer_auto(Coord2D pos_perso)
 {
-    trouver_chemin(pos_perso.get_x(), pos_perso.get_y());
+    trouver_chemin(pos_perso);
 }
+
+
 

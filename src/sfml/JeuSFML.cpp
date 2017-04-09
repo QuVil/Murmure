@@ -175,6 +175,7 @@ void JeuSFML::SFML_boucle()
     clock.restart();
     timer_arme1_perso.restart();
     timer_devmode_salles.restart();
+    timer_acutalise_perso.restart();
 
     //init();
     //charger_salle();
@@ -238,9 +239,10 @@ void JeuSFML::afficher(const int& mode)
         window.clear();
         avancer_jeu();
         dessiner_salle();
-        dessiner_perso();
+
         dessiner_projectiles();
         dessiner_ennemis();
+        dessiner_perso();
         //dessiner_curseur();
         ecrire_texte();
         break;
@@ -261,7 +263,7 @@ void JeuSFML::ecrire_texte()
     //text_fps_string = std::to_string(fps_actuel) + " FPS";
     text_fps.setString(text_fps_stringstream.str());
     buffer.draw(text_fps);
-    //std::cout << text_fps_stringstream.str() << std::endl;
+    //std::cout << text_fps_stringstream.str() << std::endl;sf::Texture *texture_carte;
     text_fps_stringstream.str("");
     text_fps_stringstream << "POS X : " << jeu.get_perso().get_pos_x();
     text_posx.setString(text_fps_stringstream.str());
@@ -305,12 +307,22 @@ void JeuSFML::dessiner_salle()
 void JeuSFML::dessiner_carte()
 {
     CarteAffSFML c;
+    bool salle_act;
+    //salle_act = ((salle_act_x == jeu.get_zone().get_salle_actuelle_x())&&(salle_act_y == jeu.get_zone().get_salle_actuelle_y()))
     sf::Texture *texture_carte;
     for(int i=0;i<11;i++)
     {
         for(int j=0;j<11;j++)
         {
-            texture_carte = &textures.retourne_texture_carteAffSFML(jeu.get_zone().get_salle(i, j).get_config());
+            if((i == jeu.get_zone().get_salle_actuelle_x())&&(j == jeu.get_zone().get_salle_actuelle_y()))
+            {
+                salle_act = true;
+            }
+            else
+            {
+                salle_act = false;
+            }
+            texture_carte = &textures.retourne_texture_carteAffSFML(jeu.get_zone().get_salle(i, j).get_config(), salle_act);
             c.init(posx0carte +i*scale_carte_largeur,
                    posy0carte +j*scale_carte_hauteur,
                    scale_carte_largeur,
@@ -360,12 +372,16 @@ void JeuSFML::dessiner_curseur()
 
 void JeuSFML::avancer_jeu()
 {
+    vitesse_base = (scale_salle*temps_frame.asSeconds());
     recupere_mouvements();
     actualiser_perso();
+    recupere_collisions();
+    jeu.avancer_jeu(vitesse_base,scale_salle);
     actualiser_salle();
     actualiser_projectiles();
     actualiser_ennemis();
-    recupere_collisions();
+
+
 }
 
 void JeuSFML::actualiser_salle()
@@ -555,7 +571,7 @@ void JeuSFML::recupere_collisions()
 void JeuSFML::recupere_mouvements()
 {
     vitesse_base_deplacement = (scale_salle*temps_frame.asSeconds()) /(val_max_deplacement/10);
-    vitesse_base = (scale_salle*temps_frame.asSeconds());
+
     // Clavier
     // Attention l'axe Y pointe vers le bas
     float x = 0;
@@ -621,7 +637,12 @@ void JeuSFML::recupere_mouvements()
     //std::cout << "axe x : " << x << " axe y : " << y << std::endl;
     //std::cout << jeu.get_zone().get_salle_actuelle_x() << " " << jeu.get_zone().get_salle_actuelle_y() << std::endl;
 
-    jeu.avancer_jeu(vitesse_base,scale_salle);
+    //if(timer_acutalise_perso.getElapsedTime().asSeconds() >= 1)
+    //{
+
+        //timer_acutalise_perso.restart();
+    //}
+
 
     if (sf::Mouse::isButtonPressed(sf::Mouse::Left)&&((timer_arme1_perso.getElapsedTime().asSeconds()==0)||(timer_arme1_perso.getElapsedTime().asSeconds()>=jeu.get_perso().get_arme1()->get_cadence_tir())))
     {

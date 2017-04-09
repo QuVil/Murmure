@@ -294,13 +294,32 @@ sf::Texture& TextureSFML::retourne_texture_caseSFML(const char& type, const int&
     }
     else
     {
+        int tirage = rand() % 1000;
         switch(type)
         {
         case 'n':
-            return sol[rand() % nb_texture_sol_caseSFML];
+            if(tirage < 690){return sol[0];}
+            else if(tirage < 790){return sol[1];}
+            else if(tirage < 890){return sol[2];}
+            else if(tirage < 988){return sol[3];}
+            else if(tirage < 990){return sol[4];}
+            else if(tirage < 992){return sol[5];}
+            else if(tirage < 994){return sol[6];}
+            else if(tirage < 996){return sol[7];}
+            else if(tirage < 998){return sol[8];}
+            else{return sol[9];}
             break;
         case 'e':
-            return sol[rand() % nb_texture_sol_caseSFML];
+            if(tirage < 690){return sol[0];}
+            else if(tirage < 790){return sol[1];}
+            else if(tirage < 890){return sol[2];}
+            else if(tirage < 988){return sol[3];}
+            else if(tirage < 990){return sol[4];}
+            else if(tirage < 992){return sol[5];}
+            else if(tirage < 994){return sol[6];}
+            else if(tirage < 996){return sol[7];}
+            else if(tirage < 998){return sol[8];}
+            else{return sol[9];}
             break;
         case 'p':
             if(j == 0) {return porte[3];}
@@ -324,31 +343,38 @@ sf::Texture& TextureSFML::retourne_texture_caseSFML(const char& type, const int&
     return defaut;
 }
 
-sf::Texture& TextureSFML::retourne_texture_carteAffSFML(const int& config)
+sf::Texture& TextureSFML::retourne_texture_carteAffSFML(const int& config, const bool &salle_act)
 {
-    switch(config)
+    if(salle_act)
     {
-    case 0:
-        return vide;
-        break;
-    case 1:
-        return normal;
-        break;
-    case 2:
-        return boss;
-        break;
-    case 3:
-        return clef;
-        break;
-    case 4:
-        return depart;
-        break;
-    case 5:
-        return objet;
-        break;
-    default:
-        return defaut;
-        break;
+        return actuel;
+    }
+    else
+    {
+        switch(config)
+        {
+        case 0:
+            return vide;
+            break;
+        case 1:
+            return normal;
+            break;
+        case 2:
+            return boss;
+            break;
+        case 3:
+            return clef;
+            break;
+        case 4:
+            return depart;
+            break;
+        case 5:
+            return objet;
+            break;
+        default:
+            return defaut;
+            break;
+        }
     }
 }
 

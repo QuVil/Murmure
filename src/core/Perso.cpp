@@ -227,6 +227,7 @@ void Perso::placer_txt(int x, int y)
 
 Projectile* Perso::tirer_1()
 {
+    //Coord2D affixe(position.get_x() + cos(position.get_x() / position.get_y()), position.get_y() + sin(position.get_x() / position.get_y()));
     return arme1.tirer(orientation, position);
 }
 

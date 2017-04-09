@@ -32,16 +32,16 @@ void HitboxSFML::perso_et_salle(PersoSFML* perso, CaseSFML* casesalle)
     perso_vertex[3].position = perso_transf.transformPoint(perso_vertex[3].position);
 
     sf::FloatRect perso_hb = perso_vertex.getBounds();*/
-    sf::FloatRect perso_rect = perso->get_persosfml().getLocalBounds();
+    sf::FloatRect perso_rect = perso->get_persosfml().getGlobalBounds();
 
-    sf::Transform perso_transf;
+    //sf::Transform perso_transf;
     //perso_transf.position
-    perso_transf.scale(sf::Vector2f(0.4 , 0.4), perso->get_persosfml().getOrigin());
+    //perso_transf.scale(sf::Vector2f(0.4 , 0.4), perso->get_persosfml().getOrigin());
     // perso_transf.translate(perso->get_persosfml().getPosition());
 
     //perso_transf.rotate(-perso->get_persosfml().getRotation(), perso->get_persosfml().getOrigin());
 
-    sf::FloatRect perso_hb = perso_transf.transformRect(perso_rect);
+    sf::FloatRect perso_hb = perso_rect;
 
 
 
