@@ -30,7 +30,7 @@ Ennemi::Ennemi(std::string ia, int case_x_app, int case_y_app)
 
     taille = 1;
 
-    coefficient_vitesse = 40;
+    coefficient_vitesse = 40000;
 }
 
 void Ennemi::set_deplacement(const VecteurM& v)
