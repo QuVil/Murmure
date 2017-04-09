@@ -524,7 +524,7 @@ void JeuSFML::actualiser_perso()
 
 void JeuSFML::recupere_collisions()
 {
-    hitboxes.perso_et_salle(&persosfml, casesfml);
+    hitboxes.perso_et_salle(&persosfml, casesfml, scale_salle, posx0salle, posy0salle);
     hitboxes.projectiles_et_salle(&projectilesfml, casesfml);
     hitboxes.projectiles_et_ennemis(&projectilesfml, &ennemisfml);
 

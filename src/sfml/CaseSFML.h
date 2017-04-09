@@ -26,6 +26,8 @@ public:
 
     void mettre_a_jour_type_case(const char &c);
 
+    void check_collision();
+
     sf::VertexArray get_casesfml()const;
 
     int get_taille_texture()const;

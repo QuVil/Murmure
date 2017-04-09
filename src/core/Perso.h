@@ -23,6 +23,8 @@ private:
 
     VecteurM orientation, resultante;
 
+    VecteurM deplacement;
+
     Coord2D position, position_old;
 
     float coefficient_vitesse;
@@ -72,6 +74,8 @@ public:
     float get_pv_actuel()const;
 
     float get_taille()const;
+
+    VecteurM get_deplacement()const;
 
     VecteurM get_orientation()const;
 

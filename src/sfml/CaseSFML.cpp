@@ -56,6 +56,14 @@ void CaseSFML::mettre_a_jour_type_case(const char& c)
     type_case = c;
 }
 
+void CaseSFML::check_collision()
+{
+    casesfml[0].color = sf::Color::Red;
+    casesfml[1].color = sf::Color::Red;
+    casesfml[2].color = sf::Color::Red;
+    casesfml[3].color = sf::Color::Red;
+}
+
 sf::VertexArray CaseSFML::get_casesfml()const
 {
     return casesfml;

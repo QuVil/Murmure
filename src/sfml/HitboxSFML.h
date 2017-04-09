@@ -13,6 +13,7 @@ class HitboxSFML
 private:
 
     void actualise_hb_perso();
+    void glisser_perso(CaseSFML *casesfml, PersoSFML *perso, const int &taille_case, const int &x0, const int &y0);
 public:
     HitboxSFML();
 
@@ -20,7 +21,7 @@ public:
 
     void changer_salle();
 
-    void perso_et_salle(PersoSFML * perso, CaseSFML * casesalle);
+    void perso_et_salle(PersoSFML * perso, CaseSFML * casesalle, const int &taille_case, const int &x0, const int &y0);
     void projectiles_et_salle(std::list<ProjectileSFML *> * projectiles, CaseSFML * casesalle);
     void projectiles_et_ennemis(std::list<ProjectileSFML *> * projectiles, std::list<EnnemiSFML *> * ennemis);
 };
