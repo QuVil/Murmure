@@ -1,13 +1,19 @@
 var searchData=
 [
-  ['remplir',['remplir',['../classSalle.html#ae6fd7211225455d887859f983e3bddce',1,'Salle']]],
-  ['remplir_5fsalle',['remplir_salle',['../classZone.html#ae97ba3cc2a452803a66dbd3c0c84852b',1,'Zone::remplir_salle(int x, int y)'],['../classZone.html#a76284023033d6b67f933b4656a8eb761',1,'Zone::remplir_salle()']]],
-  ['retourne_5fprojectilesfml',['retourne_projectilesfml',['../classProjectileSFML.html#ad44db624c636347659a9677db6ea9a56',1,'ProjectileSFML']]],
-  ['retourne_5frendu_5ftexture_5fcarteaffsfml',['retourne_rendu_texture_carteAffSFML',['../classTextureSFML.html#ad7b34fb7ef06ae789c2b608c3d2e73eb',1,'TextureSFML']]],
-  ['retourne_5frendu_5ftexture_5fcasesfml',['retourne_rendu_texture_caseSFML',['../classTextureSFML.html#aa53677d04e938b2aab93706f4e418510',1,'TextureSFML']]],
-  ['retourne_5frendu_5ftexture_5fperso',['retourne_rendu_texture_perso',['../classTextureSFML.html#a18df93a994a6343b6aea26d6e397cb1c',1,'TextureSFML']]],
-  ['retourne_5ftexture_5fcasesfml',['retourne_texture_caseSFML',['../classTextureSFML.html#a3daf2e9be9966e9d597acec83c12372b',1,'TextureSFML']]],
-  ['retourne_5ftexture_5fcurseur',['retourne_texture_curseur',['../classTextureSFML.html#ab5c8aa79baa997e736ba3c43babd314e',1,'TextureSFML']]],
-  ['retourne_5ftexture_5fperso',['retourne_texture_perso',['../classTextureSFML.html#a956e5bfd50966a426efed6c8eee16645',1,'TextureSFML']]],
-  ['revenir_5fancienne_5fposition',['revenir_ancienne_position',['../classPerso.html#a7ccf761bd7df818e304713fe117ec4d1',1,'Perso']]]
+  ['perso',['Perso',['../classPerso.html#a33aebfa5c1b957d87f81da39536121e8',1,'Perso::Perso()'],['../classPerso.html#a25afa33fb28da6526c48cca6d96cb65c',1,'Perso::Perso(std::string n)']]],
+  ['perso_5fet_5fsalle',['perso_et_salle',['../classHitboxSFML.html#a0cc4573828eead922d118cf804ad2292',1,'HitboxSFML']]],
+  ['persosfml',['PersoSFML',['../classPersoSFML.html#a43020482f05d0b79ec19ce6bb5d68c11',1,'PersoSFML']]],
+  ['placer_5famas',['placer_amas',['../classSalleGen.html#a72b440eb325c77e6578aa379a9765028',1,'SalleGen']]],
+  ['placer_5fboss',['placer_boss',['../classZoneGen.html#a2e14ba96367ade514d250c4ae1aa5025',1,'ZoneGen']]],
+  ['placer_5fclef',['placer_clef',['../classSalleGen.html#a10b76face853353421bec73ac2ad8340',1,'SalleGen::placer_clef()'],['../classZoneGen.html#a14f00aefb1e1c0a33bddeda26c9168ca',1,'ZoneGen::placer_clef()']]],
+  ['placer_5fdepart',['placer_depart',['../classZoneGen.html#aadf5a70af191ddd5f5875878831a5b63',1,'ZoneGen']]],
+  ['placer_5fennemi',['placer_ennemi',['../classSalleGen.html#a9e155f263ee5860503a1bce0c505e66e',1,'SalleGen']]],
+  ['placer_5fobjet',['placer_objet',['../classZoneGen.html#a56263320aa237d125e4737c21a4c6fa6',1,'ZoneGen']]],
+  ['placer_5fperso_5ftxt',['placer_perso_txt',['../classJeu.html#a56b2057832a6b7aa9535299131fb653e',1,'Jeu']]],
+  ['placer_5fportes',['placer_portes',['../classSalleGen.html#a1127db8d92677b67b6d709126647041e',1,'SalleGen']]],
+  ['placer_5ftxt',['placer_txt',['../classPerso.html#a7ba97b055676c800724ba1f1faf4c517',1,'Perso']]],
+  ['projectile',['Projectile',['../classProjectile.html#ac536ed2aad56af866a2078b9a85aa16d',1,'Projectile::Projectile()'],['../classProjectile.html#a40d61808d12cb84127d768ead95d7b24',1,'Projectile::Projectile(const int &amp;p_id, const int &amp;p_type, const int &amp;p_degat, const float &amp;p_vitesse, const float &amp;p_taille, const VecteurM &amp;p_orientation, const Coord2D &amp;p_position)']]],
+  ['projectiles_5fet_5fennemis',['projectiles_et_ennemis',['../classHitboxSFML.html#a2fd60880489e78abd5195c17681a1832',1,'HitboxSFML']]],
+  ['projectiles_5fet_5fsalle',['projectiles_et_salle',['../classHitboxSFML.html#acb3e6f26e67ef2644103500e51909d42',1,'HitboxSFML']]],
+  ['projectilesfml',['ProjectileSFML',['../classProjectileSFML.html#a20bdf7d68e31f15bac136722de3f8985',1,'ProjectileSFML']]]
 ];

@@ -4,8 +4,133 @@
 
 {\ttfamily \#include $<$Gestion\+Salle.\+h$>$}
 
-
-
-The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
 \item 
-/home/quentin/\+Murmure/src/core/\hyperlink{GestionSalle_8h}{Gestion\+Salle.\+h}\end{DoxyCompactItemize}
+\hyperlink{classGestionSalle_a1e182efaf1a90419768dbdcce5b3362f}{Gestion\+Salle} ()
+\item 
+\hyperlink{classGestionSalle_a94a5c95bc0b567b446c56eadfc4725e1}{$\sim$\+Gestion\+Salle} ()
+\item 
+void \hyperlink{classGestionSalle_afa4dfd73b84ebbcc6fd0e8ada8d19749}{ajouter\+\_\+projectile} (\hyperlink{classProjectile}{Projectile} $\ast$p)
+\item 
+void \hyperlink{classGestionSalle_aa95413560b18a41625f4532093e079ab}{mise\+\_\+a\+\_\+jour\+\_\+projectiles} (const float \&vitesse\+\_\+frame)
+\item 
+std\+::list$<$ \hyperlink{classProjectile}{Projectile} $\ast$ $>$ $\ast$ \hyperlink{classGestionSalle_a0ba600eb02a796327b9cb3f17a534e7e}{get\+\_\+projectiles} ()
+\item 
+std\+::list$<$ \hyperlink{classEnnemi}{Ennemi} $\ast$ $>$ $\ast$ \hyperlink{classGestionSalle_a1f6ba669677c1e7568bf31b0c04b6b56}{get\+\_\+ennemis} ()
+\item 
+void \hyperlink{classGestionSalle_a90451d453082150e6bc4aacee3185bf1}{initialise\+\_\+salle\+\_\+actuelle} (\hyperlink{classSalle}{Salle} $\ast$adresse\+\_\+salle)
+\item 
+void \hyperlink{classGestionSalle_aa6483fffd72836b96019b1c01149cb3d}{maj\+\_\+changement\+\_\+salle} ()
+\begin{DoxyCompactList}\small\item\em création des entités de la \hyperlink{classSalle}{Salle} crée les ennemis objets et clefs dans la \hyperlink{classSalle}{Salle}. \end{DoxyCompactList}\item 
+\hyperlink{classSalle}{Salle} $\ast$ \hyperlink{classGestionSalle_a956b17a928f170f399e063d730495f4c}{get\+\_\+salle\+\_\+ptr} ()
+\item 
+void \hyperlink{classGestionSalle_a18f9d9f3bceb83a0a2cee570e7936643}{vider\+\_\+projectiles} ()
+\item 
+void \hyperlink{classGestionSalle_a15b3371a3c0e135879034040c84d3ffe}{vider\+\_\+ennemis} (bool dans\+\_\+destructeur)
+\item 
+void \hyperlink{classGestionSalle_a2c7b2d5047f8f9759543ee32b68fa22b}{deplacer\+\_\+ennemis\+\_\+auto} (\hyperlink{classCoord2D}{Coord2D} pos\+\_\+perso)
+\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{Gestion\+Salle@{Gestion\+Salle}!Gestion\+Salle@{Gestion\+Salle}}
+\index{Gestion\+Salle@{Gestion\+Salle}!Gestion\+Salle@{Gestion\+Salle}}
+\subsubsection[{\texorpdfstring{Gestion\+Salle()}{GestionSalle()}}]{\setlength{\rightskip}{0pt plus 5cm}Gestion\+Salle\+::\+Gestion\+Salle (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classGestionSalle_a1e182efaf1a90419768dbdcce5b3362f}{}\label{classGestionSalle_a1e182efaf1a90419768dbdcce5b3362f}
+\index{Gestion\+Salle@{Gestion\+Salle}!````~Gestion\+Salle@{$\sim$\+Gestion\+Salle}}
+\index{````~Gestion\+Salle@{$\sim$\+Gestion\+Salle}!Gestion\+Salle@{Gestion\+Salle}}
+\subsubsection[{\texorpdfstring{$\sim$\+Gestion\+Salle()}{~GestionSalle()}}]{\setlength{\rightskip}{0pt plus 5cm}Gestion\+Salle\+::$\sim$\+Gestion\+Salle (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classGestionSalle_a94a5c95bc0b567b446c56eadfc4725e1}{}\label{classGestionSalle_a94a5c95bc0b567b446c56eadfc4725e1}
+
+
+\subsection{Member Function Documentation}
+\index{Gestion\+Salle@{Gestion\+Salle}!ajouter\+\_\+projectile@{ajouter\+\_\+projectile}}
+\index{ajouter\+\_\+projectile@{ajouter\+\_\+projectile}!Gestion\+Salle@{Gestion\+Salle}}
+\subsubsection[{\texorpdfstring{ajouter\+\_\+projectile(\+Projectile $\ast$p)}{ajouter_projectile(Projectile *p)}}]{\setlength{\rightskip}{0pt plus 5cm}void Gestion\+Salle\+::ajouter\+\_\+projectile (
+\begin{DoxyParamCaption}
+\item[{{\bf Projectile} $\ast$}]{p}
+\end{DoxyParamCaption}
+)}\hypertarget{classGestionSalle_afa4dfd73b84ebbcc6fd0e8ada8d19749}{}\label{classGestionSalle_afa4dfd73b84ebbcc6fd0e8ada8d19749}
+\index{Gestion\+Salle@{Gestion\+Salle}!deplacer\+\_\+ennemis\+\_\+auto@{deplacer\+\_\+ennemis\+\_\+auto}}
+\index{deplacer\+\_\+ennemis\+\_\+auto@{deplacer\+\_\+ennemis\+\_\+auto}!Gestion\+Salle@{Gestion\+Salle}}
+\subsubsection[{\texorpdfstring{deplacer\+\_\+ennemis\+\_\+auto(\+Coord2\+D pos\+\_\+perso)}{deplacer_ennemis_auto(Coord2D pos_perso)}}]{\setlength{\rightskip}{0pt plus 5cm}void Gestion\+Salle\+::deplacer\+\_\+ennemis\+\_\+auto (
+\begin{DoxyParamCaption}
+\item[{{\bf Coord2D}}]{pos\+\_\+perso}
+\end{DoxyParamCaption}
+)}\hypertarget{classGestionSalle_a2c7b2d5047f8f9759543ee32b68fa22b}{}\label{classGestionSalle_a2c7b2d5047f8f9759543ee32b68fa22b}
+\index{Gestion\+Salle@{Gestion\+Salle}!get\+\_\+ennemis@{get\+\_\+ennemis}}
+\index{get\+\_\+ennemis@{get\+\_\+ennemis}!Gestion\+Salle@{Gestion\+Salle}}
+\subsubsection[{\texorpdfstring{get\+\_\+ennemis()}{get_ennemis()}}]{\setlength{\rightskip}{0pt plus 5cm}std\+::list$<$ {\bf Ennemi} $\ast$ $>$ $\ast$ Gestion\+Salle\+::get\+\_\+ennemis (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classGestionSalle_a1f6ba669677c1e7568bf31b0c04b6b56}{}\label{classGestionSalle_a1f6ba669677c1e7568bf31b0c04b6b56}
+\index{Gestion\+Salle@{Gestion\+Salle}!get\+\_\+projectiles@{get\+\_\+projectiles}}
+\index{get\+\_\+projectiles@{get\+\_\+projectiles}!Gestion\+Salle@{Gestion\+Salle}}
+\subsubsection[{\texorpdfstring{get\+\_\+projectiles()}{get_projectiles()}}]{\setlength{\rightskip}{0pt plus 5cm}std\+::list$<$ {\bf Projectile} $\ast$ $>$ $\ast$ Gestion\+Salle\+::get\+\_\+projectiles (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classGestionSalle_a0ba600eb02a796327b9cb3f17a534e7e}{}\label{classGestionSalle_a0ba600eb02a796327b9cb3f17a534e7e}
+\index{Gestion\+Salle@{Gestion\+Salle}!get\+\_\+salle\+\_\+ptr@{get\+\_\+salle\+\_\+ptr}}
+\index{get\+\_\+salle\+\_\+ptr@{get\+\_\+salle\+\_\+ptr}!Gestion\+Salle@{Gestion\+Salle}}
+\subsubsection[{\texorpdfstring{get\+\_\+salle\+\_\+ptr()}{get_salle_ptr()}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Salle} $\ast$ Gestion\+Salle\+::get\+\_\+salle\+\_\+ptr (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classGestionSalle_a956b17a928f170f399e063d730495f4c}{}\label{classGestionSalle_a956b17a928f170f399e063d730495f4c}
+\index{Gestion\+Salle@{Gestion\+Salle}!initialise\+\_\+salle\+\_\+actuelle@{initialise\+\_\+salle\+\_\+actuelle}}
+\index{initialise\+\_\+salle\+\_\+actuelle@{initialise\+\_\+salle\+\_\+actuelle}!Gestion\+Salle@{Gestion\+Salle}}
+\subsubsection[{\texorpdfstring{initialise\+\_\+salle\+\_\+actuelle(\+Salle $\ast$adresse\+\_\+salle)}{initialise_salle_actuelle(Salle *adresse_salle)}}]{\setlength{\rightskip}{0pt plus 5cm}void Gestion\+Salle\+::initialise\+\_\+salle\+\_\+actuelle (
+\begin{DoxyParamCaption}
+\item[{{\bf Salle} $\ast$}]{adresse\+\_\+salle}
+\end{DoxyParamCaption}
+)}\hypertarget{classGestionSalle_a90451d453082150e6bc4aacee3185bf1}{}\label{classGestionSalle_a90451d453082150e6bc4aacee3185bf1}
+\index{Gestion\+Salle@{Gestion\+Salle}!maj\+\_\+changement\+\_\+salle@{maj\+\_\+changement\+\_\+salle}}
+\index{maj\+\_\+changement\+\_\+salle@{maj\+\_\+changement\+\_\+salle}!Gestion\+Salle@{Gestion\+Salle}}
+\subsubsection[{\texorpdfstring{maj\+\_\+changement\+\_\+salle()}{maj_changement_salle()}}]{\setlength{\rightskip}{0pt plus 5cm}void Gestion\+Salle\+::maj\+\_\+changement\+\_\+salle (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classGestionSalle_aa6483fffd72836b96019b1c01149cb3d}{}\label{classGestionSalle_aa6483fffd72836b96019b1c01149cb3d}
+
+
+création des entités de la \hyperlink{classSalle}{Salle} crée les ennemis objets et clefs dans la \hyperlink{classSalle}{Salle}. 
+
+\begin{DoxyWarning}{Warning}
+la procédure est appelée par \hyperlink{classJeu}{Jeu}. à ne pas utiliser telle quelle svp 
+\end{DoxyWarning}
+\index{Gestion\+Salle@{Gestion\+Salle}!mise\+\_\+a\+\_\+jour\+\_\+projectiles@{mise\+\_\+a\+\_\+jour\+\_\+projectiles}}
+\index{mise\+\_\+a\+\_\+jour\+\_\+projectiles@{mise\+\_\+a\+\_\+jour\+\_\+projectiles}!Gestion\+Salle@{Gestion\+Salle}}
+\subsubsection[{\texorpdfstring{mise\+\_\+a\+\_\+jour\+\_\+projectiles(const float \&vitesse\+\_\+frame)}{mise_a_jour_projectiles(const float &vitesse_frame)}}]{\setlength{\rightskip}{0pt plus 5cm}void Gestion\+Salle\+::mise\+\_\+a\+\_\+jour\+\_\+projectiles (
+\begin{DoxyParamCaption}
+\item[{const float \&}]{vitesse\+\_\+frame}
+\end{DoxyParamCaption}
+)}\hypertarget{classGestionSalle_aa95413560b18a41625f4532093e079ab}{}\label{classGestionSalle_aa95413560b18a41625f4532093e079ab}
+\index{Gestion\+Salle@{Gestion\+Salle}!vider\+\_\+ennemis@{vider\+\_\+ennemis}}
+\index{vider\+\_\+ennemis@{vider\+\_\+ennemis}!Gestion\+Salle@{Gestion\+Salle}}
+\subsubsection[{\texorpdfstring{vider\+\_\+ennemis(bool dans\+\_\+destructeur)}{vider_ennemis(bool dans_destructeur)}}]{\setlength{\rightskip}{0pt plus 5cm}void Gestion\+Salle\+::vider\+\_\+ennemis (
+\begin{DoxyParamCaption}
+\item[{bool}]{dans\+\_\+destructeur = {\ttfamily false}}
+\end{DoxyParamCaption}
+)}\hypertarget{classGestionSalle_a15b3371a3c0e135879034040c84d3ffe}{}\label{classGestionSalle_a15b3371a3c0e135879034040c84d3ffe}
+\index{Gestion\+Salle@{Gestion\+Salle}!vider\+\_\+projectiles@{vider\+\_\+projectiles}}
+\index{vider\+\_\+projectiles@{vider\+\_\+projectiles}!Gestion\+Salle@{Gestion\+Salle}}
+\subsubsection[{\texorpdfstring{vider\+\_\+projectiles()}{vider_projectiles()}}]{\setlength{\rightskip}{0pt plus 5cm}void Gestion\+Salle\+::vider\+\_\+projectiles (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classGestionSalle_a18f9d9f3bceb83a0a2cee570e7936643}{}\label{classGestionSalle_a18f9d9f3bceb83a0a2cee570e7936643}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/quentin/\+Murmure/src/core/\hyperlink{GestionSalle_8h}{Gestion\+Salle.\+h}\item 
+/home/quentin/\+Murmure/src/core/\hyperlink{GestionSalle_8cpp}{Gestion\+Salle.\+cpp}\end{DoxyCompactItemize}

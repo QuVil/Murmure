@@ -97,12 +97,20 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a43020482f05d0b79ec19ce6bb5d68c11"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPersoSFML.html#a43020482f05d0b79ec19ce6bb5d68c11">PersoSFML</a> ()</td></tr>
 <tr class="separator:a43020482f05d0b79ec19ce6bb5d68c11"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af09e136ce9c3c9a3c8552881af4922e0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPersoSFML.html#af09e136ce9c3c9a3c8552881af4922e0">charge_perso</a> (const sf::Texture &amp;texture, const int &amp;taille_case, const float &amp;taille_perso)</td></tr>
-<tr class="separator:af09e136ce9c3c9a3c8552881af4922e0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa4defa67137441d1256acddf8a670e71"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPersoSFML.html#aa4defa67137441d1256acddf8a670e71">mettre_a_jour</a> (const <a class="el" href="classPerso.html">Perso</a> &amp;perso)</td></tr>
-<tr class="separator:aa4defa67137441d1256acddf8a670e71"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0d91785cadb6daab1dd34ecf3b7484b9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPersoSFML.html#a0d91785cadb6daab1dd34ecf3b7484b9">charge_perso</a> (<a class="el" href="classPerso.html">Perso</a> *p, const sf::Texture &amp;texture, const int &amp;taille_case)</td></tr>
+<tr class="separator:a0d91785cadb6daab1dd34ecf3b7484b9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0fdcbe28dd528377aeb20f4b08c27dd3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPersoSFML.html#a0fdcbe28dd528377aeb20f4b08c27dd3">mettre_a_jour</a> (const float &amp;taille_case, const int &amp;x0, const int &amp;y0)</td></tr>
+<tr class="separator:a0fdcbe28dd528377aeb20f4b08c27dd3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afc0c3108b45e33389a1af7ae19874c86"><td class="memItemLeft" align="right" valign="top">sf::Sprite&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPersoSFML.html#afc0c3108b45e33389a1af7ae19874c86">get_persosfml</a> ()</td></tr>
 <tr class="separator:afc0c3108b45e33389a1af7ae19874c86"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a16552494eddb06938d7837b8b74c12c6"><td class="memItemLeft" align="right" valign="top">sf::Sprite *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPersoSFML.html#a16552494eddb06938d7837b8b74c12c6">get_persosfml_ptr</a> ()</td></tr>
+<tr class="separator:a16552494eddb06938d7837b8b74c12c6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1be79fa543e08f3177b52f6d661fd906"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classPerso.html">Perso</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPersoSFML.html#a1be79fa543e08f3177b52f6d661fd906">get_perso_ptr</a> ()</td></tr>
+<tr class="separator:a1be79fa543e08f3177b52f6d661fd906"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a907b0694e50472b2235e6e2c9c5d440d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classVecteurM.html">VecteurM</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPersoSFML.html#a907b0694e50472b2235e6e2c9c5d440d">get_taille</a> () const </td></tr>
+<tr class="separator:a907b0694e50472b2235e6e2c9c5d440d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5a8eb8ecd68528486b639d4f0bbfffde"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classCoord2D.html">Coord2D</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPersoSFML.html#a5a8eb8ecd68528486b639d4f0bbfffde">get_position_hg</a> () const </td></tr>
+<tr class="separator:a5a8eb8ecd68528486b639d4f0bbfffde"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="a43020482f05d0b79ec19ce6bb5d68c11"></a>
@@ -121,13 +129,19 @@ Public Member Functions</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a class="anchor" id="af09e136ce9c3c9a3c8552881af4922e0"></a>
+<a class="anchor" id="a0d91785cadb6daab1dd34ecf3b7484b9"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
           <td class="memname">void PersoSFML::charge_perso </td>
           <td>(</td>
+          <td class="paramtype"><a class="el" href="classPerso.html">Perso</a> *&#160;</td>
+          <td class="paramname"><em>p</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
           <td class="paramtype">const sf::Texture &amp;&#160;</td>
           <td class="paramname"><em>texture</em>, </td>
         </tr>
@@ -135,18 +149,27 @@ Public Member Functions</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">const int &amp;&#160;</td>
-          <td class="paramname"><em>taille_case</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const float &amp;&#160;</td>
-          <td class="paramname"><em>taille_perso</em>&#160;</td>
+          <td class="paramname"><em>taille_case</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
           <td>)</td>
           <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a1be79fa543e08f3177b52f6d661fd906"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classPerso.html">Perso</a> * PersoSFML::get_perso_ptr </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -168,16 +191,77 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="aa4defa67137441d1256acddf8a670e71"></a>
+<a class="anchor" id="a16552494eddb06938d7837b8b74c12c6"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">sf::Sprite * PersoSFML::get_persosfml_ptr </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a5a8eb8ecd68528486b639d4f0bbfffde"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classCoord2D.html">Coord2D</a> PersoSFML::get_position_hg </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a907b0694e50472b2235e6e2c9c5d440d"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classVecteurM.html">VecteurM</a> PersoSFML::get_taille </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a0fdcbe28dd528377aeb20f4b08c27dd3"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
           <td class="memname">void PersoSFML::mettre_a_jour </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="classPerso.html">Perso</a> &amp;&#160;</td>
-          <td class="paramname"><em>perso</em></td><td>)</td>
+          <td class="paramtype">const float &amp;&#160;</td>
+          <td class="paramname"><em>taille_case</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">const int &amp;&#160;</td>
+          <td class="paramname"><em>x0</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int &amp;&#160;</td>
+          <td class="paramname"><em>y0</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
 </div><div class="memdoc">

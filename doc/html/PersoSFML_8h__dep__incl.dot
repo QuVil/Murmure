@@ -4,11 +4,16 @@ digraph "/home/quentin/Murmure/src/sfml/PersoSFML.h"
   node [fontname="Helvetica",fontsize="10",shape=record];
   Node1 [label="/home/quentin/Murmure\l/src/sfml/PersoSFML.h",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
   Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node2 [label="/home/quentin/Murmure\l/src/sfml/JeuSFML.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$JeuSFML_8h.html"];
+  Node2 [label="/home/quentin/Murmure\l/src/sfml/HitboxSFML.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$HitboxSFML_8h.html"];
   Node2 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node3 [label="/home/quentin/Murmure\l/src/sfml/JeuSFML.cpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$JeuSFML_8cpp.html"];
+  Node3 [label="/home/quentin/Murmure\l/src/sfml/HitboxSFML.cpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$HitboxSFML_8cpp.html"];
   Node2 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node4 [label="/home/quentin/Murmure\l/src/sfml/mainSFML.cpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$mainSFML_8cpp.html"];
-  Node1 -> Node5 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node5 [label="/home/quentin/Murmure\l/src/sfml/PersoSFML.cpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$PersoSFML_8cpp.html"];
+  Node4 [label="/home/quentin/Murmure\l/src/sfml/JeuSFML.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$JeuSFML_8h.html"];
+  Node4 -> Node5 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node5 [label="/home/quentin/Murmure\l/src/sfml/JeuSFML.cpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$JeuSFML_8cpp.html"];
+  Node4 -> Node6 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node6 [label="/home/quentin/Murmure\l/src/sfml/mainSFML.cpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$mainSFML_8cpp.html"];
+  Node1 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node1 -> Node7 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node7 [label="/home/quentin/Murmure\l/src/sfml/PersoSFML.cpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$PersoSFML_8cpp.html"];
 }

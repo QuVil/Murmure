@@ -8,7 +8,7 @@
 \begin{DoxyCompactItemize}
 \item 
 \hyperlink{classArme_afb975397e0624d374e759ef586f6a785}{Arme} ()
-\begin{DoxyCompactList}\small\item\em T\+O\+DO \+: Gary, j\textquotesingle{}ai besoin de ton aide pour la gestion des projectiles. \end{DoxyCompactList}\item 
+\item 
 void \hyperlink{classArme_ab40a63252769f24988c99f3e6926fca3}{charger} (const int \&id, const int \&nv)
 \item 
 void \hyperlink{classArme_a457a4dc6749524e21d14edbb5caa3958}{set\+\_\+id\+\_\+arme} (const int \&i)
@@ -21,7 +21,17 @@ void \hyperlink{classArme_a4196eee3876536db2b6cbf032bc40aa5}{set\+\_\+degats\+\_
 \item 
 void \hyperlink{classArme_a9c547e3a032c015a58e5dcd634d38b9f}{set\+\_\+munitions\+\_\+max} (const int \&i)
 \item 
-void \hyperlink{classArme_aff0b1dd5e90cf02fc2c7c6663e68fcb0}{tirer} (float pos\+\_\+x, float pos\+\_\+y)
+void \hyperlink{classArme_af86cfd4dea10fdebed15b70a85e31744}{set\+\_\+type} (const int \&i)
+\item 
+void \hyperlink{classArme_a9c63bf380f0a622c3ecdff3e97e2f17f}{set\+\_\+vitesse} (const float \&v)
+\item 
+void \hyperlink{classArme_a85b5126ad3b2dc288eb40c6e5ea3df2f}{set\+\_\+taille\+\_\+projectile} (const float \&t)
+\item 
+void \hyperlink{classArme_ae64cbcd61cc344250f11718f910c61dd}{set\+\_\+cadence\+\_\+tir} (const float \&c)
+\item 
+\hyperlink{classProjectile}{Projectile} $\ast$ \hyperlink{classArme_ad7f968df091bd50e1c9fac3b3fb255fb}{tirer} (const \hyperlink{classVecteurM}{VecteurM} \&orientation, const \hyperlink{classCoord2D}{Coord2D} \&position)
+\item 
+float \hyperlink{classArme_a29a7f7acbe0bdaa6c13ce5a9254bfcda}{get\+\_\+cadence\+\_\+tir} () const 
 \end{DoxyCompactItemize}
 
 
@@ -35,10 +45,6 @@ void \hyperlink{classArme_aff0b1dd5e90cf02fc2c7c6663e68fcb0}{tirer} (float pos\+
 )}\hypertarget{classArme_afb975397e0624d374e759ef586f6a785}{}\label{classArme_afb975397e0624d374e759ef586f6a785}
 
 
-T\+O\+DO \+: Gary, j\textquotesingle{}ai besoin de ton aide pour la gestion des projectiles. 
-
-
-
 \subsection{Member Function Documentation}
 \index{Arme@{Arme}!charger@{charger}}
 \index{charger@{charger}!Arme@{Arme}}
@@ -48,6 +54,20 @@ T\+O\+DO \+: Gary, j\textquotesingle{}ai besoin de ton aide pour la gestion des 
 \item[{const int \&}]{nv}
 \end{DoxyParamCaption}
 )}\hypertarget{classArme_ab40a63252769f24988c99f3e6926fca3}{}\label{classArme_ab40a63252769f24988c99f3e6926fca3}
+\index{Arme@{Arme}!get\+\_\+cadence\+\_\+tir@{get\+\_\+cadence\+\_\+tir}}
+\index{get\+\_\+cadence\+\_\+tir@{get\+\_\+cadence\+\_\+tir}!Arme@{Arme}}
+\subsubsection[{\texorpdfstring{get\+\_\+cadence\+\_\+tir() const }{get_cadence_tir() const }}]{\setlength{\rightskip}{0pt plus 5cm}float Arme\+::get\+\_\+cadence\+\_\+tir (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\hypertarget{classArme_a29a7f7acbe0bdaa6c13ce5a9254bfcda}{}\label{classArme_a29a7f7acbe0bdaa6c13ce5a9254bfcda}
+\index{Arme@{Arme}!set\+\_\+cadence\+\_\+tir@{set\+\_\+cadence\+\_\+tir}}
+\index{set\+\_\+cadence\+\_\+tir@{set\+\_\+cadence\+\_\+tir}!Arme@{Arme}}
+\subsubsection[{\texorpdfstring{set\+\_\+cadence\+\_\+tir(const float \&c)}{set_cadence_tir(const float &c)}}]{\setlength{\rightskip}{0pt plus 5cm}void Arme\+::set\+\_\+cadence\+\_\+tir (
+\begin{DoxyParamCaption}
+\item[{const float \&}]{c}
+\end{DoxyParamCaption}
+)}\hypertarget{classArme_ae64cbcd61cc344250f11718f910c61dd}{}\label{classArme_ae64cbcd61cc344250f11718f910c61dd}
 \index{Arme@{Arme}!set\+\_\+degats\+\_\+projectiles@{set\+\_\+degats\+\_\+projectiles}}
 \index{set\+\_\+degats\+\_\+projectiles@{set\+\_\+degats\+\_\+projectiles}!Arme@{Arme}}
 \subsubsection[{\texorpdfstring{set\+\_\+degats\+\_\+projectiles(const int \&i)}{set_degats_projectiles(const int &i)}}]{\setlength{\rightskip}{0pt plus 5cm}void Arme\+::set\+\_\+degats\+\_\+projectiles (
@@ -83,14 +103,35 @@ T\+O\+DO \+: Gary, j\textquotesingle{}ai besoin de ton aide pour la gestion des 
 \item[{const int \&}]{i}
 \end{DoxyParamCaption}
 )}\hypertarget{classArme_aefa883db9062e4f17d789af558b10979}{}\label{classArme_aefa883db9062e4f17d789af558b10979}
+\index{Arme@{Arme}!set\+\_\+taille\+\_\+projectile@{set\+\_\+taille\+\_\+projectile}}
+\index{set\+\_\+taille\+\_\+projectile@{set\+\_\+taille\+\_\+projectile}!Arme@{Arme}}
+\subsubsection[{\texorpdfstring{set\+\_\+taille\+\_\+projectile(const float \&t)}{set_taille_projectile(const float &t)}}]{\setlength{\rightskip}{0pt plus 5cm}void Arme\+::set\+\_\+taille\+\_\+projectile (
+\begin{DoxyParamCaption}
+\item[{const float \&}]{t}
+\end{DoxyParamCaption}
+)}\hypertarget{classArme_a85b5126ad3b2dc288eb40c6e5ea3df2f}{}\label{classArme_a85b5126ad3b2dc288eb40c6e5ea3df2f}
+\index{Arme@{Arme}!set\+\_\+type@{set\+\_\+type}}
+\index{set\+\_\+type@{set\+\_\+type}!Arme@{Arme}}
+\subsubsection[{\texorpdfstring{set\+\_\+type(const int \&i)}{set_type(const int &i)}}]{\setlength{\rightskip}{0pt plus 5cm}void Arme\+::set\+\_\+type (
+\begin{DoxyParamCaption}
+\item[{const int \&}]{i}
+\end{DoxyParamCaption}
+)}\hypertarget{classArme_af86cfd4dea10fdebed15b70a85e31744}{}\label{classArme_af86cfd4dea10fdebed15b70a85e31744}
+\index{Arme@{Arme}!set\+\_\+vitesse@{set\+\_\+vitesse}}
+\index{set\+\_\+vitesse@{set\+\_\+vitesse}!Arme@{Arme}}
+\subsubsection[{\texorpdfstring{set\+\_\+vitesse(const float \&v)}{set_vitesse(const float &v)}}]{\setlength{\rightskip}{0pt plus 5cm}void Arme\+::set\+\_\+vitesse (
+\begin{DoxyParamCaption}
+\item[{const float \&}]{v}
+\end{DoxyParamCaption}
+)}\hypertarget{classArme_a9c63bf380f0a622c3ecdff3e97e2f17f}{}\label{classArme_a9c63bf380f0a622c3ecdff3e97e2f17f}
 \index{Arme@{Arme}!tirer@{tirer}}
 \index{tirer@{tirer}!Arme@{Arme}}
-\subsubsection[{\texorpdfstring{tirer(float pos\+\_\+x, float pos\+\_\+y)}{tirer(float pos_x, float pos_y)}}]{\setlength{\rightskip}{0pt plus 5cm}void Arme\+::tirer (
+\subsubsection[{\texorpdfstring{tirer(const Vecteur\+M \&orientation, const Coord2\+D \&position)}{tirer(const VecteurM &orientation, const Coord2D &position)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Projectile} $\ast$ Arme\+::tirer (
 \begin{DoxyParamCaption}
-\item[{float}]{pos\+\_\+x, }
-\item[{float}]{pos\+\_\+y}
+\item[{const {\bf VecteurM} \&}]{orientation, }
+\item[{const {\bf Coord2D} \&}]{position}
 \end{DoxyParamCaption}
-)}\hypertarget{classArme_aff0b1dd5e90cf02fc2c7c6663e68fcb0}{}\label{classArme_aff0b1dd5e90cf02fc2c7c6663e68fcb0}
+)}\hypertarget{classArme_ad7f968df091bd50e1c9fac3b3fb255fb}{}\label{classArme_ad7f968df091bd50e1c9fac3b3fb255fb}
 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}

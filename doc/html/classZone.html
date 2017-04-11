@@ -105,7 +105,7 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:a47c33a8aad7a0c17ff8ab213aad492f7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Consctructeur avec salle actuelle et niveau.  <a href="#a47c33a8aad7a0c17ff8ab213aad492f7">More...</a><br /></td></tr>
 <tr class="separator:a47c33a8aad7a0c17ff8ab213aad492f7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afddea0858e93cf8050e6263347b6864f"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classZone.html#afddea0858e93cf8050e6263347b6864f">Zone</a> (const <a class="el" href="classZoneGen.html">ZoneGen</a> &amp;z)</td></tr>
-<tr class="memdesc:afddea0858e93cf8050e6263347b6864f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Consctructeur depuis un generateur <a class="el" href="classZoneGen.html" title="TODO : Finir la doc de ZoneGen... ">ZoneGen</a>.  <a href="#afddea0858e93cf8050e6263347b6864f">More...</a><br /></td></tr>
+<tr class="memdesc:afddea0858e93cf8050e6263347b6864f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Consctructeur depuis un generateur <a class="el" href="classZoneGen.html" title="class principale de generation de carte pour Zone. ZoneGen est une classe de transition entre Modele ...">ZoneGen</a>.  <a href="#afddea0858e93cf8050e6263347b6864f">More...</a><br /></td></tr>
 <tr class="separator:afddea0858e93cf8050e6263347b6864f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6b28456d584e884cdeceaf6d4dcedbd1"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classSalle.html">Salle</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classZone.html#a6b28456d584e884cdeceaf6d4dcedbd1">get_salle</a> (int x, int y)</td></tr>
 <tr class="memdesc:a6b28456d584e884cdeceaf6d4dcedbd1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Accesseur de <a class="el" href="classSalle.html" title="class des salles de jeu où évolue le joueur. Salle dépend de CaseSalle et se compose d&#39;une grille de ...">Salle</a> dans la <em>carte</em>.  <a href="#a6b28456d584e884cdeceaf6d4dcedbd1">More...</a><br /></td></tr>
@@ -113,6 +113,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a3214726410943fed7c5a44f49e998cee"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classSalle.html">Salle</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classZone.html#a3214726410943fed7c5a44f49e998cee">get_salle</a> () const </td></tr>
 <tr class="memdesc:a3214726410943fed7c5a44f49e998cee"><td class="mdescLeft">&#160;</td><td class="mdescRight">Accesseur de <a class="el" href="classSalle.html" title="class des salles de jeu où évolue le joueur. Salle dépend de CaseSalle et se compose d&#39;une grille de ...">Salle</a> actuelle.  <a href="#a3214726410943fed7c5a44f49e998cee">More...</a><br /></td></tr>
 <tr class="separator:a3214726410943fed7c5a44f49e998cee"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a96398ba4ec2f3c8b2caddadf2a82f153"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classSalle.html">Salle</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classZone.html#a96398ba4ec2f3c8b2caddadf2a82f153">get_salle_ptr</a> ()</td></tr>
+<tr class="memdesc:a96398ba4ec2f3c8b2caddadf2a82f153"><td class="mdescLeft">&#160;</td><td class="mdescRight">Accesseur de l'adresse de la <a class="el" href="classSalle.html" title="class des salles de jeu où évolue le joueur. Salle dépend de CaseSalle et se compose d&#39;une grille de ...">Salle</a> actuelle.  <a href="#a96398ba4ec2f3c8b2caddadf2a82f153">More...</a><br /></td></tr>
+<tr class="separator:a96398ba4ec2f3c8b2caddadf2a82f153"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5c68a620d5c32cd2bf26272aeaee557d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classZone.html#a5c68a620d5c32cd2bf26272aeaee557d">set_salle</a> (int x, int y, const <a class="el" href="classSalle.html">Salle</a> &amp;nouvelle_salle)</td></tr>
 <tr class="memdesc:a5c68a620d5c32cd2bf26272aeaee557d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Mutateur de <a class="el" href="classSalle.html" title="class des salles de jeu où évolue le joueur. Salle dépend de CaseSalle et se compose d&#39;une grille de ...">Salle</a> de la <em>carte</em>.  <a href="#a5c68a620d5c32cd2bf26272aeaee557d">More...</a><br /></td></tr>
 <tr class="separator:a5c68a620d5c32cd2bf26272aeaee557d"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -229,10 +232,10 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Consctructeur depuis un generateur <a class="el" href="classZoneGen.html" title="TODO : Finir la doc de ZoneGen... ">ZoneGen</a>. </p>
+<p>Consctructeur depuis un generateur <a class="el" href="classZoneGen.html" title="class principale de generation de carte pour Zone. ZoneGen est une classe de transition entre Modele ...">ZoneGen</a>. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">z</td><td>: l'instance de <a class="el" href="classZoneGen.html" title="TODO : Finir la doc de ZoneGen... ">ZoneGen</a> qui sera traduite en <a class="el" href="classZone.html" title="Gère l&#39;instance où crapahute Perso. Une seule Zone sera en général générée à chaque instant...">Zone</a>. Ne genere pas les instances de <a class="el" href="classSalle.html" title="class des salles de jeu où évolue le joueur. Salle dépend de CaseSalle et se compose d&#39;une grille de ...">Salle</a>, mais prend la <em>config</em> necessaire. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">z</td><td>: l'instance de <a class="el" href="classZoneGen.html" title="class principale de generation de carte pour Zone. ZoneGen est une classe de transition entre Modele ...">ZoneGen</a> qui sera traduite en <a class="el" href="classZone.html" title="Gère l&#39;instance où crapahute Perso. Une seule Zone sera en général générée à chaque instant...">Zone</a>. Ne genere pas les instances de <a class="el" href="classSalle.html" title="class des salles de jeu où évolue le joueur. Salle dépend de CaseSalle et se compose d&#39;une grille de ...">Salle</a>, mais prend la <em>config</em> necessaire. </td></tr>
   </table>
   </dd>
 </dl>
@@ -428,6 +431,24 @@ Public Member Functions</h2></td></tr>
 
 <p>Accesseur de <em>salle_actuelle_y</em>. </p>
 <dl class="section return"><dt>Returns</dt><dd><em>salle_actuelle_y</em> de l'instance. </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a96398ba4ec2f3c8b2caddadf2a82f153"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classSalle.html">Salle</a> * Zone::get_salle_ptr </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Accesseur de l'adresse de la <a class="el" href="classSalle.html" title="class des salles de jeu où évolue le joueur. Salle dépend de CaseSalle et se compose d&#39;une grille de ...">Salle</a> actuelle. </p>
+<dl class="section return"><dt>Returns</dt><dd>l'adresse de la <a class="el" href="classSalle.html" title="class des salles de jeu où évolue le joueur. Salle dépend de CaseSalle et se compose d&#39;une grille de ...">Salle</a> actuelle. </dd></dl>
 
 </div>
 </div>

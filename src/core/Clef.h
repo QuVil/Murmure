@@ -14,6 +14,8 @@ public:
     Clef();
 
     Clef(int case_app_x, int case_app_y);
+
+    void ramasser();
 };
 
 #endif // CLEF_H_INCLUDED

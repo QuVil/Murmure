@@ -342,6 +342,12 @@
 			<Option target="murmure_gen_test" />
 			<Option target="murmure_test_q" />
 		</Unit>
+		<Unit filename="src/sfml/ClefSFML.cpp">
+			<Option target="murmure_sfml" />
+		</Unit>
+		<Unit filename="src/sfml/ClefSFML.h">
+			<Option target="murmure_sfml" />
+		</Unit>
 		<Unit filename="src/sfml/EnnemiSFML.cpp" />
 		<Unit filename="src/sfml/EnnemiSFML.h" />
 		<Unit filename="src/sfml/HitboxSFML.cpp" />

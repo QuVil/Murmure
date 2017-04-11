@@ -1,6 +1,6 @@
 /**
  * \file ZoneGen.cpp
- * \brief fichier source de la class ZoneGen.
+ * \brief Code source de la class ZoneGen.
  * \author Quentin.V & Gary.S
  * \version 0.3
  * \date 18 mars 2017

@@ -19,12 +19,17 @@ digraph "/home/quentin/Murmure/src/sfml/PersoSFML.h"
   Node7 -> Node8 [color="midnightblue",fontsize="10",style="solid"];
   Node8 [label="Coord2D.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$Coord2D_8h.html"];
   Node8 -> Node5 [color="midnightblue",fontsize="10",style="solid"];
+  Node6 -> Node5 [color="midnightblue",fontsize="10",style="solid"];
+  Node6 -> Node8 [color="midnightblue",fontsize="10",style="solid"];
   Node3 -> Node8 [color="midnightblue",fontsize="10",style="solid"];
   Node3 -> Node9 [color="midnightblue",fontsize="10",style="solid"];
   Node9 [label="Objet.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$Objet_8h.html"];
   Node9 -> Node10 [color="midnightblue",fontsize="10",style="solid"];
   Node10 [label="iostream",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled"];
   Node9 -> Node4 [color="midnightblue",fontsize="10",style="solid"];
+  Node3 -> Node7 [color="midnightblue",fontsize="10",style="solid"];
   Node3 -> Node11 [color="midnightblue",fontsize="10",style="solid"];
   Node11 [label="list",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled"];
+  Node1 -> Node8 [color="midnightblue",fontsize="10",style="solid"];
+  Node1 -> Node5 [color="midnightblue",fontsize="10",style="solid"];
 }

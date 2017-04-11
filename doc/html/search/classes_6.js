@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['modele',['Modele',['../classModele.html',1,'']]],
-  ['modelesalle',['ModeleSalle',['../classModeleSalle.html',1,'']]]
+  ['jeu',['Jeu',['../classJeu.html',1,'']]],
+  ['jeusfml',['JeuSFML',['../classJeuSFML.html',1,'']]]
 ];

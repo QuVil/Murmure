@@ -97,8 +97,22 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 Public Member Functions</h2></td></tr>
 <tr class="memitem:ac536ed2aad56af866a2078b9a85aa16d"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classProjectile.html#ac536ed2aad56af866a2078b9a85aa16d">Projectile</a> ()</td></tr>
 <tr class="separator:ac536ed2aad56af866a2078b9a85aa16d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad71209bdbc695934f937cecc13d7a825"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classProjectile.html#ad71209bdbc695934f937cecc13d7a825">Projectile</a> (int id, int deg)</td></tr>
-<tr class="separator:ad71209bdbc695934f937cecc13d7a825"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a40d61808d12cb84127d768ead95d7b24"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classProjectile.html#a40d61808d12cb84127d768ead95d7b24">Projectile</a> (const int &amp;p_id, const int &amp;p_type, const int &amp;p_degat, const float &amp;p_vitesse, const float &amp;p_taille, const <a class="el" href="classVecteurM.html">VecteurM</a> &amp;p_orientation, const <a class="el" href="classCoord2D.html">Coord2D</a> &amp;p_position)</td></tr>
+<tr class="separator:a40d61808d12cb84127d768ead95d7b24"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7284639815c2d8f7d852ff3872851fa5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classProjectile.html#a7284639815c2d8f7d852ff3872851fa5">avancer</a> (const float &amp;vitesse_frame)</td></tr>
+<tr class="separator:a7284639815c2d8f7d852ff3872851fa5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a137391002869c50a97504992033915ac"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classProjectile.html#a137391002869c50a97504992033915ac">set_collision</a> ()</td></tr>
+<tr class="separator:a137391002869c50a97504992033915ac"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af114e853c019123fd3cbf208352afbd5"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classProjectile.html#af114e853c019123fd3cbf208352afbd5">get_orientation_degre</a> () const </td></tr>
+<tr class="separator:af114e853c019123fd3cbf208352afbd5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a03627709f7fa134cae85c7480e8b8de4"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classProjectile.html#a03627709f7fa134cae85c7480e8b8de4">get_orientation_radian</a> () const </td></tr>
+<tr class="separator:a03627709f7fa134cae85c7480e8b8de4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a77d1976107d1c7a15e7ba5298d80defb"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classProjectile.html#a77d1976107d1c7a15e7ba5298d80defb">get_taille_projectile</a> () const </td></tr>
+<tr class="separator:a77d1976107d1c7a15e7ba5298d80defb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4e22cdf491c89cb27ebd31532afdd753"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classProjectile.html#a4e22cdf491c89cb27ebd31532afdd753">get_collision</a> () const </td></tr>
+<tr class="separator:a4e22cdf491c89cb27ebd31532afdd753"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5576e84397fff82a93ee85c5cc80591c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classCoord2D.html">Coord2D</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classProjectile.html#a5576e84397fff82a93ee85c5cc80591c">get_position</a> () const </td></tr>
+<tr class="separator:a5576e84397fff82a93ee85c5cc80591c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="ac536ed2aad56af866a2078b9a85aa16d"></a>
@@ -116,26 +130,163 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="ad71209bdbc695934f937cecc13d7a825"></a>
+<a class="anchor" id="a40d61808d12cb84127d768ead95d7b24"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
           <td class="memname">Projectile::Projectile </td>
           <td>(</td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>id</em>, </td>
+          <td class="paramtype">const int &amp;&#160;</td>
+          <td class="paramname"><em>p_id</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>deg</em>&#160;</td>
+          <td class="paramtype">const int &amp;&#160;</td>
+          <td class="paramname"><em>p_type</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int &amp;&#160;</td>
+          <td class="paramname"><em>p_degat</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const float &amp;&#160;</td>
+          <td class="paramname"><em>p_vitesse</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const float &amp;&#160;</td>
+          <td class="paramname"><em>p_taille</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classVecteurM.html">VecteurM</a> &amp;&#160;</td>
+          <td class="paramname"><em>p_orientation</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classCoord2D.html">Coord2D</a> &amp;&#160;</td>
+          <td class="paramname"><em>p_position</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
           <td>)</td>
           <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a class="anchor" id="a7284639815c2d8f7d852ff3872851fa5"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Projectile::avancer </td>
+          <td>(</td>
+          <td class="paramtype">const float &amp;&#160;</td>
+          <td class="paramname"><em>vitesse_frame</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a4e22cdf491c89cb27ebd31532afdd753"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Projectile::get_collision </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="af114e853c019123fd3cbf208352afbd5"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float Projectile::get_orientation_degre </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a03627709f7fa134cae85c7480e8b8de4"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float Projectile::get_orientation_radian </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a5576e84397fff82a93ee85c5cc80591c"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classCoord2D.html">Coord2D</a> Projectile::get_position </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a77d1976107d1c7a15e7ba5298d80defb"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float Projectile::get_taille_projectile </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a137391002869c50a97504992033915ac"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Projectile::set_collision </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
         </tr>
       </table>
 </div><div class="memdoc">

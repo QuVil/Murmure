@@ -14,3 +14,8 @@ Clef::Clef(int case_app_x, int case_app_y)
     type_clef = 'b';
     par_terre = true;
 }
+
+void Clef::ramasser()
+{
+    par_terre = false;
+}

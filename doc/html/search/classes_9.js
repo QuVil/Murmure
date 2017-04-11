@@ -1,6 +1,7 @@
 var searchData=
 [
-  ['salle',['Salle',['../classSalle.html',1,'']]],
-  ['sallegen',['SalleGen',['../classSalleGen.html',1,'']]],
-  ['selecpersosfml',['SelecPersoSFML',['../classSelecPersoSFML.html',1,'']]]
+  ['perso',['Perso',['../classPerso.html',1,'']]],
+  ['persosfml',['PersoSFML',['../classPersoSFML.html',1,'']]],
+  ['projectile',['Projectile',['../classProjectile.html',1,'']]],
+  ['projectilesfml',['ProjectileSFML',['../classProjectileSFML.html',1,'']]]
 ];

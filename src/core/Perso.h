@@ -41,6 +41,8 @@ private:
 
     std::list <Objet*> objets_perso;
 
+    bool possede_clef_boss;
+
 public:
 
     Perso();
@@ -100,6 +102,8 @@ public:
     Arme * get_arme1();
 
     Projectile* tirer_1();
+
+    void ramasser_clef(Clef* cle);
 
     //_____________________MODE TXT__________________________
     int get_pos_case_x() const;
