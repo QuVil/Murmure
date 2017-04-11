@@ -1,5 +1,7 @@
 #include "ProjectileSFML.h"
 
+#include "Config.h"
+
 #include <iostream>
 
 ProjectileSFML::ProjectileSFML()
@@ -20,7 +22,7 @@ void ProjectileSFML::init(Projectile * p, const sf::Texture& texture,const int &
 
 void ProjectileSFML::mise_a_jour_position(const int &taille_case, const int &x0, const int &y0)
 {
-    projectilesfml.setPosition(projectile->get_position().get_x()* taille_case + x0, projectile->get_position().get_y()*taille_case + y0);
+    projectilesfml.setPosition(projectile->get_position().get_x()* taille_case/facteur + x0, projectile->get_position().get_y()*taille_case/facteur + y0);
 }
 
 sf::Sprite ProjectileSFML::retourne_projectilesfml()

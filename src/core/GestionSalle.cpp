@@ -1,4 +1,5 @@
- #include "GestionSalle.h"
+#include "GestionSalle.h"
+#include "Config.h"
 #include <iostream>
 
 GestionSalle::GestionSalle()
@@ -33,7 +34,7 @@ void GestionSalle::mise_a_jour_projectiles(const float& vitesse_frame)
         else
         {
             (*it)->avancer(vitesse_frame);
-            if(((*it)->get_position().get_x()<0)||((*it)->get_position().get_x()>17)||((*it)->get_position().get_y()<0)||((*it)->get_position().get_y()>9))
+            if(((*it)->get_position().get_x()<0)||((*it)->get_position().get_x()>taille_grille_largeur)||((*it)->get_position().get_y()<0)||((*it)->get_position().get_y()>taille_grille_hauteur))
             {
                 delete (*it);
                 it = projectiles.erase(it);
@@ -90,31 +91,38 @@ Salle* GestionSalle::get_salle_ptr()
 
 void GestionSalle::vider_projectiles()
 {
-    for (std::list<Projectile *>::iterator it=projectiles.begin(); it != projectiles.end(); ++it)
+    while(projectiles.size() > 0)
     {
-        delete (*it);
-        projectiles.erase(it);
+        for (std::list<Projectile *>::iterator it=projectiles.begin(); it != projectiles.end(); ++it)
+        {
+            delete (*it);
+            it = projectiles.erase(it);
+        }
     }
+
 }
 
 void GestionSalle::vider_ennemis(bool dans_destructeur = false)
 {
-    for (std::list<Ennemi *>::iterator it=ennemis.begin(); it != ennemis.end(); ++it)
+    while(ennemis.size() > 0)
     {
-        std::cout << "ennemi supprime" << std::endl;
-        int case_x = (*it)->get_case_x_apparition();
-        int case_y = (*it)->get_case_y_apparition();
-
-        if (salle_actuelle_jeu->get_case(case_x, case_y).get_type_char() == 'e' && (*it)->is_vivant() == false)
+        for (std::list<Ennemi *>::iterator it=ennemis.begin(); it != ennemis.end(); ++it)
         {
-            CaseSalle case_normale;
-            case_normale.set_type('n');
-            salle_actuelle_jeu->set_case(case_x, case_y, case_normale);
+            //std::cout << "ennemi supprime" << std::endl;
+            int case_x = (*it)->get_case_x_apparition();
+            int case_y = (*it)->get_case_y_apparition();
+
+            if (salle_actuelle_jeu->get_case(case_x, case_y).get_type_char() == 'e' && (*it)->is_vivant() == false)
+            {
+                CaseSalle case_normale;
+                case_normale.set_type('n');
+                salle_actuelle_jeu->set_case(case_x, case_y, case_normale);
+            }
+
+
+            delete (*it);
+            it = ennemis.erase(it);
         }
-
-
-        delete (*it);
-        ennemis.erase(it);
     }
 }
 

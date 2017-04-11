@@ -37,7 +37,7 @@ public:
 
     void set_deplacement(const VecteurM &v);
 
-    void set_deplacement(const float &x, const float &y);
+    void set_deplacement(const Coord2D &position_perso);
 
     void set_orientation(const VecteurM &v);
 
@@ -61,6 +61,8 @@ public:
 
     VecteurM get_orientation() const;
 
+    float get_angle_perso(const Coord2D &pos_perso)const;
+
     void set_coefficient_vitesse(const float &c);
 
     int get_case_x_apparition()const;
@@ -71,7 +73,7 @@ public:
 
     void set_mort();
 
-    void trouver_chemin(float pos_x, float pos_y);
+    void trouver_chemin(const Coord2D &position_perso);
 
     void deplacer_auto(Coord2D pos_perso);
 };

@@ -3,6 +3,8 @@
 
 #include <SFML/Graphics.hpp>
 #include "Perso.h"
+#include "Coord2D.h"
+#include "VecteurM.h"
 
 class PersoSFML
 {
@@ -22,6 +24,10 @@ public:
     sf::Sprite * get_persosfml_ptr();
 
     Perso * get_perso_ptr();
+
+    VecteurM get_taille()const;
+
+    Coord2D get_position_hg()const;
 };
 
 #endif // PERSOSFML_H_INCLUDED

@@ -56,7 +56,8 @@ void Perso::set_deplacement(const float& x, const float& y)
 {
     position_old.set_x(position.get_x());
     position_old.set_y(position.get_y());
-    VecteurM deplacement(x, y);
+    deplacement.set_x(x);
+    deplacement.set_y(y);
     //std::cout << deplacement.get_x() << " " << deplacement.get_y() << std::endl;
     //resultante = deplacement + resultante;
     resultante = deplacement;
@@ -227,10 +228,16 @@ void Perso::placer_txt(int x, int y)
 
 Projectile* Perso::tirer_1()
 {
+    //Coord2D affixe(position.get_x() + cos(position.get_x() / position.get_y()), position.get_y() + sin(position.get_x() / position.get_y()));
     return arme1.tirer(orientation, position);
 }
 
 Arme* Perso::get_arme1()
 {
     return &arme1;
+}
+
+VecteurM Perso::get_deplacement() const
+{
+    return deplacement;
 }
