@@ -23,6 +23,10 @@ public:
     sf::Sprite * get_ennemisfml_ptr();
 
     Ennemi * get_ennemi();
+
+    VecteurM get_taille()const;
+
+    Coord2D get_position_hg()const;
 };
 
 #endif // ENNEMISFML_H_INCLUDED

@@ -4,9 +4,9 @@
 const int nb_cases_largeur = 17;
 const int nb_cases_hauteur = 9;
 
-const int facteur = 10000000;
-const int taille_grille_largeur = 17*facteur;
-const int taille_grille_hauteur = 9*facteur;
+const float facteur = 10000000;
+const float taille_grille_largeur = 17.0*facteur;
+const float taille_grille_hauteur = 9.0*facteur;
 
 
 #endif // CONFIG_H_INCLUDED

@@ -30,12 +30,25 @@ Ennemi::Ennemi(std::string ia, int case_x_app, int case_y_app)
 
     taille = 1;
 
-    coefficient_vitesse = 40000;
+    coefficient_vitesse = 400000;
 }
 
 void Ennemi::set_deplacement(const VecteurM& v)
 {
-    ///TODO TODO TODO TODO TODO TODO TODO
+    position_old.set_x(position.get_x());
+    position_old.set_y(position.get_y());
+    deplacement.set_x(v.get_x());
+    deplacement.set_y(v.get_y());
+    position.deplacer(deplacement, coefficient_vitesse);
+}
+
+void Ennemi::set_deplacement(const float& x, const float& y)
+{
+    position_old.set_x(position.get_x());
+    position_old.set_y(position.get_y());
+    deplacement.set_x(x);
+    deplacement.set_y(y);
+    position.deplacer(deplacement, coefficient_vitesse);
 }
 
 float Ennemi::get_orientation_degre() const
@@ -68,18 +81,14 @@ void Ennemi::set_deplacement(const Coord2D &position_perso)
     //std::cout << position.get_x() << " " << position.get_y() << std::endl;
 }
 
-
-void Ennemi::set_orientation(const VecteurM& v)
-{
-    if((v.get_x() != 0)&&(v.get_y() != 0))
-    {
-        orientation = v;
-    }
-}
-
 Coord2D Ennemi::get_position() const
 {
     return position;
+}
+
+VecteurM Ennemi::get_deplacement() const
+{
+    return deplacement;
 }
 
 void Ennemi::set_position(const int& x, const int& y)
@@ -120,7 +129,7 @@ int Ennemi::get_taille() const
     return taille;
 }
 
-VecteurM Ennemi::get_orientation() const
+float Ennemi::get_orientation() const
 {
     return orientation;
 }
@@ -152,12 +161,13 @@ void Ennemi::set_mort()
 
 void Ennemi::trouver_chemin(const Coord2D &position_perso)
 {
-    VecteurM deplacement;
+    deplacement.set_x(position.get_x() - cos(-orientation)* coefficient_vitesse);
+    deplacement.set_y(position.get_y() - sin(-orientation)* coefficient_vitesse);
+    orientation = get_angle_perso(position_perso);
     if (type_ia == "chasseur")
     {
-        position.set_x(position.get_x() - cos(-get_angle_perso(position_perso) + M_PI_2)* coefficient_vitesse);
-        position.set_y(position.get_y() - sin(-get_angle_perso(position_perso) + M_PI_2)* coefficient_vitesse);
-        //std::cout << position.get_x() << " " << position.get_y() << std::endl;
+        position.set_x(deplacement.get_x());
+        position.set_y(deplacement.get_y());
     }
 }
 

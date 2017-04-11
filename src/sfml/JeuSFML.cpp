@@ -235,12 +235,10 @@ void JeuSFML::afficher(const int& mode)
     {
     case 1:
         temps_frame = clock.restart();
-        //std::cout << temps_frame.asSeconds() << std::endl;
         buffer.clear();
         window.clear();
         avancer_jeu();
         dessiner_salle();
-
         dessiner_projectiles();
         dessiner_ennemis();
         dessiner_perso();
@@ -374,10 +372,14 @@ void JeuSFML::dessiner_curseur()
 void JeuSFML::avancer_jeu()
 {
     vitesse_base = (scale_salle*temps_frame.asSeconds());
+    if(timer_acutalise_perso.getElapsedTime().asSeconds() >= 0)
+    {
+        jeu.avancer_jeu(vitesse_base,scale_salle);
+        timer_acutalise_perso.restart();
+    }
     recupere_mouvements();
     actualiser_perso();
     recupere_collisions();
-    jeu.avancer_jeu(vitesse_base,scale_salle);
     actualiser_salle();
     actualiser_projectiles();
     actualiser_ennemis();
@@ -527,6 +529,7 @@ void JeuSFML::recupere_collisions()
     hitboxes.perso_et_salle(&persosfml, casesfml, scale_salle, posx0salle, posy0salle);
     hitboxes.projectiles_et_salle(&projectilesfml, casesfml);
     hitboxes.projectiles_et_ennemis(&projectilesfml, &ennemisfml);
+    hitboxes.ennemis_et_salle(&ennemisfml, casesfml, scale_salle, posx0salle, posy0salle);
 
     /*
     sf::FloatRect hitbox_perso = persosfml.get_persosfml().getGlobalBounds();
@@ -625,13 +628,13 @@ void JeuSFML::recupere_mouvements()
 
     jeu.definir_orientation_perso(orientation);
 
-    if(timer_arme1_perso.getElapsedTime().asSeconds()>= 0.5)
+    if(timer_devmode_salles.getElapsedTime().asSeconds()>= 0.5)
     {
         if(sf::Keyboard::isKeyPressed(sf::Keyboard::Up)) {jeu.zone_changer_salle('g');}
         if(sf::Keyboard::isKeyPressed(sf::Keyboard::Down)) {jeu.zone_changer_salle('d');}
         if(sf::Keyboard::isKeyPressed(sf::Keyboard::Left)) {jeu.zone_changer_salle('h');}
         if(sf::Keyboard::isKeyPressed(sf::Keyboard::Right)) {jeu.zone_changer_salle('b');}
-        timer_arme1_perso.restart();
+        timer_devmode_salles.restart();
     }
 
 

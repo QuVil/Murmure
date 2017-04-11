@@ -11,9 +11,11 @@ private:
     std::string nom;
     std::string type_ia;
 
-    VecteurM orientation, resultante;
+    float orientation;
 
     Coord2D position, position_old;
+
+    VecteurM deplacement;
 
     float coefficient_vitesse;
 
@@ -37,6 +39,8 @@ public:
 
     void set_deplacement(const VecteurM &v);
 
+    void set_deplacement(const float &x, const float &y);
+
     void set_deplacement(const Coord2D &position_perso);
 
     void set_orientation(const VecteurM &v);
@@ -46,6 +50,8 @@ public:
     void revenir_ancienne_position();
 
     Coord2D get_position()const;
+
+    VecteurM get_deplacement() const;
 
     float get_coefficient_vitesse()const;
 
@@ -59,7 +65,7 @@ public:
 
     int get_taille()const;
 
-    VecteurM get_orientation() const;
+    float get_orientation() const;
 
     float get_angle_perso(const Coord2D &pos_perso)const;
 

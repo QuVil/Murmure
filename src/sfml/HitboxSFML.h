@@ -24,6 +24,7 @@ public:
     void perso_et_salle(PersoSFML * perso, CaseSFML * casesalle, const int &taille_case, const int &x0, const int &y0);
     void projectiles_et_salle(std::list<ProjectileSFML *> * projectiles, CaseSFML * casesalle);
     void projectiles_et_ennemis(std::list<ProjectileSFML *> * projectiles, std::list<EnnemiSFML *> * ennemis);
+    void ennemis_et_salle(std::list<EnnemiSFML *> *ennemis, CaseSFML * casesalle, const int &taille_case, const int &x0, const int &y0);
 };
 
 #endif // HITBOXSFML_H_INCLUDED
