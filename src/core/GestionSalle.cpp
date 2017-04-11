@@ -67,7 +67,7 @@ void GestionSalle::initialise_salle_actuelle(Salle* adresse_salle)
 
 void GestionSalle::maj_changement_salle()
 {
-    //On ajoute les ennemis
+    //On ajoute les ennemis et les clefs
     for (int i=0; i<nb_cases_hauteur; ++i)
     {
         for (int j=0; j<nb_cases_largeur; ++j)
@@ -79,6 +79,12 @@ void GestionSalle::maj_changement_salle()
                 Ennemi* e = new Ennemi("chasseur", i, j);
                 ennemis.push_back(e);
                 //std::cout << "bite" << std::endl;
+            }
+            else if (tests_case == 'c')
+            {
+                Clef* c = new Clef(i, j);
+                clef = c;
+                std::cout<<"clef placee"<<std::endl;
             }
         }
     }

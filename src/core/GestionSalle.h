@@ -4,6 +4,7 @@
 #include "Ennemi.h"
 #include "Projectile.h"
 #include "Salle.h"
+#include "Clef.h"
 
 #include <list>
 
@@ -13,6 +14,8 @@ private:
 
     std::list <Ennemi *> ennemis;
     std::list <Projectile *> projectiles;
+
+    Clef* clef;
 
     int taille_case;
 
@@ -34,6 +37,11 @@ public:
 
     void initialise_salle_actuelle(Salle* adresse_salle);
 
+    /**
+     * \brief création des entités de la Salle
+     * crée les ennemis objets et clefs dans la Salle.
+     * \warning la procédure est appelée par Jeu. à ne pas utiliser telle quelle svp
+     */
     void maj_changement_salle();
 
     Salle* get_salle_ptr();
