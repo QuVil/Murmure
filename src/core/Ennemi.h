@@ -21,7 +21,7 @@ private:
 
     float pv_actuel;
 
-    int taille;
+    float taille;
 
     bool vivant;
 
@@ -63,7 +63,7 @@ public:
 
     float get_pv_actuel()const;
 
-    int get_taille()const;
+    float get_taille()const;
 
     float get_orientation() const;
 

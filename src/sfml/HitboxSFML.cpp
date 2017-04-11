@@ -198,15 +198,16 @@ void HitboxSFML::ennemis_et_salle(std::list<EnnemiSFML*>* ennemis, CaseSFML* cas
             sf::FloatRect ennemi_rect_x(sf::Vector2f((*it_e)->get_position_hg().get_x(),(*it_e)->get_position_hg().get_y()), sf::Vector2f((*it_e)->get_taille().get_x(), (*it_e)->get_taille().get_y()));
             for(std::list<CaseSFML *>::iterator it = cases_collision.begin(); it != cases_collision.end(); ++it)
             {
-                std::cout << (*it_e)->get_position_hg().get_x() << " " << (*it_e)->get_taille().get_x() << std::endl;
+                //std::cout << (*it_e)->get_position_hg().get_x() << " " << (*it_e)->get_taille().get_x() << std::endl;
                 if(ennemi_rect_x.intersects((*it)->get_casesfml().getBounds())){collision = true; break;}
             }
             if(collision)
             {
-
+                //std::cout << "kkke" << std::endl;
                 (*it_e)->get_ennemi()->revenir_ancienne_position();
                 //test coord y
                 (*it_e)->get_ennemi()->set_deplacement(0, deplacement_ennemi.get_y());
+                std::cout << deplacement_ennemi.get_y() << std::endl;
                 (*it_e)->mettre_a_jour_position(taille_case, x0, y0);
                 sf::FloatRect ennemi_rect_y(sf::Vector2f((*it_e)->get_position_hg().get_x(),(*it_e)->get_position_hg().get_y()), sf::Vector2f((*it_e)->get_taille().get_x(), (*it_e)->get_taille().get_y()));
                 collision = false;
@@ -216,6 +217,7 @@ void HitboxSFML::ennemis_et_salle(std::list<EnnemiSFML*>* ennemis, CaseSFML* cas
                 }
                 if(collision)
                 {
+                    //std::cout << "lol" << std::endl;
                     (*it_e)->get_ennemi()->revenir_ancienne_position();
                 }
             }

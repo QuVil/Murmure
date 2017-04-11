@@ -51,8 +51,6 @@ float Coord2D::get_y() const
 
 void Coord2D::deplacer(const VecteurM& vect, const float& coeff)
 {
-    x = vect.get_x() * coeff + x;
-    y = vect.get_y() * coeff + y;
-    //std::cout << x << " " << y << std::endl;
-    //std::cout << vect.get_x() << " " << vect.get_y() << std::endl;
+    x = (float) vect.get_x() * coeff + x;
+    y = (float) vect.get_y() * coeff + y;
 }

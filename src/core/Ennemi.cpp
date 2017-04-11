@@ -12,7 +12,7 @@ Ennemi::Ennemi()
 {
     type_ia = "chasseur";
 
-    taille = 1;
+    taille = 0.001;
 
     vivant = true;
 }
@@ -28,15 +28,13 @@ Ennemi::Ennemi(std::string ia, int case_x_app, int case_y_app)
 
     vivant = true;
 
-    taille = 1;
+    taille = 0.5;
 
-    coefficient_vitesse = 400000;
+    coefficient_vitesse = 90000;
 }
 
 void Ennemi::set_deplacement(const VecteurM& v)
 {
-    position_old.set_x(position.get_x());
-    position_old.set_y(position.get_y());
     deplacement.set_x(v.get_x());
     deplacement.set_y(v.get_y());
     position.deplacer(deplacement, coefficient_vitesse);
@@ -48,7 +46,9 @@ void Ennemi::set_deplacement(const float& x, const float& y)
     position_old.set_y(position.get_y());
     deplacement.set_x(x);
     deplacement.set_y(y);
+    //std::cout << "position avant : " << position.get_x() << " " << position.get_y() << std::endl;
     position.deplacer(deplacement, coefficient_vitesse);
+    //std::cout << "position apres : " << position.get_x() << " " << position.get_y() << std::endl;
 }
 
 float Ennemi::get_orientation_degre() const
@@ -56,7 +56,6 @@ float Ennemi::get_orientation_degre() const
     ///TODO TODO TODO TODO TODO TODO TODO
     return 1.0;
 }
-
 
 void Ennemi::infliger_degats(float degats)
 {
@@ -124,7 +123,7 @@ float Ennemi::get_pv_actuel() const
     return pv_actuel;
 }
 
-int Ennemi::get_taille() const
+float Ennemi::get_taille() const
 {
     return taille;
 }
@@ -161,13 +160,15 @@ void Ennemi::set_mort()
 
 void Ennemi::trouver_chemin(const Coord2D &position_perso)
 {
-    deplacement.set_x(position.get_x() - cos(-orientation)* coefficient_vitesse);
-    deplacement.set_y(position.get_y() - sin(-orientation)* coefficient_vitesse);
     orientation = get_angle_perso(position_perso);
+    deplacement.set_x(cos(-orientation));
+    deplacement.set_y(sin(-orientation));
     if (type_ia == "chasseur")
     {
-        position.set_x(deplacement.get_x());
-        position.set_y(deplacement.get_y());
+        position_old.set_x(position.get_x());
+        position_old.set_y(position.get_y());
+        position.deplacer(deplacement, coefficient_vitesse);
+        //std::cout << position.get_x() << " " << position.get_y() << std::endl;
     }
 }
 
