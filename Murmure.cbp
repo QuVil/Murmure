@@ -190,6 +190,8 @@
 			<Option target="murmure_gen_test" />
 			<Option target="murmure_test_q" />
 		</Unit>
+		<Unit filename="src/core/Menu.cpp" />
+		<Unit filename="src/core/Menu.h" />
 		<Unit filename="src/core/Modele.cpp">
 			<Option target="murmure_test" />
 			<Option target="murmure_sfml" />
@@ -357,6 +359,12 @@
 			<Option target="murmure_sfml" />
 			<Option target="murmure_gen_test" />
 			<Option target="murmure_test_q" />
+		</Unit>
+		<Unit filename="src/sfml/MenuSFML.cpp">
+			<Option target="murmure_sfml" />
+		</Unit>
+		<Unit filename="src/sfml/MenuSFML.h">
+			<Option target="murmure_sfml" />
 		</Unit>
 		<Unit filename="src/sfml/PersoSFML.cpp">
 			<Option target="murmure_txt" />

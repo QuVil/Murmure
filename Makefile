@@ -1,4 +1,4 @@
-CORE = core/Fichier.cpp core/CaseSalle.cpp core/Salle.cpp core/Zone.cpp core/Jeu.cpp core/ZoneGen.cpp core/Perso.cpp core/Modele.cpp core/SalleGen.cpp core/Coord2D.cpp core/VecteurM.cpp core/ModeleSalle.cpp core/Objet.cpp core/Ennemi.cpp core/Projectile.cpp core/Arme.cpp core/GestionSalle.cpp
+CORE = core/Fichier.cpp core/CaseSalle.cpp core/Salle.cpp core/Zone.cpp core/Jeu.cpp core/ZoneGen.cpp core/Perso.cpp core/Modele.cpp core/SalleGen.cpp core/Coord2D.cpp core/VecteurM.cpp core/ModeleSalle.cpp core/Objet.cpp core/Ennemi.cpp core/Projectile.cpp core/Arme.cpp core/GestionSalle.cpp core/Menu.cpp
 
 SRCS_TXT = $(CORE) txt/mainTxt.cpp txt/JeuTxt.cpp txt/winTxt.cpp
 FINAL_TARGET_TXT = murmure_txt
@@ -6,7 +6,7 @@ FINAL_TARGET_TXT = murmure_txt
 SRCS_TEST = $(CORE) testing/map_testing.cpp
 FINAL_TARGET_TEST = murmure_test
 
-SRCS_SFML = $(CORE) sfml/mainSFML.cpp sfml/JeuSFML.cpp sfml/CaseSFML.cpp sfml/CarteAffSFML.cpp sfml/TextureSFML.cpp sfml/PersoSFML.cpp sfml/SelecPersoSFML.cpp sfml/ProjectileSFML.cpp sfml/HitboxSFML.cpp sfml/EnnemiSFML.cpp
+SRCS_SFML = $(CORE) sfml/mainSFML.cpp sfml/JeuSFML.cpp sfml/CaseSFML.cpp sfml/CarteAffSFML.cpp sfml/TextureSFML.cpp sfml/PersoSFML.cpp sfml/SelecPersoSFML.cpp sfml/ProjectileSFML.cpp sfml/HitboxSFML.cpp sfml/EnnemiSFML.cpp sfml/MenuSFML.cpp
 FINAL_TARGET_SFML = murmure_sfml
 
 SRCS_GEN_TEST = $(CORE) testing/generation_tests.cpp

@@ -1,0 +1,6 @@
+#ifndef MENUSFML_H_INCLUDED
+#define MENUSFML_H_INCLUDED
+
+
+
+#endif // MENUSFML_H_INCLUDED
