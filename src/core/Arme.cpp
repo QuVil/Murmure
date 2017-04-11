@@ -1,7 +1,6 @@
 #include "Arme.h"
 #include "Fichier.h"
 
-///TODO : Gary, j'ai besoin de ton aide pour la gestion des projectiles.
 //L'instance d'Arme a un vector qui est en fait un tab dynamique de Projectile.
 //Le but est d'appeler tirer() avec la position de départ, l'angle et la vitesse
 //et que le projectile se gère ensuite tout seul en gros. tu devrais sûrement changer le

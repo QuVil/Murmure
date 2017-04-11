@@ -82,6 +82,7 @@ void JeuSFML::init()
     textures.charger_texture_perso();
     textures.charger_texture_projectile();
     textures.charger_texture_ennemi();
+    textures.charger_texture_clef();
     //textures.charger_texture_curseur();
     init_caseSFML();
     init_persoSFML();
@@ -115,6 +116,11 @@ void JeuSFML::init_projectileSFML()
 void JeuSFML::init_ennemiSFML()
 {
 
+}
+
+void JeuSFML::init_clefSFML()
+{
+    clefsfml.init(jeu.retourne_clef(), textures.retourne_texture_clef(), scale_salle);
 }
 
 void JeuSFML::init_texte()
@@ -363,6 +369,17 @@ void JeuSFML::dessiner_ennemis()
     }
 }
 
+void JeuSFML::dessiner_clef()
+{
+    if (jeu.get_salle_actuelle()->get_config() == 3)
+    {
+        if (!jeu.retourne_clef()->get_par_terre())
+        {
+            buffer.draw(clefsfml.get_clefsfml());
+        }
+    }
+}
+
 /*
 void JeuSFML::dessiner_curseur()
 {
@@ -518,6 +535,10 @@ void JeuSFML::actualiser_ennemis()
     }
 }
 
+void JeuSFML::actualiser_clef()
+{
+
+}
 
 void JeuSFML::actualiser_perso()
 {

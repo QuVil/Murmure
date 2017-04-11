@@ -24,6 +24,7 @@ Perso::Perso()
     coefficient_vitesse = (float) 1;
 
     vivant = true;
+    possede_clef_boss = false;
 }
 
 Perso::Perso(std::string n)
@@ -240,4 +241,10 @@ Arme* Perso::get_arme1()
 VecteurM Perso::get_deplacement() const
 {
     return deplacement;
+}
+
+void Perso::ramasser_clef(Clef* cle)
+{
+    possede_clef_boss = true;
+    cle->ramasser();
 }

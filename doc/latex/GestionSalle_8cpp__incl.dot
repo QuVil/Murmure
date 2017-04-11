@@ -19,5 +19,21 @@ digraph "/home/quentin/Murmure/src/core/GestionSalle.cpp"
   Node7 -> Node5 [color="midnightblue",fontsize="10",style="solid"];
   Node7 -> Node6 [color="midnightblue",fontsize="10",style="solid"];
   Node2 -> Node8 [color="midnightblue",fontsize="10",style="solid"];
-  Node8 [label="list",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled"];
+  Node8 [label="Salle.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$Salle_8h.html",tooltip="Header du module Salle. "];
+  Node8 -> Node9 [color="midnightblue",fontsize="10",style="solid"];
+  Node9 [label="CaseSalle.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$CaseSalle_8h.html",tooltip="Header du module CaseSalle. "];
+  Node9 -> Node4 [color="midnightblue",fontsize="10",style="solid"];
+  Node8 -> Node10 [color="midnightblue",fontsize="10",style="solid"];
+  Node10 [label="SalleGen.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$SalleGen_8h.html",tooltip="Header du module SalleGen. "];
+  Node10 -> Node4 [color="midnightblue",fontsize="10",style="solid"];
+  Node8 -> Node11 [color="midnightblue",fontsize="10",style="solid"];
+  Node11 [label="Config.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$Config_8h.html"];
+  Node2 -> Node12 [color="midnightblue",fontsize="10",style="solid"];
+  Node12 [label="Clef.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$Clef_8h.html"];
+  Node12 -> Node6 [color="midnightblue",fontsize="10",style="solid"];
+  Node2 -> Node13 [color="midnightblue",fontsize="10",style="solid"];
+  Node13 [label="list",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled"];
+  Node1 -> Node11 [color="midnightblue",fontsize="10",style="solid"];
+  Node1 -> Node14 [color="midnightblue",fontsize="10",style="solid"];
+  Node14 [label="iostream",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled"];
 }

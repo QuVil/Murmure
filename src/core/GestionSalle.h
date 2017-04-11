@@ -35,6 +35,8 @@ public:
 
     std::list <Ennemi *> * get_ennemis();
 
+    Clef* get_clef();
+
     void initialise_salle_actuelle(Salle* adresse_salle);
 
     /**
@@ -51,6 +53,8 @@ public:
     void vider_ennemis(bool dans_destructeur /* =false */);
 
     void deplacer_ennemis_auto(Coord2D pos_perso);
+
+    void vider_clef();
 };
 
 #endif // GESTIONSALLE_H_INCLUDED

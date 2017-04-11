@@ -16,6 +16,7 @@
 #include "HitboxSFML.h"
 #include "EnnemiSFML.h"
 #include "MenuSFML.h"
+#include "ClefSFML.h"
 
 class JeuSFML
 {
@@ -72,6 +73,9 @@ private:
     /// ENNEMIS
     std::list <EnnemiSFML *> ennemisfml;
 
+    /// CLEF
+    ClefSFML clefsfml;
+
     PersoSFML persosfml;
 
     MenuSFML menusfml;
@@ -90,6 +94,7 @@ private:
     void init_carteAffSFML();
     void init_projectileSFML();
     void init_ennemiSFML();
+    void init_clefSFML();
     void init_texte();
 
     void dessiner_curseur();
@@ -98,6 +103,7 @@ private:
     void dessiner_perso();
     void dessiner_projectiles();
     void dessiner_ennemis();
+    void dessiner_clef();
     void ecrire_texte();
 
     void dessiner_menu();
@@ -105,6 +111,7 @@ private:
     void actualiser_salle();
     void actualiser_projectiles();
     void actualiser_ennemis();
+    void actualiser_clef();
     void actualiser_perso();
 public:
     JeuSFML();

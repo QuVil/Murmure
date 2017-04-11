@@ -1,6 +1,6 @@
 /**
  * \file Modele.cpp
- * \brief fichier source du module Modele.
+ * \brief Code source du module Modele.
  * \author Quentin.V & Gary.S
  * \version 0.1
  * \date 17 mars 2017

@@ -9,11 +9,13 @@
 \item 
 \hyperlink{classProjectileSFML_a20bdf7d68e31f15bac136722de3f8985}{Projectile\+S\+F\+ML} ()
 \item 
-void \hyperlink{classProjectileSFML_ad5aee80fc2774811eb454a07b038cd72}{init} (const \hyperlink{classProjectile}{Projectile} \&p, const sf\+::\+Texture \&texture, const int \&scale\+\_\+salle)
+void \hyperlink{classProjectileSFML_a9c83c4a0d584183cef2650760a977ee8}{init} (\hyperlink{classProjectile}{Projectile} $\ast$p, const sf\+::\+Texture \&texture, const int \&scale\+\_\+salle)
 \item 
-void \hyperlink{classProjectileSFML_af2512b6719e061c6628de2388f3cc948}{mise\+\_\+a\+\_\+jour\+\_\+position} (const \hyperlink{classCoord2D}{Coord2D} \&position)
+void \hyperlink{classProjectileSFML_aac9b1648afeb6afbd314b35578b8bc9b}{mise\+\_\+a\+\_\+jour\+\_\+position} (const int \&taille\+\_\+case, const int \&x0, const int \&y0)
 \item 
 sf\+::\+Sprite \hyperlink{classProjectileSFML_ad44db624c636347659a9677db6ea9a56}{retourne\+\_\+projectilesfml} ()
+\item 
+\hyperlink{classProjectile}{Projectile} $\ast$ \hyperlink{classProjectileSFML_a72458a1770d553b077fb9315e5b5baaf}{get\+\_\+projectile} ()
 \end{DoxyCompactItemize}
 
 
@@ -28,22 +30,31 @@ sf\+::\+Sprite \hyperlink{classProjectileSFML_ad44db624c636347659a9677db6ea9a56}
 
 
 \subsection{Member Function Documentation}
+\index{Projectile\+S\+F\+ML@{Projectile\+S\+F\+ML}!get\+\_\+projectile@{get\+\_\+projectile}}
+\index{get\+\_\+projectile@{get\+\_\+projectile}!Projectile\+S\+F\+ML@{Projectile\+S\+F\+ML}}
+\subsubsection[{\texorpdfstring{get\+\_\+projectile()}{get_projectile()}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Projectile} $\ast$ Projectile\+S\+F\+M\+L\+::get\+\_\+projectile (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classProjectileSFML_a72458a1770d553b077fb9315e5b5baaf}{}\label{classProjectileSFML_a72458a1770d553b077fb9315e5b5baaf}
 \index{Projectile\+S\+F\+ML@{Projectile\+S\+F\+ML}!init@{init}}
 \index{init@{init}!Projectile\+S\+F\+ML@{Projectile\+S\+F\+ML}}
-\subsubsection[{\texorpdfstring{init(const Projectile \&p, const sf\+::\+Texture \&texture, const int \&scale\+\_\+salle)}{init(const Projectile &p, const sf::Texture &texture, const int &scale_salle)}}]{\setlength{\rightskip}{0pt plus 5cm}void Projectile\+S\+F\+M\+L\+::init (
+\subsubsection[{\texorpdfstring{init(\+Projectile $\ast$p, const sf\+::\+Texture \&texture, const int \&scale\+\_\+salle)}{init(Projectile *p, const sf::Texture &texture, const int &scale_salle)}}]{\setlength{\rightskip}{0pt plus 5cm}void Projectile\+S\+F\+M\+L\+::init (
 \begin{DoxyParamCaption}
-\item[{const {\bf Projectile} \&}]{p, }
+\item[{{\bf Projectile} $\ast$}]{p, }
 \item[{const sf\+::\+Texture \&}]{texture, }
 \item[{const int \&}]{scale\+\_\+salle}
 \end{DoxyParamCaption}
-)}\hypertarget{classProjectileSFML_ad5aee80fc2774811eb454a07b038cd72}{}\label{classProjectileSFML_ad5aee80fc2774811eb454a07b038cd72}
+)}\hypertarget{classProjectileSFML_a9c83c4a0d584183cef2650760a977ee8}{}\label{classProjectileSFML_a9c83c4a0d584183cef2650760a977ee8}
 \index{Projectile\+S\+F\+ML@{Projectile\+S\+F\+ML}!mise\+\_\+a\+\_\+jour\+\_\+position@{mise\+\_\+a\+\_\+jour\+\_\+position}}
 \index{mise\+\_\+a\+\_\+jour\+\_\+position@{mise\+\_\+a\+\_\+jour\+\_\+position}!Projectile\+S\+F\+ML@{Projectile\+S\+F\+ML}}
-\subsubsection[{\texorpdfstring{mise\+\_\+a\+\_\+jour\+\_\+position(const Coord2\+D \&position)}{mise_a_jour_position(const Coord2D &position)}}]{\setlength{\rightskip}{0pt plus 5cm}void Projectile\+S\+F\+M\+L\+::mise\+\_\+a\+\_\+jour\+\_\+position (
+\subsubsection[{\texorpdfstring{mise\+\_\+a\+\_\+jour\+\_\+position(const int \&taille\+\_\+case, const int \&x0, const int \&y0)}{mise_a_jour_position(const int &taille_case, const int &x0, const int &y0)}}]{\setlength{\rightskip}{0pt plus 5cm}void Projectile\+S\+F\+M\+L\+::mise\+\_\+a\+\_\+jour\+\_\+position (
 \begin{DoxyParamCaption}
-\item[{const {\bf Coord2D} \&}]{position}
+\item[{const int \&}]{taille\+\_\+case, }
+\item[{const int \&}]{x0, }
+\item[{const int \&}]{y0}
 \end{DoxyParamCaption}
-)}\hypertarget{classProjectileSFML_af2512b6719e061c6628de2388f3cc948}{}\label{classProjectileSFML_af2512b6719e061c6628de2388f3cc948}
+)}\hypertarget{classProjectileSFML_aac9b1648afeb6afbd314b35578b8bc9b}{}\label{classProjectileSFML_aac9b1648afeb6afbd314b35578b8bc9b}
 \index{Projectile\+S\+F\+ML@{Projectile\+S\+F\+ML}!retourne\+\_\+projectilesfml@{retourne\+\_\+projectilesfml}}
 \index{retourne\+\_\+projectilesfml@{retourne\+\_\+projectilesfml}!Projectile\+S\+F\+ML@{Projectile\+S\+F\+ML}}
 \subsubsection[{\texorpdfstring{retourne\+\_\+projectilesfml()}{retourne_projectilesfml()}}]{\setlength{\rightskip}{0pt plus 5cm}sf\+::\+Sprite Projectile\+S\+F\+M\+L\+::retourne\+\_\+projectilesfml (

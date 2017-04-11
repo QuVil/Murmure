@@ -9,17 +9,53 @@
 \item 
 \hyperlink{classEnnemi_a9c5eb7ca82848b97f3dcf262fe625b3a}{Ennemi} ()
 \item 
+\hyperlink{classEnnemi_a1c5db79ea2fadc4d08654f892fb913b3}{Ennemi} (std\+::string ia, int case\+\_\+x\+\_\+app, int case\+\_\+y\+\_\+app)
+\item 
 void \hyperlink{classEnnemi_ad49d449d20449273e366be5b89654ebd}{infliger\+\_\+degats} (float degats)
 \item 
 void \hyperlink{classEnnemi_abcde77d5d90b910b77bf5f66e7c4a534}{soigner} (float soin)
 \item 
-int \hyperlink{classEnnemi_a0bdb8819d51e4c6f2bbe6fa26c8c5764}{get\+\_\+pos\+\_\+case\+\_\+x} () const 
+void \hyperlink{classEnnemi_a554bf929e2b45455ccc9a4b6bba19e88}{set\+\_\+deplacement} (const \hyperlink{classVecteurM}{VecteurM} \&v)
 \item 
-int \hyperlink{classEnnemi_ac4335055a912e7b64a57ca7ab7edd785}{get\+\_\+pos\+\_\+case\+\_\+y} () const 
+void \hyperlink{classEnnemi_a202cf059502343eb9b2dd35c7f770dcb}{set\+\_\+deplacement} (const \hyperlink{classCoord2D}{Coord2D} \&position\+\_\+perso)
 \item 
-void \hyperlink{classEnnemi_ae8f9a2cc02f03d31c39ed3ac78839382}{deplacer\+\_\+txt} (char direction)
+void \hyperlink{classEnnemi_ad9b67277a7afb7510b1d72c9b771b52a}{set\+\_\+orientation} (const \hyperlink{classVecteurM}{VecteurM} \&v)
 \item 
-void \hyperlink{classEnnemi_a300a5dc1e2d25ce2a4f0d40854a5a18e}{placer\+\_\+txt} (int x, int y)
+void \hyperlink{classEnnemi_a2b3b26369645a3c2946f891fcea4ed48}{set\+\_\+position} (const int \&x, const int \&y)
+\item 
+void \hyperlink{classEnnemi_a7211dfcdacfa996833a611fd4aa9fff1}{revenir\+\_\+ancienne\+\_\+position} ()
+\item 
+\hyperlink{classCoord2D}{Coord2D} \hyperlink{classEnnemi_a928341b6737ceb7a4469a478b3504fc2}{get\+\_\+position} () const 
+\item 
+float \hyperlink{classEnnemi_ab2e641b1ee0cd88ecf48024ffb526875}{get\+\_\+coefficient\+\_\+vitesse} () const 
+\item 
+float \hyperlink{classEnnemi_a7dcf648950daa2d9e3e78258b2b09453}{get\+\_\+orientation\+\_\+degre} () const 
+\item 
+float \hyperlink{classEnnemi_a6445344d697bce634c1d7ed6958c7f44}{get\+\_\+pos\+\_\+x} () const 
+\item 
+float \hyperlink{classEnnemi_a431eb6e3f612218c4c10f97aba669596}{get\+\_\+pos\+\_\+y} () const 
+\item 
+float \hyperlink{classEnnemi_a357d1286fb7abff5686efa371ce666d0}{get\+\_\+pv\+\_\+actuel} () const 
+\item 
+int \hyperlink{classEnnemi_ac7cde57e6d177a290eab0f68708a6624}{get\+\_\+taille} () const 
+\item 
+\hyperlink{classVecteurM}{VecteurM} \hyperlink{classEnnemi_a85a0cd0d1b81d655d270d21ca394bfb3}{get\+\_\+orientation} () const 
+\item 
+float \hyperlink{classEnnemi_a5730071888e4df7de2f9fb76860e0ebf}{get\+\_\+angle\+\_\+perso} (const \hyperlink{classCoord2D}{Coord2D} \&pos\+\_\+perso) const 
+\item 
+void \hyperlink{classEnnemi_aa8013956da11a111c71e635409af8b3e}{set\+\_\+coefficient\+\_\+vitesse} (const float \&c)
+\item 
+int \hyperlink{classEnnemi_acd1d7ca00c6237863be2e6e28cd0487f}{get\+\_\+case\+\_\+x\+\_\+apparition} () const 
+\item 
+int \hyperlink{classEnnemi_ac7d5c0d2d9f769270a63b8c5635aa361}{get\+\_\+case\+\_\+y\+\_\+apparition} () const 
+\item 
+bool \hyperlink{classEnnemi_a77fd4b28c56d5880909557b2670d491f}{is\+\_\+vivant} ()
+\item 
+void \hyperlink{classEnnemi_a9d7ed969bc374b0bfd2cdc279e7e1cd4}{set\+\_\+mort} ()
+\item 
+void \hyperlink{classEnnemi_a55013546576c0463a59ade8c40281a2e}{trouver\+\_\+chemin} (const \hyperlink{classCoord2D}{Coord2D} \&position\+\_\+perso)
+\item 
+void \hyperlink{classEnnemi_ac2d3e7120f03eac2598c0f4f0a4f90b7}{deplacer\+\_\+auto} (\hyperlink{classCoord2D}{Coord2D} pos\+\_\+perso)
 \end{DoxyCompactItemize}
 
 
@@ -31,30 +67,102 @@ void \hyperlink{classEnnemi_a300a5dc1e2d25ce2a4f0d40854a5a18e}{placer\+\_\+txt} 
 {}
 \end{DoxyParamCaption}
 )}\hypertarget{classEnnemi_a9c5eb7ca82848b97f3dcf262fe625b3a}{}\label{classEnnemi_a9c5eb7ca82848b97f3dcf262fe625b3a}
+\index{Ennemi@{Ennemi}!Ennemi@{Ennemi}}
+\index{Ennemi@{Ennemi}!Ennemi@{Ennemi}}
+\subsubsection[{\texorpdfstring{Ennemi(std\+::string ia, int case\+\_\+x\+\_\+app, int case\+\_\+y\+\_\+app)}{Ennemi(std::string ia, int case_x_app, int case_y_app)}}]{\setlength{\rightskip}{0pt plus 5cm}Ennemi\+::\+Ennemi (
+\begin{DoxyParamCaption}
+\item[{std\+::string}]{ia, }
+\item[{int}]{case\+\_\+x\+\_\+app, }
+\item[{int}]{case\+\_\+y\+\_\+app}
+\end{DoxyParamCaption}
+)}\hypertarget{classEnnemi_a1c5db79ea2fadc4d08654f892fb913b3}{}\label{classEnnemi_a1c5db79ea2fadc4d08654f892fb913b3}
 
 
 \subsection{Member Function Documentation}
-\index{Ennemi@{Ennemi}!deplacer\+\_\+txt@{deplacer\+\_\+txt}}
-\index{deplacer\+\_\+txt@{deplacer\+\_\+txt}!Ennemi@{Ennemi}}
-\subsubsection[{\texorpdfstring{deplacer\+\_\+txt(char direction)}{deplacer_txt(char direction)}}]{\setlength{\rightskip}{0pt plus 5cm}void Ennemi\+::deplacer\+\_\+txt (
+\index{Ennemi@{Ennemi}!deplacer\+\_\+auto@{deplacer\+\_\+auto}}
+\index{deplacer\+\_\+auto@{deplacer\+\_\+auto}!Ennemi@{Ennemi}}
+\subsubsection[{\texorpdfstring{deplacer\+\_\+auto(\+Coord2\+D pos\+\_\+perso)}{deplacer_auto(Coord2D pos_perso)}}]{\setlength{\rightskip}{0pt plus 5cm}void Ennemi\+::deplacer\+\_\+auto (
 \begin{DoxyParamCaption}
-\item[{char}]{direction}
+\item[{{\bf Coord2D}}]{pos\+\_\+perso}
 \end{DoxyParamCaption}
-)}\hypertarget{classEnnemi_ae8f9a2cc02f03d31c39ed3ac78839382}{}\label{classEnnemi_ae8f9a2cc02f03d31c39ed3ac78839382}
-\index{Ennemi@{Ennemi}!get\+\_\+pos\+\_\+case\+\_\+x@{get\+\_\+pos\+\_\+case\+\_\+x}}
-\index{get\+\_\+pos\+\_\+case\+\_\+x@{get\+\_\+pos\+\_\+case\+\_\+x}!Ennemi@{Ennemi}}
-\subsubsection[{\texorpdfstring{get\+\_\+pos\+\_\+case\+\_\+x() const }{get_pos_case_x() const }}]{\setlength{\rightskip}{0pt plus 5cm}int Ennemi\+::get\+\_\+pos\+\_\+case\+\_\+x (
+)}\hypertarget{classEnnemi_ac2d3e7120f03eac2598c0f4f0a4f90b7}{}\label{classEnnemi_ac2d3e7120f03eac2598c0f4f0a4f90b7}
+\index{Ennemi@{Ennemi}!get\+\_\+angle\+\_\+perso@{get\+\_\+angle\+\_\+perso}}
+\index{get\+\_\+angle\+\_\+perso@{get\+\_\+angle\+\_\+perso}!Ennemi@{Ennemi}}
+\subsubsection[{\texorpdfstring{get\+\_\+angle\+\_\+perso(const Coord2\+D \&pos\+\_\+perso) const }{get_angle_perso(const Coord2D &pos_perso) const }}]{\setlength{\rightskip}{0pt plus 5cm}float Ennemi\+::get\+\_\+angle\+\_\+perso (
+\begin{DoxyParamCaption}
+\item[{const {\bf Coord2D} \&}]{pos\+\_\+perso}
+\end{DoxyParamCaption}
+) const}\hypertarget{classEnnemi_a5730071888e4df7de2f9fb76860e0ebf}{}\label{classEnnemi_a5730071888e4df7de2f9fb76860e0ebf}
+\index{Ennemi@{Ennemi}!get\+\_\+case\+\_\+x\+\_\+apparition@{get\+\_\+case\+\_\+x\+\_\+apparition}}
+\index{get\+\_\+case\+\_\+x\+\_\+apparition@{get\+\_\+case\+\_\+x\+\_\+apparition}!Ennemi@{Ennemi}}
+\subsubsection[{\texorpdfstring{get\+\_\+case\+\_\+x\+\_\+apparition() const }{get_case_x_apparition() const }}]{\setlength{\rightskip}{0pt plus 5cm}int Ennemi\+::get\+\_\+case\+\_\+x\+\_\+apparition (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
-) const}\hypertarget{classEnnemi_a0bdb8819d51e4c6f2bbe6fa26c8c5764}{}\label{classEnnemi_a0bdb8819d51e4c6f2bbe6fa26c8c5764}
-\index{Ennemi@{Ennemi}!get\+\_\+pos\+\_\+case\+\_\+y@{get\+\_\+pos\+\_\+case\+\_\+y}}
-\index{get\+\_\+pos\+\_\+case\+\_\+y@{get\+\_\+pos\+\_\+case\+\_\+y}!Ennemi@{Ennemi}}
-\subsubsection[{\texorpdfstring{get\+\_\+pos\+\_\+case\+\_\+y() const }{get_pos_case_y() const }}]{\setlength{\rightskip}{0pt plus 5cm}int Ennemi\+::get\+\_\+pos\+\_\+case\+\_\+y (
+) const}\hypertarget{classEnnemi_acd1d7ca00c6237863be2e6e28cd0487f}{}\label{classEnnemi_acd1d7ca00c6237863be2e6e28cd0487f}
+\index{Ennemi@{Ennemi}!get\+\_\+case\+\_\+y\+\_\+apparition@{get\+\_\+case\+\_\+y\+\_\+apparition}}
+\index{get\+\_\+case\+\_\+y\+\_\+apparition@{get\+\_\+case\+\_\+y\+\_\+apparition}!Ennemi@{Ennemi}}
+\subsubsection[{\texorpdfstring{get\+\_\+case\+\_\+y\+\_\+apparition() const }{get_case_y_apparition() const }}]{\setlength{\rightskip}{0pt plus 5cm}int Ennemi\+::get\+\_\+case\+\_\+y\+\_\+apparition (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
-) const}\hypertarget{classEnnemi_ac4335055a912e7b64a57ca7ab7edd785}{}\label{classEnnemi_ac4335055a912e7b64a57ca7ab7edd785}
+) const}\hypertarget{classEnnemi_ac7d5c0d2d9f769270a63b8c5635aa361}{}\label{classEnnemi_ac7d5c0d2d9f769270a63b8c5635aa361}
+\index{Ennemi@{Ennemi}!get\+\_\+coefficient\+\_\+vitesse@{get\+\_\+coefficient\+\_\+vitesse}}
+\index{get\+\_\+coefficient\+\_\+vitesse@{get\+\_\+coefficient\+\_\+vitesse}!Ennemi@{Ennemi}}
+\subsubsection[{\texorpdfstring{get\+\_\+coefficient\+\_\+vitesse() const }{get_coefficient_vitesse() const }}]{\setlength{\rightskip}{0pt plus 5cm}float Ennemi\+::get\+\_\+coefficient\+\_\+vitesse (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\hypertarget{classEnnemi_ab2e641b1ee0cd88ecf48024ffb526875}{}\label{classEnnemi_ab2e641b1ee0cd88ecf48024ffb526875}
+\index{Ennemi@{Ennemi}!get\+\_\+orientation@{get\+\_\+orientation}}
+\index{get\+\_\+orientation@{get\+\_\+orientation}!Ennemi@{Ennemi}}
+\subsubsection[{\texorpdfstring{get\+\_\+orientation() const }{get_orientation() const }}]{\setlength{\rightskip}{0pt plus 5cm}{\bf VecteurM} Ennemi\+::get\+\_\+orientation (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\hypertarget{classEnnemi_a85a0cd0d1b81d655d270d21ca394bfb3}{}\label{classEnnemi_a85a0cd0d1b81d655d270d21ca394bfb3}
+\index{Ennemi@{Ennemi}!get\+\_\+orientation\+\_\+degre@{get\+\_\+orientation\+\_\+degre}}
+\index{get\+\_\+orientation\+\_\+degre@{get\+\_\+orientation\+\_\+degre}!Ennemi@{Ennemi}}
+\subsubsection[{\texorpdfstring{get\+\_\+orientation\+\_\+degre() const }{get_orientation_degre() const }}]{\setlength{\rightskip}{0pt plus 5cm}float Ennemi\+::get\+\_\+orientation\+\_\+degre (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\hypertarget{classEnnemi_a7dcf648950daa2d9e3e78258b2b09453}{}\label{classEnnemi_a7dcf648950daa2d9e3e78258b2b09453}
+T\+O\+DO T\+O\+DO T\+O\+DO T\+O\+DO T\+O\+DO T\+O\+DO T\+O\+DO \index{Ennemi@{Ennemi}!get\+\_\+pos\+\_\+x@{get\+\_\+pos\+\_\+x}}
+\index{get\+\_\+pos\+\_\+x@{get\+\_\+pos\+\_\+x}!Ennemi@{Ennemi}}
+\subsubsection[{\texorpdfstring{get\+\_\+pos\+\_\+x() const }{get_pos_x() const }}]{\setlength{\rightskip}{0pt plus 5cm}float Ennemi\+::get\+\_\+pos\+\_\+x (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\hypertarget{classEnnemi_a6445344d697bce634c1d7ed6958c7f44}{}\label{classEnnemi_a6445344d697bce634c1d7ed6958c7f44}
+\index{Ennemi@{Ennemi}!get\+\_\+pos\+\_\+y@{get\+\_\+pos\+\_\+y}}
+\index{get\+\_\+pos\+\_\+y@{get\+\_\+pos\+\_\+y}!Ennemi@{Ennemi}}
+\subsubsection[{\texorpdfstring{get\+\_\+pos\+\_\+y() const }{get_pos_y() const }}]{\setlength{\rightskip}{0pt plus 5cm}float Ennemi\+::get\+\_\+pos\+\_\+y (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\hypertarget{classEnnemi_a431eb6e3f612218c4c10f97aba669596}{}\label{classEnnemi_a431eb6e3f612218c4c10f97aba669596}
+\index{Ennemi@{Ennemi}!get\+\_\+position@{get\+\_\+position}}
+\index{get\+\_\+position@{get\+\_\+position}!Ennemi@{Ennemi}}
+\subsubsection[{\texorpdfstring{get\+\_\+position() const }{get_position() const }}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Coord2D} Ennemi\+::get\+\_\+position (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\hypertarget{classEnnemi_a928341b6737ceb7a4469a478b3504fc2}{}\label{classEnnemi_a928341b6737ceb7a4469a478b3504fc2}
+\index{Ennemi@{Ennemi}!get\+\_\+pv\+\_\+actuel@{get\+\_\+pv\+\_\+actuel}}
+\index{get\+\_\+pv\+\_\+actuel@{get\+\_\+pv\+\_\+actuel}!Ennemi@{Ennemi}}
+\subsubsection[{\texorpdfstring{get\+\_\+pv\+\_\+actuel() const }{get_pv_actuel() const }}]{\setlength{\rightskip}{0pt plus 5cm}float Ennemi\+::get\+\_\+pv\+\_\+actuel (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\hypertarget{classEnnemi_a357d1286fb7abff5686efa371ce666d0}{}\label{classEnnemi_a357d1286fb7abff5686efa371ce666d0}
+\index{Ennemi@{Ennemi}!get\+\_\+taille@{get\+\_\+taille}}
+\index{get\+\_\+taille@{get\+\_\+taille}!Ennemi@{Ennemi}}
+\subsubsection[{\texorpdfstring{get\+\_\+taille() const }{get_taille() const }}]{\setlength{\rightskip}{0pt plus 5cm}int Ennemi\+::get\+\_\+taille (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\hypertarget{classEnnemi_ac7cde57e6d177a290eab0f68708a6624}{}\label{classEnnemi_ac7cde57e6d177a290eab0f68708a6624}
 \index{Ennemi@{Ennemi}!infliger\+\_\+degats@{infliger\+\_\+degats}}
 \index{infliger\+\_\+degats@{infliger\+\_\+degats}!Ennemi@{Ennemi}}
 \subsubsection[{\texorpdfstring{infliger\+\_\+degats(float degats)}{infliger_degats(float degats)}}]{\setlength{\rightskip}{0pt plus 5cm}void Ennemi\+::infliger\+\_\+degats (
@@ -62,14 +170,63 @@ void \hyperlink{classEnnemi_a300a5dc1e2d25ce2a4f0d40854a5a18e}{placer\+\_\+txt} 
 \item[{float}]{degats}
 \end{DoxyParamCaption}
 )}\hypertarget{classEnnemi_ad49d449d20449273e366be5b89654ebd}{}\label{classEnnemi_ad49d449d20449273e366be5b89654ebd}
-\index{Ennemi@{Ennemi}!placer\+\_\+txt@{placer\+\_\+txt}}
-\index{placer\+\_\+txt@{placer\+\_\+txt}!Ennemi@{Ennemi}}
-\subsubsection[{\texorpdfstring{placer\+\_\+txt(int x, int y)}{placer_txt(int x, int y)}}]{\setlength{\rightskip}{0pt plus 5cm}void Ennemi\+::placer\+\_\+txt (
+\index{Ennemi@{Ennemi}!is\+\_\+vivant@{is\+\_\+vivant}}
+\index{is\+\_\+vivant@{is\+\_\+vivant}!Ennemi@{Ennemi}}
+\subsubsection[{\texorpdfstring{is\+\_\+vivant()}{is_vivant()}}]{\setlength{\rightskip}{0pt plus 5cm}bool Ennemi\+::is\+\_\+vivant (
 \begin{DoxyParamCaption}
-\item[{int}]{x, }
-\item[{int}]{y}
+{}
 \end{DoxyParamCaption}
-)}\hypertarget{classEnnemi_a300a5dc1e2d25ce2a4f0d40854a5a18e}{}\label{classEnnemi_a300a5dc1e2d25ce2a4f0d40854a5a18e}
+)}\hypertarget{classEnnemi_a77fd4b28c56d5880909557b2670d491f}{}\label{classEnnemi_a77fd4b28c56d5880909557b2670d491f}
+\index{Ennemi@{Ennemi}!revenir\+\_\+ancienne\+\_\+position@{revenir\+\_\+ancienne\+\_\+position}}
+\index{revenir\+\_\+ancienne\+\_\+position@{revenir\+\_\+ancienne\+\_\+position}!Ennemi@{Ennemi}}
+\subsubsection[{\texorpdfstring{revenir\+\_\+ancienne\+\_\+position()}{revenir_ancienne_position()}}]{\setlength{\rightskip}{0pt plus 5cm}void Ennemi\+::revenir\+\_\+ancienne\+\_\+position (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classEnnemi_a7211dfcdacfa996833a611fd4aa9fff1}{}\label{classEnnemi_a7211dfcdacfa996833a611fd4aa9fff1}
+\index{Ennemi@{Ennemi}!set\+\_\+coefficient\+\_\+vitesse@{set\+\_\+coefficient\+\_\+vitesse}}
+\index{set\+\_\+coefficient\+\_\+vitesse@{set\+\_\+coefficient\+\_\+vitesse}!Ennemi@{Ennemi}}
+\subsubsection[{\texorpdfstring{set\+\_\+coefficient\+\_\+vitesse(const float \&c)}{set_coefficient_vitesse(const float &c)}}]{\setlength{\rightskip}{0pt plus 5cm}void Ennemi\+::set\+\_\+coefficient\+\_\+vitesse (
+\begin{DoxyParamCaption}
+\item[{const float \&}]{c}
+\end{DoxyParamCaption}
+)}\hypertarget{classEnnemi_aa8013956da11a111c71e635409af8b3e}{}\label{classEnnemi_aa8013956da11a111c71e635409af8b3e}
+\index{Ennemi@{Ennemi}!set\+\_\+deplacement@{set\+\_\+deplacement}}
+\index{set\+\_\+deplacement@{set\+\_\+deplacement}!Ennemi@{Ennemi}}
+\subsubsection[{\texorpdfstring{set\+\_\+deplacement(const Vecteur\+M \&v)}{set_deplacement(const VecteurM &v)}}]{\setlength{\rightskip}{0pt plus 5cm}void Ennemi\+::set\+\_\+deplacement (
+\begin{DoxyParamCaption}
+\item[{const {\bf VecteurM} \&}]{v}
+\end{DoxyParamCaption}
+)}\hypertarget{classEnnemi_a554bf929e2b45455ccc9a4b6bba19e88}{}\label{classEnnemi_a554bf929e2b45455ccc9a4b6bba19e88}
+T\+O\+DO T\+O\+DO T\+O\+DO T\+O\+DO T\+O\+DO T\+O\+DO T\+O\+DO \index{Ennemi@{Ennemi}!set\+\_\+deplacement@{set\+\_\+deplacement}}
+\index{set\+\_\+deplacement@{set\+\_\+deplacement}!Ennemi@{Ennemi}}
+\subsubsection[{\texorpdfstring{set\+\_\+deplacement(const Coord2\+D \&position\+\_\+perso)}{set_deplacement(const Coord2D &position_perso)}}]{\setlength{\rightskip}{0pt plus 5cm}void Ennemi\+::set\+\_\+deplacement (
+\begin{DoxyParamCaption}
+\item[{const {\bf Coord2D} \&}]{position\+\_\+perso}
+\end{DoxyParamCaption}
+)}\hypertarget{classEnnemi_a202cf059502343eb9b2dd35c7f770dcb}{}\label{classEnnemi_a202cf059502343eb9b2dd35c7f770dcb}
+\index{Ennemi@{Ennemi}!set\+\_\+mort@{set\+\_\+mort}}
+\index{set\+\_\+mort@{set\+\_\+mort}!Ennemi@{Ennemi}}
+\subsubsection[{\texorpdfstring{set\+\_\+mort()}{set_mort()}}]{\setlength{\rightskip}{0pt plus 5cm}void Ennemi\+::set\+\_\+mort (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classEnnemi_a9d7ed969bc374b0bfd2cdc279e7e1cd4}{}\label{classEnnemi_a9d7ed969bc374b0bfd2cdc279e7e1cd4}
+\index{Ennemi@{Ennemi}!set\+\_\+orientation@{set\+\_\+orientation}}
+\index{set\+\_\+orientation@{set\+\_\+orientation}!Ennemi@{Ennemi}}
+\subsubsection[{\texorpdfstring{set\+\_\+orientation(const Vecteur\+M \&v)}{set_orientation(const VecteurM &v)}}]{\setlength{\rightskip}{0pt plus 5cm}void Ennemi\+::set\+\_\+orientation (
+\begin{DoxyParamCaption}
+\item[{const {\bf VecteurM} \&}]{v}
+\end{DoxyParamCaption}
+)}\hypertarget{classEnnemi_ad9b67277a7afb7510b1d72c9b771b52a}{}\label{classEnnemi_ad9b67277a7afb7510b1d72c9b771b52a}
+\index{Ennemi@{Ennemi}!set\+\_\+position@{set\+\_\+position}}
+\index{set\+\_\+position@{set\+\_\+position}!Ennemi@{Ennemi}}
+\subsubsection[{\texorpdfstring{set\+\_\+position(const int \&x, const int \&y)}{set_position(const int &x, const int &y)}}]{\setlength{\rightskip}{0pt plus 5cm}void Ennemi\+::set\+\_\+position (
+\begin{DoxyParamCaption}
+\item[{const int \&}]{x, }
+\item[{const int \&}]{y}
+\end{DoxyParamCaption}
+)}\hypertarget{classEnnemi_a2b3b26369645a3c2946f891fcea4ed48}{}\label{classEnnemi_a2b3b26369645a3c2946f891fcea4ed48}
 \index{Ennemi@{Ennemi}!soigner@{soigner}}
 \index{soigner@{soigner}!Ennemi@{Ennemi}}
 \subsubsection[{\texorpdfstring{soigner(float soin)}{soigner(float soin)}}]{\setlength{\rightskip}{0pt plus 5cm}void Ennemi\+::soigner (
@@ -77,6 +234,13 @@ void \hyperlink{classEnnemi_a300a5dc1e2d25ce2a4f0d40854a5a18e}{placer\+\_\+txt} 
 \item[{float}]{soin}
 \end{DoxyParamCaption}
 )}\hypertarget{classEnnemi_abcde77d5d90b910b77bf5f66e7c4a534}{}\label{classEnnemi_abcde77d5d90b910b77bf5f66e7c4a534}
+\index{Ennemi@{Ennemi}!trouver\+\_\+chemin@{trouver\+\_\+chemin}}
+\index{trouver\+\_\+chemin@{trouver\+\_\+chemin}!Ennemi@{Ennemi}}
+\subsubsection[{\texorpdfstring{trouver\+\_\+chemin(const Coord2\+D \&position\+\_\+perso)}{trouver_chemin(const Coord2D &position_perso)}}]{\setlength{\rightskip}{0pt plus 5cm}void Ennemi\+::trouver\+\_\+chemin (
+\begin{DoxyParamCaption}
+\item[{const {\bf Coord2D} \&}]{position\+\_\+perso}
+\end{DoxyParamCaption}
+)}\hypertarget{classEnnemi_a55013546576c0463a59ade8c40281a2e}{}\label{classEnnemi_a55013546576c0463a59ade8c40281a2e}
 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}

@@ -9,7 +9,21 @@
 \item 
 \hyperlink{classProjectile_ac536ed2aad56af866a2078b9a85aa16d}{Projectile} ()
 \item 
-\hyperlink{classProjectile_ad71209bdbc695934f937cecc13d7a825}{Projectile} (int id, int deg)
+\hyperlink{classProjectile_a40d61808d12cb84127d768ead95d7b24}{Projectile} (const int \&p\+\_\+id, const int \&p\+\_\+type, const int \&p\+\_\+degat, const float \&p\+\_\+vitesse, const float \&p\+\_\+taille, const \hyperlink{classVecteurM}{VecteurM} \&p\+\_\+orientation, const \hyperlink{classCoord2D}{Coord2D} \&p\+\_\+position)
+\item 
+void \hyperlink{classProjectile_a7284639815c2d8f7d852ff3872851fa5}{avancer} (const float \&vitesse\+\_\+frame)
+\item 
+void \hyperlink{classProjectile_a137391002869c50a97504992033915ac}{set\+\_\+collision} ()
+\item 
+float \hyperlink{classProjectile_af114e853c019123fd3cbf208352afbd5}{get\+\_\+orientation\+\_\+degre} () const 
+\item 
+float \hyperlink{classProjectile_a03627709f7fa134cae85c7480e8b8de4}{get\+\_\+orientation\+\_\+radian} () const 
+\item 
+float \hyperlink{classProjectile_a77d1976107d1c7a15e7ba5298d80defb}{get\+\_\+taille\+\_\+projectile} () const 
+\item 
+bool \hyperlink{classProjectile_a4e22cdf491c89cb27ebd31532afdd753}{get\+\_\+collision} () const 
+\item 
+\hyperlink{classCoord2D}{Coord2D} \hyperlink{classProjectile_a5576e84397fff82a93ee85c5cc80591c}{get\+\_\+position} () const 
 \end{DoxyCompactItemize}
 
 
@@ -23,12 +37,69 @@
 )}\hypertarget{classProjectile_ac536ed2aad56af866a2078b9a85aa16d}{}\label{classProjectile_ac536ed2aad56af866a2078b9a85aa16d}
 \index{Projectile@{Projectile}!Projectile@{Projectile}}
 \index{Projectile@{Projectile}!Projectile@{Projectile}}
-\subsubsection[{\texorpdfstring{Projectile(int id, int deg)}{Projectile(int id, int deg)}}]{\setlength{\rightskip}{0pt plus 5cm}Projectile\+::\+Projectile (
+\subsubsection[{\texorpdfstring{Projectile(const int \&p\+\_\+id, const int \&p\+\_\+type, const int \&p\+\_\+degat, const float \&p\+\_\+vitesse, const float \&p\+\_\+taille, const Vecteur\+M \&p\+\_\+orientation, const Coord2\+D \&p\+\_\+position)}{Projectile(const int &p_id, const int &p_type, const int &p_degat, const float &p_vitesse, const float &p_taille, const VecteurM &p_orientation, const Coord2D &p_position)}}]{\setlength{\rightskip}{0pt plus 5cm}Projectile\+::\+Projectile (
 \begin{DoxyParamCaption}
-\item[{int}]{id, }
-\item[{int}]{deg}
+\item[{const int \&}]{p\+\_\+id, }
+\item[{const int \&}]{p\+\_\+type, }
+\item[{const int \&}]{p\+\_\+degat, }
+\item[{const float \&}]{p\+\_\+vitesse, }
+\item[{const float \&}]{p\+\_\+taille, }
+\item[{const {\bf VecteurM} \&}]{p\+\_\+orientation, }
+\item[{const {\bf Coord2D} \&}]{p\+\_\+position}
 \end{DoxyParamCaption}
-)}\hypertarget{classProjectile_ad71209bdbc695934f937cecc13d7a825}{}\label{classProjectile_ad71209bdbc695934f937cecc13d7a825}
+)}\hypertarget{classProjectile_a40d61808d12cb84127d768ead95d7b24}{}\label{classProjectile_a40d61808d12cb84127d768ead95d7b24}
+
+
+\subsection{Member Function Documentation}
+\index{Projectile@{Projectile}!avancer@{avancer}}
+\index{avancer@{avancer}!Projectile@{Projectile}}
+\subsubsection[{\texorpdfstring{avancer(const float \&vitesse\+\_\+frame)}{avancer(const float &vitesse_frame)}}]{\setlength{\rightskip}{0pt plus 5cm}void Projectile\+::avancer (
+\begin{DoxyParamCaption}
+\item[{const float \&}]{vitesse\+\_\+frame}
+\end{DoxyParamCaption}
+)}\hypertarget{classProjectile_a7284639815c2d8f7d852ff3872851fa5}{}\label{classProjectile_a7284639815c2d8f7d852ff3872851fa5}
+\index{Projectile@{Projectile}!get\+\_\+collision@{get\+\_\+collision}}
+\index{get\+\_\+collision@{get\+\_\+collision}!Projectile@{Projectile}}
+\subsubsection[{\texorpdfstring{get\+\_\+collision() const }{get_collision() const }}]{\setlength{\rightskip}{0pt plus 5cm}bool Projectile\+::get\+\_\+collision (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\hypertarget{classProjectile_a4e22cdf491c89cb27ebd31532afdd753}{}\label{classProjectile_a4e22cdf491c89cb27ebd31532afdd753}
+\index{Projectile@{Projectile}!get\+\_\+orientation\+\_\+degre@{get\+\_\+orientation\+\_\+degre}}
+\index{get\+\_\+orientation\+\_\+degre@{get\+\_\+orientation\+\_\+degre}!Projectile@{Projectile}}
+\subsubsection[{\texorpdfstring{get\+\_\+orientation\+\_\+degre() const }{get_orientation_degre() const }}]{\setlength{\rightskip}{0pt plus 5cm}float Projectile\+::get\+\_\+orientation\+\_\+degre (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\hypertarget{classProjectile_af114e853c019123fd3cbf208352afbd5}{}\label{classProjectile_af114e853c019123fd3cbf208352afbd5}
+\index{Projectile@{Projectile}!get\+\_\+orientation\+\_\+radian@{get\+\_\+orientation\+\_\+radian}}
+\index{get\+\_\+orientation\+\_\+radian@{get\+\_\+orientation\+\_\+radian}!Projectile@{Projectile}}
+\subsubsection[{\texorpdfstring{get\+\_\+orientation\+\_\+radian() const }{get_orientation_radian() const }}]{\setlength{\rightskip}{0pt plus 5cm}float Projectile\+::get\+\_\+orientation\+\_\+radian (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\hypertarget{classProjectile_a03627709f7fa134cae85c7480e8b8de4}{}\label{classProjectile_a03627709f7fa134cae85c7480e8b8de4}
+\index{Projectile@{Projectile}!get\+\_\+position@{get\+\_\+position}}
+\index{get\+\_\+position@{get\+\_\+position}!Projectile@{Projectile}}
+\subsubsection[{\texorpdfstring{get\+\_\+position() const }{get_position() const }}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Coord2D} Projectile\+::get\+\_\+position (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\hypertarget{classProjectile_a5576e84397fff82a93ee85c5cc80591c}{}\label{classProjectile_a5576e84397fff82a93ee85c5cc80591c}
+\index{Projectile@{Projectile}!get\+\_\+taille\+\_\+projectile@{get\+\_\+taille\+\_\+projectile}}
+\index{get\+\_\+taille\+\_\+projectile@{get\+\_\+taille\+\_\+projectile}!Projectile@{Projectile}}
+\subsubsection[{\texorpdfstring{get\+\_\+taille\+\_\+projectile() const }{get_taille_projectile() const }}]{\setlength{\rightskip}{0pt plus 5cm}float Projectile\+::get\+\_\+taille\+\_\+projectile (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\hypertarget{classProjectile_a77d1976107d1c7a15e7ba5298d80defb}{}\label{classProjectile_a77d1976107d1c7a15e7ba5298d80defb}
+\index{Projectile@{Projectile}!set\+\_\+collision@{set\+\_\+collision}}
+\index{set\+\_\+collision@{set\+\_\+collision}!Projectile@{Projectile}}
+\subsubsection[{\texorpdfstring{set\+\_\+collision()}{set_collision()}}]{\setlength{\rightskip}{0pt plus 5cm}void Projectile\+::set\+\_\+collision (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classProjectile_a137391002869c50a97504992033915ac}{}\label{classProjectile_a137391002869c50a97504992033915ac}
 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}

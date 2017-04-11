@@ -26,15 +26,17 @@ digraph "/home/quentin/Murmure/src/sfml/CarteAffSFML.cpp"
   Node9 -> Node11 [color="midnightblue",fontsize="10",style="solid"];
   Node11 [label="SalleGen.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$SalleGen_8h.html",tooltip="Header du module SalleGen. "];
   Node11 -> Node3 [color="midnightblue",fontsize="10",style="solid"];
-  Node8 -> Node12 [color="midnightblue",fontsize="10",style="solid"];
-  Node12 [label="ZoneGen.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$ZoneGen_8h.html",tooltip="Header de la class ZoneGen. "];
-  Node12 -> Node13 [color="midnightblue",fontsize="10",style="solid"];
-  Node13 [label="stdio.h",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled"];
-  Node12 -> Node14 [color="midnightblue",fontsize="10",style="solid"];
-  Node14 [label="stdlib.h",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled"];
-  Node12 -> Node15 [color="midnightblue",fontsize="10",style="solid"];
-  Node15 [label="time.h",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled"];
-  Node12 -> Node2 [color="midnightblue",fontsize="10",style="solid"];
-  Node12 -> Node3 [color="midnightblue",fontsize="10",style="solid"];
+  Node9 -> Node12 [color="midnightblue",fontsize="10",style="solid"];
+  Node12 [label="Config.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$Config_8h.html"];
+  Node8 -> Node13 [color="midnightblue",fontsize="10",style="solid"];
+  Node13 [label="ZoneGen.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$ZoneGen_8h.html",tooltip="Header de la class ZoneGen. "];
+  Node13 -> Node14 [color="midnightblue",fontsize="10",style="solid"];
+  Node14 [label="stdio.h",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled"];
+  Node13 -> Node15 [color="midnightblue",fontsize="10",style="solid"];
+  Node15 [label="stdlib.h",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled"];
+  Node13 -> Node16 [color="midnightblue",fontsize="10",style="solid"];
+  Node16 [label="time.h",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled"];
+  Node13 -> Node2 [color="midnightblue",fontsize="10",style="solid"];
+  Node13 -> Node3 [color="midnightblue",fontsize="10",style="solid"];
   Node8 -> Node3 [color="midnightblue",fontsize="10",style="solid"];
 }

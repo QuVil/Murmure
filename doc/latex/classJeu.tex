@@ -9,11 +9,15 @@
 \item 
 \hyperlink{classJeu_acc5795ee00edf75516d3dfe65be3e6d6}{Jeu} ()
 \item 
-\hyperlink{classSalle}{Salle} \hyperlink{classJeu_abef357abf8752aa3bbd887d3d02d39b5}{get\+\_\+salle} ()
+\hyperlink{classSalle}{Salle} $\ast$ \hyperlink{classJeu_a2261f7e8b69c9b3c149c7544e3650d44}{get\+\_\+salle\+\_\+actuelle} ()
 \item 
 \hyperlink{classZone}{Zone} \hyperlink{classJeu_ad039e51fea7f4831f1f7461bdad20854}{get\+\_\+zone} ()
 \item 
 \hyperlink{classPerso}{Perso} \hyperlink{classJeu_a1a13f300078c5c38d402937f7bee40e5}{get\+\_\+perso} ()
+\item 
+int \hyperlink{classJeu_a431b8b7da233c1bfc0ea553b2ecb278b}{grille\+\_\+largeur} ()
+\item 
+int \hyperlink{classJeu_a2fe158a6437316b3f737927f643801d2}{grille\+\_\+hauteur} ()
 \item 
 void \hyperlink{classJeu_a86ed39a8b3d080a3e38f03034e9ce734}{changer\+\_\+perso} (const std\+::string \&n)
 \item 
@@ -28,6 +32,18 @@ void \hyperlink{classJeu_a967e55cb872d8f570ad85dfc526692da}{zone\+\_\+changer\+\
 void \hyperlink{classJeu_a355402f932a5b99ee80c702948e632a5}{deplacer\+\_\+perso\+\_\+txt} (char direction)
 \item 
 void \hyperlink{classJeu_a56b2057832a6b7aa9535299131fb653e}{placer\+\_\+perso\+\_\+txt} (int x, int y)
+\item 
+void \hyperlink{classJeu_aca3f9ff1143c4d9093417e1f0d12b688}{ajouter\+\_\+projectile\+\_\+perso} (const int \&arme)
+\item 
+void \hyperlink{classJeu_a42e93a4cdde990d2ad94fdaa1a21d4f6}{avancer\+\_\+jeu} (const float \&vitesse\+\_\+base, const int \&taille\+\_\+case)
+\item 
+std\+::list$<$ \hyperlink{classProjectile}{Projectile} $\ast$ $>$ $\ast$ \hyperlink{classJeu_a6b7342dc6320c4a879abf949fe7062c6}{retourne\+\_\+projectiles} ()
+\item 
+std\+::list$<$ \hyperlink{classEnnemi}{Ennemi} $\ast$ $>$ $\ast$ \hyperlink{classJeu_a66190619d54d69a84ba80ea3f150071a}{retourne\+\_\+ennemis} ()
+\item 
+\hyperlink{classPerso}{Perso} $\ast$ \hyperlink{classJeu_af95d3d6493f47b030ecc3807403d5cf6}{retourne\+\_\+perso\+\_\+ptr} ()
+\item 
+void \hyperlink{classJeu_aff98b3863da48d94194ff7450d47c355}{deplace\+\_\+ennemis\+\_\+auto} ()
 \end{DoxyCompactItemize}
 
 
@@ -42,6 +58,21 @@ void \hyperlink{classJeu_a56b2057832a6b7aa9535299131fb653e}{placer\+\_\+perso\+\
 
 
 \subsection{Member Function Documentation}
+\index{Jeu@{Jeu}!ajouter\+\_\+projectile\+\_\+perso@{ajouter\+\_\+projectile\+\_\+perso}}
+\index{ajouter\+\_\+projectile\+\_\+perso@{ajouter\+\_\+projectile\+\_\+perso}!Jeu@{Jeu}}
+\subsubsection[{\texorpdfstring{ajouter\+\_\+projectile\+\_\+perso(const int \&arme)}{ajouter_projectile_perso(const int &arme)}}]{\setlength{\rightskip}{0pt plus 5cm}void Jeu\+::ajouter\+\_\+projectile\+\_\+perso (
+\begin{DoxyParamCaption}
+\item[{const int \&}]{arme}
+\end{DoxyParamCaption}
+)}\hypertarget{classJeu_aca3f9ff1143c4d9093417e1f0d12b688}{}\label{classJeu_aca3f9ff1143c4d9093417e1f0d12b688}
+\index{Jeu@{Jeu}!avancer\+\_\+jeu@{avancer\+\_\+jeu}}
+\index{avancer\+\_\+jeu@{avancer\+\_\+jeu}!Jeu@{Jeu}}
+\subsubsection[{\texorpdfstring{avancer\+\_\+jeu(const float \&vitesse\+\_\+base, const int \&taille\+\_\+case)}{avancer_jeu(const float &vitesse_base, const int &taille_case)}}]{\setlength{\rightskip}{0pt plus 5cm}void Jeu\+::avancer\+\_\+jeu (
+\begin{DoxyParamCaption}
+\item[{const float \&}]{vitesse\+\_\+base, }
+\item[{const int \&}]{taille\+\_\+case}
+\end{DoxyParamCaption}
+)}\hypertarget{classJeu_a42e93a4cdde990d2ad94fdaa1a21d4f6}{}\label{classJeu_a42e93a4cdde990d2ad94fdaa1a21d4f6}
 \index{Jeu@{Jeu}!changer\+\_\+perso@{changer\+\_\+perso}}
 \index{changer\+\_\+perso@{changer\+\_\+perso}!Jeu@{Jeu}}
 \subsubsection[{\texorpdfstring{changer\+\_\+perso(const std\+::string \&n)}{changer_perso(const std::string &n)}}]{\setlength{\rightskip}{0pt plus 5cm}void Jeu\+::changer\+\_\+perso (
@@ -64,6 +95,13 @@ void \hyperlink{classJeu_a56b2057832a6b7aa9535299131fb653e}{placer\+\_\+perso\+\
 \item[{const float \&}]{y}
 \end{DoxyParamCaption}
 )}\hypertarget{classJeu_ad515ef604f0ca6eed7a48592e26213b8}{}\label{classJeu_ad515ef604f0ca6eed7a48592e26213b8}
+\index{Jeu@{Jeu}!deplace\+\_\+ennemis\+\_\+auto@{deplace\+\_\+ennemis\+\_\+auto}}
+\index{deplace\+\_\+ennemis\+\_\+auto@{deplace\+\_\+ennemis\+\_\+auto}!Jeu@{Jeu}}
+\subsubsection[{\texorpdfstring{deplace\+\_\+ennemis\+\_\+auto()}{deplace_ennemis_auto()}}]{\setlength{\rightskip}{0pt plus 5cm}void Jeu\+::deplace\+\_\+ennemis\+\_\+auto (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classJeu_aff98b3863da48d94194ff7450d47c355}{}\label{classJeu_aff98b3863da48d94194ff7450d47c355}
 \index{Jeu@{Jeu}!deplacer\+\_\+perso@{deplacer\+\_\+perso}}
 \index{deplacer\+\_\+perso@{deplacer\+\_\+perso}!Jeu@{Jeu}}
 \subsubsection[{\texorpdfstring{deplacer\+\_\+perso(const float \&x, const float \&y)}{deplacer_perso(const float &x, const float &y)}}]{\setlength{\rightskip}{0pt plus 5cm}void Jeu\+::deplacer\+\_\+perso (
@@ -86,13 +124,13 @@ void \hyperlink{classJeu_a56b2057832a6b7aa9535299131fb653e}{placer\+\_\+perso\+\
 {}
 \end{DoxyParamCaption}
 )}\hypertarget{classJeu_a1a13f300078c5c38d402937f7bee40e5}{}\label{classJeu_a1a13f300078c5c38d402937f7bee40e5}
-\index{Jeu@{Jeu}!get\+\_\+salle@{get\+\_\+salle}}
-\index{get\+\_\+salle@{get\+\_\+salle}!Jeu@{Jeu}}
-\subsubsection[{\texorpdfstring{get\+\_\+salle()}{get_salle()}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Salle} Jeu\+::get\+\_\+salle (
+\index{Jeu@{Jeu}!get\+\_\+salle\+\_\+actuelle@{get\+\_\+salle\+\_\+actuelle}}
+\index{get\+\_\+salle\+\_\+actuelle@{get\+\_\+salle\+\_\+actuelle}!Jeu@{Jeu}}
+\subsubsection[{\texorpdfstring{get\+\_\+salle\+\_\+actuelle()}{get_salle_actuelle()}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Salle} $\ast$ Jeu\+::get\+\_\+salle\+\_\+actuelle (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
-)}\hypertarget{classJeu_abef357abf8752aa3bbd887d3d02d39b5}{}\label{classJeu_abef357abf8752aa3bbd887d3d02d39b5}
+)}\hypertarget{classJeu_a2261f7e8b69c9b3c149c7544e3650d44}{}\label{classJeu_a2261f7e8b69c9b3c149c7544e3650d44}
 \index{Jeu@{Jeu}!get\+\_\+zone@{get\+\_\+zone}}
 \index{get\+\_\+zone@{get\+\_\+zone}!Jeu@{Jeu}}
 \subsubsection[{\texorpdfstring{get\+\_\+zone()}{get_zone()}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Zone} Jeu\+::get\+\_\+zone (
@@ -100,6 +138,20 @@ void \hyperlink{classJeu_a56b2057832a6b7aa9535299131fb653e}{placer\+\_\+perso\+\
 {}
 \end{DoxyParamCaption}
 )}\hypertarget{classJeu_ad039e51fea7f4831f1f7461bdad20854}{}\label{classJeu_ad039e51fea7f4831f1f7461bdad20854}
+\index{Jeu@{Jeu}!grille\+\_\+hauteur@{grille\+\_\+hauteur}}
+\index{grille\+\_\+hauteur@{grille\+\_\+hauteur}!Jeu@{Jeu}}
+\subsubsection[{\texorpdfstring{grille\+\_\+hauteur()}{grille_hauteur()}}]{\setlength{\rightskip}{0pt plus 5cm}int Jeu\+::grille\+\_\+hauteur (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classJeu_a2fe158a6437316b3f737927f643801d2}{}\label{classJeu_a2fe158a6437316b3f737927f643801d2}
+\index{Jeu@{Jeu}!grille\+\_\+largeur@{grille\+\_\+largeur}}
+\index{grille\+\_\+largeur@{grille\+\_\+largeur}!Jeu@{Jeu}}
+\subsubsection[{\texorpdfstring{grille\+\_\+largeur()}{grille_largeur()}}]{\setlength{\rightskip}{0pt plus 5cm}int Jeu\+::grille\+\_\+largeur (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classJeu_a431b8b7da233c1bfc0ea553b2ecb278b}{}\label{classJeu_a431b8b7da233c1bfc0ea553b2ecb278b}
 \index{Jeu@{Jeu}!placer\+\_\+perso\+\_\+txt@{placer\+\_\+perso\+\_\+txt}}
 \index{placer\+\_\+perso\+\_\+txt@{placer\+\_\+perso\+\_\+txt}!Jeu@{Jeu}}
 \subsubsection[{\texorpdfstring{placer\+\_\+perso\+\_\+txt(int x, int y)}{placer_perso_txt(int x, int y)}}]{\setlength{\rightskip}{0pt plus 5cm}void Jeu\+::placer\+\_\+perso\+\_\+txt (
@@ -108,6 +160,27 @@ void \hyperlink{classJeu_a56b2057832a6b7aa9535299131fb653e}{placer\+\_\+perso\+\
 \item[{int}]{y}
 \end{DoxyParamCaption}
 )}\hypertarget{classJeu_a56b2057832a6b7aa9535299131fb653e}{}\label{classJeu_a56b2057832a6b7aa9535299131fb653e}
+\index{Jeu@{Jeu}!retourne\+\_\+ennemis@{retourne\+\_\+ennemis}}
+\index{retourne\+\_\+ennemis@{retourne\+\_\+ennemis}!Jeu@{Jeu}}
+\subsubsection[{\texorpdfstring{retourne\+\_\+ennemis()}{retourne_ennemis()}}]{\setlength{\rightskip}{0pt plus 5cm}std\+::list$<$ {\bf Ennemi} $\ast$ $>$ $\ast$ Jeu\+::retourne\+\_\+ennemis (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classJeu_a66190619d54d69a84ba80ea3f150071a}{}\label{classJeu_a66190619d54d69a84ba80ea3f150071a}
+\index{Jeu@{Jeu}!retourne\+\_\+perso\+\_\+ptr@{retourne\+\_\+perso\+\_\+ptr}}
+\index{retourne\+\_\+perso\+\_\+ptr@{retourne\+\_\+perso\+\_\+ptr}!Jeu@{Jeu}}
+\subsubsection[{\texorpdfstring{retourne\+\_\+perso\+\_\+ptr()}{retourne_perso_ptr()}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Perso} $\ast$ Jeu\+::retourne\+\_\+perso\+\_\+ptr (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classJeu_af95d3d6493f47b030ecc3807403d5cf6}{}\label{classJeu_af95d3d6493f47b030ecc3807403d5cf6}
+\index{Jeu@{Jeu}!retourne\+\_\+projectiles@{retourne\+\_\+projectiles}}
+\index{retourne\+\_\+projectiles@{retourne\+\_\+projectiles}!Jeu@{Jeu}}
+\subsubsection[{\texorpdfstring{retourne\+\_\+projectiles()}{retourne_projectiles()}}]{\setlength{\rightskip}{0pt plus 5cm}std\+::list$<$ {\bf Projectile} $\ast$ $>$ $\ast$ Jeu\+::retourne\+\_\+projectiles (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classJeu_a6b7342dc6320c4a879abf949fe7062c6}{}\label{classJeu_a6b7342dc6320c4a879abf949fe7062c6}
 \index{Jeu@{Jeu}!zone\+\_\+changer\+\_\+salle@{zone\+\_\+changer\+\_\+salle}}
 \index{zone\+\_\+changer\+\_\+salle@{zone\+\_\+changer\+\_\+salle}!Jeu@{Jeu}}
 \subsubsection[{\texorpdfstring{zone\+\_\+changer\+\_\+salle(const char \&c)}{zone_changer_salle(const char &c)}}]{\setlength{\rightskip}{0pt plus 5cm}void Jeu\+::zone\+\_\+changer\+\_\+salle (
