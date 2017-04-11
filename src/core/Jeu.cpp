@@ -112,3 +112,8 @@ void Jeu::deplace_ennemis_auto()
 {
     salle_actuelle.deplacer_ennemis_auto(perso.get_pos());
 }
+
+Clef* Jeu::retourne_clef()
+{
+    return salle_actuelle.get_clef();
+}

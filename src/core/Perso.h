@@ -7,6 +7,7 @@
 #include "Coord2D.h"
 #include "Objet.h"
 #include "Projectile.h"
+#include "Clef.h"
 
 
 #include <list>

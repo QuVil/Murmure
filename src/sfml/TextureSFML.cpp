@@ -399,4 +399,16 @@ sf::Texture& TextureSFML::retourne_texture_ennemi()
     return ennemi_1;
 }
 
+void TextureSFML::charger_texture_clef()
+{
+    std::string path;
+    path = "data/res/clef.png";
+    clef_boss.loadFromFile(path);
+}
+
+sf::Texture& TextureSFML::retourne_texture_clef()
+{
+    return clef_boss;
+}
+
 

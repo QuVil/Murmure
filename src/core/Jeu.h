@@ -54,6 +54,8 @@ public:
     Perso * retourne_perso_ptr();
 
     void deplace_ennemis_auto();
+
+    Clef* retourne_clef();
 };
 
 #endif // JEU_H_INCLUDED

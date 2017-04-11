@@ -6,12 +6,14 @@ GestionSalle::GestionSalle()
 {
     salle_actuelle_jeu = NULL;
     salle_actuelle_pointee = false;
+    clef = NULL;
 }
 
 GestionSalle::~GestionSalle()
 {
     vider_projectiles();
     vider_ennemis(true);
+    if (clef != NULL){delete clef;}
 }
 
 void GestionSalle::ajouter_projectile(Projectile* p)
@@ -54,11 +56,17 @@ std::list <Ennemi *> * GestionSalle::get_ennemis()
     return &ennemis;
 }
 
+Clef* GestionSalle::get_clef()
+{
+    return clef;
+}
+
 void GestionSalle::initialise_salle_actuelle(Salle* adresse_salle)
 {
     //On supprime les projectiles et les ennemis avant de changer le pointeur de la Salle:
     vider_projectiles();
     vider_ennemis(false);
+    vider_clef();
 
     //On actualise le pointeur sur la nouvelle salle actuelle:
     salle_actuelle_jeu = adresse_salle;
@@ -140,3 +148,16 @@ void GestionSalle::deplacer_ennemis_auto(Coord2D pos_perso)
     }
 }
 
+void GestionSalle::vider_clef()
+{
+    if (clef != NULL)
+    {
+        if (!clef->get_par_terre())
+        {
+            CaseSalle case_normale;
+            case_normale.set_type('n');
+            salle_actuelle_jeu->set_case(clef->get_case_x_apparition(), clef->get_case_y_apparition(), case_normale);
+        }
+        delete clef;
+    }
+}
