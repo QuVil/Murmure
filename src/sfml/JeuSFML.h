@@ -15,6 +15,7 @@
 #include "ProjectileSFML.h"
 #include "HitboxSFML.h"
 #include "EnnemiSFML.h"
+#include "MenuSFML.h"
 
 class JeuSFML
 {
@@ -73,6 +74,8 @@ private:
 
     PersoSFML persosfml;
 
+    MenuSFML menusfml;
+
     Jeu jeu;
 
     void recupere_mouvements();
@@ -96,6 +99,8 @@ private:
     void dessiner_projectiles();
     void dessiner_ennemis();
     void ecrire_texte();
+
+    void dessiner_menu();
 
     void actualiser_salle();
     void actualiser_projectiles();

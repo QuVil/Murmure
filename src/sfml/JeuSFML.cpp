@@ -195,7 +195,7 @@ void JeuSFML::SFML_boucle()
 
             if(event.type == sf::Event::KeyPressed)
             {
-                // si appuie sur "echape" -> ferme la fenetre(*it_sfml)->get_position().get_x()
+                // si appuie sur "echap" -> ferme la fenetre(*it_sfml)->get_position().get_x()
                 if((event.key.code == sf::Keyboard::Escape))
                 {
                     window.close();
@@ -250,6 +250,8 @@ void JeuSFML::afficher(const int& mode)
     case 2:
         dessiner_carte();
         break;
+    case 3:
+        //dessiner_menu();
     default:
         dessiner_salle();
         break;
