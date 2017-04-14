@@ -90,7 +90,7 @@ void GestionSalle::maj_changement_salle()
             }
             else if (tests_case == 'c')
             {
-                Clef* c = new Clef(i, j);
+                Clef* c = new Clef(j, i);
                 clef = c;
                 std::cout<<"clef placee"<<std::endl;
             }

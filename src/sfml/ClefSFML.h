@@ -14,7 +14,7 @@ private:
 public:
     ClefSFML();
 
-    void init(Clef* p_cle,const sf::Texture &p_texture, const int &taille_case);
+    void init(Clef* p_cle,const sf::Texture &p_texture, const int &taille_case,const int &x0, const int &y0);
 
     ///TODO TODO TODO TODO set_position salope
 

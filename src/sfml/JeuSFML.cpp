@@ -375,11 +375,11 @@ void JeuSFML::dessiner_clef()
 {
     if (jeu.get_salle_actuelle()->get_config() == 3)
     {
-        if (!jeu.retourne_clef()->get_par_terre())
-        {
+   //     if (!jeu.retourne_clef()->get_par_terre())
+  //      {
             std::cout<<"tamer suce"<<std::endl;
             buffer.draw(clefsfml.get_clefsfml());
-        }
+//        }
     }
 }
 
@@ -545,7 +545,7 @@ void JeuSFML::actualiser_clef()
     {
         if (jeu.retourne_clef() != NULL)
         {
-             clefsfml.init(jeu.retourne_clef(), textures.retourne_texture_clef(), scale_salle);
+             clefsfml.init(jeu.retourne_clef(), textures.retourne_texture_clef(), scale_salle,posx0salle, posy0salle);
         }
     }
 }
@@ -661,7 +661,7 @@ void JeuSFML::recupere_mouvements()
 
     jeu.definir_orientation_perso(orientation);
 
-    if(timer_devmode_salles.getElapsedTime().asSeconds()>= 0.5)
+    if(timer_devmode_salles.getElapsedTime().asSeconds()>= 0.1)
     {
         if(sf::Keyboard::isKeyPressed(sf::Keyboard::Up)) {jeu.zone_changer_salle('g');}
         if(sf::Keyboard::isKeyPressed(sf::Keyboard::Down)) {jeu.zone_changer_salle('d');}
