@@ -309,6 +309,18 @@ sf::Texture& TextureSFML::retourne_texture_caseSFML(const char& type, const int&
             else if(tirage < 998){return sol[8];}
             else{return sol[9];}
             break;
+        case 'c':
+            if(tirage < 690){return sol[0];}
+            else if(tirage < 790){return sol[1];}
+            else if(tirage < 890){return sol[2];}
+            else if(tirage < 988){return sol[3];}
+            else if(tirage < 990){return sol[4];}
+            else if(tirage < 992){return sol[5];}
+            else if(tirage < 994){return sol[6];}
+            else if(tirage < 996){return sol[7];}
+            else if(tirage < 998){return sol[8];}
+            else{return sol[9];}
+            break;
         case 'e':
             if(tirage < 690){return sol[0];}
             else if(tirage < 790){return sol[1];}

@@ -21,8 +21,8 @@ JeuSFML::JeuSFML()
     settings.antialiasingLevel = 0;
 
     desktop = sf::VideoMode::getDesktopMode();
-    //window.create(sf::VideoMode(desktop.width, desktop.height, desktop.bitsPerPixel), "Murmure",sf::Style::Fullscreen,settings);
-    window.create(sf::VideoMode(desktop.width, desktop.height, desktop.bitsPerPixel), "Murmure",sf::Style::Close);
+    window.create(sf::VideoMode(desktop.width, desktop.height, desktop.bitsPerPixel), "Murmure",sf::Style::Fullscreen,settings);
+    //window.create(sf::VideoMode(desktop.width, desktop.height, desktop.bitsPerPixel), "Murmure",sf::Style::Close);
     //FPS = 100;
     //window.setMouseCursorVisible(false);
     view = window.getView();
@@ -87,6 +87,7 @@ void JeuSFML::init()
     init_caseSFML();
     init_persoSFML();
     init_texte();
+    init_clefSFML();
 }
 
 void JeuSFML::init_caseSFML()
@@ -120,7 +121,7 @@ void JeuSFML::init_ennemiSFML()
 
 void JeuSFML::init_clefSFML()
 {
-    clefsfml.init(jeu.retourne_clef(), textures.retourne_texture_clef(), scale_salle);
+    //clefsfml.init(jeu.retourne_clef(), textures.retourne_texture_clef(), scale_salle);
 }
 
 void JeuSFML::init_texte()
@@ -245,6 +246,7 @@ void JeuSFML::afficher(const int& mode)
         window.clear();
         avancer_jeu();
         dessiner_salle();
+        dessiner_clef();
         dessiner_projectiles();
         dessiner_ennemis();
         dessiner_perso();
@@ -375,6 +377,7 @@ void JeuSFML::dessiner_clef()
     {
         if (!jeu.retourne_clef()->get_par_terre())
         {
+            std::cout<<"tamer suce"<<std::endl;
             buffer.draw(clefsfml.get_clefsfml());
         }
     }
@@ -398,6 +401,7 @@ void JeuSFML::avancer_jeu()
     }
     recupere_mouvements();
     actualiser_perso();
+    actualiser_clef();
     recupere_collisions();
     actualiser_salle();
     actualiser_projectiles();
@@ -537,7 +541,13 @@ void JeuSFML::actualiser_ennemis()
 
 void JeuSFML::actualiser_clef()
 {
-
+    if (jeu.get_salle_actuelle()->get_config() == 3)
+    {
+        if (jeu.retourne_clef() != NULL)
+        {
+             clefsfml.init(jeu.retourne_clef(), textures.retourne_texture_clef(), scale_salle);
+        }
+    }
 }
 
 void JeuSFML::actualiser_perso()

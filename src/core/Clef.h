@@ -13,6 +13,8 @@ private:
     int case_x_apparition;
     int case_y_apparition;
 
+    float taille;
+
 public:
     Clef();
 
@@ -20,9 +22,11 @@ public:
 
     void ramasser();
 
-    int get_case_x_apparition();
+    float get_taille()const;
 
-    int get_case_y_apparition();
+    int get_case_x_apparition()const;
+
+    int get_case_y_apparition()const;
 
     bool get_par_terre();
 };

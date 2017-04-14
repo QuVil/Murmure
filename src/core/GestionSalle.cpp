@@ -159,5 +159,6 @@ void GestionSalle::vider_clef()
             salle_actuelle_jeu->set_case(clef->get_case_x_apparition(), clef->get_case_y_apparition(), case_normale);
         }
         delete clef;
+        clef = NULL;
     }
 }

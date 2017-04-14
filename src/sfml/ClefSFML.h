@@ -16,6 +16,8 @@ public:
 
     void init(Clef* p_cle,const sf::Texture &p_texture, const int &taille_case);
 
+    ///TODO TODO TODO TODO set_position salope
+
     sf::Sprite get_clefsfml();
 
 };

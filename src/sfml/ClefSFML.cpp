@@ -11,7 +11,7 @@ void ClefSFML::init(Clef* p_cle, const sf::Texture& p_texture, const int& taille
     cle = p_cle;
     clefsfml.setTexture(p_texture);
     clefsfml.setOrigin(p_texture.getSize().x/2,p_texture.getSize().y/2);
-    clefsfml.setScale(taille_case/p_texture.getSize().x, taille_case/p_texture.getSize().y);
+    clefsfml.setScale(cle->get_taille()*taille_case/p_texture.getSize().x, cle->get_taille()*taille_case/p_texture.getSize().y);
 }
 
 sf::Sprite ClefSFML::get_clefsfml()
