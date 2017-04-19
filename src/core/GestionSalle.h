@@ -37,6 +37,8 @@ public:
 
     Clef* get_clef();
 
+    bool salle_terminee();
+
     void initialise_salle_actuelle(Salle* adresse_salle);
 
     /**

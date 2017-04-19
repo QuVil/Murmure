@@ -30,11 +30,13 @@ Ennemi::Ennemi(std::string ia, int case_x_app, int case_y_app)
 
     taille = 0.5;
 
-    coefficient_vitesse = 20000;
+    coefficient_vitesse = 90000;
 }
 
 void Ennemi::set_deplacement(const VecteurM& v)
 {
+    position_old.set_x(position.get_x());
+    position_old.set_y(position.get_y());
     deplacement.set_x(v.get_x());
     deplacement.set_y(v.get_y());
     position.deplacer(deplacement, coefficient_vitesse);
@@ -167,6 +169,7 @@ void Ennemi::trouver_chemin(const Coord2D &position_perso)
     {
         position_old.set_x(position.get_x());
         position_old.set_y(position.get_y());
+        //std::cout << position.get_x() << " " << position.get_y() << std::endl;
         position.deplacer(deplacement, coefficient_vitesse);
         //std::cout << position.get_x() << " " << position.get_y() << std::endl;
     }

@@ -57,12 +57,35 @@ void Jeu::definir_orientation_perso(const VecteurM& v)
     perso.set_orientation(v);
 }
 
-void  Jeu::zone_changer_salle(const char& c)
+bool Jeu::zone_changer_salle(const char& c)
 {
-    zone.changer_de_salle(c);
-    Salle* adresse_test = zone.get_salle_ptr();
-    salle_actuelle.initialise_salle_actuelle(adresse_test);
-    salle_actuelle.maj_changement_salle();
+    if(salle_actuelle.salle_terminee())
+    {
+        zone.changer_de_salle(c);
+        Salle* adresse_test = zone.get_salle_ptr();
+        salle_actuelle.initialise_salle_actuelle(adresse_test);
+        salle_actuelle.maj_changement_salle();
+        switch(c)
+        {
+        case 'g':
+            definir_position_perso(facteur * (8+1.0/2.0),facteur * (7 +1.0/2.0));
+            break;
+        case 'h':
+            definir_position_perso(facteur * (15 + 1.0/2.0),facteur * (4 +1.0/2.0));
+            break;
+        case 'b':
+            definir_position_perso(facteur * (1 +1.0/2.0),facteur * (4+ 1.0/2.0));
+            break;
+        case 'd':
+            definir_position_perso(facteur * (8 + 1.0/2.0),facteur *  (1 + 1.0/2.0));
+            break;
+        }
+        return 1;
+    }
+    else
+    {
+        return 0;
+    }
 }
 
 void Jeu::deplacer_perso_txt(char direction)

@@ -61,6 +61,18 @@ Clef* GestionSalle::get_clef()
     return clef;
 }
 
+bool GestionSalle::salle_terminee()
+{
+    for (std::list<Ennemi *>::iterator it=ennemis.begin(); it != ennemis.end(); ++it)
+    {
+        if((*it)->is_vivant())
+        {
+            return 0;
+        }
+    }
+    return 1;
+}
+
 void GestionSalle::initialise_salle_actuelle(Salle* adresse_salle)
 {
     //On supprime les projectiles et les ennemis avant de changer le pointeur de la Salle:

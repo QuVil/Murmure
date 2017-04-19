@@ -406,8 +406,6 @@ void JeuSFML::avancer_jeu()
     actualiser_salle();
     actualiser_projectiles();
     actualiser_ennemis();
-
-
 }
 
 void JeuSFML::actualiser_salle()
@@ -559,7 +557,7 @@ void JeuSFML::actualiser_perso()
 
 void JeuSFML::recupere_collisions()
 {
-    hitboxes.perso_et_salle(&persosfml, casesfml, scale_salle, posx0salle, posy0salle);
+    hitboxes.perso_et_salle(&persosfml, casesfml, &jeu, scale_salle, posx0salle, posy0salle);
     hitboxes.projectiles_et_salle(&projectilesfml, casesfml);
     hitboxes.projectiles_et_ennemis(&projectilesfml, &ennemisfml);
     hitboxes.ennemis_et_salle(&ennemisfml, casesfml, scale_salle, posx0salle, posy0salle);
