@@ -221,14 +221,15 @@ void HitboxSFML::ennemis_et_salle(std::list<EnnemiSFML*>* ennemis, CaseSFML* cas
 
             VecteurM deplacement_ennemi = (*it_e)->get_ennemi()->get_deplacement();
             (*it_e)->get_ennemi()->revenir_ancienne_position();
-            /*
+
             (*it_e)->mettre_a_jour_position(taille_case, x0, y0);
             sf::FloatRect ennemi_rect_test(sf::Vector2f((*it_e)->get_position_hg().get_x(),(*it_e)->get_position_hg().get_y()), sf::Vector2f((*it_e)->get_taille().get_x(), (*it_e)->get_taille().get_y()));
             for(std::list<CaseSFML *>::iterator it = cases_collision.begin(); it != cases_collision.end(); ++it)
             {
                 if(ennemi_rect_test.intersects((*it)->get_casesfml().getBounds())){std::cout << "BULLSHIT" << std::endl;}
-            }*/
+            }
             //test coord x
+
             (*it_e)->get_ennemi()->set_deplacement(deplacement_ennemi.get_x(), 0);
             (*it_e)->mettre_a_jour_position(taille_case, x0, y0);
             sf::FloatRect ennemi_rect_x(sf::Vector2f((*it_e)->get_position_hg().get_x(),(*it_e)->get_position_hg().get_y()), sf::Vector2f((*it_e)->get_taille().get_x(), (*it_e)->get_taille().get_y()));

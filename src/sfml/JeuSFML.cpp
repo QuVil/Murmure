@@ -401,11 +401,11 @@ void JeuSFML::avancer_jeu()
     }
     recupere_mouvements();
     actualiser_perso();
+    actualiser_ennemis();
     actualiser_clef();
     recupere_collisions();
     actualiser_salle();
     actualiser_projectiles();
-    actualiser_ennemis();
 }
 
 void JeuSFML::actualiser_salle()
