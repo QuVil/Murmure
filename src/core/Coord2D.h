@@ -11,8 +11,8 @@
 class Coord2D
 {
 private:
-    float x; /**< \a Coordonnée x du point */
-    float y; /**< \a Coordonnée y du point */
+    float x; /**< Coordonnée x du point */
+    float y; /**< Coordonnée y du point */
 
 public:
     /** \brief Constructeur par défaut

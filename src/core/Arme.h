@@ -14,17 +14,17 @@
 class Arme
 {
 private:
-    int id_arme; /**< \brief identifiant de l'arme */
-    int nv_arme; /**< \brief niveau de l'arme */
-    int id_projectiles; /**< \brief identifiant de ses projectiles */
-    int degats_projectiles; /**< \brief degat de ses projectiles */
-    int type; /**< \brief type de l'arme */
-    float vitesse; /**< \brief vitesse des projectiles de l'arme */
-    float taille_projectile; /**< \brief taille de ses projectiles */
-    float cadence_tir; /**< \brief cadence de tir de l'arme (nombre de coups tirés par secondes) */
+    int id_arme; /**< identifiant de l'arme */
+    int nv_arme; /**< niveau de l'arme */
+    int id_projectiles; /**< identifiant de ses projectiles */
+    int degats_projectiles; /**< degat de ses projectiles */
+    int type; /**< type de l'arme */
+    float vitesse; /**< vitesse des projectiles de l'arme */
+    float taille_projectile; /**< taille de ses projectiles */
+    float cadence_tir; /**< cadence de tir de l'arme (nombre de coups tirés par secondes) */
 
-    int munitions_max; /**< \brief nombre de munition maximum de l'arme */
-    int munitions_restantes; /**< \brief nombre de munition actuel de l'arme */
+    int munitions_max; /**< nombre de munition maximum de l'arme */
+    int munitions_restantes; /**< nombre de munition actuel de l'arme */
 
 public:
     /** \brief Constructeur

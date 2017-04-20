@@ -13,27 +13,27 @@
 class Ennemi
 {
 private:
-    std::string nom; /**< \a nom de l'entité ennemi */
-    std::string type_ia; /**< \a type de l'intelligence artificielle qui dirigera l'ennemi. IA signifiant Intelligence Artificielle */
+    std::string nom; /**< nom de l'entité ennemi */
+    std::string type_ia; /**< type de l'intelligence artificielle qui dirigera l'ennemi. IA signifiant Intelligence Artificielle */
 
-    float orientation; /**< \a orientation de l'entité (en degré) */
+    float orientation; /**< orientation de l'entité (en degré) */
 
-    Coord2D position; /**< \a position actuelle de l'entité */
-    Coord2D position_old; /**< \a derniere position de l'entité avant la position actuelle */
+    Coord2D position; /**< position actuelle de l'entité */
+    Coord2D position_old; /**< derniere position de l'entité avant la position actuelle */
 
-    VecteurM deplacement; /**< \a valeur du deplacement actuel de l'entité (selon un vecteur qui a pour origine la derniere position de l'entité) */
+    VecteurM deplacement; /**< valeur du deplacement actuel de l'entité (selon un vecteur qui a pour origine la derniere position de l'entité) */
 
-    float coefficient_vitesse; /**< \a veleur qui va definir la vitesse de l'ennemi */
+    float coefficient_vitesse; /**< veleur qui va definir la vitesse de l'ennemi */
 
-    float pv_actuel; /**< \a nombre de points de vie actuel */
-    float pv_max; /**< \a nombre de points de vie maximum */
+    float pv_actuel; /**< nombre de points de vie actuel */
+    float pv_max; /**< nombre de points de vie maximum */
 
-    float taille; /**< \a taille de l'ennemi (1 coorespondant à la taille d'une case) */
+    float taille; /**< taille de l'ennemi (1 coorespondant à la taille d'une case) */
 
-    bool vivant; /**< \a etat de l'ennemi (true = vivant, false = mort) */
+    bool vivant; /**< etat de l'ennemi (true = vivant, false = mort) */
 
-    int case_x_apparition; /**< \a coordonnée x de la case d'apparition */
-    int case_y_apparition; /**< \a coordonnée y de la case d'apparition */
+    int case_x_apparition; /**< coordonnée x de la case d'apparition */
+    int case_y_apparition; /**< coordonnée y de la case d'apparition */
 
 public:
 
