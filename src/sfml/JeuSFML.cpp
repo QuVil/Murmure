@@ -403,9 +403,9 @@ void JeuSFML::avancer_jeu()
     actualiser_perso();
     actualiser_ennemis();
     actualiser_clef();
+    actualiser_projectiles();
     recupere_collisions();
     actualiser_salle();
-    actualiser_projectiles();
 }
 
 void JeuSFML::actualiser_salle()
