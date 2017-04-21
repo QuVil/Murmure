@@ -19,8 +19,12 @@ private:
 public:
     CaseSFML();
 
+    void init(int posX,int posY, int largeur, int hauteur);
+
     //posX,posY correspondent  au pixel haut gauche
     CaseSFML(int posX,int posY, int largeur, int hauteur, const std::string & type);
+
+    void charger_salle(const std::string & type);
 
     sf::VertexArray get_casesfml();
 
