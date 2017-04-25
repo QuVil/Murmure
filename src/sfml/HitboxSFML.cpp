@@ -15,26 +15,6 @@ HitboxSFML::~HitboxSFML()
 
 void HitboxSFML::glisser_perso(CaseSFML *casesfml, PersoSFML* perso, const int &taille_case, const int &x0, const int &y0)
 {
-    VecteurM deplacement_perso = perso->get_perso_ptr()->get_deplacement();
-    perso->get_perso_ptr()->revenir_ancienne_position();
-    //test coord x
-    perso->get_perso_ptr()->set_deplacement(deplacement_perso.get_x(), 0);
-    perso->mettre_a_jour(taille_case, x0, y0);
-    sf::FloatRect perso_rect_x(perso->get_persosfml().getPosition(), perso->get_persosfml().getScale());
-    if(perso_rect_x.intersects(casesfml->get_casesfml().getBounds()))
-    {
-        perso->get_perso_ptr()->revenir_ancienne_position();
-        //test coord y
-        perso->get_perso_ptr()->set_deplacement(0, perso->get_perso_ptr()->get_deplacement().get_y());
-        perso->mettre_a_jour(taille_case, x0, y0);
-        sf::FloatRect perso_rect_y(perso->get_persosfml().getPosition(), perso->get_persosfml().getScale());
-        if(perso_rect_y.intersects(casesfml->get_casesfml().getBounds()))
-        {
-            perso->get_perso_ptr()->revenir_ancienne_position();
-            casesfml->check_collision();
-            std::cout << "KKEEEEIK" << std::endl;
-        }
-    }
 
 }
 
@@ -77,16 +57,16 @@ void HitboxSFML::perso_et_salle(PersoSFML* perso, CaseSFML* casesalle, Jeu * jeu
                     switch(j+17*i)
                     {
                     case 8: // (i = 0, j = 8)
-                        changement_salle_autorise = jeu->zone_changer_salle('g');
+                        changement_salle_autorise = jeu->zone_changer_salle('g',0);
                         break;
                     case 68: // (i = 4, j = 0)
-                        changement_salle_autorise = jeu->zone_changer_salle('h');
+                        changement_salle_autorise = jeu->zone_changer_salle('h',0);
                         break;
                     case 84: // (i = 4; j = 16)
-                        changement_salle_autorise = jeu->zone_changer_salle('b');
+                        changement_salle_autorise = jeu->zone_changer_salle('b',0);
                         break;
                     case 144: // (i = 8, j = 8)
-                        changement_salle_autorise = jeu->zone_changer_salle('d');
+                        changement_salle_autorise = jeu->zone_changer_salle('d',0);
                         break;
                     }
                     if(!changement_salle_autorise)
@@ -281,4 +261,11 @@ void HitboxSFML::projectiles_et_ennemis(std::list<ProjectileSFML*>* projectiles,
     }
 }
 
+void HitboxSFML::perso_et_clef(PersoSFML* perso, ClefSFML* clef)
+{
+    if(perso->get_persosfml().getGlobalBounds().intersects(clef->get_clefsfml().getGlobalBounds()))
+    {
+        perso->get_perso_ptr()->ramasser_clef(clef->get_cle());
+    }
+}
 

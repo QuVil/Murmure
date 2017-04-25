@@ -35,6 +35,8 @@ public:
      */
     void init(Clef* p_cle,const sf::Texture &p_texture, const int &taille_case,const int &x0, const int &y0);
 
+    void clef_possedee(const int &taille_case,const int &x0, const int &y0);
+
     ///TODO TODO TODO TODO set_position salope
 
     /** \brief Accesseur du Sprite
@@ -43,6 +45,8 @@ public:
      *
      */
     sf::Sprite get_clefsfml();
+
+    Clef* get_cle();
 
 };
 

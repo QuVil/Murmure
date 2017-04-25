@@ -13,7 +13,7 @@ MenuSFML::MenuSFML()
 
 void MenuSFML::actualiser_selection_curseur()
 {
-    actualiser_position_souris();
+    //actualiser_position_souris();
     float pos_x = position_souris.get_x();
     float pos_y = position_souris.get_y();
 
