@@ -39,7 +39,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
-      <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
       <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
       <li><a href="files.html"><span>Files</span></a></li>
       <li>
@@ -91,18 +90,43 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!--header-->
 <div class="contents">
 
+<p>gère les menus du <a class="el" href="classJeuSFML.html">JeuSFML</a>, principal, d'options, etc.  
+ <a href="classMenuSFML.html#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="MenuSFML_8h_source.html">MenuSFML.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a9a0f8c81e03ba0d02c04bdcf74fdcad2"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMenuSFML.html#a9a0f8c81e03ba0d02c04bdcf74fdcad2">MenuSFML</a> ()</td></tr>
+<tr class="memdesc:a9a0f8c81e03ba0d02c04bdcf74fdcad2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Consctructeur De base, crée le menu principal et place le curseur sur "jouer".  <a href="#a9a0f8c81e03ba0d02c04bdcf74fdcad2">More...</a><br /></td></tr>
 <tr class="separator:a9a0f8c81e03ba0d02c04bdcf74fdcad2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2abbac1f7c265afcd1524379bfbfc631"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMenuSFML.html#a2abbac1f7c265afcd1524379bfbfc631">MenuSFML</a> (std::string nom_ecr)</td></tr>
+<tr class="memdesc:a2abbac1f7c265afcd1524379bfbfc631"><td class="mdescLeft">&#160;</td><td class="mdescRight">Consctructeur avec écran en paramètre.  <a href="#a2abbac1f7c265afcd1524379bfbfc631">More...</a><br /></td></tr>
 <tr class="separator:a2abbac1f7c265afcd1524379bfbfc631"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae295ce7a37e0c5418cfd5908b540f6e2"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMenuSFML.html#ae295ce7a37e0c5418cfd5908b540f6e2">get_selection_curseur</a> ()</td></tr>
+<tr class="memdesc:ae295ce7a37e0c5418cfd5908b540f6e2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Accesseur de <em>selection_curseur</em>.  <a href="#ae295ce7a37e0c5418cfd5908b540f6e2">More...</a><br /></td></tr>
+<tr class="separator:ae295ce7a37e0c5418cfd5908b540f6e2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae6b395eb78ae4c0ad3621cfa14c6e11d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMenuSFML.html#ae6b395eb78ae4c0ad3621cfa14c6e11d">actualiser_selection_curseur</a> (const char direction, const int scale_salle)</td></tr>
+<tr class="memdesc:ae6b395eb78ae4c0ad3621cfa14c6e11d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Déplacement du curseur dans le menu &ndash;physique Met aussi à jour la position graphique du curseur par un appel à mettre_a_jour_position_curseur.  <a href="#ae6b395eb78ae4c0ad3621cfa14c6e11d">More...</a><br /></td></tr>
+<tr class="separator:ae6b395eb78ae4c0ad3621cfa14c6e11d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a63ac15c5c45c3f3d5b2a657c41574a38"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMenuSFML.html#a63ac15c5c45c3f3d5b2a657c41574a38">init_menu</a> (const sf::Texture &amp;texture_menu, const int &amp;scale_salle)</td></tr>
+<tr class="separator:a63ac15c5c45c3f3d5b2a657c41574a38"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acf34256e8e062cb455cc282fd9873ab7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMenuSFML.html#acf34256e8e062cb455cc282fd9873ab7">init_curseur_menu</a> (const sf::Texture &amp;texture_curseur_menu, const int &amp;scale_salle)</td></tr>
+<tr class="separator:acf34256e8e062cb455cc282fd9873ab7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a456e11979715e47216510f1b1f6caf06"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMenuSFML.html#a456e11979715e47216510f1b1f6caf06">afficher_menu</a> (std::string nom_ecr)</td></tr>
 <tr class="separator:a456e11979715e47216510f1b1f6caf06"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0d1ef82c7bdd9abdfc3891f98e9449f7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMenuSFML.html#a0d1ef82c7bdd9abdfc3891f98e9449f7">afficher_curseur</a> ()</td></tr>
+<tr class="separator:a0d1ef82c7bdd9abdfc3891f98e9449f7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a648694f363dbf02a203ea8f63f47ea2b"><td class="memItemLeft" align="right" valign="top">sf::Sprite&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMenuSFML.html#a648694f363dbf02a203ea8f63f47ea2b">get_menusfml</a> () const </td></tr>
+<tr class="separator:a648694f363dbf02a203ea8f63f47ea2b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a29df9e1191f98786d69f0f4b3142bcb9"><td class="memItemLeft" align="right" valign="top">sf::Sprite&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMenuSFML.html#a29df9e1191f98786d69f0f4b3142bcb9">get_curseur_menu</a> () const </td></tr>
+<tr class="separator:a29df9e1191f98786d69f0f4b3142bcb9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7142235d9651868fd2da1e21cb113ea5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMenuSFML.html#a7142235d9651868fd2da1e21cb113ea5">mettre_a_jour_position_curseur</a> (const int &amp;scale_salle)</td></tr>
+<tr class="separator:a7142235d9651868fd2da1e21cb113ea5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>gère les menus du <a class="el" href="classJeuSFML.html">JeuSFML</a>, principal, d'options, etc. </p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="a9a0f8c81e03ba0d02c04bdcf74fdcad2"></a>
 <div class="memitem">
 <div class="memproto">
@@ -115,6 +139,8 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Consctructeur De base, crée le menu principal et place le curseur sur "jouer". </p>
 
 </div>
 </div>
@@ -132,9 +158,67 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Consctructeur avec écran en paramètre. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">nom_ecr</td><td>: la valeur de <em>nom_ecran</em> </td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
+<a class="anchor" id="ae6b395eb78ae4c0ad3621cfa14c6e11d"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MenuSFML::actualiser_selection_curseur </td>
+          <td>(</td>
+          <td class="paramtype">const char&#160;</td>
+          <td class="paramname"><em>direction</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int&#160;</td>
+          <td class="paramname"><em>scale_salle</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Déplacement du curseur dans le menu &ndash;physique Met aussi à jour la position graphique du curseur par un appel à mettre_a_jour_position_curseur. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">direction</td><td>: h, b, g ou d pour déplacer le curseur dans les directions cardinales. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">scale_salle</td><td>: permet de déterminer la taille des sprites relative à l'écran -est juste passé à la suivante </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a0d1ef82c7bdd9abdfc3891f98e9449f7"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MenuSFML::afficher_curseur </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a class="anchor" id="a456e11979715e47216510f1b1f6caf06"></a>
 <div class="memitem">
 <div class="memproto">
@@ -144,6 +228,124 @@ Public Member Functions</h2></td></tr>
           <td>(</td>
           <td class="paramtype">std::string&#160;</td>
           <td class="paramname"><em>nom_ecr</em> = <code>&quot;&quot;</code></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a29df9e1191f98786d69f0f4b3142bcb9"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">sf::Sprite MenuSFML::get_curseur_menu </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a648694f363dbf02a203ea8f63f47ea2b"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">sf::Sprite MenuSFML::get_menusfml </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="ae295ce7a37e0c5418cfd5908b540f6e2"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string MenuSFML::get_selection_curseur </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Accesseur de <em>selection_curseur</em>. </p>
+<dl class="section return"><dt>Returns</dt><dd><em>selection_curseur</em> </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="acf34256e8e062cb455cc282fd9873ab7"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MenuSFML::init_curseur_menu </td>
+          <td>(</td>
+          <td class="paramtype">const sf::Texture &amp;&#160;</td>
+          <td class="paramname"><em>texture_curseur_menu</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int &amp;&#160;</td>
+          <td class="paramname"><em>scale_salle</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>TODO </p>
+
+</div>
+</div>
+<a class="anchor" id="a63ac15c5c45c3f3d5b2a657c41574a38"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MenuSFML::init_menu </td>
+          <td>(</td>
+          <td class="paramtype">const sf::Texture &amp;&#160;</td>
+          <td class="paramname"><em>texture_menu</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int &amp;&#160;</td>
+          <td class="paramname"><em>scale_salle</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>TODO </p>
+
+</div>
+</div>
+<a class="anchor" id="a7142235d9651868fd2da1e21cb113ea5"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MenuSFML::mettre_a_jour_position_curseur </td>
+          <td>(</td>
+          <td class="paramtype">const int &amp;&#160;</td>
+          <td class="paramname"><em>scale_salle</em></td><td>)</td>
           <td></td>
         </tr>
       </table>

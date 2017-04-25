@@ -24,7 +24,6 @@
 class Salle
 {
 private:
-    //cree un tableau de CaseSalle
     CaseSalle grille[nb_cases_hauteur][nb_cases_largeur]; /**< \a grille contient les CaseSalle composant la Salle. */
 
     int config; /**< \a config est la disposition de la Salle, correspondant à un int. */
@@ -47,7 +46,6 @@ public:
      * \brief Consctructeur avec \a config
      * Le Constructeur avec paramètre, donnant à l'instance la \a config donnée.
      * \param[in] conf : la \a config donnée à la nouvelle instance.
-     * \todo : potentiellement ajouter le paramètre fichier pour copie (GARY ?)
      */
     Salle(int conf);
 

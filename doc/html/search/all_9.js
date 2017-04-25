@@ -8,6 +8,7 @@ var searchData=
   ['menusfml_2eh',['MenuSFML.h',['../MenuSFML_8h.html',1,'']]],
   ['mettre_5fa_5fjour',['mettre_a_jour',['../classPersoSFML.html#a0fdcbe28dd528377aeb20f4b08c27dd3',1,'PersoSFML']]],
   ['mettre_5fa_5fjour_5fposition',['mettre_a_jour_position',['../classEnnemiSFML.html#ae24d2e38c6e482c4242eebcbb58cf959',1,'EnnemiSFML']]],
+  ['mettre_5fa_5fjour_5fposition_5fcurseur',['mettre_a_jour_position_curseur',['../classMenuSFML.html#a7142235d9651868fd2da1e21cb113ea5',1,'MenuSFML']]],
   ['mettre_5fa_5fjour_5ftaille_5ftexture',['mettre_a_jour_taille_texture',['../classCaseSFML.html#ab99bde20ef9f4afcf09603701d518246',1,'CaseSFML']]],
   ['mettre_5fa_5fjour_5ftype_5fcase',['mettre_a_jour_type_case',['../classCaseSFML.html#aa2f1966e2fe57cc62f2c9642066bb554',1,'CaseSFML']]],
   ['mise_5fa_5fjour_5fposition',['mise_a_jour_position',['../classProjectileSFML.html#aac9b1648afeb6afbd314b35578b8bc9b',1,'ProjectileSFML']]],

@@ -1,5 +1,14 @@
 #include "MenuSFML.h"
 
+/**
+ * \file MenuSFML.h
+ * \brief code source de MenuSFML
+ * \author Quentin.V & Gary.S
+ * \version 0.1
+ * \date 25 avril 2017
+ *
+ */
+
 MenuSFML::MenuSFML(std::string nom_ecr)
 {
     nom_ecran = nom_ecr;

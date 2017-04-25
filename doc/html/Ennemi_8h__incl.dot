@@ -6,8 +6,8 @@ digraph "/home/quentin/Murmure/src/core/Ennemi.h"
   Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node2 [label="string",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled"];
   Node1 -> Node3 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node3 [label="VecteurM.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$VecteurM_8h.html"];
+  Node3 [label="VecteurM.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$VecteurM_8h.html",tooltip="Module de Vecteur en 2 dimensions appliqué à Murmure. "];
   Node1 -> Node4 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node4 [label="Coord2D.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$Coord2D_8h.html"];
+  Node4 [label="Coord2D.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$Coord2D_8h.html",tooltip="module qui gere des points sur un plan en 2 dimensions "];
   Node4 -> Node3 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
 }

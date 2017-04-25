@@ -1,3 +1,12 @@
+/**
+ * \file JeuSFML.crpp
+ * \brief code source de JeuSFML
+ * \author Quentin.V & Gary.S
+ * \version 0.1
+ * \date 24 avril 2017
+ *
+ */
+
 #include <iostream>
 #include <list>
 

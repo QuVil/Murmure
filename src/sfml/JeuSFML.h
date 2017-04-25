@@ -1,6 +1,16 @@
 #ifndef JEUSFML_H_INCLUDED
 #define JESFMLU_H_INCLUDED
 
+/**
+ * \file JeuSFML.h
+ * \brief Header du module de boucle de jeu SFML.
+ * \author Quentin.V & Gary.S
+ * \version 0.1
+ * \date 24 avril 2017
+ *
+ */
+
+
 #include "Jeu.h"
 
 #include <SFML/Graphics.hpp>

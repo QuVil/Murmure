@@ -8,29 +8,35 @@
 \begin{DoxyCompactItemize}
 \item 
 \hyperlink{classGestionSalle_a1e182efaf1a90419768dbdcce5b3362f}{Gestion\+Salle} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Constructeur Déclare les variables du module. \end{DoxyCompactList}\item 
 \hyperlink{classGestionSalle_a94a5c95bc0b567b446c56eadfc4725e1}{$\sim$\+Gestion\+Salle} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Destructeur Supprime et libere la mémoire lors de la derstruction du module. \end{DoxyCompactList}\item 
 void \hyperlink{classGestionSalle_afa4dfd73b84ebbcc6fd0e8ada8d19749}{ajouter\+\_\+projectile} (\hyperlink{classProjectile}{Projectile} $\ast$p)
-\item 
+\begin{DoxyCompactList}\small\item\em Ajout \hyperlink{classProjectile}{Projectile} Ajoute un projectile à la liste. \end{DoxyCompactList}\item 
 void \hyperlink{classGestionSalle_aa95413560b18a41625f4532093e079ab}{mise\+\_\+a\+\_\+jour\+\_\+projectiles} (const float \&vitesse\+\_\+frame)
-\item 
+\begin{DoxyCompactList}\small\item\em Actualise projectiles Actualise les positions des projectiles. \end{DoxyCompactList}\item 
 std\+::list$<$ \hyperlink{classProjectile}{Projectile} $\ast$ $>$ $\ast$ \hyperlink{classGestionSalle_a0ba600eb02a796327b9cb3f17a534e7e}{get\+\_\+projectiles} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Accesseur des projectiles. \end{DoxyCompactList}\item 
 std\+::list$<$ \hyperlink{classEnnemi}{Ennemi} $\ast$ $>$ $\ast$ \hyperlink{classGestionSalle_a1f6ba669677c1e7568bf31b0c04b6b56}{get\+\_\+ennemis} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Accesseur des ennemis. \end{DoxyCompactList}\item 
+\hyperlink{classClef}{Clef} $\ast$ \hyperlink{classGestionSalle_a319c67470a0e68dee7ae1afd53451d82}{get\+\_\+clef} ()
+\begin{DoxyCompactList}\small\item\em Accesseur de la clef. \end{DoxyCompactList}\item 
+bool \hyperlink{classGestionSalle_af108e77bf088e66a0031b3a8f8f9aba9}{salle\+\_\+terminee} ()
+\begin{DoxyCompactList}\small\item\em Test etat de la salle Teste si la salle est terminée (tous les ennemis tués) \end{DoxyCompactList}\item 
 void \hyperlink{classGestionSalle_a90451d453082150e6bc4aacee3185bf1}{initialise\+\_\+salle\+\_\+actuelle} (\hyperlink{classSalle}{Salle} $\ast$adresse\+\_\+salle)
-\item 
+\begin{DoxyCompactList}\small\item\em Initialisation salle Initialise la salle lorsque l\textquotesingle{}on rentre dedans. \end{DoxyCompactList}\item 
 void \hyperlink{classGestionSalle_aa6483fffd72836b96019b1c01149cb3d}{maj\+\_\+changement\+\_\+salle} ()
 \begin{DoxyCompactList}\small\item\em création des entités de la \hyperlink{classSalle}{Salle} crée les ennemis objets et clefs dans la \hyperlink{classSalle}{Salle}. \end{DoxyCompactList}\item 
 \hyperlink{classSalle}{Salle} $\ast$ \hyperlink{classGestionSalle_a956b17a928f170f399e063d730495f4c}{get\+\_\+salle\+\_\+ptr} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Accesseur de la \hyperlink{classSalle}{Salle}. \end{DoxyCompactList}\item 
 void \hyperlink{classGestionSalle_a18f9d9f3bceb83a0a2cee570e7936643}{vider\+\_\+projectiles} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Vide projectiles Vide la salle de ses projectiles. \end{DoxyCompactList}\item 
 void \hyperlink{classGestionSalle_a15b3371a3c0e135879034040c84d3ffe}{vider\+\_\+ennemis} (bool dans\+\_\+destructeur)
-\item 
+\begin{DoxyCompactList}\small\item\em Vide ennemis Vide la salle de ses ennemis. \end{DoxyCompactList}\item 
 void \hyperlink{classGestionSalle_a2c7b2d5047f8f9759543ee32b68fa22b}{deplacer\+\_\+ennemis\+\_\+auto} (\hyperlink{classCoord2D}{Coord2D} pos\+\_\+perso)
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Actualise ennemis Actualise les deplacement des ennemis. \end{DoxyCompactList}\item 
+void \hyperlink{classGestionSalle_ae9de5077d63527bcc0c1f6c0a9e987c2}{vider\+\_\+clef} ()
+\begin{DoxyCompactList}\small\item\em Vide clef Vide la clef. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{Constructor \& Destructor Documentation}
@@ -41,6 +47,10 @@ void \hyperlink{classGestionSalle_a2c7b2d5047f8f9759543ee32b68fa22b}{deplacer\+\
 {}
 \end{DoxyParamCaption}
 )}\hypertarget{classGestionSalle_a1e182efaf1a90419768dbdcce5b3362f}{}\label{classGestionSalle_a1e182efaf1a90419768dbdcce5b3362f}
+
+
+Constructeur Déclare les variables du module. 
+
 \index{Gestion\+Salle@{Gestion\+Salle}!````~Gestion\+Salle@{$\sim$\+Gestion\+Salle}}
 \index{````~Gestion\+Salle@{$\sim$\+Gestion\+Salle}!Gestion\+Salle@{Gestion\+Salle}}
 \subsubsection[{\texorpdfstring{$\sim$\+Gestion\+Salle()}{~GestionSalle()}}]{\setlength{\rightskip}{0pt plus 5cm}Gestion\+Salle\+::$\sim$\+Gestion\+Salle (
@@ -48,6 +58,10 @@ void \hyperlink{classGestionSalle_a2c7b2d5047f8f9759543ee32b68fa22b}{deplacer\+\
 {}
 \end{DoxyParamCaption}
 )}\hypertarget{classGestionSalle_a94a5c95bc0b567b446c56eadfc4725e1}{}\label{classGestionSalle_a94a5c95bc0b567b446c56eadfc4725e1}
+
+
+Destructeur Supprime et libere la mémoire lors de la derstruction du module. 
+
 
 
 \subsection{Member Function Documentation}
@@ -58,6 +72,15 @@ void \hyperlink{classGestionSalle_a2c7b2d5047f8f9759543ee32b68fa22b}{deplacer\+\
 \item[{{\bf Projectile} $\ast$}]{p}
 \end{DoxyParamCaption}
 )}\hypertarget{classGestionSalle_afa4dfd73b84ebbcc6fd0e8ada8d19749}{}\label{classGestionSalle_afa4dfd73b84ebbcc6fd0e8ada8d19749}
+
+
+Ajout \hyperlink{classProjectile}{Projectile} Ajoute un projectile à la liste. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em p} & \+: pointeur sur le projectile \\
+\hline
+\end{DoxyParams}
 \index{Gestion\+Salle@{Gestion\+Salle}!deplacer\+\_\+ennemis\+\_\+auto@{deplacer\+\_\+ennemis\+\_\+auto}}
 \index{deplacer\+\_\+ennemis\+\_\+auto@{deplacer\+\_\+ennemis\+\_\+auto}!Gestion\+Salle@{Gestion\+Salle}}
 \subsubsection[{\texorpdfstring{deplacer\+\_\+ennemis\+\_\+auto(\+Coord2\+D pos\+\_\+perso)}{deplacer_ennemis_auto(Coord2D pos_perso)}}]{\setlength{\rightskip}{0pt plus 5cm}void Gestion\+Salle\+::deplacer\+\_\+ennemis\+\_\+auto (
@@ -65,6 +88,29 @@ void \hyperlink{classGestionSalle_a2c7b2d5047f8f9759543ee32b68fa22b}{deplacer\+\
 \item[{{\bf Coord2D}}]{pos\+\_\+perso}
 \end{DoxyParamCaption}
 )}\hypertarget{classGestionSalle_a2c7b2d5047f8f9759543ee32b68fa22b}{}\label{classGestionSalle_a2c7b2d5047f8f9759543ee32b68fa22b}
+
+
+Actualise ennemis Actualise les deplacement des ennemis. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em pos\+\_\+perso} & \+: posisiton actuelle du personnage \\
+\hline
+\end{DoxyParams}
+\index{Gestion\+Salle@{Gestion\+Salle}!get\+\_\+clef@{get\+\_\+clef}}
+\index{get\+\_\+clef@{get\+\_\+clef}!Gestion\+Salle@{Gestion\+Salle}}
+\subsubsection[{\texorpdfstring{get\+\_\+clef()}{get_clef()}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Clef} $\ast$ Gestion\+Salle\+::get\+\_\+clef (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classGestionSalle_a319c67470a0e68dee7ae1afd53451d82}{}\label{classGestionSalle_a319c67470a0e68dee7ae1afd53451d82}
+
+
+Accesseur de la clef. 
+
+\begin{DoxyReturn}{Returns}
+pointeur de la {\itshape clef} 
+\end{DoxyReturn}
 \index{Gestion\+Salle@{Gestion\+Salle}!get\+\_\+ennemis@{get\+\_\+ennemis}}
 \index{get\+\_\+ennemis@{get\+\_\+ennemis}!Gestion\+Salle@{Gestion\+Salle}}
 \subsubsection[{\texorpdfstring{get\+\_\+ennemis()}{get_ennemis()}}]{\setlength{\rightskip}{0pt plus 5cm}std\+::list$<$ {\bf Ennemi} $\ast$ $>$ $\ast$ Gestion\+Salle\+::get\+\_\+ennemis (
@@ -72,6 +118,13 @@ void \hyperlink{classGestionSalle_a2c7b2d5047f8f9759543ee32b68fa22b}{deplacer\+\
 {}
 \end{DoxyParamCaption}
 )}\hypertarget{classGestionSalle_a1f6ba669677c1e7568bf31b0c04b6b56}{}\label{classGestionSalle_a1f6ba669677c1e7568bf31b0c04b6b56}
+
+
+Accesseur des ennemis. 
+
+\begin{DoxyReturn}{Returns}
+pointeur sur {\itshape ennemis} 
+\end{DoxyReturn}
 \index{Gestion\+Salle@{Gestion\+Salle}!get\+\_\+projectiles@{get\+\_\+projectiles}}
 \index{get\+\_\+projectiles@{get\+\_\+projectiles}!Gestion\+Salle@{Gestion\+Salle}}
 \subsubsection[{\texorpdfstring{get\+\_\+projectiles()}{get_projectiles()}}]{\setlength{\rightskip}{0pt plus 5cm}std\+::list$<$ {\bf Projectile} $\ast$ $>$ $\ast$ Gestion\+Salle\+::get\+\_\+projectiles (
@@ -79,6 +132,13 @@ void \hyperlink{classGestionSalle_a2c7b2d5047f8f9759543ee32b68fa22b}{deplacer\+\
 {}
 \end{DoxyParamCaption}
 )}\hypertarget{classGestionSalle_a0ba600eb02a796327b9cb3f17a534e7e}{}\label{classGestionSalle_a0ba600eb02a796327b9cb3f17a534e7e}
+
+
+Accesseur des projectiles. 
+
+\begin{DoxyReturn}{Returns}
+pointeur sur {\itshape projectiles} 
+\end{DoxyReturn}
 \index{Gestion\+Salle@{Gestion\+Salle}!get\+\_\+salle\+\_\+ptr@{get\+\_\+salle\+\_\+ptr}}
 \index{get\+\_\+salle\+\_\+ptr@{get\+\_\+salle\+\_\+ptr}!Gestion\+Salle@{Gestion\+Salle}}
 \subsubsection[{\texorpdfstring{get\+\_\+salle\+\_\+ptr()}{get_salle_ptr()}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Salle} $\ast$ Gestion\+Salle\+::get\+\_\+salle\+\_\+ptr (
@@ -86,6 +146,13 @@ void \hyperlink{classGestionSalle_a2c7b2d5047f8f9759543ee32b68fa22b}{deplacer\+\
 {}
 \end{DoxyParamCaption}
 )}\hypertarget{classGestionSalle_a956b17a928f170f399e063d730495f4c}{}\label{classGestionSalle_a956b17a928f170f399e063d730495f4c}
+
+
+Accesseur de la \hyperlink{classSalle}{Salle}. 
+
+\begin{DoxyReturn}{Returns}
+pointeur sur la {\itshape salle} 
+\end{DoxyReturn}
 \index{Gestion\+Salle@{Gestion\+Salle}!initialise\+\_\+salle\+\_\+actuelle@{initialise\+\_\+salle\+\_\+actuelle}}
 \index{initialise\+\_\+salle\+\_\+actuelle@{initialise\+\_\+salle\+\_\+actuelle}!Gestion\+Salle@{Gestion\+Salle}}
 \subsubsection[{\texorpdfstring{initialise\+\_\+salle\+\_\+actuelle(\+Salle $\ast$adresse\+\_\+salle)}{initialise_salle_actuelle(Salle *adresse_salle)}}]{\setlength{\rightskip}{0pt plus 5cm}void Gestion\+Salle\+::initialise\+\_\+salle\+\_\+actuelle (
@@ -93,6 +160,15 @@ void \hyperlink{classGestionSalle_a2c7b2d5047f8f9759543ee32b68fa22b}{deplacer\+\
 \item[{{\bf Salle} $\ast$}]{adresse\+\_\+salle}
 \end{DoxyParamCaption}
 )}\hypertarget{classGestionSalle_a90451d453082150e6bc4aacee3185bf1}{}\label{classGestionSalle_a90451d453082150e6bc4aacee3185bf1}
+
+
+Initialisation salle Initialise la salle lorsque l\textquotesingle{}on rentre dedans. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em adresse\+\_\+salle} & \+: adresse de la salle actuelle (ensemble de cases) \\
+\hline
+\end{DoxyParams}
 \index{Gestion\+Salle@{Gestion\+Salle}!maj\+\_\+changement\+\_\+salle@{maj\+\_\+changement\+\_\+salle}}
 \index{maj\+\_\+changement\+\_\+salle@{maj\+\_\+changement\+\_\+salle}!Gestion\+Salle@{Gestion\+Salle}}
 \subsubsection[{\texorpdfstring{maj\+\_\+changement\+\_\+salle()}{maj_changement_salle()}}]{\setlength{\rightskip}{0pt plus 5cm}void Gestion\+Salle\+::maj\+\_\+changement\+\_\+salle (
@@ -114,6 +190,40 @@ la procédure est appelée par \hyperlink{classJeu}{Jeu}. à ne pas utiliser tel
 \item[{const float \&}]{vitesse\+\_\+frame}
 \end{DoxyParamCaption}
 )}\hypertarget{classGestionSalle_aa95413560b18a41625f4532093e079ab}{}\label{classGestionSalle_aa95413560b18a41625f4532093e079ab}
+
+
+Actualise projectiles Actualise les positions des projectiles. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em vitesse\+\_\+frame} & \+: vitesse du framerate (qui sert de coefficient pour la vitesse des projectiles) \\
+\hline
+\end{DoxyParams}
+\index{Gestion\+Salle@{Gestion\+Salle}!salle\+\_\+terminee@{salle\+\_\+terminee}}
+\index{salle\+\_\+terminee@{salle\+\_\+terminee}!Gestion\+Salle@{Gestion\+Salle}}
+\subsubsection[{\texorpdfstring{salle\+\_\+terminee()}{salle_terminee()}}]{\setlength{\rightskip}{0pt plus 5cm}bool Gestion\+Salle\+::salle\+\_\+terminee (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classGestionSalle_af108e77bf088e66a0031b3a8f8f9aba9}{}\label{classGestionSalle_af108e77bf088e66a0031b3a8f8f9aba9}
+
+
+Test etat de la salle Teste si la salle est terminée (tous les ennemis tués) 
+
+\begin{DoxyReturn}{Returns}
+true si c\textquotesingle{}est terminé, false sinon 
+\end{DoxyReturn}
+\index{Gestion\+Salle@{Gestion\+Salle}!vider\+\_\+clef@{vider\+\_\+clef}}
+\index{vider\+\_\+clef@{vider\+\_\+clef}!Gestion\+Salle@{Gestion\+Salle}}
+\subsubsection[{\texorpdfstring{vider\+\_\+clef()}{vider_clef()}}]{\setlength{\rightskip}{0pt plus 5cm}void Gestion\+Salle\+::vider\+\_\+clef (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classGestionSalle_ae9de5077d63527bcc0c1f6c0a9e987c2}{}\label{classGestionSalle_ae9de5077d63527bcc0c1f6c0a9e987c2}
+
+
+Vide clef Vide la clef. 
+
 \index{Gestion\+Salle@{Gestion\+Salle}!vider\+\_\+ennemis@{vider\+\_\+ennemis}}
 \index{vider\+\_\+ennemis@{vider\+\_\+ennemis}!Gestion\+Salle@{Gestion\+Salle}}
 \subsubsection[{\texorpdfstring{vider\+\_\+ennemis(bool dans\+\_\+destructeur)}{vider_ennemis(bool dans_destructeur)}}]{\setlength{\rightskip}{0pt plus 5cm}void Gestion\+Salle\+::vider\+\_\+ennemis (
@@ -121,6 +231,15 @@ la procédure est appelée par \hyperlink{classJeu}{Jeu}. à ne pas utiliser tel
 \item[{bool}]{dans\+\_\+destructeur = {\ttfamily false}}
 \end{DoxyParamCaption}
 )}\hypertarget{classGestionSalle_a15b3371a3c0e135879034040c84d3ffe}{}\label{classGestionSalle_a15b3371a3c0e135879034040c84d3ffe}
+
+
+Vide ennemis Vide la salle de ses ennemis. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em dans\+\_\+destructeur} & \+: \\
+\hline
+\end{DoxyParams}
 \index{Gestion\+Salle@{Gestion\+Salle}!vider\+\_\+projectiles@{vider\+\_\+projectiles}}
 \index{vider\+\_\+projectiles@{vider\+\_\+projectiles}!Gestion\+Salle@{Gestion\+Salle}}
 \subsubsection[{\texorpdfstring{vider\+\_\+projectiles()}{vider_projectiles()}}]{\setlength{\rightskip}{0pt plus 5cm}void Gestion\+Salle\+::vider\+\_\+projectiles (
@@ -128,6 +247,10 @@ la procédure est appelée par \hyperlink{classJeu}{Jeu}. à ne pas utiliser tel
 {}
 \end{DoxyParamCaption}
 )}\hypertarget{classGestionSalle_a18f9d9f3bceb83a0a2cee570e7936643}{}\label{classGestionSalle_a18f9d9f3bceb83a0a2cee570e7936643}
+
+
+Vide projectiles Vide la salle de ses projectiles. 
+
 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}

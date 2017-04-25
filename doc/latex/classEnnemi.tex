@@ -8,55 +8,59 @@
 \begin{DoxyCompactItemize}
 \item 
 \hyperlink{classEnnemi_a9c5eb7ca82848b97f3dcf262fe625b3a}{Ennemi} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Constructeur par défaut Attribue les valeurs par défaut au programme. \end{DoxyCompactList}\item 
 \hyperlink{classEnnemi_a1c5db79ea2fadc4d08654f892fb913b3}{Ennemi} (std\+::string ia, int case\+\_\+x\+\_\+app, int case\+\_\+y\+\_\+app)
-\item 
+\begin{DoxyCompactList}\small\item\em Constructeur avec parametres Construit l\textquotesingle{}entité avec une case d\textquotesingle{}apparition et un type d\textquotesingle{}IA. \end{DoxyCompactList}\item 
 void \hyperlink{classEnnemi_ad49d449d20449273e366be5b89654ebd}{infliger\+\_\+degats} (float degats)
-\item 
+\begin{DoxyCompactList}\small\item\em infliger \+\_\+degats Procédure qui retire le nombre de points de vie si l\textquotesingle{}ennemi subit un coup \end{DoxyCompactList}\item 
 void \hyperlink{classEnnemi_abcde77d5d90b910b77bf5f66e7c4a534}{soigner} (float soin)
-\item 
+\begin{DoxyCompactList}\small\item\em soigner Procédure qui va permettre à l\textquotesingle{}ennemi de récupérer des points de vie \end{DoxyCompactList}\item 
 void \hyperlink{classEnnemi_a554bf929e2b45455ccc9a4b6bba19e88}{set\+\_\+deplacement} (const \hyperlink{classVecteurM}{VecteurM} \&v)
-\item 
+\begin{DoxyCompactList}\small\item\em Mutateur du deplacement. \end{DoxyCompactList}\item 
+void \hyperlink{classEnnemi_a4ce1825f219f0d235a4403c47ccce46b}{set\+\_\+deplacement} (const float \&x, const float \&y)
+\begin{DoxyCompactList}\small\item\em Mutateur du deplacement. \end{DoxyCompactList}\item 
 void \hyperlink{classEnnemi_a202cf059502343eb9b2dd35c7f770dcb}{set\+\_\+deplacement} (const \hyperlink{classCoord2D}{Coord2D} \&position\+\_\+perso)
-\item 
+\begin{DoxyCompactList}\small\item\em Mutateur du deplacement Deplace l\textquotesingle{}ennemi en direction du personnage. \end{DoxyCompactList}\item 
 void \hyperlink{classEnnemi_ad9b67277a7afb7510b1d72c9b771b52a}{set\+\_\+orientation} (const \hyperlink{classVecteurM}{VecteurM} \&v)
-\item 
+\begin{DoxyCompactList}\small\item\em Mutateur de l\textquotesingle{}orientation Oriente l\textquotesingle{}ennemi en fonction. \end{DoxyCompactList}\item 
 void \hyperlink{classEnnemi_a2b3b26369645a3c2946f891fcea4ed48}{set\+\_\+position} (const int \&x, const int \&y)
-\item 
+\begin{DoxyCompactList}\small\item\em Mutateur de la position. \end{DoxyCompactList}\item 
 void \hyperlink{classEnnemi_a7211dfcdacfa996833a611fd4aa9fff1}{revenir\+\_\+ancienne\+\_\+position} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Revient à l\textquotesingle{}ancienne position Permet de définir l\textquotesingle{}ennemi à l\textquotesingle{}ancienne position à laquelle il était grâce à {\itshape position\+\_\+old}. \end{DoxyCompactList}\item 
 \hyperlink{classCoord2D}{Coord2D} \hyperlink{classEnnemi_a928341b6737ceb7a4469a478b3504fc2}{get\+\_\+position} () const 
-\item 
+\begin{DoxyCompactList}\small\item\em Accesseur de la position Retourne la position de l\textquotesingle{}ennemi. \end{DoxyCompactList}\item 
+\hyperlink{classVecteurM}{VecteurM} \hyperlink{classEnnemi_abcd5a4f815be626c53520bb2be6acde6}{get\+\_\+deplacement} () const 
+\begin{DoxyCompactList}\small\item\em Accesseur du deplacement Retourne le deplacement de l\textquotesingle{}ennemi. \end{DoxyCompactList}\item 
 float \hyperlink{classEnnemi_ab2e641b1ee0cd88ecf48024ffb526875}{get\+\_\+coefficient\+\_\+vitesse} () const 
-\item 
+\begin{DoxyCompactList}\small\item\em Accesseur du coefficient de vitesse Retourne le coefficient de vitesse. \end{DoxyCompactList}\item 
 float \hyperlink{classEnnemi_a7dcf648950daa2d9e3e78258b2b09453}{get\+\_\+orientation\+\_\+degre} () const 
-\item 
+\begin{DoxyCompactList}\small\item\em Accesseur de l\textquotesingle{}orientation de l\textquotesingle{}ennemi Retourne l\textquotesingle{}orientation de l\textquotesingle{}ennemi. \end{DoxyCompactList}\item 
 float \hyperlink{classEnnemi_a6445344d697bce634c1d7ed6958c7f44}{get\+\_\+pos\+\_\+x} () const 
-\item 
+\begin{DoxyCompactList}\small\item\em Accesseur de la position horizontale de l\textquotesingle{}ennemi Retourne la position horizontale de l\textquotesingle{}ennemi. \end{DoxyCompactList}\item 
 float \hyperlink{classEnnemi_a431eb6e3f612218c4c10f97aba669596}{get\+\_\+pos\+\_\+y} () const 
-\item 
+\begin{DoxyCompactList}\small\item\em Accesseur de la position verticale de l\textquotesingle{}ennemi Retourne la position verticale de l\textquotesingle{}ennemi. \end{DoxyCompactList}\item 
 float \hyperlink{classEnnemi_a357d1286fb7abff5686efa371ce666d0}{get\+\_\+pv\+\_\+actuel} () const 
-\item 
-int \hyperlink{classEnnemi_ac7cde57e6d177a290eab0f68708a6624}{get\+\_\+taille} () const 
-\item 
-\hyperlink{classVecteurM}{VecteurM} \hyperlink{classEnnemi_a85a0cd0d1b81d655d270d21ca394bfb3}{get\+\_\+orientation} () const 
-\item 
+\begin{DoxyCompactList}\small\item\em Accesseur du nombre de points de vie actuel Retourne le nombre de points de vie actuel. \end{DoxyCompactList}\item 
+float \hyperlink{classEnnemi_aa31b3a4978779163dd89f701510968c4}{get\+\_\+taille} () const 
+\begin{DoxyCompactList}\small\item\em Accesseur de la taille Retourne la taille. \end{DoxyCompactList}\item 
+float \hyperlink{classEnnemi_a3b3de2dd953d4e7f0dfd9d75ae17ffe5}{get\+\_\+orientation} () const 
+\begin{DoxyCompactList}\small\item\em Accesseur de l\textquotesingle{}orientation Retourne l\textquotesingle{}orientation. \end{DoxyCompactList}\item 
 float \hyperlink{classEnnemi_a5730071888e4df7de2f9fb76860e0ebf}{get\+\_\+angle\+\_\+perso} (const \hyperlink{classCoord2D}{Coord2D} \&pos\+\_\+perso) const 
-\item 
+\begin{DoxyCompactList}\small\item\em Angle mouvement chasseur Retourne l\textquotesingle{}angle entre le personnage à chasser et l\textquotesingle{}ennemi. \end{DoxyCompactList}\item 
 void \hyperlink{classEnnemi_aa8013956da11a111c71e635409af8b3e}{set\+\_\+coefficient\+\_\+vitesse} (const float \&c)
-\item 
+\begin{DoxyCompactList}\small\item\em Mutateur coefficient de vitesse. \end{DoxyCompactList}\item 
 int \hyperlink{classEnnemi_acd1d7ca00c6237863be2e6e28cd0487f}{get\+\_\+case\+\_\+x\+\_\+apparition} () const 
-\item 
+\begin{DoxyCompactList}\small\item\em Accesseur de la position horizontale initiale de l\textquotesingle{}ennemi Retourne la position horizontale initiale de l\textquotesingle{}ennemi. \end{DoxyCompactList}\item 
 int \hyperlink{classEnnemi_ac7d5c0d2d9f769270a63b8c5635aa361}{get\+\_\+case\+\_\+y\+\_\+apparition} () const 
-\item 
+\begin{DoxyCompactList}\small\item\em Accesseur de la position verticale initiale de l\textquotesingle{}ennemi Retourne la position verticale initiale de l\textquotesingle{}ennemi. \end{DoxyCompactList}\item 
 bool \hyperlink{classEnnemi_a77fd4b28c56d5880909557b2670d491f}{is\+\_\+vivant} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Accesseur de l\textquotesingle{}etat de l\textquotesingle{}ennemi Retourne l\textquotesingle{}etat de l\textquotesingle{}ennemi. \end{DoxyCompactList}\item 
 void \hyperlink{classEnnemi_a9d7ed969bc374b0bfd2cdc279e7e1cd4}{set\+\_\+mort} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Tue ennemi Met l\textquotesingle{}état de l\textquotesingle{}ennemi sur mort. \end{DoxyCompactList}\item 
 void \hyperlink{classEnnemi_a55013546576c0463a59ade8c40281a2e}{trouver\+\_\+chemin} (const \hyperlink{classCoord2D}{Coord2D} \&position\+\_\+perso)
-\item 
+\begin{DoxyCompactList}\small\item\em Gere le deplacement Deplace l\textquotesingle{}ennemi en fonction de son type d\textquotesingle{}IA. \end{DoxyCompactList}\item 
 void \hyperlink{classEnnemi_ac2d3e7120f03eac2598c0f4f0a4f90b7}{deplacer\+\_\+auto} (\hyperlink{classCoord2D}{Coord2D} pos\+\_\+perso)
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Deplace l\textquotesingle{}ennemi Procedure qui va appeler les fonctions de deplacement de l\textquotesingle{}ennemi. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{Constructor \& Destructor Documentation}
@@ -67,6 +71,10 @@ void \hyperlink{classEnnemi_ac2d3e7120f03eac2598c0f4f0a4f90b7}{deplacer\+\_\+aut
 {}
 \end{DoxyParamCaption}
 )}\hypertarget{classEnnemi_a9c5eb7ca82848b97f3dcf262fe625b3a}{}\label{classEnnemi_a9c5eb7ca82848b97f3dcf262fe625b3a}
+
+
+Constructeur par défaut Attribue les valeurs par défaut au programme. 
+
 \index{Ennemi@{Ennemi}!Ennemi@{Ennemi}}
 \index{Ennemi@{Ennemi}!Ennemi@{Ennemi}}
 \subsubsection[{\texorpdfstring{Ennemi(std\+::string ia, int case\+\_\+x\+\_\+app, int case\+\_\+y\+\_\+app)}{Ennemi(std::string ia, int case_x_app, int case_y_app)}}]{\setlength{\rightskip}{0pt plus 5cm}Ennemi\+::\+Ennemi (
@@ -78,6 +86,19 @@ void \hyperlink{classEnnemi_ac2d3e7120f03eac2598c0f4f0a4f90b7}{deplacer\+\_\+aut
 )}\hypertarget{classEnnemi_a1c5db79ea2fadc4d08654f892fb913b3}{}\label{classEnnemi_a1c5db79ea2fadc4d08654f892fb913b3}
 
 
+Constructeur avec parametres Construit l\textquotesingle{}entité avec une case d\textquotesingle{}apparition et un type d\textquotesingle{}IA. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em ia} & \+: type d\textquotesingle{}IA \\
+\hline
+\mbox{\tt in}  & {\em case\+\_\+x\+\_\+app} & \+: coordonnée x de la case d\textquotesingle{}apparition \\
+\hline
+\mbox{\tt in}  & {\em case\+\_\+y\+\_\+app} & \+: coordonnée y de la case d\textquotesingle{}apparition \\
+\hline
+\end{DoxyParams}
+
+
 \subsection{Member Function Documentation}
 \index{Ennemi@{Ennemi}!deplacer\+\_\+auto@{deplacer\+\_\+auto}}
 \index{deplacer\+\_\+auto@{deplacer\+\_\+auto}!Ennemi@{Ennemi}}
@@ -86,6 +107,15 @@ void \hyperlink{classEnnemi_ac2d3e7120f03eac2598c0f4f0a4f90b7}{deplacer\+\_\+aut
 \item[{{\bf Coord2D}}]{pos\+\_\+perso}
 \end{DoxyParamCaption}
 )}\hypertarget{classEnnemi_ac2d3e7120f03eac2598c0f4f0a4f90b7}{}\label{classEnnemi_ac2d3e7120f03eac2598c0f4f0a4f90b7}
+
+
+Deplace l\textquotesingle{}ennemi Procedure qui va appeler les fonctions de deplacement de l\textquotesingle{}ennemi. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pos\+\_\+perso} & \+: position du personnage \\
+\hline
+\end{DoxyParams}
 \index{Ennemi@{Ennemi}!get\+\_\+angle\+\_\+perso@{get\+\_\+angle\+\_\+perso}}
 \index{get\+\_\+angle\+\_\+perso@{get\+\_\+angle\+\_\+perso}!Ennemi@{Ennemi}}
 \subsubsection[{\texorpdfstring{get\+\_\+angle\+\_\+perso(const Coord2\+D \&pos\+\_\+perso) const }{get_angle_perso(const Coord2D &pos_perso) const }}]{\setlength{\rightskip}{0pt plus 5cm}float Ennemi\+::get\+\_\+angle\+\_\+perso (
@@ -93,6 +123,13 @@ void \hyperlink{classEnnemi_ac2d3e7120f03eac2598c0f4f0a4f90b7}{deplacer\+\_\+aut
 \item[{const {\bf Coord2D} \&}]{pos\+\_\+perso}
 \end{DoxyParamCaption}
 ) const}\hypertarget{classEnnemi_a5730071888e4df7de2f9fb76860e0ebf}{}\label{classEnnemi_a5730071888e4df7de2f9fb76860e0ebf}
+
+
+Angle mouvement chasseur Retourne l\textquotesingle{}angle entre le personnage à chasser et l\textquotesingle{}ennemi. 
+
+\begin{DoxyReturn}{Returns}
+angle entre personnage et ennemi 
+\end{DoxyReturn}
 \index{Ennemi@{Ennemi}!get\+\_\+case\+\_\+x\+\_\+apparition@{get\+\_\+case\+\_\+x\+\_\+apparition}}
 \index{get\+\_\+case\+\_\+x\+\_\+apparition@{get\+\_\+case\+\_\+x\+\_\+apparition}!Ennemi@{Ennemi}}
 \subsubsection[{\texorpdfstring{get\+\_\+case\+\_\+x\+\_\+apparition() const }{get_case_x_apparition() const }}]{\setlength{\rightskip}{0pt plus 5cm}int Ennemi\+::get\+\_\+case\+\_\+x\+\_\+apparition (
@@ -100,6 +137,13 @@ void \hyperlink{classEnnemi_ac2d3e7120f03eac2598c0f4f0a4f90b7}{deplacer\+\_\+aut
 {}
 \end{DoxyParamCaption}
 ) const}\hypertarget{classEnnemi_acd1d7ca00c6237863be2e6e28cd0487f}{}\label{classEnnemi_acd1d7ca00c6237863be2e6e28cd0487f}
+
+
+Accesseur de la position horizontale initiale de l\textquotesingle{}ennemi Retourne la position horizontale initiale de l\textquotesingle{}ennemi. 
+
+\begin{DoxyReturn}{Returns}
+position horizontale initiale de l\textquotesingle{}ennemi 
+\end{DoxyReturn}
 \index{Ennemi@{Ennemi}!get\+\_\+case\+\_\+y\+\_\+apparition@{get\+\_\+case\+\_\+y\+\_\+apparition}}
 \index{get\+\_\+case\+\_\+y\+\_\+apparition@{get\+\_\+case\+\_\+y\+\_\+apparition}!Ennemi@{Ennemi}}
 \subsubsection[{\texorpdfstring{get\+\_\+case\+\_\+y\+\_\+apparition() const }{get_case_y_apparition() const }}]{\setlength{\rightskip}{0pt plus 5cm}int Ennemi\+::get\+\_\+case\+\_\+y\+\_\+apparition (
@@ -107,6 +151,13 @@ void \hyperlink{classEnnemi_ac2d3e7120f03eac2598c0f4f0a4f90b7}{deplacer\+\_\+aut
 {}
 \end{DoxyParamCaption}
 ) const}\hypertarget{classEnnemi_ac7d5c0d2d9f769270a63b8c5635aa361}{}\label{classEnnemi_ac7d5c0d2d9f769270a63b8c5635aa361}
+
+
+Accesseur de la position verticale initiale de l\textquotesingle{}ennemi Retourne la position verticale initiale de l\textquotesingle{}ennemi. 
+
+\begin{DoxyReturn}{Returns}
+position verticale initiale de l\textquotesingle{}ennemi 
+\end{DoxyReturn}
 \index{Ennemi@{Ennemi}!get\+\_\+coefficient\+\_\+vitesse@{get\+\_\+coefficient\+\_\+vitesse}}
 \index{get\+\_\+coefficient\+\_\+vitesse@{get\+\_\+coefficient\+\_\+vitesse}!Ennemi@{Ennemi}}
 \subsubsection[{\texorpdfstring{get\+\_\+coefficient\+\_\+vitesse() const }{get_coefficient_vitesse() const }}]{\setlength{\rightskip}{0pt plus 5cm}float Ennemi\+::get\+\_\+coefficient\+\_\+vitesse (
@@ -114,13 +165,41 @@ void \hyperlink{classEnnemi_ac2d3e7120f03eac2598c0f4f0a4f90b7}{deplacer\+\_\+aut
 {}
 \end{DoxyParamCaption}
 ) const}\hypertarget{classEnnemi_ab2e641b1ee0cd88ecf48024ffb526875}{}\label{classEnnemi_ab2e641b1ee0cd88ecf48024ffb526875}
-\index{Ennemi@{Ennemi}!get\+\_\+orientation@{get\+\_\+orientation}}
-\index{get\+\_\+orientation@{get\+\_\+orientation}!Ennemi@{Ennemi}}
-\subsubsection[{\texorpdfstring{get\+\_\+orientation() const }{get_orientation() const }}]{\setlength{\rightskip}{0pt plus 5cm}{\bf VecteurM} Ennemi\+::get\+\_\+orientation (
+
+
+Accesseur du coefficient de vitesse Retourne le coefficient de vitesse. 
+
+\begin{DoxyReturn}{Returns}
+coefficient de vitesse 
+\end{DoxyReturn}
+\index{Ennemi@{Ennemi}!get\+\_\+deplacement@{get\+\_\+deplacement}}
+\index{get\+\_\+deplacement@{get\+\_\+deplacement}!Ennemi@{Ennemi}}
+\subsubsection[{\texorpdfstring{get\+\_\+deplacement() const }{get_deplacement() const }}]{\setlength{\rightskip}{0pt plus 5cm}{\bf VecteurM} Ennemi\+::get\+\_\+deplacement (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
-) const}\hypertarget{classEnnemi_a85a0cd0d1b81d655d270d21ca394bfb3}{}\label{classEnnemi_a85a0cd0d1b81d655d270d21ca394bfb3}
+) const}\hypertarget{classEnnemi_abcd5a4f815be626c53520bb2be6acde6}{}\label{classEnnemi_abcd5a4f815be626c53520bb2be6acde6}
+
+
+Accesseur du deplacement Retourne le deplacement de l\textquotesingle{}ennemi. 
+
+\begin{DoxyReturn}{Returns}
+deplacement actuel 
+\end{DoxyReturn}
+\index{Ennemi@{Ennemi}!get\+\_\+orientation@{get\+\_\+orientation}}
+\index{get\+\_\+orientation@{get\+\_\+orientation}!Ennemi@{Ennemi}}
+\subsubsection[{\texorpdfstring{get\+\_\+orientation() const }{get_orientation() const }}]{\setlength{\rightskip}{0pt plus 5cm}float Ennemi\+::get\+\_\+orientation (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\hypertarget{classEnnemi_a3b3de2dd953d4e7f0dfd9d75ae17ffe5}{}\label{classEnnemi_a3b3de2dd953d4e7f0dfd9d75ae17ffe5}
+
+
+Accesseur de l\textquotesingle{}orientation Retourne l\textquotesingle{}orientation. 
+
+\begin{DoxyReturn}{Returns}
+orientation 
+\end{DoxyReturn}
 \index{Ennemi@{Ennemi}!get\+\_\+orientation\+\_\+degre@{get\+\_\+orientation\+\_\+degre}}
 \index{get\+\_\+orientation\+\_\+degre@{get\+\_\+orientation\+\_\+degre}!Ennemi@{Ennemi}}
 \subsubsection[{\texorpdfstring{get\+\_\+orientation\+\_\+degre() const }{get_orientation_degre() const }}]{\setlength{\rightskip}{0pt plus 5cm}float Ennemi\+::get\+\_\+orientation\+\_\+degre (
@@ -128,6 +207,13 @@ void \hyperlink{classEnnemi_ac2d3e7120f03eac2598c0f4f0a4f90b7}{deplacer\+\_\+aut
 {}
 \end{DoxyParamCaption}
 ) const}\hypertarget{classEnnemi_a7dcf648950daa2d9e3e78258b2b09453}{}\label{classEnnemi_a7dcf648950daa2d9e3e78258b2b09453}
+
+
+Accesseur de l\textquotesingle{}orientation de l\textquotesingle{}ennemi Retourne l\textquotesingle{}orientation de l\textquotesingle{}ennemi. 
+
+\begin{DoxyReturn}{Returns}
+orientation de l\textquotesingle{}ennemi 
+\end{DoxyReturn}
 T\+O\+DO T\+O\+DO T\+O\+DO T\+O\+DO T\+O\+DO T\+O\+DO T\+O\+DO \index{Ennemi@{Ennemi}!get\+\_\+pos\+\_\+x@{get\+\_\+pos\+\_\+x}}
 \index{get\+\_\+pos\+\_\+x@{get\+\_\+pos\+\_\+x}!Ennemi@{Ennemi}}
 \subsubsection[{\texorpdfstring{get\+\_\+pos\+\_\+x() const }{get_pos_x() const }}]{\setlength{\rightskip}{0pt plus 5cm}float Ennemi\+::get\+\_\+pos\+\_\+x (
@@ -135,6 +221,13 @@ T\+O\+DO T\+O\+DO T\+O\+DO T\+O\+DO T\+O\+DO T\+O\+DO T\+O\+DO \index{Ennemi@{En
 {}
 \end{DoxyParamCaption}
 ) const}\hypertarget{classEnnemi_a6445344d697bce634c1d7ed6958c7f44}{}\label{classEnnemi_a6445344d697bce634c1d7ed6958c7f44}
+
+
+Accesseur de la position horizontale de l\textquotesingle{}ennemi Retourne la position horizontale de l\textquotesingle{}ennemi. 
+
+\begin{DoxyReturn}{Returns}
+position horizontale de l\textquotesingle{}ennemi 
+\end{DoxyReturn}
 \index{Ennemi@{Ennemi}!get\+\_\+pos\+\_\+y@{get\+\_\+pos\+\_\+y}}
 \index{get\+\_\+pos\+\_\+y@{get\+\_\+pos\+\_\+y}!Ennemi@{Ennemi}}
 \subsubsection[{\texorpdfstring{get\+\_\+pos\+\_\+y() const }{get_pos_y() const }}]{\setlength{\rightskip}{0pt plus 5cm}float Ennemi\+::get\+\_\+pos\+\_\+y (
@@ -142,6 +235,13 @@ T\+O\+DO T\+O\+DO T\+O\+DO T\+O\+DO T\+O\+DO T\+O\+DO T\+O\+DO \index{Ennemi@{En
 {}
 \end{DoxyParamCaption}
 ) const}\hypertarget{classEnnemi_a431eb6e3f612218c4c10f97aba669596}{}\label{classEnnemi_a431eb6e3f612218c4c10f97aba669596}
+
+
+Accesseur de la position verticale de l\textquotesingle{}ennemi Retourne la position verticale de l\textquotesingle{}ennemi. 
+
+\begin{DoxyReturn}{Returns}
+position verticale de l\textquotesingle{}ennemi 
+\end{DoxyReturn}
 \index{Ennemi@{Ennemi}!get\+\_\+position@{get\+\_\+position}}
 \index{get\+\_\+position@{get\+\_\+position}!Ennemi@{Ennemi}}
 \subsubsection[{\texorpdfstring{get\+\_\+position() const }{get_position() const }}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Coord2D} Ennemi\+::get\+\_\+position (
@@ -149,6 +249,13 @@ T\+O\+DO T\+O\+DO T\+O\+DO T\+O\+DO T\+O\+DO T\+O\+DO T\+O\+DO \index{Ennemi@{En
 {}
 \end{DoxyParamCaption}
 ) const}\hypertarget{classEnnemi_a928341b6737ceb7a4469a478b3504fc2}{}\label{classEnnemi_a928341b6737ceb7a4469a478b3504fc2}
+
+
+Accesseur de la position Retourne la position de l\textquotesingle{}ennemi. 
+
+\begin{DoxyReturn}{Returns}
+position actuelle 
+\end{DoxyReturn}
 \index{Ennemi@{Ennemi}!get\+\_\+pv\+\_\+actuel@{get\+\_\+pv\+\_\+actuel}}
 \index{get\+\_\+pv\+\_\+actuel@{get\+\_\+pv\+\_\+actuel}!Ennemi@{Ennemi}}
 \subsubsection[{\texorpdfstring{get\+\_\+pv\+\_\+actuel() const }{get_pv_actuel() const }}]{\setlength{\rightskip}{0pt plus 5cm}float Ennemi\+::get\+\_\+pv\+\_\+actuel (
@@ -156,13 +263,27 @@ T\+O\+DO T\+O\+DO T\+O\+DO T\+O\+DO T\+O\+DO T\+O\+DO T\+O\+DO \index{Ennemi@{En
 {}
 \end{DoxyParamCaption}
 ) const}\hypertarget{classEnnemi_a357d1286fb7abff5686efa371ce666d0}{}\label{classEnnemi_a357d1286fb7abff5686efa371ce666d0}
+
+
+Accesseur du nombre de points de vie actuel Retourne le nombre de points de vie actuel. 
+
+\begin{DoxyReturn}{Returns}
+nombre de points de vie actuel 
+\end{DoxyReturn}
 \index{Ennemi@{Ennemi}!get\+\_\+taille@{get\+\_\+taille}}
 \index{get\+\_\+taille@{get\+\_\+taille}!Ennemi@{Ennemi}}
-\subsubsection[{\texorpdfstring{get\+\_\+taille() const }{get_taille() const }}]{\setlength{\rightskip}{0pt plus 5cm}int Ennemi\+::get\+\_\+taille (
+\subsubsection[{\texorpdfstring{get\+\_\+taille() const }{get_taille() const }}]{\setlength{\rightskip}{0pt plus 5cm}float Ennemi\+::get\+\_\+taille (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
-) const}\hypertarget{classEnnemi_ac7cde57e6d177a290eab0f68708a6624}{}\label{classEnnemi_ac7cde57e6d177a290eab0f68708a6624}
+) const}\hypertarget{classEnnemi_aa31b3a4978779163dd89f701510968c4}{}\label{classEnnemi_aa31b3a4978779163dd89f701510968c4}
+
+
+Accesseur de la taille Retourne la taille. 
+
+\begin{DoxyReturn}{Returns}
+taille 
+\end{DoxyReturn}
 \index{Ennemi@{Ennemi}!infliger\+\_\+degats@{infliger\+\_\+degats}}
 \index{infliger\+\_\+degats@{infliger\+\_\+degats}!Ennemi@{Ennemi}}
 \subsubsection[{\texorpdfstring{infliger\+\_\+degats(float degats)}{infliger_degats(float degats)}}]{\setlength{\rightskip}{0pt plus 5cm}void Ennemi\+::infliger\+\_\+degats (
@@ -170,6 +291,15 @@ T\+O\+DO T\+O\+DO T\+O\+DO T\+O\+DO T\+O\+DO T\+O\+DO T\+O\+DO \index{Ennemi@{En
 \item[{float}]{degats}
 \end{DoxyParamCaption}
 )}\hypertarget{classEnnemi_ad49d449d20449273e366be5b89654ebd}{}\label{classEnnemi_ad49d449d20449273e366be5b89654ebd}
+
+
+infliger \+\_\+degats Procédure qui retire le nombre de points de vie si l\textquotesingle{}ennemi subit un coup 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em degat} & \+: nombre de degat subit \\
+\hline
+\end{DoxyParams}
 \index{Ennemi@{Ennemi}!is\+\_\+vivant@{is\+\_\+vivant}}
 \index{is\+\_\+vivant@{is\+\_\+vivant}!Ennemi@{Ennemi}}
 \subsubsection[{\texorpdfstring{is\+\_\+vivant()}{is_vivant()}}]{\setlength{\rightskip}{0pt plus 5cm}bool Ennemi\+::is\+\_\+vivant (
@@ -177,6 +307,13 @@ T\+O\+DO T\+O\+DO T\+O\+DO T\+O\+DO T\+O\+DO T\+O\+DO T\+O\+DO \index{Ennemi@{En
 {}
 \end{DoxyParamCaption}
 )}\hypertarget{classEnnemi_a77fd4b28c56d5880909557b2670d491f}{}\label{classEnnemi_a77fd4b28c56d5880909557b2670d491f}
+
+
+Accesseur de l\textquotesingle{}etat de l\textquotesingle{}ennemi Retourne l\textquotesingle{}etat de l\textquotesingle{}ennemi. 
+
+\begin{DoxyReturn}{Returns}
+{\itshape vivant} 
+\end{DoxyReturn}
 \index{Ennemi@{Ennemi}!revenir\+\_\+ancienne\+\_\+position@{revenir\+\_\+ancienne\+\_\+position}}
 \index{revenir\+\_\+ancienne\+\_\+position@{revenir\+\_\+ancienne\+\_\+position}!Ennemi@{Ennemi}}
 \subsubsection[{\texorpdfstring{revenir\+\_\+ancienne\+\_\+position()}{revenir_ancienne_position()}}]{\setlength{\rightskip}{0pt plus 5cm}void Ennemi\+::revenir\+\_\+ancienne\+\_\+position (
@@ -184,6 +321,10 @@ T\+O\+DO T\+O\+DO T\+O\+DO T\+O\+DO T\+O\+DO T\+O\+DO T\+O\+DO \index{Ennemi@{En
 {}
 \end{DoxyParamCaption}
 )}\hypertarget{classEnnemi_a7211dfcdacfa996833a611fd4aa9fff1}{}\label{classEnnemi_a7211dfcdacfa996833a611fd4aa9fff1}
+
+
+Revient à l\textquotesingle{}ancienne position Permet de définir l\textquotesingle{}ennemi à l\textquotesingle{}ancienne position à laquelle il était grâce à {\itshape position\+\_\+old}. 
+
 \index{Ennemi@{Ennemi}!set\+\_\+coefficient\+\_\+vitesse@{set\+\_\+coefficient\+\_\+vitesse}}
 \index{set\+\_\+coefficient\+\_\+vitesse@{set\+\_\+coefficient\+\_\+vitesse}!Ennemi@{Ennemi}}
 \subsubsection[{\texorpdfstring{set\+\_\+coefficient\+\_\+vitesse(const float \&c)}{set_coefficient_vitesse(const float &c)}}]{\setlength{\rightskip}{0pt plus 5cm}void Ennemi\+::set\+\_\+coefficient\+\_\+vitesse (
@@ -191,6 +332,15 @@ T\+O\+DO T\+O\+DO T\+O\+DO T\+O\+DO T\+O\+DO T\+O\+DO T\+O\+DO \index{Ennemi@{En
 \item[{const float \&}]{c}
 \end{DoxyParamCaption}
 )}\hypertarget{classEnnemi_aa8013956da11a111c71e635409af8b3e}{}\label{classEnnemi_aa8013956da11a111c71e635409af8b3e}
+
+
+Mutateur coefficient de vitesse. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em c} & \+: coefficient de vitesse \\
+\hline
+\end{DoxyParams}
 \index{Ennemi@{Ennemi}!set\+\_\+deplacement@{set\+\_\+deplacement}}
 \index{set\+\_\+deplacement@{set\+\_\+deplacement}!Ennemi@{Ennemi}}
 \subsubsection[{\texorpdfstring{set\+\_\+deplacement(const Vecteur\+M \&v)}{set_deplacement(const VecteurM &v)}}]{\setlength{\rightskip}{0pt plus 5cm}void Ennemi\+::set\+\_\+deplacement (
@@ -198,13 +348,50 @@ T\+O\+DO T\+O\+DO T\+O\+DO T\+O\+DO T\+O\+DO T\+O\+DO T\+O\+DO \index{Ennemi@{En
 \item[{const {\bf VecteurM} \&}]{v}
 \end{DoxyParamCaption}
 )}\hypertarget{classEnnemi_a554bf929e2b45455ccc9a4b6bba19e88}{}\label{classEnnemi_a554bf929e2b45455ccc9a4b6bba19e88}
-T\+O\+DO T\+O\+DO T\+O\+DO T\+O\+DO T\+O\+DO T\+O\+DO T\+O\+DO \index{Ennemi@{Ennemi}!set\+\_\+deplacement@{set\+\_\+deplacement}}
+
+
+Mutateur du deplacement. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em v} & \+: valeur du deplacement \\
+\hline
+\end{DoxyParams}
+\index{Ennemi@{Ennemi}!set\+\_\+deplacement@{set\+\_\+deplacement}}
+\index{set\+\_\+deplacement@{set\+\_\+deplacement}!Ennemi@{Ennemi}}
+\subsubsection[{\texorpdfstring{set\+\_\+deplacement(const float \&x, const float \&y)}{set_deplacement(const float &x, const float &y)}}]{\setlength{\rightskip}{0pt plus 5cm}void Ennemi\+::set\+\_\+deplacement (
+\begin{DoxyParamCaption}
+\item[{const float \&}]{x, }
+\item[{const float \&}]{y}
+\end{DoxyParamCaption}
+)}\hypertarget{classEnnemi_a4ce1825f219f0d235a4403c47ccce46b}{}\label{classEnnemi_a4ce1825f219f0d235a4403c47ccce46b}
+
+
+Mutateur du deplacement. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em x} & \+: valeur du deplacement horizontal \\
+\hline
+\mbox{\tt in}  & {\em y} & \+: valeur du deplacement vertical \\
+\hline
+\end{DoxyParams}
+\index{Ennemi@{Ennemi}!set\+\_\+deplacement@{set\+\_\+deplacement}}
 \index{set\+\_\+deplacement@{set\+\_\+deplacement}!Ennemi@{Ennemi}}
 \subsubsection[{\texorpdfstring{set\+\_\+deplacement(const Coord2\+D \&position\+\_\+perso)}{set_deplacement(const Coord2D &position_perso)}}]{\setlength{\rightskip}{0pt plus 5cm}void Ennemi\+::set\+\_\+deplacement (
 \begin{DoxyParamCaption}
 \item[{const {\bf Coord2D} \&}]{position\+\_\+perso}
 \end{DoxyParamCaption}
 )}\hypertarget{classEnnemi_a202cf059502343eb9b2dd35c7f770dcb}{}\label{classEnnemi_a202cf059502343eb9b2dd35c7f770dcb}
+
+
+Mutateur du deplacement Deplace l\textquotesingle{}ennemi en direction du personnage. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em position\+\_\+perso} & \+: position du personnage sur lequel il faut diriger l\textquotesingle{}ennemi \\
+\hline
+\end{DoxyParams}
 \index{Ennemi@{Ennemi}!set\+\_\+mort@{set\+\_\+mort}}
 \index{set\+\_\+mort@{set\+\_\+mort}!Ennemi@{Ennemi}}
 \subsubsection[{\texorpdfstring{set\+\_\+mort()}{set_mort()}}]{\setlength{\rightskip}{0pt plus 5cm}void Ennemi\+::set\+\_\+mort (
@@ -212,6 +399,10 @@ T\+O\+DO T\+O\+DO T\+O\+DO T\+O\+DO T\+O\+DO T\+O\+DO T\+O\+DO \index{Ennemi@{En
 {}
 \end{DoxyParamCaption}
 )}\hypertarget{classEnnemi_a9d7ed969bc374b0bfd2cdc279e7e1cd4}{}\label{classEnnemi_a9d7ed969bc374b0bfd2cdc279e7e1cd4}
+
+
+Tue ennemi Met l\textquotesingle{}état de l\textquotesingle{}ennemi sur mort. 
+
 \index{Ennemi@{Ennemi}!set\+\_\+orientation@{set\+\_\+orientation}}
 \index{set\+\_\+orientation@{set\+\_\+orientation}!Ennemi@{Ennemi}}
 \subsubsection[{\texorpdfstring{set\+\_\+orientation(const Vecteur\+M \&v)}{set_orientation(const VecteurM &v)}}]{\setlength{\rightskip}{0pt plus 5cm}void Ennemi\+::set\+\_\+orientation (
@@ -219,6 +410,15 @@ T\+O\+DO T\+O\+DO T\+O\+DO T\+O\+DO T\+O\+DO T\+O\+DO T\+O\+DO \index{Ennemi@{En
 \item[{const {\bf VecteurM} \&}]{v}
 \end{DoxyParamCaption}
 )}\hypertarget{classEnnemi_ad9b67277a7afb7510b1d72c9b771b52a}{}\label{classEnnemi_ad9b67277a7afb7510b1d72c9b771b52a}
+
+
+Mutateur de l\textquotesingle{}orientation Oriente l\textquotesingle{}ennemi en fonction. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em v} & \+: orientation souhaitée \\
+\hline
+\end{DoxyParams}
 \index{Ennemi@{Ennemi}!set\+\_\+position@{set\+\_\+position}}
 \index{set\+\_\+position@{set\+\_\+position}!Ennemi@{Ennemi}}
 \subsubsection[{\texorpdfstring{set\+\_\+position(const int \&x, const int \&y)}{set_position(const int &x, const int &y)}}]{\setlength{\rightskip}{0pt plus 5cm}void Ennemi\+::set\+\_\+position (
@@ -227,6 +427,17 @@ T\+O\+DO T\+O\+DO T\+O\+DO T\+O\+DO T\+O\+DO T\+O\+DO T\+O\+DO \index{Ennemi@{En
 \item[{const int \&}]{y}
 \end{DoxyParamCaption}
 )}\hypertarget{classEnnemi_a2b3b26369645a3c2946f891fcea4ed48}{}\label{classEnnemi_a2b3b26369645a3c2946f891fcea4ed48}
+
+
+Mutateur de la position. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em x} & \+: coordonnée horizontale de la position \\
+\hline
+\mbox{\tt in}  & {\em y} & \+: coordonnée verticale de la position \\
+\hline
+\end{DoxyParams}
 \index{Ennemi@{Ennemi}!soigner@{soigner}}
 \index{soigner@{soigner}!Ennemi@{Ennemi}}
 \subsubsection[{\texorpdfstring{soigner(float soin)}{soigner(float soin)}}]{\setlength{\rightskip}{0pt plus 5cm}void Ennemi\+::soigner (
@@ -234,6 +445,15 @@ T\+O\+DO T\+O\+DO T\+O\+DO T\+O\+DO T\+O\+DO T\+O\+DO T\+O\+DO \index{Ennemi@{En
 \item[{float}]{soin}
 \end{DoxyParamCaption}
 )}\hypertarget{classEnnemi_abcde77d5d90b910b77bf5f66e7c4a534}{}\label{classEnnemi_abcde77d5d90b910b77bf5f66e7c4a534}
+
+
+soigner Procédure qui va permettre à l\textquotesingle{}ennemi de récupérer des points de vie 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em soin} & \+: quantité de points de vie récupéré \\
+\hline
+\end{DoxyParams}
 \index{Ennemi@{Ennemi}!trouver\+\_\+chemin@{trouver\+\_\+chemin}}
 \index{trouver\+\_\+chemin@{trouver\+\_\+chemin}!Ennemi@{Ennemi}}
 \subsubsection[{\texorpdfstring{trouver\+\_\+chemin(const Coord2\+D \&position\+\_\+perso)}{trouver_chemin(const Coord2D &position_perso)}}]{\setlength{\rightskip}{0pt plus 5cm}void Ennemi\+::trouver\+\_\+chemin (
@@ -241,6 +461,15 @@ T\+O\+DO T\+O\+DO T\+O\+DO T\+O\+DO T\+O\+DO T\+O\+DO T\+O\+DO \index{Ennemi@{En
 \item[{const {\bf Coord2D} \&}]{position\+\_\+perso}
 \end{DoxyParamCaption}
 )}\hypertarget{classEnnemi_a55013546576c0463a59ade8c40281a2e}{}\label{classEnnemi_a55013546576c0463a59ade8c40281a2e}
+
+
+Gere le deplacement Deplace l\textquotesingle{}ennemi en fonction de son type d\textquotesingle{}IA. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em position\+\_\+perso} & \+: position du personnage à chasser si l\textquotesingle{}IA en tient compte \\
+\hline
+\end{DoxyParams}
 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}

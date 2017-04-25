@@ -1,11 +1,10 @@
 #include "Arme.h"
 #include "Fichier.h"
 
-//L'instance d'Arme a un vector qui est en fait un tab dynamique de Projectile.
-//Le but est d'appeler tirer() avec la position de départ, l'angle et la vitesse
-//et que le projectile se gère ensuite tout seul en gros. tu devrais sûrement changer le
-//constructeur de Projectile, mais je ne vois pas trop comment tu utilises tes vecteurs.
-//GL HF
+/** \brief code source du module Arme
+ *
+ * \file Arme.h
+ */
 
 Arme::Arme()
 {

@@ -39,7 +39,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
-      <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
       <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
       <li><a href="files.html"><span>Files</span></a></li>
       <li>
@@ -96,10 +95,13 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a558faaa4a56df4d94c28385577bc027f"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCarteAffSFML.html#a558faaa4a56df4d94c28385577bc027f">CarteAffSFML</a> ()</td></tr>
+<tr class="memdesc:a558faaa4a56df4d94c28385577bc027f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructeur par défaut.  <a href="#a558faaa4a56df4d94c28385577bc027f">More...</a><br /></td></tr>
 <tr class="separator:a558faaa4a56df4d94c28385577bc027f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3fe8aef5419aaab6b457bfb31eac1103"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCarteAffSFML.html#a3fe8aef5419aaab6b457bfb31eac1103">init</a> (const int &amp;posX, const int &amp;posY, const int &amp;largeur, const int &amp;hauteur, const int &amp;hauteur_tex, const int &amp;largeur_tex)</td></tr>
+<tr class="memdesc:a3fe8aef5419aaab6b457bfb31eac1103"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialisation de la case Initialise la position de la case ainsi que la taille de la texture qu'elle va recevoir lors de l'affichage.  <a href="#a3fe8aef5419aaab6b457bfb31eac1103">More...</a><br /></td></tr>
 <tr class="separator:a3fe8aef5419aaab6b457bfb31eac1103"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a711ef65927e16d60425938893da1124a"><td class="memItemLeft" align="right" valign="top">sf::VertexArray&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCarteAffSFML.html#a711ef65927e16d60425938893da1124a">get_cartesallesfml</a> ()</td></tr>
+<tr class="memdesc:a711ef65927e16d60425938893da1124a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Accesseur de la case Renvoie la case (sous forme de tableau de Vertex) avec tous les paramètres précedemment initialisés  <a href="#a711ef65927e16d60425938893da1124a">More...</a><br /></td></tr>
 <tr class="separator:a711ef65927e16d60425938893da1124a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
@@ -116,6 +118,8 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Constructeur par défaut. </p>
+
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
@@ -131,6 +135,9 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Accesseur de la case Renvoie la case (sous forme de tableau de Vertex) avec tous les paramètres précedemment initialisés </p>
+<dl class="section return"><dt>Returns</dt><dd>sf::VertexArray : la case </dd></dl>
 
 </div>
 </div>
@@ -181,6 +188,19 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Initialisation de la case Initialise la position de la case ainsi que la taille de la texture qu'elle va recevoir lors de l'affichage. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">posX</td><td>const int&amp; : position horizontale du point en haut à gauche de la case </td></tr>
+    <tr><td class="paramname">posY</td><td>const int&amp; : position verticale du point en haut à gauche de la case </td></tr>
+    <tr><td class="paramname">largeur</td><td>const int&amp; : largeur de la case </td></tr>
+    <tr><td class="paramname">hauteur</td><td>const int&amp; : hauteur de la case </td></tr>
+    <tr><td class="paramname">hauteur_tex</td><td>const int&amp; : largeur de la texture de la case </td></tr>
+    <tr><td class="paramname">largeur_tex</td><td>const int&amp; : hauteur de la texture de la case </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>

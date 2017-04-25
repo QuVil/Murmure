@@ -8,21 +8,21 @@
 \begin{DoxyCompactItemize}
 \item 
 \hyperlink{classFichier_ace018349629e9c136aff5421c1e72c4f}{Fichier} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Constucteur par défaut Declare les variables et assigne les valeurs par défaut. \end{DoxyCompactList}\item 
 void \hyperlink{classFichier_a8e2a8489a8ffea882d4e0ccbb63b6db5}{creation\+\_\+index} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Creation de l\textquotesingle{}index Créé l\textquotesingle{}index de tous les fichier s de configuration. \end{DoxyCompactList}\item 
 void \hyperlink{classFichier_a066bf6c08b447e930afdd6f1bd5b36a6}{charger} (\hyperlink{classSalle}{Salle} \&s)
-\item 
+\begin{DoxyCompactList}\small\item\em Charge {\itshape \hyperlink{classSalle}{Salle}} défaut Charge la salle avec les parametres par défaut. \end{DoxyCompactList}\item 
 void \hyperlink{classFichier_a0c22388e17ed0a2915ab81e390612dbc}{charger} (\hyperlink{classSalle}{Salle} \&s, const int \&id, const int \&conf)
-\item 
+\begin{DoxyCompactList}\small\item\em Charge {\itshape \hyperlink{classSalle}{Salle}} Charge la salle avec des parametres definis. \end{DoxyCompactList}\item 
 void \hyperlink{classFichier_af8ddba9c428687f989b782ea64d9eeab}{charger} (\hyperlink{classZoneGen}{Zone\+Gen} \&z)
-\item 
+\begin{DoxyCompactList}\small\item\em Charge {\itshape \hyperlink{classZoneGen}{Zone\+Gen}} Charge le script de generation de la zone. \end{DoxyCompactList}\item 
 void \hyperlink{classFichier_a4b61b1529d46332087fd494723cebed9}{charger} (\hyperlink{classZone}{Zone} \&z)
-\item 
+\begin{DoxyCompactList}\small\item\em Charge {\itshape \hyperlink{classZone}{Zone}} défaut Charge la zone avec les parametres par défaut. \end{DoxyCompactList}\item 
 void \hyperlink{classFichier_a142312981d9a5934e431033450aed3f4}{charger} (\hyperlink{classArme}{Arme} \&a, const int \&id\+\_\+arme, const int \&nv\+\_\+arme)
-\item 
+\begin{DoxyCompactList}\small\item\em Charge {\itshape \hyperlink{classArme}{Arme}} Charge l\textquotesingle{}arme avec les parametres definis. \end{DoxyCompactList}\item 
 void \hyperlink{classFichier_a24944040e870bdd87d5cd2a70dbf44e4}{charger} (\hyperlink{classPerso}{Perso} \&p, const std\+::string \&n)
-\item 
+\begin{DoxyCompactList}\small\item\em Charge {\itshape \hyperlink{classPerso}{Perso}} défaut Charge le personnage avec un nom défini. \end{DoxyCompactList}\item 
 void \hyperlink{classFichier_aed5c72a3a8289e51f6724dcd683fbcbd}{charger} (\hyperlink{classModele}{Modele} \&m, std\+::string nom)
 \item 
 void \hyperlink{classFichier_a5dd17206285977ead14f689d085af32c}{charger} (\hyperlink{classModeleSalle}{Modele\+Salle} \&m, std\+::string nom)
@@ -39,6 +39,10 @@ void \hyperlink{classFichier_a5dd17206285977ead14f689d085af32c}{charger} (\hyper
 )}\hypertarget{classFichier_ace018349629e9c136aff5421c1e72c4f}{}\label{classFichier_ace018349629e9c136aff5421c1e72c4f}
 
 
+Constucteur par défaut Declare les variables et assigne les valeurs par défaut. 
+
+
+
 \subsection{Member Function Documentation}
 \index{Fichier@{Fichier}!charger@{charger}}
 \index{charger@{charger}!Fichier@{Fichier}}
@@ -47,6 +51,15 @@ void \hyperlink{classFichier_a5dd17206285977ead14f689d085af32c}{charger} (\hyper
 \item[{{\bf Salle} \&}]{s}
 \end{DoxyParamCaption}
 )}\hypertarget{classFichier_a066bf6c08b447e930afdd6f1bd5b36a6}{}\label{classFichier_a066bf6c08b447e930afdd6f1bd5b36a6}
+
+
+Charge {\itshape \hyperlink{classSalle}{Salle}} défaut Charge la salle avec les parametres par défaut. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in,out}  & {\em s} & \+: salle à implementer \\
+\hline
+\end{DoxyParams}
 \index{Fichier@{Fichier}!charger@{charger}}
 \index{charger@{charger}!Fichier@{Fichier}}
 \subsubsection[{\texorpdfstring{charger(\+Salle \&s, const int \&id, const int \&conf)}{charger(Salle &s, const int &id, const int &conf)}}]{\setlength{\rightskip}{0pt plus 5cm}void Fichier\+::charger (
@@ -56,6 +69,15 @@ void \hyperlink{classFichier_a5dd17206285977ead14f689d085af32c}{charger} (\hyper
 \item[{const int \&}]{conf}
 \end{DoxyParamCaption}
 )}\hypertarget{classFichier_a0c22388e17ed0a2915ab81e390612dbc}{}\label{classFichier_a0c22388e17ed0a2915ab81e390612dbc}
+
+
+Charge {\itshape \hyperlink{classSalle}{Salle}} Charge la salle avec des parametres definis. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in,out}  & {\em s} & \+: salle à implementer \\
+\hline
+\end{DoxyParams}
 \index{Fichier@{Fichier}!charger@{charger}}
 \index{charger@{charger}!Fichier@{Fichier}}
 \subsubsection[{\texorpdfstring{charger(\+Zone\+Gen \&z)}{charger(ZoneGen &z)}}]{\setlength{\rightskip}{0pt plus 5cm}void Fichier\+::charger (
@@ -63,6 +85,19 @@ void \hyperlink{classFichier_a5dd17206285977ead14f689d085af32c}{charger} (\hyper
 \item[{{\bf Zone\+Gen} \&}]{z}
 \end{DoxyParamCaption}
 )}\hypertarget{classFichier_af8ddba9c428687f989b782ea64d9eeab}{}\label{classFichier_af8ddba9c428687f989b782ea64d9eeab}
+
+
+Charge {\itshape \hyperlink{classZoneGen}{Zone\+Gen}} Charge le script de generation de la zone. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in,out}  & {\em z} & \+: script à charger \\
+\hline
+\mbox{\tt in}  & {\em id} & \+: identifiant de la salle \\
+\hline
+\mbox{\tt in}  & {\em conf} & \+: configuration de la salle \\
+\hline
+\end{DoxyParams}
 \index{Fichier@{Fichier}!charger@{charger}}
 \index{charger@{charger}!Fichier@{Fichier}}
 \subsubsection[{\texorpdfstring{charger(\+Zone \&z)}{charger(Zone &z)}}]{\setlength{\rightskip}{0pt plus 5cm}void Fichier\+::charger (
@@ -70,6 +105,15 @@ void \hyperlink{classFichier_a5dd17206285977ead14f689d085af32c}{charger} (\hyper
 \item[{{\bf Zone} \&}]{z}
 \end{DoxyParamCaption}
 )}\hypertarget{classFichier_a4b61b1529d46332087fd494723cebed9}{}\label{classFichier_a4b61b1529d46332087fd494723cebed9}
+
+
+Charge {\itshape \hyperlink{classZone}{Zone}} défaut Charge la zone avec les parametres par défaut. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in,out}  & {\em z} & \+: zone à implementer \\
+\hline
+\end{DoxyParams}
 \index{Fichier@{Fichier}!charger@{charger}}
 \index{charger@{charger}!Fichier@{Fichier}}
 \subsubsection[{\texorpdfstring{charger(\+Arme \&a, const int \&id\+\_\+arme, const int \&nv\+\_\+arme)}{charger(Arme &a, const int &id_arme, const int &nv_arme)}}]{\setlength{\rightskip}{0pt plus 5cm}void Fichier\+::charger (
@@ -79,6 +123,19 @@ void \hyperlink{classFichier_a5dd17206285977ead14f689d085af32c}{charger} (\hyper
 \item[{const int \&}]{nv\+\_\+arme}
 \end{DoxyParamCaption}
 )}\hypertarget{classFichier_a142312981d9a5934e431033450aed3f4}{}\label{classFichier_a142312981d9a5934e431033450aed3f4}
+
+
+Charge {\itshape \hyperlink{classArme}{Arme}} Charge l\textquotesingle{}arme avec les parametres definis. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in,out}  & {\em a} & \+: arme à implementer \\
+\hline
+\mbox{\tt in}  & {\em id\+\_\+arme} & \+: indetifiant de l\textquotesingle{}arme à charger \\
+\hline
+\mbox{\tt in}  & {\em nv\+\_\+arme} & \+: niveau de l\textquotesingle{}arme à charger\\
+\hline
+\end{DoxyParams}
 void \hyperlink{classFichier_a4b61b1529d46332087fd494723cebed9}{Fichier\+::charger(\+Zone \& z)} \{ Cree un chemin relatif qui pointe sur la configuration en fonction de la valeur config de la salle (par defaut 1) stringstream ss; ss $<$$<$ chemin $<$$<$ \char`\"{}\+Zone/\char`\"{} $<$$<$ z.\+get\+\_\+patterne() $<$$<$ \char`\"{}.\+cfg\char`\"{}; string path = ss.\+str();
 
 ifstream fichier((path).c\+\_\+str(), ios\+::in); assert(fichier);
@@ -95,6 +152,17 @@ fichier.\+close(); \} \index{Fichier@{Fichier}!charger@{charger}}
 \item[{const std\+::string \&}]{n}
 \end{DoxyParamCaption}
 )}\hypertarget{classFichier_a24944040e870bdd87d5cd2a70dbf44e4}{}\label{classFichier_a24944040e870bdd87d5cd2a70dbf44e4}
+
+
+Charge {\itshape \hyperlink{classPerso}{Perso}} défaut Charge le personnage avec un nom défini. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in,out}  & {\em p} & \+: personnage à implementer \\
+\hline
+\mbox{\tt in}  & {\em n} & \+: nom du personnage \\
+\hline
+\end{DoxyParams}
 \index{Fichier@{Fichier}!charger@{charger}}
 \index{charger@{charger}!Fichier@{Fichier}}
 \subsubsection[{\texorpdfstring{charger(\+Modele \&m, std\+::string nom)}{charger(Modele &m, std::string nom)}}]{\setlength{\rightskip}{0pt plus 5cm}void Fichier\+::charger (
@@ -118,6 +186,10 @@ fichier.\+close(); \} \index{Fichier@{Fichier}!charger@{charger}}
 {}
 \end{DoxyParamCaption}
 )}\hypertarget{classFichier_a8e2a8489a8ffea882d4e0ccbb63b6db5}{}\label{classFichier_a8e2a8489a8ffea882d4e0ccbb63b6db5}
+
+
+Creation de l\textquotesingle{}index Créé l\textquotesingle{}index de tous les fichier s de configuration. 
+
 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}

@@ -39,7 +39,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
-      <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
       <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
       <li><a href="files.html"><span>Files</span></a></li>
       <li>
@@ -101,12 +100,16 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a7db8de961747c56a000ccd1eb092805d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8eed6ede26a0f46267570d7e8d96c199"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classHitboxSFML.html#a8eed6ede26a0f46267570d7e8d96c199">changer_salle</a> ()</td></tr>
 <tr class="separator:a8eed6ede26a0f46267570d7e8d96c199"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0cc4573828eead922d118cf804ad2292"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classHitboxSFML.html#a0cc4573828eead922d118cf804ad2292">perso_et_salle</a> (<a class="el" href="classPersoSFML.html">PersoSFML</a> *perso, <a class="el" href="classCaseSFML.html">CaseSFML</a> *casesalle, const int &amp;taille_case, const int &amp;x0, const int &amp;y0)</td></tr>
-<tr class="separator:a0cc4573828eead922d118cf804ad2292"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8ee11312dc168d63978e355af4c56af5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classHitboxSFML.html#a8ee11312dc168d63978e355af4c56af5">perso_et_salle</a> (<a class="el" href="classPersoSFML.html">PersoSFML</a> *perso, <a class="el" href="classCaseSFML.html">CaseSFML</a> *casesalle, <a class="el" href="classJeu.html">Jeu</a> *jeu, const int &amp;taille_case, const int &amp;x0, const int &amp;y0)</td></tr>
+<tr class="separator:a8ee11312dc168d63978e355af4c56af5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acb3e6f26e67ef2644103500e51909d42"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classHitboxSFML.html#acb3e6f26e67ef2644103500e51909d42">projectiles_et_salle</a> (std::list&lt; <a class="el" href="classProjectileSFML.html">ProjectileSFML</a> * &gt; *projectiles, <a class="el" href="classCaseSFML.html">CaseSFML</a> *casesalle)</td></tr>
 <tr class="separator:acb3e6f26e67ef2644103500e51909d42"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2fd60880489e78abd5195c17681a1832"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classHitboxSFML.html#a2fd60880489e78abd5195c17681a1832">projectiles_et_ennemis</a> (std::list&lt; <a class="el" href="classProjectileSFML.html">ProjectileSFML</a> * &gt; *projectiles, std::list&lt; <a class="el" href="classEnnemiSFML.html">EnnemiSFML</a> * &gt; *ennemis)</td></tr>
 <tr class="separator:a2fd60880489e78abd5195c17681a1832"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a74a01b2e9be2b80826e41e9501df9628"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classHitboxSFML.html#a74a01b2e9be2b80826e41e9501df9628">ennemis_et_salle</a> (std::list&lt; <a class="el" href="classEnnemiSFML.html">EnnemiSFML</a> * &gt; *ennemis, <a class="el" href="classCaseSFML.html">CaseSFML</a> *casesalle, const int &amp;taille_case, const int &amp;x0, const int &amp;y0)</td></tr>
+<tr class="separator:a74a01b2e9be2b80826e41e9501df9628"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0a220e858ed3936822f7d5dccd0ab0f6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classHitboxSFML.html#a0a220e858ed3936822f7d5dccd0ab0f6">perso_et_clef</a> (<a class="el" href="classPersoSFML.html">PersoSFML</a> *perso, <a class="el" href="classClefSFML.html">ClefSFML</a> *clef)</td></tr>
+<tr class="separator:a0a220e858ed3936822f7d5dccd0ab0f6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="aafccc1508ac80fe745810f2d9f4c10b1"></a>
@@ -155,7 +158,77 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a0cc4573828eead922d118cf804ad2292"></a>
+<a class="anchor" id="a74a01b2e9be2b80826e41e9501df9628"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void HitboxSFML::ennemis_et_salle </td>
+          <td>(</td>
+          <td class="paramtype">std::list&lt; <a class="el" href="classEnnemiSFML.html">EnnemiSFML</a> * &gt; *&#160;</td>
+          <td class="paramname"><em>ennemis</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classCaseSFML.html">CaseSFML</a> *&#160;</td>
+          <td class="paramname"><em>casesalle</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int &amp;&#160;</td>
+          <td class="paramname"><em>taille_case</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int &amp;&#160;</td>
+          <td class="paramname"><em>x0</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int &amp;&#160;</td>
+          <td class="paramname"><em>y0</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a0a220e858ed3936822f7d5dccd0ab0f6"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void HitboxSFML::perso_et_clef </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classPersoSFML.html">PersoSFML</a> *&#160;</td>
+          <td class="paramname"><em>perso</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classClefSFML.html">ClefSFML</a> *&#160;</td>
+          <td class="paramname"><em>clef</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a8ee11312dc168d63978e355af4c56af5"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -170,6 +243,12 @@ Public Member Functions</h2></td></tr>
           <td></td>
           <td class="paramtype"><a class="el" href="classCaseSFML.html">CaseSFML</a> *&#160;</td>
           <td class="paramname"><em>casesalle</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classJeu.html">Jeu</a> *&#160;</td>
+          <td class="paramname"><em>jeu</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>

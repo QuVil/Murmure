@@ -6,12 +6,12 @@ digraph "/home/quentin/Murmure/src/sfml/EnnemiSFML.h"
   Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node2 [label="SFML/Graphics.hpp",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled"];
   Node1 -> Node3 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node3 [label="Ennemi.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$Ennemi_8h.html"];
+  Node3 [label="Ennemi.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$Ennemi_8h.html",tooltip="Header du module Ennemi. "];
   Node3 -> Node4 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node4 [label="string",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled"];
   Node3 -> Node5 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node5 [label="VecteurM.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$VecteurM_8h.html"];
+  Node5 [label="VecteurM.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$VecteurM_8h.html",tooltip="Module de Vecteur en 2 dimensions appliqué à Murmure. "];
   Node3 -> Node6 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node6 [label="Coord2D.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$Coord2D_8h.html"];
+  Node6 [label="Coord2D.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$Coord2D_8h.html",tooltip="module qui gere des points sur un plan en 2 dimensions "];
   Node6 -> Node5 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
 }
