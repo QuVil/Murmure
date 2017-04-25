@@ -83,6 +83,7 @@ private:
     Jeu jeu;
 
     void recupere_mouvements();
+    void recupere_mouvements_menu();
     void recupere_collisions();
     void avancer_jeu();
 
@@ -96,6 +97,7 @@ private:
     void init_ennemiSFML();
     void init_clefSFML();
     void init_texte();
+    void init_menuSFML();
 
     void dessiner_curseur();
     void dessiner_salle();

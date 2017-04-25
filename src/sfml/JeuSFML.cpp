@@ -83,6 +83,8 @@ void JeuSFML::init()
     textures.charger_texture_projectile();
     textures.charger_texture_ennemi();
     textures.charger_texture_clef();
+    textures.charger_menu_principal();
+    textures.charger_curseur_menu();
     //textures.charger_texture_curseur();
     init_caseSFML();
     init_persoSFML();
@@ -177,6 +179,12 @@ void JeuSFML::init_persoSFML()
     //jeu.definir_position_perso(jeu.get_perso().get_pos_x(), jeu.get_perso().get_pos_y());
 }
 
+void JeuSFML::init_menuSFML()
+{
+    menusfml.init_menu(textures.retourne_texture_menu(), scale_salle);
+    menusfml.init_curseur_menu(textures.retourne_texture_curseur_menu(), scale_salle);
+}
+
 void JeuSFML::SFML_boucle()
 {
     int mode = 1;
@@ -257,6 +265,7 @@ void JeuSFML::afficher(const int& mode)
         dessiner_carte();
         break;
     case 3:
+        recupere_mouvements_menu();
         //dessiner_menu();
     default:
         dessiner_salle();
@@ -380,6 +389,12 @@ void JeuSFML::dessiner_clef()
             buffer.draw(clefsfml.get_clefsfml());
         }
     }
+}
+
+void JeuSFML::dessiner_menu()
+{
+    buffer.draw(menusfml.get_menusfml());
+    buffer.draw(menusfml.get_curseur_menu());
 }
 
 /*
@@ -684,3 +699,29 @@ void JeuSFML::recupere_mouvements()
         timer_arme1_perso.restart();
     }
 }
+
+void JeuSFML::recupere_mouvements_menu()
+{
+    char direction_mouv;
+    if (timer_devmode_salles.getElapsedTime().asSeconds() >= 0.3)
+    {
+        if(sf::Joystick::isConnected(0))
+        {
+            float x = sf::Joystick::getAxisPosition(0, sf::Joystick::X);
+            if(x <= -80) {direction_mouv = 'g';}
+            else if(x >= 80) {direction_mouv = 'd';}
+            float y = sf::Joystick::getAxisPosition(0, sf::Joystick::Y);
+            if(y <= -80) {direction_mouv = 'b';}
+            else if(y >= 80) {direction_mouv = 'h';}
+        }
+        else
+        {
+            if(sf::Keyboard::isKeyPressed(sf::Keyboard::Q) || sf::Keyboard::isKeyPressed(sf::Keyboard::Left)) {direction_mouv = 'g';}
+            if(sf::Keyboard::isKeyPressed(sf::Keyboard::D) || sf::Keyboard::isKeyPressed(sf::Keyboard::Right)) {direction_mouv = 'd';}
+            if(sf::Keyboard::isKeyPressed(sf::Keyboard::Z) || sf::Keyboard::isKeyPressed(sf::Keyboard::Up)) {direction_mouv = 'h';}
+            if(sf::Keyboard::isKeyPressed(sf::Keyboard::S) || sf::Keyboard::isKeyPressed(sf::Keyboard::Down)) {direction_mouv = 'b';}
+        }
+    }
+    menusfml.actualiser_selection_curseur(direction_mouv, scale_salle);
+}
+

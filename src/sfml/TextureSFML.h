@@ -45,6 +45,12 @@ private:
     //CLef
     sf::Texture clef_boss;
 
+    //Menu Principal
+    sf::Texture menu_principal;
+
+    //Curseur menu
+    sf::Texture curseur_menu;
+
 public:
     TextureSFML();
 
@@ -61,6 +67,10 @@ public:
     void charger_texture_ennemi();
 
     void charger_texture_clef();
+
+    void charger_menu_principal();
+
+    void charger_curseur_menu();
 
     sf::RenderStates retourne_rendu_texture_caseSFML(const char & type, const int &i, const int &j, const int &x, const int &y);
 
@@ -81,6 +91,10 @@ public:
     sf::Texture& retourne_texture_ennemi();
 
     sf::Texture& retourne_texture_clef();
+
+    sf::Texture& retourne_texture_menu();
+
+    sf::Texture& retourne_texture_curseur_menu();
 };
 
 #endif // TEXTURESFML_H_INCLUDED

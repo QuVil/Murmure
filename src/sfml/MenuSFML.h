@@ -18,17 +18,26 @@ private:
 
     std::string selection_curseur; /**< l'option actuellement sélectionnée ("options", "jouer", etc.)*/
 
-    void actualiser_selection_curseur();
-
 public:
     MenuSFML();
 
     MenuSFML(std::string nom_ecr);
 
-    void actualiser();///TODO maggle
+    void actualiser_selection_curseur(const char direction, const int scale_salle);
+
+    void init_menu(const sf::Texture& texture_menu, const int &scale_salle);
+
+    void init_curseur_menu(const sf::Texture& texture_curseur_menu, const int &scale_salle);
 
     void afficher_menu (std::string nom_ecr /* = "" */);
 
+    void afficher_curseur();
+
+    sf::Sprite get_menusfml()const;
+
+    sf::Sprite get_curseur_menu()const;
+
+    void mettre_a_jour_position_curseur(const int &scale_salle);
 };
 
 #endif // MENUSFML_H_INCLUDED

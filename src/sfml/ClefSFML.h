@@ -20,8 +20,6 @@ private:
     Clef* cle; /**< Un pointeur sur la clef du Jeu, pour ains avoir les informations nécessaires */
 public:
     /** \brief Constructeur par défaut
-     *
-     *
      */
     ClefSFML();
 
@@ -35,7 +33,7 @@ public:
      */
     void init(Clef* p_cle,const sf::Texture &p_texture, const int &taille_case,const int &x0, const int &y0);
 
-    ///TODO TODO TODO TODO set_position salope
+    ///TODO TODO TODO TODO set_position
 
     /** \brief Accesseur du Sprite
      *
