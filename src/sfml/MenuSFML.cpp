@@ -11,6 +11,11 @@ MenuSFML::MenuSFML()
     selection_curseur = "jouer";
 }
 
+std::string MenuSFML::get_selection_curseur()
+{
+    return selection_curseur;
+}
+
 void MenuSFML::init_menu(const sf::Texture& texture_menu, const int &scale_salle)
 {
     ecran_menu.setTexture(texture_menu);

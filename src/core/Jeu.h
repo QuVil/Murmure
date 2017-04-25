@@ -78,7 +78,7 @@ public:
      * \param[in] c : direction de la nouvelle salle (h, b ,g ,d)
      * \return true si le changement est fait, false sinon
      */
-    bool zone_changer_salle(const char &c);
+    bool zone_changer_salle(const char &c, bool devmode);
 
 
     void deplacer_perso_txt(char direction);
@@ -125,6 +125,8 @@ public:
      * \return pointeur sur la clef
      */
     Clef* retourne_clef();
+
+    void initialiser_jeu(const std::string &nom_perso, const int &niveau);
 };
 
 #endif // JEU_H_INCLUDED

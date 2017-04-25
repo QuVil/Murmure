@@ -155,6 +155,8 @@ public:
 
     void ramasser_clef(Clef* cle);
 
+    bool get_cle_boss()const;
+
     //_____________________MODE TXT__________________________
     int get_pos_case_x() const;
 

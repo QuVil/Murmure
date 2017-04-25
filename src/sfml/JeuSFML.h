@@ -87,7 +87,7 @@ private:
     void recupere_collisions();
     void avancer_jeu();
 
-    void afficher(const int &mode);
+    void afficher();
 
     void init_curseur();
     void init_persoSFML();
@@ -115,6 +115,8 @@ private:
     void actualiser_ennemis();
     void actualiser_clef();
     void actualiser_perso();
+
+    int mode_jeu;
 public:
     JeuSFML();
 

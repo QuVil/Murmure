@@ -15,6 +15,7 @@
 
 JeuSFML::JeuSFML()
 {
+    mode_jeu = 3;
     //jeu.get_zone().afficher_zone();
     // cherche les parametres de l'utilisateur (resolution)
     sf::ContextSettings settings;
@@ -77,6 +78,8 @@ JeuSFML::~JeuSFML()
 
 void JeuSFML::init()
 {
+    jeu.initialiser_jeu("Green", 10);
+
     textures.charger_textures_caseSFML();
     textures.charger_textures_carteAffSFML();
     textures.charger_texture_perso();
@@ -187,7 +190,6 @@ void JeuSFML::init_menuSFML()
 
 void JeuSFML::SFML_boucle()
 {
-    int mode = 1;
     clock.restart();
     timer_arme1_perso.restart();
     timer_devmode_salles.restart();
@@ -218,12 +220,12 @@ void JeuSFML::SFML_boucle()
 
                 if(event.key.code == sf::Keyboard::M)
                 {
-                    mode = 1;
+                    mode_jeu = 1;
                 }
 
                 if(event.key.code == sf::Keyboard::P)
                 {
-                    mode = 2;
+                    mode_jeu = 2;
                 }
             }
 
@@ -231,7 +233,7 @@ void JeuSFML::SFML_boucle()
         }
 
         //
-        afficher(mode);
+        afficher();
 
         window.setView(view);
         buffer.display();
@@ -244,9 +246,9 @@ void JeuSFML::SFML_boucle()
     }
 }
 
-void JeuSFML::afficher(const int& mode)
+void JeuSFML::afficher()
 {
-    switch(mode)
+    switch(mode_jeu)
     {
     case 1:
         temps_frame = clock.restart();
@@ -266,7 +268,7 @@ void JeuSFML::afficher(const int& mode)
         break;
     case 3:
         recupere_mouvements_menu();
-        //dessiner_menu();
+        dessiner_menu();
     default:
         dessiner_salle();
         break;
@@ -382,13 +384,21 @@ void JeuSFML::dessiner_ennemis()
 
 void JeuSFML::dessiner_clef()
 {
-    if (jeu.get_salle_actuelle()->get_config() == 3)
+    if(persosfml.get_perso_ptr()->get_cle_boss())
     {
-        if (jeu.retourne_clef()->get_par_terre())
+        buffer.draw(clefsfml.get_clefsfml());
+    }
+    else
+    {
+        if (jeu.get_salle_actuelle()->get_config() == 3)
         {
-            buffer.draw(clefsfml.get_clefsfml());
+            if (jeu.retourne_clef()->get_par_terre())
+            {
+                buffer.draw(clefsfml.get_clefsfml());
+            }
         }
     }
+
 }
 
 void JeuSFML::dessiner_menu()
@@ -553,13 +563,21 @@ void JeuSFML::actualiser_ennemis()
 
 void JeuSFML::actualiser_clef()
 {
-    if (jeu.get_salle_actuelle()->get_config() == 3)
+    if(persosfml.get_perso_ptr()->get_cle_boss())
     {
-        if (jeu.retourne_clef() != NULL)
+        clefsfml.clef_possedee(scale_salle, posx0salle, posy0salle);
+    }
+    else
+    {
+        if (jeu.get_salle_actuelle()->get_config() == 3)
         {
-             clefsfml.init(jeu.retourne_clef(), textures.retourne_texture_clef(), scale_salle,posx0salle, posy0salle);
+            if (jeu.retourne_clef() != NULL)
+            {
+                 clefsfml.init(jeu.retourne_clef(), textures.retourne_texture_clef(), scale_salle,posx0salle, posy0salle);
+            }
         }
     }
+
 }
 
 void JeuSFML::actualiser_perso()
@@ -575,7 +593,10 @@ void JeuSFML::recupere_collisions()
     hitboxes.projectiles_et_salle(&projectilesfml, casesfml);
     hitboxes.projectiles_et_ennemis(&projectilesfml, &ennemisfml);
     hitboxes.ennemis_et_salle(&ennemisfml, casesfml, scale_salle, posx0salle, posy0salle);
-
+    if (jeu.get_salle_actuelle()->get_config() == 3)
+    {
+        hitboxes.perso_et_clef(&persosfml, &clefsfml);
+    }
     /*
     sf::FloatRect hitbox_perso = persosfml.get_persosfml().getGlobalBounds();
     if(jeu->get_salle().get_case(0,8).get_type_char() == 'p')
@@ -675,10 +696,10 @@ void JeuSFML::recupere_mouvements()
 
     if(timer_devmode_salles.getElapsedTime().asSeconds()>= 0.1)
     {
-        if(sf::Keyboard::isKeyPressed(sf::Keyboard::Up)) {jeu.zone_changer_salle('g');}
-        if(sf::Keyboard::isKeyPressed(sf::Keyboard::Down)) {jeu.zone_changer_salle('d');}
-        if(sf::Keyboard::isKeyPressed(sf::Keyboard::Left)) {jeu.zone_changer_salle('h');}
-        if(sf::Keyboard::isKeyPressed(sf::Keyboard::Right)) {jeu.zone_changer_salle('b');}
+        if(sf::Keyboard::isKeyPressed(sf::Keyboard::Up)) {jeu.zone_changer_salle('g',1);}
+        if(sf::Keyboard::isKeyPressed(sf::Keyboard::Down)) {jeu.zone_changer_salle('d',1);}
+        if(sf::Keyboard::isKeyPressed(sf::Keyboard::Left)) {jeu.zone_changer_salle('h',1);}
+        if(sf::Keyboard::isKeyPressed(sf::Keyboard::Right)) {jeu.zone_changer_salle('b',1);}
         timer_devmode_salles.restart();
     }
 
@@ -720,6 +741,20 @@ void JeuSFML::recupere_mouvements_menu()
             if(sf::Keyboard::isKeyPressed(sf::Keyboard::D) || sf::Keyboard::isKeyPressed(sf::Keyboard::Right)) {direction_mouv = 'd';}
             if(sf::Keyboard::isKeyPressed(sf::Keyboard::Z) || sf::Keyboard::isKeyPressed(sf::Keyboard::Up)) {direction_mouv = 'h';}
             if(sf::Keyboard::isKeyPressed(sf::Keyboard::S) || sf::Keyboard::isKeyPressed(sf::Keyboard::Down)) {direction_mouv = 'b';}
+            if(sf::Keyboard::isKeyPressed(sf::Keyboard::Space) || sf::Keyboard::isKeyPressed(sf::Keyboard::Return)){direction_mouv = 'o';}
+        }
+    }
+    if (direction_mouv == 'o')
+    {
+        std::string selection = menusfml.get_selection_curseur();
+        ///TODO Ajouter les autres menus
+        if (selection == "jouer")
+        {
+            mode_jeu = 1;
+        }
+        else if (selection == "options")
+        {
+            //rien
         }
     }
     menusfml.actualiser_selection_curseur(direction_mouv, scale_salle);

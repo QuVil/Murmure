@@ -248,3 +248,8 @@ void Perso::ramasser_clef(Clef* cle)
     possede_clef_boss = true;
     cle->ramasser();
 }
+
+bool Perso::get_cle_boss() const
+{
+    return possede_clef_boss;
+}

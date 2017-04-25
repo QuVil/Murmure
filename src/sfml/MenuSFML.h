@@ -23,6 +23,8 @@ public:
 
     MenuSFML(std::string nom_ecr);
 
+    std::string get_selection_curseur();
+
     void actualiser_selection_curseur(const char direction, const int scale_salle);
 
     void init_menu(const sf::Texture& texture_menu, const int &scale_salle);

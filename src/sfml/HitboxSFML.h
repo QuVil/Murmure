@@ -5,6 +5,7 @@
 #include "ProjectileSFML.h"
 #include "CaseSFML.h"
 #include "EnnemiSFML.h"
+#include "ClefSFML.h"
 #include "Jeu.h"
 
 #include <list>
@@ -26,6 +27,7 @@ public:
     void projectiles_et_salle(std::list<ProjectileSFML *> * projectiles, CaseSFML * casesalle);
     void projectiles_et_ennemis(std::list<ProjectileSFML *> * projectiles, std::list<EnnemiSFML *> * ennemis);
     void ennemis_et_salle(std::list<EnnemiSFML *> *ennemis, CaseSFML * casesalle, const int &taille_case, const int &x0, const int &y0);
+    void perso_et_clef(PersoSFML * perso, ClefSFML * clef);
 };
 
 #endif // HITBOXSFML_H_INCLUDED

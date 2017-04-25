@@ -4,10 +4,10 @@
 
 Jeu::Jeu()
 {
-    zone.generer_et_remplir(0);
+    //zone.generer_et_remplir(0);
 
-    Salle* adresse_test = zone.get_salle_ptr();
-    salle_actuelle.initialise_salle_actuelle(adresse_test);
+    //Salle* adresse_test = zone.get_salle_ptr();
+    //salle_actuelle.initialise_salle_actuelle(adresse_test);
 
 }
 
@@ -57,9 +57,9 @@ void Jeu::definir_orientation_perso(const VecteurM& v)
     perso.set_orientation(v);
 }
 
-bool Jeu::zone_changer_salle(const char& c)
+bool Jeu::zone_changer_salle(const char& c, bool devmode)
 {
-    if(salle_actuelle.salle_terminee())
+    if((salle_actuelle.salle_terminee())||(devmode))
     {
         zone.changer_de_salle(c);
         Salle* adresse_test = zone.get_salle_ptr();
@@ -140,3 +140,14 @@ Clef* Jeu::retourne_clef()
 {
     return salle_actuelle.get_clef();
 }
+
+void Jeu::initialiser_jeu(const std::string &nom_joueur, const int &niveau)
+{
+    zone.generer_et_remplir(0);
+
+    Salle* adresse_test = zone.get_salle_ptr();
+    salle_actuelle.initialise_salle_actuelle(adresse_test);
+
+    perso.charger_perso(nom_joueur);
+}
+
