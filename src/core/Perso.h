@@ -51,26 +51,21 @@ public:
     /** \brief Constructeur par défaut
      * Déclare les variables
      */
-
     Perso();
 
 
     /** \brief Constructeur avec paramètres
      * Construit l'instance en fonction du npm du personnage
      * \param n : nom du personnage
-     *
      */
     Perso(std::string n);
 
     /** \brief Accesseur pour le nom
-     *
      * \return le nom du personnage
-     *
      */
     std::string get_nom()const;
 
     /** \brief Mutateur du déplacement
-     *
      * \param v : deplacement à attribuer
      */
     void set_deplacement(const VecteurM &v);
@@ -82,7 +77,6 @@ public:
     void set_deplacement(const float &x, const float &y);
 
     /** \brief Mutateur de l'orientation
-     *
      * \param v : orientation à attribuer
      */
     void set_orientation(const VecteurM &v);
@@ -126,37 +120,31 @@ public:
     void set_nom(const std::string &n);
 
     /** \brief Mutateur du déplacement
-     *
      * \param v : deplacement à attribuer
      */
     void set_coefficient_vitesse(const float &c);
 
     /** \brief Mutateur du déplacement
-     *
      * \param v : deplacement à attribuer
      */
     void set_pv_max(const int &p);
 
     /** \brief Mutateur du déplacement
-     *
      * \param v : deplacement à attribuer
      */
     void set_taille(const float &t);
 
     /** \brief Mutateur du déplacement
-     *
      * \param v : deplacement à attribuer
      */
     void set_id_arme1(const int &i);
 
     /** \brief Mutateur du déplacement
-     *
      * \param v : deplacement à attribuer
      */
     void set_nv_arme1(const int &i);
 
     /** \brief Mutateur du déplacement
-     *
      * \param v : deplacement à attribuer
      */
     void charger_perso(const std::string &n);

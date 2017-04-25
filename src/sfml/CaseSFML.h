@@ -68,6 +68,8 @@ public:
      *
      */
     char get_type_case()const;
+
+    void check_collision();
 };
 
 #endif // CASESFML_H_INCLUDED

@@ -375,11 +375,10 @@ void JeuSFML::dessiner_clef()
 {
     if (jeu.get_salle_actuelle()->get_config() == 3)
     {
-   //     if (!jeu.retourne_clef()->get_par_terre())
-  //      {
-            std::cout<<"tamer suce"<<std::endl;
+        if (jeu.retourne_clef()->get_par_terre())
+        {
             buffer.draw(clefsfml.get_clefsfml());
-//        }
+        }
     }
 }
 

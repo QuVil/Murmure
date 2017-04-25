@@ -25,13 +25,11 @@ public:
     /** \brief Constructeur
      * Déclare les variables par défaut
      */
-
     Jeu();
 
     /** \brief Accesseur salle actuelle
      * \return pointeur sur la \a salle_actuelle
      */
-
     Salle* get_salle_actuelle();
 
     /** \brief Accesseur zone
@@ -53,7 +51,6 @@ public:
      * Procédure qui va changer le personnage jouable
      * \param[in] n : nom du nouveau personnage
      */
-
     void changer_perso(const std::string &n);
 
     /** \brief Deplace le personnage
@@ -61,7 +58,6 @@ public:
      * \param[in] x : coordonnée horitontale du déplacement
      * \param[in] y : coordonnée verticale du déplacement
      */
-
     void deplacer_perso(const float &x, const float &y);
 
     /** \brief Mutateur position personnage
@@ -69,7 +65,6 @@ public:
      * \param[in] x : coordonnée horizontale
      * \param[in] y : coordonnée verticale
      */
-
     void definir_position_perso(const float &x, const float &y);
 
     /** \brief Mutateur orientation personnage
@@ -83,7 +78,6 @@ public:
      * \param[in] c : direction de la nouvelle salle (h, b ,g ,d)
      * \return true si le changement est fait, false sinon
      */
-
     bool zone_changer_salle(const char &c);
 
 
@@ -95,7 +89,6 @@ public:
      * Lors d'un tir, ajoute un nouveau projectile tiré par le personnage
      * \param[in] arme : numéro de l'arme du personnage
      */
-
     void ajouter_projectile_perso(const int &arme);
 
     /** \brief Actualise le jeu
@@ -126,7 +119,6 @@ public:
     /** \brief Actualise les ennemis
      * Actualise les positions et les déplacement des ennemis
      */
-
     void deplace_ennemis_auto();
 
     /** \brief Accesseur de la clef
