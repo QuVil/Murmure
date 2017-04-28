@@ -62,3 +62,8 @@ bool Projectile::get_collision() const
 {
     return collision;
 }
+
+int Projectile::get_id_projectile() const
+{
+    return id_projectile;
+}

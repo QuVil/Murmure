@@ -202,6 +202,7 @@ void JeuSFML::SFML_boucle()
 {
     clock.restart();
     timer_arme1_perso.restart();
+    timer_arme2_perso.restart();
     timer_devmode_salles.restart();
     timer_acutalise_perso.restart();
 
@@ -511,7 +512,7 @@ void JeuSFML::actualiser_projectiles()
     for(std::list<Projectile *>::iterator it_jeu2 = it_jeu; it_jeu2 != proj->end(); ++it_jeu2)
     {
         ProjectileSFML *p = new ProjectileSFML();
-        p->init((*it_jeu2), textures.retourne_texture_projectile(),scale_salle);
+        p->init((*it_jeu2), textures.retourne_texture_projectile((*it_jeu2)->get_id_projectile()),scale_salle);
         projectilesfml.push_back(p);
     }
     for(std::list<ProjectileSFML *>::iterator it_sfml = projectilesfml.begin(); it_sfml != projectilesfml.end(); ++it_sfml)
@@ -545,13 +546,13 @@ void JeuSFML::actualiser_ennemis()
                 it_sfml = ennemisfml.erase(it_sfml);
                 if(it_sfml == ennemisfml.end())
                 {
-                    std::cout << "yo le rap" << std::endl;
+                    //std::cout << "yo le rap" << std::endl;
                     break;
                 }
             }
             if(it_sfml == ennemisfml.end())
             {
-                std::cout << "OMFGGGG" << std::endl;
+                //std::cout << "OMFGGGG" << std::endl;
                 break;
             }
             else
@@ -565,7 +566,7 @@ void JeuSFML::actualiser_ennemis()
     {
         EnnemiSFML * e = new EnnemiSFML();
         e->init((*it_jeu2), textures.retourne_texture_ennemi(),scale_salle);
-        std::cout << "case x : " << (*it_jeu2)->get_case_x_apparition() << " et y : " << (*it_jeu2)->get_case_y_apparition() << std::endl;
+        //std::cout << "case x : " << (*it_jeu2)->get_case_x_apparition() << " et y : " << (*it_jeu2)->get_case_y_apparition() << std::endl;
         ennemisfml.push_back(e);
     }
     for(std::list<EnnemiSFML *>::iterator it_sfml = ennemisfml.begin(); it_sfml != ennemisfml.end(); ++it_sfml)
@@ -693,6 +694,11 @@ void JeuSFML::recupere_mouvements()
     {
         jeu.ajouter_projectile_perso(1);
         timer_arme1_perso.restart();
+    }
+    if (sf::Mouse::isButtonPressed(sf::Mouse::Right)&&((timer_arme2_perso.getElapsedTime().asSeconds()==0)||(timer_arme2_perso.getElapsedTime().asSeconds()>=jeu.get_perso().get_arme2()->get_cadence_tir())))
+    {
+        jeu.ajouter_projectile_perso(2);
+        timer_arme2_perso.restart();
     }
 }
 

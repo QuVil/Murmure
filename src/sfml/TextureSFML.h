@@ -37,7 +37,7 @@ private:
     sf::Texture curseur;
 
     // Projectile
-    sf::Texture proj_1;
+    sf::Texture proj[8];
 
     // Ennemi
     sf::Texture ennemi_1;
@@ -86,7 +86,7 @@ public:
 
     sf::Texture& retourne_texture_carteAffSFML(const int & config, const bool &salle_act);
 
-    sf::Texture& retourne_texture_projectile();
+    sf::Texture& retourne_texture_projectile(const int &id);
 
     sf::Texture& retourne_texture_ennemi();
 

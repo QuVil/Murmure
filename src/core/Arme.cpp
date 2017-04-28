@@ -1,5 +1,6 @@
 #include "Arme.h"
 #include "Fichier.h"
+#include <iostream>
 
 /** \brief code source du module Arme
  *
@@ -71,4 +72,9 @@ Projectile* Arme::tirer(const VecteurM& orientation, const Coord2D& position)
 float Arme::get_cadence_tir() const
 {
     return cadence_tir;
+}
+
+int Arme::get_id_proj() const
+{
+    return id_projectiles;
 }

@@ -25,6 +25,12 @@ Perso::Perso()
 
     vivant = true;
     possede_clef_boss = false;
+
+    id_arme1=0;
+    nv_arme1=1;
+
+    id_arme2=1;
+    nv_arme2=1;
 }
 
 Perso::Perso(std::string n)
@@ -192,12 +198,23 @@ void Perso::set_nv_arme1(const int& i)
     nv_arme1 = i;
 }
 
+void Perso::set_id_arme2(const int& i)
+{
+    id_arme2 = i;
+}
+
+void Perso::set_nv_arme2(const int& i)
+{
+    nv_arme2 = i;
+}
+
 void Perso::charger_perso(const std::string& n)
 {
     Fichier fichier;
     fichier.charger(*this, n);
 
     arme1.charger(id_arme1, nv_arme1);
+    arme2.charger(id_arme2, nv_arme2);
 }
 
 void Perso::deplacer_txt(char direction)
@@ -233,9 +250,20 @@ Projectile* Perso::tirer_1()
     return arme1.tirer(orientation, position);
 }
 
+Projectile* Perso::tirer_2()
+{
+    //Coord2D affixe(position.get_x() + cos(position.get_x() / position.get_y()), position.get_y() + sin(position.get_x() / position.get_y()));
+    return arme2.tirer(orientation, position);
+}
+
 Arme* Perso::get_arme1()
 {
     return &arme1;
+}
+
+Arme* Perso::get_arme2()
+{
+    return &arme2;
 }
 
 VecteurM Perso::get_deplacement() const

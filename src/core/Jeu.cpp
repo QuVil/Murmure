@@ -107,6 +107,9 @@ void Jeu::ajouter_projectile_perso(const int& arme)
     case 1:
         salle_actuelle.ajouter_projectile(perso.tirer_1());
         break;
+    case 2:
+        salle_actuelle.ajouter_projectile(perso.tirer_2());
+        break;
     }
 }
 

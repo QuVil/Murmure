@@ -426,6 +426,16 @@ void Fichier::charger(Perso & p,const std::string &n)
               valeur_int = atoi(valeur.c_str());
               p.set_nv_arme1(valeur_int);
             }
+            else if(variable.compare("id_arme2") == 0)
+            {
+              valeur_int = atoi(valeur.c_str());
+              p.set_id_arme2(valeur_int);
+            }
+            else if(variable.compare("nv_arme2") == 0)
+            {
+              valeur_int = atoi(valeur.c_str());
+              p.set_nv_arme2(valeur_int);
+            }
             else
             {
               std::cout << variable << " : Mauvaise Valeur (Arme)" << std::endl;

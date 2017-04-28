@@ -19,8 +19,10 @@ private:
     ///TODO : implémenter Arme puis revenir un coup sur Perso.
     int id_arme1; /**< identifiant de l'Arme 1 du perso */
     int nv_arme1; /**< niveau de l'Arme 1 du perso */
+    int id_arme2; /**< identifiant de l'Arme 1 du perso */
+    int nv_arme2; /**< niveau de l'Arme 1 du perso */
     Arme arme1; /**< Arme 1 du perso */
-    //Arme arme2;
+    Arme arme2;
 
     VecteurM orientation; /**< Orientation du perso */
     VecteurM resultante; /**< Resultante du deplacement du perso */
@@ -144,6 +146,10 @@ public:
      */
     void set_nv_arme1(const int &i);
 
+    void set_id_arme2(const int &i);
+
+    void set_nv_arme2(const int &i);
+
     /** \brief Mutateur du déplacement
      * \param v : deplacement à attribuer
      */
@@ -151,7 +157,11 @@ public:
 
     Arme * get_arme1();
 
+    Arme * get_arme2();
+
     Projectile* tirer_1();
+
+    Projectile* tirer_2();
 
     void ramasser_clef(Clef* cle);
 

@@ -38,6 +38,8 @@ public:
     bool get_collision()const;
 
     Coord2D get_position()const;
+
+    int get_id_projectile()const;
 };
 
 #endif // PROJECTILE_H_INCLUDED

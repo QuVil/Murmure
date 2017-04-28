@@ -107,6 +107,11 @@ public:
      */
     float get_cadence_tir()const;
 
+    /** \brief Accesseur de la cadence de tir
+     * \return \a cadence
+     */
+    int get_id_proj()const;
+
 };
 
 #endif // ARME_H_INCLUDED

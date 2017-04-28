@@ -110,8 +110,11 @@ void TextureSFML::charger_texture_curseur()
 void TextureSFML::charger_texture_projectile()
 {
     std::string path;
+    path = "data/res/Projectile/skins/0.png";
+    proj[0].loadFromFile(path);
+
     path = "data/res/Projectile/skins/1.png";
-    proj_1.loadFromFile(path);
+    proj[1].loadFromFile(path);
 }
 
 void TextureSFML::charger_texture_ennemi()
@@ -320,8 +323,7 @@ sf::Texture& TextureSFML::retourne_texture_caseSFML(const char& type, const int&
             else if(tirage < 992){return sol[5];}
             else if(tirage < 994){return sol[6];}
             else if(tirage < 996){return sol[7];}
-            else if(tirage < 998){return sol[8];}
-            else{return sol[9];}
+            else{return sol[8];}
             break;
         case 'c':
             if(tirage < 690){return sol[0];}
@@ -332,8 +334,7 @@ sf::Texture& TextureSFML::retourne_texture_caseSFML(const char& type, const int&
             else if(tirage < 992){return sol[5];}
             else if(tirage < 994){return sol[6];}
             else if(tirage < 996){return sol[7];}
-            else if(tirage < 998){return sol[8];}
-            else{return sol[9];}
+            else{return sol[8];}
             break;
         case 'e':
             if(tirage < 690){return sol[0];}
@@ -344,8 +345,7 @@ sf::Texture& TextureSFML::retourne_texture_caseSFML(const char& type, const int&
             else if(tirage < 992){return sol[5];}
             else if(tirage < 994){return sol[6];}
             else if(tirage < 996){return sol[7];}
-            else if(tirage < 998){return sol[8];}
-            else{return sol[9];}
+            else{return sol[8];}
             break;
         case 'p':
             if(j == 0) {return porte[3];}
@@ -415,9 +415,9 @@ sf::Texture& TextureSFML::retourne_texture_curseur()
     return curseur;
 }
 
-sf::Texture& TextureSFML::retourne_texture_projectile()
+sf::Texture& TextureSFML::retourne_texture_projectile(const int &id)
 {
-    return proj_1;
+    return proj[id];
 }
 
 sf::Texture& TextureSFML::retourne_texture_ennemi()
