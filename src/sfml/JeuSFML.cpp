@@ -102,6 +102,7 @@ void JeuSFML::init()
     init_persoSFML();
     init_texte();
     init_clefSFML();
+    init_menuSFML();
 }
 
 void JeuSFML::init_caseSFML()
@@ -606,45 +607,6 @@ void JeuSFML::recupere_collisions()
     {
         hitboxes.perso_et_clef(&persosfml, &clefsfml);
     }
-    /*
-    sf::FloatRect hitbox_perso = persosfml.get_persosfml().getGlobalBounds();
-    if(jeu->get_salle().get_case(0,8).get_type_char() == 'p')
-    {
-        //std::cout << "kek" << std::endl;
-        sf::FloatRect hitbox_porte_haut = casesfml[0][8].get_casesfml().getBounds();
-        if(hitbox_perso.intersects(hitbox_porte_haut))
-        {
-            jeu.zone_changer_salle('g');
-            jeu.definir_position_perso(scale_salle * (8+1.0/2.0),scale_salle * (7 +1.0/2.0));
-        }
-    }
-    if(jeu->get_salle().get_case(4,0).get_type_char()  == 'p')
-    {
-        sf::FloatRect hitbox_porte_gauche = casesfml[4][0].get_casesfml().getBounds();
-        if(hitbox_perso.intersects(hitbox_porte_gauche))
-        {
-            jeu.zone_changer_salle('h');
-            jeu.definir_position_perso(scale_salle * (15 + 1.0/2.0), scale_salle * (4 +1.0/2.0));
-        }
-    }
-    if(jeu->get_salle().get_case(4,16).get_type_char()  == 'p')
-    {
-        sf::FloatRect hitbox_porte_droite = casesfml[4][16].get_casesfml().getBounds();
-        if(hitbox_perso.intersects(hitbox_porte_droite))
-        {
-            jeu.zone_changer_salle('b');
-            jeu.definir_position_perso(scale_salle * (1 +1.0/2.0),scale_salle * (4+ 1.0/2.0));
-        }
-    }
-    if(jeu->get_salle().get_case(8,8).get_type_char()  == 'p')
-    {
-        sf::FloatRect hitbox_porte_bas = casesfml[8][8].get_casesfml().getBounds();
-        if(hitbox_perso.intersects(hitbox_porte_bas))
-        {
-            jeu.zone_changer_salle('d');
-            jeu.definir_position_perso(scale_salle * (8 + 1.0/2.0), scale_salle * (1 + 1.0/2.0));
-        }
-    }*/
 }
 
 void JeuSFML::recupere_mouvements()
