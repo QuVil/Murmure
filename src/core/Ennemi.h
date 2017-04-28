@@ -201,14 +201,14 @@ public:
      * \param[in] position_perso : position du personnage à chasser si l'IA en tient compte
      */
 
-    void trouver_chemin(const Coord2D &position_perso);
+    void trouver_chemin(const Coord2D &position_perso, const float &vitesse_frame);
 
     /** \brief Deplace l'ennemi
      * Procedure qui va appeler les fonctions de deplacement de l'ennemi
      * \param pos_perso : position du personnage
      */
 
-    void deplacer_auto(Coord2D pos_perso);
+    void deplacer_auto(Coord2D pos_perso, const float &vitesse_frame);
 };
 
 #endif // ENNEMI_H_INCLUDED

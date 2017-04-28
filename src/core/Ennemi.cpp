@@ -78,7 +78,7 @@ void Ennemi::set_deplacement(const Coord2D &position_perso)
     position_old.set_x(position.get_x());
     position_old.set_y(position.get_y());
     //std::cout << resultante.get_x() << " " << resultante.get_y() << std::endl;
-    trouver_chemin(position_perso);
+    trouver_chemin(position_perso,0.1);
     //std::cout << position.get_x() << " " << position.get_y() << std::endl;
 }
 
@@ -160,7 +160,7 @@ void Ennemi::set_mort()
     vivant = false;
 }
 
-void Ennemi::trouver_chemin(const Coord2D &position_perso)
+void Ennemi::trouver_chemin(const Coord2D &position_perso, const float &vitesse_frame)
 {
     orientation = get_angle_perso(position_perso);
     deplacement.set_x(cos(-orientation));
@@ -170,7 +170,7 @@ void Ennemi::trouver_chemin(const Coord2D &position_perso)
         position_old.set_x(position.get_x());
         position_old.set_y(position.get_y());
         //std::cout << position.get_x() << " " << position.get_y() << std::endl;
-        position.deplacer(deplacement, coefficient_vitesse);
+        position.deplacer(deplacement, coefficient_vitesse*vitesse_frame);
         //std::cout << position.get_x() << " " << position.get_y() << std::endl;
     }
 }
@@ -181,9 +181,9 @@ float Ennemi::get_angle_perso(const Coord2D &pos_perso) const
 }
 
 
-void Ennemi::deplacer_auto(Coord2D pos_perso)
+void Ennemi::deplacer_auto(Coord2D pos_perso, const float &vitesse_frame)
 {
-    trouver_chemin(pos_perso);
+    trouver_chemin(pos_perso, vitesse_frame);
 }
 
 

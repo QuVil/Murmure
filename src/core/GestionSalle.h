@@ -104,7 +104,7 @@ public:
      * Actualise les deplacement des ennemis
      * \param[in] pos_perso : posisiton actuelle du personnage
      */
-    void deplacer_ennemis_auto(Coord2D pos_perso);
+    void deplacer_ennemis_auto(Coord2D pos_perso, const float &vitesse_frame);
 
     /** \brief Vide clef
      * Vide la clef

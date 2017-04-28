@@ -144,13 +144,13 @@ void GestionSalle::vider_ennemis(bool dans_destructeur = false)
     }
 }
 
-void GestionSalle::deplacer_ennemis_auto(Coord2D pos_perso)
+void GestionSalle::deplacer_ennemis_auto(Coord2D pos_perso, const float &vitesse_frame)
 {
     for (std::list<Ennemi *>::iterator it=ennemis.begin(); it != ennemis.end(); ++it)
     {
         if((*it)->is_vivant())
         {
-            (*it)->deplacer_auto(pos_perso);
+            (*it)->deplacer_auto(pos_perso, vitesse_frame);
         }
         else
         {

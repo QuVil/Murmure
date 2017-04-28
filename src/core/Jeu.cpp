@@ -113,7 +113,7 @@ void Jeu::ajouter_projectile_perso(const int& arme)
 void Jeu::avancer_jeu(const float &vitesse_base, const int &taille_case)
 {
     salle_actuelle.mise_a_jour_projectiles(vitesse_base);
-    salle_actuelle.deplacer_ennemis_auto(perso.get_pos());
+    salle_actuelle.deplacer_ennemis_auto(perso.get_pos(),vitesse_base);
 }
 
 std::list <Projectile *> * Jeu::retourne_projectiles()
@@ -134,7 +134,7 @@ Perso* Jeu::retourne_perso_ptr()
 
 void Jeu::deplace_ennemis_auto()
 {
-    salle_actuelle.deplacer_ennemis_auto(perso.get_pos());
+    //salle_actuelle.deplacer_ennemis_auto(perso.get_pos(),);
 }
 
 Clef* Jeu::retourne_clef()
