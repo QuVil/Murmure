@@ -80,6 +80,7 @@ bool Jeu::zone_changer_salle(const char& c, bool devmode)
             definir_position_perso(facteur * (8 + 1.0/2.0),facteur *  (1 + 1.0/2.0));
             break;
         }
+        std::cout << "changement salle ok" << std::endl;
         return 1;
     }
     else

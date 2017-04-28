@@ -545,15 +545,18 @@ void JeuSFML::actualiser_ennemis()
                 it_sfml = ennemisfml.erase(it_sfml);
                 if(it_sfml == ennemisfml.end())
                 {
+                    std::cout << "yo le rap" << std::endl;
                     break;
                 }
             }
             if(it_sfml == ennemisfml.end())
             {
+                std::cout << "OMFGGGG" << std::endl;
                 break;
             }
             else
             {
+                //std::cout << "plussoie" << std::endl;
                 ++it_jeu;
             }
         }
@@ -562,6 +565,7 @@ void JeuSFML::actualiser_ennemis()
     {
         EnnemiSFML * e = new EnnemiSFML();
         e->init((*it_jeu2), textures.retourne_texture_ennemi(),scale_salle);
+        std::cout << "case x : " << (*it_jeu2)->get_case_x_apparition() << " et y : " << (*it_jeu2)->get_case_y_apparition() << std::endl;
         ennemisfml.push_back(e);
     }
     for(std::list<EnnemiSFML *>::iterator it_sfml = ennemisfml.begin(); it_sfml != ennemisfml.end(); ++it_sfml)

@@ -13,7 +13,7 @@ GestionSalle::~GestionSalle()
 {
     vider_projectiles();
     vider_ennemis(true);
-    if (clef != NULL){delete clef;}
+    vider_clef();
 }
 
 void GestionSalle::ajouter_projectile(Projectile* p)
@@ -96,9 +96,12 @@ void GestionSalle::maj_changement_salle()
 
             if (tests_case == 'e')
             {
-                Ennemi* e = new Ennemi("chasseur", i, j);
-                ennemis.push_back(e);
-                //std::cout << "bite" << std::endl;
+                    Ennemi* e = new Ennemi("chasseur", i, j);
+                    ennemis.push_back(e);
+                    std::cout << "ennemi ++" << std::endl;
+                    CaseSalle case_normale;
+                    case_normale.set_type('n');
+                    salle_actuelle_jeu->set_case(i, j, case_normale);
             }
             else if (tests_case == 'c')
             {
@@ -135,17 +138,6 @@ void GestionSalle::vider_ennemis(bool dans_destructeur = false)
         for (std::list<Ennemi *>::iterator it=ennemis.begin(); it != ennemis.end(); ++it)
         {
             //std::cout << "ennemi supprime" << std::endl;
-            int case_x = (*it)->get_case_x_apparition();
-            int case_y = (*it)->get_case_y_apparition();
-
-            if (salle_actuelle_jeu->get_case(case_x, case_y).get_type_char() == 'e' && (*it)->is_vivant() == false)
-            {
-                CaseSalle case_normale;
-                case_normale.set_type('n');
-                salle_actuelle_jeu->set_case(case_x, case_y, case_normale);
-            }
-
-
             delete (*it);
             it = ennemis.erase(it);
         }
@@ -156,7 +148,15 @@ void GestionSalle::deplacer_ennemis_auto(Coord2D pos_perso)
 {
     for (std::list<Ennemi *>::iterator it=ennemis.begin(); it != ennemis.end(); ++it)
     {
-        (*it)->deplacer_auto(pos_perso);
+        if((*it)->is_vivant())
+        {
+            (*it)->deplacer_auto(pos_perso);
+        }
+        else
+        {
+            delete (*it);
+            it = ennemis.erase(it);
+        }
     }
 }
 

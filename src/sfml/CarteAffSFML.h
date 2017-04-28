@@ -1,5 +1,5 @@
 #ifndef CARTEAFFSFML_H_INCLUDED
-#define CARTAFFESFML_H_INCLUDED
+#define CARTEAFFSFML_H_INCLUDED
 
 #include <string>
 #include <SFML/Graphics.hpp>
