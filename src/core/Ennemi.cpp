@@ -27,6 +27,7 @@ void Ennemi::charger()
 {
     Fichier fichier;
     fichier.charger(*this, nom);
+    pv_actuel= pv_max;
 }
 
 void Ennemi::set_deplacement(const VecteurM& v)

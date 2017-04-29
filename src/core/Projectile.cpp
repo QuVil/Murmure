@@ -67,3 +67,8 @@ int Projectile::get_id_projectile() const
 {
     return id_projectile;
 }
+
+float Projectile::get_degat()const
+{
+    return degats;
+}

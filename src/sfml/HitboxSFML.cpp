@@ -253,7 +253,7 @@ void HitboxSFML::projectiles_et_ennemis(std::list<ProjectileSFML*>* projectiles,
                 if(projectile_hb.intersects(ennemis_hb))
                 {
                     (*it_proj)->get_projectile()->set_collision();
-                    (*it_ennemis)->get_ennemi()->set_mort();
+                    (*it_ennemis)->get_ennemi()->infliger_degats((*it_proj)->get_projectile()->get_degat());
                 }
             }
         }

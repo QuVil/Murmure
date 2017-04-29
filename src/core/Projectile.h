@@ -10,8 +10,8 @@ private:
     bool collision;
     int id_projectile;
     int type;
-    int degats;
 
+    float degats;
     float vitesse;
     float taille_projectile;
     float angle_orientation;
@@ -34,6 +34,8 @@ public:
     float get_orientation_radian()const;
 
     float get_taille_projectile()const;
+
+    float get_degat()const;
 
     bool get_collision()const;
 
