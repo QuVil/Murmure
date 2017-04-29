@@ -50,12 +50,17 @@ public:
      * \param[in] case_y_app : coordonnée y de la case d'apparition
      */
 
-    Ennemi(std::string ia, int case_x_app, int case_y_app);
+     Ennemi(std::string &n, const int &case_x_app, const int &case_y_app);
 
-    /** \brief infliger _degats
-     * Procédure qui retire le nombre de points de vie si l'ennemi subit un coup
-     * \param[in] degat : nombre de degat subit
-     */
+     void charger();
+
+    void set_type_ia(const std::string &n);
+
+    void set_pv_max(const float &p);
+
+    void set_taille(const float &t);
+
+    void set_nom(const std::string &n);
 
     void infliger_degats(float degats);
 

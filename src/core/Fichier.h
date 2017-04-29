@@ -5,6 +5,7 @@
 #include <string>
 
 #include "Arme.h"
+#include "Ennemi.h"
 #include "Salle.h"
 #include "ZoneGen.h"
 #include "Zone.h"
@@ -94,6 +95,8 @@ public:
 
 
     void charger(ModeleSalle & m, std::string nom);
+
+    void charger(Ennemi &e, std::string nom);
 };
 
 #endif // FICHIER_H_INCLUDED

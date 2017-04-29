@@ -445,6 +445,63 @@ void Fichier::charger(Perso & p,const std::string &n)
     }
 }
 
+void Fichier::charger(Ennemi& e, std::string nom)
+{
+    std::stringstream ss;
+    ss << chemin << "Ennemi/cfg/" << nom << ".cfg";
+    std::string path = ss.str();
+
+    std::ifstream fichier((path).c_str(), std::ios::in);
+    assert(fichier);
+
+    std::stringstream buffer;
+    buffer << fichier.rdbuf();
+
+    //std::cout << buffer.str() << std::endl;
+
+    int valeur_int;
+    float valeur_float;
+    std::istringstream is_file(buffer.str());
+    std::string ligne;
+    std::string variable;
+    std::string valeur;
+    while( std::getline(is_file, ligne) )
+    {
+        std::istringstream is_line(ligne);
+        if( std::getline(is_line, variable, '=') )
+        {
+            assert(std::getline(is_line, valeur));
+            if(variable.compare("nom") == 0)
+            {
+              e.set_nom(valeur);
+            }
+            else if(variable.compare("type_ia") == 0)
+            {
+              e.set_type_ia(valeur);
+            }
+            else if(variable.compare("pv_max") == 0)
+            {
+              valeur_int = atoi(valeur.c_str());
+              e.set_pv_max(valeur_int);
+            }
+            else if(variable.compare("coefficient_vitesse") == 0)
+            {
+              valeur_float = atof(valeur.c_str());
+              e.set_coefficient_vitesse(valeur_float);
+            }
+            else if(variable.compare("taille") == 0)
+            {
+                valeur_float = atof(valeur.c_str());
+                e.set_taille(valeur_float);
+            }
+            else
+            {
+              std::cout << variable << " : Mauvaise Valeur (Ennemi)" << std::endl;
+              exit(0);
+            }
+        }
+    }
+}
 
 
 

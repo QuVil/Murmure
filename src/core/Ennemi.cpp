@@ -10,27 +10,23 @@
 
 Ennemi::Ennemi()
 {
-    type_ia = "chasseur";
 
-    taille = 0.001;
+}
 
+Ennemi::Ennemi(std::string& n, const int &case_x_app, const int &case_y_app)
+{
+    nom = n;
+    case_x_apparition = case_x_app;
+    case_y_apparition = case_y_app;
+    position.set_x((float) facteur*(case_y_app + 1.0/2.0));
+    position.set_y((float) facteur*(case_x_app + 1.0/2.0));
     vivant = true;
 }
 
-Ennemi::Ennemi(std::string ia, int case_x_app, int case_y_app)
+void Ennemi::charger()
 {
-    type_ia = ia;
-    case_x_apparition = case_x_app;
-    case_y_apparition = case_y_app;
-
-    position.set_x((float) facteur*(case_y_app + 1.0/2.0));
-    position.set_y((float) facteur*(case_x_app + 1.0/2.0));
-
-    vivant = true;
-
-    taille = 0.5;
-
-    coefficient_vitesse = 90000;
+    Fichier fichier;
+    fichier.charger(*this, nom);
 }
 
 void Ennemi::set_deplacement(const VecteurM& v)
@@ -187,4 +183,22 @@ void Ennemi::deplacer_auto(Coord2D pos_perso, const float &vitesse_frame)
 }
 
 
+void Ennemi::set_type_ia(const std::string& n)
+{
+    type_ia = n;
+}
 
+void Ennemi::set_pv_max(const float& p)
+{
+    pv_max = p;
+}
+
+void Ennemi::set_taille(const float& t)
+{
+    taille = t;
+}
+
+void Ennemi::set_nom(const std::string& n)
+{
+    nom = n;
+}

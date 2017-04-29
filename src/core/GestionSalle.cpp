@@ -96,12 +96,14 @@ void GestionSalle::maj_changement_salle()
 
             if (tests_case == 'e')
             {
-                    Ennemi* e = new Ennemi("chasseur", i, j);
-                    ennemis.push_back(e);
-                    std::cout << "ennemi ++" << std::endl;
-                    CaseSalle case_normale;
-                    case_normale.set_type('n');
-                    salle_actuelle_jeu->set_case(i, j, case_normale);
+                std::string nom = "0";
+                Ennemi* e = new Ennemi(nom, i, j);
+                e->charger();
+                ennemis.push_back(e);
+                std::cout << "ennemi ++" << std::endl;
+                CaseSalle case_normale;
+                case_normale.set_type('n');
+                salle_actuelle_jeu->set_case(i, j, case_normale);
             }
             else if (tests_case == 'c')
             {
