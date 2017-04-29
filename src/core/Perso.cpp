@@ -213,6 +213,7 @@ void Perso::charger_perso(const std::string& n)
     Fichier fichier;
     fichier.charger(*this, n);
 
+    pv_actuel=pv_max;
     arme1.charger(id_arme1, nv_arme1);
     arme2.charger(id_arme2, nv_arme2);
 }

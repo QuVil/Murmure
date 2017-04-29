@@ -268,3 +268,21 @@ void HitboxSFML::perso_et_clef(PersoSFML* perso, ClefSFML* clef)
     }
 }
 
+void HitboxSFML::perso_et_ennemis(PersoSFML* perso, std::list<EnnemiSFML*>* ennemis)
+{
+    sf::FloatRect perso_hb = perso->get_persosfml().getGlobalBounds();
+    sf::FloatRect ennemis_hb;
+    for(std::list<EnnemiSFML *>::iterator it_ennemis = ennemis->begin(); it_ennemis != ennemis->end(); ++it_ennemis)
+    {
+        if((*it_ennemis)->get_ennemi()->is_vivant())
+        {
+            ennemis_hb = (*it_ennemis)->get_ennemisfml().getGlobalBounds();
+            if(perso_hb.intersects(ennemis_hb))
+            {
+                perso->get_perso_ptr()->infliger_degats(10);
+                (*it_ennemis)->get_ennemi()->set_mort();
+            }
+        }
+    }
+}
+

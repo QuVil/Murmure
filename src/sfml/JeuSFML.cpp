@@ -177,6 +177,12 @@ void JeuSFML::init_texte()
     text_ennemis.setPosition(7 * scale_salle, 9*scale_salle + 24);
     text_ennemis.setCharacterSize(24);
     text_ennemis.setFillColor(sf::Color::White);
+
+    ecran_fin.setFont(police_test);
+    ecran_fin.setPosition(4 * scale_salle, 3*scale_salle + 24);
+    ecran_fin.setCharacterSize(70);
+    ecran_fin.setFillColor(sf::Color::White);
+    ecran_fin.setString("VOUS ETES MORT, FIN DU JEU");
 }
 
 /*
@@ -280,6 +286,12 @@ void JeuSFML::afficher()
     case 3:
         recupere_mouvements_menu();
         dessiner_menu();
+        break;
+    case 4:
+        window.clear(sf::Color::Black);
+        buffer.draw(ecran_fin);
+        //std::cout << "kkekk" << std::endl;
+        break;
     default:
         dessiner_salle();
         break;
@@ -318,6 +330,7 @@ void JeuSFML::ecrire_texte()
     text_fps_stringstream.str("");
     text_fps_stringstream << "NB ENNEMIS SFML: " << ennemisfml.size() << " GESTSALLE : " << jeu.retourne_ennemis()->size();
     text_ennemis.setString(text_fps_stringstream.str());
+
 
     buffer.draw(text_posx);
     buffer.draw(text_posy);
@@ -440,6 +453,7 @@ void JeuSFML::avancer_jeu()
     actualiser_clef();
     actualiser_projectiles();
     recupere_collisions();
+
     actualiser_salle();
 }
 
@@ -608,6 +622,12 @@ void JeuSFML::recupere_collisions()
     hitboxes.projectiles_et_salle(&projectilesfml, casesfml);
     hitboxes.projectiles_et_ennemis(&projectilesfml, &ennemisfml);
     hitboxes.ennemis_et_salle(&ennemisfml, casesfml, scale_salle, posx0salle, posy0salle);
+    hitboxes.perso_et_ennemis(&persosfml, &ennemisfml);
+    std::cout << "pv :" << persosfml.get_perso_ptr()->get_pv_actuel() << std::endl;
+    if(persosfml.get_perso_ptr()->get_pv_actuel()<=0)
+    {
+        mode_jeu = 4;
+    }
     if (jeu.get_salle_actuelle()->get_config() == 3)
     {
         hitboxes.perso_et_clef(&persosfml, &clefsfml);
