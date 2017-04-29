@@ -178,6 +178,11 @@ void JeuSFML::init_texte()
     text_ennemis.setCharacterSize(24);
     text_ennemis.setFillColor(sf::Color::White);
 
+    text_pv.setFont(police_test);
+    text_pv.setPosition(12 * scale_salle, 9*scale_salle + 24);
+    text_pv.setCharacterSize(24);
+    text_pv.setFillColor(sf::Color::White);
+
     ecran_fin.setFont(police_test);
     ecran_fin.setPosition(4 * scale_salle, 3*scale_salle + 24);
     ecran_fin.setCharacterSize(70);
@@ -331,6 +336,10 @@ void JeuSFML::ecrire_texte()
     text_fps_stringstream << "NB ENNEMIS SFML: " << ennemisfml.size() << " GESTSALLE : " << jeu.retourne_ennemis()->size();
     text_ennemis.setString(text_fps_stringstream.str());
 
+    text_fps_stringstream.str("");
+    text_fps_stringstream << "PV : " << persosfml.get_perso_ptr()->get_pv_actuel() << "/" << persosfml.get_perso_ptr()->get_pv_max();
+    text_pv.setString(text_fps_stringstream.str());
+
 
     buffer.draw(text_posx);
     buffer.draw(text_posy);
@@ -338,6 +347,7 @@ void JeuSFML::ecrire_texte()
     buffer.draw(text_mouseposy);
     buffer.draw(text_projectiles);
     buffer.draw(text_ennemis);
+    buffer.draw(text_pv);
 }
 
 

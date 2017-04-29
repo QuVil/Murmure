@@ -60,6 +60,7 @@ private:
     sf::Text text_mouseposx,text_mouseposy;
     sf::Text text_projectiles;
     sf::Text text_ennemis;
+    sf::Text text_pv;
     sf::Text ecran_fin;
     std::stringstream text_fps_stringstream;
     int fps_actuel;
