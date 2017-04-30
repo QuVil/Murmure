@@ -633,7 +633,6 @@ void JeuSFML::recupere_collisions()
     hitboxes.projectiles_et_ennemis(&projectilesfml, &ennemisfml);
     hitboxes.ennemis_et_salle(&ennemisfml, casesfml, scale_salle, posx0salle, posy0salle);
     hitboxes.perso_et_ennemis(&persosfml, &ennemisfml);
-    std::cout << "pv :" << persosfml.get_perso_ptr()->get_pv_actuel() << std::endl;
     if(persosfml.get_perso_ptr()->get_pv_actuel()<=0)
     {
         mode_jeu = 4;

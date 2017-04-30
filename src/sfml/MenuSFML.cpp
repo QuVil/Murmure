@@ -31,10 +31,11 @@ void MenuSFML::init_menu(const sf::Texture& texture_menu, const int &scale_salle
     //ecran_menu.setOrigin(0, 0);
     ecran_menu.setPosition(0, 0);
 
-    sf::Vector2f targetSize(1300.0f, 760.0f);
+    sf::VideoMode targetSize = sf::VideoMode::getDesktopMode();
+    //sf::Vector2f targetSize(1300.0f, 760.0f);
     ecran_menu.setScale(
-    targetSize.x / ecran_menu.getLocalBounds().width,
-    targetSize.y / ecran_menu.getLocalBounds().height);
+    targetSize.width / ecran_menu.getLocalBounds().width,
+    targetSize.height / ecran_menu.getLocalBounds().height);
 }
 
 void MenuSFML::init_curseur_menu(const sf::Texture& texture_curseur_menu, const int &scale_salle)

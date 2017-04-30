@@ -372,6 +372,8 @@
 		<Unit filename="src/sfml/MenuSFML.h">
 			<Option target="murmure_sfml" />
 		</Unit>
+		<Unit filename="src/sfml/ObjetSFML.cpp" />
+		<Unit filename="src/sfml/ObjetSFML.h" />
 		<Unit filename="src/sfml/PersoSFML.cpp">
 			<Option target="murmure_txt" />
 			<Option target="murmure_test" />

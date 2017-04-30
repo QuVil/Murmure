@@ -1,4 +1,4 @@
-------------------------Murmure-------------------------
+﻿------------------------Murmure-------------------------
 ->détails :
 Projet réalisé par :
 VILLERMET Quentin (11507338) & SUBLET Gary (11506450)
@@ -14,16 +14,18 @@ privé, sans succès.
 
 Le programme utilise la bibliothèque SFML, incluse dans le dossier lib.
 
-->Pour compiler le programme :
+->Pour compiler et lancer le programme :
 
-	make clean
+_Sous Linux :
 
-	make
-
-	bin/murmure_sfml.sh
+make clean
+make murmure_sfml
+bin/murmure_sfml.sh
 
 _Sous Windows :
-C:/Program Files/CodeBlocks/MinGW/bin/mingw_32_make.exe - f Makefile "cible")
+C:\Program Files (x86)\CodeBlocks\MinGW\bin\mingw32-make.exe -f Makefile clean
+C:\Program Files (x86)\CodeBlocks\MinGW\bin\mingw32-make.exe -f Makefile murmure_sfml.exe
+lancer dans bin\ le fichier murmure_sfml_windows.bat
 
 ->Pour jouer : Z-Q-S-D pour se déplacer, tirer à la souris (clic droit et gauche
 pour les 2 armes), ou à la manette, sticks gauche et droit pour bouger/tirer.
