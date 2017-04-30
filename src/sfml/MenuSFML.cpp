@@ -31,10 +31,10 @@ void MenuSFML::init_menu(const sf::Texture& texture_menu, const int &scale_salle
     //ecran_menu.setOrigin(0, 0);
     ecran_menu.setPosition(0, 0);
 
-    sf::Vector2f targetSize(900.0f, 1200.0f);
+    sf::Vector2f targetSize(1300.0f, 760.0f);
     ecran_menu.setScale(
     targetSize.x / ecran_menu.getLocalBounds().width,
-    targetSize.y / ecran_menu.getLocalBounds().height);///TODO
+    targetSize.y / ecran_menu.getLocalBounds().height);
 }
 
 void MenuSFML::init_curseur_menu(const sf::Texture& texture_curseur_menu, const int &scale_salle)
@@ -43,7 +43,7 @@ void MenuSFML::init_curseur_menu(const sf::Texture& texture_curseur_menu, const 
     curseur_selection.setOrigin(texture_curseur_menu.getSize().x/2, texture_curseur_menu.getSize().y/2);
     curseur_selection.setPosition(0, 0);
 
-    curseur_selection.setScale(1000/curseur_selection.getLocalBounds().width, 1300/curseur_selection.getLocalBounds().height);///TODO
+    curseur_selection.setScale(100/curseur_selection.getLocalBounds().width, 100/curseur_selection.getLocalBounds().height);
 }
 
 void MenuSFML::actualiser_selection_curseur(const char direction, const int scale_salle)

@@ -49,7 +49,6 @@ public:
      * \param[in] case_x_app : coordonnée x de la case d'apparition
      * \param[in] case_y_app : coordonnée y de la case d'apparition
      */
-
      Ennemi(std::string &n, const int &case_x_app, const int &case_y_app);
 
      void charger();
@@ -68,54 +67,46 @@ public:
      * Procédure qui va permettre à l'ennemi de récupérer des points de vie
      * \param[in] soin : quantité de points de vie récupéré
      */
-
     void soigner(float soin);
 
     /** \brief Mutateur du deplacement
      * \param[in] v : valeur du deplacement
      */
-
     void set_deplacement(const VecteurM &v);
 
     /** \brief Mutateur du deplacement
      * \param[in] x : valeur du deplacement horizontal
      * \param[in] y : valeur du deplacement vertical
      */
-
     void set_deplacement(const float &x, const float &y);
 
     /** \brief Mutateur du deplacement
      * Deplace l'ennemi en direction du personnage
      * \param[in] position_perso : position du personnage sur lequel il faut diriger l'ennemi
      */
-
     void set_deplacement(const Coord2D &position_perso);
 
     /** \brief Mutateur de l'orientation
      * Oriente l'ennemi en fonction
      * \param[in] v : orientation souhaitée
      */
-
     void set_orientation(const VecteurM &v);
 
     /** \brief Mutateur de la position
      * \param[in] x : coordonnée horizontale de la position
      * \param[in] y : coordonnée verticale de la position
      */
-
     void set_position(const int &x, const int &y);
 
     /** \brief Revient à l'ancienne position
      * Permet de définir l'ennemi à l'ancienne position à laquelle il était grâce à \a position_old
      */
-
     void revenir_ancienne_position();
 
     /** \brief Accesseur de la position
      * Retourne la position de l'ennemi
      * \return position actuelle
      */
-
     Coord2D get_position()const;
 
     /** \brief Accesseur du deplacement
@@ -198,21 +189,18 @@ public:
     /** \brief Tue ennemi
      * Met l'état de l'ennemi sur mort
      */
-
     void set_mort();
 
     /** \brief Gere le deplacement
      * Deplace l'ennemi en fonction de son type d'IA
      * \param[in] position_perso : position du personnage à chasser si l'IA en tient compte
      */
-
     void trouver_chemin(const Coord2D &position_perso, const float &vitesse_frame);
 
     /** \brief Deplace l'ennemi
      * Procedure qui va appeler les fonctions de deplacement de l'ennemi
      * \param pos_perso : position du personnage
      */
-
     void deplacer_auto(Coord2D pos_perso, const float &vitesse_frame);
 };
 
