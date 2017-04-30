@@ -38,7 +38,7 @@ JeuSFML::JeuSFML()
     view = window.getView();
     //temps_frame = sf::seconds((float) 1/FPS); // en seconde
     //window.setVerticalSyncEnabled(true);
-    //window.setFramerateLimit(100);
+    //window.setFramerateLimit(500);
 
     //window.setMouseCursorVisible(false);
     /////////////////////////////////////////////////////////////////////////
