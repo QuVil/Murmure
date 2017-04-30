@@ -2,10 +2,15 @@
 #include "Fichier.h"
 #include <iostream>
 
-/** \brief code source du module Arme
+/**
+ * \file Arme.cpp
+ * \brief code source du module Arme.
+ * \author Quentin.V & Gary.S
+ * \version 0.1
+ * \date 15 avril 2017
  *
- * \file Arme.h
  */
+
 
 Arme::Arme()
 {

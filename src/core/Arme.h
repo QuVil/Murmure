@@ -5,10 +5,15 @@
 #include "VecteurM.h"
 #include "Coord2D.h"
 
-/** \brief Header du module Arme
- *
+/**
  * \file Arme.h
+ * \brief Header du module Arme.
+ * \author Quentin.V & Gary.S
+ * \version 0.1
+ * \date 15 avril 2017
+ *
  */
+
 
 
 class Arme

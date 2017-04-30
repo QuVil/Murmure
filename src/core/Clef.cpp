@@ -1,3 +1,12 @@
+/**
+ * \file Clef.cpp
+ * \brief code source du module Clef.
+ * \author Quentin.V & Gary.S
+ * \version 0.1
+ * \date 20 avril 2017
+ *
+ */
+
 #include "Clef.h"
 
 Clef::Clef()
@@ -5,7 +14,7 @@ Clef::Clef()
     type_clef = 'b';
     par_terre = true;
 
-    taille = 1;
+    taille = 0.5;
 
     case_x_apparition = 3;
     case_y_apparition = 3;
