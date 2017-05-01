@@ -1,0 +1,349 @@
+\hypertarget{classZoneGen}{}\section{Zone\+Gen Class Reference}
+\label{classZoneGen}\index{Zone\+Gen@{Zone\+Gen}}
+
+
+class principale de generation de carte pour \hyperlink{classZone}{Zone}. \hyperlink{classZoneGen}{Zone\+Gen} est une classe de transition entre \hyperlink{classModele}{Modele} et \hyperlink{classZone}{Zone}, instanciant un generateur contenant une carte semblable aux Zones. Le generateur applique un patterne de base sur sa carte, puis \textquotesingle{}itere\textquotesingle{} dessus avec differentes methodes. une procedure permet ensuite de \hyperlink{classZoneGen_ad0f167f538f4e9f3e12908421297250f}{valider()} la carte, en verifiant que toutes les salles sont connectees, puis place le boss et l\textquotesingle{}objet de la \hyperlink{classZone}{Zone}.  
+
+
+
+
+{\ttfamily \#include $<$Zone\+Gen.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classZoneGen_aae2af3fc6b6db23a7b1f7091115ef392}{Zone\+Gen} ()
+\begin{DoxyCompactList}\small\item\em Constructeur par défaut Initialise toute la carte sur 0, met le {\itshape patterne} et la {\itshape methode} comme \char`\"{} \char`\"{} et place {\itshape valide} et {\itshape pret\+\_\+iteration} sur false. \end{DoxyCompactList}\item 
+int \hyperlink{classZoneGen_a893e3c5d0ae5ecc50bf19a5d90e89b45}{get\+\_\+etat} (int x, int y) const 
+\begin{DoxyCompactList}\small\item\em Accesseur d\textquotesingle{}une \textquotesingle{}salle\textquotesingle{} de la grille. \end{DoxyCompactList}\item 
+bool \hyperlink{classZoneGen_a0e073b705a18999388b0b85b7c11a080}{is\+\_\+valide} () const 
+\begin{DoxyCompactList}\small\item\em Accesseur de {\itshape valide}. \end{DoxyCompactList}\item 
+int \hyperlink{classZoneGen_ac64697de6f96b242b2fb191af66e1a30}{get\+\_\+posx\+\_\+dep} () const 
+\begin{DoxyCompactList}\small\item\em Accesseur de {\itshape posx\+\_\+dep}. posx\+\_\+dep est la coordonnee x de la case de depart de la {\itshape carte}. \end{DoxyCompactList}\item 
+int \hyperlink{classZoneGen_aa8a3a729f5d2106dbb47f33aa4d8bc9a}{get\+\_\+posy\+\_\+dep} () const 
+\begin{DoxyCompactList}\small\item\em Accesseur de {\itshape posy\+\_\+dep}. posx\+\_\+dep est la coordonnee y de la case de depart de la {\itshape carte}. \end{DoxyCompactList}\item 
+int \hyperlink{classZoneGen_a76588fc3a5d361a213ec28692b8abcdc}{get\+\_\+nb\+\_\+cases} () const 
+\begin{DoxyCompactList}\small\item\em \textquotesingle{}Accesseur\textquotesingle{} du nombre de cases de {\itshape carte}. \end{DoxyCompactList}\item 
+void \hyperlink{classZoneGen_a881eb249ee86fa522c58e7f42f651c85}{teste\+\_\+nb\+\_\+cases\+\_\+assez} (int nb\+\_\+voulu)
+\begin{DoxyCompactList}\small\item\em Vérifie que la nombre de cases est suffisant. fait appel à \hyperlink{classZoneGen_a76588fc3a5d361a213ec28692b8abcdc}{get\+\_\+nb\+\_\+cases()} et passe {\itshape valide} sur false si la {\itshape carte} contient plus de nb\+\_\+voulu cases. \end{DoxyCompactList}\item 
+void \hyperlink{classZoneGen_a47825d838930c2f8657044353767f222}{teste\+\_\+nb\+\_\+cases\+\_\+trop} (int nb\+\_\+voulu)
+\begin{DoxyCompactList}\small\item\em Vérifie que la nombre de cases n\textquotesingle{}est pas trop grand. fait appel à \hyperlink{classZoneGen_a76588fc3a5d361a213ec28692b8abcdc}{get\+\_\+nb\+\_\+cases()} et passe {\itshape valide} sur false si la {\itshape carte} contient moins de nb\+\_\+voulu cases. \end{DoxyCompactList}\item 
+void \hyperlink{classZoneGen_aa08565e6eb38911c72143aacfced7b91}{initialisation\+\_\+gen} (std\+::string pat, std\+::string met)
+\begin{DoxyCompactList}\small\item\em Initialise la {\itshape carte} avec le patterne voulu. passe {\itshape pret\+\_\+iteration} sur true après avoir vérifié que le {\itshape patterne} et la {\itshape methode} sont correctes, et charge le patterne depuis un \hyperlink{classFichier}{Fichier} avant de l\textquotesingle{}appliquer à la {\itshape carte}. \end{DoxyCompactList}\item 
+void \hyperlink{classZoneGen_a79aa554fa5bee5bd1e0af2a1a505fa57}{afficher\+\_\+carte} () const 
+\begin{DoxyCompactList}\small\item\em Affiche la carte dans la console. une procédure très certainement éphémère. \end{DoxyCompactList}\item 
+void \hyperlink{classZoneGen_a63dfaff24d4686702b22937606da1e04}{iterer} (std\+::string meth=\char`\"{}\char`\"{})
+\begin{DoxyCompactList}\small\item\em Itère sur le modèle avec la {\itshape methode} choisie. Procédure d\textquotesingle{}itération sur le generateur, qui parcours la {\itshape carte} dans le sens de la lecture, et applique des changements selon la {\itshape methode} d\textquotesingle{}iteration. \end{DoxyCompactList}\item 
+std\+::string \hyperlink{classZoneGen_ab1d84dcb2654e8339cd325cf15fcf9ca}{get\+\_\+patterne} ()
+\begin{DoxyCompactList}\small\item\em Accesseur du {\itshape patterne} de l\textquotesingle{}instance. \end{DoxyCompactList}\item 
+void \hyperlink{classZoneGen_a6b87a471d137c8db268ffc2df0425c81}{set\+\_\+etat} (int i, int j, int etat)
+\begin{DoxyCompactList}\small\item\em Mutateur d\textquotesingle{}une \textquotesingle{}salle\textquotesingle{} de la {\itshape carte} (int). \end{DoxyCompactList}\item 
+void \hyperlink{classZoneGen_ad0f167f538f4e9f3e12908421297250f}{valider} ()
+\begin{DoxyCompactList}\small\item\em Procédure de validation de la {\itshape carte}. Recopie {\itshape carte} dans {\itshape carte\+\_\+validation}, puis cherche une salle pour commencer la récursivité et appelle valider\+\_\+recursif() sur cette salle. Ensuite, vérifie que toutes les salles sont peintes et détermine l\textquotesingle{}état de validité de la {\itshape carte}. \end{DoxyCompactList}\item 
+void \hyperlink{classZoneGen_a57bde599d7912da9ee574d5f94c3ea48}{afficher\+\_\+validation} () const 
+\begin{DoxyCompactList}\small\item\em Affiche {\itshape carte\+\_\+validation} dans la console (txt) Ceci est une procédure de test -- elle est à détruire en release. \end{DoxyCompactList}\item 
+void \hyperlink{classZoneGen_a2e14ba96367ade514d250c4ae1aa5025}{placer\+\_\+boss} ()
+\begin{DoxyCompactList}\small\item\em place une salle de boss dans la {\itshape carte}. La recherche de boss se fait ainsi \+: une variable aleatoire decide en premier lieu si la recherche se fait dans le sens de lecture ou dans le sens inverse (pour plus de variation). Ensuite, on cherche une salle n\textquotesingle{}ayant qu\textquotesingle{}une seule salle adjacente. Si aucune salle n\textquotesingle{}est valable, l\textquotesingle{}attribut {\itshape valide} est passé sur false (ce qui implique que la carte est invalidée et repasse à la génération). \end{DoxyCompactList}\item 
+void \hyperlink{classZoneGen_ab288110fafd009f569ab27d65d35b3ed}{vider\+\_\+carte} ()
+\begin{DoxyCompactList}\small\item\em vide la {\itshape carte}. Met toute la {\itshape carte} sur 0, et passe {\itshape pret\+\_\+iteration} sur false. \end{DoxyCompactList}\item 
+void \hyperlink{classZoneGen_aadf5a70af191ddd5f5875878831a5b63}{placer\+\_\+depart} ()
+\begin{DoxyCompactList}\small\item\em Place la salle de départ. Fonctionne sur le même principe que \hyperlink{classZoneGen_a2e14ba96367ade514d250c4ae1aa5025}{placer\+\_\+boss()}. Cherche une salle avec 4 salles adjacentes. Mais s\textquotesingle{}il n\textquotesingle{}en existe pas, place le départ aléatoirement au lieu d\textquotesingle{}invalider la carte. \end{DoxyCompactList}\item 
+void \hyperlink{classZoneGen_a14f00aefb1e1c0a33bddeda26c9168ca}{placer\+\_\+clef} ()
+\begin{DoxyCompactList}\small\item\em Place la clef du boss. La clef du boss est toujours le plus loin possible du départ (ce qui implique qu\textquotesingle{}elle sera parfois à côté du boss). La procédure utilise donc logiquement calculer\+\_\+distance(). \end{DoxyCompactList}\item 
+void \hyperlink{classZoneGen_a56263320aa237d125e4737c21a4c6fa6}{placer\+\_\+objet} ()
+\begin{DoxyCompactList}\small\item\em Place une salle d\textquotesingle{}objet. L\textquotesingle{}objet est simplement placé sur une salle aléatoirement, pourvu qu\textquotesingle{}elle ne soit pas déjà utilisée à d\textquotesingle{}autres fins. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+class principale de generation de carte pour \hyperlink{classZone}{Zone}. \hyperlink{classZoneGen}{Zone\+Gen} est une classe de transition entre \hyperlink{classModele}{Modele} et \hyperlink{classZone}{Zone}, instanciant un generateur contenant une carte semblable aux Zones. Le generateur applique un patterne de base sur sa carte, puis \textquotesingle{}itere\textquotesingle{} dessus avec differentes methodes. une procedure permet ensuite de \hyperlink{classZoneGen_ad0f167f538f4e9f3e12908421297250f}{valider()} la carte, en verifiant que toutes les salles sont connectees, puis place le boss et l\textquotesingle{}objet de la \hyperlink{classZone}{Zone}. 
+
+\subsection{Constructor \& Destructor Documentation}
+\index{Zone\+Gen@{Zone\+Gen}!Zone\+Gen@{Zone\+Gen}}
+\index{Zone\+Gen@{Zone\+Gen}!Zone\+Gen@{Zone\+Gen}}
+\subsubsection[{\texorpdfstring{Zone\+Gen()}{ZoneGen()}}]{\setlength{\rightskip}{0pt plus 5cm}Zone\+Gen\+::\+Zone\+Gen (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classZoneGen_aae2af3fc6b6db23a7b1f7091115ef392}{}\label{classZoneGen_aae2af3fc6b6db23a7b1f7091115ef392}
+
+
+Constructeur par défaut Initialise toute la carte sur 0, met le {\itshape patterne} et la {\itshape methode} comme \char`\"{} \char`\"{} et place {\itshape valide} et {\itshape pret\+\_\+iteration} sur false. 
+
+
+
+\subsection{Member Function Documentation}
+\index{Zone\+Gen@{Zone\+Gen}!afficher\+\_\+carte@{afficher\+\_\+carte}}
+\index{afficher\+\_\+carte@{afficher\+\_\+carte}!Zone\+Gen@{Zone\+Gen}}
+\subsubsection[{\texorpdfstring{afficher\+\_\+carte() const }{afficher_carte() const }}]{\setlength{\rightskip}{0pt plus 5cm}void Zone\+Gen\+::afficher\+\_\+carte (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\hypertarget{classZoneGen_a79aa554fa5bee5bd1e0af2a1a505fa57}{}\label{classZoneGen_a79aa554fa5bee5bd1e0af2a1a505fa57}
+
+
+Affiche la carte dans la console. une procédure très certainement éphémère. 
+
+\index{Zone\+Gen@{Zone\+Gen}!afficher\+\_\+validation@{afficher\+\_\+validation}}
+\index{afficher\+\_\+validation@{afficher\+\_\+validation}!Zone\+Gen@{Zone\+Gen}}
+\subsubsection[{\texorpdfstring{afficher\+\_\+validation() const }{afficher_validation() const }}]{\setlength{\rightskip}{0pt plus 5cm}void Zone\+Gen\+::afficher\+\_\+validation (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\hypertarget{classZoneGen_a57bde599d7912da9ee574d5f94c3ea48}{}\label{classZoneGen_a57bde599d7912da9ee574d5f94c3ea48}
+
+
+Affiche {\itshape carte\+\_\+validation} dans la console (txt) Ceci est une procédure de test -- elle est à détruire en release. 
+
+\index{Zone\+Gen@{Zone\+Gen}!get\+\_\+etat@{get\+\_\+etat}}
+\index{get\+\_\+etat@{get\+\_\+etat}!Zone\+Gen@{Zone\+Gen}}
+\subsubsection[{\texorpdfstring{get\+\_\+etat(int x, int y) const }{get_etat(int x, int y) const }}]{\setlength{\rightskip}{0pt plus 5cm}int Zone\+Gen\+::get\+\_\+etat (
+\begin{DoxyParamCaption}
+\item[{int}]{x, }
+\item[{int}]{y}
+\end{DoxyParamCaption}
+) const}\hypertarget{classZoneGen_a893e3c5d0ae5ecc50bf19a5d90e89b45}{}\label{classZoneGen_a893e3c5d0ae5ecc50bf19a5d90e89b45}
+
+
+Accesseur d\textquotesingle{}une \textquotesingle{}salle\textquotesingle{} de la grille. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em x} & \+: coordonnees x de la salle. \\
+\hline
+\mbox{\tt in}  & {\em y} & \+: coordonnees y de la salle. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+l\textquotesingle{}entier correspondant à la \textquotesingle{}salle\textquotesingle{} x,y. 
+\end{DoxyReturn}
+\index{Zone\+Gen@{Zone\+Gen}!get\+\_\+nb\+\_\+cases@{get\+\_\+nb\+\_\+cases}}
+\index{get\+\_\+nb\+\_\+cases@{get\+\_\+nb\+\_\+cases}!Zone\+Gen@{Zone\+Gen}}
+\subsubsection[{\texorpdfstring{get\+\_\+nb\+\_\+cases() const }{get_nb_cases() const }}]{\setlength{\rightskip}{0pt plus 5cm}int Zone\+Gen\+::get\+\_\+nb\+\_\+cases (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\hypertarget{classZoneGen_a76588fc3a5d361a213ec28692b8abcdc}{}\label{classZoneGen_a76588fc3a5d361a213ec28692b8abcdc}
+
+
+\textquotesingle{}Accesseur\textquotesingle{} du nombre de cases de {\itshape carte}. 
+
+\begin{DoxyReturn}{Returns}
+le nombre de cases composant la {\itshape carte}. 
+\end{DoxyReturn}
+\index{Zone\+Gen@{Zone\+Gen}!get\+\_\+patterne@{get\+\_\+patterne}}
+\index{get\+\_\+patterne@{get\+\_\+patterne}!Zone\+Gen@{Zone\+Gen}}
+\subsubsection[{\texorpdfstring{get\+\_\+patterne()}{get_patterne()}}]{\setlength{\rightskip}{0pt plus 5cm}std\+::string Zone\+Gen\+::get\+\_\+patterne (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classZoneGen_ab1d84dcb2654e8339cd325cf15fcf9ca}{}\label{classZoneGen_ab1d84dcb2654e8339cd325cf15fcf9ca}
+
+
+Accesseur du {\itshape patterne} de l\textquotesingle{}instance. 
+
+\begin{DoxyReturn}{Returns}
+le {\itshape patterne} de \hyperlink{classZoneGen}{Zone\+Gen} (string). 
+\end{DoxyReturn}
+\index{Zone\+Gen@{Zone\+Gen}!get\+\_\+posx\+\_\+dep@{get\+\_\+posx\+\_\+dep}}
+\index{get\+\_\+posx\+\_\+dep@{get\+\_\+posx\+\_\+dep}!Zone\+Gen@{Zone\+Gen}}
+\subsubsection[{\texorpdfstring{get\+\_\+posx\+\_\+dep() const }{get_posx_dep() const }}]{\setlength{\rightskip}{0pt plus 5cm}int Zone\+Gen\+::get\+\_\+posx\+\_\+dep (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\hypertarget{classZoneGen_ac64697de6f96b242b2fb191af66e1a30}{}\label{classZoneGen_ac64697de6f96b242b2fb191af66e1a30}
+
+
+Accesseur de {\itshape posx\+\_\+dep}. posx\+\_\+dep est la coordonnee x de la case de depart de la {\itshape carte}. 
+
+\begin{DoxyReturn}{Returns}
+l\textquotesingle{}attribut {\itshape posx\+\_\+dep} de l\textquotesingle{}instance. 
+\end{DoxyReturn}
+\index{Zone\+Gen@{Zone\+Gen}!get\+\_\+posy\+\_\+dep@{get\+\_\+posy\+\_\+dep}}
+\index{get\+\_\+posy\+\_\+dep@{get\+\_\+posy\+\_\+dep}!Zone\+Gen@{Zone\+Gen}}
+\subsubsection[{\texorpdfstring{get\+\_\+posy\+\_\+dep() const }{get_posy_dep() const }}]{\setlength{\rightskip}{0pt plus 5cm}int Zone\+Gen\+::get\+\_\+posy\+\_\+dep (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\hypertarget{classZoneGen_aa8a3a729f5d2106dbb47f33aa4d8bc9a}{}\label{classZoneGen_aa8a3a729f5d2106dbb47f33aa4d8bc9a}
+
+
+Accesseur de {\itshape posy\+\_\+dep}. posx\+\_\+dep est la coordonnee y de la case de depart de la {\itshape carte}. 
+
+\begin{DoxyReturn}{Returns}
+l\textquotesingle{}attribut {\itshape posy\+\_\+dep} de l\textquotesingle{}instance. 
+\end{DoxyReturn}
+\index{Zone\+Gen@{Zone\+Gen}!initialisation\+\_\+gen@{initialisation\+\_\+gen}}
+\index{initialisation\+\_\+gen@{initialisation\+\_\+gen}!Zone\+Gen@{Zone\+Gen}}
+\subsubsection[{\texorpdfstring{initialisation\+\_\+gen(std\+::string pat, std\+::string met)}{initialisation_gen(std::string pat, std::string met)}}]{\setlength{\rightskip}{0pt plus 5cm}void Zone\+Gen\+::initialisation\+\_\+gen (
+\begin{DoxyParamCaption}
+\item[{std\+::string}]{pat, }
+\item[{std\+::string}]{met}
+\end{DoxyParamCaption}
+)}\hypertarget{classZoneGen_aa08565e6eb38911c72143aacfced7b91}{}\label{classZoneGen_aa08565e6eb38911c72143aacfced7b91}
+
+
+Initialise la {\itshape carte} avec le patterne voulu. passe {\itshape pret\+\_\+iteration} sur true après avoir vérifié que le {\itshape patterne} et la {\itshape methode} sont correctes, et charge le patterne depuis un \hyperlink{classFichier}{Fichier} avant de l\textquotesingle{}appliquer à la {\itshape carte}. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em pat} & \+: le nom du {\itshape patterne} à utiliser \+: carré, croix, etc.. \\
+\hline
+\mbox{\tt in}  & {\em met} & \+: le nom de {\itshape la} methode à utiliser \+: voisins, aleatoire, etc.. \\
+\hline
+\end{DoxyParams}
+\index{Zone\+Gen@{Zone\+Gen}!is\+\_\+valide@{is\+\_\+valide}}
+\index{is\+\_\+valide@{is\+\_\+valide}!Zone\+Gen@{Zone\+Gen}}
+\subsubsection[{\texorpdfstring{is\+\_\+valide() const }{is_valide() const }}]{\setlength{\rightskip}{0pt plus 5cm}bool Zone\+Gen\+::is\+\_\+valide (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\hypertarget{classZoneGen_a0e073b705a18999388b0b85b7c11a080}{}\label{classZoneGen_a0e073b705a18999388b0b85b7c11a080}
+
+
+Accesseur de {\itshape valide}. 
+
+\begin{DoxyReturn}{Returns}
+l\textquotesingle{}état de validité de la {\itshape carte} du generateur. 
+\end{DoxyReturn}
+\index{Zone\+Gen@{Zone\+Gen}!iterer@{iterer}}
+\index{iterer@{iterer}!Zone\+Gen@{Zone\+Gen}}
+\subsubsection[{\texorpdfstring{iterer(std\+::string meth="""")}{iterer(std::string meth="")}}]{\setlength{\rightskip}{0pt plus 5cm}void Zone\+Gen\+::iterer (
+\begin{DoxyParamCaption}
+\item[{std\+::string}]{meth = {\ttfamily \char`\"{}\char`\"{}}}
+\end{DoxyParamCaption}
+)}\hypertarget{classZoneGen_a63dfaff24d4686702b22937606da1e04}{}\label{classZoneGen_a63dfaff24d4686702b22937606da1e04}
+
+
+Itère sur le modèle avec la {\itshape methode} choisie. Procédure d\textquotesingle{}itération sur le generateur, qui parcours la {\itshape carte} dans le sens de la lecture, et applique des changements selon la {\itshape methode} d\textquotesingle{}iteration. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em meth} & \+: {\itshape methode} à appliquer pour l\textquotesingle{}iteration. \\
+\hline
+\end{DoxyParams}
+\index{Zone\+Gen@{Zone\+Gen}!placer\+\_\+boss@{placer\+\_\+boss}}
+\index{placer\+\_\+boss@{placer\+\_\+boss}!Zone\+Gen@{Zone\+Gen}}
+\subsubsection[{\texorpdfstring{placer\+\_\+boss()}{placer_boss()}}]{\setlength{\rightskip}{0pt plus 5cm}void Zone\+Gen\+::placer\+\_\+boss (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classZoneGen_a2e14ba96367ade514d250c4ae1aa5025}{}\label{classZoneGen_a2e14ba96367ade514d250c4ae1aa5025}
+
+
+place une salle de boss dans la {\itshape carte}. La recherche de boss se fait ainsi \+: une variable aleatoire decide en premier lieu si la recherche se fait dans le sens de lecture ou dans le sens inverse (pour plus de variation). Ensuite, on cherche une salle n\textquotesingle{}ayant qu\textquotesingle{}une seule salle adjacente. Si aucune salle n\textquotesingle{}est valable, l\textquotesingle{}attribut {\itshape valide} est passé sur false (ce qui implique que la carte est invalidée et repasse à la génération). 
+
+\index{Zone\+Gen@{Zone\+Gen}!placer\+\_\+clef@{placer\+\_\+clef}}
+\index{placer\+\_\+clef@{placer\+\_\+clef}!Zone\+Gen@{Zone\+Gen}}
+\subsubsection[{\texorpdfstring{placer\+\_\+clef()}{placer_clef()}}]{\setlength{\rightskip}{0pt plus 5cm}void Zone\+Gen\+::placer\+\_\+clef (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classZoneGen_a14f00aefb1e1c0a33bddeda26c9168ca}{}\label{classZoneGen_a14f00aefb1e1c0a33bddeda26c9168ca}
+
+
+Place la clef du boss. La clef du boss est toujours le plus loin possible du départ (ce qui implique qu\textquotesingle{}elle sera parfois à côté du boss). La procédure utilise donc logiquement calculer\+\_\+distance(). 
+
+\index{Zone\+Gen@{Zone\+Gen}!placer\+\_\+depart@{placer\+\_\+depart}}
+\index{placer\+\_\+depart@{placer\+\_\+depart}!Zone\+Gen@{Zone\+Gen}}
+\subsubsection[{\texorpdfstring{placer\+\_\+depart()}{placer_depart()}}]{\setlength{\rightskip}{0pt plus 5cm}void Zone\+Gen\+::placer\+\_\+depart (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classZoneGen_aadf5a70af191ddd5f5875878831a5b63}{}\label{classZoneGen_aadf5a70af191ddd5f5875878831a5b63}
+
+
+Place la salle de départ. Fonctionne sur le même principe que \hyperlink{classZoneGen_a2e14ba96367ade514d250c4ae1aa5025}{placer\+\_\+boss()}. Cherche une salle avec 4 salles adjacentes. Mais s\textquotesingle{}il n\textquotesingle{}en existe pas, place le départ aléatoirement au lieu d\textquotesingle{}invalider la carte. 
+
+\index{Zone\+Gen@{Zone\+Gen}!placer\+\_\+objet@{placer\+\_\+objet}}
+\index{placer\+\_\+objet@{placer\+\_\+objet}!Zone\+Gen@{Zone\+Gen}}
+\subsubsection[{\texorpdfstring{placer\+\_\+objet()}{placer_objet()}}]{\setlength{\rightskip}{0pt plus 5cm}void Zone\+Gen\+::placer\+\_\+objet (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classZoneGen_a56263320aa237d125e4737c21a4c6fa6}{}\label{classZoneGen_a56263320aa237d125e4737c21a4c6fa6}
+
+
+Place une salle d\textquotesingle{}objet. L\textquotesingle{}objet est simplement placé sur une salle aléatoirement, pourvu qu\textquotesingle{}elle ne soit pas déjà utilisée à d\textquotesingle{}autres fins. 
+
+\index{Zone\+Gen@{Zone\+Gen}!set\+\_\+etat@{set\+\_\+etat}}
+\index{set\+\_\+etat@{set\+\_\+etat}!Zone\+Gen@{Zone\+Gen}}
+\subsubsection[{\texorpdfstring{set\+\_\+etat(int i, int j, int etat)}{set_etat(int i, int j, int etat)}}]{\setlength{\rightskip}{0pt plus 5cm}void Zone\+Gen\+::set\+\_\+etat (
+\begin{DoxyParamCaption}
+\item[{int}]{i, }
+\item[{int}]{j, }
+\item[{int}]{etat}
+\end{DoxyParamCaption}
+)}\hypertarget{classZoneGen_a6b87a471d137c8db268ffc2df0425c81}{}\label{classZoneGen_a6b87a471d137c8db268ffc2df0425c81}
+
+
+Mutateur d\textquotesingle{}une \textquotesingle{}salle\textquotesingle{} de la {\itshape carte} (int). 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em i} & \+: coordonnee x de la \textquotesingle{}salle\textquotesingle{}. \\
+\hline
+\mbox{\tt in}  & {\em j} & \+: coordonnee y de la \textquotesingle{}salle\textquotesingle{}. \\
+\hline
+\mbox{\tt in}  & {\em salle} & \+: l\textquotesingle{}int qui remplacera le carte\mbox{[}i\mbox{]}\mbox{[}j\mbox{]} actuel. \\
+\hline
+\end{DoxyParams}
+\index{Zone\+Gen@{Zone\+Gen}!teste\+\_\+nb\+\_\+cases\+\_\+assez@{teste\+\_\+nb\+\_\+cases\+\_\+assez}}
+\index{teste\+\_\+nb\+\_\+cases\+\_\+assez@{teste\+\_\+nb\+\_\+cases\+\_\+assez}!Zone\+Gen@{Zone\+Gen}}
+\subsubsection[{\texorpdfstring{teste\+\_\+nb\+\_\+cases\+\_\+assez(int nb\+\_\+voulu)}{teste_nb_cases_assez(int nb_voulu)}}]{\setlength{\rightskip}{0pt plus 5cm}void Zone\+Gen\+::teste\+\_\+nb\+\_\+cases\+\_\+assez (
+\begin{DoxyParamCaption}
+\item[{int}]{nb\+\_\+voulu}
+\end{DoxyParamCaption}
+)}\hypertarget{classZoneGen_a881eb249ee86fa522c58e7f42f651c85}{}\label{classZoneGen_a881eb249ee86fa522c58e7f42f651c85}
+
+
+Vérifie que la nombre de cases est suffisant. fait appel à \hyperlink{classZoneGen_a76588fc3a5d361a213ec28692b8abcdc}{get\+\_\+nb\+\_\+cases()} et passe {\itshape valide} sur false si la {\itshape carte} contient plus de nb\+\_\+voulu cases. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em nb\+\_\+voulu} & \+: le nbre maximum de cases voulues. \\
+\hline
+\end{DoxyParams}
+\index{Zone\+Gen@{Zone\+Gen}!teste\+\_\+nb\+\_\+cases\+\_\+trop@{teste\+\_\+nb\+\_\+cases\+\_\+trop}}
+\index{teste\+\_\+nb\+\_\+cases\+\_\+trop@{teste\+\_\+nb\+\_\+cases\+\_\+trop}!Zone\+Gen@{Zone\+Gen}}
+\subsubsection[{\texorpdfstring{teste\+\_\+nb\+\_\+cases\+\_\+trop(int nb\+\_\+voulu)}{teste_nb_cases_trop(int nb_voulu)}}]{\setlength{\rightskip}{0pt plus 5cm}void Zone\+Gen\+::teste\+\_\+nb\+\_\+cases\+\_\+trop (
+\begin{DoxyParamCaption}
+\item[{int}]{nb\+\_\+voulu}
+\end{DoxyParamCaption}
+)}\hypertarget{classZoneGen_a47825d838930c2f8657044353767f222}{}\label{classZoneGen_a47825d838930c2f8657044353767f222}
+
+
+Vérifie que la nombre de cases n\textquotesingle{}est pas trop grand. fait appel à \hyperlink{classZoneGen_a76588fc3a5d361a213ec28692b8abcdc}{get\+\_\+nb\+\_\+cases()} et passe {\itshape valide} sur false si la {\itshape carte} contient moins de nb\+\_\+voulu cases. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em nb\+\_\+voulu} & \+: le nbre minimum de cases voulues. \\
+\hline
+\end{DoxyParams}
+\index{Zone\+Gen@{Zone\+Gen}!valider@{valider}}
+\index{valider@{valider}!Zone\+Gen@{Zone\+Gen}}
+\subsubsection[{\texorpdfstring{valider()}{valider()}}]{\setlength{\rightskip}{0pt plus 5cm}void Zone\+Gen\+::valider (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classZoneGen_ad0f167f538f4e9f3e12908421297250f}{}\label{classZoneGen_ad0f167f538f4e9f3e12908421297250f}
+
+
+Procédure de validation de la {\itshape carte}. Recopie {\itshape carte} dans {\itshape carte\+\_\+validation}, puis cherche une salle pour commencer la récursivité et appelle valider\+\_\+recursif() sur cette salle. Ensuite, vérifie que toutes les salles sont peintes et détermine l\textquotesingle{}état de validité de la {\itshape carte}. 
+
+\index{Zone\+Gen@{Zone\+Gen}!vider\+\_\+carte@{vider\+\_\+carte}}
+\index{vider\+\_\+carte@{vider\+\_\+carte}!Zone\+Gen@{Zone\+Gen}}
+\subsubsection[{\texorpdfstring{vider\+\_\+carte()}{vider_carte()}}]{\setlength{\rightskip}{0pt plus 5cm}void Zone\+Gen\+::vider\+\_\+carte (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classZoneGen_ab288110fafd009f569ab27d65d35b3ed}{}\label{classZoneGen_ab288110fafd009f569ab27d65d35b3ed}
+
+
+vide la {\itshape carte}. Met toute la {\itshape carte} sur 0, et passe {\itshape pret\+\_\+iteration} sur false. 
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/quentin/\+Murmure/src/core/\hyperlink{ZoneGen_8h}{Zone\+Gen.\+h}\item 
+/home/quentin/\+Murmure/src/core/\hyperlink{ZoneGen_8cpp}{Zone\+Gen.\+cpp}\end{DoxyCompactItemize}

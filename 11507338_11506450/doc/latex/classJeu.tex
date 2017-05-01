@@ -1,0 +1,345 @@
+\hypertarget{classJeu}{}\section{Jeu Class Reference}
+\label{classJeu}\index{Jeu@{Jeu}}
+
+
+{\ttfamily \#include $<$Jeu.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classJeu_acc5795ee00edf75516d3dfe65be3e6d6}{Jeu} ()
+\begin{DoxyCompactList}\small\item\em Constructeur Déclare les variables par défaut. \end{DoxyCompactList}\item 
+\hyperlink{classSalle}{Salle} $\ast$ \hyperlink{classJeu_a2261f7e8b69c9b3c149c7544e3650d44}{get\+\_\+salle\+\_\+actuelle} ()
+\begin{DoxyCompactList}\small\item\em Accesseur salle actuelle. \end{DoxyCompactList}\item 
+\hyperlink{classZone}{Zone} \hyperlink{classJeu_ad039e51fea7f4831f1f7461bdad20854}{get\+\_\+zone} ()
+\begin{DoxyCompactList}\small\item\em Accesseur zone. \end{DoxyCompactList}\item 
+\hyperlink{classPerso}{Perso} \hyperlink{classJeu_a1a13f300078c5c38d402937f7bee40e5}{get\+\_\+perso} ()
+\begin{DoxyCompactList}\small\item\em Accesseur perso. \end{DoxyCompactList}\item 
+int \hyperlink{classJeu_a431b8b7da233c1bfc0ea553b2ecb278b}{grille\+\_\+largeur} ()
+\item 
+int \hyperlink{classJeu_a2fe158a6437316b3f737927f643801d2}{grille\+\_\+hauteur} ()
+\item 
+void \hyperlink{classJeu_a86ed39a8b3d080a3e38f03034e9ce734}{changer\+\_\+perso} (const std\+::string \&n)
+\begin{DoxyCompactList}\small\item\em Change de perso Procédure qui va changer le personnage jouable. \end{DoxyCompactList}\item 
+void \hyperlink{classJeu_af53414a64fbed782135517c6244baa19}{deplacer\+\_\+perso} (const float \&x, const float \&y)
+\begin{DoxyCompactList}\small\item\em Deplace le personnage Procédure qui va déplacer le personnage. \end{DoxyCompactList}\item 
+void \hyperlink{classJeu_ad515ef604f0ca6eed7a48592e26213b8}{definir\+\_\+position\+\_\+perso} (const float \&x, const float \&y)
+\begin{DoxyCompactList}\small\item\em Mutateur position personnage Défini la position du personnage. \end{DoxyCompactList}\item 
+void \hyperlink{classJeu_a356c3f60c1fba1d16bce98013eefe443}{definir\+\_\+orientation\+\_\+perso} (const \hyperlink{classVecteurM}{VecteurM} \&v)
+\begin{DoxyCompactList}\small\item\em Mutateur orientation personnage Défini l\textquotesingle{}orientation du personnage. \end{DoxyCompactList}\item 
+bool \hyperlink{classJeu_aa2a5e6d3d7a3e6a57a0c280694701299}{zone\+\_\+changer\+\_\+salle} (const char \&c, bool devmode)
+\begin{DoxyCompactList}\small\item\em Change de salle Fonction qui va d\textquotesingle{}abord tester si le changement de salle peut être effectué, et si oui, change de salle. \end{DoxyCompactList}\item 
+void \hyperlink{classJeu_a355402f932a5b99ee80c702948e632a5}{deplacer\+\_\+perso\+\_\+txt} (char direction)
+\item 
+void \hyperlink{classJeu_a56b2057832a6b7aa9535299131fb653e}{placer\+\_\+perso\+\_\+txt} (int x, int y)
+\item 
+void \hyperlink{classJeu_aca3f9ff1143c4d9093417e1f0d12b688}{ajouter\+\_\+projectile\+\_\+perso} (const int \&arme)
+\begin{DoxyCompactList}\small\item\em Ajoute un projectile perso Lors d\textquotesingle{}un tir, ajoute un nouveau projectile tiré par le personnage. \end{DoxyCompactList}\item 
+void \hyperlink{classJeu_a42e93a4cdde990d2ad94fdaa1a21d4f6}{avancer\+\_\+jeu} (const float \&vitesse\+\_\+base, const int \&taille\+\_\+case)
+\begin{DoxyCompactList}\small\item\em Actualise le jeu Actualise l\textquotesingle{}ensemble des entités indépendantes (ennemis, projectiles) \end{DoxyCompactList}\item 
+std\+::list$<$ \hyperlink{classProjectile}{Projectile} $\ast$ $>$ $\ast$ \hyperlink{classJeu_a6b7342dc6320c4a879abf949fe7062c6}{retourne\+\_\+projectiles} ()
+\begin{DoxyCompactList}\small\item\em Accesseur des projectiles. \end{DoxyCompactList}\item 
+std\+::list$<$ \hyperlink{classEnnemi}{Ennemi} $\ast$ $>$ $\ast$ \hyperlink{classJeu_a66190619d54d69a84ba80ea3f150071a}{retourne\+\_\+ennemis} ()
+\begin{DoxyCompactList}\small\item\em Accesseur des ennemis. \end{DoxyCompactList}\item 
+\hyperlink{classPerso}{Perso} $\ast$ \hyperlink{classJeu_af95d3d6493f47b030ecc3807403d5cf6}{retourne\+\_\+perso\+\_\+ptr} ()
+\begin{DoxyCompactList}\small\item\em Accesseur du personnage. \end{DoxyCompactList}\item 
+void \hyperlink{classJeu_aff98b3863da48d94194ff7450d47c355}{deplace\+\_\+ennemis\+\_\+auto} ()
+\begin{DoxyCompactList}\small\item\em Actualise les ennemis Actualise les positions et les déplacement des ennemis. \end{DoxyCompactList}\item 
+\hyperlink{classClef}{Clef} $\ast$ \hyperlink{classJeu_a3b7707f717a71931870b6d96208e013e}{retourne\+\_\+clef} ()
+\begin{DoxyCompactList}\small\item\em Accesseur de la clef. \end{DoxyCompactList}\item 
+void \hyperlink{classJeu_abefba32caf2e87a24965abdefffd28c0}{initialiser\+\_\+jeu} (const std\+::string \&nom\+\_\+perso, const int \&niveau)
+\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{Jeu@{Jeu}!Jeu@{Jeu}}
+\index{Jeu@{Jeu}!Jeu@{Jeu}}
+\subsubsection[{\texorpdfstring{Jeu()}{Jeu()}}]{\setlength{\rightskip}{0pt plus 5cm}Jeu\+::\+Jeu (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classJeu_acc5795ee00edf75516d3dfe65be3e6d6}{}\label{classJeu_acc5795ee00edf75516d3dfe65be3e6d6}
+
+
+Constructeur Déclare les variables par défaut. 
+
+
+
+\subsection{Member Function Documentation}
+\index{Jeu@{Jeu}!ajouter\+\_\+projectile\+\_\+perso@{ajouter\+\_\+projectile\+\_\+perso}}
+\index{ajouter\+\_\+projectile\+\_\+perso@{ajouter\+\_\+projectile\+\_\+perso}!Jeu@{Jeu}}
+\subsubsection[{\texorpdfstring{ajouter\+\_\+projectile\+\_\+perso(const int \&arme)}{ajouter_projectile_perso(const int &arme)}}]{\setlength{\rightskip}{0pt plus 5cm}void Jeu\+::ajouter\+\_\+projectile\+\_\+perso (
+\begin{DoxyParamCaption}
+\item[{const int \&}]{arme}
+\end{DoxyParamCaption}
+)}\hypertarget{classJeu_aca3f9ff1143c4d9093417e1f0d12b688}{}\label{classJeu_aca3f9ff1143c4d9093417e1f0d12b688}
+
+
+Ajoute un projectile perso Lors d\textquotesingle{}un tir, ajoute un nouveau projectile tiré par le personnage. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em arme} & \+: numéro de l\textquotesingle{}arme du personnage \\
+\hline
+\end{DoxyParams}
+\index{Jeu@{Jeu}!avancer\+\_\+jeu@{avancer\+\_\+jeu}}
+\index{avancer\+\_\+jeu@{avancer\+\_\+jeu}!Jeu@{Jeu}}
+\subsubsection[{\texorpdfstring{avancer\+\_\+jeu(const float \&vitesse\+\_\+base, const int \&taille\+\_\+case)}{avancer_jeu(const float &vitesse_base, const int &taille_case)}}]{\setlength{\rightskip}{0pt plus 5cm}void Jeu\+::avancer\+\_\+jeu (
+\begin{DoxyParamCaption}
+\item[{const float \&}]{vitesse\+\_\+base, }
+\item[{const int \&}]{taille\+\_\+case}
+\end{DoxyParamCaption}
+)}\hypertarget{classJeu_a42e93a4cdde990d2ad94fdaa1a21d4f6}{}\label{classJeu_a42e93a4cdde990d2ad94fdaa1a21d4f6}
+
+
+Actualise le jeu Actualise l\textquotesingle{}ensemble des entités indépendantes (ennemis, projectiles) 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em vitesse\+\_\+base} & \+: coefficient calculé à partir du framerate pour avoir une vitesse de base constante \\
+\hline
+\mbox{\tt in}  & {\em taille\+\_\+case} & \+: taille des cases \\
+\hline
+\end{DoxyParams}
+\index{Jeu@{Jeu}!changer\+\_\+perso@{changer\+\_\+perso}}
+\index{changer\+\_\+perso@{changer\+\_\+perso}!Jeu@{Jeu}}
+\subsubsection[{\texorpdfstring{changer\+\_\+perso(const std\+::string \&n)}{changer_perso(const std::string &n)}}]{\setlength{\rightskip}{0pt plus 5cm}void Jeu\+::changer\+\_\+perso (
+\begin{DoxyParamCaption}
+\item[{const std\+::string \&}]{n}
+\end{DoxyParamCaption}
+)}\hypertarget{classJeu_a86ed39a8b3d080a3e38f03034e9ce734}{}\label{classJeu_a86ed39a8b3d080a3e38f03034e9ce734}
+
+
+Change de perso Procédure qui va changer le personnage jouable. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em n} & \+: nom du nouveau personnage \\
+\hline
+\end{DoxyParams}
+\index{Jeu@{Jeu}!definir\+\_\+orientation\+\_\+perso@{definir\+\_\+orientation\+\_\+perso}}
+\index{definir\+\_\+orientation\+\_\+perso@{definir\+\_\+orientation\+\_\+perso}!Jeu@{Jeu}}
+\subsubsection[{\texorpdfstring{definir\+\_\+orientation\+\_\+perso(const Vecteur\+M \&v)}{definir_orientation_perso(const VecteurM &v)}}]{\setlength{\rightskip}{0pt plus 5cm}void Jeu\+::definir\+\_\+orientation\+\_\+perso (
+\begin{DoxyParamCaption}
+\item[{const {\bf VecteurM} \&}]{v}
+\end{DoxyParamCaption}
+)}\hypertarget{classJeu_a356c3f60c1fba1d16bce98013eefe443}{}\label{classJeu_a356c3f60c1fba1d16bce98013eefe443}
+
+
+Mutateur orientation personnage Défini l\textquotesingle{}orientation du personnage. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em v} & \+: orientation voulue \\
+\hline
+\end{DoxyParams}
+\index{Jeu@{Jeu}!definir\+\_\+position\+\_\+perso@{definir\+\_\+position\+\_\+perso}}
+\index{definir\+\_\+position\+\_\+perso@{definir\+\_\+position\+\_\+perso}!Jeu@{Jeu}}
+\subsubsection[{\texorpdfstring{definir\+\_\+position\+\_\+perso(const float \&x, const float \&y)}{definir_position_perso(const float &x, const float &y)}}]{\setlength{\rightskip}{0pt plus 5cm}void Jeu\+::definir\+\_\+position\+\_\+perso (
+\begin{DoxyParamCaption}
+\item[{const float \&}]{x, }
+\item[{const float \&}]{y}
+\end{DoxyParamCaption}
+)}\hypertarget{classJeu_ad515ef604f0ca6eed7a48592e26213b8}{}\label{classJeu_ad515ef604f0ca6eed7a48592e26213b8}
+
+
+Mutateur position personnage Défini la position du personnage. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em x} & \+: coordonnée horizontale \\
+\hline
+\mbox{\tt in}  & {\em y} & \+: coordonnée verticale \\
+\hline
+\end{DoxyParams}
+\index{Jeu@{Jeu}!deplace\+\_\+ennemis\+\_\+auto@{deplace\+\_\+ennemis\+\_\+auto}}
+\index{deplace\+\_\+ennemis\+\_\+auto@{deplace\+\_\+ennemis\+\_\+auto}!Jeu@{Jeu}}
+\subsubsection[{\texorpdfstring{deplace\+\_\+ennemis\+\_\+auto()}{deplace_ennemis_auto()}}]{\setlength{\rightskip}{0pt plus 5cm}void Jeu\+::deplace\+\_\+ennemis\+\_\+auto (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classJeu_aff98b3863da48d94194ff7450d47c355}{}\label{classJeu_aff98b3863da48d94194ff7450d47c355}
+
+
+Actualise les ennemis Actualise les positions et les déplacement des ennemis. 
+
+\index{Jeu@{Jeu}!deplacer\+\_\+perso@{deplacer\+\_\+perso}}
+\index{deplacer\+\_\+perso@{deplacer\+\_\+perso}!Jeu@{Jeu}}
+\subsubsection[{\texorpdfstring{deplacer\+\_\+perso(const float \&x, const float \&y)}{deplacer_perso(const float &x, const float &y)}}]{\setlength{\rightskip}{0pt plus 5cm}void Jeu\+::deplacer\+\_\+perso (
+\begin{DoxyParamCaption}
+\item[{const float \&}]{x, }
+\item[{const float \&}]{y}
+\end{DoxyParamCaption}
+)}\hypertarget{classJeu_af53414a64fbed782135517c6244baa19}{}\label{classJeu_af53414a64fbed782135517c6244baa19}
+
+
+Deplace le personnage Procédure qui va déplacer le personnage. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em x} & \+: coordonnée horitontale du déplacement \\
+\hline
+\mbox{\tt in}  & {\em y} & \+: coordonnée verticale du déplacement \\
+\hline
+\end{DoxyParams}
+\index{Jeu@{Jeu}!deplacer\+\_\+perso\+\_\+txt@{deplacer\+\_\+perso\+\_\+txt}}
+\index{deplacer\+\_\+perso\+\_\+txt@{deplacer\+\_\+perso\+\_\+txt}!Jeu@{Jeu}}
+\subsubsection[{\texorpdfstring{deplacer\+\_\+perso\+\_\+txt(char direction)}{deplacer_perso_txt(char direction)}}]{\setlength{\rightskip}{0pt plus 5cm}void Jeu\+::deplacer\+\_\+perso\+\_\+txt (
+\begin{DoxyParamCaption}
+\item[{char}]{direction}
+\end{DoxyParamCaption}
+)}\hypertarget{classJeu_a355402f932a5b99ee80c702948e632a5}{}\label{classJeu_a355402f932a5b99ee80c702948e632a5}
+\index{Jeu@{Jeu}!get\+\_\+perso@{get\+\_\+perso}}
+\index{get\+\_\+perso@{get\+\_\+perso}!Jeu@{Jeu}}
+\subsubsection[{\texorpdfstring{get\+\_\+perso()}{get_perso()}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Perso} Jeu\+::get\+\_\+perso (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classJeu_a1a13f300078c5c38d402937f7bee40e5}{}\label{classJeu_a1a13f300078c5c38d402937f7bee40e5}
+
+
+Accesseur perso. 
+
+\begin{DoxyReturn}{Returns}
+{\itshape perso} 
+\end{DoxyReturn}
+\index{Jeu@{Jeu}!get\+\_\+salle\+\_\+actuelle@{get\+\_\+salle\+\_\+actuelle}}
+\index{get\+\_\+salle\+\_\+actuelle@{get\+\_\+salle\+\_\+actuelle}!Jeu@{Jeu}}
+\subsubsection[{\texorpdfstring{get\+\_\+salle\+\_\+actuelle()}{get_salle_actuelle()}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Salle} $\ast$ Jeu\+::get\+\_\+salle\+\_\+actuelle (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classJeu_a2261f7e8b69c9b3c149c7544e3650d44}{}\label{classJeu_a2261f7e8b69c9b3c149c7544e3650d44}
+
+
+Accesseur salle actuelle. 
+
+\begin{DoxyReturn}{Returns}
+pointeur sur la {\itshape salle\+\_\+actuelle} 
+\end{DoxyReturn}
+\index{Jeu@{Jeu}!get\+\_\+zone@{get\+\_\+zone}}
+\index{get\+\_\+zone@{get\+\_\+zone}!Jeu@{Jeu}}
+\subsubsection[{\texorpdfstring{get\+\_\+zone()}{get_zone()}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Zone} Jeu\+::get\+\_\+zone (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classJeu_ad039e51fea7f4831f1f7461bdad20854}{}\label{classJeu_ad039e51fea7f4831f1f7461bdad20854}
+
+
+Accesseur zone. 
+
+\begin{DoxyReturn}{Returns}
+{\itshape zone} 
+\end{DoxyReturn}
+\index{Jeu@{Jeu}!grille\+\_\+hauteur@{grille\+\_\+hauteur}}
+\index{grille\+\_\+hauteur@{grille\+\_\+hauteur}!Jeu@{Jeu}}
+\subsubsection[{\texorpdfstring{grille\+\_\+hauteur()}{grille_hauteur()}}]{\setlength{\rightskip}{0pt plus 5cm}int Jeu\+::grille\+\_\+hauteur (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classJeu_a2fe158a6437316b3f737927f643801d2}{}\label{classJeu_a2fe158a6437316b3f737927f643801d2}
+\index{Jeu@{Jeu}!grille\+\_\+largeur@{grille\+\_\+largeur}}
+\index{grille\+\_\+largeur@{grille\+\_\+largeur}!Jeu@{Jeu}}
+\subsubsection[{\texorpdfstring{grille\+\_\+largeur()}{grille_largeur()}}]{\setlength{\rightskip}{0pt plus 5cm}int Jeu\+::grille\+\_\+largeur (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classJeu_a431b8b7da233c1bfc0ea553b2ecb278b}{}\label{classJeu_a431b8b7da233c1bfc0ea553b2ecb278b}
+\index{Jeu@{Jeu}!initialiser\+\_\+jeu@{initialiser\+\_\+jeu}}
+\index{initialiser\+\_\+jeu@{initialiser\+\_\+jeu}!Jeu@{Jeu}}
+\subsubsection[{\texorpdfstring{initialiser\+\_\+jeu(const std\+::string \&nom\+\_\+perso, const int \&niveau)}{initialiser_jeu(const std::string &nom_perso, const int &niveau)}}]{\setlength{\rightskip}{0pt plus 5cm}void Jeu\+::initialiser\+\_\+jeu (
+\begin{DoxyParamCaption}
+\item[{const std\+::string \&}]{nom\+\_\+perso, }
+\item[{const int \&}]{niveau}
+\end{DoxyParamCaption}
+)}\hypertarget{classJeu_abefba32caf2e87a24965abdefffd28c0}{}\label{classJeu_abefba32caf2e87a24965abdefffd28c0}
+\index{Jeu@{Jeu}!placer\+\_\+perso\+\_\+txt@{placer\+\_\+perso\+\_\+txt}}
+\index{placer\+\_\+perso\+\_\+txt@{placer\+\_\+perso\+\_\+txt}!Jeu@{Jeu}}
+\subsubsection[{\texorpdfstring{placer\+\_\+perso\+\_\+txt(int x, int y)}{placer_perso_txt(int x, int y)}}]{\setlength{\rightskip}{0pt plus 5cm}void Jeu\+::placer\+\_\+perso\+\_\+txt (
+\begin{DoxyParamCaption}
+\item[{int}]{x, }
+\item[{int}]{y}
+\end{DoxyParamCaption}
+)}\hypertarget{classJeu_a56b2057832a6b7aa9535299131fb653e}{}\label{classJeu_a56b2057832a6b7aa9535299131fb653e}
+\index{Jeu@{Jeu}!retourne\+\_\+clef@{retourne\+\_\+clef}}
+\index{retourne\+\_\+clef@{retourne\+\_\+clef}!Jeu@{Jeu}}
+\subsubsection[{\texorpdfstring{retourne\+\_\+clef()}{retourne_clef()}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Clef} $\ast$ Jeu\+::retourne\+\_\+clef (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classJeu_a3b7707f717a71931870b6d96208e013e}{}\label{classJeu_a3b7707f717a71931870b6d96208e013e}
+
+
+Accesseur de la clef. 
+
+\begin{DoxyReturn}{Returns}
+pointeur sur la clef 
+\end{DoxyReturn}
+\index{Jeu@{Jeu}!retourne\+\_\+ennemis@{retourne\+\_\+ennemis}}
+\index{retourne\+\_\+ennemis@{retourne\+\_\+ennemis}!Jeu@{Jeu}}
+\subsubsection[{\texorpdfstring{retourne\+\_\+ennemis()}{retourne_ennemis()}}]{\setlength{\rightskip}{0pt plus 5cm}std\+::list$<$ {\bf Ennemi} $\ast$ $>$ $\ast$ Jeu\+::retourne\+\_\+ennemis (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classJeu_a66190619d54d69a84ba80ea3f150071a}{}\label{classJeu_a66190619d54d69a84ba80ea3f150071a}
+
+
+Accesseur des ennemis. 
+
+\begin{DoxyReturn}{Returns}
+pointeur sur la liste des ennemis 
+\end{DoxyReturn}
+\index{Jeu@{Jeu}!retourne\+\_\+perso\+\_\+ptr@{retourne\+\_\+perso\+\_\+ptr}}
+\index{retourne\+\_\+perso\+\_\+ptr@{retourne\+\_\+perso\+\_\+ptr}!Jeu@{Jeu}}
+\subsubsection[{\texorpdfstring{retourne\+\_\+perso\+\_\+ptr()}{retourne_perso_ptr()}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Perso} $\ast$ Jeu\+::retourne\+\_\+perso\+\_\+ptr (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classJeu_af95d3d6493f47b030ecc3807403d5cf6}{}\label{classJeu_af95d3d6493f47b030ecc3807403d5cf6}
+
+
+Accesseur du personnage. 
+
+\begin{DoxyReturn}{Returns}
+pointeur sur le personnage 
+\end{DoxyReturn}
+\index{Jeu@{Jeu}!retourne\+\_\+projectiles@{retourne\+\_\+projectiles}}
+\index{retourne\+\_\+projectiles@{retourne\+\_\+projectiles}!Jeu@{Jeu}}
+\subsubsection[{\texorpdfstring{retourne\+\_\+projectiles()}{retourne_projectiles()}}]{\setlength{\rightskip}{0pt plus 5cm}std\+::list$<$ {\bf Projectile} $\ast$ $>$ $\ast$ Jeu\+::retourne\+\_\+projectiles (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classJeu_a6b7342dc6320c4a879abf949fe7062c6}{}\label{classJeu_a6b7342dc6320c4a879abf949fe7062c6}
+
+
+Accesseur des projectiles. 
+
+\begin{DoxyReturn}{Returns}
+pointeur sur la liste de projectiles 
+\end{DoxyReturn}
+\index{Jeu@{Jeu}!zone\+\_\+changer\+\_\+salle@{zone\+\_\+changer\+\_\+salle}}
+\index{zone\+\_\+changer\+\_\+salle@{zone\+\_\+changer\+\_\+salle}!Jeu@{Jeu}}
+\subsubsection[{\texorpdfstring{zone\+\_\+changer\+\_\+salle(const char \&c, bool devmode)}{zone_changer_salle(const char &c, bool devmode)}}]{\setlength{\rightskip}{0pt plus 5cm}bool Jeu\+::zone\+\_\+changer\+\_\+salle (
+\begin{DoxyParamCaption}
+\item[{const char \&}]{c, }
+\item[{bool}]{devmode}
+\end{DoxyParamCaption}
+)}\hypertarget{classJeu_aa2a5e6d3d7a3e6a57a0c280694701299}{}\label{classJeu_aa2a5e6d3d7a3e6a57a0c280694701299}
+
+
+Change de salle Fonction qui va d\textquotesingle{}abord tester si le changement de salle peut être effectué, et si oui, change de salle. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em c} & \+: direction de la nouvelle salle (h, b ,g ,d) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true si le changement est fait, false sinon 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/quentin/\+Murmure/src/core/\hyperlink{Jeu_8h}{Jeu.\+h}\item 
+/home/quentin/\+Murmure/src/core/\hyperlink{Jeu_8cpp}{Jeu.\+cpp}\end{DoxyCompactItemize}

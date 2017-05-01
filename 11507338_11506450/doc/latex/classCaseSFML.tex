@@ -1,0 +1,154 @@
+\hypertarget{classCaseSFML}{}\section{Case\+S\+F\+ML Class Reference}
+\label{classCaseSFML}\index{Case\+S\+F\+ML@{Case\+S\+F\+ML}}
+
+
+{\ttfamily \#include $<$Case\+S\+F\+M\+L.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classCaseSFML_acab03b1ec1b8adcf2e5c8b7e31de3a9a}{Case\+S\+F\+ML} ()
+\begin{DoxyCompactList}\small\item\em Constructeur par défaut. \end{DoxyCompactList}\item 
+void \hyperlink{classCaseSFML_ae851a25113bae34b39049a3b09afd471}{init} (int posX, int posY, int largeur, int hauteur)
+\begin{DoxyCompactList}\small\item\em Initialisation Initialise la position de la case et la taille qu\textquotesingle{}elle sera ammenée à prendre. \end{DoxyCompactList}\item 
+void \hyperlink{classCaseSFML_ab99bde20ef9f4afcf09603701d518246}{mettre\+\_\+a\+\_\+jour\+\_\+taille\+\_\+texture} (const int \&t)
+\begin{DoxyCompactList}\small\item\em Mise à jour de la texture Change le paramètre de la taille de la texture, au cas où celle ci soit ammenée à avoir une texture de taille différente de la précédente. \end{DoxyCompactList}\item 
+void \hyperlink{classCaseSFML_aa2f1966e2fe57cc62f2c9642066bb554}{mettre\+\_\+a\+\_\+jour\+\_\+type\+\_\+case} (const char \&c)
+\begin{DoxyCompactList}\small\item\em Mise à jour du type de la case Change le type de la case. \end{DoxyCompactList}\item 
+sf\+::\+Vertex\+Array \hyperlink{classCaseSFML_ab9497e87b7eeceec1c65f61a882ec3f4}{get\+\_\+casesfml} () const 
+\begin{DoxyCompactList}\small\item\em Accesseur de la case Retourne la case qui comprendra toutes les données initialisées précédemment. \end{DoxyCompactList}\item 
+int \hyperlink{classCaseSFML_ae6afad2d1356c979dc6510aa5bba8952}{get\+\_\+taille\+\_\+texture} () const 
+\begin{DoxyCompactList}\small\item\em Accesseur de la taille de la dernière texture utilisée pour la case Retourne la taille de la derniere texture utilisée de la case, pour ainsi voir si celle-\/ci doit être changée ou non. \end{DoxyCompactList}\item 
+char \hyperlink{classCaseSFML_ab0f4d3c8cdc923c8847a8becb41bf695}{get\+\_\+type\+\_\+case} () const 
+\begin{DoxyCompactList}\small\item\em Retourne le type de la case. \end{DoxyCompactList}\item 
+void \hyperlink{classCaseSFML_a6652dda4d0728e726c3327f57ca3ea5e}{check\+\_\+collision} ()
+\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{Case\+S\+F\+ML@{Case\+S\+F\+ML}!Case\+S\+F\+ML@{Case\+S\+F\+ML}}
+\index{Case\+S\+F\+ML@{Case\+S\+F\+ML}!Case\+S\+F\+ML@{Case\+S\+F\+ML}}
+\subsubsection[{\texorpdfstring{Case\+S\+F\+M\+L()}{CaseSFML()}}]{\setlength{\rightskip}{0pt plus 5cm}Case\+S\+F\+M\+L\+::\+Case\+S\+F\+ML (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classCaseSFML_acab03b1ec1b8adcf2e5c8b7e31de3a9a}{}\label{classCaseSFML_acab03b1ec1b8adcf2e5c8b7e31de3a9a}
+
+
+Constructeur par défaut. 
+
+
+
+\subsection{Member Function Documentation}
+\index{Case\+S\+F\+ML@{Case\+S\+F\+ML}!check\+\_\+collision@{check\+\_\+collision}}
+\index{check\+\_\+collision@{check\+\_\+collision}!Case\+S\+F\+ML@{Case\+S\+F\+ML}}
+\subsubsection[{\texorpdfstring{check\+\_\+collision()}{check_collision()}}]{\setlength{\rightskip}{0pt plus 5cm}void Case\+S\+F\+M\+L\+::check\+\_\+collision (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classCaseSFML_a6652dda4d0728e726c3327f57ca3ea5e}{}\label{classCaseSFML_a6652dda4d0728e726c3327f57ca3ea5e}
+\index{Case\+S\+F\+ML@{Case\+S\+F\+ML}!get\+\_\+casesfml@{get\+\_\+casesfml}}
+\index{get\+\_\+casesfml@{get\+\_\+casesfml}!Case\+S\+F\+ML@{Case\+S\+F\+ML}}
+\subsubsection[{\texorpdfstring{get\+\_\+casesfml() const }{get_casesfml() const }}]{\setlength{\rightskip}{0pt plus 5cm}sf\+::\+Vertex\+Array Case\+S\+F\+M\+L\+::get\+\_\+casesfml (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\hypertarget{classCaseSFML_ab9497e87b7eeceec1c65f61a882ec3f4}{}\label{classCaseSFML_ab9497e87b7eeceec1c65f61a882ec3f4}
+
+
+Accesseur de la case Retourne la case qui comprendra toutes les données initialisées précédemment. 
+
+\begin{DoxyReturn}{Returns}
+sf\+::\+Vertex\+Array \+: la case 
+\end{DoxyReturn}
+\index{Case\+S\+F\+ML@{Case\+S\+F\+ML}!get\+\_\+taille\+\_\+texture@{get\+\_\+taille\+\_\+texture}}
+\index{get\+\_\+taille\+\_\+texture@{get\+\_\+taille\+\_\+texture}!Case\+S\+F\+ML@{Case\+S\+F\+ML}}
+\subsubsection[{\texorpdfstring{get\+\_\+taille\+\_\+texture() const }{get_taille_texture() const }}]{\setlength{\rightskip}{0pt plus 5cm}int Case\+S\+F\+M\+L\+::get\+\_\+taille\+\_\+texture (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\hypertarget{classCaseSFML_ae6afad2d1356c979dc6510aa5bba8952}{}\label{classCaseSFML_ae6afad2d1356c979dc6510aa5bba8952}
+
+
+Accesseur de la taille de la dernière texture utilisée pour la case Retourne la taille de la derniere texture utilisée de la case, pour ainsi voir si celle-\/ci doit être changée ou non. 
+
+\begin{DoxyReturn}{Returns}
+int \+: la taille de la texture 
+\end{DoxyReturn}
+\index{Case\+S\+F\+ML@{Case\+S\+F\+ML}!get\+\_\+type\+\_\+case@{get\+\_\+type\+\_\+case}}
+\index{get\+\_\+type\+\_\+case@{get\+\_\+type\+\_\+case}!Case\+S\+F\+ML@{Case\+S\+F\+ML}}
+\subsubsection[{\texorpdfstring{get\+\_\+type\+\_\+case() const }{get_type_case() const }}]{\setlength{\rightskip}{0pt plus 5cm}char Case\+S\+F\+M\+L\+::get\+\_\+type\+\_\+case (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\hypertarget{classCaseSFML_ab0f4d3c8cdc923c8847a8becb41bf695}{}\label{classCaseSFML_ab0f4d3c8cdc923c8847a8becb41bf695}
+
+
+Retourne le type de la case. 
+
+\begin{DoxyReturn}{Returns}
+char \+: le type de la case 
+\end{DoxyReturn}
+\index{Case\+S\+F\+ML@{Case\+S\+F\+ML}!init@{init}}
+\index{init@{init}!Case\+S\+F\+ML@{Case\+S\+F\+ML}}
+\subsubsection[{\texorpdfstring{init(int pos\+X, int pos\+Y, int largeur, int hauteur)}{init(int posX, int posY, int largeur, int hauteur)}}]{\setlength{\rightskip}{0pt plus 5cm}void Case\+S\+F\+M\+L\+::init (
+\begin{DoxyParamCaption}
+\item[{int}]{posX, }
+\item[{int}]{posY, }
+\item[{int}]{largeur, }
+\item[{int}]{hauteur}
+\end{DoxyParamCaption}
+)}\hypertarget{classCaseSFML_ae851a25113bae34b39049a3b09afd471}{}\label{classCaseSFML_ae851a25113bae34b39049a3b09afd471}
+
+
+Initialisation Initialise la position de la case et la taille qu\textquotesingle{}elle sera ammenée à prendre. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em posX} & int \+: position horizontale du point en haut à gauche de la case \\
+\hline
+{\em posY} & int \+: position verticale du point en haut à gauche de la case \\
+\hline
+{\em largeur} & int \+: largeur de la case \\
+\hline
+{\em hauteur} & int \+: hauteur de la case \\
+\hline
+\end{DoxyParams}
+\index{Case\+S\+F\+ML@{Case\+S\+F\+ML}!mettre\+\_\+a\+\_\+jour\+\_\+taille\+\_\+texture@{mettre\+\_\+a\+\_\+jour\+\_\+taille\+\_\+texture}}
+\index{mettre\+\_\+a\+\_\+jour\+\_\+taille\+\_\+texture@{mettre\+\_\+a\+\_\+jour\+\_\+taille\+\_\+texture}!Case\+S\+F\+ML@{Case\+S\+F\+ML}}
+\subsubsection[{\texorpdfstring{mettre\+\_\+a\+\_\+jour\+\_\+taille\+\_\+texture(const int \&t)}{mettre_a_jour_taille_texture(const int &t)}}]{\setlength{\rightskip}{0pt plus 5cm}void Case\+S\+F\+M\+L\+::mettre\+\_\+a\+\_\+jour\+\_\+taille\+\_\+texture (
+\begin{DoxyParamCaption}
+\item[{const int \&}]{t}
+\end{DoxyParamCaption}
+)}\hypertarget{classCaseSFML_ab99bde20ef9f4afcf09603701d518246}{}\label{classCaseSFML_ab99bde20ef9f4afcf09603701d518246}
+
+
+Mise à jour de la texture Change le paramètre de la taille de la texture, au cas où celle ci soit ammenée à avoir une texture de taille différente de la précédente. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em t} & const int\& \+: nouvelle taille de la texture \\
+\hline
+\end{DoxyParams}
+\index{Case\+S\+F\+ML@{Case\+S\+F\+ML}!mettre\+\_\+a\+\_\+jour\+\_\+type\+\_\+case@{mettre\+\_\+a\+\_\+jour\+\_\+type\+\_\+case}}
+\index{mettre\+\_\+a\+\_\+jour\+\_\+type\+\_\+case@{mettre\+\_\+a\+\_\+jour\+\_\+type\+\_\+case}!Case\+S\+F\+ML@{Case\+S\+F\+ML}}
+\subsubsection[{\texorpdfstring{mettre\+\_\+a\+\_\+jour\+\_\+type\+\_\+case(const char \&c)}{mettre_a_jour_type_case(const char &c)}}]{\setlength{\rightskip}{0pt plus 5cm}void Case\+S\+F\+M\+L\+::mettre\+\_\+a\+\_\+jour\+\_\+type\+\_\+case (
+\begin{DoxyParamCaption}
+\item[{const char \&}]{c}
+\end{DoxyParamCaption}
+)}\hypertarget{classCaseSFML_aa2f1966e2fe57cc62f2c9642066bb554}{}\label{classCaseSFML_aa2f1966e2fe57cc62f2c9642066bb554}
+
+
+Mise à jour du type de la case Change le type de la case. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em c} & const char\& \+: nouveau type \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/quentin/\+Murmure/src/sfml/\hyperlink{CaseSFML_8h}{Case\+S\+F\+M\+L.\+h}\item 
+/home/quentin/\+Murmure/src/sfml/\hyperlink{CaseSFML_8cpp}{Case\+S\+F\+M\+L.\+cpp}\end{DoxyCompactItemize}

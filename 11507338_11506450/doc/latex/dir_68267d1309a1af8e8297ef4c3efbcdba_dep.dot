@@ -1,0 +1,12 @@
+digraph "/home/quentin/Murmure/src" {
+  compound=true
+  node [ fontsize="10", fontname="Helvetica"];
+  edge [ labelfontsize="10", labelfontname="Helvetica"];
+  subgraph clusterdir_68267d1309a1af8e8297ef4c3efbcdba {
+    graph [ bgcolor="#eeeeff", pencolor="black", label="" URL="dir_68267d1309a1af8e8297ef4c3efbcdba.html"];
+    dir_68267d1309a1af8e8297ef4c3efbcdba [shape=plaintext label="src"];
+    dir_aebb8dcc11953d78e620bbef0b9e2183 [shape=box label="core" color="black" fillcolor="white" style="filled" URL="dir_aebb8dcc11953d78e620bbef0b9e2183.html"];
+    dir_555df0971abdff4e67fa10b3825416ca [shape=box label="sfml" color="black" fillcolor="white" style="filled" URL="dir_555df0971abdff4e67fa10b3825416ca.html"];
+  }
+  dir_555df0971abdff4e67fa10b3825416ca->dir_aebb8dcc11953d78e620bbef0b9e2183 [headlabel="21", labeldistance=1.5 headhref="dir_000002_000001.html"];
+}

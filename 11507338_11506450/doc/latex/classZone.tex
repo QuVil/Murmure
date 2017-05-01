@@ -1,0 +1,361 @@
+\hypertarget{classZone}{}\section{Zone Class Reference}
+\label{classZone}\index{Zone@{Zone}}
+
+
+Gère l\textquotesingle{}instance où crapahute \hyperlink{classPerso}{Perso}. Une seule \hyperlink{classZone}{Zone} sera en général générée à chaque instant. Elle contient des informations sur toutes les \hyperlink{classSalle}{Salle} de l\textquotesingle{}instance (rangées dans un tableau 11$\ast$11) et instancie toutes les \hyperlink{classSalle}{Salle} où \hyperlink{classPerso}{Perso} évoluera.  
+
+
+
+
+{\ttfamily \#include $<$Zone.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classZone_a37c9721c0d592a7a231f4e6dbae93277}{Zone} ()
+\begin{DoxyCompactList}\small\item\em Consctructeur Le Constructeur basique de \hyperlink{classZone}{Zone}, mettant la position actuelle du \hyperlink{classPerso}{Perso} en 5,5 et vidant toutes les \hyperlink{classSalle}{Salle}. \end{DoxyCompactList}\item 
+\hyperlink{classZone_a47c33a8aad7a0c17ff8ab213aad492f7}{Zone} (int posx, int posy, int niv)
+\begin{DoxyCompactList}\small\item\em Consctructeur avec salle actuelle et niveau. \end{DoxyCompactList}\item 
+\hyperlink{classZone_afddea0858e93cf8050e6263347b6864f}{Zone} (const \hyperlink{classZoneGen}{Zone\+Gen} \&z)
+\begin{DoxyCompactList}\small\item\em Consctructeur depuis un generateur \hyperlink{classZoneGen}{Zone\+Gen}. \end{DoxyCompactList}\item 
+\hyperlink{classSalle}{Salle} \hyperlink{classZone_a6b28456d584e884cdeceaf6d4dcedbd1}{get\+\_\+salle} (int x, int y)
+\begin{DoxyCompactList}\small\item\em Accesseur de \hyperlink{classSalle}{Salle} dans la {\itshape carte}. \end{DoxyCompactList}\item 
+\hyperlink{classSalle}{Salle} \hyperlink{classZone_a3214726410943fed7c5a44f49e998cee}{get\+\_\+salle} () const 
+\begin{DoxyCompactList}\small\item\em Accesseur de \hyperlink{classSalle}{Salle} actuelle. \end{DoxyCompactList}\item 
+\hyperlink{classSalle}{Salle} $\ast$ \hyperlink{classZone_a96398ba4ec2f3c8b2caddadf2a82f153}{get\+\_\+salle\+\_\+ptr} ()
+\begin{DoxyCompactList}\small\item\em Accesseur de l\textquotesingle{}adresse de la \hyperlink{classSalle}{Salle} actuelle. \end{DoxyCompactList}\item 
+void \hyperlink{classZone_a5c68a620d5c32cd2bf26272aeaee557d}{set\+\_\+salle} (int x, int y, const \hyperlink{classSalle}{Salle} \&nouvelle\+\_\+salle)
+\begin{DoxyCompactList}\small\item\em Mutateur de \hyperlink{classSalle}{Salle} de la {\itshape carte}. \end{DoxyCompactList}\item 
+int \hyperlink{classZone_a5cba037223549a19e4717c9a502895ca}{get\+\_\+salle\+\_\+actuelle\+\_\+x} () const 
+\begin{DoxyCompactList}\small\item\em Accesseur de {\itshape salle\+\_\+actuelle\+\_\+x}. \end{DoxyCompactList}\item 
+int \hyperlink{classZone_a481d145df776bb245a223e6848b9a6d6}{get\+\_\+salle\+\_\+actuelle\+\_\+y} () const 
+\begin{DoxyCompactList}\small\item\em Accesseur de {\itshape salle\+\_\+actuelle\+\_\+y}. \end{DoxyCompactList}\item 
+void \hyperlink{classZone_ae7fc481efb7e4bb2fc28bb5da0bbaf90}{afficher\+\_\+zone} ()
+\begin{DoxyCompactList}\small\item\em Affiche la \hyperlink{classZone}{Zone} (txt). Affiche la \hyperlink{classZone}{Zone} dans la console en version txt. \end{DoxyCompactList}\item 
+void \hyperlink{classZone_ae97ba3cc2a452803a66dbd3c0c84852b}{remplir\+\_\+salle} (int x, int y)
+\begin{DoxyCompactList}\small\item\em Appelle la procedure remplir() d\textquotesingle{}une \hyperlink{classSalle}{Salle}. \end{DoxyCompactList}\item 
+void \hyperlink{classZone_a76284023033d6b67f933b4656a8eb761}{remplir\+\_\+salle} ()
+\begin{DoxyCompactList}\small\item\em Appelle la procedure vider() de la \hyperlink{classSalle}{Salle} actuelle Sûrement temporaire et à supprimer plus tard. \end{DoxyCompactList}\item 
+void \hyperlink{classZone_a296f45a66db2f5ad565d15274f628e72}{vider\+\_\+salle} (int x, int y)
+\begin{DoxyCompactList}\small\item\em Appelle la procedure vider() d\textquotesingle{}une \hyperlink{classSalle}{Salle}. \end{DoxyCompactList}\item 
+void \hyperlink{classZone_a0f61f5c9028db56ef251371818b31b35}{vider\+\_\+salle} ()
+\item 
+void \hyperlink{classZone_a411c8abc6ba0b85239bea9aa2daac45c}{zone\+\_\+depuis\+\_\+modele} (std\+::string nom)
+\begin{DoxyCompactList}\small\item\em Remplit les {\itshape config} de la {\itshape carte}. Crée un \hyperlink{classModele}{Modele} à partir de {\itshape nom} et génère la \hyperlink{classZone}{Zone} procéduralement à partir de ce \hyperlink{classModele}{Modele}. \end{DoxyCompactList}\item 
+void \hyperlink{classZone_a64b87f18b343a38b40a2fbf9220b3994}{zone\+\_\+depuis\+\_\+modele\+\_\+aleatoire} (int taille)
+\begin{DoxyCompactList}\small\item\em Appelle zone\+\_\+depuis\+\_\+modele avec un nom aléatoire. Crée un \hyperlink{classModele}{Modele} aléatoirement et génère la \hyperlink{classZone}{Zone} procéduralement à partir de ce \hyperlink{classModele}{Modele}. \end{DoxyCompactList}\item 
+void \hyperlink{classZone_a2a149ff3989dbe48c1dd1822f158da8e}{generer\+\_\+salle} (int i, int j)
+\begin{DoxyCompactList}\small\item\em genere la \hyperlink{classSalle}{Salle} i,j de la \hyperlink{classZone}{Zone}. fait appel à \hyperlink{classSalle_a6eaf8452709243464f7919b53bccc0b3}{Salle\+::salle\+\_\+depuis\+\_\+modele()} ou à Fichier\+::charger(\+Salle s, const int id) aléatoirement. Tente aussi de respecter à peu près la difficulté moyenne désirée. \end{DoxyCompactList}\item 
+void \hyperlink{classZone_a91c45becbd6371aecf0b26ee68bb06f5}{generer\+\_\+toutes\+\_\+les\+\_\+salles} ()
+\begin{DoxyCompactList}\small\item\em Genere toutes les \hyperlink{classSalle}{Salle} de la \hyperlink{classZone}{Zone}. appelle simplement generer\+\_\+salle sur toute la carte. \end{DoxyCompactList}\item 
+void \hyperlink{classZone_a55883c546c6359642a9b50ad4ba48c78}{generer\+\_\+et\+\_\+remplir} (int taille)
+\item 
+void \hyperlink{classZone_a5563c71779d4c897df21da0f5a01df8d}{changer\+\_\+de\+\_\+salle} (char direction)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Gère l\textquotesingle{}instance où crapahute \hyperlink{classPerso}{Perso}. Une seule \hyperlink{classZone}{Zone} sera en général générée à chaque instant. Elle contient des informations sur toutes les \hyperlink{classSalle}{Salle} de l\textquotesingle{}instance (rangées dans un tableau 11$\ast$11) et instancie toutes les \hyperlink{classSalle}{Salle} où \hyperlink{classPerso}{Perso} évoluera. 
+
+\subsection{Constructor \& Destructor Documentation}
+\index{Zone@{Zone}!Zone@{Zone}}
+\index{Zone@{Zone}!Zone@{Zone}}
+\subsubsection[{\texorpdfstring{Zone()}{Zone()}}]{\setlength{\rightskip}{0pt plus 5cm}Zone\+::\+Zone (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classZone_a37c9721c0d592a7a231f4e6dbae93277}{}\label{classZone_a37c9721c0d592a7a231f4e6dbae93277}
+
+
+Consctructeur Le Constructeur basique de \hyperlink{classZone}{Zone}, mettant la position actuelle du \hyperlink{classPerso}{Perso} en 5,5 et vidant toutes les \hyperlink{classSalle}{Salle}. 
+
+\index{Zone@{Zone}!Zone@{Zone}}
+\index{Zone@{Zone}!Zone@{Zone}}
+\subsubsection[{\texorpdfstring{Zone(int posx, int posy, int niv)}{Zone(int posx, int posy, int niv)}}]{\setlength{\rightskip}{0pt plus 5cm}Zone\+::\+Zone (
+\begin{DoxyParamCaption}
+\item[{int}]{posx, }
+\item[{int}]{posy, }
+\item[{int}]{niv = {\ttfamily 1}}
+\end{DoxyParamCaption}
+)}\hypertarget{classZone_a47c33a8aad7a0c17ff8ab213aad492f7}{}\label{classZone_a47c33a8aad7a0c17ff8ab213aad492f7}
+
+
+Consctructeur avec salle actuelle et niveau. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em posx} & \+: {\itshape salle\+\_\+actuelle\+\_\+x} pour la nouvelle instance. \\
+\hline
+\mbox{\tt in}  & {\em posy} & \+: {\itshape salle\+\_\+actuelle\+\_\+y} pour la nouvelle instance. \\
+\hline
+\mbox{\tt in}  & {\em niv} & \+: le niveau de la nouvelle \hyperlink{classZone}{Zone}. \\
+\hline
+\end{DoxyParams}
+\index{Zone@{Zone}!Zone@{Zone}}
+\index{Zone@{Zone}!Zone@{Zone}}
+\subsubsection[{\texorpdfstring{Zone(const Zone\+Gen \&z)}{Zone(const ZoneGen &z)}}]{\setlength{\rightskip}{0pt plus 5cm}Zone\+::\+Zone (
+\begin{DoxyParamCaption}
+\item[{const {\bf Zone\+Gen} \&}]{z}
+\end{DoxyParamCaption}
+)}\hypertarget{classZone_afddea0858e93cf8050e6263347b6864f}{}\label{classZone_afddea0858e93cf8050e6263347b6864f}
+
+
+Consctructeur depuis un generateur \hyperlink{classZoneGen}{Zone\+Gen}. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em z} & \+: l\textquotesingle{}instance de \hyperlink{classZoneGen}{Zone\+Gen} qui sera traduite en \hyperlink{classZone}{Zone}. Ne genere pas les instances de \hyperlink{classSalle}{Salle}, mais prend la {\itshape config} necessaire. \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\index{Zone@{Zone}!afficher\+\_\+zone@{afficher\+\_\+zone}}
+\index{afficher\+\_\+zone@{afficher\+\_\+zone}!Zone@{Zone}}
+\subsubsection[{\texorpdfstring{afficher\+\_\+zone()}{afficher_zone()}}]{\setlength{\rightskip}{0pt plus 5cm}void Zone\+::afficher\+\_\+zone (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classZone_ae7fc481efb7e4bb2fc28bb5da0bbaf90}{}\label{classZone_ae7fc481efb7e4bb2fc28bb5da0bbaf90}
+
+
+Affiche la \hyperlink{classZone}{Zone} (txt). Affiche la \hyperlink{classZone}{Zone} dans la console en version txt. 
+
+\index{Zone@{Zone}!changer\+\_\+de\+\_\+salle@{changer\+\_\+de\+\_\+salle}}
+\index{changer\+\_\+de\+\_\+salle@{changer\+\_\+de\+\_\+salle}!Zone@{Zone}}
+\subsubsection[{\texorpdfstring{changer\+\_\+de\+\_\+salle(char direction)}{changer_de_salle(char direction)}}]{\setlength{\rightskip}{0pt plus 5cm}void Zone\+::changer\+\_\+de\+\_\+salle (
+\begin{DoxyParamCaption}
+\item[{char}]{direction}
+\end{DoxyParamCaption}
+)}\hypertarget{classZone_a5563c71779d4c897df21da0f5a01df8d}{}\label{classZone_a5563c71779d4c897df21da0f5a01df8d}
+\index{Zone@{Zone}!generer\+\_\+et\+\_\+remplir@{generer\+\_\+et\+\_\+remplir}}
+\index{generer\+\_\+et\+\_\+remplir@{generer\+\_\+et\+\_\+remplir}!Zone@{Zone}}
+\subsubsection[{\texorpdfstring{generer\+\_\+et\+\_\+remplir(int taille)}{generer_et_remplir(int taille)}}]{\setlength{\rightskip}{0pt plus 5cm}void Zone\+::generer\+\_\+et\+\_\+remplir (
+\begin{DoxyParamCaption}
+\item[{int}]{taille = {\ttfamily 0}}
+\end{DoxyParamCaption}
+)}\hypertarget{classZone_a55883c546c6359642a9b50ad4ba48c78}{}\label{classZone_a55883c546c6359642a9b50ad4ba48c78}
+\index{Zone@{Zone}!generer\+\_\+salle@{generer\+\_\+salle}}
+\index{generer\+\_\+salle@{generer\+\_\+salle}!Zone@{Zone}}
+\subsubsection[{\texorpdfstring{generer\+\_\+salle(int i, int j)}{generer_salle(int i, int j)}}]{\setlength{\rightskip}{0pt plus 5cm}void Zone\+::generer\+\_\+salle (
+\begin{DoxyParamCaption}
+\item[{int}]{i, }
+\item[{int}]{j}
+\end{DoxyParamCaption}
+)}\hypertarget{classZone_a2a149ff3989dbe48c1dd1822f158da8e}{}\label{classZone_a2a149ff3989dbe48c1dd1822f158da8e}
+
+
+genere la \hyperlink{classSalle}{Salle} i,j de la \hyperlink{classZone}{Zone}. fait appel à \hyperlink{classSalle_a6eaf8452709243464f7919b53bccc0b3}{Salle\+::salle\+\_\+depuis\+\_\+modele()} ou à Fichier\+::charger(\+Salle s, const int id) aléatoirement. Tente aussi de respecter à peu près la difficulté moyenne désirée. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em i} & \+: coordonnee i de la \hyperlink{classSalle}{Salle} \\
+\hline
+\mbox{\tt in}  & {\em j} & \+: coordonnee j de la \hyperlink{classSalle}{Salle} \\
+\hline
+\end{DoxyParams}
+\index{Zone@{Zone}!generer\+\_\+toutes\+\_\+les\+\_\+salles@{generer\+\_\+toutes\+\_\+les\+\_\+salles}}
+\index{generer\+\_\+toutes\+\_\+les\+\_\+salles@{generer\+\_\+toutes\+\_\+les\+\_\+salles}!Zone@{Zone}}
+\subsubsection[{\texorpdfstring{generer\+\_\+toutes\+\_\+les\+\_\+salles()}{generer_toutes_les_salles()}}]{\setlength{\rightskip}{0pt plus 5cm}void Zone\+::generer\+\_\+toutes\+\_\+les\+\_\+salles (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classZone_a91c45becbd6371aecf0b26ee68bb06f5}{}\label{classZone_a91c45becbd6371aecf0b26ee68bb06f5}
+
+
+Genere toutes les \hyperlink{classSalle}{Salle} de la \hyperlink{classZone}{Zone}. appelle simplement generer\+\_\+salle sur toute la carte. 
+
+\index{Zone@{Zone}!get\+\_\+salle@{get\+\_\+salle}}
+\index{get\+\_\+salle@{get\+\_\+salle}!Zone@{Zone}}
+\subsubsection[{\texorpdfstring{get\+\_\+salle(int x, int y)}{get_salle(int x, int y)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Salle} Zone\+::get\+\_\+salle (
+\begin{DoxyParamCaption}
+\item[{int}]{x, }
+\item[{int}]{y}
+\end{DoxyParamCaption}
+)}\hypertarget{classZone_a6b28456d584e884cdeceaf6d4dcedbd1}{}\label{classZone_a6b28456d584e884cdeceaf6d4dcedbd1}
+
+
+Accesseur de \hyperlink{classSalle}{Salle} dans la {\itshape carte}. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em x} & \+: coordonnees x de la \hyperlink{classSalle}{Salle} voulue dans la {\itshape carte}. \\
+\hline
+\mbox{\tt in}  & {\em y} & \+: coordonnees y de la \hyperlink{classSalle}{Salle} voulue dans la {\itshape carte}. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+la \hyperlink{classSalle}{Salle} (x,y) de la {\itshape carte}. 
+\end{DoxyReturn}
+\index{Zone@{Zone}!get\+\_\+salle@{get\+\_\+salle}}
+\index{get\+\_\+salle@{get\+\_\+salle}!Zone@{Zone}}
+\subsubsection[{\texorpdfstring{get\+\_\+salle() const }{get_salle() const }}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Salle} Zone\+::get\+\_\+salle (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\hypertarget{classZone_a3214726410943fed7c5a44f49e998cee}{}\label{classZone_a3214726410943fed7c5a44f49e998cee}
+
+
+Accesseur de \hyperlink{classSalle}{Salle} actuelle. 
+
+\begin{DoxyReturn}{Returns}
+la \hyperlink{classSalle}{Salle} actuelle. 
+\end{DoxyReturn}
+\index{Zone@{Zone}!get\+\_\+salle\+\_\+actuelle\+\_\+x@{get\+\_\+salle\+\_\+actuelle\+\_\+x}}
+\index{get\+\_\+salle\+\_\+actuelle\+\_\+x@{get\+\_\+salle\+\_\+actuelle\+\_\+x}!Zone@{Zone}}
+\subsubsection[{\texorpdfstring{get\+\_\+salle\+\_\+actuelle\+\_\+x() const }{get_salle_actuelle_x() const }}]{\setlength{\rightskip}{0pt plus 5cm}int Zone\+::get\+\_\+salle\+\_\+actuelle\+\_\+x (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\hypertarget{classZone_a5cba037223549a19e4717c9a502895ca}{}\label{classZone_a5cba037223549a19e4717c9a502895ca}
+
+
+Accesseur de {\itshape salle\+\_\+actuelle\+\_\+x}. 
+
+\begin{DoxyReturn}{Returns}
+{\itshape salle\+\_\+actuelle\+\_\+x} de l\textquotesingle{}instance. 
+\end{DoxyReturn}
+\index{Zone@{Zone}!get\+\_\+salle\+\_\+actuelle\+\_\+y@{get\+\_\+salle\+\_\+actuelle\+\_\+y}}
+\index{get\+\_\+salle\+\_\+actuelle\+\_\+y@{get\+\_\+salle\+\_\+actuelle\+\_\+y}!Zone@{Zone}}
+\subsubsection[{\texorpdfstring{get\+\_\+salle\+\_\+actuelle\+\_\+y() const }{get_salle_actuelle_y() const }}]{\setlength{\rightskip}{0pt plus 5cm}int Zone\+::get\+\_\+salle\+\_\+actuelle\+\_\+y (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\hypertarget{classZone_a481d145df776bb245a223e6848b9a6d6}{}\label{classZone_a481d145df776bb245a223e6848b9a6d6}
+
+
+Accesseur de {\itshape salle\+\_\+actuelle\+\_\+y}. 
+
+\begin{DoxyReturn}{Returns}
+{\itshape salle\+\_\+actuelle\+\_\+y} de l\textquotesingle{}instance. 
+\end{DoxyReturn}
+\index{Zone@{Zone}!get\+\_\+salle\+\_\+ptr@{get\+\_\+salle\+\_\+ptr}}
+\index{get\+\_\+salle\+\_\+ptr@{get\+\_\+salle\+\_\+ptr}!Zone@{Zone}}
+\subsubsection[{\texorpdfstring{get\+\_\+salle\+\_\+ptr()}{get_salle_ptr()}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Salle} $\ast$ Zone\+::get\+\_\+salle\+\_\+ptr (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classZone_a96398ba4ec2f3c8b2caddadf2a82f153}{}\label{classZone_a96398ba4ec2f3c8b2caddadf2a82f153}
+
+
+Accesseur de l\textquotesingle{}adresse de la \hyperlink{classSalle}{Salle} actuelle. 
+
+\begin{DoxyReturn}{Returns}
+l\textquotesingle{}adresse de la \hyperlink{classSalle}{Salle} actuelle. 
+\end{DoxyReturn}
+\index{Zone@{Zone}!remplir\+\_\+salle@{remplir\+\_\+salle}}
+\index{remplir\+\_\+salle@{remplir\+\_\+salle}!Zone@{Zone}}
+\subsubsection[{\texorpdfstring{remplir\+\_\+salle(int x, int y)}{remplir_salle(int x, int y)}}]{\setlength{\rightskip}{0pt plus 5cm}void Zone\+::remplir\+\_\+salle (
+\begin{DoxyParamCaption}
+\item[{int}]{x, }
+\item[{int}]{y}
+\end{DoxyParamCaption}
+)}\hypertarget{classZone_ae97ba3cc2a452803a66dbd3c0c84852b}{}\label{classZone_ae97ba3cc2a452803a66dbd3c0c84852b}
+
+
+Appelle la procedure remplir() d\textquotesingle{}une \hyperlink{classSalle}{Salle}. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em x} & \+: coordonnees x de la \hyperlink{classSalle}{Salle} à vider. \\
+\hline
+\mbox{\tt in}  & {\em y} & \+: coordonnees y de la \hyperlink{classSalle}{Salle} à vider. \\
+\hline
+\end{DoxyParams}
+\index{Zone@{Zone}!remplir\+\_\+salle@{remplir\+\_\+salle}}
+\index{remplir\+\_\+salle@{remplir\+\_\+salle}!Zone@{Zone}}
+\subsubsection[{\texorpdfstring{remplir\+\_\+salle()}{remplir_salle()}}]{\setlength{\rightskip}{0pt plus 5cm}void Zone\+::remplir\+\_\+salle (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classZone_a76284023033d6b67f933b4656a8eb761}{}\label{classZone_a76284023033d6b67f933b4656a8eb761}
+
+
+Appelle la procedure vider() de la \hyperlink{classSalle}{Salle} actuelle Sûrement temporaire et à supprimer plus tard. 
+
+\index{Zone@{Zone}!set\+\_\+salle@{set\+\_\+salle}}
+\index{set\+\_\+salle@{set\+\_\+salle}!Zone@{Zone}}
+\subsubsection[{\texorpdfstring{set\+\_\+salle(int x, int y, const Salle \&nouvelle\+\_\+salle)}{set_salle(int x, int y, const Salle &nouvelle_salle)}}]{\setlength{\rightskip}{0pt plus 5cm}void Zone\+::set\+\_\+salle (
+\begin{DoxyParamCaption}
+\item[{int}]{x, }
+\item[{int}]{y, }
+\item[{const {\bf Salle} \&}]{nouvelle\+\_\+salle}
+\end{DoxyParamCaption}
+)}\hypertarget{classZone_a5c68a620d5c32cd2bf26272aeaee557d}{}\label{classZone_a5c68a620d5c32cd2bf26272aeaee557d}
+
+
+Mutateur de \hyperlink{classSalle}{Salle} de la {\itshape carte}. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em x} & \+: les coordonnees x de la \hyperlink{classSalle}{Salle} à changer. \\
+\hline
+\mbox{\tt in}  & {\em y} & \+: les coordonnees y de la \hyperlink{classSalle}{Salle} à changer. \\
+\hline
+\mbox{\tt in}  & {\em nouvelle\+\_\+salle} & \+: la \hyperlink{classSalle}{Salle} qui remplacera l\textquotesingle{}ancienne. \\
+\hline
+\end{DoxyParams}
+\index{Zone@{Zone}!vider\+\_\+salle@{vider\+\_\+salle}}
+\index{vider\+\_\+salle@{vider\+\_\+salle}!Zone@{Zone}}
+\subsubsection[{\texorpdfstring{vider\+\_\+salle(int x, int y)}{vider_salle(int x, int y)}}]{\setlength{\rightskip}{0pt plus 5cm}void Zone\+::vider\+\_\+salle (
+\begin{DoxyParamCaption}
+\item[{int}]{x, }
+\item[{int}]{y}
+\end{DoxyParamCaption}
+)}\hypertarget{classZone_a296f45a66db2f5ad565d15274f628e72}{}\label{classZone_a296f45a66db2f5ad565d15274f628e72}
+
+
+Appelle la procedure vider() d\textquotesingle{}une \hyperlink{classSalle}{Salle}. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em x} & \+: coordonnees x de la \hyperlink{classSalle}{Salle} à vider. \\
+\hline
+\mbox{\tt in}  & {\em y} & \+: coordonnees y de la \hyperlink{classSalle}{Salle} à vider. \\
+\hline
+\end{DoxyParams}
+\index{Zone@{Zone}!vider\+\_\+salle@{vider\+\_\+salle}}
+\index{vider\+\_\+salle@{vider\+\_\+salle}!Zone@{Zone}}
+\subsubsection[{\texorpdfstring{vider\+\_\+salle()}{vider_salle()}}]{\setlength{\rightskip}{0pt plus 5cm}void Zone\+::vider\+\_\+salle (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classZone_a0f61f5c9028db56ef251371818b31b35}{}\label{classZone_a0f61f5c9028db56ef251371818b31b35}
+\index{Zone@{Zone}!zone\+\_\+depuis\+\_\+modele@{zone\+\_\+depuis\+\_\+modele}}
+\index{zone\+\_\+depuis\+\_\+modele@{zone\+\_\+depuis\+\_\+modele}!Zone@{Zone}}
+\subsubsection[{\texorpdfstring{zone\+\_\+depuis\+\_\+modele(std\+::string nom)}{zone_depuis_modele(std::string nom)}}]{\setlength{\rightskip}{0pt plus 5cm}void Zone\+::zone\+\_\+depuis\+\_\+modele (
+\begin{DoxyParamCaption}
+\item[{std\+::string}]{nom}
+\end{DoxyParamCaption}
+)}\hypertarget{classZone_a411c8abc6ba0b85239bea9aa2daac45c}{}\label{classZone_a411c8abc6ba0b85239bea9aa2daac45c}
+
+
+Remplit les {\itshape config} de la {\itshape carte}. Crée un \hyperlink{classModele}{Modele} à partir de {\itshape nom} et génère la \hyperlink{classZone}{Zone} procéduralement à partir de ce \hyperlink{classModele}{Modele}. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em nom} & \+: le nom du \hyperlink{classModele}{Modele} désiré pour la \hyperlink{classZone}{Zone}. \\
+\hline
+\end{DoxyParams}
+\index{Zone@{Zone}!zone\+\_\+depuis\+\_\+modele\+\_\+aleatoire@{zone\+\_\+depuis\+\_\+modele\+\_\+aleatoire}}
+\index{zone\+\_\+depuis\+\_\+modele\+\_\+aleatoire@{zone\+\_\+depuis\+\_\+modele\+\_\+aleatoire}!Zone@{Zone}}
+\subsubsection[{\texorpdfstring{zone\+\_\+depuis\+\_\+modele\+\_\+aleatoire(int taille)}{zone_depuis_modele_aleatoire(int taille)}}]{\setlength{\rightskip}{0pt plus 5cm}void Zone\+::zone\+\_\+depuis\+\_\+modele\+\_\+aleatoire (
+\begin{DoxyParamCaption}
+\item[{int}]{taille = {\ttfamily 0}}
+\end{DoxyParamCaption}
+)}\hypertarget{classZone_a64b87f18b343a38b40a2fbf9220b3994}{}\label{classZone_a64b87f18b343a38b40a2fbf9220b3994}
+
+
+Appelle zone\+\_\+depuis\+\_\+modele avec un nom aléatoire. Crée un \hyperlink{classModele}{Modele} aléatoirement et génère la \hyperlink{classZone}{Zone} procéduralement à partir de ce \hyperlink{classModele}{Modele}. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em taille} & \+: la taille générale (0-\/$>$4) de la \hyperlink{classZone}{Zone}. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/quentin/\+Murmure/src/core/\hyperlink{Zone_8h}{Zone.\+h}\item 
+/home/quentin/\+Murmure/src/core/\hyperlink{Zone_8cpp}{Zone.\+cpp}\end{DoxyCompactItemize}

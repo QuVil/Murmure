@@ -1,0 +1,215 @@
+\hypertarget{classCoord2D}{}\section{Coord2D Class Reference}
+\label{classCoord2D}\index{Coord2D@{Coord2D}}
+
+
+Une simple class gérant les coordonnées x et y. Les points sont dans un plan simple orthonormé dirigé par l\textquotesingle{}axe x des abscisses et y des ordonnées.  
+
+
+
+
+{\ttfamily \#include $<$Coord2\+D.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classCoord2D_a145cbd725c616e3f26ad8654ac7abc23}{Coord2D} ()
+\begin{DoxyCompactList}\small\item\em Constructeur par défaut Initialise x à 0 et y à 0. \end{DoxyCompactList}\item 
+\hyperlink{classCoord2D_a386e5a356b88ee9554a3243a2e2879bf}{Coord2D} (float a, float b)
+\begin{DoxyCompactList}\small\item\em Constructeur à parametres Initialise l\textquotesingle{}objet avec les valeurs données en parametre. \end{DoxyCompactList}\item 
+bool \hyperlink{classCoord2D_a6c08cc90bbab0447195b0337f913bf0a}{operator==} (const \hyperlink{classCoord2D}{Coord2D} \&c2)
+\begin{DoxyCompactList}\small\item\em Operateur == Surcharge de == pour pouvoir faire des tests entre des points. \end{DoxyCompactList}\item 
+bool \hyperlink{classCoord2D_a9929543176bde519c88ae750fc135d5c}{operator!=} (const \hyperlink{classCoord2D}{Coord2D} \&c2)
+\begin{DoxyCompactList}\small\item\em Operateur != Surcharge de == pour pouvoir faire des tests entre des points. \end{DoxyCompactList}\item 
+void \hyperlink{classCoord2D_ac37a73454b1fb3269707b7cb69b3ebea}{coord\+\_\+set} (float a, float b)
+\begin{DoxyCompactList}\small\item\em Affectation des variables Met à jour les variables x et y. \end{DoxyCompactList}\item 
+void \hyperlink{classCoord2D_ae80ecbbe8bb3ae6bf3ba27749b2b899e}{deplacer} (const \hyperlink{classVecteurM}{VecteurM} \&vect, const float \&coeff)
+\begin{DoxyCompactList}\small\item\em Deplace le point Procedure qui va deplacer un point en fonction du mouvement dirigé et d\textquotesingle{}un coefficient. \end{DoxyCompactList}\item 
+void \hyperlink{classCoord2D_a1055168107f36a6ab72063ffc8a124dc}{set\+\_\+x} (float a)
+\begin{DoxyCompactList}\small\item\em Mutateur de x. \end{DoxyCompactList}\item 
+void \hyperlink{classCoord2D_afd4d4eabd9f960f93a88f846005f6d1f}{set\+\_\+y} (float b)
+\begin{DoxyCompactList}\small\item\em Mutateur de y. \end{DoxyCompactList}\item 
+float \hyperlink{classCoord2D_a46c1e82f0ee86a36f26e292dfbdd5ad6}{get\+\_\+x} () const 
+\begin{DoxyCompactList}\small\item\em Accesseur de x. \end{DoxyCompactList}\item 
+float \hyperlink{classCoord2D_a4aebebbedd53836e6d3b5a43335b4cc8}{get\+\_\+y} () const 
+\begin{DoxyCompactList}\small\item\em Accesseur de y. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Une simple class gérant les coordonnées x et y. Les points sont dans un plan simple orthonormé dirigé par l\textquotesingle{}axe x des abscisses et y des ordonnées. 
+
+\subsection{Constructor \& Destructor Documentation}
+\index{Coord2D@{Coord2D}!Coord2D@{Coord2D}}
+\index{Coord2D@{Coord2D}!Coord2D@{Coord2D}}
+\subsubsection[{\texorpdfstring{Coord2\+D()}{Coord2D()}}]{\setlength{\rightskip}{0pt plus 5cm}Coord2\+D\+::\+Coord2D (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classCoord2D_a145cbd725c616e3f26ad8654ac7abc23}{}\label{classCoord2D_a145cbd725c616e3f26ad8654ac7abc23}
+
+
+Constructeur par défaut Initialise x à 0 et y à 0. 
+
+\index{Coord2D@{Coord2D}!Coord2D@{Coord2D}}
+\index{Coord2D@{Coord2D}!Coord2D@{Coord2D}}
+\subsubsection[{\texorpdfstring{Coord2\+D(float a, float b)}{Coord2D(float a, float b)}}]{\setlength{\rightskip}{0pt plus 5cm}Coord2\+D\+::\+Coord2D (
+\begin{DoxyParamCaption}
+\item[{float}]{a, }
+\item[{float}]{b}
+\end{DoxyParamCaption}
+)}\hypertarget{classCoord2D_a386e5a356b88ee9554a3243a2e2879bf}{}\label{classCoord2D_a386e5a356b88ee9554a3243a2e2879bf}
+
+
+Constructeur à parametres Initialise l\textquotesingle{}objet avec les valeurs données en parametre. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em a} & \+: valeur pour x \\
+\hline
+\mbox{\tt in}  & {\em b} & \+: valeur pour y \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\index{Coord2D@{Coord2D}!coord\+\_\+set@{coord\+\_\+set}}
+\index{coord\+\_\+set@{coord\+\_\+set}!Coord2D@{Coord2D}}
+\subsubsection[{\texorpdfstring{coord\+\_\+set(float a, float b)}{coord_set(float a, float b)}}]{\setlength{\rightskip}{0pt plus 5cm}void Coord2\+D\+::coord\+\_\+set (
+\begin{DoxyParamCaption}
+\item[{float}]{a, }
+\item[{float}]{b}
+\end{DoxyParamCaption}
+)}\hypertarget{classCoord2D_ac37a73454b1fb3269707b7cb69b3ebea}{}\label{classCoord2D_ac37a73454b1fb3269707b7cb69b3ebea}
+
+
+Affectation des variables Met à jour les variables x et y. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em a} & \+: valeur de x \\
+\hline
+\mbox{\tt in}  & {\em b} & \+: valeur de y \\
+\hline
+\end{DoxyParams}
+\index{Coord2D@{Coord2D}!deplacer@{deplacer}}
+\index{deplacer@{deplacer}!Coord2D@{Coord2D}}
+\subsubsection[{\texorpdfstring{deplacer(const Vecteur\+M \&vect, const float \&coeff)}{deplacer(const VecteurM &vect, const float &coeff)}}]{\setlength{\rightskip}{0pt plus 5cm}void Coord2\+D\+::deplacer (
+\begin{DoxyParamCaption}
+\item[{const {\bf VecteurM} \&}]{vect, }
+\item[{const float \&}]{coeff}
+\end{DoxyParamCaption}
+)}\hypertarget{classCoord2D_ae80ecbbe8bb3ae6bf3ba27749b2b899e}{}\label{classCoord2D_ae80ecbbe8bb3ae6bf3ba27749b2b899e}
+
+
+Deplace le point Procedure qui va deplacer un point en fonction du mouvement dirigé et d\textquotesingle{}un coefficient. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em vect} & \+: la direction et l\textquotesingle{}intensité du mouvement \\
+\hline
+\mbox{\tt in}  & {\em coeff} & \+: coefficient à appliquer au mouvement pour que celui-\/ci ait plus ou moins d\textquotesingle{}intensité \\
+\hline
+\end{DoxyParams}
+\index{Coord2D@{Coord2D}!get\+\_\+x@{get\+\_\+x}}
+\index{get\+\_\+x@{get\+\_\+x}!Coord2D@{Coord2D}}
+\subsubsection[{\texorpdfstring{get\+\_\+x() const }{get_x() const }}]{\setlength{\rightskip}{0pt plus 5cm}float Coord2\+D\+::get\+\_\+x (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\hypertarget{classCoord2D_a46c1e82f0ee86a36f26e292dfbdd5ad6}{}\label{classCoord2D_a46c1e82f0ee86a36f26e292dfbdd5ad6}
+
+
+Accesseur de x. 
+
+\begin{DoxyReturn}{Returns}
+valeur de x 
+\end{DoxyReturn}
+\index{Coord2D@{Coord2D}!get\+\_\+y@{get\+\_\+y}}
+\index{get\+\_\+y@{get\+\_\+y}!Coord2D@{Coord2D}}
+\subsubsection[{\texorpdfstring{get\+\_\+y() const }{get_y() const }}]{\setlength{\rightskip}{0pt plus 5cm}float Coord2\+D\+::get\+\_\+y (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\hypertarget{classCoord2D_a4aebebbedd53836e6d3b5a43335b4cc8}{}\label{classCoord2D_a4aebebbedd53836e6d3b5a43335b4cc8}
+
+
+Accesseur de y. 
+
+\begin{DoxyReturn}{Returns}
+valeur de y 
+\end{DoxyReturn}
+\index{Coord2D@{Coord2D}!operator"!=@{operator"!=}}
+\index{operator"!=@{operator"!=}!Coord2D@{Coord2D}}
+\subsubsection[{\texorpdfstring{operator"!=(const Coord2\+D \&c2)}{operator!=(const Coord2D &c2)}}]{\setlength{\rightskip}{0pt plus 5cm}bool Coord2\+D\+::operator!= (
+\begin{DoxyParamCaption}
+\item[{const {\bf Coord2D} \&}]{c2}
+\end{DoxyParamCaption}
+)}\hypertarget{classCoord2D_a9929543176bde519c88ae750fc135d5c}{}\label{classCoord2D_a9929543176bde519c88ae750fc135d5c}
+
+
+Operateur != Surcharge de == pour pouvoir faire des tests entre des points. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em c2} & \+: la sencode entité {\itshape \hyperlink{classCoord2D}{Coord2D}} à comparer avec celle actuelle \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+false si elles sont identiques, true sinon 
+\end{DoxyReturn}
+\index{Coord2D@{Coord2D}!operator==@{operator==}}
+\index{operator==@{operator==}!Coord2D@{Coord2D}}
+\subsubsection[{\texorpdfstring{operator==(const Coord2\+D \&c2)}{operator==(const Coord2D &c2)}}]{\setlength{\rightskip}{0pt plus 5cm}bool Coord2\+D\+::operator== (
+\begin{DoxyParamCaption}
+\item[{const {\bf Coord2D} \&}]{c2}
+\end{DoxyParamCaption}
+)}\hypertarget{classCoord2D_a6c08cc90bbab0447195b0337f913bf0a}{}\label{classCoord2D_a6c08cc90bbab0447195b0337f913bf0a}
+
+
+Operateur == Surcharge de == pour pouvoir faire des tests entre des points. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em c2} & \+: la sencode entité {\itshape \hyperlink{classCoord2D}{Coord2D}} à comparer avec celle actuelle \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true si elles sont identiques, false sinon 
+\end{DoxyReturn}
+\index{Coord2D@{Coord2D}!set\+\_\+x@{set\+\_\+x}}
+\index{set\+\_\+x@{set\+\_\+x}!Coord2D@{Coord2D}}
+\subsubsection[{\texorpdfstring{set\+\_\+x(float a)}{set_x(float a)}}]{\setlength{\rightskip}{0pt plus 5cm}void Coord2\+D\+::set\+\_\+x (
+\begin{DoxyParamCaption}
+\item[{float}]{a}
+\end{DoxyParamCaption}
+)}\hypertarget{classCoord2D_a1055168107f36a6ab72063ffc8a124dc}{}\label{classCoord2D_a1055168107f36a6ab72063ffc8a124dc}
+
+
+Mutateur de x. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em a} & \+: valeur de x \\
+\hline
+\end{DoxyParams}
+\index{Coord2D@{Coord2D}!set\+\_\+y@{set\+\_\+y}}
+\index{set\+\_\+y@{set\+\_\+y}!Coord2D@{Coord2D}}
+\subsubsection[{\texorpdfstring{set\+\_\+y(float b)}{set_y(float b)}}]{\setlength{\rightskip}{0pt plus 5cm}void Coord2\+D\+::set\+\_\+y (
+\begin{DoxyParamCaption}
+\item[{float}]{b}
+\end{DoxyParamCaption}
+)}\hypertarget{classCoord2D_afd4d4eabd9f960f93a88f846005f6d1f}{}\label{classCoord2D_afd4d4eabd9f960f93a88f846005f6d1f}
+
+
+Mutateur de y. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em a} & \+: valeur de y \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/quentin/\+Murmure/src/core/\hyperlink{Coord2D_8h}{Coord2\+D.\+h}\item 
+/home/quentin/\+Murmure/src/core/\hyperlink{Coord2D_8cpp}{Coord2\+D.\+cpp}\end{DoxyCompactItemize}

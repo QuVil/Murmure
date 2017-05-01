@@ -1,0 +1,493 @@
+\hypertarget{classPerso}{}\section{Perso Class Reference}
+\label{classPerso}\index{Perso@{Perso}}
+
+
+{\ttfamily \#include $<$Perso.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classPerso_a33aebfa5c1b957d87f81da39536121e8}{Perso} ()
+\begin{DoxyCompactList}\small\item\em Constructeur par défaut Déclare les variables. \end{DoxyCompactList}\item 
+\hyperlink{classPerso_a25afa33fb28da6526c48cca6d96cb65c}{Perso} (std\+::string n)
+\begin{DoxyCompactList}\small\item\em Constructeur avec paramètres Construit l\textquotesingle{}instance en fonction du npm du personnage. \end{DoxyCompactList}\item 
+std\+::string \hyperlink{classPerso_a33d916b6f92b8dace29b86ef42b55de0}{get\+\_\+nom} () const 
+\begin{DoxyCompactList}\small\item\em Accesseur pour le nom. \end{DoxyCompactList}\item 
+void \hyperlink{classPerso_aee94c6fa0d07ebe5d27207aa11552a22}{set\+\_\+deplacement} (const \hyperlink{classVecteurM}{VecteurM} \&v)
+\begin{DoxyCompactList}\small\item\em Mutateur du déplacement. \end{DoxyCompactList}\item 
+void \hyperlink{classPerso_a37854611430566f2c7443daa67cc9acb}{set\+\_\+deplacement} (const float \&x, const float \&y)
+\begin{DoxyCompactList}\small\item\em Mutateur du déplacement. \end{DoxyCompactList}\item 
+void \hyperlink{classPerso_abd42a00f2f2110cadc68001e570ae3f7}{set\+\_\+orientation} (const \hyperlink{classVecteurM}{VecteurM} \&v)
+\begin{DoxyCompactList}\small\item\em Mutateur de l\textquotesingle{}orientation. \end{DoxyCompactList}\item 
+void \hyperlink{classPerso_a61086cee36d4adf7f95b6eab8c2a0016}{set\+\_\+position} (const int \&x, const int \&y)
+\begin{DoxyCompactList}\small\item\em Mutateur de la position. \end{DoxyCompactList}\item 
+void \hyperlink{classPerso_a7ccf761bd7df818e304713fe117ec4d1}{revenir\+\_\+ancienne\+\_\+position} ()
+\begin{DoxyCompactList}\small\item\em Rétablir position Retourne à l\textquotesingle{}ancienne position (celle sauvegardée dans position\+\_\+old) \end{DoxyCompactList}\item 
+\hyperlink{classCoord2D}{Coord2D} \hyperlink{classPerso_a5190c85261ab0e6f5825b1a5d23042f7}{get\+\_\+pos} () const 
+\item 
+float \hyperlink{classPerso_aa8d8bea99ce43e44a071e0d773356fd2}{get\+\_\+coefficient\+\_\+vitesse} () const 
+\item 
+float \hyperlink{classPerso_a681288fec10d471d95374488c63b9a77}{get\+\_\+orientation\+\_\+degre} () const 
+\item 
+float \hyperlink{classPerso_ab03b733beb68cf443e281ee1272b56df}{get\+\_\+pos\+\_\+x} () const 
+\item 
+float \hyperlink{classPerso_a3c38e53fa260249c5b97bd0926442958}{get\+\_\+pos\+\_\+y} () const 
+\item 
+float \hyperlink{classPerso_a5a56b6db9d25cf6c34ebb16d31a0b7a5}{get\+\_\+pv\+\_\+max} () const 
+\item 
+float \hyperlink{classPerso_aa7ca3080d319f62908c10f777fe93811}{get\+\_\+pv\+\_\+actuel} () const 
+\item 
+float \hyperlink{classPerso_a37f3623645e49fd9408a350f75eac62f}{get\+\_\+taille} () const 
+\item 
+\hyperlink{classVecteurM}{VecteurM} \hyperlink{classPerso_a39dfcd62e64dde90953ac3fe3aa7d53d}{get\+\_\+deplacement} () const 
+\item 
+\hyperlink{classVecteurM}{VecteurM} \hyperlink{classPerso_a7092b7aef8e99d900db50114d55cab2b}{get\+\_\+orientation} () const 
+\item 
+void \hyperlink{classPerso_aa090d23e55bbbda0cf572d9cbdb294e6}{infliger\+\_\+degats} (float degats)
+\item 
+void \hyperlink{classPerso_a26cb7f4235726561a55d6feb585cf789}{soigner} (float soin)
+\item 
+void \hyperlink{classPerso_a072d564a8bca3b10d03acbffc9dacfea}{set\+\_\+nom} (const std\+::string \&n)
+\item 
+void \hyperlink{classPerso_aa687e5caeb62f90622ad1a09e4e95380}{set\+\_\+coefficient\+\_\+vitesse} (const float \&c)
+\begin{DoxyCompactList}\small\item\em Mutateur du déplacement. \end{DoxyCompactList}\item 
+void \hyperlink{classPerso_a197f7c4a5ca9677ebc597a56b64d066c}{set\+\_\+pv\+\_\+max} (const int \&p)
+\begin{DoxyCompactList}\small\item\em Mutateur du déplacement. \end{DoxyCompactList}\item 
+void \hyperlink{classPerso_aba25d0e7ca796d4b5f05b9a4ff34d239}{set\+\_\+taille} (const float \&t)
+\begin{DoxyCompactList}\small\item\em Mutateur du déplacement. \end{DoxyCompactList}\item 
+void \hyperlink{classPerso_ac6538c0cccd1f7703fabadf491737a41}{set\+\_\+id\+\_\+arme1} (const int \&i)
+\begin{DoxyCompactList}\small\item\em Mutateur du déplacement. \end{DoxyCompactList}\item 
+void \hyperlink{classPerso_a4f35ce41db777a555946a52609a48ee3}{set\+\_\+nv\+\_\+arme1} (const int \&i)
+\begin{DoxyCompactList}\small\item\em Mutateur du déplacement. \end{DoxyCompactList}\item 
+void \hyperlink{classPerso_a04d4fcb6ad182eb25914abf047775a82}{set\+\_\+id\+\_\+arme2} (const int \&i)
+\item 
+void \hyperlink{classPerso_a9c2da2ddd242e58d3316e89e2c1d952f}{set\+\_\+nv\+\_\+arme2} (const int \&i)
+\item 
+void \hyperlink{classPerso_a12d61850ed6d9e1ce8da1b95a976e5cb}{charger\+\_\+perso} (const std\+::string \&n)
+\begin{DoxyCompactList}\small\item\em Mutateur du déplacement. \end{DoxyCompactList}\item 
+\hyperlink{classArme}{Arme} $\ast$ \hyperlink{classPerso_aa8e41cc8879e7aaccfd2b378a0015ebc}{get\+\_\+arme1} ()
+\item 
+\hyperlink{classArme}{Arme} $\ast$ \hyperlink{classPerso_ac951596137fde977ed45552e63531b8f}{get\+\_\+arme2} ()
+\item 
+\hyperlink{classProjectile}{Projectile} $\ast$ \hyperlink{classPerso_a213b97f622aa98972c106d232f6a66b6}{tirer\+\_\+1} ()
+\item 
+\hyperlink{classProjectile}{Projectile} $\ast$ \hyperlink{classPerso_a099b51c3db112723feb541cdbe8c1bcc}{tirer\+\_\+2} ()
+\item 
+void \hyperlink{classPerso_a082cd5d342e2dd59b11f5a5af6746f43}{ramasser\+\_\+clef} (\hyperlink{classClef}{Clef} $\ast$cle)
+\item 
+bool \hyperlink{classPerso_abad8b9406ce74c04614793eef4d1a827}{get\+\_\+cle\+\_\+boss} () const 
+\item 
+int \hyperlink{classPerso_a4a277ad575018af259025b8008a66c99}{get\+\_\+pos\+\_\+case\+\_\+x} () const 
+\item 
+int \hyperlink{classPerso_a7ac28cb2b5131123254d8b5a358a84a0}{get\+\_\+pos\+\_\+case\+\_\+y} () const 
+\item 
+void \hyperlink{classPerso_a7903c80e4915a2f3a45452360b69b798}{deplacer\+\_\+txt} (char direction)
+\item 
+void \hyperlink{classPerso_a7ba97b055676c800724ba1f1faf4c517}{placer\+\_\+txt} (int x, int y)
+\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{Perso@{Perso}!Perso@{Perso}}
+\index{Perso@{Perso}!Perso@{Perso}}
+\subsubsection[{\texorpdfstring{Perso()}{Perso()}}]{\setlength{\rightskip}{0pt plus 5cm}Perso\+::\+Perso (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classPerso_a33aebfa5c1b957d87f81da39536121e8}{}\label{classPerso_a33aebfa5c1b957d87f81da39536121e8}
+
+
+Constructeur par défaut Déclare les variables. 
+
+\index{Perso@{Perso}!Perso@{Perso}}
+\index{Perso@{Perso}!Perso@{Perso}}
+\subsubsection[{\texorpdfstring{Perso(std\+::string n)}{Perso(std::string n)}}]{\setlength{\rightskip}{0pt plus 5cm}Perso\+::\+Perso (
+\begin{DoxyParamCaption}
+\item[{std\+::string}]{n}
+\end{DoxyParamCaption}
+)}\hypertarget{classPerso_a25afa33fb28da6526c48cca6d96cb65c}{}\label{classPerso_a25afa33fb28da6526c48cca6d96cb65c}
+
+
+Constructeur avec paramètres Construit l\textquotesingle{}instance en fonction du npm du personnage. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em n} & \+: nom du personnage \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\index{Perso@{Perso}!charger\+\_\+perso@{charger\+\_\+perso}}
+\index{charger\+\_\+perso@{charger\+\_\+perso}!Perso@{Perso}}
+\subsubsection[{\texorpdfstring{charger\+\_\+perso(const std\+::string \&n)}{charger_perso(const std::string &n)}}]{\setlength{\rightskip}{0pt plus 5cm}void Perso\+::charger\+\_\+perso (
+\begin{DoxyParamCaption}
+\item[{const std\+::string \&}]{n}
+\end{DoxyParamCaption}
+)}\hypertarget{classPerso_a12d61850ed6d9e1ce8da1b95a976e5cb}{}\label{classPerso_a12d61850ed6d9e1ce8da1b95a976e5cb}
+
+
+Mutateur du déplacement. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em v} & \+: deplacement à attribuer \\
+\hline
+\end{DoxyParams}
+\index{Perso@{Perso}!deplacer\+\_\+txt@{deplacer\+\_\+txt}}
+\index{deplacer\+\_\+txt@{deplacer\+\_\+txt}!Perso@{Perso}}
+\subsubsection[{\texorpdfstring{deplacer\+\_\+txt(char direction)}{deplacer_txt(char direction)}}]{\setlength{\rightskip}{0pt plus 5cm}void Perso\+::deplacer\+\_\+txt (
+\begin{DoxyParamCaption}
+\item[{char}]{direction}
+\end{DoxyParamCaption}
+)}\hypertarget{classPerso_a7903c80e4915a2f3a45452360b69b798}{}\label{classPerso_a7903c80e4915a2f3a45452360b69b798}
+\index{Perso@{Perso}!get\+\_\+arme1@{get\+\_\+arme1}}
+\index{get\+\_\+arme1@{get\+\_\+arme1}!Perso@{Perso}}
+\subsubsection[{\texorpdfstring{get\+\_\+arme1()}{get_arme1()}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Arme} $\ast$ Perso\+::get\+\_\+arme1 (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classPerso_aa8e41cc8879e7aaccfd2b378a0015ebc}{}\label{classPerso_aa8e41cc8879e7aaccfd2b378a0015ebc}
+\index{Perso@{Perso}!get\+\_\+arme2@{get\+\_\+arme2}}
+\index{get\+\_\+arme2@{get\+\_\+arme2}!Perso@{Perso}}
+\subsubsection[{\texorpdfstring{get\+\_\+arme2()}{get_arme2()}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Arme} $\ast$ Perso\+::get\+\_\+arme2 (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classPerso_ac951596137fde977ed45552e63531b8f}{}\label{classPerso_ac951596137fde977ed45552e63531b8f}
+\index{Perso@{Perso}!get\+\_\+cle\+\_\+boss@{get\+\_\+cle\+\_\+boss}}
+\index{get\+\_\+cle\+\_\+boss@{get\+\_\+cle\+\_\+boss}!Perso@{Perso}}
+\subsubsection[{\texorpdfstring{get\+\_\+cle\+\_\+boss() const }{get_cle_boss() const }}]{\setlength{\rightskip}{0pt plus 5cm}bool Perso\+::get\+\_\+cle\+\_\+boss (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\hypertarget{classPerso_abad8b9406ce74c04614793eef4d1a827}{}\label{classPerso_abad8b9406ce74c04614793eef4d1a827}
+\index{Perso@{Perso}!get\+\_\+coefficient\+\_\+vitesse@{get\+\_\+coefficient\+\_\+vitesse}}
+\index{get\+\_\+coefficient\+\_\+vitesse@{get\+\_\+coefficient\+\_\+vitesse}!Perso@{Perso}}
+\subsubsection[{\texorpdfstring{get\+\_\+coefficient\+\_\+vitesse() const }{get_coefficient_vitesse() const }}]{\setlength{\rightskip}{0pt plus 5cm}float Perso\+::get\+\_\+coefficient\+\_\+vitesse (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\hypertarget{classPerso_aa8d8bea99ce43e44a071e0d773356fd2}{}\label{classPerso_aa8d8bea99ce43e44a071e0d773356fd2}
+\index{Perso@{Perso}!get\+\_\+deplacement@{get\+\_\+deplacement}}
+\index{get\+\_\+deplacement@{get\+\_\+deplacement}!Perso@{Perso}}
+\subsubsection[{\texorpdfstring{get\+\_\+deplacement() const }{get_deplacement() const }}]{\setlength{\rightskip}{0pt plus 5cm}{\bf VecteurM} Perso\+::get\+\_\+deplacement (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\hypertarget{classPerso_a39dfcd62e64dde90953ac3fe3aa7d53d}{}\label{classPerso_a39dfcd62e64dde90953ac3fe3aa7d53d}
+\index{Perso@{Perso}!get\+\_\+nom@{get\+\_\+nom}}
+\index{get\+\_\+nom@{get\+\_\+nom}!Perso@{Perso}}
+\subsubsection[{\texorpdfstring{get\+\_\+nom() const }{get_nom() const }}]{\setlength{\rightskip}{0pt plus 5cm}std\+::string Perso\+::get\+\_\+nom (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\hypertarget{classPerso_a33d916b6f92b8dace29b86ef42b55de0}{}\label{classPerso_a33d916b6f92b8dace29b86ef42b55de0}
+
+
+Accesseur pour le nom. 
+
+\begin{DoxyReturn}{Returns}
+le nom du personnage 
+\end{DoxyReturn}
+\index{Perso@{Perso}!get\+\_\+orientation@{get\+\_\+orientation}}
+\index{get\+\_\+orientation@{get\+\_\+orientation}!Perso@{Perso}}
+\subsubsection[{\texorpdfstring{get\+\_\+orientation() const }{get_orientation() const }}]{\setlength{\rightskip}{0pt plus 5cm}{\bf VecteurM} Perso\+::get\+\_\+orientation (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\hypertarget{classPerso_a7092b7aef8e99d900db50114d55cab2b}{}\label{classPerso_a7092b7aef8e99d900db50114d55cab2b}
+\index{Perso@{Perso}!get\+\_\+orientation\+\_\+degre@{get\+\_\+orientation\+\_\+degre}}
+\index{get\+\_\+orientation\+\_\+degre@{get\+\_\+orientation\+\_\+degre}!Perso@{Perso}}
+\subsubsection[{\texorpdfstring{get\+\_\+orientation\+\_\+degre() const }{get_orientation_degre() const }}]{\setlength{\rightskip}{0pt plus 5cm}float Perso\+::get\+\_\+orientation\+\_\+degre (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\hypertarget{classPerso_a681288fec10d471d95374488c63b9a77}{}\label{classPerso_a681288fec10d471d95374488c63b9a77}
+\index{Perso@{Perso}!get\+\_\+pos@{get\+\_\+pos}}
+\index{get\+\_\+pos@{get\+\_\+pos}!Perso@{Perso}}
+\subsubsection[{\texorpdfstring{get\+\_\+pos() const }{get_pos() const }}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Coord2D} Perso\+::get\+\_\+pos (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\hypertarget{classPerso_a5190c85261ab0e6f5825b1a5d23042f7}{}\label{classPerso_a5190c85261ab0e6f5825b1a5d23042f7}
+\index{Perso@{Perso}!get\+\_\+pos\+\_\+case\+\_\+x@{get\+\_\+pos\+\_\+case\+\_\+x}}
+\index{get\+\_\+pos\+\_\+case\+\_\+x@{get\+\_\+pos\+\_\+case\+\_\+x}!Perso@{Perso}}
+\subsubsection[{\texorpdfstring{get\+\_\+pos\+\_\+case\+\_\+x() const }{get_pos_case_x() const }}]{\setlength{\rightskip}{0pt plus 5cm}int Perso\+::get\+\_\+pos\+\_\+case\+\_\+x (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\hypertarget{classPerso_a4a277ad575018af259025b8008a66c99}{}\label{classPerso_a4a277ad575018af259025b8008a66c99}
+\index{Perso@{Perso}!get\+\_\+pos\+\_\+case\+\_\+y@{get\+\_\+pos\+\_\+case\+\_\+y}}
+\index{get\+\_\+pos\+\_\+case\+\_\+y@{get\+\_\+pos\+\_\+case\+\_\+y}!Perso@{Perso}}
+\subsubsection[{\texorpdfstring{get\+\_\+pos\+\_\+case\+\_\+y() const }{get_pos_case_y() const }}]{\setlength{\rightskip}{0pt plus 5cm}int Perso\+::get\+\_\+pos\+\_\+case\+\_\+y (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\hypertarget{classPerso_a7ac28cb2b5131123254d8b5a358a84a0}{}\label{classPerso_a7ac28cb2b5131123254d8b5a358a84a0}
+\index{Perso@{Perso}!get\+\_\+pos\+\_\+x@{get\+\_\+pos\+\_\+x}}
+\index{get\+\_\+pos\+\_\+x@{get\+\_\+pos\+\_\+x}!Perso@{Perso}}
+\subsubsection[{\texorpdfstring{get\+\_\+pos\+\_\+x() const }{get_pos_x() const }}]{\setlength{\rightskip}{0pt plus 5cm}float Perso\+::get\+\_\+pos\+\_\+x (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\hypertarget{classPerso_ab03b733beb68cf443e281ee1272b56df}{}\label{classPerso_ab03b733beb68cf443e281ee1272b56df}
+\index{Perso@{Perso}!get\+\_\+pos\+\_\+y@{get\+\_\+pos\+\_\+y}}
+\index{get\+\_\+pos\+\_\+y@{get\+\_\+pos\+\_\+y}!Perso@{Perso}}
+\subsubsection[{\texorpdfstring{get\+\_\+pos\+\_\+y() const }{get_pos_y() const }}]{\setlength{\rightskip}{0pt plus 5cm}float Perso\+::get\+\_\+pos\+\_\+y (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\hypertarget{classPerso_a3c38e53fa260249c5b97bd0926442958}{}\label{classPerso_a3c38e53fa260249c5b97bd0926442958}
+\index{Perso@{Perso}!get\+\_\+pv\+\_\+actuel@{get\+\_\+pv\+\_\+actuel}}
+\index{get\+\_\+pv\+\_\+actuel@{get\+\_\+pv\+\_\+actuel}!Perso@{Perso}}
+\subsubsection[{\texorpdfstring{get\+\_\+pv\+\_\+actuel() const }{get_pv_actuel() const }}]{\setlength{\rightskip}{0pt plus 5cm}float Perso\+::get\+\_\+pv\+\_\+actuel (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\hypertarget{classPerso_aa7ca3080d319f62908c10f777fe93811}{}\label{classPerso_aa7ca3080d319f62908c10f777fe93811}
+\index{Perso@{Perso}!get\+\_\+pv\+\_\+max@{get\+\_\+pv\+\_\+max}}
+\index{get\+\_\+pv\+\_\+max@{get\+\_\+pv\+\_\+max}!Perso@{Perso}}
+\subsubsection[{\texorpdfstring{get\+\_\+pv\+\_\+max() const }{get_pv_max() const }}]{\setlength{\rightskip}{0pt plus 5cm}float Perso\+::get\+\_\+pv\+\_\+max (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\hypertarget{classPerso_a5a56b6db9d25cf6c34ebb16d31a0b7a5}{}\label{classPerso_a5a56b6db9d25cf6c34ebb16d31a0b7a5}
+\index{Perso@{Perso}!get\+\_\+taille@{get\+\_\+taille}}
+\index{get\+\_\+taille@{get\+\_\+taille}!Perso@{Perso}}
+\subsubsection[{\texorpdfstring{get\+\_\+taille() const }{get_taille() const }}]{\setlength{\rightskip}{0pt plus 5cm}float Perso\+::get\+\_\+taille (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\hypertarget{classPerso_a37f3623645e49fd9408a350f75eac62f}{}\label{classPerso_a37f3623645e49fd9408a350f75eac62f}
+\index{Perso@{Perso}!infliger\+\_\+degats@{infliger\+\_\+degats}}
+\index{infliger\+\_\+degats@{infliger\+\_\+degats}!Perso@{Perso}}
+\subsubsection[{\texorpdfstring{infliger\+\_\+degats(float degats)}{infliger_degats(float degats)}}]{\setlength{\rightskip}{0pt plus 5cm}void Perso\+::infliger\+\_\+degats (
+\begin{DoxyParamCaption}
+\item[{float}]{degats}
+\end{DoxyParamCaption}
+)}\hypertarget{classPerso_aa090d23e55bbbda0cf572d9cbdb294e6}{}\label{classPerso_aa090d23e55bbbda0cf572d9cbdb294e6}
+\index{Perso@{Perso}!placer\+\_\+txt@{placer\+\_\+txt}}
+\index{placer\+\_\+txt@{placer\+\_\+txt}!Perso@{Perso}}
+\subsubsection[{\texorpdfstring{placer\+\_\+txt(int x, int y)}{placer_txt(int x, int y)}}]{\setlength{\rightskip}{0pt plus 5cm}void Perso\+::placer\+\_\+txt (
+\begin{DoxyParamCaption}
+\item[{int}]{x, }
+\item[{int}]{y}
+\end{DoxyParamCaption}
+)}\hypertarget{classPerso_a7ba97b055676c800724ba1f1faf4c517}{}\label{classPerso_a7ba97b055676c800724ba1f1faf4c517}
+\index{Perso@{Perso}!ramasser\+\_\+clef@{ramasser\+\_\+clef}}
+\index{ramasser\+\_\+clef@{ramasser\+\_\+clef}!Perso@{Perso}}
+\subsubsection[{\texorpdfstring{ramasser\+\_\+clef(\+Clef $\ast$cle)}{ramasser_clef(Clef *cle)}}]{\setlength{\rightskip}{0pt plus 5cm}void Perso\+::ramasser\+\_\+clef (
+\begin{DoxyParamCaption}
+\item[{{\bf Clef} $\ast$}]{cle}
+\end{DoxyParamCaption}
+)}\hypertarget{classPerso_a082cd5d342e2dd59b11f5a5af6746f43}{}\label{classPerso_a082cd5d342e2dd59b11f5a5af6746f43}
+\index{Perso@{Perso}!revenir\+\_\+ancienne\+\_\+position@{revenir\+\_\+ancienne\+\_\+position}}
+\index{revenir\+\_\+ancienne\+\_\+position@{revenir\+\_\+ancienne\+\_\+position}!Perso@{Perso}}
+\subsubsection[{\texorpdfstring{revenir\+\_\+ancienne\+\_\+position()}{revenir_ancienne_position()}}]{\setlength{\rightskip}{0pt plus 5cm}void Perso\+::revenir\+\_\+ancienne\+\_\+position (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classPerso_a7ccf761bd7df818e304713fe117ec4d1}{}\label{classPerso_a7ccf761bd7df818e304713fe117ec4d1}
+
+
+Rétablir position Retourne à l\textquotesingle{}ancienne position (celle sauvegardée dans position\+\_\+old) 
+
+\index{Perso@{Perso}!set\+\_\+coefficient\+\_\+vitesse@{set\+\_\+coefficient\+\_\+vitesse}}
+\index{set\+\_\+coefficient\+\_\+vitesse@{set\+\_\+coefficient\+\_\+vitesse}!Perso@{Perso}}
+\subsubsection[{\texorpdfstring{set\+\_\+coefficient\+\_\+vitesse(const float \&c)}{set_coefficient_vitesse(const float &c)}}]{\setlength{\rightskip}{0pt plus 5cm}void Perso\+::set\+\_\+coefficient\+\_\+vitesse (
+\begin{DoxyParamCaption}
+\item[{const float \&}]{c}
+\end{DoxyParamCaption}
+)}\hypertarget{classPerso_aa687e5caeb62f90622ad1a09e4e95380}{}\label{classPerso_aa687e5caeb62f90622ad1a09e4e95380}
+
+
+Mutateur du déplacement. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em v} & \+: deplacement à attribuer \\
+\hline
+\end{DoxyParams}
+\index{Perso@{Perso}!set\+\_\+deplacement@{set\+\_\+deplacement}}
+\index{set\+\_\+deplacement@{set\+\_\+deplacement}!Perso@{Perso}}
+\subsubsection[{\texorpdfstring{set\+\_\+deplacement(const Vecteur\+M \&v)}{set_deplacement(const VecteurM &v)}}]{\setlength{\rightskip}{0pt plus 5cm}void Perso\+::set\+\_\+deplacement (
+\begin{DoxyParamCaption}
+\item[{const {\bf VecteurM} \&}]{v}
+\end{DoxyParamCaption}
+)}\hypertarget{classPerso_aee94c6fa0d07ebe5d27207aa11552a22}{}\label{classPerso_aee94c6fa0d07ebe5d27207aa11552a22}
+
+
+Mutateur du déplacement. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em v} & \+: deplacement à attribuer \\
+\hline
+\end{DoxyParams}
+\index{Perso@{Perso}!set\+\_\+deplacement@{set\+\_\+deplacement}}
+\index{set\+\_\+deplacement@{set\+\_\+deplacement}!Perso@{Perso}}
+\subsubsection[{\texorpdfstring{set\+\_\+deplacement(const float \&x, const float \&y)}{set_deplacement(const float &x, const float &y)}}]{\setlength{\rightskip}{0pt plus 5cm}void Perso\+::set\+\_\+deplacement (
+\begin{DoxyParamCaption}
+\item[{const float \&}]{x, }
+\item[{const float \&}]{y}
+\end{DoxyParamCaption}
+)}\hypertarget{classPerso_a37854611430566f2c7443daa67cc9acb}{}\label{classPerso_a37854611430566f2c7443daa67cc9acb}
+
+
+Mutateur du déplacement. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & \+: valeur horizontale du déplacement \\
+\hline
+{\em y} & \+: valeur verticale du déplacement \\
+\hline
+\end{DoxyParams}
+\index{Perso@{Perso}!set\+\_\+id\+\_\+arme1@{set\+\_\+id\+\_\+arme1}}
+\index{set\+\_\+id\+\_\+arme1@{set\+\_\+id\+\_\+arme1}!Perso@{Perso}}
+\subsubsection[{\texorpdfstring{set\+\_\+id\+\_\+arme1(const int \&i)}{set_id_arme1(const int &i)}}]{\setlength{\rightskip}{0pt plus 5cm}void Perso\+::set\+\_\+id\+\_\+arme1 (
+\begin{DoxyParamCaption}
+\item[{const int \&}]{i}
+\end{DoxyParamCaption}
+)}\hypertarget{classPerso_ac6538c0cccd1f7703fabadf491737a41}{}\label{classPerso_ac6538c0cccd1f7703fabadf491737a41}
+
+
+Mutateur du déplacement. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em v} & \+: deplacement à attribuer \\
+\hline
+\end{DoxyParams}
+\index{Perso@{Perso}!set\+\_\+id\+\_\+arme2@{set\+\_\+id\+\_\+arme2}}
+\index{set\+\_\+id\+\_\+arme2@{set\+\_\+id\+\_\+arme2}!Perso@{Perso}}
+\subsubsection[{\texorpdfstring{set\+\_\+id\+\_\+arme2(const int \&i)}{set_id_arme2(const int &i)}}]{\setlength{\rightskip}{0pt plus 5cm}void Perso\+::set\+\_\+id\+\_\+arme2 (
+\begin{DoxyParamCaption}
+\item[{const int \&}]{i}
+\end{DoxyParamCaption}
+)}\hypertarget{classPerso_a04d4fcb6ad182eb25914abf047775a82}{}\label{classPerso_a04d4fcb6ad182eb25914abf047775a82}
+\index{Perso@{Perso}!set\+\_\+nom@{set\+\_\+nom}}
+\index{set\+\_\+nom@{set\+\_\+nom}!Perso@{Perso}}
+\subsubsection[{\texorpdfstring{set\+\_\+nom(const std\+::string \&n)}{set_nom(const std::string &n)}}]{\setlength{\rightskip}{0pt plus 5cm}void Perso\+::set\+\_\+nom (
+\begin{DoxyParamCaption}
+\item[{const std\+::string \&}]{n}
+\end{DoxyParamCaption}
+)}\hypertarget{classPerso_a072d564a8bca3b10d03acbffc9dacfea}{}\label{classPerso_a072d564a8bca3b10d03acbffc9dacfea}
+\index{Perso@{Perso}!set\+\_\+nv\+\_\+arme1@{set\+\_\+nv\+\_\+arme1}}
+\index{set\+\_\+nv\+\_\+arme1@{set\+\_\+nv\+\_\+arme1}!Perso@{Perso}}
+\subsubsection[{\texorpdfstring{set\+\_\+nv\+\_\+arme1(const int \&i)}{set_nv_arme1(const int &i)}}]{\setlength{\rightskip}{0pt plus 5cm}void Perso\+::set\+\_\+nv\+\_\+arme1 (
+\begin{DoxyParamCaption}
+\item[{const int \&}]{i}
+\end{DoxyParamCaption}
+)}\hypertarget{classPerso_a4f35ce41db777a555946a52609a48ee3}{}\label{classPerso_a4f35ce41db777a555946a52609a48ee3}
+
+
+Mutateur du déplacement. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em v} & \+: deplacement à attribuer \\
+\hline
+\end{DoxyParams}
+\index{Perso@{Perso}!set\+\_\+nv\+\_\+arme2@{set\+\_\+nv\+\_\+arme2}}
+\index{set\+\_\+nv\+\_\+arme2@{set\+\_\+nv\+\_\+arme2}!Perso@{Perso}}
+\subsubsection[{\texorpdfstring{set\+\_\+nv\+\_\+arme2(const int \&i)}{set_nv_arme2(const int &i)}}]{\setlength{\rightskip}{0pt plus 5cm}void Perso\+::set\+\_\+nv\+\_\+arme2 (
+\begin{DoxyParamCaption}
+\item[{const int \&}]{i}
+\end{DoxyParamCaption}
+)}\hypertarget{classPerso_a9c2da2ddd242e58d3316e89e2c1d952f}{}\label{classPerso_a9c2da2ddd242e58d3316e89e2c1d952f}
+\index{Perso@{Perso}!set\+\_\+orientation@{set\+\_\+orientation}}
+\index{set\+\_\+orientation@{set\+\_\+orientation}!Perso@{Perso}}
+\subsubsection[{\texorpdfstring{set\+\_\+orientation(const Vecteur\+M \&v)}{set_orientation(const VecteurM &v)}}]{\setlength{\rightskip}{0pt plus 5cm}void Perso\+::set\+\_\+orientation (
+\begin{DoxyParamCaption}
+\item[{const {\bf VecteurM} \&}]{v}
+\end{DoxyParamCaption}
+)}\hypertarget{classPerso_abd42a00f2f2110cadc68001e570ae3f7}{}\label{classPerso_abd42a00f2f2110cadc68001e570ae3f7}
+
+
+Mutateur de l\textquotesingle{}orientation. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em v} & \+: orientation à attribuer \\
+\hline
+\end{DoxyParams}
+\index{Perso@{Perso}!set\+\_\+position@{set\+\_\+position}}
+\index{set\+\_\+position@{set\+\_\+position}!Perso@{Perso}}
+\subsubsection[{\texorpdfstring{set\+\_\+position(const int \&x, const int \&y)}{set_position(const int &x, const int &y)}}]{\setlength{\rightskip}{0pt plus 5cm}void Perso\+::set\+\_\+position (
+\begin{DoxyParamCaption}
+\item[{const int \&}]{x, }
+\item[{const int \&}]{y}
+\end{DoxyParamCaption}
+)}\hypertarget{classPerso_a61086cee36d4adf7f95b6eab8c2a0016}{}\label{classPerso_a61086cee36d4adf7f95b6eab8c2a0016}
+
+
+Mutateur de la position. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & \+: position horizontale à attribuer \\
+\hline
+{\em y} & \+: position verticale à attribuer \\
+\hline
+\end{DoxyParams}
+\index{Perso@{Perso}!set\+\_\+pv\+\_\+max@{set\+\_\+pv\+\_\+max}}
+\index{set\+\_\+pv\+\_\+max@{set\+\_\+pv\+\_\+max}!Perso@{Perso}}
+\subsubsection[{\texorpdfstring{set\+\_\+pv\+\_\+max(const int \&p)}{set_pv_max(const int &p)}}]{\setlength{\rightskip}{0pt plus 5cm}void Perso\+::set\+\_\+pv\+\_\+max (
+\begin{DoxyParamCaption}
+\item[{const int \&}]{p}
+\end{DoxyParamCaption}
+)}\hypertarget{classPerso_a197f7c4a5ca9677ebc597a56b64d066c}{}\label{classPerso_a197f7c4a5ca9677ebc597a56b64d066c}
+
+
+Mutateur du déplacement. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em v} & \+: deplacement à attribuer \\
+\hline
+\end{DoxyParams}
+\index{Perso@{Perso}!set\+\_\+taille@{set\+\_\+taille}}
+\index{set\+\_\+taille@{set\+\_\+taille}!Perso@{Perso}}
+\subsubsection[{\texorpdfstring{set\+\_\+taille(const float \&t)}{set_taille(const float &t)}}]{\setlength{\rightskip}{0pt plus 5cm}void Perso\+::set\+\_\+taille (
+\begin{DoxyParamCaption}
+\item[{const float \&}]{t}
+\end{DoxyParamCaption}
+)}\hypertarget{classPerso_aba25d0e7ca796d4b5f05b9a4ff34d239}{}\label{classPerso_aba25d0e7ca796d4b5f05b9a4ff34d239}
+
+
+Mutateur du déplacement. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em v} & \+: deplacement à attribuer \\
+\hline
+\end{DoxyParams}
+\index{Perso@{Perso}!soigner@{soigner}}
+\index{soigner@{soigner}!Perso@{Perso}}
+\subsubsection[{\texorpdfstring{soigner(float soin)}{soigner(float soin)}}]{\setlength{\rightskip}{0pt plus 5cm}void Perso\+::soigner (
+\begin{DoxyParamCaption}
+\item[{float}]{soin}
+\end{DoxyParamCaption}
+)}\hypertarget{classPerso_a26cb7f4235726561a55d6feb585cf789}{}\label{classPerso_a26cb7f4235726561a55d6feb585cf789}
+\index{Perso@{Perso}!tirer\+\_\+1@{tirer\+\_\+1}}
+\index{tirer\+\_\+1@{tirer\+\_\+1}!Perso@{Perso}}
+\subsubsection[{\texorpdfstring{tirer\+\_\+1()}{tirer_1()}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Projectile} $\ast$ Perso\+::tirer\+\_\+1 (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classPerso_a213b97f622aa98972c106d232f6a66b6}{}\label{classPerso_a213b97f622aa98972c106d232f6a66b6}
+\index{Perso@{Perso}!tirer\+\_\+2@{tirer\+\_\+2}}
+\index{tirer\+\_\+2@{tirer\+\_\+2}!Perso@{Perso}}
+\subsubsection[{\texorpdfstring{tirer\+\_\+2()}{tirer_2()}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Projectile} $\ast$ Perso\+::tirer\+\_\+2 (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classPerso_a099b51c3db112723feb541cdbe8c1bcc}{}\label{classPerso_a099b51c3db112723feb541cdbe8c1bcc}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/quentin/\+Murmure/src/core/\hyperlink{Perso_8h}{Perso.\+h}\item 
+/home/quentin/\+Murmure/src/core/\hyperlink{Perso_8cpp}{Perso.\+cpp}\end{DoxyCompactItemize}

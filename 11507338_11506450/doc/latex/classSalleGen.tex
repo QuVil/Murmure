@@ -1,0 +1,399 @@
+\hypertarget{classSalleGen}{}\section{Salle\+Gen Class Reference}
+\label{classSalleGen}\index{Salle\+Gen@{Salle\+Gen}}
+
+
+analogue de \hyperlink{classZoneGen}{Zone\+Gen} pour les objets type \hyperlink{classSalle}{Salle}. Peremet de generer une \hyperlink{classSalle}{Salle} en plaçant des amas de trous ou de rochers et des ennemis.  
+
+
+
+
+{\ttfamily \#include $<$Salle\+Gen.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classSalleGen_a43963479681e4a2795c04c916ee74c44}{Salle\+Gen} ()
+\begin{DoxyCompactList}\small\item\em Constructeur par défaut Initialise les membres à leurs valeurs par défaut et la grille comme une \hyperlink{classSalle}{Salle} où toutes les \hyperlink{classCaseSalle}{Case\+Salle} sont normales. \end{DoxyCompactList}\item 
+\hyperlink{classSalleGen_abd4c76d720255b7a2bdf4d744cc8fa8a}{Salle\+Gen} (bool p\+\_\+h, bool p\+\_\+b, bool p\+\_\+g, bool p\+\_\+d, int conf, int diff)
+\begin{DoxyCompactList}\small\item\em Constructeur à paramètres Initialise les membres à l\textquotesingle{}aide des valeurs données. \end{DoxyCompactList}\item 
+int \hyperlink{classSalleGen_a75685bdd1ce85294ac285b907aa26803}{get\+\_\+type} (int i, int j) const 
+\begin{DoxyCompactList}\small\item\em Accesseur d\textquotesingle{}une \textquotesingle{}\hyperlink{classCaseSalle}{Case\+Salle}\textquotesingle{} de la salle. \end{DoxyCompactList}\item 
+bool \hyperlink{classSalleGen_a1e4204bc7355d2f3f540f8ed1e92b28e}{is\+\_\+valide} () const 
+\begin{DoxyCompactList}\small\item\em Accesseur de {\itshape valide}. \end{DoxyCompactList}\item 
+void \hyperlink{classSalleGen_a70a00ece0f63c097bc27f4c9754605ee}{set\+\_\+valide} (bool v)
+\begin{DoxyCompactList}\small\item\em Mutateur de {\itshape valide}. \end{DoxyCompactList}\item 
+int \hyperlink{classSalleGen_a04a7e2b7e52c52d90b61b51442f1b3ae}{get\+\_\+difficulte\+\_\+voulue} () const 
+\begin{DoxyCompactList}\small\item\em Accesseur de {\itshape difficulte\+\_\+voulue}. \end{DoxyCompactList}\item 
+int \hyperlink{classSalleGen_a130ad804784a2bf23566c34821405908}{get\+\_\+difficulte\+\_\+approx} () const 
+\begin{DoxyCompactList}\small\item\em Accesseur de {\itshape difficulte\+\_\+approx}. \end{DoxyCompactList}\item 
+void \hyperlink{classSalleGen_a56ad6729e07d2dc10d38ca3f49ad2b0d}{set\+\_\+difficulte\+\_\+voulue} (int diff)
+\begin{DoxyCompactList}\small\item\em Mutateur de {\itshape difficulte\+\_\+voulue}. \end{DoxyCompactList}\item 
+void \hyperlink{classSalleGen_af0886287a6e35eef33706ac287b1a534}{initialisation\+\_\+gen} ()
+\begin{DoxyCompactList}\small\item\em Initialise la {\itshape grille} du generateur. place les murs et les portes (en fonction des attributs p\+\_\+haut, ...) \end{DoxyCompactList}\item 
+void \hyperlink{classSalleGen_a04804bb621939bf1f1610a775cffd76e}{afficher\+\_\+tests} () const 
+\item 
+void \hyperlink{classSalleGen_a10b76face853353421bec73ac2ad8340}{placer\+\_\+clef} ()
+\begin{DoxyCompactList}\small\item\em Place la clef dans la \hyperlink{classSalle}{Salle}. ne fonctionne que si la clef n\textquotesingle{}a pas déjà été placée ET si la config le permet (i.\+e. si config = 3). \end{DoxyCompactList}\item 
+void \hyperlink{classSalleGen_a72b440eb325c77e6578aa379a9765028}{placer\+\_\+amas} (char type, int taille)
+\begin{DoxyCompactList}\small\item\em Place un amas de type {\itshape type} et de taille {\itshape taille}. appelle placer\+\_\+amas\+\_\+recursif() avec un point de départ choisi aléatoirement, créant un amas de rochers ou de trous. \end{DoxyCompactList}\item 
+void \hyperlink{classSalleGen_a2e7e291757dac1170857f0da0d5bbb7b}{valider} ()
+\begin{DoxyCompactList}\small\item\em procédure de validation de la \hyperlink{classSalle}{Salle}. appelle valider\+\_\+recursif() depuis un point de départ fixe. vérifie que le \hyperlink{classPerso}{Perso} puisse atteindre toutes les portes de la \hyperlink{classSalle}{Salle}, et récupérer la clef si elle est présente. \end{DoxyCompactList}\item 
+void \hyperlink{classSalleGen_a4fa92d03c7c2f229bce396fa42f2d11b}{afficher\+\_\+validation} () const 
+\item 
+void \hyperlink{classSalleGen_a9e155f263ee5860503a1bce0c505e66e}{placer\+\_\+ennemi} ()
+\begin{DoxyCompactList}\small\item\em Place un \hyperlink{classEnnemi}{Ennemi} aléatoirement dans la \hyperlink{classSalle}{Salle}. Vérifie au passage que l\textquotesingle{}\hyperlink{classEnnemi}{Ennemi} ne soit pas enfermé entre des rochers. \end{DoxyCompactList}\item 
+int \hyperlink{classSalleGen_a4d9d4c826e88ca738af490ce24e8fef3}{calculer\+\_\+distance} (int x\+\_\+dep, int y\+\_\+dep, int x\+\_\+arr, int y\+\_\+arr) const 
+\begin{DoxyCompactList}\small\item\em Calcule la distance entre deux cases. Prend les coordonnees de deux cases. et renvoie la distance (Manhattan) entre les cases. \end{DoxyCompactList}\item 
+int \hyperlink{classSalleGen_a15acfd886516fe233da483a8187de2b5}{calculer\+\_\+distance\+\_\+porte} (int x, int y) const 
+\begin{DoxyCompactList}\small\item\em Calcule la distance entre une case et la porte la plus proche. \end{DoxyCompactList}\item 
+void \hyperlink{classSalleGen_a3e0f8cb7dd106e669b1bc119a8dfcca1}{calculer\+\_\+difficulte} ()
+\begin{DoxyCompactList}\small\item\em Calcule la difficulte approximative de la \hyperlink{classSalle}{Salle} du generateur. ne renvoie rien, mais modifie le membre {\itshape difficulte\+\_\+approx} de l\textquotesingle{}instance. l\textquotesingle{}algorithme n\textquotesingle{}est pas folichon, et la difficulté calculée ici reste une simple approximation. \end{DoxyCompactList}\item 
+void \hyperlink{classSalleGen_a0a90f415bbad64af48d117ac6ec32fc2}{vider\+\_\+salle} ()
+\begin{DoxyCompactList}\small\item\em reinitialise la \hyperlink{classSalle}{Salle} du generateur. remet les cases de l\textquotesingle{}intérieur de la \hyperlink{classSalle}{Salle} sur \textquotesingle{}n\textquotesingle{}. \end{DoxyCompactList}\item 
+void \hyperlink{classSalleGen_a1127db8d92677b67b6d709126647041e}{placer\+\_\+portes} (int h, int b, int g, int d)
+\begin{DoxyCompactList}\small\item\em place les portes dans la \hyperlink{classSalle}{Salle} du generateur. en pratique, ne fait que modifier les membres {\itshape porte\+\_\+haut} et compagnie. \end{DoxyCompactList}\item 
+void \hyperlink{classSalleGen_a85252c668099db4fcb319877b15e7522}{set\+\_\+config} (int c)
+\begin{DoxyCompactList}\small\item\em Mutateur de {\itshape config}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+analogue de \hyperlink{classZoneGen}{Zone\+Gen} pour les objets type \hyperlink{classSalle}{Salle}. Peremet de generer une \hyperlink{classSalle}{Salle} en plaçant des amas de trous ou de rochers et des ennemis. 
+
+\subsection{Constructor \& Destructor Documentation}
+\index{Salle\+Gen@{Salle\+Gen}!Salle\+Gen@{Salle\+Gen}}
+\index{Salle\+Gen@{Salle\+Gen}!Salle\+Gen@{Salle\+Gen}}
+\subsubsection[{\texorpdfstring{Salle\+Gen()}{SalleGen()}}]{\setlength{\rightskip}{0pt plus 5cm}Salle\+Gen\+::\+Salle\+Gen (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classSalleGen_a43963479681e4a2795c04c916ee74c44}{}\label{classSalleGen_a43963479681e4a2795c04c916ee74c44}
+
+
+Constructeur par défaut Initialise les membres à leurs valeurs par défaut et la grille comme une \hyperlink{classSalle}{Salle} où toutes les \hyperlink{classCaseSalle}{Case\+Salle} sont normales. 
+
+\index{Salle\+Gen@{Salle\+Gen}!Salle\+Gen@{Salle\+Gen}}
+\index{Salle\+Gen@{Salle\+Gen}!Salle\+Gen@{Salle\+Gen}}
+\subsubsection[{\texorpdfstring{Salle\+Gen(bool p\+\_\+h, bool p\+\_\+b, bool p\+\_\+g, bool p\+\_\+d, int conf, int diff)}{SalleGen(bool p_h, bool p_b, bool p_g, bool p_d, int conf, int diff)}}]{\setlength{\rightskip}{0pt plus 5cm}Salle\+Gen\+::\+Salle\+Gen (
+\begin{DoxyParamCaption}
+\item[{bool}]{p\+\_\+h, }
+\item[{bool}]{p\+\_\+b, }
+\item[{bool}]{p\+\_\+g, }
+\item[{bool}]{p\+\_\+d, }
+\item[{int}]{conf, }
+\item[{int}]{diff}
+\end{DoxyParamCaption}
+)}\hypertarget{classSalleGen_abd4c76d720255b7a2bdf4d744cc8fa8a}{}\label{classSalleGen_abd4c76d720255b7a2bdf4d744cc8fa8a}
+
+
+Constructeur à paramètres Initialise les membres à l\textquotesingle{}aide des valeurs données. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em p\+\_\+h} & \+: la valeur de départ pour {\itshape p\+\_\+haut}. \\
+\hline
+\mbox{\tt in}  & {\em p\+\_\+b} & \+: la valeur de départ pour {\itshape p\+\_\+bas}. \\
+\hline
+\mbox{\tt in}  & {\em p\+\_\+g} & \+: la valeur de départ pour {\itshape p\+\_\+gauche}. \\
+\hline
+\mbox{\tt in}  & {\em p\+\_\+d} & \+: la valeur de départ pour {\itshape p\+\_\+droite}. \\
+\hline
+\mbox{\tt in}  & {\em conf} & \+: la configuration de la \hyperlink{classSalle}{Salle}. \\
+\hline
+\mbox{\tt in}  & {\em diff} & \+: la valeur de départ de {\itshape difficulte\+\_\+voulue}. \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\index{Salle\+Gen@{Salle\+Gen}!afficher\+\_\+tests@{afficher\+\_\+tests}}
+\index{afficher\+\_\+tests@{afficher\+\_\+tests}!Salle\+Gen@{Salle\+Gen}}
+\subsubsection[{\texorpdfstring{afficher\+\_\+tests() const }{afficher_tests() const }}]{\setlength{\rightskip}{0pt plus 5cm}void Salle\+Gen\+::afficher\+\_\+tests (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\hypertarget{classSalleGen_a04804bb621939bf1f1610a775cffd76e}{}\label{classSalleGen_a04804bb621939bf1f1610a775cffd76e}
+\index{Salle\+Gen@{Salle\+Gen}!afficher\+\_\+validation@{afficher\+\_\+validation}}
+\index{afficher\+\_\+validation@{afficher\+\_\+validation}!Salle\+Gen@{Salle\+Gen}}
+\subsubsection[{\texorpdfstring{afficher\+\_\+validation() const }{afficher_validation() const }}]{\setlength{\rightskip}{0pt plus 5cm}void Salle\+Gen\+::afficher\+\_\+validation (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\hypertarget{classSalleGen_a4fa92d03c7c2f229bce396fa42f2d11b}{}\label{classSalleGen_a4fa92d03c7c2f229bce396fa42f2d11b}
+\index{Salle\+Gen@{Salle\+Gen}!calculer\+\_\+difficulte@{calculer\+\_\+difficulte}}
+\index{calculer\+\_\+difficulte@{calculer\+\_\+difficulte}!Salle\+Gen@{Salle\+Gen}}
+\subsubsection[{\texorpdfstring{calculer\+\_\+difficulte()}{calculer_difficulte()}}]{\setlength{\rightskip}{0pt plus 5cm}void Salle\+Gen\+::calculer\+\_\+difficulte (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classSalleGen_a3e0f8cb7dd106e669b1bc119a8dfcca1}{}\label{classSalleGen_a3e0f8cb7dd106e669b1bc119a8dfcca1}
+
+
+Calcule la difficulte approximative de la \hyperlink{classSalle}{Salle} du generateur. ne renvoie rien, mais modifie le membre {\itshape difficulte\+\_\+approx} de l\textquotesingle{}instance. l\textquotesingle{}algorithme n\textquotesingle{}est pas folichon, et la difficulté calculée ici reste une simple approximation. 
+
+\index{Salle\+Gen@{Salle\+Gen}!calculer\+\_\+distance@{calculer\+\_\+distance}}
+\index{calculer\+\_\+distance@{calculer\+\_\+distance}!Salle\+Gen@{Salle\+Gen}}
+\subsubsection[{\texorpdfstring{calculer\+\_\+distance(int x\+\_\+dep, int y\+\_\+dep, int x\+\_\+arr, int y\+\_\+arr) const }{calculer_distance(int x_dep, int y_dep, int x_arr, int y_arr) const }}]{\setlength{\rightskip}{0pt plus 5cm}int Salle\+Gen\+::calculer\+\_\+distance (
+\begin{DoxyParamCaption}
+\item[{int}]{x\+\_\+dep, }
+\item[{int}]{y\+\_\+dep, }
+\item[{int}]{x\+\_\+arr, }
+\item[{int}]{y\+\_\+arr}
+\end{DoxyParamCaption}
+) const}\hypertarget{classSalleGen_a4d9d4c826e88ca738af490ce24e8fef3}{}\label{classSalleGen_a4d9d4c826e88ca738af490ce24e8fef3}
+
+
+Calcule la distance entre deux cases. Prend les coordonnees de deux cases. et renvoie la distance (Manhattan) entre les cases. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em x\+\_\+dep} & \+: coordonnee x du point de depart de la distance. \\
+\hline
+\mbox{\tt in}  & {\em y\+\_\+dep} & \+: coordonnee y du point de depart de la distance. \\
+\hline
+\mbox{\tt in}  & {\em x\+\_\+arr} & \+: coordonnee x du point d\textquotesingle{}arrivee de la distance. \\
+\hline
+\mbox{\tt in}  & {\em y\+\_\+arr} & \+: coordonnee y du point d\textquotesingle{}arrivee de la distance. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\+: la distance Manhattan séparant les deux cases. 
+\end{DoxyReturn}
+\index{Salle\+Gen@{Salle\+Gen}!calculer\+\_\+distance\+\_\+porte@{calculer\+\_\+distance\+\_\+porte}}
+\index{calculer\+\_\+distance\+\_\+porte@{calculer\+\_\+distance\+\_\+porte}!Salle\+Gen@{Salle\+Gen}}
+\subsubsection[{\texorpdfstring{calculer\+\_\+distance\+\_\+porte(int x, int y) const }{calculer_distance_porte(int x, int y) const }}]{\setlength{\rightskip}{0pt plus 5cm}int Salle\+Gen\+::calculer\+\_\+distance\+\_\+porte (
+\begin{DoxyParamCaption}
+\item[{int}]{x, }
+\item[{int}]{y}
+\end{DoxyParamCaption}
+) const}\hypertarget{classSalleGen_a15acfd886516fe233da483a8187de2b5}{}\label{classSalleGen_a15acfd886516fe233da483a8187de2b5}
+
+
+Calcule la distance entre une case et la porte la plus proche. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em x} & \+: la coordonnee x de la case en question. \\
+\hline
+\mbox{\tt in}  & {\em y} & \+: la coordonnee y de la case en question. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\+: la distance Manhattan séparant la case de sa porte la plus proche. 
+\end{DoxyReturn}
+\index{Salle\+Gen@{Salle\+Gen}!get\+\_\+difficulte\+\_\+approx@{get\+\_\+difficulte\+\_\+approx}}
+\index{get\+\_\+difficulte\+\_\+approx@{get\+\_\+difficulte\+\_\+approx}!Salle\+Gen@{Salle\+Gen}}
+\subsubsection[{\texorpdfstring{get\+\_\+difficulte\+\_\+approx() const }{get_difficulte_approx() const }}]{\setlength{\rightskip}{0pt plus 5cm}int Salle\+Gen\+::get\+\_\+difficulte\+\_\+approx (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\hypertarget{classSalleGen_a130ad804784a2bf23566c34821405908}{}\label{classSalleGen_a130ad804784a2bf23566c34821405908}
+
+
+Accesseur de {\itshape difficulte\+\_\+approx}. 
+
+\begin{DoxyReturn}{Returns}
+la valeur de la difficulté approximative actuelle de la \hyperlink{classSalle}{Salle}. 
+\end{DoxyReturn}
+\index{Salle\+Gen@{Salle\+Gen}!get\+\_\+difficulte\+\_\+voulue@{get\+\_\+difficulte\+\_\+voulue}}
+\index{get\+\_\+difficulte\+\_\+voulue@{get\+\_\+difficulte\+\_\+voulue}!Salle\+Gen@{Salle\+Gen}}
+\subsubsection[{\texorpdfstring{get\+\_\+difficulte\+\_\+voulue() const }{get_difficulte_voulue() const }}]{\setlength{\rightskip}{0pt plus 5cm}int Salle\+Gen\+::get\+\_\+difficulte\+\_\+voulue (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\hypertarget{classSalleGen_a04a7e2b7e52c52d90b61b51442f1b3ae}{}\label{classSalleGen_a04a7e2b7e52c52d90b61b51442f1b3ae}
+
+
+Accesseur de {\itshape difficulte\+\_\+voulue}. 
+
+\begin{DoxyReturn}{Returns}
+la valeur de la difficulté finale voulue pour la \hyperlink{classSalle}{Salle}. 
+\end{DoxyReturn}
+\index{Salle\+Gen@{Salle\+Gen}!get\+\_\+type@{get\+\_\+type}}
+\index{get\+\_\+type@{get\+\_\+type}!Salle\+Gen@{Salle\+Gen}}
+\subsubsection[{\texorpdfstring{get\+\_\+type(int i, int j) const }{get_type(int i, int j) const }}]{\setlength{\rightskip}{0pt plus 5cm}int Salle\+Gen\+::get\+\_\+type (
+\begin{DoxyParamCaption}
+\item[{int}]{i, }
+\item[{int}]{j}
+\end{DoxyParamCaption}
+) const}\hypertarget{classSalleGen_a75685bdd1ce85294ac285b907aa26803}{}\label{classSalleGen_a75685bdd1ce85294ac285b907aa26803}
+
+
+Accesseur d\textquotesingle{}une \textquotesingle{}\hyperlink{classCaseSalle}{Case\+Salle}\textquotesingle{} de la salle. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em i} & \+: coordonnees x de la case. \\
+\hline
+\mbox{\tt in}  & {\em j} & \+: coordonnees y de la case. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+le caractère correspondant à la \textquotesingle{}\hyperlink{classCaseSalle}{Case\+Salle}\textquotesingle{} i,j. 
+\end{DoxyReturn}
+\index{Salle\+Gen@{Salle\+Gen}!initialisation\+\_\+gen@{initialisation\+\_\+gen}}
+\index{initialisation\+\_\+gen@{initialisation\+\_\+gen}!Salle\+Gen@{Salle\+Gen}}
+\subsubsection[{\texorpdfstring{initialisation\+\_\+gen()}{initialisation_gen()}}]{\setlength{\rightskip}{0pt plus 5cm}void Salle\+Gen\+::initialisation\+\_\+gen (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classSalleGen_af0886287a6e35eef33706ac287b1a534}{}\label{classSalleGen_af0886287a6e35eef33706ac287b1a534}
+
+
+Initialise la {\itshape grille} du generateur. place les murs et les portes (en fonction des attributs p\+\_\+haut, ...) 
+
+\index{Salle\+Gen@{Salle\+Gen}!is\+\_\+valide@{is\+\_\+valide}}
+\index{is\+\_\+valide@{is\+\_\+valide}!Salle\+Gen@{Salle\+Gen}}
+\subsubsection[{\texorpdfstring{is\+\_\+valide() const }{is_valide() const }}]{\setlength{\rightskip}{0pt plus 5cm}bool Salle\+Gen\+::is\+\_\+valide (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\hypertarget{classSalleGen_a1e4204bc7355d2f3f540f8ed1e92b28e}{}\label{classSalleGen_a1e4204bc7355d2f3f540f8ed1e92b28e}
+
+
+Accesseur de {\itshape valide}. 
+
+\begin{DoxyReturn}{Returns}
+l\textquotesingle{}état de validité de la {\itshape grille} du generateur. 
+\end{DoxyReturn}
+\index{Salle\+Gen@{Salle\+Gen}!placer\+\_\+amas@{placer\+\_\+amas}}
+\index{placer\+\_\+amas@{placer\+\_\+amas}!Salle\+Gen@{Salle\+Gen}}
+\subsubsection[{\texorpdfstring{placer\+\_\+amas(char type, int taille)}{placer_amas(char type, int taille)}}]{\setlength{\rightskip}{0pt plus 5cm}void Salle\+Gen\+::placer\+\_\+amas (
+\begin{DoxyParamCaption}
+\item[{char}]{type, }
+\item[{int}]{taille}
+\end{DoxyParamCaption}
+)}\hypertarget{classSalleGen_a72b440eb325c77e6578aa379a9765028}{}\label{classSalleGen_a72b440eb325c77e6578aa379a9765028}
+
+
+Place un amas de type {\itshape type} et de taille {\itshape taille}. appelle placer\+\_\+amas\+\_\+recursif() avec un point de départ choisi aléatoirement, créant un amas de rochers ou de trous. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em type} & \+: le type d\textquotesingle{}amas désiré (2=trous, 5=rochers) \\
+\hline
+\mbox{\tt in}  & {\em taille} & \+: taille (unité arbitraire) de l\textquotesingle{}amas, entre 0 et 4. \\
+\hline
+\end{DoxyParams}
+\index{Salle\+Gen@{Salle\+Gen}!placer\+\_\+clef@{placer\+\_\+clef}}
+\index{placer\+\_\+clef@{placer\+\_\+clef}!Salle\+Gen@{Salle\+Gen}}
+\subsubsection[{\texorpdfstring{placer\+\_\+clef()}{placer_clef()}}]{\setlength{\rightskip}{0pt plus 5cm}void Salle\+Gen\+::placer\+\_\+clef (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classSalleGen_a10b76face853353421bec73ac2ad8340}{}\label{classSalleGen_a10b76face853353421bec73ac2ad8340}
+
+
+Place la clef dans la \hyperlink{classSalle}{Salle}. ne fonctionne que si la clef n\textquotesingle{}a pas déjà été placée ET si la config le permet (i.\+e. si config = 3). 
+
+\index{Salle\+Gen@{Salle\+Gen}!placer\+\_\+ennemi@{placer\+\_\+ennemi}}
+\index{placer\+\_\+ennemi@{placer\+\_\+ennemi}!Salle\+Gen@{Salle\+Gen}}
+\subsubsection[{\texorpdfstring{placer\+\_\+ennemi()}{placer_ennemi()}}]{\setlength{\rightskip}{0pt plus 5cm}void Salle\+Gen\+::placer\+\_\+ennemi (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classSalleGen_a9e155f263ee5860503a1bce0c505e66e}{}\label{classSalleGen_a9e155f263ee5860503a1bce0c505e66e}
+
+
+Place un \hyperlink{classEnnemi}{Ennemi} aléatoirement dans la \hyperlink{classSalle}{Salle}. Vérifie au passage que l\textquotesingle{}\hyperlink{classEnnemi}{Ennemi} ne soit pas enfermé entre des rochers. 
+
+\index{Salle\+Gen@{Salle\+Gen}!placer\+\_\+portes@{placer\+\_\+portes}}
+\index{placer\+\_\+portes@{placer\+\_\+portes}!Salle\+Gen@{Salle\+Gen}}
+\subsubsection[{\texorpdfstring{placer\+\_\+portes(int h, int b, int g, int d)}{placer_portes(int h, int b, int g, int d)}}]{\setlength{\rightskip}{0pt plus 5cm}void Salle\+Gen\+::placer\+\_\+portes (
+\begin{DoxyParamCaption}
+\item[{int}]{h, }
+\item[{int}]{b, }
+\item[{int}]{g, }
+\item[{int}]{d}
+\end{DoxyParamCaption}
+)}\hypertarget{classSalleGen_a1127db8d92677b67b6d709126647041e}{}\label{classSalleGen_a1127db8d92677b67b6d709126647041e}
+
+
+place les portes dans la \hyperlink{classSalle}{Salle} du generateur. en pratique, ne fait que modifier les membres {\itshape porte\+\_\+haut} et compagnie. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em h} & \+: la nouvelle valeur de {\itshape porte\+\_\+haut}. \\
+\hline
+\mbox{\tt in}  & {\em b} & \+: la nouvelle valeur de {\itshape porte\+\_\+bas}. \\
+\hline
+\mbox{\tt in}  & {\em g} & \+: la nouvelle valeur de {\itshape porte\+\_\+gauche}. \\
+\hline
+\mbox{\tt in}  & {\em d} & \+: la nouvelle valeur de {\itshape porte\+\_\+droite}. \\
+\hline
+\end{DoxyParams}
+\index{Salle\+Gen@{Salle\+Gen}!set\+\_\+config@{set\+\_\+config}}
+\index{set\+\_\+config@{set\+\_\+config}!Salle\+Gen@{Salle\+Gen}}
+\subsubsection[{\texorpdfstring{set\+\_\+config(int c)}{set_config(int c)}}]{\setlength{\rightskip}{0pt plus 5cm}void Salle\+Gen\+::set\+\_\+config (
+\begin{DoxyParamCaption}
+\item[{int}]{c}
+\end{DoxyParamCaption}
+)}\hypertarget{classSalleGen_a85252c668099db4fcb319877b15e7522}{}\label{classSalleGen_a85252c668099db4fcb319877b15e7522}
+
+
+Mutateur de {\itshape config}. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em c} & \+: nouvelle valeur de {\itshape config}. \\
+\hline
+\end{DoxyParams}
+\index{Salle\+Gen@{Salle\+Gen}!set\+\_\+difficulte\+\_\+voulue@{set\+\_\+difficulte\+\_\+voulue}}
+\index{set\+\_\+difficulte\+\_\+voulue@{set\+\_\+difficulte\+\_\+voulue}!Salle\+Gen@{Salle\+Gen}}
+\subsubsection[{\texorpdfstring{set\+\_\+difficulte\+\_\+voulue(int diff)}{set_difficulte_voulue(int diff)}}]{\setlength{\rightskip}{0pt plus 5cm}void Salle\+Gen\+::set\+\_\+difficulte\+\_\+voulue (
+\begin{DoxyParamCaption}
+\item[{int}]{diff}
+\end{DoxyParamCaption}
+)}\hypertarget{classSalleGen_a56ad6729e07d2dc10d38ca3f49ad2b0d}{}\label{classSalleGen_a56ad6729e07d2dc10d38ca3f49ad2b0d}
+
+
+Mutateur de {\itshape difficulte\+\_\+voulue}. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em diff} & \+: nouvelle valeur de {\itshape difficulte\+\_\+voulue}. \\
+\hline
+\end{DoxyParams}
+\index{Salle\+Gen@{Salle\+Gen}!set\+\_\+valide@{set\+\_\+valide}}
+\index{set\+\_\+valide@{set\+\_\+valide}!Salle\+Gen@{Salle\+Gen}}
+\subsubsection[{\texorpdfstring{set\+\_\+valide(bool v)}{set_valide(bool v)}}]{\setlength{\rightskip}{0pt plus 5cm}void Salle\+Gen\+::set\+\_\+valide (
+\begin{DoxyParamCaption}
+\item[{bool}]{v}
+\end{DoxyParamCaption}
+)}\hypertarget{classSalleGen_a70a00ece0f63c097bc27f4c9754605ee}{}\label{classSalleGen_a70a00ece0f63c097bc27f4c9754605ee}
+
+
+Mutateur de {\itshape valide}. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em v} & \+: nouvelle valeur de {\itshape valide}. \\
+\hline
+\end{DoxyParams}
+\index{Salle\+Gen@{Salle\+Gen}!valider@{valider}}
+\index{valider@{valider}!Salle\+Gen@{Salle\+Gen}}
+\subsubsection[{\texorpdfstring{valider()}{valider()}}]{\setlength{\rightskip}{0pt plus 5cm}void Salle\+Gen\+::valider (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classSalleGen_a2e7e291757dac1170857f0da0d5bbb7b}{}\label{classSalleGen_a2e7e291757dac1170857f0da0d5bbb7b}
+
+
+procédure de validation de la \hyperlink{classSalle}{Salle}. appelle valider\+\_\+recursif() depuis un point de départ fixe. vérifie que le \hyperlink{classPerso}{Perso} puisse atteindre toutes les portes de la \hyperlink{classSalle}{Salle}, et récupérer la clef si elle est présente. 
+
+\index{Salle\+Gen@{Salle\+Gen}!vider\+\_\+salle@{vider\+\_\+salle}}
+\index{vider\+\_\+salle@{vider\+\_\+salle}!Salle\+Gen@{Salle\+Gen}}
+\subsubsection[{\texorpdfstring{vider\+\_\+salle()}{vider_salle()}}]{\setlength{\rightskip}{0pt plus 5cm}void Salle\+Gen\+::vider\+\_\+salle (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classSalleGen_a0a90f415bbad64af48d117ac6ec32fc2}{}\label{classSalleGen_a0a90f415bbad64af48d117ac6ec32fc2}
+
+
+reinitialise la \hyperlink{classSalle}{Salle} du generateur. remet les cases de l\textquotesingle{}intérieur de la \hyperlink{classSalle}{Salle} sur \textquotesingle{}n\textquotesingle{}. 
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/quentin/\+Murmure/src/core/\hyperlink{SalleGen_8h}{Salle\+Gen.\+h}\item 
+/home/quentin/\+Murmure/src/core/\hyperlink{SalleGen_8cpp}{Salle\+Gen.\+cpp}\end{DoxyCompactItemize}

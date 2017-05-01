@@ -1,0 +1,162 @@
+\hypertarget{classMenuSFML}{}\section{Menu\+S\+F\+ML Class Reference}
+\label{classMenuSFML}\index{Menu\+S\+F\+ML@{Menu\+S\+F\+ML}}
+
+
+gère les menus du \hyperlink{classJeuSFML}{Jeu\+S\+F\+ML}, principal, d\textquotesingle{}options, etc.  
+
+
+
+
+{\ttfamily \#include $<$Menu\+S\+F\+M\+L.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classMenuSFML_a9a0f8c81e03ba0d02c04bdcf74fdcad2}{Menu\+S\+F\+ML} ()
+\begin{DoxyCompactList}\small\item\em Consctructeur De base, crée le menu principal et place le curseur sur \char`\"{}jouer\char`\"{}. \end{DoxyCompactList}\item 
+\hyperlink{classMenuSFML_a2abbac1f7c265afcd1524379bfbfc631}{Menu\+S\+F\+ML} (std\+::string nom\+\_\+ecr)
+\begin{DoxyCompactList}\small\item\em Consctructeur avec écran en paramètre. \end{DoxyCompactList}\item 
+std\+::string \hyperlink{classMenuSFML_ae295ce7a37e0c5418cfd5908b540f6e2}{get\+\_\+selection\+\_\+curseur} ()
+\begin{DoxyCompactList}\small\item\em Accesseur de {\itshape selection\+\_\+curseur}. \end{DoxyCompactList}\item 
+void \hyperlink{classMenuSFML_ae6b395eb78ae4c0ad3621cfa14c6e11d}{actualiser\+\_\+selection\+\_\+curseur} (const char direction, const int scale\+\_\+salle)
+\begin{DoxyCompactList}\small\item\em Déplacement du curseur dans le menu --physique Met aussi à jour la position graphique du curseur par un appel à mettre\+\_\+a\+\_\+jour\+\_\+position\+\_\+curseur. \end{DoxyCompactList}\item 
+void \hyperlink{classMenuSFML_a63ac15c5c45c3f3d5b2a657c41574a38}{init\+\_\+menu} (const sf\+::\+Texture \&texture\+\_\+menu, const int \&scale\+\_\+salle)
+\item 
+void \hyperlink{classMenuSFML_acf34256e8e062cb455cc282fd9873ab7}{init\+\_\+curseur\+\_\+menu} (const sf\+::\+Texture \&texture\+\_\+curseur\+\_\+menu, const int \&scale\+\_\+salle)
+\item 
+void \hyperlink{classMenuSFML_a456e11979715e47216510f1b1f6caf06}{afficher\+\_\+menu} (std\+::string nom\+\_\+ecr)
+\item 
+void \hyperlink{classMenuSFML_a0d1ef82c7bdd9abdfc3891f98e9449f7}{afficher\+\_\+curseur} ()
+\item 
+sf\+::\+Sprite \hyperlink{classMenuSFML_a648694f363dbf02a203ea8f63f47ea2b}{get\+\_\+menusfml} () const 
+\item 
+sf\+::\+Sprite \hyperlink{classMenuSFML_a29df9e1191f98786d69f0f4b3142bcb9}{get\+\_\+curseur\+\_\+menu} () const 
+\item 
+void \hyperlink{classMenuSFML_a7142235d9651868fd2da1e21cb113ea5}{mettre\+\_\+a\+\_\+jour\+\_\+position\+\_\+curseur} (const int \&scale\+\_\+salle)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+gère les menus du \hyperlink{classJeuSFML}{Jeu\+S\+F\+ML}, principal, d\textquotesingle{}options, etc. 
+
+\subsection{Constructor \& Destructor Documentation}
+\index{Menu\+S\+F\+ML@{Menu\+S\+F\+ML}!Menu\+S\+F\+ML@{Menu\+S\+F\+ML}}
+\index{Menu\+S\+F\+ML@{Menu\+S\+F\+ML}!Menu\+S\+F\+ML@{Menu\+S\+F\+ML}}
+\subsubsection[{\texorpdfstring{Menu\+S\+F\+M\+L()}{MenuSFML()}}]{\setlength{\rightskip}{0pt plus 5cm}Menu\+S\+F\+M\+L\+::\+Menu\+S\+F\+ML (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classMenuSFML_a9a0f8c81e03ba0d02c04bdcf74fdcad2}{}\label{classMenuSFML_a9a0f8c81e03ba0d02c04bdcf74fdcad2}
+
+
+Consctructeur De base, crée le menu principal et place le curseur sur \char`\"{}jouer\char`\"{}. 
+
+\index{Menu\+S\+F\+ML@{Menu\+S\+F\+ML}!Menu\+S\+F\+ML@{Menu\+S\+F\+ML}}
+\index{Menu\+S\+F\+ML@{Menu\+S\+F\+ML}!Menu\+S\+F\+ML@{Menu\+S\+F\+ML}}
+\subsubsection[{\texorpdfstring{Menu\+S\+F\+M\+L(std\+::string nom\+\_\+ecr)}{MenuSFML(std::string nom_ecr)}}]{\setlength{\rightskip}{0pt plus 5cm}Menu\+S\+F\+M\+L\+::\+Menu\+S\+F\+ML (
+\begin{DoxyParamCaption}
+\item[{std\+::string}]{nom\+\_\+ecr}
+\end{DoxyParamCaption}
+)}\hypertarget{classMenuSFML_a2abbac1f7c265afcd1524379bfbfc631}{}\label{classMenuSFML_a2abbac1f7c265afcd1524379bfbfc631}
+
+
+Consctructeur avec écran en paramètre. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em nom\+\_\+ecr} & \+: la valeur de {\itshape nom\+\_\+ecran} \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\index{Menu\+S\+F\+ML@{Menu\+S\+F\+ML}!actualiser\+\_\+selection\+\_\+curseur@{actualiser\+\_\+selection\+\_\+curseur}}
+\index{actualiser\+\_\+selection\+\_\+curseur@{actualiser\+\_\+selection\+\_\+curseur}!Menu\+S\+F\+ML@{Menu\+S\+F\+ML}}
+\subsubsection[{\texorpdfstring{actualiser\+\_\+selection\+\_\+curseur(const char direction, const int scale\+\_\+salle)}{actualiser_selection_curseur(const char direction, const int scale_salle)}}]{\setlength{\rightskip}{0pt plus 5cm}void Menu\+S\+F\+M\+L\+::actualiser\+\_\+selection\+\_\+curseur (
+\begin{DoxyParamCaption}
+\item[{const char}]{direction, }
+\item[{const int}]{scale\+\_\+salle}
+\end{DoxyParamCaption}
+)}\hypertarget{classMenuSFML_ae6b395eb78ae4c0ad3621cfa14c6e11d}{}\label{classMenuSFML_ae6b395eb78ae4c0ad3621cfa14c6e11d}
+
+
+Déplacement du curseur dans le menu --physique Met aussi à jour la position graphique du curseur par un appel à mettre\+\_\+a\+\_\+jour\+\_\+position\+\_\+curseur. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em direction} & \+: h, b, g ou d pour déplacer le curseur dans les directions cardinales. \\
+\hline
+\mbox{\tt in}  & {\em scale\+\_\+salle} & \+: permet de déterminer la taille des sprites relative à l\textquotesingle{}écran -\/est juste passé à la suivante \\
+\hline
+\end{DoxyParams}
+\index{Menu\+S\+F\+ML@{Menu\+S\+F\+ML}!afficher\+\_\+curseur@{afficher\+\_\+curseur}}
+\index{afficher\+\_\+curseur@{afficher\+\_\+curseur}!Menu\+S\+F\+ML@{Menu\+S\+F\+ML}}
+\subsubsection[{\texorpdfstring{afficher\+\_\+curseur()}{afficher_curseur()}}]{\setlength{\rightskip}{0pt plus 5cm}void Menu\+S\+F\+M\+L\+::afficher\+\_\+curseur (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classMenuSFML_a0d1ef82c7bdd9abdfc3891f98e9449f7}{}\label{classMenuSFML_a0d1ef82c7bdd9abdfc3891f98e9449f7}
+\index{Menu\+S\+F\+ML@{Menu\+S\+F\+ML}!afficher\+\_\+menu@{afficher\+\_\+menu}}
+\index{afficher\+\_\+menu@{afficher\+\_\+menu}!Menu\+S\+F\+ML@{Menu\+S\+F\+ML}}
+\subsubsection[{\texorpdfstring{afficher\+\_\+menu(std\+::string nom\+\_\+ecr)}{afficher_menu(std::string nom_ecr)}}]{\setlength{\rightskip}{0pt plus 5cm}void Menu\+S\+F\+M\+L\+::afficher\+\_\+menu (
+\begin{DoxyParamCaption}
+\item[{std\+::string}]{nom\+\_\+ecr = {\ttfamily \char`\"{}\char`\"{}}}
+\end{DoxyParamCaption}
+)}\hypertarget{classMenuSFML_a456e11979715e47216510f1b1f6caf06}{}\label{classMenuSFML_a456e11979715e47216510f1b1f6caf06}
+\index{Menu\+S\+F\+ML@{Menu\+S\+F\+ML}!get\+\_\+curseur\+\_\+menu@{get\+\_\+curseur\+\_\+menu}}
+\index{get\+\_\+curseur\+\_\+menu@{get\+\_\+curseur\+\_\+menu}!Menu\+S\+F\+ML@{Menu\+S\+F\+ML}}
+\subsubsection[{\texorpdfstring{get\+\_\+curseur\+\_\+menu() const }{get_curseur_menu() const }}]{\setlength{\rightskip}{0pt plus 5cm}sf\+::\+Sprite Menu\+S\+F\+M\+L\+::get\+\_\+curseur\+\_\+menu (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\hypertarget{classMenuSFML_a29df9e1191f98786d69f0f4b3142bcb9}{}\label{classMenuSFML_a29df9e1191f98786d69f0f4b3142bcb9}
+\index{Menu\+S\+F\+ML@{Menu\+S\+F\+ML}!get\+\_\+menusfml@{get\+\_\+menusfml}}
+\index{get\+\_\+menusfml@{get\+\_\+menusfml}!Menu\+S\+F\+ML@{Menu\+S\+F\+ML}}
+\subsubsection[{\texorpdfstring{get\+\_\+menusfml() const }{get_menusfml() const }}]{\setlength{\rightskip}{0pt plus 5cm}sf\+::\+Sprite Menu\+S\+F\+M\+L\+::get\+\_\+menusfml (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\hypertarget{classMenuSFML_a648694f363dbf02a203ea8f63f47ea2b}{}\label{classMenuSFML_a648694f363dbf02a203ea8f63f47ea2b}
+\index{Menu\+S\+F\+ML@{Menu\+S\+F\+ML}!get\+\_\+selection\+\_\+curseur@{get\+\_\+selection\+\_\+curseur}}
+\index{get\+\_\+selection\+\_\+curseur@{get\+\_\+selection\+\_\+curseur}!Menu\+S\+F\+ML@{Menu\+S\+F\+ML}}
+\subsubsection[{\texorpdfstring{get\+\_\+selection\+\_\+curseur()}{get_selection_curseur()}}]{\setlength{\rightskip}{0pt plus 5cm}std\+::string Menu\+S\+F\+M\+L\+::get\+\_\+selection\+\_\+curseur (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classMenuSFML_ae295ce7a37e0c5418cfd5908b540f6e2}{}\label{classMenuSFML_ae295ce7a37e0c5418cfd5908b540f6e2}
+
+
+Accesseur de {\itshape selection\+\_\+curseur}. 
+
+\begin{DoxyReturn}{Returns}
+{\itshape selection\+\_\+curseur} 
+\end{DoxyReturn}
+\index{Menu\+S\+F\+ML@{Menu\+S\+F\+ML}!init\+\_\+curseur\+\_\+menu@{init\+\_\+curseur\+\_\+menu}}
+\index{init\+\_\+curseur\+\_\+menu@{init\+\_\+curseur\+\_\+menu}!Menu\+S\+F\+ML@{Menu\+S\+F\+ML}}
+\subsubsection[{\texorpdfstring{init\+\_\+curseur\+\_\+menu(const sf\+::\+Texture \&texture\+\_\+curseur\+\_\+menu, const int \&scale\+\_\+salle)}{init_curseur_menu(const sf::Texture &texture_curseur_menu, const int &scale_salle)}}]{\setlength{\rightskip}{0pt plus 5cm}void Menu\+S\+F\+M\+L\+::init\+\_\+curseur\+\_\+menu (
+\begin{DoxyParamCaption}
+\item[{const sf\+::\+Texture \&}]{texture\+\_\+curseur\+\_\+menu, }
+\item[{const int \&}]{scale\+\_\+salle}
+\end{DoxyParamCaption}
+)}\hypertarget{classMenuSFML_acf34256e8e062cb455cc282fd9873ab7}{}\label{classMenuSFML_acf34256e8e062cb455cc282fd9873ab7}
+\index{Menu\+S\+F\+ML@{Menu\+S\+F\+ML}!init\+\_\+menu@{init\+\_\+menu}}
+\index{init\+\_\+menu@{init\+\_\+menu}!Menu\+S\+F\+ML@{Menu\+S\+F\+ML}}
+\subsubsection[{\texorpdfstring{init\+\_\+menu(const sf\+::\+Texture \&texture\+\_\+menu, const int \&scale\+\_\+salle)}{init_menu(const sf::Texture &texture_menu, const int &scale_salle)}}]{\setlength{\rightskip}{0pt plus 5cm}void Menu\+S\+F\+M\+L\+::init\+\_\+menu (
+\begin{DoxyParamCaption}
+\item[{const sf\+::\+Texture \&}]{texture\+\_\+menu, }
+\item[{const int \&}]{scale\+\_\+salle}
+\end{DoxyParamCaption}
+)}\hypertarget{classMenuSFML_a63ac15c5c45c3f3d5b2a657c41574a38}{}\label{classMenuSFML_a63ac15c5c45c3f3d5b2a657c41574a38}
+\index{Menu\+S\+F\+ML@{Menu\+S\+F\+ML}!mettre\+\_\+a\+\_\+jour\+\_\+position\+\_\+curseur@{mettre\+\_\+a\+\_\+jour\+\_\+position\+\_\+curseur}}
+\index{mettre\+\_\+a\+\_\+jour\+\_\+position\+\_\+curseur@{mettre\+\_\+a\+\_\+jour\+\_\+position\+\_\+curseur}!Menu\+S\+F\+ML@{Menu\+S\+F\+ML}}
+\subsubsection[{\texorpdfstring{mettre\+\_\+a\+\_\+jour\+\_\+position\+\_\+curseur(const int \&scale\+\_\+salle)}{mettre_a_jour_position_curseur(const int &scale_salle)}}]{\setlength{\rightskip}{0pt plus 5cm}void Menu\+S\+F\+M\+L\+::mettre\+\_\+a\+\_\+jour\+\_\+position\+\_\+curseur (
+\begin{DoxyParamCaption}
+\item[{const int \&}]{scale\+\_\+salle}
+\end{DoxyParamCaption}
+)}\hypertarget{classMenuSFML_a7142235d9651868fd2da1e21cb113ea5}{}\label{classMenuSFML_a7142235d9651868fd2da1e21cb113ea5}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/quentin/\+Murmure/src/sfml/\hyperlink{MenuSFML_8h}{Menu\+S\+F\+M\+L.\+h}\item 
+/home/quentin/\+Murmure/src/sfml/\hyperlink{MenuSFML_8cpp}{Menu\+S\+F\+M\+L.\+cpp}\end{DoxyCompactItemize}
