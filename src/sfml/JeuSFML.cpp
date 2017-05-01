@@ -31,8 +31,8 @@ JeuSFML::JeuSFML()
     settings.antialiasingLevel = 0;
 
     desktop = sf::VideoMode::getDesktopMode();
-    //window.create(sf::VideoMode(desktop.width, desktop.height, desktop.bitsPerPixel), "Murmure",sf::Style::Fullscreen,settings);
-    window.create(sf::VideoMode(desktop.width, desktop.height, desktop.bitsPerPixel), "Murmure",sf::Style::Close);
+    window.create(sf::VideoMode(desktop.width, desktop.height, desktop.bitsPerPixel), "Murmure",sf::Style::Fullscreen,settings);
+    //window.create(sf::VideoMode(desktop.width, desktop.height, desktop.bitsPerPixel), "Murmure",sf::Style::Close);
     //FPS = 100;
     //window.setMouseCursorVisible(false);
     view = window.getView();
