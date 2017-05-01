@@ -14,8 +14,6 @@
  *
  */
 
-
-
 class Arme
 {
 private:

@@ -8,6 +8,7 @@ Module qui va chercher les valeurs des différentes classes dans des fichiers de 
 {\ttfamily \#include $<$fstream$>$}\\*
 {\ttfamily \#include $<$string$>$}\\*
 {\ttfamily \#include \char`\"{}Arme.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}Ennemi.\+h\char`\"{}}\\*
 {\ttfamily \#include \char`\"{}Salle.\+h\char`\"{}}\\*
 {\ttfamily \#include \char`\"{}Zone\+Gen.\+h\char`\"{}}\\*
 {\ttfamily \#include \char`\"{}Zone.\+h\char`\"{}}\\*
@@ -22,9 +23,18 @@ This graph shows which files directly or indirectly include this file\+:
 \begin{DoxyCompactItemize}
 \item 
 class \hyperlink{classFichier}{Fichier}
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Gère les fichiers des ressources. charge des informations depuis les fichiers du dossier data dans les instances voulues. Permet une modification plus simple des données des ennemis, personnages, modèles de génération, etc. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
 Module qui va chercher les valeurs des différentes classes dans des fichiers de configuration. 
 
+\begin{DoxyAuthor}{Author}
+Quentin.\+V \& Gary.\+S 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+0.\+1 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+9 mars 2017 
+\end{DoxyDate}

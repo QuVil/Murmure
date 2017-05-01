@@ -1,3 +1,12 @@
+/**
+ * \file Coord2D.cpp
+ * \brief code source du module Coord2D.
+ * \author Quentin.V & Gary.S
+ * \version 0.1
+ * \date 12 mars 2017
+ *
+ */
+
 #include "Coord2D.h"
 #include <iostream>
 

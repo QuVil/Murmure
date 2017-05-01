@@ -10,7 +10,7 @@ digraph "/home/quentin/Murmure/src/core/Ennemi.cpp"
   Node2 -> Node4 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node4 [label="VecteurM.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$VecteurM_8h.html",tooltip="Module de Vecteur en 2 dimensions appliqué à Murmure. "];
   Node2 -> Node5 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node5 [label="Coord2D.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$Coord2D_8h.html",tooltip="module qui gere des points sur un plan en 2 dimensions "];
+  Node5 [label="Coord2D.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$Coord2D_8h.html",tooltip="Header du module Coord2D. "];
   Node5 -> Node4 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node1 -> Node6 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node6 [label="Fichier.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$Fichier_8h.html",tooltip="Module qui va chercher les valeurs des différentes classes dans des fichiers de configuration. "];
@@ -18,13 +18,14 @@ digraph "/home/quentin/Murmure/src/core/Ennemi.cpp"
   Node7 [label="fstream",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled"];
   Node6 -> Node3 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node6 -> Node8 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node8 [label="Arme.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$Arme_8h.html",tooltip="code source du module Arme "];
+  Node8 [label="Arme.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$Arme_8h.html",tooltip="Header du module Arme. "];
   Node8 -> Node9 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node9 [label="Projectile.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$Projectile_8h.html"];
   Node9 -> Node4 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node9 -> Node5 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node8 -> Node4 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node8 -> Node5 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node6 -> Node2 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node6 -> Node10 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node10 [label="Salle.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$Salle_8h.html",tooltip="Header du module Salle. "];
   Node10 -> Node11 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
@@ -63,7 +64,7 @@ digraph "/home/quentin/Murmure/src/core/Ennemi.cpp"
   Node21 -> Node3 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node20 -> Node9 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node20 -> Node22 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node22 [label="Clef.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$Clef_8h.html"];
+  Node22 [label="Clef.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$Clef_8h.html",tooltip="Header du module Clef. "];
   Node22 -> Node5 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node20 -> Node23 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node23 [label="list",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled"];

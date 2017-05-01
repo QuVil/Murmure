@@ -734,7 +734,7 @@ void JeuSFML::recupere_mouvements()
 void JeuSFML::recupere_mouvements_menu()
 {
     char direction_mouv;
-    if (timer_devmode_salles.getElapsedTime().asSeconds() >= 0.3)
+    if (timer_devmode_salles.getElapsedTime().asSeconds() >= 0.1)
     {
         if(sf::Joystick::isConnected(0))
         {
@@ -753,6 +753,7 @@ void JeuSFML::recupere_mouvements_menu()
             if(sf::Keyboard::isKeyPressed(sf::Keyboard::S) || sf::Keyboard::isKeyPressed(sf::Keyboard::Down)) {direction_mouv = 'b';}
             if(sf::Keyboard::isKeyPressed(sf::Keyboard::Space) || sf::Keyboard::isKeyPressed(sf::Keyboard::Return)){direction_mouv = 'o';}
         }
+        timer_devmode_salles.restart();
     }
     if (direction_mouv == 'o')
     {

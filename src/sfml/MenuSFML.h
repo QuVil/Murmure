@@ -26,6 +26,8 @@ private:
     sf::Sprite ecran_menu; /**< sprite du menu actuel, par-dessus lequel on met le curseur*/
     sf::Sprite curseur_selection; /**< sprite du curseur de selection du menu*/
 
+    sf::VideoMode targetSize;
+
     std::string nom_ecran; /**< nom de l'ecran actuel ("menu principal", "options", etc.)*/
 
     std::string selection_curseur; /**< l'option actuellement sélectionnée ("options", "jouer", etc.)*/

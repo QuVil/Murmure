@@ -31,7 +31,7 @@ void MenuSFML::init_menu(const sf::Texture& texture_menu, const int &scale_salle
     //ecran_menu.setOrigin(0, 0);
     ecran_menu.setPosition(0, 0);
 
-    sf::VideoMode targetSize = sf::VideoMode::getDesktopMode();
+    targetSize = sf::VideoMode::getDesktopMode();
     //sf::Vector2f targetSize(1300.0f, 760.0f);
     ecran_menu.setScale(
     targetSize.width / ecran_menu.getLocalBounds().width,
@@ -118,23 +118,23 @@ void MenuSFML::mettre_a_jour_position_curseur(const int &scale_salle)
     {
         if (selection_curseur == "jouer")
         {
-            x0 = 200 *(scale_salle/64);
-            y0 = 200 *(scale_salle/64);
+            x0 = 0.18 *targetSize.width;
+            y0 = 0.4 *targetSize.height;
         }
         else if (selection_curseur == "options")
         {
-            x0 = 200 *(scale_salle/64);
-            y0 = 500 *(scale_salle/64);
+            x0 = 0.18 *targetSize.width;
+            y0 = 0.65 *targetSize.height;
         }
         else if (selection_curseur == "stats")
         {
-            x0 = 200 *(scale_salle/64);
-            y0 = 600 *(scale_salle/64);
+            x0 = 0.18 *targetSize.width;
+            y0 = 0.8 *targetSize.height;
         }
         else if (selection_curseur == "challenge")
         {
-            x0 = 1100 *(scale_salle/64);
-            y0 = 500 *(scale_salle/64);
+            x0 = 0.49 *targetSize.width;
+            y0 = 0.8 *targetSize.height;
         }
     }
     curseur_selection.setPosition(x0, y0);

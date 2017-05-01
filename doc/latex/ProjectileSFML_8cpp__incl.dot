@@ -10,7 +10,7 @@ digraph "/home/quentin/Murmure/src/sfml/ProjectileSFML.cpp"
   Node2 -> Node4 [color="midnightblue",fontsize="10",style="solid"];
   Node4 [label="VecteurM.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$VecteurM_8h.html",tooltip="Module de Vecteur en 2 dimensions appliqué à Murmure. "];
   Node2 -> Node5 [color="midnightblue",fontsize="10",style="solid"];
-  Node5 [label="Coord2D.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$Coord2D_8h.html",tooltip="module qui gere des points sur un plan en 2 dimensions "];
+  Node5 [label="Coord2D.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$Coord2D_8h.html",tooltip="Header du module Coord2D. "];
   Node5 -> Node4 [color="midnightblue",fontsize="10",style="solid"];
   Node2 -> Node6 [color="midnightblue",fontsize="10",style="solid"];
   Node6 [label="Projectile.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$Projectile_8h.html"];

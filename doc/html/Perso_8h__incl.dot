@@ -8,12 +8,12 @@ digraph "/home/quentin/Murmure/src/core/Perso.h"
   Node1 -> Node3 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node3 [label="VecteurM.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$VecteurM_8h.html",tooltip="Module de Vecteur en 2 dimensions appliqué à Murmure. "];
   Node1 -> Node4 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node4 [label="Arme.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$Arme_8h.html",tooltip="code source du module Arme "];
+  Node4 [label="Arme.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$Arme_8h.html",tooltip="Header du module Arme. "];
   Node4 -> Node5 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node5 [label="Projectile.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$Projectile_8h.html"];
   Node5 -> Node3 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node5 -> Node6 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node6 [label="Coord2D.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$Coord2D_8h.html",tooltip="module qui gere des points sur un plan en 2 dimensions "];
+  Node6 [label="Coord2D.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$Coord2D_8h.html",tooltip="Header du module Coord2D. "];
   Node6 -> Node3 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node4 -> Node3 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node4 -> Node6 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
@@ -25,7 +25,7 @@ digraph "/home/quentin/Murmure/src/core/Perso.h"
   Node7 -> Node2 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node1 -> Node5 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node1 -> Node9 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node9 [label="Clef.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$Clef_8h.html"];
+  Node9 [label="Clef.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$Clef_8h.html",tooltip="Header du module Clef. "];
   Node9 -> Node6 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node1 -> Node10 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node10 [label="list",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled"];
