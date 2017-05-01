@@ -1,6 +1,13 @@
 #ifndef FICHIER_H_INCLUDED
 #define FICHIER_H_INCLUDED
 
+/** \file Fichier.h
+ * \brief Module qui va chercher les valeurs des différentes classes dans des fichiers de configuration
+ * \author Quentin.V & Gary.S
+ * \version 0.1
+ * \date 9 mars 2017
+ */
+
 #include <fstream>
 #include <string>
 
@@ -13,10 +20,13 @@
 #include "Modele.h"
 #include "ModeleSalle.h"
 
-/** \file Fichier.h
- * \brief Module qui va chercher les valeurs des différentes classes dans des fichiers de configuration
+ /**
+ * \class Fichier
+ * \brief Gère les fichiers des ressources.
+ * charge des informations depuis les fichiers du dossier data
+ * dans les instances voulues. Permet une modification plus simple
+ * des données des ennemis, personnages, modèles de génération, etc.
  */
-
 class Fichier
 {
 private:

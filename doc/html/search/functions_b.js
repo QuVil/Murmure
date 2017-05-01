@@ -2,6 +2,7 @@ var searchData=
 [
   ['perso',['Perso',['../classPerso.html#a33aebfa5c1b957d87f81da39536121e8',1,'Perso::Perso()'],['../classPerso.html#a25afa33fb28da6526c48cca6d96cb65c',1,'Perso::Perso(std::string n)']]],
   ['perso_5fet_5fclef',['perso_et_clef',['../classHitboxSFML.html#a0a220e858ed3936822f7d5dccd0ab0f6',1,'HitboxSFML']]],
+  ['perso_5fet_5fennemis',['perso_et_ennemis',['../classHitboxSFML.html#a87f9a5d5e47f2a8551a3087d9fa31272',1,'HitboxSFML']]],
   ['perso_5fet_5fsalle',['perso_et_salle',['../classHitboxSFML.html#a8ee11312dc168d63978e355af4c56af5',1,'HitboxSFML']]],
   ['persosfml',['PersoSFML',['../classPersoSFML.html#a43020482f05d0b79ec19ce6bb5d68c11',1,'PersoSFML']]],
   ['placer_5famas',['placer_amas',['../classSalleGen.html#a72b440eb325c77e6578aa379a9765028',1,'SalleGen']]],

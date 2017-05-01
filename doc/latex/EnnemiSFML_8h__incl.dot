@@ -12,6 +12,6 @@ digraph "/home/quentin/Murmure/src/sfml/EnnemiSFML.h"
   Node3 -> Node5 [color="midnightblue",fontsize="10",style="solid"];
   Node5 [label="VecteurM.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$VecteurM_8h.html",tooltip="Module de Vecteur en 2 dimensions appliqué à Murmure. "];
   Node3 -> Node6 [color="midnightblue",fontsize="10",style="solid"];
-  Node6 [label="Coord2D.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$Coord2D_8h.html",tooltip="module qui gere des points sur un plan en 2 dimensions "];
+  Node6 [label="Coord2D.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$Coord2D_8h.html",tooltip="Header du module Coord2D. "];
   Node6 -> Node5 [color="midnightblue",fontsize="10",style="solid"];
 }

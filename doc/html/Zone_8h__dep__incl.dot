@@ -6,7 +6,7 @@ digraph "/home/quentin/Murmure/src/core/Zone.h"
   Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node2 [label="/home/quentin/Murmure\l/src/core/Fichier.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$Fichier_8h.html",tooltip="Module qui va chercher les valeurs des différentes classes dans des fichiers de configuration. "];
   Node2 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node3 [label="/home/quentin/Murmure\l/src/core/Arme.cpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$Arme_8cpp.html"];
+  Node3 [label="/home/quentin/Murmure\l/src/core/Arme.cpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$Arme_8cpp.html",tooltip="code source du module Arme. "];
   Node2 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node4 [label="/home/quentin/Murmure\l/src/core/Ennemi.cpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$Ennemi_8cpp.html"];
   Node2 -> Node5 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];

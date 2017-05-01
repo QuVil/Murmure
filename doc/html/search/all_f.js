@@ -9,5 +9,6 @@ var searchData=
   ['texturesfml_2eh',['TextureSFML.h',['../TextureSFML_8h.html',1,'']]],
   ['tirer',['tirer',['../classArme.html#ad7f968df091bd50e1c9fac3b3fb255fb',1,'Arme']]],
   ['tirer_5f1',['tirer_1',['../classPerso.html#a213b97f622aa98972c106d232f6a66b6',1,'Perso']]],
-  ['trouver_5fchemin',['trouver_chemin',['../classEnnemi.html#a55013546576c0463a59ade8c40281a2e',1,'Ennemi']]]
+  ['tirer_5f2',['tirer_2',['../classPerso.html#a099b51c3db112723feb541cdbe8c1bcc',1,'Perso']]],
+  ['trouver_5fchemin',['trouver_chemin',['../classEnnemi.html#a0cc78bd6c180535a9189cb32583c5384',1,'Ennemi']]]
 ];

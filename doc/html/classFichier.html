@@ -90,6 +90,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!--header-->
 <div class="contents">
 
+<p>Gère les fichiers des ressources. charge des informations depuis les fichiers du dossier data dans les instances voulues. Permet une modification plus simple des données des ennemis, personnages, modèles de génération, etc.  
+ <a href="classFichier.html#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="Fichier_8h_source.html">Fichier.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
@@ -122,8 +125,12 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:aed5c72a3a8289e51f6724dcd683fbcbd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5dd17206285977ead14f689d085af32c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFichier.html#a5dd17206285977ead14f689d085af32c">charger</a> (<a class="el" href="classModeleSalle.html">ModeleSalle</a> &amp;m, std::string nom)</td></tr>
 <tr class="separator:a5dd17206285977ead14f689d085af32c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8191157e196c5549d7ac53176fd3cf76"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFichier.html#a8191157e196c5549d7ac53176fd3cf76">charger</a> (<a class="el" href="classEnnemi.html">Ennemi</a> &amp;e, std::string nom)</td></tr>
+<tr class="separator:a8191157e196c5549d7ac53176fd3cf76"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Gère les fichiers des ressources. charge des informations depuis les fichiers du dossier data dans les instances voulues. Permet une modification plus simple des données des ennemis, personnages, modèles de génération, etc. </p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="ace018349629e9c136aff5421c1e72c4f"></a>
 <div class="memitem">
 <div class="memproto">
@@ -373,6 +380,32 @@ Public Member Functions</h2></td></tr>
           <td>(</td>
           <td class="paramtype"><a class="el" href="classModeleSalle.html">ModeleSalle</a> &amp;&#160;</td>
           <td class="paramname"><em>m</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>nom</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a8191157e196c5549d7ac53176fd3cf76"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Fichier::charger </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classEnnemi.html">Ennemi</a> &amp;&#160;</td>
+          <td class="paramname"><em>e</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>

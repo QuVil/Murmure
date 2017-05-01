@@ -4,6 +4,7 @@ var searchData=
   ['perso_2ecpp',['Perso.cpp',['../Perso_8cpp.html',1,'']]],
   ['perso_2eh',['Perso.h',['../Perso_8h.html',1,'']]],
   ['perso_5fet_5fclef',['perso_et_clef',['../classHitboxSFML.html#a0a220e858ed3936822f7d5dccd0ab0f6',1,'HitboxSFML']]],
+  ['perso_5fet_5fennemis',['perso_et_ennemis',['../classHitboxSFML.html#a87f9a5d5e47f2a8551a3087d9fa31272',1,'HitboxSFML']]],
   ['perso_5fet_5fsalle',['perso_et_salle',['../classHitboxSFML.html#a8ee11312dc168d63978e355af4c56af5',1,'HitboxSFML']]],
   ['persosfml',['PersoSFML',['../classPersoSFML.html',1,'PersoSFML'],['../classPersoSFML.html#a43020482f05d0b79ec19ce6bb5d68c11',1,'PersoSFML::PersoSFML()']]],
   ['persosfml_2ecpp',['PersoSFML.cpp',['../PersoSFML_8cpp.html',1,'']]],

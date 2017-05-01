@@ -38,12 +38,12 @@ digraph "/home/quentin/Murmure/src/core/Jeu.cpp"
   Node14 -> Node15 [color="midnightblue",fontsize="10",style="solid"];
   Node15 [label="VecteurM.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$VecteurM_8h.html",tooltip="Module de Vecteur en 2 dimensions appliqué à Murmure. "];
   Node14 -> Node16 [color="midnightblue",fontsize="10",style="solid"];
-  Node16 [label="Arme.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$Arme_8h.html",tooltip="code source du module Arme "];
+  Node16 [label="Arme.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$Arme_8h.html",tooltip="Header du module Arme. "];
   Node16 -> Node17 [color="midnightblue",fontsize="10",style="solid"];
   Node17 [label="Projectile.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$Projectile_8h.html"];
   Node17 -> Node15 [color="midnightblue",fontsize="10",style="solid"];
   Node17 -> Node18 [color="midnightblue",fontsize="10",style="solid"];
-  Node18 [label="Coord2D.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$Coord2D_8h.html",tooltip="module qui gere des points sur un plan en 2 dimensions "];
+  Node18 [label="Coord2D.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$Coord2D_8h.html",tooltip="Header du module Coord2D. "];
   Node18 -> Node15 [color="midnightblue",fontsize="10",style="solid"];
   Node16 -> Node15 [color="midnightblue",fontsize="10",style="solid"];
   Node16 -> Node18 [color="midnightblue",fontsize="10",style="solid"];
@@ -54,7 +54,7 @@ digraph "/home/quentin/Murmure/src/core/Jeu.cpp"
   Node19 -> Node7 [color="midnightblue",fontsize="10",style="solid"];
   Node14 -> Node17 [color="midnightblue",fontsize="10",style="solid"];
   Node14 -> Node20 [color="midnightblue",fontsize="10",style="solid"];
-  Node20 [label="Clef.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$Clef_8h.html"];
+  Node20 [label="Clef.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$Clef_8h.html",tooltip="Header du module Clef. "];
   Node20 -> Node18 [color="midnightblue",fontsize="10",style="solid"];
   Node14 -> Node21 [color="midnightblue",fontsize="10",style="solid"];
   Node21 [label="list",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled"];

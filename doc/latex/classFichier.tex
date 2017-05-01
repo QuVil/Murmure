@@ -2,6 +2,11 @@
 \label{classFichier}\index{Fichier@{Fichier}}
 
 
+Gère les fichiers des ressources. charge des informations depuis les fichiers du dossier data dans les instances voulues. Permet une modification plus simple des données des ennemis, personnages, modèles de génération, etc.  
+
+
+
+
 {\ttfamily \#include $<$Fichier.\+h$>$}
 
 \subsection*{Public Member Functions}
@@ -26,8 +31,13 @@ void \hyperlink{classFichier_a24944040e870bdd87d5cd2a70dbf44e4}{charger} (\hyper
 void \hyperlink{classFichier_aed5c72a3a8289e51f6724dcd683fbcbd}{charger} (\hyperlink{classModele}{Modele} \&m, std\+::string nom)
 \item 
 void \hyperlink{classFichier_a5dd17206285977ead14f689d085af32c}{charger} (\hyperlink{classModeleSalle}{Modele\+Salle} \&m, std\+::string nom)
+\item 
+void \hyperlink{classFichier_a8191157e196c5549d7ac53176fd3cf76}{charger} (\hyperlink{classEnnemi}{Ennemi} \&e, std\+::string nom)
 \end{DoxyCompactItemize}
 
+
+\subsection{Detailed Description}
+Gère les fichiers des ressources. charge des informations depuis les fichiers du dossier data dans les instances voulues. Permet une modification plus simple des données des ennemis, personnages, modèles de génération, etc. 
 
 \subsection{Constructor \& Destructor Documentation}
 \index{Fichier@{Fichier}!Fichier@{Fichier}}
@@ -179,6 +189,14 @@ Charge {\itshape \hyperlink{classPerso}{Perso}} défaut Charge le personnage avec
 \item[{std\+::string}]{nom}
 \end{DoxyParamCaption}
 )}\hypertarget{classFichier_a5dd17206285977ead14f689d085af32c}{}\label{classFichier_a5dd17206285977ead14f689d085af32c}
+\index{Fichier@{Fichier}!charger@{charger}}
+\index{charger@{charger}!Fichier@{Fichier}}
+\subsubsection[{\texorpdfstring{charger(\+Ennemi \&e, std\+::string nom)}{charger(Ennemi &e, std::string nom)}}]{\setlength{\rightskip}{0pt plus 5cm}void Fichier\+::charger (
+\begin{DoxyParamCaption}
+\item[{{\bf Ennemi} \&}]{e, }
+\item[{std\+::string}]{nom}
+\end{DoxyParamCaption}
+)}\hypertarget{classFichier_a8191157e196c5549d7ac53176fd3cf76}{}\label{classFichier_a8191157e196c5549d7ac53176fd3cf76}
 \index{Fichier@{Fichier}!creation\+\_\+index@{creation\+\_\+index}}
 \index{creation\+\_\+index@{creation\+\_\+index}!Fichier@{Fichier}}
 \subsubsection[{\texorpdfstring{creation\+\_\+index()}{creation_index()}}]{\setlength{\rightskip}{0pt plus 5cm}void Fichier\+::creation\+\_\+index (
