@@ -6,7 +6,7 @@ VILLERMET Quentin (11507338) & SUBLET Gary (11506450)
 /!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\
 Le projet n'est pas présent sur la forge car il contient plusieurs fichiers de
 plus de 1Mo, ce qui excède la limite de push sur la forge. Le repository se
-trouve donc sur http://github.com/lilelvis98/Murmure et est resté en public -
+trouve donc sur http://github.com/QuVil/Murmure et est resté en public -
 Nous avons tenté d'écrire au support de github.com pour obtenir un repo étudiant
 privé, sans succès.
  _  _  _  _  _  _  _  _  _  _  _  _  _  _  _  _  _  _  _  _  _  _  _  _  _  _
